@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-03T09:08:07.277374",
+    "expiry_date": "2026-04-07",
+    "historical_data_points": 2614,
+    "options_strikes": 41,
+    "data_source": "generated_realistic"
+  },
+  "historical_data": [
+    {
+      "timestamp": 

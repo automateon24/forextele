@@ -1,0 +1,5 @@
+timestamp,type,strategy,pnl,investment,roi,is_win,entry_price,exit_price,strike_price,option_type,strike_type,lots,lot_size,message,thread_id,data_id
+2026-04-03 23:05:02.297262,PERFORMANCE,,,,,,,,,,,,,"Performance: 0 trades, 0.0% win rate, 0.0% ROI, 73.7MB memory",44104,
+2026-04-03 23:06:02.298076,PERFORMANCE,,,,,,,,,,,,,"Performance: 0 trades, 0.0% win rate, 0.0% ROI, 73.7MB memory",44104,
+2026-04-03 23:07:02.298744,PERFORMANCE,,,,,,,,,,,,,"Performance: 0 trades, 0.0% win rate, 0.0% ROI, 73.7MB memory",44104,
+2026-04-03 23:08:02.299673,PERFORMANCE,,,,,,,,,,,,,"Performance: 0 trades, 0.0% win rate, 0.0% ROI, 73.7MB memory",44104,

@@ -1,0 +1,200 @@
+{
+  "ADX_TREND_OPTIMIZED": {
+    "strategy": "ADX_TREND_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "BOLLINGER_SQUEEZE_OPTIMIZED": {
+    "strategy": "BOLLINGER_SQUEEZE_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "ATR_BREAKOUT_OPTIMIZED": {
+    "strategy": "ATR_BREAKOUT_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "DAY_HIGH_LOW_OPTIMIZED": {
+    "strategy": "DAY_HIGH_LOW_OPTIMIZED",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 38269.499999999825,
+    "avg_pnl": 19134.749999999913,
+    "roi": 34.51015771724954,
+    "capital_utilization": 101.88000000000012,
+    "status": "ACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "RSI_DIVERGENCE_OPTIMIZED": {
+    "strategy": "RSI_DIVERGENCE_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "TREND_FOLLOWING_OPTIMIZED": {
+    "strategy": "TREND_FOLLOWING_OPTIMIZED",
+    "trades": 1,
+    "win_rate": 100.0,
+    "total_pnl": 30279.999999999854,
+    "avg_pnl": 30279.999999999854,
+    "roi": 49.232570239333725,
+    "capital_utilization": 61.50400000000009,
+    "status": "ACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "STOCHASTIC_OVERSOLD_OPTIMIZED": {
+    "strategy": "STOCHASTIC_OVERSOLD_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "WILLIAMS_REVERSAL_OPTIMIZED": {
+    "strategy": "WILLIAMS_REVERSAL_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "PROFIT_MAKING"
+  },
+  "STRONG_MOMENTUM_NEGATIVE": {
+    "strategy": "STRONG_MOMENTUM_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "HIGH_VOLUME_NEGATIVE": {
+    "strategy": "HIGH_VOLUME_NEGATIVE",
+    "trades": 2,
+    "win_rate": 50.0,
+    "total_pnl": 3627.999999999738,
+    "avg_pnl": 1813.999999999869,
+    "roi": 3.5823719509401277,
+    "capital_utilization": 106.50400000000009,
+    "status": "ACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "STOCHASTIC_OVERSOLD_NEGATIVE": {
+    "strategy": "STOCHASTIC_OVERSOLD_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "WILLIAMS_REVERSAL_NEGATIVE": {
+    "strategy": "WILLIAMS_REVERSAL_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "MULTI_TIMEFRAME_NEGATIVE": {
+    "strategy": "MULTI_TIMEFRAME_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "AI_ENHANCED_NEGATIVE": {
+    "strategy": "AI_ENHANCED_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "CCI_EXTREME_NEGATIVE": {
+    "strategy": "CCI_EXTREME_NEGATIVE",
+    "trades": 1,
+    "win_rate": 100.0,
+    "total_pnl": 665.0000000000728,
+    "avg_pnl": 665.0000000000728,
+    "roi": 2.2736597374181953,
+    "capital_utilization": 29.24799999999996,
+    "status": "ACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "MFI_DIVERGENCE_NEGATIVE": {
+    "strategy": "MFI_DIVERGENCE_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "MOMENTUM_REVERSAL_NEGATIVE": {
+    "strategy": "MOMENTUM_REVERSAL_NEGATIVE",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  },
+  "MACD_DIVERGENCE_NEGATIVE": {
+    "strategy": "MACD_DIVERGENCE_NEGATIVE",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 7306.999999999825,
+    "avg_pnl": 3653.4999999999127,
+    "roi": 15.067222038930712,
+    "capital_utilization": 48.49599999999991,
+    "status": "ACTIVE",
+    "category": "NEGATIVE_ZERO_MAKING"
+  }
+}

@@ -1,0 +1,28 @@
+Starting parallel scan of 5059 parquets...
+Processed 1000/5059 files...
+Processed 2000/5059 files...
+Processed 3000/5059 files...
+Processed 4000/5059 files...
+Processed 5000/5059 files...
+
+================================================================================
+EXPIRY DAY PREDICTIVE TRIGGERS BACKTEST RESULTS:
+================================================================================
+
+RULE A (Spot Velocity + Vol Spike):
+  Total Trades Triggered: 3
+  Win Rate (End Green)  : 0.0%
+  5x Target Hit Rate    : 0.0% (Multi-Bagger Success Rate)
+  Average Trade Return  : -50.0%
+
+RULE B (OI Unwinding + Price Breakout):
+  Total Trades Triggered: 12
+  Win Rate (End Green)  : 0.0%
+  5x Target Hit Rate    : 0.0% (Multi-Bagger Success Rate)
+  Average Trade Return  : -50.0%
+
+RULE C (Greeks Gamma + Spot Momentum):
+  Total Trades Triggered: 22
+  Win Rate (End Green)  : 4.5%
+  5x Target Hit Rate    : 4.5% (Multi-Bagger Success Rate)
+  Average Trade Return  : -29.5%

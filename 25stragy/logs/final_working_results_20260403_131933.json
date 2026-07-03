@@ -1,0 +1,20 @@
+{
+  "total_trades": 4,
+  "winning_trades": 0,
+  "losing_trades": 4,
+  "total_gross_pnl": -102413.99999999994,
+  "total_broker_charges": 320,
+  "total_net_pnl": -102733.99999999994,
+  "total_investment": 5844.0,
+  "win_rate": 0.0,
+  "avg_gross_pnl_per_trade": -25603.499999999985,
+  "avg_net_pnl_per_trade": -25683.499999999985,
+  "avg_roi_per_trade": -1757.9397672826822,
+  "profit_factor": 0.0,
+  "max_drawdown": 0.0,
+  "sharpe_ratio": 0.31,
+  "avg_daily_pnl": -102733.99999999994,
+  "trading_days": 1,
+  "capital_utilization": 5.844,
+  "capital": 100000
+}

@@ -1,0 +1,7 @@
+,total_trades,winning_trades,losing_trades,total_pnl,win_rate,avg_pnl_per_trade
+adx_trend_fine_tuned,17,8,9,3352.0000000004075,47.05882352941176,197.17647058825926
+rsi_oversold_fine_tuned,0,0,0,0.0,0.0,0.0
+macd_crossover_fine_tuned,0,0,0,0.0,0.0,0.0
+bollinger_bands_fine_tuned,0,0,0,0.0,0.0,0.0
+stochastic_fine_tuned,0,0,0,0.0,0.0,0.0
+mean_reversion_fine_tuned,0,0,0,0.0,0.0,0.0

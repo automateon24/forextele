@@ -1,0 +1,30 @@
+﻿Loading data...
+Loading 1min option parquets...
+  786,163 rows | 155 days | 2025-02-03 to 2026-05-27
+Running backtest...
+
+======================================================================
+1. TIME EXIT DEEP AUDIT ù why are 28 trades timing out?
+======================================================================
+c:\cursor\options\niftyopt\venv\Scripts\python.exe : Traceback 
+(most recent call last):
+At line:1 char:1
++ c:\cursor\options\niftyopt\venv\Scripts\python.exe 
+deep_audit.py 2>&1 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most rece 
+   nt call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\cursor\options\niftyopt\deep_audit.py", line 29, in 
+<module>
+    print(f"   Total TIME exits: {len(time_df)}, Total loss: 
+\u20b9{time_df['pnl_rs'].sum():+,.0f}")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Pytho
+n311\Lib\encodings\cp1252.py", line 19, in encode
+    return 
+codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character 
+'\u20b9' in position 37: character maps to <undefined>

@@ -1,0 +1,81 @@
+api:
+  dhan:
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzc1NTg5NTA0LCJhcHBfaWQiOiJhNWYwYjE3ZSIsImlhdCI6MTc3NTUwMzEwNCwidG9rZW5Db25zdW1lclR5cGUiOiJBUFAiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMTkzNjEzMyJ9.fXohkXbr79_KmVbGdb8mzHepqcJDKxsH8NGK_xRXo0fBPk0f48eYYV5QbTrgDzXv7VrxtmJn7smLdbQ10EvooA
+    base_url: https://api.dhan.co/v2
+    client_id: '1101936133'
+    retry_attempts: 3
+    timeout: 30
+database:
+  path: data/trading_system.db
+  type: sqlite
+logging:
+  backup_count: 5
+  file: logs/trading_system.log
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  level: INFO
+  max_size: 10MB
+monitoring:
+  dashboard_port: 5000
+  enable_api: true
+  enable_terminal: true
+  update_interval: 2
+strategies:
+  enabled:
+  - enhanced_day_high_low
+  - rsi_oversold
+  - rsi_overbought
+  - mean_reversion
+  - breakout_scalping
+  - trend_following
+  - volatility_scalping
+  - ai_enhanced
+  parameters:
+    ai_enhanced:
+      confidence_threshold: 0.7
+      max_positions: 5
+      model_type: ensemble
+    breakout_scalping:
+      breakout_period: 10
+      profit_target: 0.01
+      volume_threshold: 1.5
+    enhanced_day_high_low:
+      entry_threshold: 0.02
+      exit_threshold: 0.03
+      lookback_period: 20
+    mean_reversion:
+      entry_threshold: 2.0
+      exit_threshold: 1.0
+      lookback_period: 20
+    rsi_overbought:
+      overbought_level: 70
+      oversold_level: 30
+      rsi_period: 14
+    rsi_oversold:
+      overbought_level: 70
+      oversold_level: 30
+      rsi_period: 14
+    trend_following:
+      signal_threshold: 0.02
+      stop_loss: 0.03
+      trend_period: 50
+    volatility_scalping:
+      profit_target: 0.015
+      volatility_period: 20
+      volatility_threshold: 0.02
+system:
+  environment: development
+  name: NIFTY Options Trading System
+  version: 2.0.0
+trading:
+  broker_charges: 40.0
+  brokerage_per_order: 40
+  capital_per_strategy: 100000
+  max_position_size: 100
+  risk_management:
+    max_concurrent_trades: 5
+    max_daily_loss: 5000
+    max_risk_per_trade: 2000
+    position_size_percentage: 10
+  risk_percentage: 2.0
+  stop_loss_points: 300
+  target_points: 600

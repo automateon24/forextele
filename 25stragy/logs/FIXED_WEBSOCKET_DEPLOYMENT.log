@@ -1,0 +1,20 @@
+2026-02-18 12:17:19,477 - INFO - Database setup completed
+2026-02-18 12:17:19,498 - INFO - Dhan HTTP API initialized successfully
+2026-02-18 12:17:19,499 - INFO - FIXED WEBSOCKET DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:17:19,499 - INFO - ======================================================================
+2026-02-18 12:17:19,499 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:17:19,499 - INFO - Data Source: REAL Dhan API (HTTP Fallback)
+2026-02-18 12:17:19,500 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:17:19,500 - INFO - Update Interval: 5 seconds
+2026-02-18 12:17:19,501 - INFO - ======================================================================
+2026-02-18 12:17:19,817 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:24,836 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:29,854 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:34,873 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:39,892 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:44,911 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:49,930 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:54,948 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:17:59,968 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:18:04,987 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:18:10,008 - WARNING - Failed to get real NIFTY price

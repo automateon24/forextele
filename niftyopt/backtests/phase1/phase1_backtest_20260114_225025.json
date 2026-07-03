@@ -1,0 +1,46 @@
+{
+  "phase": "Phase 1",
+  "changes": {
+    "ml_threshold": "30% (was 65%) - DISABLED",
+    "momentum_threshold": "0.3 (was 0.5)",
+    "confidence_threshold": "0.05 (was 0.30)",
+    "commission_filter": "Rs 300 (was Rs 500)"
+  },
+  "metrics": {
+    "total_trades": 40,
+    "winning_trades": 10,
+    "losing_trades": 30,
+    "breakeven_trades": 0,
+    "win_rate": 0.25,
+    "total_pnl": -59351.180166249964,
+    "total_return": -0.5935118016624996,
+    "total_return_pct": -59.35118016624996,
+    "gross_profit": 16787.01480500001,
+    "gross_loss": 76138.19497124998,
+    "profit_factor": 0.22048086129883745,
+    "avg_win": 1678.701480500001,
+    "avg_loss": 2537.9398323749992,
+    "avg_trade": -1483.779504156249,
+    "largest_win": 5008.526656250003,
+    "largest_loss": -4310.509247499998,
+    "sharpe_ratio": -1.2561540193896785,
+    "max_drawdown": -0.4975118016624996,
+    "max_drawdown_pct": -49.75118016624996,
+    "max_drawdown_amount": -49751.18016624996,
+    "avg_holding_period_hours": 0.0,
+    "initial_capital": 100000.0,
+    "final_capital": 40648.819833750036
+  },
+  "total_trades": 40,
+  "winning_trades": 10,
+  "losing_trades": 30,
+  "win_rate": 0.25,
+  "total_pnl": -59351.18016624996,
+  "total_return_pct": -59.35118016624996,
+  "profit_factor": 0.2204808612988375,
+  "total_commission": 9600.0,
+  "period": {
+    "start": "2025-12-15",
+    "end": "2026-01-14"
+  }
+}

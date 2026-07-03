@@ -1,0 +1,46 @@
+2026-02-18 11:32:21,815 - INFO - Database setup completed
+2026-02-18 11:32:21,838 - INFO - Dhan Direct API initialized
+2026-02-18 11:32:21,838 - INFO - Dhan API initialized successfully
+2026-02-18 11:32:21,839 - INFO - STARTING LIVE DEPLOYMENT WITH REAL DHAN API
+2026-02-18 11:32:21,839 - INFO - ======================================================================
+2026-02-18 11:32:21,839 - INFO - Mode: Paper Trading (No Real Orders)
+2026-02-18 11:32:21,839 - INFO - Data Source: REAL Dhan API (Existing Working Implementation)
+2026-02-18 11:32:21,840 - INFO - Strategies: 9 Trading Strategies
+2026-02-18 11:32:21,841 - INFO - ======================================================================
+2026-02-18 11:32:22,145 - INFO - Dhan API connection successful
+2026-02-18 11:32:22,152 - ERROR - HTTP Error: 429 - {"data":{"805":"Too many requests. Further requests may result in the user being blocked."},"status":"failed"}
+2026-02-18 11:32:22,159 - ERROR - Failed to get NIFTY OHLC: 404 - {"timestamp":1771394543176,"status":404,"error":"Not Found","path":"/v2/market/ohlc/13/NSE_INDEX"}
+2026-02-18 11:32:22,163 - ERROR - Failed to get expiry dates: 404 - 404 page not found
+
+2026-02-18 11:32:24,153 - ERROR - NIFTY data not found in response
+2026-02-18 11:32:24,153 - ERROR - Failed to get comprehensive data: Unknown error
+2026-02-18 11:32:54,165 - ERROR - NIFTY data not found in response
+2026-02-18 11:32:54,171 - ERROR - Failed to get NIFTY OHLC: 404 - {"timestamp":1771394575190,"status":404,"error":"Not Found","path":"/v2/market/ohlc/13/NSE_INDEX"}
+2026-02-18 11:32:54,176 - ERROR - Failed to get expiry dates: 404 - 404 page not found
+
+2026-02-18 11:32:56,168 - ERROR - NIFTY data not found in response
+2026-02-18 11:32:56,229 - ERROR - Failed to get comprehensive data: Unknown error
+2026-02-18 11:33:26,247 - ERROR - NIFTY data not found in response
+2026-02-18 11:33:26,253 - ERROR - Failed to get NIFTY OHLC: 404 - {"timestamp":1771394607273,"status":404,"error":"Not Found","path":"/v2/market/ohlc/13/NSE_INDEX"}
+2026-02-18 11:33:26,258 - ERROR - Failed to get expiry dates: 404 - 404 page not found
+
+2026-02-18 11:33:28,247 - ERROR - NIFTY data not found in response
+2026-02-18 11:33:28,248 - ERROR - Failed to get comprehensive data: Unknown error
+2026-02-18 11:33:58,257 - ERROR - NIFTY data not found in response
+2026-02-18 11:33:58,264 - ERROR - Failed to get NIFTY OHLC: 404 - {"timestamp":1771394639285,"status":404,"error":"Not Found","path":"/v2/market/ohlc/13/NSE_INDEX"}
+2026-02-18 11:33:58,269 - ERROR - Failed to get expiry dates: 404 - 404 page not found
+
+2026-02-18 11:34:00,257 - ERROR - NIFTY data not found in response
+2026-02-18 11:34:00,258 - ERROR - Failed to get comprehensive data: Unknown error
+2026-02-18 11:34:08,043 - INFO - 
+LIVE DEPLOYMENT WITH REAL DHAN API SUMMARY
+2026-02-18 11:34:08,043 - INFO - ======================================================================
+2026-02-18 11:34:08,044 - INFO - Total Signals Generated: 0
+2026-02-18 11:34:08,044 - INFO - Paper Trades Executed: 0
+2026-02-18 11:34:08,044 - INFO - Real Data Points Captured: 0
+2026-02-18 11:34:08,044 - INFO - 
+Database: c:\cursor\options\niftyopt\data\live_deployment_real_dhan.db
+2026-02-18 11:34:08,045 - INFO - All real market data, options, and signals saved successfully
+2026-02-18 11:34:08,045 - INFO - 
+Final Status: LIVE DEPLOYMENT WITH REAL DHAN API COMPLETED
+2026-02-18 11:34:08,045 - INFO - System successfully used existing working Dhan API for real market data

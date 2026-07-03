@@ -1,0 +1,73 @@
+{
+  "backtest_date": "2026-04-03T11:03:51.369765",
+  "backtest_type": "FINE_TUNED_STRATEGIES",
+  "data_period": {
+    "start": "2026-03-27T09:15:07.140822",
+    "end": "2026-04-06T15:27:00",
+    "total_days": 7,
+    "data_points": 2614
+  },
+  "overall_results": {
+    "total_trades": 17,
+    "winning_trades": 8,
+    "losing_trades": 9,
+    "total_pnl": 3352.0000000004075,
+    "win_rate": 47.05882352941176,
+    "avg_pnl_per_trade": 197.17647058825926
+  },
+  "strategy_results": {
+    "adx_trend_fine_tuned": {
+      "total_trades": 17,
+      "winning_trades": 8,
+      "losing_trades": 9,
+      "total_pnl": 3352.0000000004075,
+      "win_rate": 47.05882352941176,
+      "avg_pnl_per_trade": 197.17647058825926
+    },
+    "rsi_oversold_fine_tuned": {
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "total_pnl": 0,
+      "win_rate": 0,
+      "avg_pnl_per_trade": 0
+    },
+    "macd_crossover_fine_tuned": {
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "total_pnl": 0,
+      "win_rate": 0,
+      "avg_pnl_per_trade": 0
+    },
+    "bollinger_bands_fine_tuned": {
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "total_pnl": 0,
+      "win_rate": 0,
+      "avg_pnl_per_trade": 0
+    },
+    "stochastic_fine_tuned": {
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "total_pnl": 0,
+      "win_rate": 0,
+      "avg_pnl_per_trade": 0
+    },
+    "mean_reversion_fine_tuned": {
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "total_pnl": 0,
+      "win_rate": 0,
+      "avg_pnl_per_trade": 0
+    }
+  },
+  "improvements": {
+    "reduced_drawdown": "Advanced stop-loss and trailing stops",
+    "reduced_trades": "Stricter entry conditions",
+    "higher_profitability": "Better strike selection and position sizing"
+  }
+}

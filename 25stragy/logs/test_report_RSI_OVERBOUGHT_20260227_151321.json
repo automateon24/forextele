@@ -1,0 +1,189 @@
+{
+  "strategy_name": "RSI_OVERBOUGHT",
+  "test_date": "2026-02-27 15:13:21",
+  "total_tests": 16,
+  "passed_tests": 0,
+  "failed_tests": 0,
+  "error_tests": 16,
+  "test_results": [
+    {
+      "test_name": "Strategy Initialization",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.012579,
+      "details": "Strategy initialization failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Configuration Loading",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.008958,
+      "details": "Configuration loading failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Method Existence",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.010537,
+      "details": "Method existence check failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Parameter Validation",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.009199,
+      "details": "Parameter validation failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Signal Generation",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.008691,
+      "details": "Signal generation failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Trade Execution",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.013517,
+      "details": "Trade execution failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Position Management",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.010021,
+      "details": "Position management failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Data Processing",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.010315,
+      "details": "Data processing failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Data Integrity",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.010796,
+      "details": "Data integrity test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Performance Bounds",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.013308,
+      "details": "Performance bounds test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Risk Management",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.010599,
+      "details": "Risk management test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Memory Usage",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.012014,
+      "details": "Memory usage test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Infinite Loops",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.01018,
+      "details": "Infinite loop test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Memory Leaks",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.058329,
+      "details": "Memory leak test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Division by Zero",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.012458,
+      "details": "Division by zero test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Null Pointers",
+      "strategy_name": "RSI_OVERBOUGHT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.010483,
+      "details": "Null pointer test failed",
+      "error_message": "'strategies'",
+      "performance_metrics": null
+    }
+  ],
+  "critical_issues": [],
+  "performance_summary": {
+    "total_execution_time": 0.22198400000000001,
+    "avg_execution_time": 0.013874000000000001,
+    "max_execution_time": 0.058329,
+    "min_execution_time": 0.008691,
+    "tests_by_type": {
+      "unit": 4,
+      "functional": 4,
+      "sanity": 4,
+      "critical": 4
+    },
+    "tests_by_status": {
+      "PASS": 0,
+      "FAIL": 0,
+      "ERROR": 16
+    }
+  },
+  "overall_status": "CRITICAL_ISSUES"
+}

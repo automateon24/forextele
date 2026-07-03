@@ -1,0 +1,3 @@
+strategy,action,entry_time,entry_price,strike,option_type,premium,delta,theta,gamma,vega,confidence,reason,position_lots,position_size,broker_charges,max_risk,status,exit_time,exit_price,exit_reason,gross_pnl,net_pnl,pnl,roi,investment
+adx_trend_balanced,BUY,2026-04-02 10:42:00,23012.18,23250,ce,15.71,0.5149,-0.4232,0.009,0.2097,0.8,ADX trend,2,100,40,2000.0,CLOSED,2026-04-02 11:28:00,23175.72,Time Exit,16354.000000000087,16274.000000000087,16274.000000000087,1035.9007001909667,1571.0
+adx_trend_balanced,BUY,2026-04-02 10:43:00,23033.13,23250,ce,15.71,0.5149,-0.4232,0.009,0.2097,0.7834052305894794,ADX trend,2,100,40,2000.0,CLOSED,2026-04-02 11:29:00,23153.65,Time Exit,12052.000000000044,11972.000000000044,11972.000000000044,762.0623806492707,1571.0

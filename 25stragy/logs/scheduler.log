@@ -1,0 +1,1030 @@
+[Tue 04/28/2026  8:30:02.26] Starting Dhan token refresh... 
+'py' is not recognized as an internal or external command,
+operable program or batch file.
+[Tue 04/28/2026  8:30:02.33] Token refresh FAILED - check logs\auto_renew.log 
+[Tue 04/28/2026  8:48:57.66] Starting Dhan token refresh... 
+Traceback (most recent call last):
+  File "C:\cursor\options\niftyopt\dhan_direct_auth.py", line 19, in <module>
+    import pyotp
+ModuleNotFoundError: No module named 'pyotp'
+[Tue 04/28/2026  8:49:00.06] Token refresh FAILED - check logs\auto_renew.log 
+[Tue 04/28/2026  8:49:35.98] Starting Dhan token refresh... 
+2026-04-28 08:49:37,072 INFO [TOTP] Code generated (valid for ~23s)
+2026-04-28 08:49:37,075 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-28 08:49:37,712 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-28 08:49:37,713 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-28 08:49:37,715 INFO [SAVED] Token saved. Expires: 2026-04-29T08:49:38
+
+[FORCE] Generating fresh token...
+[2026-04-28 08:49:37] [INFO] Token refresh SUCCESS. Expires: 2026-04-29 08:49:38
+[2026-04-28 08:49:39] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-04-29 08:49:38
+
+[Tue 04/28/2026  8:49:39.78] Token refresh SUCCESS 
+[Tue 04/28/2026  8:51:11.09] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 04/28/2026  8:51:11.10] Python OK: C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe 
+[Tue 04/28/2026  8:51:11.95] Config files OK 
+[Tue 04/28/2026  8:51:11.95] Running token refresh... 
+2026-04-28 08:51:12,332 INFO [TOTP] Code generated (valid for ~18s)
+2026-04-28 08:51:12,333 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-28 08:51:13,227 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-28 08:51:13,228 WARNING [AUTH] Rate limited - waiting 2 minutes before retry...
+2026-04-28 08:53:15,229 INFO [TOTP] Code generated (valid for ~15s)
+2026-04-28 08:53:16,660 INFO [AUTH] Attempt 2: HTTP 200
+2026-04-28 08:53:16,661 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-28 08:53:16,666 INFO [SAVED] Token saved. Expires: 2026-04-29T08:53:17
+
+[FORCE] Generating fresh token...
+[2026-04-28 08:53:16] [INFO] Token refresh SUCCESS. Expires: 2026-04-29 08:53:17
+[2026-04-28 08:53:18] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-04-29 08:53:17
+
+[Tue 04/28/2026  8:53:18.20] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 04/29/2026  8:30:02.37] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 04/29/2026  8:30:02.46] Python OK: C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe 
+[Wed 04/29/2026  8:30:07.14] Config files OK 
+[Wed 04/29/2026  8:30:07.14] Running token refresh... 
+2026-04-29 08:30:07,640 INFO [TOTP] Code generated (valid for ~23s)
+2026-04-29 08:30:07,642 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-29 08:30:08,718 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-29 08:30:08,718 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-29 08:30:08,724 INFO [SAVED] Token saved. Expires: 2026-04-30T08:30:09
+
+[FORCE] Generating fresh token...
+[2026-04-29 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-04-30 08:30:09
+[2026-04-29 08:30:09] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-04-30 08:30:09
+
+[Wed 04/29/2026  8:30:09.84] ========== TOKEN REFRESH SUCCESS ========== 
+[Thu 04/30/2026  8:30:02.00] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 04/30/2026  8:30:02.15] Python OK: C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe 
+[Thu 04/30/2026  8:30:03.64] Config files OK 
+[Thu 04/30/2026  8:30:03.64] Running token refresh... 
+2026-04-30 08:30:04,492 INFO [TOTP] Code generated (valid for ~26s)
+2026-04-30 08:30:04,493 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-30 08:30:05,683 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-30 08:30:05,683 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-30 08:30:05,687 INFO [SAVED] Token saved. Expires: 2026-05-01T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-04-30 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-05-01 08:30:06
+[2026-04-30 08:30:06] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-01 08:30:06
+
+[Thu 04/30/2026  8:30:07.07] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 05/10/2026 18:43:25.51] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 05/10/2026 18:43:25.54] Python OK: C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe 
+[Sun 05/10/2026 18:43:26.01] All files OK 
+[Sun 05/10/2026 18:43:26.02] Running token refresh... 
+2026-05-10 18:43:26,492 INFO [TOTP] Waiting 6s for fresh TOTP window...
+2026-05-10 18:43:32,499 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-10 18:43:32,499 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:43:33,003 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:43:33,004 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:43:33,008 INFO [SAVED] Token saved. Expires: 2026-05-11T18:43:34
+
+[FORCE] Generating fresh token...
+[2026-05-10 18:43:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:43:34
+[2026-05-10 18:43:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-11 18:43:34
+
+[Sun 05/10/2026 18:43:35.14] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 05/10/2026 18:52:34.76] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 05/10/2026 18:52:34.77] Python OK: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'pyotp'
+[Sun 05/10/2026 18:52:35.31] Missing packages - installing now... 
+Collecting pyotp
+  Using cached pyotp-2.9.0-py3-none-any.whl.metadata (9.8 kB)
+Requirement already satisfied: pyyaml in .\venv\Lib\site-packages (6.0.3)
+Requirement already satisfied: requests in .\venv\Lib\site-packages (2.32.5)
+Requirement already satisfied: charset_normalizer<4,>=2 in .\venv\Lib\site-packages (from requests) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in .\venv\Lib\site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in .\venv\Lib\site-packages (from requests) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in .\venv\Lib\site-packages (from requests) (2026.1.4)
+Using cached pyotp-2.9.0-py3-none-any.whl (13 kB)
+Installing collected packages: pyotp
+Successfully installed pyotp-2.9.0
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: C:\cursor\options\niftyopt\venv\Scripts\python.exe -m pip install --upgrade pip
+[Sun 05/10/2026 18:52:35.31] Packages installed 
+[Sun 05/10/2026 18:52:59.57] All files OK 
+[Sun 05/10/2026 18:52:59.59] Running token refresh... 
+2026-05-10 18:53:01,188 INFO [TOTP] Code generated (valid for ~29s)
+2026-05-10 18:53:01,193 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:53:01,564 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:53:01,565 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:53:01,569 INFO [SAVED] Token saved. Expires: 2026-05-11T18:53:03
+
+[FORCE] Generating fresh token...
+[2026-05-10 18:53:01] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:53:03
+[2026-05-10 18:53:03] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-11 18:53:03
+
+[Sun 05/10/2026 18:53:03.85] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 05/10/2026 18:55:41.33] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 05/10/2026 18:55:41.33] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/10/2026 18:55:41.43] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/10/2026 18:55:42.55] All files OK 
+[Sun 05/10/2026 18:55:42.56] Running token refresh... 
+2026-05-10 18:55:42,982 INFO [TOTP] Code generated (valid for ~18s)
+2026-05-10 18:55:42,986 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:55:43,702 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:55:43,703 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:55:43,708 INFO [SAVED] Token saved. Expires: 2026-05-11T18:55:45
+
+[FORCE] Generating fresh token...
+[2026-05-10 18:55:43] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:55:45
+[2026-05-10 18:55:45] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-11 18:55:45
+
+[Sun 05/10/2026 18:55:45.80] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 05/11/2026  8:30:04.14] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 05/11/2026  8:30:04.26] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 05/11/2026  8:30:04.28] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 05/11/2026  8:30:07.14] All files OK 
+[Mon 05/11/2026  8:30:07.15] Running token refresh... 
+2026-05-11 08:30:07,864 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-11 08:30:07,865 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-11 08:30:08,354 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-11 08:30:08,354 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-11 08:30:08,363 INFO [SAVED] Token saved. Expires: 2026-05-12T08:30:09
+
+[FORCE] Generating fresh token...
+[2026-05-11 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-05-12 08:30:09
+[2026-05-11 08:30:11] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-12 08:30:09
+
+[Mon 05/11/2026  8:30:11.18] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 05/12/2026  8:30:04.22] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 05/12/2026  8:30:04.29] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 05/12/2026  8:30:04.31] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 05/12/2026  8:30:06.66] All files OK 
+[Tue 05/12/2026  8:30:06.67] Running token refresh... 
+2026-05-12 08:30:07,297 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-12 08:30:07,298 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-12 08:30:07,784 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-12 08:30:07,784 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-12 08:30:07,789 INFO [SAVED] Token saved. Expires: 2026-05-13T08:30:08
+
+[FORCE] Generating fresh token...
+[2026-05-12 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-05-13 08:30:08
+[2026-05-12 08:30:10] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-13 08:30:08
+
+[Tue 05/12/2026  8:30:10.12] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 05/13/2026  8:30:08.07] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 05/13/2026  8:30:08.35] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 05/13/2026  8:30:08.57] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 05/13/2026  8:30:17.41] All files OK 
+[Wed 05/13/2026  8:30:17.41] Running token refresh... 
+2026-05-13 08:30:26,299 INFO [TOTP] Waiting 6s for fresh TOTP window...
+2026-05-13 08:30:32,318 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-13 08:30:32,319 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-13 08:30:33,323 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-13 08:30:33,323 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-13 08:30:33,332 INFO [SAVED] Token saved. Expires: 2026-05-14T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-05-13 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-14 08:30:33
+[2026-05-13 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-14 08:30:33
+
+[Wed 05/13/2026  8:30:40.40] ========== TOKEN REFRESH SUCCESS ========== 
+[Thu 05/14/2026  8:30:05.20] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 05/14/2026  8:30:05.29] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 05/14/2026  8:30:05.31] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 05/14/2026  8:30:07.62] All files OK 
+[Thu 05/14/2026  8:30:07.62] Running token refresh... 
+2026-05-14 08:30:08,255 INFO [TOTP] Code generated (valid for ~22s)
+2026-05-14 08:30:08,256 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-14 08:30:08,972 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-14 08:30:08,973 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-14 08:30:08,977 INFO [SAVED] Token saved. Expires: 2026-05-15T08:30:09
+
+[FORCE] Generating fresh token...
+[2026-05-14 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-05-15 08:30:09
+[2026-05-14 08:30:11] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-15 08:30:09
+
+[Thu 05/14/2026  8:30:11.67] ========== TOKEN REFRESH SUCCESS ========== 
+[Fri 05/15/2026  8:30:05.41] ========== DAILY TOKEN REFRESH START ========== 
+[Fri 05/15/2026  8:30:05.56] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 05/15/2026  8:30:05.58] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 05/15/2026  8:30:08.47] All files OK 
+[Fri 05/15/2026  8:30:08.47] Running token refresh... 
+2026-05-15 08:30:09,286 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-15 08:30:09,289 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-15 08:30:09,928 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-15 08:30:09,928 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-15 08:30:09,934 INFO [SAVED] Token saved. Expires: 2026-05-16T08:30:10
+
+[FORCE] Generating fresh token...
+[2026-05-15 08:30:09] [INFO] Token refresh SUCCESS. Expires: 2026-05-16 08:30:10
+[2026-05-15 08:30:12] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-16 08:30:10
+
+[Fri 05/15/2026  8:30:12.36] ========== TOKEN REFRESH SUCCESS ========== 
+[Sat 05/16/2026  8:30:04.40] ========== DAILY TOKEN REFRESH START ========== 
+[Sat 05/16/2026  8:30:04.52] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 05/16/2026  8:30:04.54] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 05/16/2026  8:30:06.97] All files OK 
+[Sat 05/16/2026  8:30:06.97] Running token refresh... 
+2026-05-16 08:30:07,934 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-16 08:30:07,935 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-16 08:30:08,477 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-16 08:30:08,478 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-16 08:30:08,483 INFO [SAVED] Token saved. Expires: 2026-05-17T08:30:09
+
+[FORCE] Generating fresh token...
+[2026-05-16 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-05-17 08:30:09
+[2026-05-16 08:30:10] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-17 08:30:09
+
+[Sat 05/16/2026  8:30:10.83] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 05/17/2026  8:30:07.80] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 05/17/2026  8:30:07.94] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/17/2026  8:30:07.96] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/17/2026  8:30:10.91] All files OK 
+[Sun 05/17/2026  8:30:10.91] Running token refresh... 
+2026-05-17 08:30:11,865 INFO [TOTP] Code generated (valid for ~19s)
+2026-05-17 08:30:11,866 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-17 08:30:22,424 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-17 08:30:22,425 WARNING [AUTH] TOTP used already - waiting 10s for next window...
+2026-05-17 08:30:32,425 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-17 08:30:32,874 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-17 08:30:32,882 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-17 08:30:32,886 INFO [SAVED] Token saved. Expires: 2026-05-18T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-05-17 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-05-18 08:30:33
+[2026-05-17 08:30:37] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-18 08:30:33
+
+[Sun 05/17/2026  8:30:37.53] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 05/18/2026  8:30:04.34] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 05/18/2026  8:30:04.43] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 05/18/2026  8:30:04.47] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 05/18/2026  8:30:06.69] All files OK 
+[Mon 05/18/2026  8:30:06.70] Running token refresh... 
+2026-05-18 08:30:37,830 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-18 08:30:37,833 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-18 08:30:38,535 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-18 08:30:38,536 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-18 08:30:38,541 INFO [SAVED] Token saved. Expires: 2026-05-19T08:30:39
+
+[FORCE] Generating fresh token...
+[2026-05-18 08:30:38] [INFO] Token refresh SUCCESS. Expires: 2026-05-19 08:30:39
+[2026-05-18 08:30:43] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-19 08:30:39
+
+[Mon 05/18/2026  8:30:44.15] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 05/19/2026  8:30:04.28] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 05/19/2026  8:30:04.50] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 05/19/2026  8:30:04.51] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 05/19/2026  8:30:06.98] All files OK 
+[Tue 05/19/2026  8:30:06.99] Running token refresh... 
+2026-05-19 08:30:07,689 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-19 08:30:07,690 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-19 08:30:45,868 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-19 08:30:45,892 WARNING [AUTH] TOTP used already - waiting 17s for next window...
+2026-05-19 08:31:41,249 INFO [TOTP] Code generated (valid for ~19s)
+2026-05-19 08:31:42,331 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-19 08:31:42,345 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-19 08:31:42,376 INFO [SAVED] Token saved. Expires: 2026-05-20T08:31:42
+
+[FORCE] Generating fresh token...
+[2026-05-19 08:31:42] [INFO] Token refresh SUCCESS. Expires: 2026-05-20 08:31:42
+[2026-05-19 08:31:45] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-20 08:31:42
+
+[Tue 05/19/2026  8:31:46.67] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 05/20/2026  8:43:15.21] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 05/20/2026  8:43:31.63] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 05/20/2026  8:43:37.25] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 05/20/2026  8:43:58.16] All files OK 
+[Wed 05/20/2026  8:43:58.16] Running token refresh... 
+2026-05-20 08:44:00,104 INFO [TOTP] Code generated (valid for ~30s)
+2026-05-20 08:44:00,106 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-20 08:44:14,540 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-20 08:44:14,542 WARNING [AUTH] TOTP used already - waiting 18s for next window...
+2026-05-20 08:44:32,543 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-20 08:44:33,088 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-20 08:44:33,102 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-20 08:44:33,106 INFO [SAVED] Token saved. Expires: 2026-05-21T08:44:33
+
+[FORCE] Generating fresh token...
+[2026-05-20 08:44:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-21 08:44:33
+[2026-05-20 08:44:36] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-21 08:44:33
+
+[Wed 05/20/2026  8:44:38.67] ========== TOKEN REFRESH SUCCESS ========== 
+[Thu 05/21/2026  8:30:05.33] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 05/21/2026  8:30:05.43] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 05/21/2026  8:30:05.46] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 05/21/2026  8:30:09.38] All files OK 
+[Thu 05/21/2026  8:30:09.38] Running token refresh... 
+2026-05-21 08:30:10,233 INFO [TOTP] Code generated (valid for ~20s)
+2026-05-21 08:30:10,240 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-21 08:30:20,906 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-21 08:30:20,907 WARNING [AUTH] TOTP used already - waiting 12s for next window...
+2026-05-21 08:30:32,908 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-21 08:30:33,251 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-21 08:30:33,252 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-21 08:30:33,257 INFO [SAVED] Token saved. Expires: 2026-05-22T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-05-21 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-22 08:30:33
+[2026-05-21 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-22 08:30:33
+
+[Thu 05/21/2026  8:30:35.63] ========== TOKEN REFRESH SUCCESS ========== 
+[Fri 05/22/2026  8:30:05.12] ========== DAILY TOKEN REFRESH START ========== 
+[Fri 05/22/2026  8:30:05.23] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 05/22/2026  8:30:05.25] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 05/22/2026  8:30:08.66] All files OK 
+[Fri 05/22/2026  8:30:08.67] Running token refresh... 
+2026-05-22 08:30:09,318 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-22 08:30:09,320 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-22 08:30:10,125 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-22 08:30:10,125 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-22 08:30:10,130 INFO [SAVED] Token saved. Expires: 2026-05-23T08:30:10
+
+[FORCE] Generating fresh token...
+[2026-05-22 08:30:10] [INFO] Token refresh SUCCESS. Expires: 2026-05-23 08:30:10
+[2026-05-22 08:30:12] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-23 08:30:10
+
+[Fri 05/22/2026  8:30:12.49] ========== TOKEN REFRESH SUCCESS ========== 
+[Sat 05/23/2026  8:30:05.57] ========== DAILY TOKEN REFRESH START ========== 
+[Sat 05/23/2026  8:30:05.65] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 05/23/2026  8:30:05.74] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 05/23/2026  8:30:08.52] All files OK 
+[Sat 05/23/2026  8:30:08.52] Running token refresh... 
+2026-05-23 08:30:09,152 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-23 08:30:09,154 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-23 08:30:09,986 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-23 08:30:09,986 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-23 08:30:09,998 INFO [SAVED] Token saved. Expires: 2026-05-24T08:30:10
+
+[FORCE] Generating fresh token...
+[2026-05-23 08:30:09] [INFO] Token refresh SUCCESS. Expires: 2026-05-24 08:30:10
+[2026-05-23 08:30:12] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-24 08:30:10
+
+[Sat 05/23/2026  8:30:12.33] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 05/24/2026  8:30:05.11] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 05/24/2026  8:30:05.23] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/24/2026  8:30:05.27] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/24/2026  8:30:08.78] All files OK 
+[Sun 05/24/2026  8:30:08.79] Running token refresh... 
+2026-05-24 08:30:09,665 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-24 08:30:09,666 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-24 08:30:10,601 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-24 08:30:10,601 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-24 08:30:10,608 INFO [SAVED] Token saved. Expires: 2026-05-25T08:30:11
+
+[FORCE] Generating fresh token...
+[2026-05-24 08:30:10] [INFO] Token refresh SUCCESS. Expires: 2026-05-25 08:30:11
+[2026-05-24 08:30:12] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-25 08:30:11
+
+[Sun 05/24/2026  8:30:12.91] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 05/25/2026  8:30:03.53] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 05/25/2026  8:30:03.56] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 05/25/2026  8:30:03.58] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 05/25/2026  8:30:04.91] All files OK 
+[Mon 05/25/2026  8:30:04.91] Running token refresh... 
+2026-05-25 08:30:05,308 INFO [TOTP] Code generated (valid for ~25s)
+2026-05-25 08:30:05,309 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-25 08:30:05,832 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-25 08:30:05,832 WARNING [AUTH] TOTP used already - waiting 27s for next window...
+2026-05-25 08:30:32,832 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-25 08:30:33,178 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-25 08:30:33,178 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-25 08:30:33,182 INFO [SAVED] Token saved. Expires: 2026-05-26T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-05-25 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-26 08:30:33
+[2026-05-25 08:30:43] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x23419f2fe50>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-26 08:30:33
+
+[Mon 05/25/2026  8:30:43.28] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 05/26/2026  8:30:02.83] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 05/26/2026  8:30:02.86] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 05/26/2026  8:30:02.89] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 05/26/2026  8:30:04.19] All files OK 
+[Tue 05/26/2026  8:30:04.19] Running token refresh... 
+2026-05-26 08:30:04,768 INFO [TOTP] Code generated (valid for ~26s)
+2026-05-26 08:30:04,771 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-26 08:30:05,483 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-26 08:30:05,484 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-26 08:30:05,489 INFO [SAVED] Token saved. Expires: 2026-05-27T08:30:08
+
+[FORCE] Generating fresh token...
+[2026-05-26 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-05-27 08:30:08
+[2026-05-26 08:30:07] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-27 08:30:08
+
+[Tue 05/26/2026  8:30:07.85] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 05/27/2026  8:30:06.59] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 05/27/2026  8:30:06.66] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 05/27/2026  8:30:06.69] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 05/27/2026  8:30:16.27] All files OK 
+[Wed 05/27/2026  8:30:16.49] Running token refresh... 
+2026-05-27 08:30:20,682 INFO [TOTP] Code generated (valid for ~10s)
+2026-05-27 08:30:20,686 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-27 08:30:21,440 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-27 08:30:21,443 WARNING [AUTH] TOTP used already - waiting 11s for next window...
+2026-05-27 08:30:32,444 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-27 08:30:42,826 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-27 08:30:42,826 WARNING [AUTH] TOTP used already - waiting 20s for next window...
+2026-05-27 08:31:02,828 INFO [TOTP] Code generated (valid for ~28s)
+[Thu 05/28/2026  8:30:04.03] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 05/28/2026  8:30:04.08] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 05/28/2026  8:30:04.12] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 05/28/2026  8:30:06.66] All files OK 
+[Thu 05/28/2026  8:30:06.66] Running token refresh... 
+2026-05-28 08:30:07,235 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-28 08:30:07,238 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-28 08:30:07,839 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-28 08:30:07,839 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-28 08:30:07,844 INFO [SAVED] Token saved. Expires: 2026-05-29T08:30:08
+
+[FORCE] Generating fresh token...
+[2026-05-28 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-05-29 08:30:08
+[2026-05-28 08:30:10] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-29 08:30:08
+
+[Thu 05/28/2026  8:30:10.41] ========== TOKEN REFRESH SUCCESS ========== 
+[Fri 05/29/2026  8:30:03.67] ========== DAILY TOKEN REFRESH START ========== 
+[Fri 05/29/2026  8:30:03.71] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 05/29/2026  8:30:03.73] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 05/29/2026  8:30:05.00] All files OK 
+[Fri 05/29/2026  8:30:05.00] Running token refresh... 
+2026-05-29 08:30:05,504 INFO [TOTP] Code generated (valid for ~25s)
+2026-05-29 08:30:05,507 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-29 08:30:06,009 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-29 08:30:06,009 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-29 08:30:06,014 INFO [SAVED] Token saved. Expires: 2026-05-30T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-05-29 08:30:06] [INFO] Token refresh SUCCESS. Expires: 2026-05-30 08:30:06
+[2026-05-29 08:30:08] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-30 08:30:06
+
+[Fri 05/29/2026  8:30:08.37] ========== TOKEN REFRESH SUCCESS ========== 
+[Sat 05/30/2026  8:30:03.74] ========== DAILY TOKEN REFRESH START ========== 
+[Sat 05/30/2026  8:30:03.78] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 05/30/2026  8:30:03.81] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 05/30/2026  8:30:06.42] All files OK 
+[Sat 05/30/2026  8:30:06.42] Running token refresh... 
+2026-05-30 08:30:06,973 INFO [TOTP] Code generated (valid for ~24s)
+2026-05-30 08:30:06,976 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-30 08:30:07,619 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-30 08:30:07,620 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-30 08:30:07,625 INFO [SAVED] Token saved. Expires: 2026-05-31T08:30:08
+
+[FORCE] Generating fresh token...
+[2026-05-30 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-05-31 08:30:08
+[2026-05-30 08:30:10] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-05-31 08:30:08
+
+[Sat 05/30/2026  8:30:10.54] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 05/31/2026  8:30:03.59] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 05/31/2026  8:30:03.63] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/31/2026  8:30:03.65] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 05/31/2026  8:30:05.86] All files OK 
+[Sun 05/31/2026  8:30:05.86] All files OK 
+[Sun 05/31/2026  8:30:05.89] Running token refresh... 
+2026-05-31 08:30:06,359 INFO [TOTP] Code generated (valid for ~24s)
+2026-05-31 08:30:06,361 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-31 08:30:16,913 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-31 08:30:16,914 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-05-31 08:30:32,915 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-31 08:30:33,507 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-31 08:30:33,508 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-31 08:30:33,512 INFO [SAVED] Token saved. Expires: 2026-06-01T08:30:34
+
+[FORCE] Generating fresh token...
+[2026-05-31 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-06-01 08:30:34
+[2026-05-31 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-01 08:30:34
+
+[Sun 05/31/2026  8:30:35.88] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 06/01/2026  8:30:03.22] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 06/01/2026  8:30:03.31] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/01/2026  8:30:03.34] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/01/2026  8:30:04.78] All files OK 
+[Mon 06/01/2026  8:30:04.78] Running token refresh... 
+2026-06-01 08:30:05,409 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-01 08:30:05,411 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-01 08:30:05,909 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-01 08:30:05,910 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-01 08:30:05,914 INFO [SAVED] Token saved. Expires: 2026-06-02T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-06-01 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-02 08:30:06
+[2026-06-01 08:30:08] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-02 08:30:06
+
+[Mon 06/01/2026  8:30:08.27] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 06/02/2026  8:30:04.07] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 06/02/2026  8:30:04.18] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/02/2026  8:30:04.21] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/02/2026  8:30:07.48] All files OK 
+[Tue 06/02/2026  8:30:07.51] Running token refresh... 
+2026-06-02 08:30:08,433 INFO [TOTP] Code generated (valid for ~22s)
+2026-06-02 08:30:08,434 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-02 08:30:09,192 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-02 08:30:09,192 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-02 08:30:09,202 INFO [SAVED] Token saved. Expires: 2026-06-03T08:30:09
+
+[FORCE] Generating fresh token...
+[2026-06-02 08:30:09] [INFO] Token refresh SUCCESS. Expires: 2026-06-03 08:30:09
+[2026-06-02 08:30:11] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-03 08:30:09
+
+[Tue 06/02/2026  8:30:11.57] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 06/03/2026  8:30:02.92] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 06/03/2026  8:30:02.96] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/03/2026  8:30:02.98] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/03/2026  8:30:04.70] All files OK 
+[Wed 06/03/2026  8:30:04.71] Running token refresh... 
+2026-06-03 08:30:05,238 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-03 08:30:05,240 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-03 08:30:05,820 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-03 08:30:05,821 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-03 08:30:05,827 INFO [SAVED] Token saved. Expires: 2026-06-04T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-06-03 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-04 08:30:06
+[2026-06-03 08:30:08] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-04 08:30:06
+
+[Wed 06/03/2026  8:30:08.16] ========== TOKEN REFRESH SUCCESS ========== 
+[Thu 06/04/2026  8:30:03.01] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 06/04/2026  8:30:03.06] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/04/2026  8:30:03.08] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/04/2026  8:30:05.87] All files OK 
+[Thu 06/04/2026  8:30:05.87] All files OK 
+[Thu 06/04/2026  8:30:05.89] Running token refresh... 
+2026-06-04 08:30:06,464 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-04 08:30:06,470 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-04 08:30:07,115 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-04 08:30:07,116 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-04 08:30:07,123 INFO [SAVED] Token saved. Expires: 2026-06-05T08:30:07
+
+[FORCE] Generating fresh token...
+[2026-06-04 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-06-05 08:30:07
+[2026-06-04 08:30:09] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-05 08:30:07
+
+[Thu 06/04/2026  8:30:09.32] ========== TOKEN REFRESH SUCCESS ========== 
+[Fri 06/05/2026  8:30:04.20] ========== DAILY TOKEN REFRESH START ========== 
+[Fri 06/05/2026  8:30:04.45] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 06/05/2026  8:30:04.49] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 06/05/2026  8:30:09.49] All files OK 
+[Fri 06/05/2026  8:30:09.53] Running token refresh... 
+2026-06-05 08:30:10,805 INFO [TOTP] Code generated (valid for ~20s)
+2026-06-05 08:30:10,806 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-05 08:30:21,499 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-05 08:30:21,499 WARNING [AUTH] TOTP used already - waiting 11s for next window...
+2026-06-05 08:30:32,501 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-05 08:30:33,069 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-05 08:30:33,069 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-05 08:30:33,073 INFO [SAVED] Token saved. Expires: 2026-06-06T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-05 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-06-06 08:30:33
+[2026-06-05 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-06 08:30:33
+
+[Fri 06/05/2026  8:30:35.66] ========== TOKEN REFRESH SUCCESS ========== 
+[Sat 06/06/2026  8:30:03.10] ========== DAILY TOKEN REFRESH START ========== 
+[Sat 06/06/2026  8:30:03.14] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 06/06/2026  8:30:03.16] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 06/06/2026  8:30:05.71] All files OK 
+[Sat 06/06/2026  8:30:05.71] Running token refresh... 
+2026-06-06 08:30:06,188 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-06 08:30:06,190 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-06 08:30:06,957 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-06 08:30:06,958 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-06 08:30:06,964 INFO [SAVED] Token saved. Expires: 2026-06-07T08:30:07
+
+[FORCE] Generating fresh token...
+[2026-06-06 08:30:06] [INFO] Token refresh SUCCESS. Expires: 2026-06-07 08:30:07
+[2026-06-06 08:30:09] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-07 08:30:07
+
+[Sat 06/06/2026  8:30:09.42] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 06/07/2026  8:30:03.23] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 06/07/2026  8:30:03.26] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 06/07/2026  8:30:03.28] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 06/07/2026  8:30:04.05] All files OK 
+[Sun 06/07/2026  8:30:04.05] Running token refresh... 
+2026-06-07 08:30:04,451 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-07 08:30:04,453 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-07 08:30:05,205 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-07 08:30:05,205 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-07 08:30:05,209 INFO [SAVED] Token saved. Expires: 2026-06-08T08:30:05
+
+[FORCE] Generating fresh token...
+[2026-06-07 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-08 08:30:05
+[2026-06-07 08:30:07] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-08 08:30:05
+
+[Sun 06/07/2026  8:30:07.51] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 06/08/2026  8:30:03.12] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 06/08/2026  8:30:03.15] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/08/2026  8:30:03.17] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/08/2026  8:30:04.15] All files OK 
+[Mon 06/08/2026  8:30:04.16] Running token refresh... 
+2026-06-08 08:30:04,580 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-08 08:30:04,582 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-08 08:30:05,125 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-08 08:30:05,125 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-08 08:30:05,129 INFO [SAVED] Token saved. Expires: 2026-06-09T08:30:05
+
+[FORCE] Generating fresh token...
+[2026-06-08 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-09 08:30:05
+[2026-06-08 08:30:07] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-09 08:30:05
+
+[Mon 06/08/2026  8:30:07.48] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 06/09/2026  8:30:01.46] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 06/09/2026  8:30:01.53] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/09/2026  8:30:01.55] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/09/2026  8:30:03.16] All files OK 
+[Tue 06/09/2026  8:30:03.16] Running token refresh... 
+2026-06-09 08:30:03,633 INFO [TOTP] Code generated (valid for ~27s)
+2026-06-09 08:30:03,635 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-09 08:30:04,227 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-09 08:30:04,227 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-09 08:30:04,231 INFO [SAVED] Token saved. Expires: 2026-06-10T08:30:04
+
+[FORCE] Generating fresh token...
+[2026-06-09 08:30:04] [INFO] Token refresh SUCCESS. Expires: 2026-06-10 08:30:04
+[2026-06-09 08:30:06] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-10 08:30:04
+
+[Tue 06/09/2026  8:30:06.52] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 06/10/2026  8:30:03.33] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 06/10/2026  8:30:03.44] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/10/2026  8:30:03.46] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/10/2026  8:30:05.19] All files OK 
+[Wed 06/10/2026  8:30:05.19] Running token refresh... 
+2026-06-10 08:30:05,718 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-10 08:30:05,719 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-10 08:30:16,252 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-10 08:30:16,252 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-10 08:30:32,253 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-10 08:30:32,795 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-10 08:30:32,795 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-10 08:30:32,800 INFO [SAVED] Token saved. Expires: 2026-06-11T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-10 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-11 08:30:33
+[2026-06-10 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-11 08:30:33
+
+[Wed 06/10/2026  8:30:35.11] ========== TOKEN REFRESH SUCCESS ========== 
+[Thu 06/11/2026  8:30:03.19] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 06/11/2026  8:30:03.24] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/11/2026  8:30:03.26] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/11/2026  8:30:05.19] All files OK 
+[Thu 06/11/2026  8:30:05.19] Running token refresh... 
+2026-06-11 08:30:05,706 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-11 08:30:05,711 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-11 08:30:16,160 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-11 08:30:16,160 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-11 08:30:32,161 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-11 08:30:32,489 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-11 08:30:32,489 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-11 08:30:32,495 INFO [SAVED] Token saved. Expires: 2026-06-12T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-11 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-12 08:30:33
+[2026-06-11 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-12 08:30:33
+
+[Thu 06/11/2026  8:30:35.05] ========== TOKEN REFRESH SUCCESS ========== 
+[Fri 06/12/2026  8:30:04.23] ========== DAILY TOKEN REFRESH START ========== 
+[Fri 06/12/2026  8:30:04.29] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 06/12/2026  8:30:04.31] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 06/12/2026  8:30:05.67] All files OK 
+[Fri 06/12/2026  8:30:05.67] Running token refresh... 
+2026-06-12 08:30:06,192 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-12 08:30:06,194 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-12 08:30:16,727 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-12 08:30:16,728 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-12 08:30:32,729 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-12 08:30:33,120 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-12 08:30:33,121 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-12 08:30:33,124 INFO [SAVED] Token saved. Expires: 2026-06-13T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-12 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-06-13 08:30:33
+[2026-06-12 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-13 08:30:33
+
+[Fri 06/12/2026  8:30:35.90] ========== TOKEN REFRESH SUCCESS ========== 
+[Sat 06/13/2026  8:30:03.83] ========== DAILY TOKEN REFRESH START ========== 
+[Sat 06/13/2026  8:30:03.88] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 06/13/2026  8:30:03.91] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 06/13/2026  8:30:05.39] All files OK 
+[Sat 06/13/2026  8:30:05.39] Running token refresh... 
+2026-06-13 08:30:05,870 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-13 08:30:05,871 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-13 08:30:16,304 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-13 08:30:16,304 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-13 08:30:32,305 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-13 08:30:32,660 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-13 08:30:32,661 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-13 08:30:32,665 INFO [SAVED] Token saved. Expires: 2026-06-14T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-13 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-14 08:30:33
+[2026-06-13 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-14 08:30:33
+
+[Sat 06/13/2026  8:30:35.15] ========== TOKEN REFRESH SUCCESS ========== 
+[Sun 06/14/2026  8:30:03.62] ========== DAILY TOKEN REFRESH START ========== 
+[Sun 06/14/2026  8:30:03.67] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 06/14/2026  8:30:03.69] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sun 06/14/2026  8:30:04.62] All files OK 
+[Sun 06/14/2026  8:30:04.62] Running token refresh... 
+2026-06-14 08:30:05,036 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-14 08:30:05,037 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-14 08:30:05,432 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-14 08:30:05,432 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-14 08:30:05,436 INFO [SAVED] Token saved. Expires: 2026-06-15T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-06-14 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-15 08:30:06
+[2026-06-14 08:30:07] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-15 08:30:06
+
+[Sun 06/14/2026  8:30:07.80] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 06/15/2026  8:30:03.75] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 06/15/2026  8:30:03.79] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/15/2026  8:30:03.81] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/15/2026  8:30:05.17] All files OK 
+[Mon 06/15/2026  8:30:05.17] Running token refresh... 
+2026-06-15 08:30:05,748 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-15 08:30:05,749 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-15 08:30:06,305 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-15 08:30:06,308 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-15 08:30:06,320 INFO [SAVED] Token saved. Expires: 2026-06-16T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-06-15 08:30:06] [INFO] Token refresh SUCCESS. Expires: 2026-06-16 08:30:06
+[2026-06-15 08:30:08] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-16 08:30:06
+
+[Mon 06/15/2026  8:30:08.58] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 06/16/2026  8:30:01.86] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 06/16/2026  8:30:01.93] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/16/2026  8:30:01.96] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/16/2026  8:30:03.37] All files OK 
+[Tue 06/16/2026  8:30:03.37] Running token refresh... 
+2026-06-16 08:30:04,142 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-16 08:30:04,144 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-16 08:30:14,578 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-16 08:30:14,579 WARNING [AUTH] TOTP used already - waiting 18s for next window...
+2026-06-16 08:30:32,579 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-16 08:30:32,986 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-16 08:30:32,986 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-16 08:30:32,989 INFO [SAVED] Token saved. Expires: 2026-06-17T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-16 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-17 08:30:33
+[2026-06-16 08:30:35] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-17 08:30:33
+
+[Tue 06/16/2026  8:30:35.30] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 06/17/2026  8:30:03.32] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 06/17/2026  8:30:03.37] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/17/2026  8:30:03.42] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/17/2026  8:30:05.52] All files OK 
+[Wed 06/17/2026  8:30:05.53] Running token refresh... 
+2026-06-17 08:30:06,002 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-17 08:30:06,004 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-17 08:30:06,425 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-17 08:30:06,425 WARNING [AUTH] TOTP used already - waiting 26s for next window...
+2026-06-17 08:30:32,426 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-17 08:30:32,846 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-17 08:30:32,846 WARNING [AUTH] TOTP used already - waiting 30s for next window...
+2026-06-17 08:31:02,847 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-17 08:31:13,120 INFO [AUTH] Attempt 3: HTTP 200
+2026-06-17 08:31:13,120 ERROR [AUTH] generateAccessToken failed: 200 {"message":"Invalid TOTP","status":"error"}
+2026-06-17 08:31:13,123 ERROR [FATAL] All token generation methods failed.
+
+[FORCE] Generating fresh token...
+[2026-06-17 08:31:13] [ERROR] Token refresh FAILED: generateAccessToken failed - check TOTP/PIN/internet
+[2026-06-17 08:31:16] [INFO] Telegram notification sent
+Traceback (most recent call last):
+  File "C:\cursor\options\niftyopt\dhan_direct_auth.py", line 327, in <module>
+    token = fetch_fresh_token()
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\cursor\options\niftyopt\dhan_direct_auth.py", line 257, in fetch_fresh_token
+    raise RuntimeError(
+RuntimeError: Could not generate Dhan access token.
+Check: 1) TOTP secret correct  2) PIN correct  3) Internet working
+Logs: logs/auto_renew.log
+[Wed 06/17/2026  8:31:16.28] ========== TOKEN REFRESH FAILED - Sending Telegram alert ========== 
+
+  ok result                                                                                                            
+  -- ------                                                                                                            
+True @{message_id=54; from=; chat=; date=1781665282; text=CRITICAL: Dhan token refresh FAILED at 8:30 AM. Manual log...
+
+
+[Thu 06/18/2026  8:30:03.19] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 06/18/2026  8:30:03.23] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/18/2026  8:30:03.26] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/18/2026  8:30:05.05] All files OK 
+[Thu 06/18/2026  8:30:05.05] Running token refresh... 
+2026-06-18 08:30:05,494 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-18 08:30:05,494 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-18 08:30:05,973 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-18 08:30:05,973 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-18 08:30:05,979 INFO [SAVED] Token saved. Expires: 2026-06-19T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-06-18 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-19 08:30:06
+[2026-06-18 08:30:16] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x2346fcad010>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-19 08:30:06
+
+[Thu 06/18/2026  8:30:16.12] ========== TOKEN REFRESH SUCCESS ========== 
+[Fri 06/19/2026  8:30:03.61] ========== DAILY TOKEN REFRESH START ========== 
+[Fri 06/19/2026  8:30:03.66] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 06/19/2026  8:30:03.69] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Fri 06/19/2026  8:30:05.51] All files OK 
+[Fri 06/19/2026  8:30:05.51] Running token refresh... 
+2026-06-19 08:30:06,054 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-19 08:30:06,054 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-19 08:30:16,547 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-19 08:30:16,547 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-19 08:30:32,548 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-19 08:30:32,974 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-19 08:30:32,974 WARNING [AUTH] TOTP used already - waiting 30s for next window...
+2026-06-19 08:31:02,975 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-19 08:31:03,329 INFO [AUTH] Attempt 3: HTTP 200
+2026-06-19 08:31:03,331 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-19 08:31:03,334 INFO [SAVED] Token saved. Expires: 2026-06-20T08:31:03
+
+[FORCE] Generating fresh token...
+[2026-06-19 08:31:03] [INFO] Token refresh SUCCESS. Expires: 2026-06-20 08:31:03
+[2026-06-19 08:31:13] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x26d7193cfd0>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-20 08:31:03
+
+[Fri 06/19/2026  8:31:13.46] ========== TOKEN REFRESH SUCCESS ========== 
+[Sat 06/20/2026  8:30:03.49] ========== DAILY TOKEN REFRESH START ========== 
+[Sat 06/20/2026  8:30:03.55] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 06/20/2026  8:30:03.58] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Sat 06/20/2026  8:30:05.74] All files OK 
+[Sat 06/20/2026  8:30:05.74] Running token refresh... 
+2026-06-20 08:30:06,221 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-20 08:30:06,222 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-20 08:30:16,613 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-20 08:30:16,613 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-20 08:30:32,614 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-20 08:30:32,923 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-20 08:30:32,923 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-20 08:30:32,926 INFO [SAVED] Token saved. Expires: 2026-06-21T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-20 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-21 08:30:33
+[2026-06-20 08:30:42] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x2221a2aabd0>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-21 08:30:33
+
+[Sat 06/20/2026  8:30:43.03] ========== TOKEN REFRESH SUCCESS ========== 
+[Mon 06/22/2026  8:30:01.73] ========== DAILY TOKEN REFRESH START ========== 
+[Mon 06/22/2026  8:30:01.77] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/22/2026  8:30:01.80] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Mon 06/22/2026  8:30:03.24] All files OK 
+[Mon 06/22/2026  8:30:03.25] Running token refresh... 
+2026-06-22 08:30:03,712 INFO [TOTP] Code generated (valid for ~27s)
+2026-06-22 08:30:03,713 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-22 08:30:04,219 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-22 08:30:04,219 WARNING [AUTH] TOTP used already - waiting 28s for next window...
+2026-06-22 08:30:32,221 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-22 08:30:32,663 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-22 08:30:32,663 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-22 08:30:32,667 INFO [SAVED] Token saved. Expires: 2026-06-23T08:30:33
+
+[FORCE] Generating fresh token...
+[2026-06-22 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-23 08:30:33
+[2026-06-22 08:30:42] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x1ef2db4a010>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-23 08:30:33
+
+[Mon 06/22/2026  8:30:42.78] ========== TOKEN REFRESH SUCCESS ========== 
+[Tue 06/23/2026  8:30:02.18] ========== DAILY TOKEN REFRESH START ========== 
+[Tue 06/23/2026  8:30:02.26] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/23/2026  8:30:02.29] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Tue 06/23/2026  8:30:03.74] All files OK 
+[Tue 06/23/2026  8:30:03.74] Running token refresh... 
+2026-06-23 08:30:04,261 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-23 08:30:04,261 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-23 08:30:04,761 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-23 08:30:04,762 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-23 08:30:04,767 INFO [SAVED] Token saved. Expires: 2026-06-24T08:30:05
+
+[FORCE] Generating fresh token...
+[2026-06-23 08:30:04] [INFO] Token refresh SUCCESS. Expires: 2026-06-24 08:30:05
+[2026-06-23 08:30:05] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-24 08:30:05
+
+[Tue 06/23/2026  8:30:06.05] ========== TOKEN REFRESH SUCCESS ========== 
+[Wed 06/24/2026  8:30:02.22] ========== DAILY TOKEN REFRESH START ========== 
+[Wed 06/24/2026  8:30:02.29] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/24/2026  8:30:02.32] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Wed 06/24/2026  8:30:03.78] All files OK 
+[Wed 06/24/2026  8:30:03.78] Running token refresh... 
+2026-06-24 08:30:04,270 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-24 08:30:04,272 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-24 08:30:14,707 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-24 08:30:14,707 WARNING [AUTH] TOTP used already - waiting 18s for next window...
+2026-06-24 08:30:32,708 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-24 08:30:42,981 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-24 08:30:42,982 WARNING [AUTH] TOTP used already - waiting 20s for next window...
+2026-06-24 08:31:02,983 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-24 08:31:03,570 INFO [AUTH] Attempt 3: HTTP 200
+2026-06-24 08:31:03,570 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-24 08:31:03,574 INFO [SAVED] Token saved. Expires: 2026-06-25T08:31:04
+
+[FORCE] Generating fresh token...
+[2026-06-24 08:31:03] [INFO] Token refresh SUCCESS. Expires: 2026-06-25 08:31:04
+[2026-06-24 08:31:05] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-25 08:31:04
+
+[Wed 06/24/2026  8:31:05.94] ========== TOKEN REFRESH SUCCESS ========== 
+[Thu 06/25/2026  8:30:02.35] ========== DAILY TOKEN REFRESH START ========== 
+[Thu 06/25/2026  8:30:02.46] Python: VENV found at C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/25/2026  8:30:02.49] Using Python: C:\cursor\options\niftyopt\venv\Scripts\python.exe 
+[Thu 06/25/2026  8:30:04.51] All files OK 
+[Thu 06/25/2026  8:30:04.51] Running token refresh... 
+2026-06-25 08:30:04,992 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-25 08:30:04,993 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-25 08:30:05,455 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-25 08:30:05,455 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-25 08:30:05,460 INFO [SAVED] Token saved. Expires: 2026-06-26T08:30:06
+
+[FORCE] Generating fresh token...
+[2026-06-25 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-26 08:30:06
+[2026-06-25 08:30:07] [INFO] Telegram notification sent
+[SUCCESS] New token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGF...
+[INFO] Expires: 2026-06-26 08:30:06
+
+[Thu 06/25/2026  8:30:08.00] ========== TOKEN REFRESH SUCCESS ========== 

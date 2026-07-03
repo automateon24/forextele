@@ -1,0 +1,90 @@
+{
+  "DAY_HIGH_LOW_OPTIMIZED": {
+    "strategy": "DAY_HIGH_LOW_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "total_investment": 0,
+    "status": "INACTIVE"
+  },
+  "TREND_FOLLOWING_OPTIMIZED": {
+    "strategy": "TREND_FOLLOWING_OPTIMIZED",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 5859.000000000051,
+    "avg_pnl": 2929.5000000000255,
+    "roi": 19.052419354838847,
+    "capital_utilization": 30.752000000000045,
+    "total_investment": 30752.000000000044,
+    "status": "ACTIVE"
+  },
+  "ATR_BREAKOUT_LOSING": {
+    "strategy": "ATR_BREAKOUT_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 22598.000000000175,
+    "avg_pnl": 11299.000000000087,
+    "roi": 37.19712931261548,
+    "capital_utilization": 60.75200000000004,
+    "total_investment": 60752.000000000044,
+    "status": "ACTIVE"
+  },
+  "MOMENTUM_REVERSAL_LOSING": {
+    "strategy": "MOMENTUM_REVERSAL_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 8475.000000000218,
+    "avg_pnl": 4237.500000000109,
+    "roi": 50.028823808905116,
+    "capital_utilization": 16.747999999999955,
+    "total_investment": 16747.999999999956,
+    "status": "ACTIVE"
+  },
+  "MACD_DIVERGENCE_LOSING": {
+    "strategy": "MACD_DIVERGENCE_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 25860.999999999913,
+    "avg_pnl": 12930.499999999956,
+    "roi": 67.54380726916614,
+    "capital_utilization": 38.252000000000045,
+    "total_investment": 38252.000000000044,
+    "status": "ACTIVE"
+  },
+  "BOLLINGER_SQUEEZE_LOSING": {
+    "strategy": "BOLLINGER_SQUEEZE_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 18727.500000000182,
+    "avg_pnl": 9363.750000000091,
+    "roi": 28.482023360506403,
+    "capital_utilization": 65.75200000000004,
+    "total_investment": 65752.00000000004,
+    "status": "ACTIVE"
+  },
+  "HIGH_VOLUME_LOSING": {
+    "strategy": "HIGH_VOLUME_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 15658.00000000003,
+    "avg_pnl": 7829.000000000015,
+    "roi": 23.905865258980686,
+    "capital_utilization": 70.75200000000004,
+    "total_investment": 70752.00000000004,
+    "status": "ACTIVE"
+  },
+  "CCI_EXTREME_LOSING": {
+    "strategy": "CCI_EXTREME_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "total_investment": 0,
+    "status": "INACTIVE"
+  }
+}

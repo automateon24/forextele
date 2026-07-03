@@ -1,0 +1,122 @@
+[
+    {
+        "date": "2026-07-02",
+        "channels": {
+            "ZERO TO HERO": {
+                "total_trades": 10,
+                "win_rate": 100.0,
+                "capital_utilized": 1230.0,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            },
+            "BTST VIP+": {
+                "total_trades": 2,
+                "win_rate": 0,
+                "capital_utilized": 4650.0,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            },
+            "Equity Stocks": {
+                "total_trades": 1,
+                "win_rate": 0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            },
+            "Premium DIL SE TRADER": {
+                "total_trades": 6,
+                "win_rate": 50.0,
+                "capital_utilized": 49693.0,
+                "net_pnl": 1269.0,
+                "pct_return": 2.553679592699173
+            },
+            "VIP Stock Options": {
+                "total_trades": 2,
+                "win_rate": 0,
+                "capital_utilized": 17350.0,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            },
+            "Sensex360": {
+                "total_trades": 4,
+                "win_rate": 100.0,
+                "capital_utilized": 5050.0,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            },
+            "MCX Commodities": {
+                "total_trades": 2,
+                "win_rate": 0,
+                "capital_utilized": 25612.8,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            }
+        }
+    },
+    {
+        "date": "2026-07-03",
+        "channels": {
+            "Sensex360": {
+                "total_trades": 2,
+                "win_rate": 100.0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            },
+            "VIP Stock Options": {
+                "total_trades": 2,
+                "win_rate": 100.0,
+                "capital_utilized": 22300.0,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            },
+            "MCX Commodities": {
+                "total_trades": 1,
+                "win_rate": 100.0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            },
+            "Premium DIL SE TRADER": {
+                "total_trades": 1,
+                "win_rate": 0.0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            }
+        }
+    },
+    {
+        "date": "2026-07-03",
+        "channels": {
+            "Sensex360": {
+                "total_trades": 2,
+                "win_rate": 100.0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            },
+            "VIP Stock Options": {
+                "total_trades": 2,
+                "win_rate": 100.0,
+                "capital_utilized": 22300.0,
+                "net_pnl": 0.0,
+                "pct_return": 0.0
+            },
+            "MCX Commodities": {
+                "total_trades": 1,
+                "win_rate": 100.0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            },
+            "Premium DIL SE TRADER": {
+                "total_trades": 1,
+                "win_rate": 0.0,
+                "capital_utilized": 0.0,
+                "net_pnl": 0.0,
+                "pct_return": 0
+            }
+        }
+    }
+]

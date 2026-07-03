@@ -1,0 +1,106 @@
+# Full Forex Channel List
+
+- **1001563961063** | Airwallex Forex"
+- **1001995034623** | Alcatraz nation Verified Software /flash Btc usdt
+- **1001182477198** | Areeal Forex™
+- **1001594126751** | BEST FX XAUUSD GOLD TRADER
+- **1001408470704** | Best Gold EA Auto Trade
+- **1002409183014** | CULERSFOREX™
+- **1001699340506** | Champion Traders Academy®
+- **1001319855464** | DUBAI CAPITAL FX GROUP 3
+- **1001716258301** | EAGLE 🦅 FOREX
+- **1001284268486** | Easy Forex 👑 OFFICIAL CHANNEL
+- **1001653757995** | Eurusd Signals
+- **1001844586862** | FOREX COURSE FREE
+- **1001365849207** | FOREX GOLD Fx
+- **1001510630529** | FOREX GOLD TEAM ™®
+- **1002563226585** | FOREX PARTNERS®
+- **1002111254252** | FOREX PIPS PROFESSOR
+- **1001519637785** | FREE - SuperFxSignals
+- **1002354050689** | Flash usdt
+- **1003638741357** | Forex -Funded_Community
+- **1001482874188** | Forex Advisors Group
+- **1001615565284** | Forex Education
+- **1002253548791** | Forex GDP - Free Signal Channel 501
+- **1001894619862** | Forex Robot Nation
+- **1001615586325** | Forex Trading Investment & All Pair Signals
+- **1002058804124** | Forex Trading Tips
+- **1001565705747** | Forex master
+- **1003895133416** | Forex-Funded
+- **1001950809105** | ForexTraders__$
+- **1001125504616** | ForexTradingEducation
+- **1001758700941** | Forexero - Forex Signals
+- **1001620606655** | Forexzonespot Channel
+- **1001538623275** | G0lD GBP Signal's MASTER
+- **1001551011731** | GLOBAL FOREX ™️
+- **1001335852535** | GOLD Copy Trading
+- **1001281538099** | GOLD DREAMS TRADER
+- **1001664258336** | GOLD FOREX
+- **1001522707444** | GOLD FOREX SIGNAL
+- **1001776264261** | GOLD KILLER✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️✍️
+- **1001370758307** | GOLD PRO TRADER ♨️
+- **1001710836950** | GOLD Sniper Pips
+- **1001584939836** | GOLD Snipers
+- **1001986940315** | GOLD TRADE SIGNALS
+- **1001095525244** | GOLD Trader Dan
+- **1001716334529** | GOLDEN STAR SIGNAL
+- **1001160074043** | Gold Best Signal Group 💯
+- **1001449411977** | Gold Trade Experts
+- **1002531199093** | Gold VIP
+- **1001899867117** | HFT GOLD TRADING
+- **1002037277586** | HaremFX12
+- **1001546887557** | JAXON Forex Signals ™
+- **1001643440943** | JUSTFORFOREX.COM - Traders Chatroom
+- **1001459082137** | MFOREX & Invest Sniper
+- **1002042412757** | MM Gold Trader🏆
+- **1001841399481** | MSB FX Elite Insights 🔥
+- **1001333854359** | Marie/Rose News
+- **1001728775531** | Metaverse Trading Academy (Channel)
+- **1001414337579** | Mission profit ® Forex robot
+- **1001243998748** | Mr.DAVID, XAU/USD CLUB
+- **1001139248374** | OCTA FX NOT
+- **1001703129912** | PIPS HUNTER 4.0
+- **1001555316988** | PIPS HUNTER 4.0 EA 🌐
+- **1001513382167** | PIPS KILLER EA
+- **1001821216397** | PipXpert - Forex Signals
+- **1002247154936** | Pump Dump Gold
+- **1001618581129** | RIAOGOLDFOREX
+- **1001770318851** | RaSrasanForex
+- **1001218320988** | Saviour Gold EA
+- **1002114483080** | Shivam trading academy 📊
+- **1001661400724** | SureShot GOLD (VIP)
+- **1001422000261** | Sureshot FX VIP
+- **1001218056271** | Sureshot FX 🎯
+- **1001530068533** | TRADEPASS FX 4.1 Autobots
+- **1003436456947** | The Forex master Course Trading With Karol
+- **1001738218924** | The King of forex
+- **1001617309775** | Trading Forex Quotex Binomo Signals
+- **1001189897936** | ULTREOS FOREX
+- **1001309641548** | VIP Forex Signals
+- **1002301385145** | Vault Gold Forex™
+- **1001281037402** | WaliBabaFx
+- **1001170194358** | We Speak FX Free
+- **1001693629230** | XAUUSD ACCURATE SiGNALS
+- **1001237506764** | XAUUSD EA
+- **1001408713519** | XAUUSD PIPS KILLER 🥷
+- **1001267469938** | XAUUSD kILLER
+- **1001951092380** | YoForex Premium
+- **1001093143616** | fxTsignals.com Hedge Funds (Official)🏛
+- **1001235352359** | https://ofpfunding.com/?aff=sjad
+- **1001430194125** | rameshfx
+- **1001177936461** | vfxAlert signals
+- **1002723135238** | ₹ich Academy ⚡️ OFFICIAL
+- **1001514361407** | ☘☘King of gold☘☘
+- **1001577905746** | ☘️ Forex Bulls And Bears ☘️
+- **1001566740862** | ⚜️FOREX • XAU/USD • EA⚜️
+- **1001625379181** | ❤️❤️❤️❤️Forex And Deriv Master:❤️❤️❤️❤️❤️
+- **1001623546117** | 𝐔𝐒𝐃/𝐄𝐔𝐑 𝐌𝐀𝐍𝐀𝐆𝐄𝐌𝐄𝐍𝐓
+- **1002450989379** | 🌹🌹🌹KING FOREX MARKET🌹🌹🌹🌹
+- **1001403093594** | 🎮 DesiGames 24/7 🎰
+- **1001533718978** | 🎯 Dukascopy Fx Trading ™ Signals (Free) 🎯
+- **1001451168389** | 🏅 GoldSignals.io 🏅
+- **1001748295317** | 👁‍🗨GOLD KILLER MANAGEMENT🔰
+- **1001364733159** | 👉 FOREX SIGNAL💯👌
+- **1001618780201** | 💯MIKE GOLD MASTER 💯💯
+- **1001295318309** | 🔰GOLD FX Network 🔰
+- **1001150763960** | 🤖🤖SAVIOUR AUTO TRADING FOREX ROBOT®

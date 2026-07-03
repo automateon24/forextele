@@ -1,0 +1,20 @@
+=== CURRENT BACKTEST DATA ===
+
+Total Trades: 580
+Total PnL: Rs.35,146
+Win Rate: 56.6%
+Avg per trade: Rs.61
+Lots: 2.0
+
+--- PER INDEX ---
+NIFTY: 72 trades, Rs.15,769
+BANKNIFTY: 88 trades, Rs.19,783
+FINNIFTY: 292 trades, Rs.3,546
+MIDCPNIFTY: 92 trades, Rs.-10,427
+SENSEX: 36 trades, Rs.6,475
+
+--- DAILY ---
+Best Day: Rs.9,590 (1.9%)
+Avg Day: Rs.338
+Days >=Rs.40K: 0/104
+Days >=Rs.75K: 0/104

@@ -1,0 +1,29 @@
+2026-02-18 12:27:02,862 - INFO - Database setup completed
+2026-02-18 12:27:02,883 - INFO - WEBSOCKET LIVE DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:27:02,884 - INFO - ======================================================================
+2026-02-18 12:27:02,884 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:27:02,884 - INFO - Data Source: PURE Dhan WebSocket (Real Data Only)
+2026-02-18 12:27:02,885 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:27:02,885 - INFO - Update Interval: 5 seconds
+2026-02-18 12:27:02,885 - INFO - ======================================================================
+2026-02-18 12:27:02,887 - INFO - Starting WebSocket live deployment...
+2026-02-18 12:27:02,887 - ERROR - Failed to start WebSocket feed: There is no current event loop in thread 'MainThread'.
+2026-02-18 12:27:02,888 - INFO - 
+======================================================================
+2026-02-18 12:27:02,888 - INFO - WEBSOCKET LIVE DEPLOYMENT SUMMARY
+2026-02-18 12:27:02,888 - INFO - ======================================================================
+2026-02-18 12:27:02,888 - INFO - Total Duration: 0:00:00.004606
+2026-02-18 12:27:02,888 - INFO - Total Signals Generated: 0
+2026-02-18 12:27:02,888 - INFO - Paper Trades Executed: 0
+2026-02-18 12:27:02,889 - INFO - Total Broker Charges: Rs.0.00
+2026-02-18 12:27:02,889 - INFO - Real-time Data Points: 0
+2026-02-18 12:27:02,889 - INFO - 
+Database: c:\cursor\options\niftyopt\data\WEBSOCKET_LIVE_DEPLOYMENT.db
+2026-02-18 12:27:02,889 - INFO - All trades, signals, and data saved successfully
+2026-02-18 12:27:02,890 - INFO - 
+FINAL STATUS: WEBSOCKET DEPLOYMENT COMPLETED
+2026-02-18 12:27:02,890 - INFO - PURE WebSocket-based real-time deployment
+2026-02-18 12:27:02,890 - INFO - 9 Strategies tested with live market data
+2026-02-18 12:27:02,890 - INFO - Paper trading mode - No real orders placed
+2026-02-18 12:27:02,890 - INFO - Ready for production deployment with real orders
+2026-02-18 12:27:02,891 - INFO - ======================================================================

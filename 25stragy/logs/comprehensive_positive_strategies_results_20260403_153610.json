@@ -1,0 +1,98 @@
+{
+  "DAY_HIGH_LOW_OPTIMIZED": {
+    "strategy": "DAY_HIGH_LOW_OPTIMIZED",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 38269.499999999825,
+    "avg_pnl": 19134.749999999913,
+    "roi": 34.51015771724954,
+    "capital_utilization": 101.88000000000012,
+    "status": "ACTIVE",
+    "category": "PROFIT_MAKING",
+    "source": "profit_making_backtest"
+  },
+  "TREND_FOLLOWING_OPTIMIZED": {
+    "strategy": "TREND_FOLLOWING_OPTIMIZED",
+    "trades": 1,
+    "win_rate": 100.0,
+    "total_pnl": 30279.999999999854,
+    "avg_pnl": 30279.999999999854,
+    "roi": 49.232570239333725,
+    "capital_utilization": 61.50400000000009,
+    "status": "ACTIVE",
+    "category": "PROFIT_MAKING",
+    "source": "profit_making_backtest"
+  },
+  "HIGH_VOLUME_LOSING": {
+    "strategy": "HIGH_VOLUME_LOSING",
+    "trades": 2,
+    "win_rate": 50.0,
+    "total_pnl": 4883.999999999505,
+    "avg_pnl": 2441.9999999997526,
+    "roi": 5.36805378961751,
+    "capital_utilization": 111.50400000000009,
+    "status": "ACTIVE",
+    "category": "UNEXPECTED_POSITIVE",
+    "source": "negative_zero_backtest"
+  },
+  "CCI_EXTREME_LOSING": {
+    "strategy": "CCI_EXTREME_LOSING",
+    "trades": 1,
+    "win_rate": 100.0,
+    "total_pnl": 665.0000000000728,
+    "avg_pnl": 665.0000000000728,
+    "roi": 2.7424942263282497,
+    "capital_utilization": 24.247999999999955,
+    "status": "ACTIVE",
+    "category": "UNEXPECTED_POSITIVE",
+    "source": "negative_zero_backtest"
+  },
+  "MOMENTUM_REVERSAL_LOSING": {
+    "strategy": "MOMENTUM_REVERSAL_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 8057.000000000189,
+    "avg_pnl": 4028.5000000000946,
+    "roi": 12.872110805748761,
+    "capital_utilization": 63.49599999999991,
+    "status": "ACTIVE",
+    "category": "UNEXPECTED_POSITIVE",
+    "source": "negative_zero_backtest"
+  },
+  "MACD_DIVERGENCE_LOSING": {
+    "strategy": "MACD_DIVERGENCE_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 7306.999999999825,
+    "avg_pnl": 3653.4999999999127,
+    "roi": 15.437702527853782,
+    "capital_utilization": 46.50400000000009,
+    "status": "ACTIVE",
+    "category": "UNEXPECTED_POSITIVE",
+    "source": "negative_zero_backtest"
+  },
+  "BOLLINGER_SQUEEZE_LOSING": {
+    "strategy": "BOLLINGER_SQUEEZE_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 6791.000000000204,
+    "avg_pnl": 3395.500000000102,
+    "roi": 6.690376733922012,
+    "capital_utilization": 101.50400000000008,
+    "status": "ACTIVE",
+    "category": "UNEXPECTED_POSITIVE",
+    "source": "negative_zero_backtest"
+  },
+  "ATR_BREAKOUT_LOSING": {
+    "strategy": "ATR_BREAKOUT_LOSING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 10385.999999999913,
+    "avg_pnl": 5192.999999999956,
+    "roi": 11.350323483126314,
+    "capital_utilization": 91.50400000000009,
+    "status": "ACTIVE",
+    "category": "UNEXPECTED_POSITIVE",
+    "source": "negative_zero_backtest"
+  }
+}

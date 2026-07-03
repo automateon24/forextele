@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-04-04T00:12:27.721926",
+  "project_root": "C:\\cursor\\options\\niftyopt",
+  "test_results": {
+    "unit_tests": {
+      "total": 36,
+      "passed": 3,
+      "failed": 33,
+      "errors": 0,
+      "duration": 26.354721784591675
+    },
+    "functional_tests": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "duration": 3.5762786865234375e-06
+    },
+    "thread_safety_tests": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "duration": 2.6226043701171875e-06
+    },
+    "memory_tests": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "duration": 3.5762786865234375e-06
+    },
+    "code_integrity_tests": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "duration": 2.384185791015625e-06
+    },
+    "calculation_tests": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "duration": 1.9073486328125e-06
+    },
+    "critical_issue_tests": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0,
+      "duration": 0.4642212390899658
+    },
+    "sanity_tests": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0,
+      "duration": 0.18421387672424316
+    }
+  },
+  "summary": {
+    "total_tests": 38,
+    "total_passed": 3,
+    "total_failed": 35,
+    "total_errors": 0,
+    "success_rate": 7.894736842105263,
+    "total_duration": 27.00317096710205,
+    "categories_tested": 3
+  }
+}

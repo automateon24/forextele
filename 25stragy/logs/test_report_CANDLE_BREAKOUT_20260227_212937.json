@@ -1,0 +1,189 @@
+{
+  "strategy_name": "CANDLE_BREAKOUT",
+  "test_date": "2026-02-27 21:29:37",
+  "total_tests": 16,
+  "passed_tests": 0,
+  "failed_tests": 0,
+  "error_tests": 16,
+  "test_results": [
+    {
+      "test_name": "Strategy Initialization",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.008816,
+      "details": "Strategy initialization failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Configuration Loading",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.013182,
+      "details": "Configuration loading failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Method Existence",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.01592,
+      "details": "Method existence check failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Parameter Validation",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "unit",
+      "status": "ERROR",
+      "execution_time": 0.008788,
+      "details": "Parameter validation failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Signal Generation",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.010009,
+      "details": "Signal generation failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Trade Execution",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.010439,
+      "details": "Trade execution failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Position Management",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.008367,
+      "details": "Position management failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Data Processing",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "functional",
+      "status": "ERROR",
+      "execution_time": 0.00988,
+      "details": "Data processing failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Data Integrity",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.009891,
+      "details": "Data integrity test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Performance Bounds",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.008551,
+      "details": "Performance bounds test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Risk Management",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.009416,
+      "details": "Risk management test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Memory Usage",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "sanity",
+      "status": "ERROR",
+      "execution_time": 0.009562,
+      "details": "Memory usage test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Infinite Loops",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.011619,
+      "details": "Infinite loop test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Memory Leaks",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.047771,
+      "details": "Memory leak test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Division by Zero",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.008909,
+      "details": "Division by zero test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Null Pointers",
+      "strategy_name": "CANDLE_BREAKOUT",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 0.008678,
+      "details": "Null pointer test failed",
+      "error_message": "'volume_multiplier'",
+      "performance_metrics": null
+    }
+  ],
+  "critical_issues": [],
+  "performance_summary": {
+    "total_execution_time": 0.199798,
+    "avg_execution_time": 0.012487375,
+    "max_execution_time": 0.047771,
+    "min_execution_time": 0.008367,
+    "tests_by_type": {
+      "unit": 4,
+      "functional": 4,
+      "sanity": 4,
+      "critical": 4
+    },
+    "tests_by_status": {
+      "PASS": 0,
+      "FAIL": 0,
+      "ERROR": 16
+    }
+  },
+  "overall_status": "CRITICAL_ISSUES"
+}

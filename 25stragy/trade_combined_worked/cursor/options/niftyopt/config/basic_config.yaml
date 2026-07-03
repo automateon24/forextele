@@ -1,0 +1,14 @@
+
+# Basic NIFTY Options Trading System Config
+system:
+  name: "NIFTY Options Trading System"
+  version: "2.0.0"
+
+api:
+  dhan:
+    client_id: "1101936133"
+    access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzcyNTU4OTYxLCJpYXQiOjE3NzI0NzI1NjEsInRva2VuQ29uc3VtZXJUeXBlIjoiU0VMRiIsIndlYmhvb2tVcmUiOiIiLCJkaGFuQ2xpZW50SWQiOiIxMTAxOTM2MTMzIn0.wLS6EhSW5AY1opZdcWlPuqYg-YIzxQAgpxHa6MhD7HNDiZgjIUObqITD-mPkmMXK8Xz_bEjnTHffCL2oAbxYGA"
+
+trading:
+  broker_charges: 40.0
+  capital_per_strategy: 100000

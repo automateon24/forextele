@@ -1,0 +1,1827 @@
+2026-02-19 09:22:21,289 - INFO - Configuration loaded successfully
+2026-02-19 09:22:21,290 - INFO - LIVE PAPER TRADING WITH REAL DATA INITIALIZED
+2026-02-19 09:22:21,291 - INFO - Paper Capital: ₹100,000
+2026-02-19 09:22:21,291 - INFO - Risk Per Trade: 25.0%
+2026-02-19 09:22:21,291 - INFO - Max Trades Per Day: 4
+2026-02-19 09:22:21,291 - INFO - Data Source: Dhan API (Real Market Data)
+2026-02-19 09:22:21,292 - INFO - STARTING LIVE PAPER TRADING WITH REAL DATA
+2026-02-19 09:22:21,292 - INFO - Mode: PAPER TRADING (NO REAL ORDERS)
+2026-02-19 09:22:21,292 - INFO - Data Source: Dhan API (Real Market Data)
+2026-02-19 09:22:21,294 - INFO - Options: Simulated based on real spot price
+2026-02-19 09:22:21,294 - INFO - 
+================================================================================
+2026-02-19 09:22:21,294 - INFO - MARKET IS OPEN - 09:22:21
+2026-02-19 09:22:21,294 - INFO - Active Trades: 0
+2026-02-19 09:22:21,295 - INFO - Completed Trades: 0
+2026-02-19 09:22:21,295 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:22:21,854 - INFO - API Response: {'data': {}, 'status': 'success'}
+2026-02-19 09:22:21,855 - WARNING - No price data in API response - using fallback
+2026-02-19 09:22:21,873 - INFO - Market Condition: NEUTRAL, Volatility: 0.029
+2026-02-19 09:22:21,874 - INFO - ============================================================
+2026-02-19 09:22:21,874 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:22:21,875 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:22:21,875 - INFO -    Direction: long CE
+2026-02-19 09:22:21,875 - INFO -    Strike: 19022
+2026-02-19 09:22:21,875 - INFO -    Premium: ₹394.17
+2026-02-19 09:22:21,876 - INFO -    Lot Size: 25
+2026-02-19 09:22:21,876 - INFO -    Market: NEUTRAL
+2026-02-19 09:22:21,876 - INFO -    Real NIFTY Price: ₹19522.86
+2026-02-19 09:22:21,876 - INFO - ============================================================
+2026-02-19 09:22:21,877 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:22:21,877 - INFO -    Trade ID: PAPER_20260219_092221
+2026-02-19 09:22:21,877 - INFO -    Margin Used: ₹9,974.31
+2026-02-19 09:22:21,877 - INFO -    Available Capital: ₹90,025.69
+2026-02-19 09:22:21,877 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:23:21,878 - INFO - 
+================================================================================
+2026-02-19 09:23:21,879 - INFO - MARKET IS OPEN - 09:23:21
+2026-02-19 09:23:21,879 - INFO - Active Trades: 1
+2026-02-19 09:23:21,879 - INFO - Completed Trades: 0
+2026-02-19 09:23:21,880 - INFO - Available Capital: ₹90,025.69
+2026-02-19 09:23:22,209 - INFO - API Response: {'data': {}, 'status': 'success'}
+2026-02-19 09:23:22,210 - WARNING - No price data in API response - using fallback
+2026-02-19 09:23:22,212 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:24:22,213 - INFO - 
+================================================================================
+2026-02-19 09:24:22,213 - INFO - MARKET IS OPEN - 09:24:22
+2026-02-19 09:24:22,214 - INFO - Active Trades: 1
+2026-02-19 09:24:22,214 - INFO - Completed Trades: 0
+2026-02-19 09:24:22,214 - INFO - Available Capital: ₹90,025.69
+2026-02-19 09:24:22,523 - INFO - API Response: {'data': {}, 'status': 'success'}
+2026-02-19 09:24:22,524 - WARNING - No price data in API response - using fallback
+2026-02-19 09:24:22,527 - INFO - Market Condition: VOLATILE, Volatility: 0.029
+2026-02-19 09:24:22,527 - INFO - ============================================================
+2026-02-19 09:24:22,527 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:24:22,528 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:24:22,528 - INFO -    Direction: long CE
+2026-02-19 09:24:22,528 - INFO -    Strike: 18850
+2026-02-19 09:24:22,529 - INFO -    Premium: ₹418.87
+2026-02-19 09:24:22,529 - INFO -    Lot Size: 25
+2026-02-19 09:24:22,529 - INFO -    Market: VOLATILE
+2026-02-19 09:24:22,529 - INFO -    Real NIFTY Price: ₹19350.64
+2026-02-19 09:24:22,530 - INFO - ============================================================
+2026-02-19 09:24:22,530 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:24:22,530 - INFO -    Trade ID: PAPER_20260219_092422
+2026-02-19 09:24:22,531 - INFO -    Margin Used: ₹10,591.78
+2026-02-19 09:24:22,531 - INFO -    Available Capital: ₹79,433.91
+2026-02-19 09:24:22,531 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:25:22,532 - INFO - 
+================================================================================
+2026-02-19 09:25:22,533 - INFO - MARKET IS OPEN - 09:25:22
+2026-02-19 09:25:22,533 - INFO - Active Trades: 2
+2026-02-19 09:25:22,534 - INFO - Completed Trades: 0
+2026-02-19 09:25:22,534 - INFO - Available Capital: ₹79,433.91
+2026-02-19 09:25:22,823 - INFO - API Response: {'data': {}, 'status': 'success'}
+2026-02-19 09:25:22,823 - WARNING - No price data in API response - using fallback
+2026-02-19 09:25:22,826 - INFO - Market Condition: VOLATILE, Volatility: 0.018
+2026-02-19 09:25:22,827 - INFO - ============================================================
+2026-02-19 09:25:22,827 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:25:22,827 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:25:22,827 - INFO -    Direction: long CE
+2026-02-19 09:25:22,828 - INFO -    Strike: 18939
+2026-02-19 09:25:22,828 - INFO -    Premium: ₹413.22
+2026-02-19 09:25:22,828 - INFO -    Lot Size: 25
+2026-02-19 09:25:22,829 - INFO -    Market: VOLATILE
+2026-02-19 09:25:22,829 - INFO -    Real NIFTY Price: ₹19439.67
+2026-02-19 09:25:22,829 - INFO - ============================================================
+2026-02-19 09:25:22,829 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:25:22,829 - INFO -    Trade ID: PAPER_20260219_092522
+2026-02-19 09:25:22,830 - INFO -    Margin Used: ₹10,450.40
+2026-02-19 09:25:22,830 - INFO -    Available Capital: ₹68,983.51
+2026-02-19 09:25:22,831 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:25:48,834 - INFO - Paper trading stopped by user
+2026-02-19 09:25:48,835 - INFO - ================================================================================
+2026-02-19 09:25:48,835 - INFO - FINAL PAPER TRADING SUMMARY
+2026-02-19 09:25:48,835 - INFO - DAILY SUMMARY (2026-02-19): No trades completed
+2026-02-19 09:25:48,836 - INFO - Paper trading session ended
+2026-02-19 09:25:48,836 - INFO - ================================================================================
+2026-02-19 09:28:24,862 - INFO - Configuration loaded from c:/cursor/options/niftyopt/config/system_config.yaml
+2026-02-19 09:28:25,160 - INFO - Dhan API connection successful
+2026-02-19 09:28:25,161 - INFO - LIVE PAPER TRADING WITH REAL DATA INITIALIZED
+2026-02-19 09:28:25,161 - INFO - Paper Capital: ₹100,000
+2026-02-19 09:28:25,161 - INFO - Risk Per Trade: 25.0%
+2026-02-19 09:28:25,161 - INFO - Max Trades Per Day: 4
+2026-02-19 09:28:25,161 - INFO - Data Source: Dhan API (Real Market Data)
+2026-02-19 09:28:25,161 - INFO - STARTING LIVE PAPER TRADING WITH REAL DATA
+2026-02-19 09:28:25,162 - INFO - Mode: PAPER TRADING (NO REAL ORDERS)
+2026-02-19 09:28:25,162 - INFO - Data Source: Dhan API (Real Market Data)
+2026-02-19 09:28:25,162 - INFO - Options: Simulated based on real spot price
+2026-02-19 09:28:25,162 - INFO - 
+================================================================================
+2026-02-19 09:28:25,162 - INFO - MARKET IS OPEN - 09:28:25
+2026-02-19 09:28:25,162 - INFO - Active Trades: 0
+2026-02-19 09:28:25,163 - INFO - Completed Trades: 0
+2026-02-19 09:28:25,163 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:28:25,163 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:29:25,164 - INFO - 
+================================================================================
+2026-02-19 09:29:25,164 - INFO - MARKET IS OPEN - 09:29:25
+2026-02-19 09:29:25,164 - INFO - Active Trades: 0
+2026-02-19 09:29:25,165 - INFO - Completed Trades: 0
+2026-02-19 09:29:25,165 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:29:25,483 - INFO - Current NIFTY Price: ₹25821.65
+2026-02-19 09:29:25,510 - INFO - Options chain loaded: 241 strikes
+2026-02-19 09:29:25,511 - INFO - Market Condition: NEUTRAL, Volatility: 0.013
+2026-02-19 09:29:25,512 - INFO - ============================================================
+2026-02-19 09:29:25,512 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:29:25,512 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:29:25,513 - INFO -    Direction: long CE
+2026-02-19 09:29:25,513 - INFO -    Strike: 25350.0
+2026-02-19 09:29:25,513 - INFO -    Premium: ₹499.00
+2026-02-19 09:29:25,513 - INFO -    Lot Size: 25
+2026-02-19 09:29:25,513 - INFO -    Market: NEUTRAL
+2026-02-19 09:29:25,513 - INFO -    Real NIFTY Price: ₹25821.65
+2026-02-19 09:29:25,514 - INFO - ============================================================
+2026-02-19 09:29:25,514 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:29:25,514 - INFO -    Trade ID: PAPER_20260219_092925
+2026-02-19 09:29:25,514 - INFO -    Margin Used: ₹12,595.00
+2026-02-19 09:29:25,514 - INFO -    Available Capital: ₹87,405.00
+2026-02-19 09:29:25,519 - ERROR - Ticker data request failed: {'status': 'failure', 'remarks': {'error_code': None, 'error_type': None, 'error_message': None}, 'data': {'data': {'805': 'Too many requests. Further requests may result in the user being blocked.'}, 'status': 'failed'}}
+2026-02-19 09:29:25,520 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:30:25,521 - INFO - 
+================================================================================
+2026-02-19 09:30:25,521 - INFO - MARKET IS OPEN - 09:30:25
+2026-02-19 09:30:25,521 - INFO - Active Trades: 1
+2026-02-19 09:30:25,522 - INFO - Completed Trades: 0
+2026-02-19 09:30:25,522 - INFO - Available Capital: ₹87,405.00
+2026-02-19 09:30:25,847 - INFO - Current NIFTY Price: ₹25815.90
+2026-02-19 09:30:25,881 - INFO - Options chain loaded: 241 strikes
+2026-02-19 09:30:25,882 - INFO - Market Condition: NEUTRAL, Volatility: 0.019
+2026-02-19 09:30:25,882 - INFO - ============================================================
+2026-02-19 09:30:25,883 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:30:25,883 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:30:25,883 - INFO -    Direction: long CE
+2026-02-19 09:30:25,883 - INFO -    Strike: 25350.0
+2026-02-19 09:30:25,883 - INFO -    Premium: ₹491.40
+2026-02-19 09:30:25,883 - INFO -    Lot Size: 25
+2026-02-19 09:30:25,884 - INFO -    Market: NEUTRAL
+2026-02-19 09:30:25,884 - INFO -    Real NIFTY Price: ₹25815.90
+2026-02-19 09:30:25,884 - INFO - ============================================================
+2026-02-19 09:30:25,884 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:30:25,885 - INFO -    Trade ID: PAPER_20260219_093025
+2026-02-19 09:30:25,885 - INFO -    Margin Used: ₹12,405.00
+2026-02-19 09:30:25,885 - INFO -    Available Capital: ₹75,000.00
+2026-02-19 09:30:25,891 - ERROR - Ticker data request failed: {'status': 'failure', 'remarks': {'error_code': None, 'error_type': None, 'error_message': None}, 'data': {'data': {'805': 'Too many requests. Further requests may result in the user being blocked.'}, 'status': 'failed'}}
+2026-02-19 09:30:25,891 - INFO - ============================================================
+2026-02-19 09:30:25,891 - INFO - TRADE CLOSED:
+2026-02-19 09:30:25,891 - INFO -    Trade ID: PAPER_20260219_092925
+2026-02-19 09:30:25,892 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 09:30:25,892 - INFO -    Net Profit: ₹-1,349.05
+2026-02-19 09:30:25,892 - INFO -    Duration: 1.0 minutes
+2026-02-19 09:30:25,892 - INFO - ============================================================
+2026-02-19 09:30:25,897 - ERROR - Ticker data request failed: {'status': 'failure', 'remarks': {'error_code': None, 'error_type': None, 'error_message': None}, 'data': {'data': {'805': 'Too many requests. Further requests may result in the user being blocked.'}, 'status': 'failed'}}
+2026-02-19 09:30:25,897 - INFO - ============================================================
+2026-02-19 09:30:25,898 - INFO - TRADE CLOSED:
+2026-02-19 09:30:25,898 - INFO -    Trade ID: PAPER_20260219_093025
+2026-02-19 09:30:25,898 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 09:30:25,899 - INFO -    Net Profit: ₹-1,215.66
+2026-02-19 09:30:25,899 - INFO -    Duration: 0.0 minutes
+2026-02-19 09:30:25,899 - INFO - ============================================================
+2026-02-19 09:30:25,899 - INFO - ============================================================
+2026-02-19 09:30:25,900 - INFO - DAILY SUMMARY (2026-02-19):
+2026-02-19 09:30:25,900 - INFO -    Total Trades: 2
+2026-02-19 09:30:25,900 - INFO -    Win Rate: 0.0%
+2026-02-19 09:30:25,900 - INFO -    Total P&L: ₹-2,564.71
+2026-02-19 09:30:25,900 - INFO -    Available Capital: ₹75,240.00
+2026-02-19 09:30:25,901 - INFO - ============================================================
+2026-02-19 09:30:25,901 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:31:25,901 - INFO - 
+================================================================================
+2026-02-19 09:31:25,902 - INFO - MARKET IS OPEN - 09:31:25
+2026-02-19 09:31:25,902 - INFO - Active Trades: 0
+2026-02-19 09:31:25,902 - INFO - Completed Trades: 2
+2026-02-19 09:31:25,902 - INFO - Available Capital: ₹75,240.00
+2026-02-19 09:31:26,212 - INFO - Current NIFTY Price: ₹25814.05
+2026-02-19 09:31:26,241 - INFO - Options chain loaded: 241 strikes
+2026-02-19 09:31:26,242 - INFO - Market Condition: BULLISH, Volatility: 0.019
+2026-02-19 09:31:26,242 - INFO - ============================================================
+2026-02-19 09:31:26,243 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:31:26,243 - INFO -    Strategy: DAY_HIGH_LOW_BULL_BEAR
+2026-02-19 09:31:26,243 - INFO -    Direction: short PE
+2026-02-19 09:31:26,243 - INFO -    Strike: 25250.0
+2026-02-19 09:31:26,243 - INFO -    Premium: ₹15.40
+2026-02-19 09:31:26,244 - INFO -    Lot Size: 25
+2026-02-19 09:31:26,244 - INFO -    Market: BULLISH
+2026-02-19 09:31:26,244 - INFO -    Real NIFTY Price: ₹25814.05
+2026-02-19 09:31:26,244 - INFO - ============================================================
+2026-02-19 09:31:26,244 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:31:26,245 - INFO -    Trade ID: PAPER_20260219_093126
+2026-02-19 09:31:26,245 - INFO -    Margin Used: ₹505.00
+2026-02-19 09:31:26,245 - INFO -    Available Capital: ₹74,735.00
+2026-02-19 09:31:26,250 - ERROR - Ticker data request failed: {'status': 'failure', 'remarks': {'error_code': None, 'error_type': None, 'error_message': None}, 'data': {'data': {'805': 'Too many requests. Further requests may result in the user being blocked.'}, 'status': 'failed'}}
+2026-02-19 09:31:26,252 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:32:26,253 - INFO - 
+================================================================================
+2026-02-19 09:32:26,254 - INFO - MARKET IS OPEN - 09:32:26
+2026-02-19 09:32:26,254 - INFO - Active Trades: 1
+2026-02-19 09:32:26,254 - INFO - Completed Trades: 2
+2026-02-19 09:32:26,254 - INFO - Available Capital: ₹74,735.00
+2026-02-19 09:32:26,570 - INFO - Current NIFTY Price: ₹25807.25
+2026-02-19 09:32:26,601 - INFO - Options chain loaded: 241 strikes
+2026-02-19 09:32:26,602 - INFO - Market Condition: BULLISH, Volatility: 0.029
+2026-02-19 09:32:26,603 - INFO - ============================================================
+2026-02-19 09:32:26,603 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:32:26,603 - INFO -    Strategy: DAY_HIGH_LOW_BULL_BEAR
+2026-02-19 09:32:26,603 - INFO -    Direction: short PE
+2026-02-19 09:32:26,604 - INFO -    Strike: 25250.0
+2026-02-19 09:32:26,604 - INFO -    Premium: ₹15.85
+2026-02-19 09:32:26,604 - INFO -    Lot Size: 25
+2026-02-19 09:32:26,604 - INFO -    Market: BULLISH
+2026-02-19 09:32:26,604 - INFO -    Real NIFTY Price: ₹25807.25
+2026-02-19 09:32:26,604 - INFO - ============================================================
+2026-02-19 09:32:26,605 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:32:26,605 - INFO -    Trade ID: PAPER_20260219_093226
+2026-02-19 09:32:26,605 - INFO -    Margin Used: ₹516.25
+2026-02-19 09:32:26,605 - INFO -    Available Capital: ₹74,218.75
+2026-02-19 09:32:26,611 - ERROR - Ticker data request failed: {'status': 'failure', 'remarks': {'error_code': None, 'error_type': None, 'error_message': None}, 'data': {'data': {'805': 'Too many requests. Further requests may result in the user being blocked.'}, 'status': 'failed'}}
+2026-02-19 09:32:26,611 - INFO - ============================================================
+2026-02-19 09:32:26,611 - INFO - TRADE CLOSED:
+2026-02-19 09:32:26,612 - INFO -    Trade ID: PAPER_20260219_093126
+2026-02-19 09:32:26,612 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 09:32:26,612 - INFO -    Net Profit: ₹-186.91
+2026-02-19 09:32:26,612 - INFO -    Duration: 1.0 minutes
+2026-02-19 09:32:26,612 - INFO - ============================================================
+2026-02-19 09:32:26,617 - ERROR - Ticker data request failed: {'status': 'failure', 'remarks': {'error_code': None, 'error_type': None, 'error_message': None}, 'data': {'data': {'805': 'Too many requests. Further requests may result in the user being blocked.'}, 'status': 'failed'}}
+2026-02-19 09:32:26,618 - INFO - Waiting 60 seconds for next cycle...
+2026-02-19 09:32:44,161 - INFO - Paper trading stopped by user
+2026-02-19 09:32:44,162 - INFO - ================================================================================
+2026-02-19 09:32:44,162 - INFO - FINAL PAPER TRADING SUMMARY
+2026-02-19 09:32:44,162 - INFO - ============================================================
+2026-02-19 09:32:44,162 - INFO - DAILY SUMMARY (2026-02-19):
+2026-02-19 09:32:44,162 - INFO -    Total Trades: 3
+2026-02-19 09:32:44,163 - INFO -    Win Rate: 0.0%
+2026-02-19 09:32:44,163 - INFO -    Total P&L: ₹-2,751.63
+2026-02-19 09:32:44,163 - INFO -    Available Capital: ₹74,338.75
+2026-02-19 09:32:44,163 - INFO - ============================================================
+2026-02-19 09:32:44,163 - INFO - Paper trading session ended
+2026-02-19 09:32:44,163 - INFO - ================================================================================
+2026-02-19 09:33:48,139 - INFO - Configuration loaded from c:/cursor/options/niftyopt/config/system_config.yaml
+2026-02-19 09:33:48,472 - INFO - Dhan API connection successful
+2026-02-19 09:33:48,472 - INFO - LIVE PAPER TRADING WITH REAL DATA INITIALIZED
+2026-02-19 09:33:48,473 - INFO - Paper Capital: ₹100,000
+2026-02-19 09:33:48,473 - INFO - Risk Per Trade: 25.0%
+2026-02-19 09:33:48,473 - INFO - Max Trades Per Day: 4
+2026-02-19 09:33:48,473 - INFO - Data Source: Dhan API (Real Market Data)
+2026-02-19 09:33:48,473 - INFO - STARTING LIVE PAPER TRADING WITH REAL DATA
+2026-02-19 09:33:48,473 - INFO - Mode: PAPER TRADING (NO REAL ORDERS)
+2026-02-19 09:33:48,474 - INFO - Data Source: Dhan API (Real Market Data)
+2026-02-19 09:33:48,474 - INFO - Options: Simulated based on real spot price
+2026-02-19 09:33:48,474 - INFO - 
+================================================================================
+2026-02-19 09:33:48,474 - INFO - MARKET IS OPEN - 09:33:48
+2026-02-19 09:33:48,474 - INFO - Active Trades: 0
+2026-02-19 09:33:48,475 - INFO - Completed Trades: 0
+2026-02-19 09:33:48,475 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:33:48,475 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:35:48,476 - INFO - 
+================================================================================
+2026-02-19 09:35:48,476 - INFO - MARKET IS OPEN - 09:35:48
+2026-02-19 09:35:48,477 - INFO - Active Trades: 0
+2026-02-19 09:35:48,477 - INFO - Completed Trades: 0
+2026-02-19 09:35:48,477 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:35:48,477 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:37:48,478 - INFO - 
+================================================================================
+2026-02-19 09:37:48,479 - INFO - MARKET IS OPEN - 09:37:48
+2026-02-19 09:37:48,479 - INFO - Active Trades: 0
+2026-02-19 09:37:48,479 - INFO - Completed Trades: 0
+2026-02-19 09:37:48,479 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:37:48,480 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:39:48,481 - INFO - 
+================================================================================
+2026-02-19 09:39:48,482 - INFO - MARKET IS OPEN - 09:39:48
+2026-02-19 09:39:48,482 - INFO - Active Trades: 0
+2026-02-19 09:39:48,482 - INFO - Completed Trades: 0
+2026-02-19 09:39:48,482 - INFO - Available Capital: ₹100,000.00
+2026-02-19 09:39:48,781 - INFO - Current NIFTY Price: ₹25790.95
+2026-02-19 09:39:48,810 - INFO - Options chain loaded: 241 strikes
+2026-02-19 09:39:48,811 - INFO - Market Condition: NEUTRAL, Volatility: 0.013
+2026-02-19 09:39:48,811 - INFO - ============================================================
+2026-02-19 09:39:48,812 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:39:48,812 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:39:48,812 - INFO -    Direction: long CE
+2026-02-19 09:39:48,812 - INFO -    Strike: 25350.0
+2026-02-19 09:39:48,813 - INFO -    Premium: ₹470.25
+2026-02-19 09:39:48,814 - INFO -    Lot Size: 25
+2026-02-19 09:39:48,814 - INFO -    Market: NEUTRAL
+2026-02-19 09:39:48,815 - INFO -    Real NIFTY Price: ₹25790.95
+2026-02-19 09:39:48,816 - INFO - ============================================================
+2026-02-19 09:39:48,817 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:39:48,818 - INFO -    Trade ID: PAPER_20260219_093948
+2026-02-19 09:39:48,818 - INFO -    Margin Used: ₹11,876.25
+2026-02-19 09:39:48,819 - INFO -    Available Capital: ₹88,123.75
+2026-02-19 09:39:48,819 - INFO - Using cached NIFTY Price: ₹25790.95
+2026-02-19 09:39:48,820 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:41:48,821 - INFO - 
+================================================================================
+2026-02-19 09:41:48,821 - INFO - MARKET IS OPEN - 09:41:48
+2026-02-19 09:41:48,821 - INFO - Active Trades: 1
+2026-02-19 09:41:48,822 - INFO - Completed Trades: 0
+2026-02-19 09:41:48,822 - INFO - Available Capital: ₹88,123.75
+2026-02-19 09:41:49,127 - INFO - Current NIFTY Price: ₹25786.85
+2026-02-19 09:41:49,127 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:43:49,128 - INFO - 
+================================================================================
+2026-02-19 09:43:49,129 - INFO - MARKET IS OPEN - 09:43:49
+2026-02-19 09:43:49,130 - INFO - Active Trades: 1
+2026-02-19 09:43:49,130 - INFO - Completed Trades: 0
+2026-02-19 09:43:49,130 - INFO - Available Capital: ₹88,123.75
+2026-02-19 09:43:49,427 - INFO - Current NIFTY Price: ₹25780.85
+2026-02-19 09:43:49,428 - INFO - Using cached options chain
+2026-02-19 09:43:49,428 - INFO - Market Condition: BULLISH, Volatility: 0.013
+2026-02-19 09:43:49,429 - INFO - ============================================================
+2026-02-19 09:43:49,429 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:43:49,430 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:43:49,430 - INFO -    Direction: long CE
+2026-02-19 09:43:49,430 - INFO -    Strike: 25350.0
+2026-02-19 09:43:49,430 - INFO -    Premium: ₹470.25
+2026-02-19 09:43:49,431 - INFO -    Lot Size: 25
+2026-02-19 09:43:49,431 - INFO -    Market: BULLISH
+2026-02-19 09:43:49,431 - INFO -    Real NIFTY Price: ₹25780.85
+2026-02-19 09:43:49,431 - INFO - ============================================================
+2026-02-19 09:43:49,431 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:43:49,431 - INFO -    Trade ID: PAPER_20260219_094349
+2026-02-19 09:43:49,432 - INFO -    Margin Used: ₹11,876.25
+2026-02-19 09:43:49,432 - INFO -    Available Capital: ₹76,247.50
+2026-02-19 09:43:49,432 - INFO - Using cached NIFTY Price: ₹25780.85
+2026-02-19 09:43:49,432 - INFO - Using cached NIFTY Price: ₹25780.85
+2026-02-19 09:43:49,433 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:45:49,434 - INFO - 
+================================================================================
+2026-02-19 09:45:49,434 - INFO - MARKET IS OPEN - 09:45:49
+2026-02-19 09:45:49,434 - INFO - Active Trades: 2
+2026-02-19 09:45:49,435 - INFO - Completed Trades: 0
+2026-02-19 09:45:49,435 - INFO - Available Capital: ₹76,247.50
+2026-02-19 09:45:49,779 - INFO - Current NIFTY Price: ₹25775.40
+2026-02-19 09:45:49,780 - INFO - Using cached options chain
+2026-02-19 09:45:49,780 - INFO - Market Condition: NEUTRAL, Volatility: 0.013
+2026-02-19 09:45:49,781 - INFO - ============================================================
+2026-02-19 09:45:49,781 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:45:49,781 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:45:49,781 - INFO -    Direction: long CE
+2026-02-19 09:45:49,781 - INFO -    Strike: 25350.0
+2026-02-19 09:45:49,782 - INFO -    Premium: ₹470.25
+2026-02-19 09:45:49,782 - INFO -    Lot Size: 25
+2026-02-19 09:45:49,782 - INFO -    Market: NEUTRAL
+2026-02-19 09:45:49,782 - INFO -    Real NIFTY Price: ₹25775.40
+2026-02-19 09:45:49,782 - INFO - ============================================================
+2026-02-19 09:45:49,783 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:45:49,783 - INFO -    Trade ID: PAPER_20260219_094549
+2026-02-19 09:45:49,783 - INFO -    Margin Used: ₹11,876.25
+2026-02-19 09:45:49,783 - INFO -    Available Capital: ₹64,371.25
+2026-02-19 09:45:49,783 - INFO - Using cached NIFTY Price: ₹25775.40
+2026-02-19 09:45:49,784 - INFO - Using cached NIFTY Price: ₹25775.40
+2026-02-19 09:45:49,784 - INFO - Using cached NIFTY Price: ₹25775.40
+2026-02-19 09:45:49,784 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:47:49,785 - INFO - 
+================================================================================
+2026-02-19 09:47:49,785 - INFO - MARKET IS OPEN - 09:47:49
+2026-02-19 09:47:49,786 - INFO - Active Trades: 3
+2026-02-19 09:47:49,786 - INFO - Completed Trades: 0
+2026-02-19 09:47:49,786 - INFO - Available Capital: ₹64,371.25
+2026-02-19 09:47:50,121 - INFO - Current NIFTY Price: ₹25790.45
+2026-02-19 09:47:50,122 - INFO - Using cached options chain
+2026-02-19 09:47:50,123 - INFO - Market Condition: NEUTRAL, Volatility: 0.022
+2026-02-19 09:47:50,123 - INFO - ============================================================
+2026-02-19 09:47:50,124 - INFO - TRADE SIGNAL GENERATED:
+2026-02-19 09:47:50,124 - INFO -    Strategy: Ultimate_Day_High_Low_FullDay
+2026-02-19 09:47:50,124 - INFO -    Direction: long CE
+2026-02-19 09:47:50,124 - INFO -    Strike: 25350.0
+2026-02-19 09:47:50,124 - INFO -    Premium: ₹470.25
+2026-02-19 09:47:50,125 - INFO -    Lot Size: 25
+2026-02-19 09:47:50,125 - INFO -    Market: NEUTRAL
+2026-02-19 09:47:50,125 - INFO -    Real NIFTY Price: ₹25790.45
+2026-02-19 09:47:50,125 - INFO - ============================================================
+2026-02-19 09:47:50,126 - INFO - PAPER TRADE EXECUTED:
+2026-02-19 09:47:50,126 - INFO -    Trade ID: PAPER_20260219_094750
+2026-02-19 09:47:50,126 - INFO -    Margin Used: ₹11,876.25
+2026-02-19 09:47:50,126 - INFO -    Available Capital: ₹52,495.00
+2026-02-19 09:47:50,126 - INFO - Using cached NIFTY Price: ₹25790.45
+2026-02-19 09:47:50,127 - INFO - Using cached NIFTY Price: ₹25790.45
+2026-02-19 09:47:50,127 - INFO - Using cached NIFTY Price: ₹25790.45
+2026-02-19 09:47:50,127 - INFO - Using cached NIFTY Price: ₹25790.45
+2026-02-19 09:47:50,127 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:49:50,128 - INFO - 
+================================================================================
+2026-02-19 09:49:50,128 - INFO - MARKET IS OPEN - 09:49:50
+2026-02-19 09:49:50,128 - INFO - Active Trades: 4
+2026-02-19 09:49:50,129 - INFO - Completed Trades: 0
+2026-02-19 09:49:50,129 - INFO - Available Capital: ₹52,495.00
+2026-02-19 09:49:50,461 - INFO - Current NIFTY Price: ₹25811.65
+2026-02-19 09:49:50,461 - INFO - Using cached NIFTY Price: ₹25811.65
+2026-02-19 09:49:50,462 - INFO - Using cached NIFTY Price: ₹25811.65
+2026-02-19 09:49:50,462 - INFO - Using cached NIFTY Price: ₹25811.65
+2026-02-19 09:49:50,463 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:51:50,463 - INFO - 
+================================================================================
+2026-02-19 09:51:50,464 - INFO - MARKET IS OPEN - 09:51:50
+2026-02-19 09:51:50,465 - INFO - Active Trades: 4
+2026-02-19 09:51:50,465 - INFO - Completed Trades: 0
+2026-02-19 09:51:50,465 - INFO - Available Capital: ₹52,495.00
+2026-02-19 09:51:50,805 - INFO - Current NIFTY Price: ₹25795.00
+2026-02-19 09:51:50,805 - INFO - Using cached NIFTY Price: ₹25795.00
+2026-02-19 09:51:50,806 - INFO - Using cached NIFTY Price: ₹25795.00
+2026-02-19 09:51:50,806 - INFO - Using cached NIFTY Price: ₹25795.00
+2026-02-19 09:51:50,806 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:53:50,807 - INFO - 
+================================================================================
+2026-02-19 09:53:50,808 - INFO - MARKET IS OPEN - 09:53:50
+2026-02-19 09:53:50,808 - INFO - Active Trades: 4
+2026-02-19 09:53:50,808 - INFO - Completed Trades: 0
+2026-02-19 09:53:50,809 - INFO - Available Capital: ₹52,495.00
+2026-02-19 09:53:51,119 - INFO - Current NIFTY Price: ₹25787.45
+2026-02-19 09:53:51,119 - INFO - Using cached NIFTY Price: ₹25787.45
+2026-02-19 09:53:51,120 - INFO - Using cached NIFTY Price: ₹25787.45
+2026-02-19 09:53:51,120 - INFO - Using cached NIFTY Price: ₹25787.45
+2026-02-19 09:53:51,120 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:55:51,122 - INFO - 
+================================================================================
+2026-02-19 09:55:51,122 - INFO - MARKET IS OPEN - 09:55:51
+2026-02-19 09:55:51,123 - INFO - Active Trades: 4
+2026-02-19 09:55:51,123 - INFO - Completed Trades: 0
+2026-02-19 09:55:51,123 - INFO - Available Capital: ₹52,495.00
+2026-02-19 09:55:51,445 - INFO - Current NIFTY Price: ₹25786.55
+2026-02-19 09:55:51,446 - INFO - Using cached NIFTY Price: ₹25786.55
+2026-02-19 09:55:51,446 - INFO - Using cached NIFTY Price: ₹25786.55
+2026-02-19 09:55:51,446 - INFO - Using cached NIFTY Price: ₹25786.55
+2026-02-19 09:55:51,447 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:57:51,447 - INFO - 
+================================================================================
+2026-02-19 09:57:51,448 - INFO - MARKET IS OPEN - 09:57:51
+2026-02-19 09:57:51,448 - INFO - Active Trades: 4
+2026-02-19 09:57:51,448 - INFO - Completed Trades: 0
+2026-02-19 09:57:51,448 - INFO - Available Capital: ₹52,495.00
+2026-02-19 09:57:51,780 - INFO - Current NIFTY Price: ₹25781.70
+2026-02-19 09:57:51,781 - INFO - Using cached NIFTY Price: ₹25781.70
+2026-02-19 09:57:51,781 - INFO - Using cached NIFTY Price: ₹25781.70
+2026-02-19 09:57:51,781 - INFO - Using cached NIFTY Price: ₹25781.70
+2026-02-19 09:57:51,782 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 09:59:51,783 - INFO - 
+================================================================================
+2026-02-19 09:59:51,783 - INFO - MARKET IS OPEN - 09:59:51
+2026-02-19 09:59:51,784 - INFO - Active Trades: 4
+2026-02-19 09:59:51,784 - INFO - Completed Trades: 0
+2026-02-19 09:59:51,784 - INFO - Available Capital: ₹52,495.00
+2026-02-19 09:59:52,094 - INFO - Current NIFTY Price: ₹25770.95
+2026-02-19 09:59:52,094 - INFO - Using cached NIFTY Price: ₹25770.95
+2026-02-19 09:59:52,095 - INFO - Using cached NIFTY Price: ₹25770.95
+2026-02-19 09:59:52,095 - INFO - Using cached NIFTY Price: ₹25770.95
+2026-02-19 09:59:52,095 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:01:52,096 - INFO - 
+================================================================================
+2026-02-19 10:01:52,097 - INFO - MARKET IS OPEN - 10:01:52
+2026-02-19 10:01:52,097 - INFO - Active Trades: 4
+2026-02-19 10:01:52,097 - INFO - Completed Trades: 0
+2026-02-19 10:01:52,098 - INFO - Available Capital: ₹52,495.00
+2026-02-19 10:01:52,441 - WARNING - Rate limit hit, using cached data
+2026-02-19 10:01:52,442 - INFO - Using cached NIFTY Price: ₹25770.95
+2026-02-19 10:01:52,443 - INFO - Using cached NIFTY Price: ₹25770.95
+2026-02-19 10:01:52,443 - INFO - Using cached NIFTY Price: ₹25770.95
+2026-02-19 10:01:52,443 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:03:52,444 - INFO - 
+================================================================================
+2026-02-19 10:03:52,445 - INFO - MARKET IS OPEN - 10:03:52
+2026-02-19 10:03:52,445 - INFO - Active Trades: 4
+2026-02-19 10:03:52,445 - INFO - Completed Trades: 0
+2026-02-19 10:03:52,446 - INFO - Available Capital: ₹52,495.00
+2026-02-19 10:03:52,759 - INFO - Current NIFTY Price: ₹25779.55
+2026-02-19 10:03:52,760 - INFO - Using cached NIFTY Price: ₹25779.55
+2026-02-19 10:03:52,760 - INFO - Using cached NIFTY Price: ₹25779.55
+2026-02-19 10:03:52,760 - INFO - Using cached NIFTY Price: ₹25779.55
+2026-02-19 10:03:52,761 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:05:52,761 - INFO - 
+================================================================================
+2026-02-19 10:05:52,762 - INFO - MARKET IS OPEN - 10:05:52
+2026-02-19 10:05:52,762 - INFO - Active Trades: 4
+2026-02-19 10:05:52,762 - INFO - Completed Trades: 0
+2026-02-19 10:05:52,763 - INFO - Available Capital: ₹52,495.00
+2026-02-19 10:05:53,072 - INFO - Current NIFTY Price: ₹25790.00
+2026-02-19 10:05:53,073 - INFO - Using cached NIFTY Price: ₹25790.00
+2026-02-19 10:05:53,073 - INFO - Using cached NIFTY Price: ₹25790.00
+2026-02-19 10:05:53,073 - INFO - Using cached NIFTY Price: ₹25790.00
+2026-02-19 10:05:53,073 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:07:53,074 - INFO - 
+================================================================================
+2026-02-19 10:07:53,075 - INFO - MARKET IS OPEN - 10:07:53
+2026-02-19 10:07:53,075 - INFO - Active Trades: 4
+2026-02-19 10:07:53,075 - INFO - Completed Trades: 0
+2026-02-19 10:07:53,076 - INFO - Available Capital: ₹52,495.00
+2026-02-19 10:07:53,364 - INFO - Current NIFTY Price: ₹25782.25
+2026-02-19 10:07:53,364 - INFO - ============================================================
+2026-02-19 10:07:53,364 - INFO - TRADE CLOSED:
+2026-02-19 10:07:53,365 - INFO -    Trade ID: PAPER_20260219_093948
+2026-02-19 10:07:53,365 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 10:07:53,365 - INFO -    Net Profit: ₹-488.98
+2026-02-19 10:07:53,365 - INFO -    Duration: 28.1 minutes
+2026-02-19 10:07:53,365 - INFO - ============================================================
+2026-02-19 10:07:53,366 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:07:53,366 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:07:53,366 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:07:53,366 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:09:53,367 - INFO - 
+================================================================================
+2026-02-19 10:09:53,367 - INFO - MARKET IS OPEN - 10:09:53
+2026-02-19 10:09:53,368 - INFO - Active Trades: 3
+2026-02-19 10:09:53,368 - INFO - Completed Trades: 1
+2026-02-19 10:09:53,368 - INFO - Available Capital: ₹52,615.00
+2026-02-19 10:09:53,368 - INFO - Max trades per day reached: 4
+2026-02-19 10:09:53,670 - WARNING - Rate limit hit, using cached data
+2026-02-19 10:09:53,670 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:09:53,671 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:09:53,671 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:11:53,672 - INFO - 
+================================================================================
+2026-02-19 10:11:53,672 - INFO - MARKET IS OPEN - 10:11:53
+2026-02-19 10:11:53,672 - INFO - Active Trades: 3
+2026-02-19 10:11:53,673 - INFO - Completed Trades: 1
+2026-02-19 10:11:53,673 - INFO - Available Capital: ₹52,615.00
+2026-02-19 10:11:53,979 - WARNING - Rate limit hit, using cached data
+2026-02-19 10:11:53,980 - INFO - ============================================================
+2026-02-19 10:11:53,980 - INFO - TRADE CLOSED:
+2026-02-19 10:11:53,981 - INFO -    Trade ID: PAPER_20260219_094349
+2026-02-19 10:11:53,981 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 10:11:53,981 - INFO -    Net Profit: ₹-486.30
+2026-02-19 10:11:53,981 - INFO -    Duration: 28.1 minutes
+2026-02-19 10:11:53,982 - INFO - ============================================================
+2026-02-19 10:11:53,982 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:11:53,982 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:11:53,982 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:13:53,983 - INFO - 
+================================================================================
+2026-02-19 10:13:53,984 - INFO - MARKET IS OPEN - 10:13:53
+2026-02-19 10:13:53,984 - INFO - Active Trades: 2
+2026-02-19 10:13:53,984 - INFO - Completed Trades: 2
+2026-02-19 10:13:53,984 - INFO - Available Capital: ₹52,735.00
+2026-02-19 10:13:53,984 - INFO - Max trades per day reached: 4
+2026-02-19 10:13:54,294 - WARNING - Rate limit hit, using cached data
+2026-02-19 10:13:54,294 - INFO - ============================================================
+2026-02-19 10:13:54,294 - INFO - TRADE CLOSED:
+2026-02-19 10:13:54,295 - INFO -    Trade ID: PAPER_20260219_094549
+2026-02-19 10:13:54,295 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 10:13:54,295 - INFO -    Net Profit: ₹-484.85
+2026-02-19 10:13:54,295 - INFO -    Duration: 28.1 minutes
+2026-02-19 10:13:54,296 - INFO - ============================================================
+2026-02-19 10:13:54,296 - INFO - Using cached NIFTY Price: ₹25782.25
+2026-02-19 10:13:54,296 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:15:54,297 - INFO - 
+================================================================================
+2026-02-19 10:15:54,297 - INFO - MARKET IS OPEN - 10:15:54
+2026-02-19 10:15:54,297 - INFO - Active Trades: 1
+2026-02-19 10:15:54,298 - INFO - Completed Trades: 3
+2026-02-19 10:15:54,298 - INFO - Available Capital: ₹52,855.00
+2026-02-19 10:15:54,298 - INFO - Max trades per day reached: 4
+2026-02-19 10:15:54,612 - WARNING - Rate limit hit, using cached data
+2026-02-19 10:15:54,613 - INFO - ============================================================
+2026-02-19 10:15:54,613 - INFO - TRADE CLOSED:
+2026-02-19 10:15:54,614 - INFO -    Trade ID: PAPER_20260219_094750
+2026-02-19 10:15:54,614 - INFO -    Exit Reason: STOP_LOSS
+2026-02-19 10:15:54,614 - INFO -    Net Profit: ₹-488.83
+2026-02-19 10:15:54,614 - INFO -    Duration: 28.1 minutes
+2026-02-19 10:15:54,614 - INFO - ============================================================
+2026-02-19 10:15:54,615 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:17:54,615 - INFO - 
+================================================================================
+2026-02-19 10:17:54,616 - INFO - MARKET IS OPEN - 10:17:54
+2026-02-19 10:17:54,616 - INFO - Active Trades: 0
+2026-02-19 10:17:54,616 - INFO - Completed Trades: 4
+2026-02-19 10:17:54,616 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:17:54,616 - INFO - Max trades per day reached: 4
+2026-02-19 10:17:54,617 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:19:54,618 - INFO - 
+================================================================================
+2026-02-19 10:19:54,619 - INFO - MARKET IS OPEN - 10:19:54
+2026-02-19 10:19:54,619 - INFO - Active Trades: 0
+2026-02-19 10:19:54,619 - INFO - Completed Trades: 4
+2026-02-19 10:19:54,619 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:19:54,620 - INFO - Max trades per day reached: 4
+2026-02-19 10:19:54,620 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:21:54,620 - INFO - 
+================================================================================
+2026-02-19 10:21:54,621 - INFO - MARKET IS OPEN - 10:21:54
+2026-02-19 10:21:54,621 - INFO - Active Trades: 0
+2026-02-19 10:21:54,622 - INFO - Completed Trades: 4
+2026-02-19 10:21:54,622 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:21:54,622 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:23:54,623 - INFO - 
+================================================================================
+2026-02-19 10:23:54,624 - INFO - MARKET IS OPEN - 10:23:54
+2026-02-19 10:23:54,624 - INFO - Active Trades: 0
+2026-02-19 10:23:54,624 - INFO - Completed Trades: 4
+2026-02-19 10:23:54,625 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:23:54,625 - INFO - Max trades per day reached: 4
+2026-02-19 10:23:54,625 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:25:54,626 - INFO - 
+================================================================================
+2026-02-19 10:25:54,626 - INFO - MARKET IS OPEN - 10:25:54
+2026-02-19 10:25:54,627 - INFO - Active Trades: 0
+2026-02-19 10:25:54,627 - INFO - Completed Trades: 4
+2026-02-19 10:25:54,627 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:25:54,627 - INFO - Max trades per day reached: 4
+2026-02-19 10:25:54,627 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:27:54,629 - INFO - 
+================================================================================
+2026-02-19 10:27:54,629 - INFO - MARKET IS OPEN - 10:27:54
+2026-02-19 10:27:54,629 - INFO - Active Trades: 0
+2026-02-19 10:27:54,630 - INFO - Completed Trades: 4
+2026-02-19 10:27:54,630 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:27:54,630 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:29:54,631 - INFO - 
+================================================================================
+2026-02-19 10:29:54,631 - INFO - MARKET IS OPEN - 10:29:54
+2026-02-19 10:29:54,632 - INFO - Active Trades: 0
+2026-02-19 10:29:54,632 - INFO - Completed Trades: 4
+2026-02-19 10:29:54,632 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:29:54,632 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:31:54,634 - INFO - 
+================================================================================
+2026-02-19 10:31:54,634 - INFO - MARKET IS OPEN - 10:31:54
+2026-02-19 10:31:54,635 - INFO - Active Trades: 0
+2026-02-19 10:31:54,635 - INFO - Completed Trades: 4
+2026-02-19 10:31:54,635 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:31:54,635 - INFO - Max trades per day reached: 4
+2026-02-19 10:31:54,635 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:33:54,636 - INFO - 
+================================================================================
+2026-02-19 10:33:54,637 - INFO - MARKET IS OPEN - 10:33:54
+2026-02-19 10:33:54,637 - INFO - Active Trades: 0
+2026-02-19 10:33:54,638 - INFO - Completed Trades: 4
+2026-02-19 10:33:54,638 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:33:54,638 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:35:54,639 - INFO - 
+================================================================================
+2026-02-19 10:35:54,640 - INFO - MARKET IS OPEN - 10:35:54
+2026-02-19 10:35:54,640 - INFO - Active Trades: 0
+2026-02-19 10:35:54,640 - INFO - Completed Trades: 4
+2026-02-19 10:35:54,640 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:35:54,640 - INFO - Max trades per day reached: 4
+2026-02-19 10:35:54,641 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:37:54,641 - INFO - 
+================================================================================
+2026-02-19 10:37:54,642 - INFO - MARKET IS OPEN - 10:37:54
+2026-02-19 10:37:54,642 - INFO - Active Trades: 0
+2026-02-19 10:37:54,642 - INFO - Completed Trades: 4
+2026-02-19 10:37:54,643 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:37:54,643 - INFO - Max trades per day reached: 4
+2026-02-19 10:37:54,643 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:39:54,645 - INFO - 
+================================================================================
+2026-02-19 10:39:54,645 - INFO - MARKET IS OPEN - 10:39:54
+2026-02-19 10:39:54,646 - INFO - Active Trades: 0
+2026-02-19 10:39:54,646 - INFO - Completed Trades: 4
+2026-02-19 10:39:54,646 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:39:54,646 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:41:54,648 - INFO - 
+================================================================================
+2026-02-19 10:41:54,648 - INFO - MARKET IS OPEN - 10:41:54
+2026-02-19 10:41:54,649 - INFO - Active Trades: 0
+2026-02-19 10:41:54,649 - INFO - Completed Trades: 4
+2026-02-19 10:41:54,649 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:41:54,649 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:43:54,651 - INFO - 
+================================================================================
+2026-02-19 10:43:54,651 - INFO - MARKET IS OPEN - 10:43:54
+2026-02-19 10:43:54,652 - INFO - Active Trades: 0
+2026-02-19 10:43:54,652 - INFO - Completed Trades: 4
+2026-02-19 10:43:54,652 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:43:54,652 - INFO - Max trades per day reached: 4
+2026-02-19 10:43:54,653 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:45:54,653 - INFO - 
+================================================================================
+2026-02-19 10:45:54,654 - INFO - MARKET IS OPEN - 10:45:54
+2026-02-19 10:45:54,654 - INFO - Active Trades: 0
+2026-02-19 10:45:54,654 - INFO - Completed Trades: 4
+2026-02-19 10:45:54,655 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:45:54,655 - INFO - Max trades per day reached: 4
+2026-02-19 10:45:54,655 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:47:54,656 - INFO - 
+================================================================================
+2026-02-19 10:47:54,656 - INFO - MARKET IS OPEN - 10:47:54
+2026-02-19 10:47:54,656 - INFO - Active Trades: 0
+2026-02-19 10:47:54,656 - INFO - Completed Trades: 4
+2026-02-19 10:47:54,656 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:47:54,657 - INFO - Max trades per day reached: 4
+2026-02-19 10:47:54,657 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:49:54,658 - INFO - 
+================================================================================
+2026-02-19 10:49:54,659 - INFO - MARKET IS OPEN - 10:49:54
+2026-02-19 10:49:54,659 - INFO - Active Trades: 0
+2026-02-19 10:49:54,659 - INFO - Completed Trades: 4
+2026-02-19 10:49:54,659 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:49:54,660 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:51:54,661 - INFO - 
+================================================================================
+2026-02-19 10:51:54,661 - INFO - MARKET IS OPEN - 10:51:54
+2026-02-19 10:51:54,662 - INFO - Active Trades: 0
+2026-02-19 10:51:54,662 - INFO - Completed Trades: 4
+2026-02-19 10:51:54,662 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:51:54,662 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:53:54,663 - INFO - 
+================================================================================
+2026-02-19 10:53:54,664 - INFO - MARKET IS OPEN - 10:53:54
+2026-02-19 10:53:54,664 - INFO - Active Trades: 0
+2026-02-19 10:53:54,664 - INFO - Completed Trades: 4
+2026-02-19 10:53:54,664 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:53:54,665 - INFO - Max trades per day reached: 4
+2026-02-19 10:53:54,665 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:55:54,666 - INFO - 
+================================================================================
+2026-02-19 10:55:54,667 - INFO - MARKET IS OPEN - 10:55:54
+2026-02-19 10:55:54,667 - INFO - Active Trades: 0
+2026-02-19 10:55:54,667 - INFO - Completed Trades: 4
+2026-02-19 10:55:54,667 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:55:54,668 - INFO - Max trades per day reached: 4
+2026-02-19 10:55:54,668 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:57:54,669 - INFO - 
+================================================================================
+2026-02-19 10:57:54,670 - INFO - MARKET IS OPEN - 10:57:54
+2026-02-19 10:57:54,670 - INFO - Active Trades: 0
+2026-02-19 10:57:54,670 - INFO - Completed Trades: 4
+2026-02-19 10:57:54,670 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:57:54,671 - INFO - Max trades per day reached: 4
+2026-02-19 10:57:54,671 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 10:59:54,671 - INFO - 
+================================================================================
+2026-02-19 10:59:54,672 - INFO - MARKET IS OPEN - 10:59:54
+2026-02-19 10:59:54,672 - INFO - Active Trades: 0
+2026-02-19 10:59:54,673 - INFO - Completed Trades: 4
+2026-02-19 10:59:54,673 - INFO - Available Capital: ₹52,975.00
+2026-02-19 10:59:54,673 - INFO - Max trades per day reached: 4
+2026-02-19 10:59:54,673 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:01:54,674 - INFO - 
+================================================================================
+2026-02-19 11:01:54,674 - INFO - MARKET IS OPEN - 11:01:54
+2026-02-19 11:01:54,674 - INFO - Active Trades: 0
+2026-02-19 11:01:54,675 - INFO - Completed Trades: 4
+2026-02-19 11:01:54,675 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:01:54,675 - INFO - Max trades per day reached: 4
+2026-02-19 11:01:54,675 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:03:54,676 - INFO - 
+================================================================================
+2026-02-19 11:03:54,677 - INFO - MARKET IS OPEN - 11:03:54
+2026-02-19 11:03:54,677 - INFO - Active Trades: 0
+2026-02-19 11:03:54,677 - INFO - Completed Trades: 4
+2026-02-19 11:03:54,678 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:03:54,678 - INFO - Max trades per day reached: 4
+2026-02-19 11:03:54,678 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:05:54,679 - INFO - 
+================================================================================
+2026-02-19 11:05:54,679 - INFO - MARKET IS OPEN - 11:05:54
+2026-02-19 11:05:54,680 - INFO - Active Trades: 0
+2026-02-19 11:05:54,680 - INFO - Completed Trades: 4
+2026-02-19 11:05:54,680 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:05:54,680 - INFO - Max trades per day reached: 4
+2026-02-19 11:05:54,680 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:07:54,681 - INFO - 
+================================================================================
+2026-02-19 11:07:54,682 - INFO - MARKET IS OPEN - 11:07:54
+2026-02-19 11:07:54,682 - INFO - Active Trades: 0
+2026-02-19 11:07:54,682 - INFO - Completed Trades: 4
+2026-02-19 11:07:54,683 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:07:54,683 - INFO - Max trades per day reached: 4
+2026-02-19 11:07:54,683 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:09:54,684 - INFO - 
+================================================================================
+2026-02-19 11:09:54,685 - INFO - MARKET IS OPEN - 11:09:54
+2026-02-19 11:09:54,685 - INFO - Active Trades: 0
+2026-02-19 11:09:54,685 - INFO - Completed Trades: 4
+2026-02-19 11:09:54,686 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:09:54,686 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:11:54,686 - INFO - 
+================================================================================
+2026-02-19 11:11:54,687 - INFO - MARKET IS OPEN - 11:11:54
+2026-02-19 11:11:54,687 - INFO - Active Trades: 0
+2026-02-19 11:11:54,687 - INFO - Completed Trades: 4
+2026-02-19 11:11:54,687 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:11:54,688 - INFO - Max trades per day reached: 4
+2026-02-19 11:11:54,688 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:13:54,689 - INFO - 
+================================================================================
+2026-02-19 11:13:54,689 - INFO - MARKET IS OPEN - 11:13:54
+2026-02-19 11:13:54,690 - INFO - Active Trades: 0
+2026-02-19 11:13:54,690 - INFO - Completed Trades: 4
+2026-02-19 11:13:54,690 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:13:54,690 - INFO - Max trades per day reached: 4
+2026-02-19 11:13:54,691 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:15:54,691 - INFO - 
+================================================================================
+2026-02-19 11:15:54,691 - INFO - MARKET IS OPEN - 11:15:54
+2026-02-19 11:15:54,692 - INFO - Active Trades: 0
+2026-02-19 11:15:54,692 - INFO - Completed Trades: 4
+2026-02-19 11:15:54,692 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:15:54,693 - INFO - Max trades per day reached: 4
+2026-02-19 11:15:54,693 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:17:54,693 - INFO - 
+================================================================================
+2026-02-19 11:17:54,694 - INFO - MARKET IS OPEN - 11:17:54
+2026-02-19 11:17:54,694 - INFO - Active Trades: 0
+2026-02-19 11:17:54,694 - INFO - Completed Trades: 4
+2026-02-19 11:17:54,694 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:17:54,695 - INFO - Max trades per day reached: 4
+2026-02-19 11:17:54,695 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:19:54,696 - INFO - 
+================================================================================
+2026-02-19 11:19:54,696 - INFO - MARKET IS OPEN - 11:19:54
+2026-02-19 11:19:54,697 - INFO - Active Trades: 0
+2026-02-19 11:19:54,697 - INFO - Completed Trades: 4
+2026-02-19 11:19:54,697 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:19:54,697 - INFO - Max trades per day reached: 4
+2026-02-19 11:19:54,698 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:21:54,698 - INFO - 
+================================================================================
+2026-02-19 11:21:54,699 - INFO - MARKET IS OPEN - 11:21:54
+2026-02-19 11:21:54,699 - INFO - Active Trades: 0
+2026-02-19 11:21:54,699 - INFO - Completed Trades: 4
+2026-02-19 11:21:54,699 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:21:54,700 - INFO - Max trades per day reached: 4
+2026-02-19 11:21:54,700 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:23:54,701 - INFO - 
+================================================================================
+2026-02-19 11:23:54,701 - INFO - MARKET IS OPEN - 11:23:54
+2026-02-19 11:23:54,702 - INFO - Active Trades: 0
+2026-02-19 11:23:54,702 - INFO - Completed Trades: 4
+2026-02-19 11:23:54,702 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:23:54,703 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:25:54,703 - INFO - 
+================================================================================
+2026-02-19 11:25:54,704 - INFO - MARKET IS OPEN - 11:25:54
+2026-02-19 11:25:54,704 - INFO - Active Trades: 0
+2026-02-19 11:25:54,704 - INFO - Completed Trades: 4
+2026-02-19 11:25:54,705 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:25:54,705 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:27:54,706 - INFO - 
+================================================================================
+2026-02-19 11:27:54,706 - INFO - MARKET IS OPEN - 11:27:54
+2026-02-19 11:27:54,707 - INFO - Active Trades: 0
+2026-02-19 11:27:54,707 - INFO - Completed Trades: 4
+2026-02-19 11:27:54,707 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:27:54,707 - INFO - Max trades per day reached: 4
+2026-02-19 11:27:54,707 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:29:54,708 - INFO - 
+================================================================================
+2026-02-19 11:29:54,709 - INFO - MARKET IS OPEN - 11:29:54
+2026-02-19 11:29:54,709 - INFO - Active Trades: 0
+2026-02-19 11:29:54,709 - INFO - Completed Trades: 4
+2026-02-19 11:29:54,710 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:29:54,710 - INFO - Max trades per day reached: 4
+2026-02-19 11:29:54,710 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:31:54,711 - INFO - 
+================================================================================
+2026-02-19 11:31:54,711 - INFO - MARKET IS OPEN - 11:31:54
+2026-02-19 11:31:54,712 - INFO - Active Trades: 0
+2026-02-19 11:31:54,712 - INFO - Completed Trades: 4
+2026-02-19 11:31:54,712 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:31:54,712 - INFO - Max trades per day reached: 4
+2026-02-19 11:31:54,712 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:33:54,713 - INFO - 
+================================================================================
+2026-02-19 11:33:54,714 - INFO - MARKET IS OPEN - 11:33:54
+2026-02-19 11:33:54,714 - INFO - Active Trades: 0
+2026-02-19 11:33:54,714 - INFO - Completed Trades: 4
+2026-02-19 11:33:54,715 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:33:54,715 - INFO - Max trades per day reached: 4
+2026-02-19 11:33:54,715 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:35:54,716 - INFO - 
+================================================================================
+2026-02-19 11:35:54,717 - INFO - MARKET IS OPEN - 11:35:54
+2026-02-19 11:35:54,717 - INFO - Active Trades: 0
+2026-02-19 11:35:54,717 - INFO - Completed Trades: 4
+2026-02-19 11:35:54,717 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:35:54,718 - INFO - Max trades per day reached: 4
+2026-02-19 11:35:54,718 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:37:54,719 - INFO - 
+================================================================================
+2026-02-19 11:37:54,719 - INFO - MARKET IS OPEN - 11:37:54
+2026-02-19 11:37:54,720 - INFO - Active Trades: 0
+2026-02-19 11:37:54,720 - INFO - Completed Trades: 4
+2026-02-19 11:37:54,720 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:37:54,720 - INFO - Max trades per day reached: 4
+2026-02-19 11:37:54,720 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:39:54,721 - INFO - 
+================================================================================
+2026-02-19 11:39:54,722 - INFO - MARKET IS OPEN - 11:39:54
+2026-02-19 11:39:54,722 - INFO - Active Trades: 0
+2026-02-19 11:39:54,723 - INFO - Completed Trades: 4
+2026-02-19 11:39:54,723 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:39:54,723 - INFO - Max trades per day reached: 4
+2026-02-19 11:39:54,723 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:41:54,724 - INFO - 
+================================================================================
+2026-02-19 11:41:54,725 - INFO - MARKET IS OPEN - 11:41:54
+2026-02-19 11:41:54,725 - INFO - Active Trades: 0
+2026-02-19 11:41:54,725 - INFO - Completed Trades: 4
+2026-02-19 11:41:54,725 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:41:54,725 - INFO - Max trades per day reached: 4
+2026-02-19 11:41:54,726 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:43:54,726 - INFO - 
+================================================================================
+2026-02-19 11:43:54,727 - INFO - MARKET IS OPEN - 11:43:54
+2026-02-19 11:43:54,727 - INFO - Active Trades: 0
+2026-02-19 11:43:54,727 - INFO - Completed Trades: 4
+2026-02-19 11:43:54,728 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:43:54,728 - INFO - Max trades per day reached: 4
+2026-02-19 11:43:54,728 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:45:54,729 - INFO - 
+================================================================================
+2026-02-19 11:45:54,729 - INFO - MARKET IS OPEN - 11:45:54
+2026-02-19 11:45:54,730 - INFO - Active Trades: 0
+2026-02-19 11:45:54,730 - INFO - Completed Trades: 4
+2026-02-19 11:45:54,730 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:45:54,731 - INFO - Max trades per day reached: 4
+2026-02-19 11:45:54,731 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:47:54,732 - INFO - 
+================================================================================
+2026-02-19 11:47:54,732 - INFO - MARKET IS OPEN - 11:47:54
+2026-02-19 11:47:54,732 - INFO - Active Trades: 0
+2026-02-19 11:47:54,733 - INFO - Completed Trades: 4
+2026-02-19 11:47:54,733 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:47:54,733 - INFO - Max trades per day reached: 4
+2026-02-19 11:47:54,733 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:49:54,734 - INFO - 
+================================================================================
+2026-02-19 11:49:54,734 - INFO - MARKET IS OPEN - 11:49:54
+2026-02-19 11:49:54,735 - INFO - Active Trades: 0
+2026-02-19 11:49:54,735 - INFO - Completed Trades: 4
+2026-02-19 11:49:54,735 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:49:54,735 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:51:54,736 - INFO - 
+================================================================================
+2026-02-19 11:51:54,737 - INFO - MARKET IS OPEN - 11:51:54
+2026-02-19 11:51:54,737 - INFO - Active Trades: 0
+2026-02-19 11:51:54,738 - INFO - Completed Trades: 4
+2026-02-19 11:51:54,738 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:51:54,738 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:53:54,739 - INFO - 
+================================================================================
+2026-02-19 11:53:54,740 - INFO - MARKET IS OPEN - 11:53:54
+2026-02-19 11:53:54,740 - INFO - Active Trades: 0
+2026-02-19 11:53:54,740 - INFO - Completed Trades: 4
+2026-02-19 11:53:54,740 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:53:54,741 - INFO - Max trades per day reached: 4
+2026-02-19 11:53:54,741 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:55:54,742 - INFO - 
+================================================================================
+2026-02-19 11:55:54,742 - INFO - MARKET IS OPEN - 11:55:54
+2026-02-19 11:55:54,743 - INFO - Active Trades: 0
+2026-02-19 11:55:54,743 - INFO - Completed Trades: 4
+2026-02-19 11:55:54,743 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:55:54,743 - INFO - Max trades per day reached: 4
+2026-02-19 11:55:54,744 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:57:54,745 - INFO - 
+================================================================================
+2026-02-19 11:57:54,746 - INFO - MARKET IS OPEN - 11:57:54
+2026-02-19 11:57:54,746 - INFO - Active Trades: 0
+2026-02-19 11:57:54,746 - INFO - Completed Trades: 4
+2026-02-19 11:57:54,746 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:57:54,747 - INFO - Max trades per day reached: 4
+2026-02-19 11:57:54,747 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 11:59:54,748 - INFO - 
+================================================================================
+2026-02-19 11:59:54,748 - INFO - MARKET IS OPEN - 11:59:54
+2026-02-19 11:59:54,749 - INFO - Active Trades: 0
+2026-02-19 11:59:54,749 - INFO - Completed Trades: 4
+2026-02-19 11:59:54,749 - INFO - Available Capital: ₹52,975.00
+2026-02-19 11:59:54,749 - INFO - Max trades per day reached: 4
+2026-02-19 11:59:54,750 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:01:54,751 - INFO - 
+================================================================================
+2026-02-19 12:01:54,751 - INFO - MARKET IS OPEN - 12:01:54
+2026-02-19 12:01:54,751 - INFO - Active Trades: 0
+2026-02-19 12:01:54,752 - INFO - Completed Trades: 4
+2026-02-19 12:01:54,752 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:01:54,752 - INFO - Max trades per day reached: 4
+2026-02-19 12:01:54,752 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:03:54,753 - INFO - 
+================================================================================
+2026-02-19 12:03:54,754 - INFO - MARKET IS OPEN - 12:03:54
+2026-02-19 12:03:54,754 - INFO - Active Trades: 0
+2026-02-19 12:03:54,754 - INFO - Completed Trades: 4
+2026-02-19 12:03:54,754 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:03:54,755 - INFO - Max trades per day reached: 4
+2026-02-19 12:03:54,755 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:05:54,756 - INFO - 
+================================================================================
+2026-02-19 12:05:54,757 - INFO - MARKET IS OPEN - 12:05:54
+2026-02-19 12:05:54,757 - INFO - Active Trades: 0
+2026-02-19 12:05:54,757 - INFO - Completed Trades: 4
+2026-02-19 12:05:54,757 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:05:54,758 - INFO - Max trades per day reached: 4
+2026-02-19 12:05:54,758 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:07:54,759 - INFO - 
+================================================================================
+2026-02-19 12:07:54,759 - INFO - MARKET IS OPEN - 12:07:54
+2026-02-19 12:07:54,759 - INFO - Active Trades: 0
+2026-02-19 12:07:54,760 - INFO - Completed Trades: 4
+2026-02-19 12:07:54,760 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:07:54,760 - INFO - Max trades per day reached: 4
+2026-02-19 12:07:54,760 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:09:54,761 - INFO - 
+================================================================================
+2026-02-19 12:09:54,761 - INFO - MARKET IS OPEN - 12:09:54
+2026-02-19 12:09:54,761 - INFO - Active Trades: 0
+2026-02-19 12:09:54,762 - INFO - Completed Trades: 4
+2026-02-19 12:09:54,762 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:09:54,762 - INFO - Max trades per day reached: 4
+2026-02-19 12:09:54,762 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:11:54,763 - INFO - 
+================================================================================
+2026-02-19 12:11:54,763 - INFO - MARKET IS OPEN - 12:11:54
+2026-02-19 12:11:54,764 - INFO - Active Trades: 0
+2026-02-19 12:11:54,764 - INFO - Completed Trades: 4
+2026-02-19 12:11:54,764 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:11:54,764 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:13:54,765 - INFO - 
+================================================================================
+2026-02-19 12:13:54,766 - INFO - MARKET IS OPEN - 12:13:54
+2026-02-19 12:13:54,766 - INFO - Active Trades: 0
+2026-02-19 12:13:54,766 - INFO - Completed Trades: 4
+2026-02-19 12:13:54,766 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:13:54,766 - INFO - Max trades per day reached: 4
+2026-02-19 12:13:54,767 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:15:54,767 - INFO - 
+================================================================================
+2026-02-19 12:15:54,768 - INFO - MARKET IS OPEN - 12:15:54
+2026-02-19 12:15:54,768 - INFO - Active Trades: 0
+2026-02-19 12:15:54,768 - INFO - Completed Trades: 4
+2026-02-19 12:15:54,769 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:15:54,769 - INFO - Max trades per day reached: 4
+2026-02-19 12:15:54,769 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:17:54,770 - INFO - 
+================================================================================
+2026-02-19 12:17:54,771 - INFO - MARKET IS OPEN - 12:17:54
+2026-02-19 12:17:54,771 - INFO - Active Trades: 0
+2026-02-19 12:17:54,771 - INFO - Completed Trades: 4
+2026-02-19 12:17:54,771 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:17:54,771 - INFO - Max trades per day reached: 4
+2026-02-19 12:17:54,772 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:19:54,773 - INFO - 
+================================================================================
+2026-02-19 12:19:54,774 - INFO - MARKET IS OPEN - 12:19:54
+2026-02-19 12:19:54,774 - INFO - Active Trades: 0
+2026-02-19 12:19:54,774 - INFO - Completed Trades: 4
+2026-02-19 12:19:54,774 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:19:54,775 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:21:54,776 - INFO - 
+================================================================================
+2026-02-19 12:21:54,776 - INFO - MARKET IS OPEN - 12:21:54
+2026-02-19 12:21:54,777 - INFO - Active Trades: 0
+2026-02-19 12:21:54,777 - INFO - Completed Trades: 4
+2026-02-19 12:21:54,777 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:21:54,777 - INFO - Max trades per day reached: 4
+2026-02-19 12:21:54,777 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:23:54,778 - INFO - 
+================================================================================
+2026-02-19 12:23:54,779 - INFO - MARKET IS OPEN - 12:23:54
+2026-02-19 12:23:54,779 - INFO - Active Trades: 0
+2026-02-19 12:23:54,780 - INFO - Completed Trades: 4
+2026-02-19 12:23:54,780 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:23:54,780 - INFO - Max trades per day reached: 4
+2026-02-19 12:23:54,780 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:25:54,782 - INFO - 
+================================================================================
+2026-02-19 12:25:54,782 - INFO - MARKET IS OPEN - 12:25:54
+2026-02-19 12:25:54,783 - INFO - Active Trades: 0
+2026-02-19 12:25:54,783 - INFO - Completed Trades: 4
+2026-02-19 12:25:54,783 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:25:54,783 - INFO - Max trades per day reached: 4
+2026-02-19 12:25:54,783 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:27:54,784 - INFO - 
+================================================================================
+2026-02-19 12:27:54,784 - INFO - MARKET IS OPEN - 12:27:54
+2026-02-19 12:27:54,785 - INFO - Active Trades: 0
+2026-02-19 12:27:54,785 - INFO - Completed Trades: 4
+2026-02-19 12:27:54,785 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:27:54,785 - INFO - Max trades per day reached: 4
+2026-02-19 12:27:54,785 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:29:54,786 - INFO - 
+================================================================================
+2026-02-19 12:29:54,787 - INFO - MARKET IS OPEN - 12:29:54
+2026-02-19 12:29:54,787 - INFO - Active Trades: 0
+2026-02-19 12:29:54,788 - INFO - Completed Trades: 4
+2026-02-19 12:29:54,788 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:29:54,788 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:31:54,789 - INFO - 
+================================================================================
+2026-02-19 12:31:54,790 - INFO - MARKET IS OPEN - 12:31:54
+2026-02-19 12:31:54,790 - INFO - Active Trades: 0
+2026-02-19 12:31:54,790 - INFO - Completed Trades: 4
+2026-02-19 12:31:54,791 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:31:54,791 - INFO - Max trades per day reached: 4
+2026-02-19 12:31:54,791 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:33:54,792 - INFO - 
+================================================================================
+2026-02-19 12:33:54,793 - INFO - MARKET IS OPEN - 12:33:54
+2026-02-19 12:33:54,793 - INFO - Active Trades: 0
+2026-02-19 12:33:54,793 - INFO - Completed Trades: 4
+2026-02-19 12:33:54,793 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:33:54,794 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:35:54,795 - INFO - 
+================================================================================
+2026-02-19 12:35:54,795 - INFO - MARKET IS OPEN - 12:35:54
+2026-02-19 12:35:54,796 - INFO - Active Trades: 0
+2026-02-19 12:35:54,796 - INFO - Completed Trades: 4
+2026-02-19 12:35:54,796 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:35:54,796 - INFO - Max trades per day reached: 4
+2026-02-19 12:35:54,796 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:37:54,798 - INFO - 
+================================================================================
+2026-02-19 12:37:54,798 - INFO - MARKET IS OPEN - 12:37:54
+2026-02-19 12:37:54,799 - INFO - Active Trades: 0
+2026-02-19 12:37:54,799 - INFO - Completed Trades: 4
+2026-02-19 12:37:54,800 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:37:54,800 - INFO - Max trades per day reached: 4
+2026-02-19 12:37:54,800 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:39:54,801 - INFO - 
+================================================================================
+2026-02-19 12:39:54,802 - INFO - MARKET IS OPEN - 12:39:54
+2026-02-19 12:39:54,802 - INFO - Active Trades: 0
+2026-02-19 12:39:54,802 - INFO - Completed Trades: 4
+2026-02-19 12:39:54,803 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:39:54,803 - INFO - Max trades per day reached: 4
+2026-02-19 12:39:54,803 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:41:54,804 - INFO - 
+================================================================================
+2026-02-19 12:41:54,805 - INFO - MARKET IS OPEN - 12:41:54
+2026-02-19 12:41:54,805 - INFO - Active Trades: 0
+2026-02-19 12:41:54,805 - INFO - Completed Trades: 4
+2026-02-19 12:41:54,805 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:41:54,806 - INFO - Max trades per day reached: 4
+2026-02-19 12:41:54,806 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:43:54,806 - INFO - 
+================================================================================
+2026-02-19 12:43:54,807 - INFO - MARKET IS OPEN - 12:43:54
+2026-02-19 12:43:54,807 - INFO - Active Trades: 0
+2026-02-19 12:43:54,808 - INFO - Completed Trades: 4
+2026-02-19 12:43:54,808 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:43:54,808 - INFO - Max trades per day reached: 4
+2026-02-19 12:43:54,808 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:45:54,809 - INFO - 
+================================================================================
+2026-02-19 12:45:54,810 - INFO - MARKET IS OPEN - 12:45:54
+2026-02-19 12:45:54,810 - INFO - Active Trades: 0
+2026-02-19 12:45:54,810 - INFO - Completed Trades: 4
+2026-02-19 12:45:54,810 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:45:54,810 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:47:54,811 - INFO - 
+================================================================================
+2026-02-19 12:47:54,812 - INFO - MARKET IS OPEN - 12:47:54
+2026-02-19 12:47:54,813 - INFO - Active Trades: 0
+2026-02-19 12:47:54,813 - INFO - Completed Trades: 4
+2026-02-19 12:47:54,813 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:47:54,814 - INFO - Max trades per day reached: 4
+2026-02-19 12:47:54,814 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:49:54,814 - INFO - 
+================================================================================
+2026-02-19 12:49:54,815 - INFO - MARKET IS OPEN - 12:49:54
+2026-02-19 12:49:54,815 - INFO - Active Trades: 0
+2026-02-19 12:49:54,815 - INFO - Completed Trades: 4
+2026-02-19 12:49:54,816 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:49:54,816 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:51:54,817 - INFO - 
+================================================================================
+2026-02-19 12:51:54,817 - INFO - MARKET IS OPEN - 12:51:54
+2026-02-19 12:51:54,818 - INFO - Active Trades: 0
+2026-02-19 12:51:54,818 - INFO - Completed Trades: 4
+2026-02-19 12:51:54,818 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:51:54,818 - INFO - Max trades per day reached: 4
+2026-02-19 12:51:54,819 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:53:54,819 - INFO - 
+================================================================================
+2026-02-19 12:53:54,820 - INFO - MARKET IS OPEN - 12:53:54
+2026-02-19 12:53:54,820 - INFO - Active Trades: 0
+2026-02-19 12:53:54,820 - INFO - Completed Trades: 4
+2026-02-19 12:53:54,821 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:53:54,821 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:55:54,821 - INFO - 
+================================================================================
+2026-02-19 12:55:54,822 - INFO - MARKET IS OPEN - 12:55:54
+2026-02-19 12:55:54,822 - INFO - Active Trades: 0
+2026-02-19 12:55:54,822 - INFO - Completed Trades: 4
+2026-02-19 12:55:54,823 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:55:54,823 - INFO - Max trades per day reached: 4
+2026-02-19 12:55:54,823 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:57:54,824 - INFO - 
+================================================================================
+2026-02-19 12:57:54,825 - INFO - MARKET IS OPEN - 12:57:54
+2026-02-19 12:57:54,825 - INFO - Active Trades: 0
+2026-02-19 12:57:54,825 - INFO - Completed Trades: 4
+2026-02-19 12:57:54,825 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:57:54,826 - INFO - Max trades per day reached: 4
+2026-02-19 12:57:54,826 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 12:59:54,827 - INFO - 
+================================================================================
+2026-02-19 12:59:54,827 - INFO - MARKET IS OPEN - 12:59:54
+2026-02-19 12:59:54,828 - INFO - Active Trades: 0
+2026-02-19 12:59:54,828 - INFO - Completed Trades: 4
+2026-02-19 12:59:54,828 - INFO - Available Capital: ₹52,975.00
+2026-02-19 12:59:54,828 - INFO - Max trades per day reached: 4
+2026-02-19 12:59:54,828 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:01:54,829 - INFO - 
+================================================================================
+2026-02-19 13:01:54,830 - INFO - MARKET IS OPEN - 13:01:54
+2026-02-19 13:01:54,830 - INFO - Active Trades: 0
+2026-02-19 13:01:54,831 - INFO - Completed Trades: 4
+2026-02-19 13:01:54,831 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:01:54,831 - INFO - Max trades per day reached: 4
+2026-02-19 13:01:54,831 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:03:54,832 - INFO - 
+================================================================================
+2026-02-19 13:03:54,832 - INFO - MARKET IS OPEN - 13:03:54
+2026-02-19 13:03:54,833 - INFO - Active Trades: 0
+2026-02-19 13:03:54,833 - INFO - Completed Trades: 4
+2026-02-19 13:03:54,833 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:03:54,833 - INFO - Max trades per day reached: 4
+2026-02-19 13:03:54,834 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:05:54,834 - INFO - 
+================================================================================
+2026-02-19 13:05:54,835 - INFO - MARKET IS OPEN - 13:05:54
+2026-02-19 13:05:54,836 - INFO - Active Trades: 0
+2026-02-19 13:05:54,836 - INFO - Completed Trades: 4
+2026-02-19 13:05:54,836 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:05:54,836 - INFO - Max trades per day reached: 4
+2026-02-19 13:05:54,836 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:07:54,837 - INFO - 
+================================================================================
+2026-02-19 13:07:54,838 - INFO - MARKET IS OPEN - 13:07:54
+2026-02-19 13:07:54,838 - INFO - Active Trades: 0
+2026-02-19 13:07:54,838 - INFO - Completed Trades: 4
+2026-02-19 13:07:54,839 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:07:54,839 - INFO - Max trades per day reached: 4
+2026-02-19 13:07:54,839 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:09:54,841 - INFO - 
+================================================================================
+2026-02-19 13:09:54,842 - INFO - MARKET IS OPEN - 13:09:54
+2026-02-19 13:09:54,842 - INFO - Active Trades: 0
+2026-02-19 13:09:54,842 - INFO - Completed Trades: 4
+2026-02-19 13:09:54,842 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:09:54,843 - INFO - Max trades per day reached: 4
+2026-02-19 13:09:54,843 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:11:54,843 - INFO - 
+================================================================================
+2026-02-19 13:11:54,844 - INFO - MARKET IS OPEN - 13:11:54
+2026-02-19 13:11:54,844 - INFO - Active Trades: 0
+2026-02-19 13:11:54,844 - INFO - Completed Trades: 4
+2026-02-19 13:11:54,844 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:11:54,845 - INFO - Max trades per day reached: 4
+2026-02-19 13:11:54,845 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:13:54,846 - INFO - 
+================================================================================
+2026-02-19 13:13:54,847 - INFO - MARKET IS OPEN - 13:13:54
+2026-02-19 13:13:54,847 - INFO - Active Trades: 0
+2026-02-19 13:13:54,847 - INFO - Completed Trades: 4
+2026-02-19 13:13:54,847 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:13:54,848 - INFO - Max trades per day reached: 4
+2026-02-19 13:13:54,848 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:15:54,851 - INFO - 
+================================================================================
+2026-02-19 13:15:54,855 - INFO - MARKET IS OPEN - 13:15:54
+2026-02-19 13:15:54,858 - INFO - Active Trades: 0
+2026-02-19 13:15:54,891 - INFO - Completed Trades: 4
+2026-02-19 13:15:54,891 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:15:54,892 - INFO - Max trades per day reached: 4
+2026-02-19 13:15:54,892 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:17:54,892 - INFO - 
+================================================================================
+2026-02-19 13:17:54,893 - INFO - MARKET IS OPEN - 13:17:54
+2026-02-19 13:17:54,893 - INFO - Active Trades: 0
+2026-02-19 13:17:54,894 - INFO - Completed Trades: 4
+2026-02-19 13:17:54,894 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:17:54,894 - INFO - Max trades per day reached: 4
+2026-02-19 13:17:54,894 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:19:54,895 - INFO - 
+================================================================================
+2026-02-19 13:19:54,895 - INFO - MARKET IS OPEN - 13:19:54
+2026-02-19 13:19:54,896 - INFO - Active Trades: 0
+2026-02-19 13:19:54,896 - INFO - Completed Trades: 4
+2026-02-19 13:19:54,896 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:19:54,896 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:21:54,897 - INFO - 
+================================================================================
+2026-02-19 13:21:54,898 - INFO - MARKET IS OPEN - 13:21:54
+2026-02-19 13:21:54,898 - INFO - Active Trades: 0
+2026-02-19 13:21:54,898 - INFO - Completed Trades: 4
+2026-02-19 13:21:54,899 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:21:54,899 - INFO - Max trades per day reached: 4
+2026-02-19 13:21:54,899 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:23:54,900 - INFO - 
+================================================================================
+2026-02-19 13:23:54,901 - INFO - MARKET IS OPEN - 13:23:54
+2026-02-19 13:23:54,901 - INFO - Active Trades: 0
+2026-02-19 13:23:54,901 - INFO - Completed Trades: 4
+2026-02-19 13:23:54,902 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:23:54,902 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:25:54,903 - INFO - 
+================================================================================
+2026-02-19 13:25:54,904 - INFO - MARKET IS OPEN - 13:25:54
+2026-02-19 13:25:54,905 - INFO - Active Trades: 0
+2026-02-19 13:25:54,905 - INFO - Completed Trades: 4
+2026-02-19 13:25:54,905 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:25:54,905 - INFO - Max trades per day reached: 4
+2026-02-19 13:25:54,906 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:27:54,907 - INFO - 
+================================================================================
+2026-02-19 13:27:54,907 - INFO - MARKET IS OPEN - 13:27:54
+2026-02-19 13:27:54,908 - INFO - Active Trades: 0
+2026-02-19 13:27:54,908 - INFO - Completed Trades: 4
+2026-02-19 13:27:54,908 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:27:54,908 - INFO - Max trades per day reached: 4
+2026-02-19 13:27:54,909 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:29:54,909 - INFO - 
+================================================================================
+2026-02-19 13:29:54,910 - INFO - MARKET IS OPEN - 13:29:54
+2026-02-19 13:29:54,910 - INFO - Active Trades: 0
+2026-02-19 13:29:54,910 - INFO - Completed Trades: 4
+2026-02-19 13:29:54,911 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:29:54,911 - INFO - Max trades per day reached: 4
+2026-02-19 13:29:54,911 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:31:54,912 - INFO - 
+================================================================================
+2026-02-19 13:31:54,913 - INFO - MARKET IS OPEN - 13:31:54
+2026-02-19 13:31:54,913 - INFO - Active Trades: 0
+2026-02-19 13:31:54,913 - INFO - Completed Trades: 4
+2026-02-19 13:31:54,913 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:31:54,914 - INFO - Max trades per day reached: 4
+2026-02-19 13:31:54,914 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:33:54,915 - INFO - 
+================================================================================
+2026-02-19 13:33:54,915 - INFO - MARKET IS OPEN - 13:33:54
+2026-02-19 13:33:54,915 - INFO - Active Trades: 0
+2026-02-19 13:33:54,915 - INFO - Completed Trades: 4
+2026-02-19 13:33:54,916 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:33:54,916 - INFO - Max trades per day reached: 4
+2026-02-19 13:33:54,916 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:35:54,917 - INFO - 
+================================================================================
+2026-02-19 13:35:54,918 - INFO - MARKET IS OPEN - 13:35:54
+2026-02-19 13:35:54,918 - INFO - Active Trades: 0
+2026-02-19 13:35:54,918 - INFO - Completed Trades: 4
+2026-02-19 13:35:54,918 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:35:54,918 - INFO - Max trades per day reached: 4
+2026-02-19 13:35:54,919 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:37:54,920 - INFO - 
+================================================================================
+2026-02-19 13:37:54,920 - INFO - MARKET IS OPEN - 13:37:54
+2026-02-19 13:37:54,921 - INFO - Active Trades: 0
+2026-02-19 13:37:54,921 - INFO - Completed Trades: 4
+2026-02-19 13:37:54,921 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:37:54,921 - INFO - Max trades per day reached: 4
+2026-02-19 13:37:54,921 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:39:54,923 - INFO - 
+================================================================================
+2026-02-19 13:39:54,923 - INFO - MARKET IS OPEN - 13:39:54
+2026-02-19 13:39:54,924 - INFO - Active Trades: 0
+2026-02-19 13:39:54,924 - INFO - Completed Trades: 4
+2026-02-19 13:39:54,924 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:39:54,925 - INFO - Max trades per day reached: 4
+2026-02-19 13:39:54,925 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:41:54,926 - INFO - 
+================================================================================
+2026-02-19 13:41:54,927 - INFO - MARKET IS OPEN - 13:41:54
+2026-02-19 13:41:54,927 - INFO - Active Trades: 0
+2026-02-19 13:41:54,927 - INFO - Completed Trades: 4
+2026-02-19 13:41:54,927 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:41:54,928 - INFO - Max trades per day reached: 4
+2026-02-19 13:41:54,928 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:43:54,929 - INFO - 
+================================================================================
+2026-02-19 13:43:54,929 - INFO - MARKET IS OPEN - 13:43:54
+2026-02-19 13:43:54,929 - INFO - Active Trades: 0
+2026-02-19 13:43:54,930 - INFO - Completed Trades: 4
+2026-02-19 13:43:54,930 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:43:54,930 - INFO - Max trades per day reached: 4
+2026-02-19 13:43:54,930 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:45:54,931 - INFO - 
+================================================================================
+2026-02-19 13:45:54,932 - INFO - MARKET IS OPEN - 13:45:54
+2026-02-19 13:45:54,932 - INFO - Active Trades: 0
+2026-02-19 13:45:54,933 - INFO - Completed Trades: 4
+2026-02-19 13:45:54,933 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:45:54,933 - INFO - Max trades per day reached: 4
+2026-02-19 13:45:54,933 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:47:54,934 - INFO - 
+================================================================================
+2026-02-19 13:47:54,935 - INFO - MARKET IS OPEN - 13:47:54
+2026-02-19 13:47:54,935 - INFO - Active Trades: 0
+2026-02-19 13:47:54,936 - INFO - Completed Trades: 4
+2026-02-19 13:47:54,936 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:47:54,936 - INFO - Max trades per day reached: 4
+2026-02-19 13:47:54,936 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:49:54,937 - INFO - 
+================================================================================
+2026-02-19 13:49:54,938 - INFO - MARKET IS OPEN - 13:49:54
+2026-02-19 13:49:54,938 - INFO - Active Trades: 0
+2026-02-19 13:49:54,939 - INFO - Completed Trades: 4
+2026-02-19 13:49:54,939 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:49:54,939 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:51:54,940 - INFO - 
+================================================================================
+2026-02-19 13:51:54,941 - INFO - MARKET IS OPEN - 13:51:54
+2026-02-19 13:51:54,941 - INFO - Active Trades: 0
+2026-02-19 13:51:54,941 - INFO - Completed Trades: 4
+2026-02-19 13:51:54,942 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:51:54,942 - INFO - Max trades per day reached: 4
+2026-02-19 13:51:54,942 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:53:54,943 - INFO - 
+================================================================================
+2026-02-19 13:53:54,943 - INFO - MARKET IS OPEN - 13:53:54
+2026-02-19 13:53:54,944 - INFO - Active Trades: 0
+2026-02-19 13:53:54,944 - INFO - Completed Trades: 4
+2026-02-19 13:53:54,944 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:53:54,944 - INFO - Max trades per day reached: 4
+2026-02-19 13:53:54,944 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:55:54,946 - INFO - 
+================================================================================
+2026-02-19 13:55:54,947 - INFO - MARKET IS OPEN - 13:55:54
+2026-02-19 13:55:54,947 - INFO - Active Trades: 0
+2026-02-19 13:55:54,947 - INFO - Completed Trades: 4
+2026-02-19 13:55:54,947 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:55:54,948 - INFO - Max trades per day reached: 4
+2026-02-19 13:55:54,948 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:57:54,949 - INFO - 
+================================================================================
+2026-02-19 13:57:54,949 - INFO - MARKET IS OPEN - 13:57:54
+2026-02-19 13:57:54,950 - INFO - Active Trades: 0
+2026-02-19 13:57:54,950 - INFO - Completed Trades: 4
+2026-02-19 13:57:54,950 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:57:54,951 - INFO - Max trades per day reached: 4
+2026-02-19 13:57:54,951 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 13:59:54,952 - INFO - 
+================================================================================
+2026-02-19 13:59:54,952 - INFO - MARKET IS OPEN - 13:59:54
+2026-02-19 13:59:54,953 - INFO - Active Trades: 0
+2026-02-19 13:59:54,953 - INFO - Completed Trades: 4
+2026-02-19 13:59:54,953 - INFO - Available Capital: ₹52,975.00
+2026-02-19 13:59:54,953 - INFO - Max trades per day reached: 4
+2026-02-19 13:59:54,954 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:01:54,955 - INFO - 
+================================================================================
+2026-02-19 14:01:54,955 - INFO - MARKET IS OPEN - 14:01:54
+2026-02-19 14:01:54,956 - INFO - Active Trades: 0
+2026-02-19 14:01:54,956 - INFO - Completed Trades: 4
+2026-02-19 14:01:54,956 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:01:54,956 - INFO - Max trades per day reached: 4
+2026-02-19 14:01:54,956 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:03:54,957 - INFO - 
+================================================================================
+2026-02-19 14:03:54,958 - INFO - MARKET IS OPEN - 14:03:54
+2026-02-19 14:03:54,958 - INFO - Active Trades: 0
+2026-02-19 14:03:54,958 - INFO - Completed Trades: 4
+2026-02-19 14:03:54,958 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:03:54,959 - INFO - Max trades per day reached: 4
+2026-02-19 14:03:54,959 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:05:54,959 - INFO - 
+================================================================================
+2026-02-19 14:05:54,960 - INFO - MARKET IS OPEN - 14:05:54
+2026-02-19 14:05:54,960 - INFO - Active Trades: 0
+2026-02-19 14:05:54,960 - INFO - Completed Trades: 4
+2026-02-19 14:05:54,960 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:05:54,961 - INFO - Max trades per day reached: 4
+2026-02-19 14:05:54,961 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:07:54,962 - INFO - 
+================================================================================
+2026-02-19 14:07:54,962 - INFO - MARKET IS OPEN - 14:07:54
+2026-02-19 14:07:54,963 - INFO - Active Trades: 0
+2026-02-19 14:07:54,963 - INFO - Completed Trades: 4
+2026-02-19 14:07:54,963 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:07:54,963 - INFO - Max trades per day reached: 4
+2026-02-19 14:07:54,963 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:09:54,964 - INFO - 
+================================================================================
+2026-02-19 14:09:54,965 - INFO - MARKET IS OPEN - 14:09:54
+2026-02-19 14:09:54,965 - INFO - Active Trades: 0
+2026-02-19 14:09:54,965 - INFO - Completed Trades: 4
+2026-02-19 14:09:54,966 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:09:54,966 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:11:54,967 - INFO - 
+================================================================================
+2026-02-19 14:11:54,968 - INFO - MARKET IS OPEN - 14:11:54
+2026-02-19 14:11:54,968 - INFO - Active Trades: 0
+2026-02-19 14:11:54,968 - INFO - Completed Trades: 4
+2026-02-19 14:11:54,968 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:11:54,969 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:13:54,969 - INFO - 
+================================================================================
+2026-02-19 14:13:54,972 - INFO - MARKET IS OPEN - 14:13:54
+2026-02-19 14:13:54,973 - INFO - Active Trades: 0
+2026-02-19 14:13:54,973 - INFO - Completed Trades: 4
+2026-02-19 14:13:54,973 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:13:54,973 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:15:54,974 - INFO - 
+================================================================================
+2026-02-19 14:15:54,975 - INFO - MARKET IS OPEN - 14:15:54
+2026-02-19 14:15:54,975 - INFO - Active Trades: 0
+2026-02-19 14:15:54,975 - INFO - Completed Trades: 4
+2026-02-19 14:15:54,975 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:15:54,976 - INFO - Max trades per day reached: 4
+2026-02-19 14:15:54,976 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:17:54,977 - INFO - 
+================================================================================
+2026-02-19 14:17:54,978 - INFO - MARKET IS OPEN - 14:17:54
+2026-02-19 14:17:54,978 - INFO - Active Trades: 0
+2026-02-19 14:17:54,979 - INFO - Completed Trades: 4
+2026-02-19 14:17:54,979 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:17:54,979 - INFO - Max trades per day reached: 4
+2026-02-19 14:17:54,979 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:19:54,980 - INFO - 
+================================================================================
+2026-02-19 14:19:54,981 - INFO - MARKET IS OPEN - 14:19:54
+2026-02-19 14:19:54,981 - INFO - Active Trades: 0
+2026-02-19 14:19:54,981 - INFO - Completed Trades: 4
+2026-02-19 14:19:54,982 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:19:54,982 - INFO - Max trades per day reached: 4
+2026-02-19 14:19:54,982 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:21:54,983 - INFO - 
+================================================================================
+2026-02-19 14:21:54,983 - INFO - MARKET IS OPEN - 14:21:54
+2026-02-19 14:21:54,984 - INFO - Active Trades: 0
+2026-02-19 14:21:54,984 - INFO - Completed Trades: 4
+2026-02-19 14:21:54,984 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:21:54,984 - INFO - Max trades per day reached: 4
+2026-02-19 14:21:54,985 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:23:54,985 - INFO - 
+================================================================================
+2026-02-19 14:23:54,986 - INFO - MARKET IS OPEN - 14:23:54
+2026-02-19 14:23:54,986 - INFO - Active Trades: 0
+2026-02-19 14:23:54,987 - INFO - Completed Trades: 4
+2026-02-19 14:23:54,987 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:23:54,987 - INFO - Max trades per day reached: 4
+2026-02-19 14:23:54,987 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:25:54,989 - INFO - 
+================================================================================
+2026-02-19 14:25:54,989 - INFO - MARKET IS OPEN - 14:25:54
+2026-02-19 14:25:54,989 - INFO - Active Trades: 0
+2026-02-19 14:25:54,990 - INFO - Completed Trades: 4
+2026-02-19 14:25:54,990 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:25:54,990 - INFO - Max trades per day reached: 4
+2026-02-19 14:25:54,990 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:27:54,991 - INFO - 
+================================================================================
+2026-02-19 14:27:54,992 - INFO - MARKET IS OPEN - 14:27:54
+2026-02-19 14:27:54,992 - INFO - Active Trades: 0
+2026-02-19 14:27:54,992 - INFO - Completed Trades: 4
+2026-02-19 14:27:54,993 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:27:54,993 - INFO - Max trades per day reached: 4
+2026-02-19 14:27:54,993 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:29:54,994 - INFO - 
+================================================================================
+2026-02-19 14:29:54,995 - INFO - MARKET IS OPEN - 14:29:54
+2026-02-19 14:29:54,995 - INFO - Active Trades: 0
+2026-02-19 14:29:54,995 - INFO - Completed Trades: 4
+2026-02-19 14:29:54,995 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:29:54,996 - INFO - Max trades per day reached: 4
+2026-02-19 14:29:54,996 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:31:54,996 - INFO - 
+================================================================================
+2026-02-19 14:31:54,997 - INFO - MARKET IS OPEN - 14:31:54
+2026-02-19 14:31:54,997 - INFO - Active Trades: 0
+2026-02-19 14:31:54,998 - INFO - Completed Trades: 4
+2026-02-19 14:31:54,998 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:31:54,998 - INFO - Max trades per day reached: 4
+2026-02-19 14:31:54,998 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:33:54,999 - INFO - 
+================================================================================
+2026-02-19 14:33:55,000 - INFO - MARKET IS OPEN - 14:33:54
+2026-02-19 14:33:55,000 - INFO - Active Trades: 0
+2026-02-19 14:33:55,000 - INFO - Completed Trades: 4
+2026-02-19 14:33:55,000 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:33:55,001 - INFO - Max trades per day reached: 4
+2026-02-19 14:33:55,001 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:35:55,002 - INFO - 
+================================================================================
+2026-02-19 14:35:55,003 - INFO - MARKET IS OPEN - 14:35:55
+2026-02-19 14:35:55,003 - INFO - Active Trades: 0
+2026-02-19 14:35:55,003 - INFO - Completed Trades: 4
+2026-02-19 14:35:55,003 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:35:55,003 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:37:55,004 - INFO - 
+================================================================================
+2026-02-19 14:37:55,005 - INFO - MARKET IS OPEN - 14:37:55
+2026-02-19 14:37:55,005 - INFO - Active Trades: 0
+2026-02-19 14:37:55,006 - INFO - Completed Trades: 4
+2026-02-19 14:37:55,006 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:37:55,006 - INFO - Max trades per day reached: 4
+2026-02-19 14:37:55,006 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:39:55,007 - INFO - 
+================================================================================
+2026-02-19 14:39:55,008 - INFO - MARKET IS OPEN - 14:39:55
+2026-02-19 14:39:55,008 - INFO - Active Trades: 0
+2026-02-19 14:39:55,008 - INFO - Completed Trades: 4
+2026-02-19 14:39:55,009 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:39:55,009 - INFO - Max trades per day reached: 4
+2026-02-19 14:39:55,009 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:41:55,010 - INFO - 
+================================================================================
+2026-02-19 14:41:55,010 - INFO - MARKET IS OPEN - 14:41:55
+2026-02-19 14:41:55,011 - INFO - Active Trades: 0
+2026-02-19 14:41:55,011 - INFO - Completed Trades: 4
+2026-02-19 14:41:55,011 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:41:55,011 - INFO - Max trades per day reached: 4
+2026-02-19 14:41:55,012 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:43:55,013 - INFO - 
+================================================================================
+2026-02-19 14:43:55,013 - INFO - MARKET IS OPEN - 14:43:55
+2026-02-19 14:43:55,013 - INFO - Active Trades: 0
+2026-02-19 14:43:55,014 - INFO - Completed Trades: 4
+2026-02-19 14:43:55,014 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:43:55,014 - INFO - Max trades per day reached: 4
+2026-02-19 14:43:55,014 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:45:55,016 - INFO - 
+================================================================================
+2026-02-19 14:45:55,017 - INFO - MARKET IS OPEN - 14:45:55
+2026-02-19 14:45:55,017 - INFO - Active Trades: 0
+2026-02-19 14:45:55,017 - INFO - Completed Trades: 4
+2026-02-19 14:45:55,018 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:45:55,018 - INFO - Max trades per day reached: 4
+2026-02-19 14:45:55,018 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:47:55,019 - INFO - 
+================================================================================
+2026-02-19 14:47:55,020 - INFO - MARKET IS OPEN - 14:47:55
+2026-02-19 14:47:55,021 - INFO - Active Trades: 0
+2026-02-19 14:47:55,021 - INFO - Completed Trades: 4
+2026-02-19 14:47:55,021 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:47:55,021 - INFO - Max trades per day reached: 4
+2026-02-19 14:47:55,022 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:49:55,023 - INFO - 
+================================================================================
+2026-02-19 14:49:55,024 - INFO - MARKET IS OPEN - 14:49:55
+2026-02-19 14:49:55,024 - INFO - Active Trades: 0
+2026-02-19 14:49:55,025 - INFO - Completed Trades: 4
+2026-02-19 14:49:55,025 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:49:55,025 - INFO - Max trades per day reached: 4
+2026-02-19 14:49:55,025 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:51:55,026 - INFO - 
+================================================================================
+2026-02-19 14:51:55,026 - INFO - MARKET IS OPEN - 14:51:55
+2026-02-19 14:51:55,027 - INFO - Active Trades: 0
+2026-02-19 14:51:55,027 - INFO - Completed Trades: 4
+2026-02-19 14:51:55,027 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:51:55,027 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:53:55,029 - INFO - 
+================================================================================
+2026-02-19 14:53:55,029 - INFO - MARKET IS OPEN - 14:53:55
+2026-02-19 14:53:55,030 - INFO - Active Trades: 0
+2026-02-19 14:53:55,030 - INFO - Completed Trades: 4
+2026-02-19 14:53:55,030 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:53:55,030 - INFO - Max trades per day reached: 4
+2026-02-19 14:53:55,031 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:55:55,031 - INFO - 
+================================================================================
+2026-02-19 14:55:55,032 - INFO - MARKET IS OPEN - 14:55:55
+2026-02-19 14:55:55,032 - INFO - Active Trades: 0
+2026-02-19 14:55:55,032 - INFO - Completed Trades: 4
+2026-02-19 14:55:55,033 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:55:55,033 - INFO - Max trades per day reached: 4
+2026-02-19 14:55:55,033 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:57:55,034 - INFO - 
+================================================================================
+2026-02-19 14:57:55,035 - INFO - MARKET IS OPEN - 14:57:55
+2026-02-19 14:57:55,035 - INFO - Active Trades: 0
+2026-02-19 14:57:55,035 - INFO - Completed Trades: 4
+2026-02-19 14:57:55,036 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:57:55,038 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 14:59:55,039 - INFO - 
+================================================================================
+2026-02-19 14:59:55,040 - INFO - MARKET IS OPEN - 14:59:55
+2026-02-19 14:59:55,040 - INFO - Active Trades: 0
+2026-02-19 14:59:55,040 - INFO - Completed Trades: 4
+2026-02-19 14:59:55,040 - INFO - Available Capital: ₹52,975.00
+2026-02-19 14:59:55,041 - INFO - Max trades per day reached: 4
+2026-02-19 14:59:55,041 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:01:55,042 - INFO - 
+================================================================================
+2026-02-19 15:01:55,042 - INFO - MARKET IS OPEN - 15:01:55
+2026-02-19 15:01:55,043 - INFO - Active Trades: 0
+2026-02-19 15:01:55,043 - INFO - Completed Trades: 4
+2026-02-19 15:01:55,043 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:01:55,043 - INFO - Max trades per day reached: 4
+2026-02-19 15:01:55,043 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:03:55,044 - INFO - 
+================================================================================
+2026-02-19 15:03:55,045 - INFO - MARKET IS OPEN - 15:03:55
+2026-02-19 15:03:55,045 - INFO - Active Trades: 0
+2026-02-19 15:03:55,045 - INFO - Completed Trades: 4
+2026-02-19 15:03:55,046 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:03:55,046 - INFO - Max trades per day reached: 4
+2026-02-19 15:03:55,046 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:05:55,047 - INFO - 
+================================================================================
+2026-02-19 15:05:55,048 - INFO - MARKET IS OPEN - 15:05:55
+2026-02-19 15:05:55,048 - INFO - Active Trades: 0
+2026-02-19 15:05:55,048 - INFO - Completed Trades: 4
+2026-02-19 15:05:55,048 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:05:55,049 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:07:55,049 - INFO - 
+================================================================================
+2026-02-19 15:07:55,050 - INFO - MARKET IS OPEN - 15:07:55
+2026-02-19 15:07:55,050 - INFO - Active Trades: 0
+2026-02-19 15:07:55,051 - INFO - Completed Trades: 4
+2026-02-19 15:07:55,051 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:07:55,051 - INFO - Max trades per day reached: 4
+2026-02-19 15:07:55,051 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:09:55,052 - INFO - 
+================================================================================
+2026-02-19 15:09:55,053 - INFO - MARKET IS OPEN - 15:09:55
+2026-02-19 15:09:55,053 - INFO - Active Trades: 0
+2026-02-19 15:09:55,053 - INFO - Completed Trades: 4
+2026-02-19 15:09:55,054 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:09:55,054 - INFO - Max trades per day reached: 4
+2026-02-19 15:09:55,054 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:11:55,055 - INFO - 
+================================================================================
+2026-02-19 15:11:55,056 - INFO - MARKET IS OPEN - 15:11:55
+2026-02-19 15:11:55,056 - INFO - Active Trades: 0
+2026-02-19 15:11:55,056 - INFO - Completed Trades: 4
+2026-02-19 15:11:55,057 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:11:55,057 - INFO - Max trades per day reached: 4
+2026-02-19 15:11:55,057 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:13:55,058 - INFO - 
+================================================================================
+2026-02-19 15:13:55,059 - INFO - MARKET IS OPEN - 15:13:55
+2026-02-19 15:13:55,059 - INFO - Active Trades: 0
+2026-02-19 15:13:55,060 - INFO - Completed Trades: 4
+2026-02-19 15:13:55,060 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:13:55,060 - INFO - Max trades per day reached: 4
+2026-02-19 15:13:55,060 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:15:55,061 - INFO - 
+================================================================================
+2026-02-19 15:15:55,062 - INFO - MARKET IS OPEN - 15:15:55
+2026-02-19 15:15:55,062 - INFO - Active Trades: 0
+2026-02-19 15:15:55,062 - INFO - Completed Trades: 4
+2026-02-19 15:15:55,062 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:15:55,063 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:17:55,063 - INFO - 
+================================================================================
+2026-02-19 15:17:55,064 - INFO - MARKET IS OPEN - 15:17:55
+2026-02-19 15:17:55,064 - INFO - Active Trades: 0
+2026-02-19 15:17:55,065 - INFO - Completed Trades: 4
+2026-02-19 15:17:55,065 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:17:55,065 - INFO - Max trades per day reached: 4
+2026-02-19 15:17:55,065 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:19:55,066 - INFO - 
+================================================================================
+2026-02-19 15:19:55,067 - INFO - MARKET IS OPEN - 15:19:55
+2026-02-19 15:19:55,067 - INFO - Active Trades: 0
+2026-02-19 15:19:55,067 - INFO - Completed Trades: 4
+2026-02-19 15:19:55,068 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:19:55,068 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:21:55,068 - INFO - 
+================================================================================
+2026-02-19 15:21:55,069 - INFO - MARKET IS OPEN - 15:21:55
+2026-02-19 15:21:55,070 - INFO - Active Trades: 0
+2026-02-19 15:21:55,070 - INFO - Completed Trades: 4
+2026-02-19 15:21:55,070 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:21:55,070 - INFO - Max trades per day reached: 4
+2026-02-19 15:21:55,071 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:23:55,072 - INFO - 
+================================================================================
+2026-02-19 15:23:55,072 - INFO - MARKET IS OPEN - 15:23:55
+2026-02-19 15:23:55,073 - INFO - Active Trades: 0
+2026-02-19 15:23:55,073 - INFO - Completed Trades: 4
+2026-02-19 15:23:55,073 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:23:55,074 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:25:55,074 - INFO - 
+================================================================================
+2026-02-19 15:25:55,075 - INFO - MARKET IS OPEN - 15:25:55
+2026-02-19 15:25:55,075 - INFO - Active Trades: 0
+2026-02-19 15:25:55,075 - INFO - Completed Trades: 4
+2026-02-19 15:25:55,075 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:25:55,075 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:27:55,076 - INFO - 
+================================================================================
+2026-02-19 15:27:55,077 - INFO - MARKET IS OPEN - 15:27:55
+2026-02-19 15:27:55,077 - INFO - Active Trades: 0
+2026-02-19 15:27:55,077 - INFO - Completed Trades: 4
+2026-02-19 15:27:55,077 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:27:55,077 - INFO - Max trades per day reached: 4
+2026-02-19 15:27:55,078 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:29:55,078 - INFO - 
+================================================================================
+2026-02-19 15:29:55,079 - INFO - MARKET IS OPEN - 15:29:55
+2026-02-19 15:29:55,079 - INFO - Active Trades: 0
+2026-02-19 15:29:55,080 - INFO - Completed Trades: 4
+2026-02-19 15:29:55,080 - INFO - Available Capital: ₹52,975.00
+2026-02-19 15:29:55,080 - INFO - Max trades per day reached: 4
+2026-02-19 15:29:55,080 - INFO - Waiting 120 seconds for next cycle...
+2026-02-19 15:31:55,081 - INFO - 
+================================================================================
+2026-02-19 15:31:55,082 - INFO - MARKET IS CLOSED - 15:31:55
+2026-02-19 15:31:55,083 - INFO - Paper trading paused until market opens
+2026-02-19 15:31:55,083 - INFO - ============================================================
+2026-02-19 15:31:55,083 - INFO - DAILY SUMMARY (2026-02-19):
+2026-02-19 15:31:55,084 - INFO -    Total Trades: 4
+2026-02-19 15:31:55,084 - INFO -    Win Rate: 0.0%
+2026-02-19 15:31:55,084 - INFO -    Total P&L: ₹-1,948.97
+2026-02-19 15:31:55,085 - INFO -    Available Capital: ₹52,975.00
+2026-02-19 15:31:55,085 - INFO - ============================================================
+2026-02-19 15:31:55,085 - INFO - Sleeping until 2026-02-20 09:00:00 (17.5 hours)
+2026-02-19 16:25:33,344 - INFO - Paper trading stopped by user
+2026-02-19 16:25:33,345 - INFO - ================================================================================
+2026-02-19 16:25:33,345 - INFO - FINAL PAPER TRADING SUMMARY
+2026-02-19 16:25:33,346 - INFO - ============================================================
+2026-02-19 16:25:33,346 - INFO - DAILY SUMMARY (2026-02-19):
+2026-02-19 16:25:33,346 - INFO -    Total Trades: 4
+2026-02-19 16:25:33,346 - INFO -    Win Rate: 0.0%
+2026-02-19 16:25:33,346 - INFO -    Total P&L: ₹-1,948.97
+2026-02-19 16:25:33,347 - INFO -    Available Capital: ₹52,975.00
+2026-02-19 16:25:33,347 - INFO - ============================================================
+2026-02-19 16:25:33,347 - INFO - Paper trading session ended
+2026-02-19 16:25:33,347 - INFO - ================================================================================

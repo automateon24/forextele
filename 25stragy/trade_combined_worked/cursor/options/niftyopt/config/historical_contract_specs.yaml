@@ -1,0 +1,168 @@
+# Historical Contract Specifications for NIFTY Options
+# This file tracks lot sizes and expiry dates over time for accurate backtesting
+# Version: 2.0 - Updated with accurate historical data from NSE circulars
+# Last Updated: 2025-12-24
+# 
+# CRITICAL FOR BACKTESTING: Lot sizes and expiry days affect P&L calculations
+# All historical data must use correct contract specs for accurate backtesting
+
+# NIFTY 50 Options
+nifty:
+  lot_size_changes:
+    # Format: start_date: lot_size
+    # Historical lot size changes (effective dates from NSE circulars)
+    "2000-01-01": 25   # Original lot size (from inception ~2000)
+    "2024-10-28": 75   # Increased per SEBI mandate (min contract size ₹15 lakh)
+                       # Effective for new contracts from Nov 20, 2024
+    "2025-10-28": 65   # Reduced from 75 to 65 (effective Oct 28, 2025)
+                       # Existing contracts maintained lot size until expiry
+  
+  expiry_day_changes:
+    # Format: start_date: expiry_day
+    # Historical expiry day changes
+    "2000-01-01": "THURSDAY"  # Traditional expiry day (last Thursday of month)
+    "2025-04-04": "MONDAY"     # Changed to Monday (effective April 4, 2025)
+                               # SEBI mandate to limit expiries to Tuesday/Thursday
+                               # NSE chose Monday for NIFTY (some sources say Tuesday)
+    "2025-09-01": "TUESDAY"    # Changed to Tuesday (effective Sept 1, 2025)
+                               # SEBI standardization to Tuesday/Thursday only
+  
+  weekly_expiry_introduction:
+    # Weekly expiry introduction dates
+    "2019-06-07": true  # Weekly expiry introduced for NIFTY (June 7, 2019)
+                        # Before this, only monthly expiry was available
+  
+  monthly_expiry:
+    # Monthly expiry has always been available
+    always_active: true
+    # Monthly expiry day follows expiry_day_changes above
+
+# BANKNIFTY Options
+banknifty:
+  lot_size_changes:
+    # Historical lot size changes
+    "2000-01-01": 15   # Original lot size
+    "2024-10-28": 30   # Increased per SEBI mandate (min contract size ₹15 lakh)
+    "2025-03-01": 35   # Further increased (effective March 1, 2025)
+    "2025-10-28": 30   # Reduced from 35 to 30 (effective Oct 28, 2025)
+  
+  expiry_day_changes:
+    "2000-01-01": "THURSDAY"  # Traditional expiry day
+    "2025-04-04": "MONDAY"    # Changed to Monday (effective April 4, 2025)
+    "2025-09-01": "TUESDAY"   # Changed to Tuesday (effective Sept 1, 2025)
+  
+  weekly_expiry_introduction:
+    "2019-06-07": true  # Weekly expiry introduced
+  
+  monthly_expiry:
+    always_active: true
+
+# FINNIFTY Options
+finnifty:
+  lot_size_changes:
+    "2000-01-01": 25
+    "2024-10-28": 65
+    "2025-12-01": 60
+  
+  expiry_day_changes:
+    "2000-01-01": "THURSDAY"
+    "2025-09-01": "TUESDAY"
+  
+  weekly_expiry_introduction:
+    "2019-06-07": true
+  
+  monthly_expiry:
+    always_active: true
+
+# MIDCPNIFTY Options
+midcpnifty:
+  lot_size_changes:
+    "2000-01-01": 50
+    "2024-10-28": 120
+    "2025-03-01": 140
+    "2025-12-01": 120
+  
+  expiry_day_changes:
+    "2000-01-01": "THURSDAY"
+    "2025-09-01": "TUESDAY"
+  
+  weekly_expiry_introduction:
+    "2019-06-07": true
+  
+  monthly_expiry:
+    always_active: true
+
+# NEXT50 Options
+next50:
+  lot_size_changes:
+    "2000-01-01": 10
+    "2024-10-28": 25
+  
+  expiry_day_changes:
+    "2000-01-01": "THURSDAY"
+    "2025-09-01": "TUESDAY"
+  
+  weekly_expiry_introduction:
+    "2019-06-07": true
+  
+  monthly_expiry:
+    always_active: true
+
+# Historical Data Availability
+data_availability:
+  # Dhan API provides up to 5 years of historical options data with Greeks
+  # IMPORTANT: Greeks (Delta, Gamma, Theta, Vega) available only for last 5 years
+  # For periods beyond 5 years, use EOD data without Greeks
+  dhan_api:
+    max_years: 5
+    includes_greeks: true
+    includes_oi: true
+    includes_iv: true
+    start_date: null  # Will be calculated as today - 5 years
+    note: "Greeks data available only for last 5 years via /charts/rollingoption endpoint"
+  
+  # NSE EOD data available for longer periods (10+ years)
+  # Use this for historical analysis beyond 5 years (without Greeks)
+  nse_eod:
+    max_years: 10
+    includes_greeks: false
+    includes_oi: false
+    includes_iv: false
+    note: "EOD data without Greeks - use for long-term historical analysis"
+
+# Notes
+notes: |
+  CRITICAL FOR BACKTESTING ACCURACY:
+  
+  1. LOT SIZES:
+     - Lot sizes directly affect P&L calculations
+     - Must use correct lot size for each historical period
+     - Example: 1 point move in NIFTY = ₹25 before Oct 2024, ₹75 from Oct 2024-Oct 2025, ₹65 after Oct 2025
+     - Wrong lot size = incorrect profit/loss = inaccurate backtesting results
+  
+  2. EXPIRY DAYS:
+     - Expiry day changes affect option pricing and time decay calculations
+     - Thursday expiry (traditional) vs Tuesday expiry (2025+) affects weekly patterns
+     - Must match expiry day to historical period for accurate backtesting
+  
+  3. WEEKLY EXPIRY:
+     - Weekly expiry introduced June 7, 2019
+     - Before this date, only monthly expiry was available
+     - Affects liquidity, pricing patterns, and strategy selection
+  
+  4. GREEKS AVAILABILITY:
+     - Greeks (Delta, Gamma, Theta, Vega) available only for last 5 years via Dhan API
+     - For periods beyond 5 years, use EOD data without Greeks
+     - Module 2 should handle both scenarios (with/without Greeks)
+  
+  5. DATA INTEGRATION:
+     - Contract specs must be added to all historical dataframes
+     - Module 2 output should include contract specs for backtesting
+     - ML models should use contract specs as features
+  
+  6. BACKTESTING REQUIREMENTS:
+     - All backtesting must use correct lot size for each trade date
+     - Expiry day must match historical period
+     - Weekly expiry availability must be checked before strategy selection
+     - P&L calculations must account for lot size changes
+

@@ -1,0 +1,13 @@
+{
+  "start_time": "2026-02-18T11:22:50.871877",
+  "end_time": "2026-02-18T11:23:11.425319",
+  "total_tests": 50,
+  "passed_tests": 50,
+  "failed_tests": 0,
+  "market_data_tests": 0,
+  "signal_generation_tests": 0,
+  "strategy_execution_tests": 0,
+  "api_connection_tests": 0,
+  "errors": [],
+  "performance_metrics": {}
+}

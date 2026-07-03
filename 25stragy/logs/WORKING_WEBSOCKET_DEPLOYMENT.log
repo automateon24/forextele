@@ -1,0 +1,118 @@
+2026-02-18 12:11:27,710 - INFO - Database setup completed
+2026-02-18 12:11:27,732 - INFO - WORKING WEBSOCKET DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:11:27,733 - INFO - ======================================================================
+2026-02-18 12:11:27,733 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:11:27,734 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:11:27,734 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:11:27,734 - INFO - Duration: Continuous until market close
+2026-02-18 12:11:27,735 - INFO - ======================================================================
+2026-02-18 12:11:27,736 - INFO - Starting WebSocket real-time deployment with asyncio...
+2026-02-18 12:11:27,839 - INFO - 
+======================================================================
+2026-02-18 12:11:27,839 - INFO - WORKING WEBSOCKET DEPLOYMENT SUMMARY
+2026-02-18 12:11:27,840 - INFO - ======================================================================
+2026-02-18 12:11:27,840 - INFO - Total Duration: 0:00:00.106607
+2026-02-18 12:11:27,840 - INFO - Total Signals Generated: 0
+2026-02-18 12:11:27,840 - INFO - Paper Trades Executed: 0
+2026-02-18 12:11:27,840 - INFO - Total Broker Charges: Rs.0.00
+2026-02-18 12:11:27,840 - INFO - Real-time Data Points: 0
+2026-02-18 12:11:27,841 - INFO - 
+Database: c:\cursor\options\niftyopt\data\WORKING_WEBSOCKET_DEPLOYMENT.db
+2026-02-18 12:11:27,841 - INFO - All trades, signals, and data saved successfully
+2026-02-18 12:11:27,841 - INFO - 
+FINAL STATUS: WEBSOCKET DEPLOYMENT COMPLETED
+2026-02-18 12:11:27,841 - INFO - WebSocket-based real-time deployment
+2026-02-18 12:11:27,841 - INFO - 9 Strategies tested with live market data
+2026-02-18 12:11:27,841 - INFO - Paper trading mode - No real orders placed
+2026-02-18 12:11:27,842 - INFO - Ready for production deployment with real orders
+2026-02-18 12:11:27,842 - INFO - ======================================================================
+2026-02-18 12:11:54,631 - INFO - Database setup completed
+2026-02-18 12:11:54,651 - INFO - WORKING WEBSOCKET DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:11:54,652 - INFO - ======================================================================
+2026-02-18 12:11:54,653 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:11:54,653 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:11:54,653 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:11:54,653 - INFO - Duration: Continuous until market close
+2026-02-18 12:11:54,653 - INFO - ======================================================================
+2026-02-18 12:11:54,654 - INFO - Starting WebSocket real-time deployment with asyncio...
+2026-02-18 12:11:54,655 - INFO - WebSocket event loop started. Streaming Nifty data...
+2026-02-18 12:11:54,655 - ERROR - Failed to start WebSocket feed: This event loop is already running
+2026-02-18 12:11:54,663 - INFO - 
+======================================================================
+2026-02-18 12:11:54,664 - INFO - WORKING WEBSOCKET DEPLOYMENT SUMMARY
+2026-02-18 12:11:54,664 - INFO - ======================================================================
+2026-02-18 12:11:54,664 - INFO - Total Duration: 0:00:00.012893
+2026-02-18 12:11:54,664 - INFO - Total Signals Generated: 0
+2026-02-18 12:11:54,664 - INFO - Paper Trades Executed: 0
+2026-02-18 12:11:54,665 - INFO - Total Broker Charges: Rs.0.00
+2026-02-18 12:11:54,665 - INFO - Real-time Data Points: 0
+2026-02-18 12:11:54,665 - INFO - 
+Database: c:\cursor\options\niftyopt\data\WORKING_WEBSOCKET_DEPLOYMENT.db
+2026-02-18 12:11:54,665 - INFO - All trades, signals, and data saved successfully
+2026-02-18 12:11:54,665 - INFO - 
+FINAL STATUS: WEBSOCKET DEPLOYMENT COMPLETED
+2026-02-18 12:11:54,665 - INFO - WebSocket-based real-time deployment
+2026-02-18 12:11:54,666 - INFO - 9 Strategies tested with live market data
+2026-02-18 12:11:54,666 - INFO - Paper trading mode - No real orders placed
+2026-02-18 12:11:54,666 - INFO - Ready for production deployment with real orders
+2026-02-18 12:11:54,666 - INFO - ======================================================================
+2026-02-18 12:13:18,766 - INFO - Database setup completed
+2026-02-18 12:13:18,787 - INFO - WORKING WEBSOCKET DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:13:18,787 - INFO - ======================================================================
+2026-02-18 12:13:18,787 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:13:18,788 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:13:18,788 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:13:18,788 - INFO - Duration: Continuous until market close
+2026-02-18 12:13:18,788 - INFO - ======================================================================
+2026-02-18 12:13:18,789 - INFO - Starting WebSocket real-time deployment with asyncio...
+2026-02-18 12:13:18,790 - INFO - WebSocket event loop started. Streaming Nifty data...
+2026-02-18 12:13:18,790 - ERROR - Failed to start WebSocket feed: This event loop is already running
+2026-02-18 12:13:18,796 - INFO - 
+======================================================================
+2026-02-18 12:13:18,797 - INFO - WORKING WEBSOCKET DEPLOYMENT SUMMARY
+2026-02-18 12:13:18,797 - INFO - ======================================================================
+2026-02-18 12:13:18,797 - INFO - Total Duration: 0:00:00.009847
+2026-02-18 12:13:18,797 - INFO - Total Signals Generated: 0
+2026-02-18 12:13:18,798 - INFO - Paper Trades Executed: 0
+2026-02-18 12:13:18,798 - INFO - Total Broker Charges: Rs.0.00
+2026-02-18 12:13:18,798 - INFO - Real-time Data Points: 0
+2026-02-18 12:13:18,798 - INFO - 
+Database: c:\cursor\options\niftyopt\data\WORKING_WEBSOCKET_DEPLOYMENT.db
+2026-02-18 12:13:18,798 - INFO - All trades, signals, and data saved successfully
+2026-02-18 12:13:18,799 - INFO - 
+FINAL STATUS: WEBSOCKET DEPLOYMENT COMPLETED
+2026-02-18 12:13:18,799 - INFO - WebSocket-based real-time deployment
+2026-02-18 12:13:18,799 - INFO - 9 Strategies tested with live market data
+2026-02-18 12:13:18,799 - INFO - Paper trading mode - No real orders placed
+2026-02-18 12:13:18,799 - INFO - Ready for production deployment with real orders
+2026-02-18 12:13:18,799 - INFO - ======================================================================
+2026-02-18 13:00:16,740 - INFO - Database setup completed
+2026-02-18 13:00:16,765 - INFO - WORKING WEBSOCKET DEPLOYMENT - 9 STRATEGIES
+2026-02-18 13:00:16,765 - INFO - ======================================================================
+2026-02-18 13:00:16,766 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 13:00:16,766 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 13:00:16,766 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 13:00:16,766 - INFO - Duration: Continuous until market close
+2026-02-18 13:00:16,767 - INFO - ======================================================================
+2026-02-18 13:00:16,767 - INFO - Starting WebSocket real-time deployment with asyncio...
+2026-02-18 13:00:16,768 - INFO - WebSocket event loop started. Streaming Nifty data...
+2026-02-18 13:00:16,769 - ERROR - Failed to start WebSocket feed: This event loop is already running
+2026-02-18 13:00:16,778 - INFO - 
+======================================================================
+2026-02-18 13:00:16,778 - INFO - WORKING WEBSOCKET DEPLOYMENT SUMMARY
+2026-02-18 13:00:16,778 - INFO - ======================================================================
+2026-02-18 13:00:16,779 - INFO - Total Duration: 0:00:00.012548
+2026-02-18 13:00:16,779 - INFO - Total Signals Generated: 0
+2026-02-18 13:00:16,779 - INFO - Paper Trades Executed: 0
+2026-02-18 13:00:16,779 - INFO - Total Broker Charges: Rs.0.00
+2026-02-18 13:00:16,779 - INFO - Real-time Data Points: 0
+2026-02-18 13:00:16,780 - INFO - 
+Database: c:\cursor\options\niftyopt\data\WORKING_WEBSOCKET_DEPLOYMENT.db
+2026-02-18 13:00:16,780 - INFO - All trades, signals, and data saved successfully
+2026-02-18 13:00:16,780 - INFO - 
+FINAL STATUS: WEBSOCKET DEPLOYMENT COMPLETED
+2026-02-18 13:00:16,781 - INFO - WebSocket-based real-time deployment
+2026-02-18 13:00:16,781 - INFO - 9 Strategies tested with live market data
+2026-02-18 13:00:16,781 - INFO - Paper trading mode - No real orders placed
+2026-02-18 13:00:16,781 - INFO - Ready for production deployment with real orders
+2026-02-18 13:00:16,781 - INFO - ======================================================================

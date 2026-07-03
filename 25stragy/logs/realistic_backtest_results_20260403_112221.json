@@ -1,0 +1,14 @@
+{
+  "total_trades": 2,
+  "winning_trades": 2,
+  "losing_trades": 0,
+  "total_gross_pnl": 12014.999999999964,
+  "total_broker_charges": 160,
+  "total_net_pnl": 11854.999999999964,
+  "win_rate": 100.0,
+  "avg_gross_pnl_per_trade": 6007.499999999982,
+  "avg_net_pnl_per_trade": 5927.499999999982,
+  "profit_factor": 0,
+  "max_drawdown": 0,
+  "sharpe_ratio": 5.483348751156117
+}

@@ -1,0 +1,17 @@
+================================================================================
+BACKTEST SUMMARY
+================================================================================
+
+Start Date: 2024-11-01
+End Date: 2024-11-05
+Symbol: NIFTY
+Initial Capital: Rs 100,000
+Final Capital: Rs 100,000
+Total Return: 0.00%
+
+Total Trades: 0
+Winning Trades: 0
+Losing Trades: 0
+Win Rate: 0.00%
+Total P&L: Rs 0.00
+Average P&L per Trade: Rs 0.00

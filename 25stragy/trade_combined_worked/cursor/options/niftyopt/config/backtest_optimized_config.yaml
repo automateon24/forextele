@@ -1,0 +1,86 @@
+# Optimized Configuration for Aggressive Trading
+# Targets: 4-5% daily returns, 50-60% monthly
+# Based on successful manual trading experience
+
+strikes:
+  # Widen moneyness range to catch more opportunities
+  moneyness_range: 0.15  # 15% (increased from 8%)
+  
+  # Lower liquidity thresholds to allow more strikes
+  min_oi: 5000  # Reduced from 10000
+  min_volume: 200  # Reduced from 500
+  max_spread_pct: 0.05  # Increased from 3% to 5%
+  
+  liquidity_weights:
+    oi: 0.3  # Reduced weight on OI
+    volume: 0.5  # Increased weight on volume
+    spread: 0.2
+
+risk:
+  per_trade:
+    # Increase risk per trade for higher returns
+    base_risk_pct: 0.02  # 2% per trade (increased from 1%)
+    min_risk_pct: 0.01  # 1% minimum
+    max_risk_pct: 0.05  # 5% maximum (increased from 2%)
+    
+    confidence_scaling:
+      enabled: true
+      formula: base_risk * (0.3 + confidence * 1.4)  # More aggressive scaling
+      cap_at_max: true
+    
+    stop_loss:
+      # Tighter stops for quick recovery
+      intraday_pct: 0.25  # 25% stop (tighter from 35%)
+      positional_pct: 0.40  # 40% stop (tighter from 50%)
+      spreads_max_loss: true
+  
+  portfolio:
+    # Allow higher daily loss before stopping
+    daily_loss_limit_pct: 0.05  # 5% daily loss limit (increased from 2%)
+    max_positions: 10  # Allow more concurrent positions (increased from 5)
+    max_correlation: 0.8
+
+decision:
+  filters:
+    # Lower confidence thresholds to allow more trades
+    min_confidence:
+      intraday: 0.10  # Very low threshold (was 0.55)
+      positional: 0.15  # Low threshold (was 0.55)
+      swing: 0.20  # Low threshold (was 0.55)
+    
+    # Lower probability thresholds
+    min_prob_up:
+      intraday: 0.30  # Lower from 0.55
+      positional: 0.35
+      swing: 0.40
+    
+    min_prob_down:
+      intraday: 0.30
+      positional: 0.35
+      swing: 0.40
+
+  strategy_selection:
+    # More aggressive strategy selection
+    intraday_bullish:
+      iv_low_normal: buy_atm_or_itm_call
+      iv_high: bull_call_spread
+    intraday_bearish:
+      iv_low_normal: buy_atm_or_itm_put
+      iv_high: bear_put_spread
+    range_neutral_high_iv:
+      strategies:
+      - short_straddle
+      - short_strangle
+      - iron_condor
+      center_on_writer_oi: true
+      size_conservatively: false  # More aggressive sizing
+
+# Backtest-specific overrides
+backtest:
+  max_trades_per_day: 5  # Allow up to 5 trades per day
+  allow_same_day_recovery: true  # Allow recovery trades on same day
+  min_trade_interval_minutes: 15  # Minimum 15 minutes between trades
+  position_sizing:
+    base_size_pct: 0.20  # 20% of capital per trade
+    max_size_pct: 0.30  # Up to 30% for high confidence
+    confidence_multiplier: 1.5  # Aggressive multiplier

@@ -1,0 +1,127 @@
+[Mon 06/22/2026  9:20:02.05] Stragy V15 starting for session 20260622 
+[DNA MATRIX] Loaded 36 strategies x 5 indices = 180 DNA combinations
+======================================================================
+BACKTEST V8 AI — SCALING MULTI-STRATEGY ENGINE
+  Dynamic Lot Sizing | 36 Strategies | Parallelized Execution
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+  [MIDCPNIFTY] Loading parquets...
+  [MIDCPNIFTY] 820,796 rows | 155 days | 2025-02-03 -> 2026-05-27
+
+Loaded 5 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX', 'MIDCPNIFTY']
+
+======================================================================
+Running portfolio backtest in sequential mode...
+======================================================================
+
+[SEQUENTIAL SIMULATION] Processing 155 trading days sequentially with global capital sharing...
+  [NIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [MIDCPNIFTY] Labelling regimes on 155 days...
+
+
+======================================================================
+BACKTEST V8 AI — MULTI-INDEX SCALE TARGET (155 calendar days)
+  5 indices × 36 strategies × Dynamic lot sizing
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 757
+  Win rate           : 79.0%
+  Total PnL          : Rs.+5,790,199
+  Avg PnL/day        : Rs.+45,592  (9.12%)
+  Monthly est.       : Rs.+1,003,027  (200.6%)
+  Green days         : 84/127 (66%)
+  Max drawdown       : Rs.-747,480
+  5% daily target    : 72 days hit (Rs.25,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  BANKNIFTY        163   84%   +1,630,187     69    +23,626   +519,770
+  FINNIFTY         165   76%   +1,055,713     70    +15,082   +331,796
+  MIDCPNIFTY        44   77%     +362,759     24    +15,115   +332,529
+  NIFTY            206   81%   +1,727,955     94    +18,382   +404,415
+  SENSEX           179   75%   +1,013,585     78    +12,995   +285,883
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  ATR_BREAK                    51   88%     +321,610   +6,306
+  BEAR_TREND_FOLLOWER          26   65%     +182,323   +7,012
+  BOLLINGER_SQUEEZE            14   93%      +83,875   +5,991
+  BREAKOUT                      2  100%      +52,923  +26,462
+  DAY_LOW_BULLISH               7   86%      +52,731   +7,533
+  GAMMA_BLAST                   6   67%      +14,788   +2,465
+  LONG_UNWIND                  41   68%     -164,393   -4,010
+  MACD_DIVERGENCE             187   78%     +961,455   +5,141
+  MOMENTUM_BURST              114   85%   +1,172,526  +10,285
+  OPTIONS_GREEKS              103   81%   +1,132,418  +10,994
+  PUT_WRITER_SUPPORT            9   78%      +90,033  +10,004
+  RESIST_BREAK                  2  100%      +18,648   +9,324
+  RSI_REVERSAL                  5  100%      +48,488   +9,698
+  SCALPING                     27   85%     +145,313   +5,382
+  TREND_FOLLOWING              43   93%     +225,573   +5,246
+  ULTIMATE_DAY_HIGH_LOW        34   62%      +93,647   +2,754
+  VOLUME_CLIMAX                 4   75%      +67,301  +16,825
+  VWAP_BOUNCE                  49   84%     +208,095   +4,247
+  ZERO_HERO                    33   45%   +1,082,844  +32,813
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  TSL          484   +7,615,178  +15,734
+  TIME         209   +1,553,987   +7,435
+  SL            39   -2,508,590  -64,323
+  SPOT_SL       24     -956,222  -39,843
+  TARGET         1      +85,846  +85,846
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.500 (0.1%)   : 84/127
+  Days >= Rs.1,000 (0.2%) : 84/127
+  Days >= Rs.2,500 (0.5%) : 84/127
+  Days >= Rs.5,000 (1.0%) : 84/127
+  Days >= Rs.25,000 (5.0%): 72/127
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs.+760,233  (+152.0%)  ##############################
+  2025-03  Rs.+1,200,776  (+240.2%)  ##############################
+  2025-04  Rs.-270,975  (-54.2%)  ##############################
+  2025-05  Rs. -84,801  (-17.0%)  ################
+  2026-01  Rs.+1,620,402  (+324.1%)  ##############################
+  2026-02  Rs.+1,191,632  (+238.3%)  ##############################
+  2026-03  Rs. -13,542  ( -2.7%)  ##
+  2026-04  Rs.+631,575  (+126.3%)  ##############################
+  2026-05  Rs.+754,897  (+151.0%)  ##############################
+
+  TOP 10 DAYS:
+  2026-01-22  Rs.+890,350  NI:ZERO_HER(PE) | NI:ZERO_HER(PE) | NI:ZERO_HER(PE) | NI:GAMMA_BL(PE) | NI:ZERO_HER(PE) | BA:OPTIONS_(CE) | BA:TREND_FO(PE) | BA:MACD_DIV(PE) | FI:OPTIONS_(CE) | FI:TREND_FO(PE) | FI:MACD_DIV(PE) | FI:MACD_DIV(CE) | SE:OPTIONS_(CE) | SE:MACD_DIV(CE) | SE:TREND_FO(PE) | SE:MACD_DIV(PE) | MI:OPTIONS_(CE) | MI:MACD_DIV(CE) | MI:TREND_FO(PE)
+  2026-02-23  Rs.+555,186  NI:MOMENTUM(PE) | NI:ATR_BREA(PE) | NI:MACD_DIV(CE) | NI:TREND_FO(PE) | NI:MACD_DIV(PE) | NI:MACD_DIV(CE) | BA:MACD_DIV(PE) | BA:OPTIONS_(CE) | BA:MACD_DIV(CE) | BA:VWAP_BOU(PE) | FI:MOMENTUM(PE) | FI:MACD_DIV(PE) | FI:MOMENTUM(PE) | FI:ATR_BREA(PE) | FI:MACD_DIV(CE) | FI:MOMENTUM(PE) | FI:VWAP_BOU(PE) | FI:MOMENTUM(PE) | FI:MOMENTUM(PE) | FI:ATR_BREA(PE) | FI:MACD_DIV(CE) | SE:MACD_DIV(PE) | SE:MACD_DIV(CE) | SE:TREND_FO(PE) | SE:MOMENTUM(PE) | SE:MACD_DIV(CE)
+  2025-03-21  Rs.+552,579  NI:OPTIONS_(PE) | BA:OPTIONS_(PE) | BA:MOMENTUM(CE) | BA:OPTIONS_(PE) | BA:MOMENTUM(CE) | FI:OPTIONS_(PE) | FI:VWAP_BOU(CE) | FI:MOMENTUM(CE) | SE:ZERO_HER(CE) | SE:ZERO_HER(CE) | MI:MOMENTUM(CE) | MI:OPTIONS_(PE) | MI:MACD_DIV(CE)
+  2026-01-08  Rs.+327,615  NI:ZERO_HER(PE) | NI:GAMMA_BL(PE) | BA:BEAR_TRE(PE) | BA:TREND_FO(PE) | FI:TREND_FO(PE) | SE:OPTIONS_(CE) | SE:TREND_FO(PE) | SE:MACD_DIV(PE)
+  2026-02-02  Rs.+276,211  NI:MACD_DIV(CE) | NI:MACD_DIV(CE) | BA:MACD_DIV(CE) | BA:LONG_UNW(PE) | BA:MACD_DIV(CE) | BA:MACD_DIV(PE) | FI:MACD_DIV(CE) | FI:TREND_FO(PE) | FI:MACD_DIV(CE) | SE:MACD_DIV(CE) | SE:MOMENTUM(CE)
+  2026-05-22  Rs.+236,971  BA:MOMENTUM(CE) | BA:BOLLINGE(CE) | BA:OPTIONS_(PE) | BA:MACD_DIV(PE) | FI:MOMENTUM(CE) | FI:ATR_BREA(CE) | FI:MACD_DIV(PE) | FI:OPTIONS_(PE) | SE:GAMMA_BL(PE) | SE:GAMMA_BL(PE) | SE:ZERO_HER(PE) | MI:SCALPING(CE) | MI:MOMENTUM(CE) | MI:OPTIONS_(PE)
+  2025-03-24  Rs.+235,590  NI:OPTIONS_(PE) | NI:MACD_DIV(CE) | NI:MOMENTUM(CE) | BA:OPTIONS_(PE) | BA:OPTIONS_(PE) | BA:MOMENTUM(CE) | BA:MOMENTUM(CE) | FI:MACD_DIV(CE) | FI:OPTIONS_(PE) | FI:MOMENTUM(CE) | SE:MACD_DIV(CE) | SE:MACD_DIV(PE) | SE:MOMENTUM(CE)
+  2026-01-23  Rs.+207,048  NI:BEAR_TRE(PE) | NI:MACD_DIV(PE) | BA:MACD_DIV(PE) | BA:MOMENTUM(PE) | FI:BEAR_TRE(PE) | FI:MACD_DIV(PE) | FI:OPTIONS_(CE) | FI:MACD_DIV(CE) | SE:ZERO_HER(PE)
+  2026-04-29  Rs.+186,256  NI:OPTIONS_(PE) | FI:OPTIONS_(PE)
+  2026-05-13  Rs.+172,536  NI:MACD_DIV(CE) | NI:MACD_DIV(PE) | SE:MOMENTUM(CE) | SE:ATR_BREA(CE) | SE:MACD_DIV(PE)
+
+  WORST 5 DAYS:
+  2026-01-05  Rs.-262,547  NI:MACD_DIV[SPOT_SL] | FI:MACD_DIV[SPOT_SL] | SE:MACD_DIV[SL]
+  2026-05-06  Rs.-194,135  NI:OPTIONS_[SL] | SE:OPTIONS_[SL]
+  2025-02-19  Rs.-164,203  NI:MACD_DIV[SPOT_SL] | FI:MACD_DIV[TSL] | SE:MACD_DIV[SL]
+  2025-03-04  Rs.-147,419  NI:MACD_DIV[SL] | BA:MACD_DIV[TSL] | BA:MACD_DIV[TIME] | SE:ULTIMATE[SL]
+  2026-01-20  Rs.-131,800  NI:OPTIONS_[TIME] | BA:TREND_FO[TSL] | BA:MOMENTUM[TSL] | BA:OPTIONS_[TIME] | FI:ZERO_HER[SL] | SE:OPTIONS_[TSL] | SE:MOMENTUM[TSL] | SE:MACD_DIV[TIME]
+
+  Saved 757 trades -> backtest_results/aggressive_100k_trades.csv

@@ -1,0 +1,1 @@
+trade_id,timestamp,strategy,option_type,strike_price,action,quantity,premium,spot_price,status,pnl

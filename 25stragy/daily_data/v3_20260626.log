@@ -1,0 +1,52 @@
+26-06-26 02:36:00 | INFO | [ORB] Levels locked: High=24000.00 Low=24000.00
+26-06-26 02:36:00 | INFO | [ORB] CE breakout: spot=24072 > ORB_HIGH=24000
+26-06-26 02:36:00 | INFO | [ORB] CE retest: spot=24012 pulled back to ORB_HIGH=24000 
+26-06-26 02:36:00 | INFO | [ORB] Levels locked: High=24000.00 Low=24000.00
+26-06-26 02:36:00 | INFO | [ORB] CE breakout: spot=24072 > ORB_HIGH=24000
+26-06-26 02:36:00 | INFO | [ORB] CE retest: spot=24012 pulled back to ORB_HIGH=24000 
+26-06-26 02:36:00 | INFO | [ORB] Levels locked: High=24000.00 Low=24000.00
+26-06-26 02:36:00 | INFO | [ORB] Levels locked: High=24014.00 Low=24000.00
+26-06-26 02:36:00 | INFO | [ORB] Levels locked: High=24014.00 Low=24000.00
+26-06-26 02:36:00 | INFO | [ORB] Levels locked: High=24100.00 Low=24100.00
+26-06-26 02:36:00 | INFO | [ORB] PE breakdown: spot=24028 < ORB_LOW=24100
+26-06-26 02:36:00 | INFO | [ORB] PE retest: spot=24088 pulled back to ORB_LOW=24100
+26-06-26 02:36:00 | INFO | [BREAKOUT] CE broke: spot=24060 > range_high=24000
+26-06-26 02:36:00 | INFO | [BREAKOUT] CE retest: spot=24002 back to 24000
+26-06-26 02:36:00 | INFO | [BREAKOUT] CE broke: spot=24060 > range_high=24000
+26-06-26 02:36:00 | INFO | [PUT_SUPPORT] Invalidated: day_low=23985 broke support 24000
+26-06-26 02:36:00 | INFO | PUT_WRITER_SUPPORT: Spot 24020 at put support 24000 | writers defending (OI +1.0%) | 20pt above
+26-06-26 02:36:00 | INFO | [GAP_RECOVERY] Blocking PE for ULTIMATE_DAY_HIGH_LOW - gap-down day has recovered
+26-06-26 02:36:00 | INFO | [ORD_BLOCK] CE signal: bounced off put support 23150, RSI=38
+26-06-26 02:36:00 | INFO | [FILTER] Blocking CE trade for ULTIMATE_DAY_HIGH_LOW - PCR bias is BEARISH
+26-06-26 02:36:00 | INFO | [FILTER] Blocking PE trade for ULTIMATE_DAY_HIGH_LOW - PCR bias is BULLISH
+26-06-26 02:36:00 | INFO | [CIRCUIT_BREAKER] Portfolio loss ₹-22,000 <= limit ₹-10,000 - halting ALL new entries
+26-06-26 02:36:00 | INFO | [DIRECTION_GUARD] Blocking PE for ULTIMATE_DAY_HIGH_LOW - market UP 150pts from open (strong bull)
+26-06-26 02:36:00 | INFO | [FILTER] Blocking ULTIMATE_DAY_HIGH_LOW CE - Price near VWAP (0.02% away = choppy zone)
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] CYC#1 spot=24000 pcr=1.000/NEUTRAL rsi=55 dev=+0.00% | OPEN:1 CE:0 PE:0 | P&L:Rs+0 | candles=20 !! ULTIMATE_DAY_HIGH_LOW LTP near zero - check data feed!
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] ULTIMATE_DAY_HIGH_LOW        | OPEN CE24000 -99.8%          | t=0/3 pnl=+0 | ORB not locked (need 15 candles, have 20)
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1; RSI=55<65
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=+0.00% (need ±0.5%) RSI=55; dev too small
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=55 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] CYC#1 spot=24000 pcr=1.000/NEUTRAL rsi=55 dev=+0.00% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=20
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB not locked (need 15 candles, have 20)
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1; RSI=55<65
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=+0.00% (need ±0.5%) RSI=55; dev too small
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=55 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] CYC#2 spot=24000 pcr=1.000/NEUTRAL rsi=55 dev=+0.00% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=20
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB not locked (need 15 candles, have 20)
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1; RSI=55<65
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=+0.00% (need ±0.5%) RSI=55; dev too small
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=55 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] CYC#1 spot=24000 pcr=1.000/NEUTRAL rsi=55 dev=+0.00% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=20
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB not locked (need 15 candles, have 20)
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1; RSI=55<65
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=+0.00% (need ±0.5%) RSI=55; dev too small
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-26 02:36:00 | INFO | [HEALTH 02:36:00] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=55 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-26 02:36:00 | INFO | [ENTER] AI_E_103000 | AI_ENHANCED.AI_SIGNAL | PE24000 | Entry:₹80.50 SL:₹56.35 Target:₹120.75
+26-06-26 02:36:00 | INFO | [ENTER] AI_E_103000 | AI_ENHANCED | test signal
+26-06-26 02:36:00 | INFO | [EXIT] AI_E_103000 | LOSS | STOP_LOSS | Entry:₹80.50 Exit:₹55.79 | P&L:₹-1,853.51
+26-06-26 02:36:00 | INFO | [EXIT] AI_E_103000 | LOSS | STOP_LOSS | P&L:₹-1,853.51

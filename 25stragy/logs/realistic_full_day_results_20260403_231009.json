@@ -1,0 +1,114 @@
+{
+  "MULTI_TIMEFRAME_LOSING": {
+    "trades": 6,
+    "wins": 5,
+    "total_pnl": 2265.7987916360717,
+    "total_investment": 76504.00000000009,
+    "strategy_type": "FROZEN"
+  },
+  "AI_ENHANCED_LOSING": {
+    "trades": 7,
+    "wins": 5,
+    "total_pnl": 2084.1635863737756,
+    "total_investment": 100132.00000000017,
+    "strategy_type": "FROZEN"
+  },
+  "RSI_DIVERGENCE_LOSING": {
+    "trades": 6,
+    "wins": 4,
+    "total_pnl": 1651.5440384709852,
+    "total_investment": 45000.0,
+    "strategy_type": "FROZEN"
+  },
+  "STOCHASTIC_OVERSOLD_LOSING": {
+    "trades": 6,
+    "wins": 2,
+    "total_pnl": 9.870005085460377,
+    "total_investment": 92256.00000000015,
+    "strategy_type": "FROZEN"
+  },
+  "TREND_FOLLOWING_OPTIMIZED": {
+    "trades": 6,
+    "wins": 2,
+    "total_pnl": -811.0519095522837,
+    "total_investment": 79004.00000000009,
+    "strategy_type": "FROZEN"
+  },
+  "VOLUME_SPIKE_LOSING": {
+    "trades": 8,
+    "wins": 5,
+    "total_pnl": 2887.9513175660823,
+    "total_investment": 108008.00000000017,
+    "strategy_type": "FROZEN"
+  },
+  "HIGH_VOLUME_LOSING": {
+    "trades": 8,
+    "wins": 5,
+    "total_pnl": 1113.246237545608,
+    "total_investment": 108008.00000000017,
+    "strategy_type": "FROZEN"
+  },
+  "STRONG_MOMENTUM_LOSING": {
+    "trades": 8,
+    "wins": 6,
+    "total_pnl": 3191.362234461436,
+    "total_investment": 109756.00000000015,
+    "strategy_type": "FROZEN"
+  },
+  "MACD_DIVERGENCE_LOSING": {
+    "trades": 8,
+    "wins": 6,
+    "total_pnl": 2630.1182089826034,
+    "total_investment": 109756.00000000015,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "WILLIAMS_REVERSAL_LOSING": {
+    "trades": 7,
+    "wins": 3,
+    "total_pnl": -5.144515321548226,
+    "total_investment": 71880.00000000012,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "CCI_EXTREME_LOSING": {
+    "trades": 9,
+    "wins": 6,
+    "total_pnl": 2707.294173044128,
+    "total_investment": 115132.00000000017,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "ATR_BREAKOUT_LOSING": {
+    "trades": 8,
+    "wins": 4,
+    "total_pnl": 336.04449674460244,
+    "total_investment": 85752.00000000003,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "MOMENTUM_REVERSAL_LOSING": {
+    "trades": 8,
+    "wins": 4,
+    "total_pnl": 953.7071149167365,
+    "total_investment": 94756.00000000015,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "DAY_HIGH_LOW_OPTIMIZED": {
+    "trades": 8,
+    "wins": 5,
+    "total_pnl": 1833.9385883998716,
+    "total_investment": 103008.0000000002,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "BOLLINGER_SQUEEZE_LOSING": {
+    "trades": 8,
+    "wins": 4,
+    "total_pnl": 1506.079581778482,
+    "total_investment": 100508.0000000002,
+    "strategy_type": "RE-OPTIMIZED"
+  },
+  "BREAKOUT_REVERSAL_LOSING": {
+    "trades": 7,
+    "wins": 5,
+    "total_pnl": 2366.5568054714518,
+    "total_investment": 91880.00000000012,
+    "strategy_type": "RE-OPTIMIZED"
+  }
+}

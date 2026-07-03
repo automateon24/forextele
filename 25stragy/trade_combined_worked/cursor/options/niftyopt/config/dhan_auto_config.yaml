@@ -1,0 +1,11 @@
+api_key: a5f0b17e
+api_secret: eda373ae-9f3d-4f2b-865a-f5fafd46cf0a
+auto_open_browser: true
+auto_refresh_enabled: true
+client_id: '1101936133'
+headless_mode: true
+phone_number: your_phone_here
+pin: '615512'
+redirect_url: http://localhost:8080/callback
+refresh_before_expiry_minutes: 30
+totp_secret: WWOVHIWZS2IWQBXU4EZGYX53QOR2PJ4C

@@ -1,0 +1,11 @@
+2026-02-18 11:31:15,915 - INFO - Configuration loaded successfully
+2026-02-18 11:31:15,966 - INFO - Database setup completed
+2026-02-18 11:31:15,976 - INFO - STARTING REAL LIVE DEPLOYMENT WITH DHAN API
+2026-02-18 11:31:15,978 - INFO - ======================================================================
+2026-02-18 11:31:15,978 - INFO - Mode: Paper Trading (No Real Orders)
+2026-02-18 11:31:15,978 - INFO - Data Source: REAL Dhan API
+2026-02-18 11:31:15,979 - INFO - Strategies: 9 Trading Strategies
+2026-02-18 11:31:15,979 - INFO - ======================================================================
+2026-02-18 11:31:16,314 - ERROR - Dhan API test failed: 404
+2026-02-18 11:31:16,317 - ERROR - Dhan API connection failed
+2026-02-18 11:31:16,318 - ERROR - Failed to initialize Dhan client. Exiting...

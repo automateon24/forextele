@@ -1,0 +1,72 @@
+{
+  "STRONG_MOMENTUM": {
+    "strategy": "STRONG_MOMENTUM",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "HIGH_VOLUME": {
+    "strategy": "HIGH_VOLUME",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "ADX_TREND": {
+    "strategy": "ADX_TREND",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 44039.00000000489,
+    "avg_pnl": 22019.500000002445,
+    "roi": 80.63855885670509,
+    "capital_utilization": 54.08400000000183,
+    "status": "ACTIVE"
+  },
+  "STOCHASTIC_OVERSOLD": {
+    "strategy": "STOCHASTIC_OVERSOLD",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "WILLIAMS_REVERSAL": {
+    "strategy": "WILLIAMS_REVERSAL",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MULTI_TIMEFRAME": {
+    "strategy": "MULTI_TIMEFRAME",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "AI_ENHANCED": {
+    "strategy": "AI_ENHANCED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  }
+}

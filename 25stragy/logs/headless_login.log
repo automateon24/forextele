@@ -1,0 +1,3 @@
+2026-04-27 12:23:04,621 - INFO - [CLI] Checking token validity...
+2026-04-27 12:23:04,622 - INFO - [TOKEN] Expires in 1210.8 minutes
+2026-04-27 12:23:04,622 - INFO - [CLI] Token still valid - no login needed

@@ -1,0 +1,120 @@
+[DNA MATRIX] Loaded 36 strategies x 4 indices = 144 DNA combinations
+======================================================================
+BACKTEST V8 AI — SCALING MULTI-STRATEGY ENGINE
+  Dynamic Lot Sizing | 36 Strategies | Parallelized Execution
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+Loaded 4 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX']
+
+======================================================================
+Running backtests in parallel...
+======================================================================
+  [NIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [SENSEX] Grouping option data by date...
+  [SENSEX] Grouping EOD data by dt...
+  [BANKNIFTY] Grouping option data by date...
+  [BANKNIFTY] Grouping EOD data by dt...
+  [NIFTY] Grouping option data by date...
+  [NIFTY] Grouping EOD data by dt...
+  [FINNIFTY] Grouping option data by date...
+  [FINNIFTY] Grouping EOD data by dt...
+  [SENSEX] Done — 76 trades
+  [SENSEX] Completed: 76 trades
+  [FINNIFTY] Done — 82 trades
+  [FINNIFTY] Completed: 82 trades
+  [BANKNIFTY] Done — 94 trades
+  [BANKNIFTY] Completed: 94 trades
+  [NIFTY] Done — 106 trades
+  [NIFTY] Completed: 106 trades
+
+
+======================================================================
+BACKTEST V8 AI — MULTI-INDEX SCALE TARGET (155 calendar days)
+  4 indices × 36 strategies × Dynamic lot sizing
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 358
+  Win rate           : 55.0%
+  Total PnL          : Rs.+56,279
+  Avg PnL/day        : Rs.+1,876  (0.47%)
+  Monthly est.       : Rs.+41,271  (10.3%)
+  Green days         : 15/30 (50%)
+  Max drawdown       : Rs.-19,508
+  5% daily target    : 0 days hit (Rs.20,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  NIFTY            106   64%      +50,172     29     +1,730    +38,061
+  BANKNIFTY         94   56%       +5,203     28       +186     +4,088
+  FINNIFTY          82   57%       +4,169     28       +149     +3,276
+  SENSEX            76   38%       -3,264     25       -131     -2,873
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  BOLLINGER_SQUEEZE            17   65%      +10,620     +625
+  EMA_CROSSOVER                15   60%       +2,634     +176
+  LONG_UNWIND                  24   50%         -513      -21
+  MACD_DIVERGENCE             145   52%       +4,381      +30
+  MAGIC_SQUARE                  1  100%       +1,654   +1,654
+  MOMENTUM_BURST               77   56%      +23,460     +305
+  OPTIONS_GREEKS               38   50%       +2,337      +61
+  PREMIUM_CRUSH                 1    0%         -483     -483
+  RSI_REVERSAL                 10   60%       +1,584     +158
+  VOLUME_CLIMAX                 2   50%         -377     -188
+  VWAP_BOUNCE                  28   71%      +10,982     +392
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  TIME         236      -74,102     -314
+  TSL          100     +151,276   +1,513
+  DURATION      21      -27,265   -1,298
+  TARGET         1       +6,369   +6,369
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.400 (0.1%)   : 15/30
+  Days >= Rs.800 (0.2%)   : 15/30
+  Days >= Rs.2,000 (0.5%) : 13/30
+  Days >= Rs.4,000 (1.0%) : 10/30
+  Days >= Rs.20,000 (5.0%): 0/30
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs. +70,861  (+17.7%)  #################
+  2025-03  Rs. -14,582  ( -3.6%)  ###
+
+  TOP 10 DAYS:
+  2025-02-11  Rs. +18,393  SE:MOMENTUM(PE) | SE:RSI_REVE(CE) | SE:MACD_DIV(CE) | SE:MOMENTUM(PE) | FI:MOMENTUM(PE) | FI:BOLLINGE(PE) | FI:MACD_DIV(CE) | FI:OPTIONS_(CE) | BA:MOMENTUM(PE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:MACD_DIV(CE) | BA:OPTIONS_(CE) | BA:MOMENTUM(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE) | NI:MOMENTUM(PE) | NI:RSI_REVE(CE) | NI:MACD_DIV(CE)
+  2025-03-10  Rs. +14,807  SE:VWAP_BOU(CE) | SE:MACD_DIV(PE) | SE:OPTIONS_(CE) | FI:OPTIONS_(CE) | BA:MACD_DIV(CE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:LONG_UNW(PE) | BA:PREMIUM_(CE) | NI:LONG_UNW(PE) | NI:MACD_DIV(PE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE)
+  2025-02-13  Rs. +13,404  SE:MOMENTUM(PE) | SE:EMA_CROS(PE) | FI:MAGIC_SQ(CE) | BA:MOMENTUM(PE) | BA:EMA_CROS(PE) | BA:BOLLINGE(PE) | BA:BOLLINGE(PE) | NI:LONG_UNW(PE) | NI:MOMENTUM(PE) | NI:EMA_CROS(PE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE) | NI:MOMENTUM(PE)
+  2025-02-07  Rs. +10,508  SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:MACD_DIV(CE) | SE:VWAP_BOU(PE) | SE:MACD_DIV(PE) | FI:MOMENTUM(PE) | BA:MACD_DIV(CE) | BA:MOMENTUM(PE) | BA:MACD_DIV(PE) | BA:MOMENTUM(PE) | NI:MACD_DIV(CE) | NI:MOMENTUM(PE) | NI:MACD_DIV(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE)
+  2025-02-18  Rs.  +8,324  SE:MACD_DIV(PE) | SE:MACD_DIV(CE) | SE:MOMENTUM(CE) | SE:MACD_DIV(PE) | FI:MACD_DIV(CE) | FI:MACD_DIV(PE) | FI:MOMENTUM(CE) | BA:MACD_DIV(CE) | BA:MACD_DIV(PE) | NI:MACD_DIV(PE) | NI:VWAP_BOU(CE) | NI:OPTIONS_(PE) | NI:MACD_DIV(PE)
+  2025-02-25  Rs.  +7,875  NI:MACD_DIV(CE) | NI:MOMENTUM(CE) | NI:MACD_DIV(PE) | NI:MACD_DIV(PE)
+  2025-02-14  Rs.  +7,150  SE:MACD_DIV(PE) | SE:OPTIONS_(CE) | SE:MOMENTUM(PE) | SE:MACD_DIV(CE) | FI:RSI_REVE(CE) | FI:MOMENTUM(PE) | FI:MACD_DIV(CE) | BA:MACD_DIV(PE) | BA:RSI_REVE(CE) | BA:MACD_DIV(CE) | NI:VOLUME_C(CE) | NI:OPTIONS_(CE) | NI:MOMENTUM(PE)
+  2025-02-20  Rs.  +5,161  SE:MOMENTUM(CE) | SE:VWAP_BOU(CE) | FI:VWAP_BOU(CE) | FI:EMA_CROS(CE) | BA:MOMENTUM(CE) | BA:VWAP_BOU(CE) | BA:MACD_DIV(PE) | NI:MOMENTUM(CE) | NI:VWAP_BOU(CE) | NI:MACD_DIV(PE)
+  2025-02-12  Rs.  +4,422  SE:MOMENTUM(CE) | SE:OPTIONS_(PE) | SE:MACD_DIV(PE) | FI:OPTIONS_(PE) | FI:MACD_DIV(PE) | BA:MOMENTUM(CE) | BA:OPTIONS_(PE) | BA:MACD_DIV(PE) | NI:OPTIONS_(PE) | NI:MACD_DIV(PE)
+  2025-02-17  Rs.  +4,245  SE:MOMENTUM(CE) | SE:BOLLINGE(CE) | FI:VWAP_BOU(CE) | FI:MOMENTUM(CE) | BA:MOMENTUM(CE) | BA:MACD_DIV(CE) | NI:MOMENTUM(CE) | NI:BOLLINGE(CE)
+
+  WORST 5 DAYS:
+  2025-02-19  Rs.  -9,180  SE:MACD_DIV[TSL] | FI:MACD_DIV[DURATION] | FI:MACD_DIV[TIME] | FI:EMA_CROS[TIME] | FI:BOLLINGE[TIME] | BA:MACD_DIV[TIME] | BA:MOMENTUM[TSL] | BA:MACD_DIV[TIME] | NI:MACD_DIV[DURATION] | NI:MACD_DIV[TIME] | NI:LONG_UNW[TIME] | NI:MOMENTUM[TIME] | NI:EMA_CROS[TIME] | NI:BOLLINGE[TIME] | NI:MACD_DIV[TIME] | NI:LONG_UNW[TIME]
+  2025-03-18  Rs.  -6,696  SE:MACD_DIV[DURATION] | SE:MOMENTUM[TSL] | SE:OPTIONS_[TIME] | SE:MACD_DIV[TIME] | FI:MACD_DIV[TSL] | FI:MOMENTUM[TIME] | FI:OPTIONS_[TIME] | FI:MACD_DIV[TIME] | BA:MACD_DIV[TSL] | BA:MACD_DIV[TIME] | NI:VWAP_BOU[DURATION] | NI:MACD_DIV[DURATION] | NI:OPTIONS_[TIME] | NI:MACD_DIV[TIME]
+  2025-03-11  Rs.  -6,559  SE:OPTIONS_[DURATION] | SE:MACD_DIV[TIME] | SE:MOMENTUM[TIME] | SE:RSI_REVE[TIME] | SE:OPTIONS_[TIME] | SE:RSI_REVE[TIME] | FI:MOMENTUM[TIME] | FI:MOMENTUM[TSL] | FI:OPTIONS_[TIME] | FI:MACD_DIV[TIME] | BA:MACD_DIV[DURATION] | BA:LONG_UNW[TIME] | BA:MOMENTUM[TIME] | BA:BOLLINGE[TIME] | BA:VOLUME_C[TIME] | BA:MACD_DIV[TIME] | NI:MACD_DIV[TIME] | NI:MACD_DIV[TIME] | NI:RSI_REVE[TIME]
+  2025-02-28  Rs.  -4,925  SE:MOMENTUM[TIME] | SE:EMA_CROS[TIME] | SE:BOLLINGE[TIME] | FI:MOMENTUM[TSL] | FI:EMA_CROS[DURATION] | FI:BOLLINGE[TSL] | FI:LONG_UNW[TIME] | FI:LONG_UNW[TIME] | FI:MACD_DIV[TSL] | FI:LONG_UNW[TIME] | FI:LONG_UNW[TIME] | BA:LONG_UNW[TIME] | BA:LONG_UNW[TIME] | BA:LONG_UNW[TIME] | BA:LONG_UNW[TIME] | NI:MOMENTUM[TIME] | NI:BOLLINGE[TIME] | NI:OPTIONS_[TIME] | NI:MACD_DIV[TIME]
+  2025-03-03  Rs.  -4,289  SE:LONG_UNW[TIME] | FI:EMA_CROS[TIME] | FI:MACD_DIV[TIME] | BA:MACD_DIV[TIME] | NI:MACD_DIV[TIME] | NI:MACD_DIV[TIME] | NI:MACD_DIV[TIME]
+
+  Saved 358 trades -> backtest_results/v8_multiindex_trades.csv

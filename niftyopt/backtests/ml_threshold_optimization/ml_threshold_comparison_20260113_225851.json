@@ -1,0 +1,92 @@
+{
+  "test_period": {
+    "start": "2025-12-14",
+    "end": "2026-01-13"
+  },
+  "initial_capital": 100000.0,
+  "commission_per_trade": 240.0,
+  "thresholds_tested": [
+    0.2,
+    0.25,
+    0.3,
+    0.35
+  ],
+  "results": [
+    {
+      "threshold": 0.2,
+      "metrics": {
+        "total_trades": 26,
+        "winning_trades": 0,
+        "losing_trades": 26,
+        "breakeven_trades": 0,
+        "win_rate": 0.0,
+        "total_pnl": -7276.664974135286,
+        "total_return_pct": -7.276664974135286,
+        "profit_factor": 0.0,
+        "gross_profit": 0,
+        "gross_loss": 7276.664974135286,
+        "avg_win": 0.0,
+        "avg_loss": 279.8717297744341,
+        "total_commission": 6240.0,
+        "avg_commission_per_trade": 240.0,
+        "threshold": 0.2,
+        "time_taken": 1051.627230644226
+      },
+      "trade_count": 26
+    },
+    {
+      "threshold": 0.25,
+      "metrics": {
+        "total_trades": 10,
+        "winning_trades": 0,
+        "losing_trades": 10,
+        "breakeven_trades": 0,
+        "win_rate": 0.0,
+        "total_pnl": -2830.266937825,
+        "total_return_pct": -2.830266937825,
+        "profit_factor": 0.0,
+        "gross_profit": 0,
+        "gross_loss": 2830.266937825,
+        "avg_win": 0.0,
+        "avg_loss": 283.0266937825,
+        "total_commission": 2400.0,
+        "avg_commission_per_trade": 240.0,
+        "threshold": 0.25,
+        "time_taken": 1825.579452753067
+      },
+      "trade_count": 10
+    },
+    {
+      "threshold": 0.3,
+      "metrics": {
+        "total_trades": 0,
+        "winning_trades": 0,
+        "losing_trades": 0,
+        "win_rate": 0.0,
+        "total_pnl": 0.0,
+        "total_return_pct": 0.0,
+        "profit_factor": 0.0,
+        "total_commission": 0.0,
+        "threshold": 0.3,
+        "time_taken": 1803.474779367447
+      },
+      "trade_count": 0
+    },
+    {
+      "threshold": 0.35,
+      "metrics": {
+        "total_trades": 0,
+        "winning_trades": 0,
+        "losing_trades": 0,
+        "win_rate": 0.0,
+        "total_pnl": 0.0,
+        "total_return_pct": 0.0,
+        "profit_factor": 0.0,
+        "total_commission": 0.0,
+        "threshold": 0.35,
+        "time_taken": 1790.2792773246765
+      },
+      "trade_count": 0
+    }
+  ]
+}

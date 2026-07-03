@@ -1,0 +1,94 @@
+test_afternoon_choppy_config (__main__.TestV4Configuration.test_afternoon_choppy_config)
+Afternoon choppy filter is configured ... ok
+test_gap_orb_config (__main__.TestV4Configuration.test_gap_orb_config)
+Gap ORB configuration is set ... ok
+test_momentum_bypass_config (__main__.TestV4Configuration.test_momentum_bypass_config)
+Momentum filter with confidence bypass is configured ... ok
+test_portfolio_heat_config (__main__.TestV4Configuration.test_portfolio_heat_config)
+Portfolio heat limits are configured ... ok
+test_time_based_sizing_config (__main__.TestV4Configuration.test_time_based_sizing_config)
+Time-based position sizing is configured ... ok
+test_v4_version_set (__main__.TestV4Configuration.test_v4_version_set)
+V4 file version string is set (V5.0 internal label, still V4 codebase) ... ok
+test_different_strategies_independent (__main__.TestPortfolioHeatManager.test_different_strategies_independent)
+Different strategies track independently ... ok
+test_initial_state (__main__.TestPortfolioHeatManager.test_initial_state)
+Heat manager starts empty ... ok
+test_max_open_limit (__main__.TestPortfolioHeatManager.test_max_open_limit)
+Heat manager enforces max open positions ... ======================================================================
+MODULAR TRADER V4 - TEST SUITE
+Testing April 29, 2026 Learning Implementation
+======================================================================
+26-06-26 09:15:01 | INFO | [HEAT] Blocking MAGIC_SQUARE - Max 3 open positions reached (3)
+ok
+test_release_on_exit (__main__.TestPortfolioHeatManager.test_release_on_exit)
+Heat manager releases on exit ... ok
+test_cooldown_after_losses (__main__.TestStrategyCooldown.test_cooldown_after_losses)
+Cooldown activates after consecutive losses ... 26-06-26 09:15:01 | WARNING | [COOLDOWN] TEST disabled for 30min after 2 losses
+ok
+test_cooldown_expires (__main__.TestStrategyCooldown.test_cooldown_expires)
+Cooldown expires after configured time ... 26-06-26 09:15:01 | WARNING | [COOLDOWN] TEST disabled for 30min after 2 losses
+ok
+test_no_cooldown_initially (__main__.TestStrategyCooldown.test_no_cooldown_initially)
+Strategy not in cooldown initially ... ok
+test_win_resets_losses (__main__.TestStrategyCooldown.test_win_resets_losses)
+Win resets consecutive loss counter ... ok
+test_choppy_filter_allows_morning_low_vix (__main__.TestAfternoonChoppyFilter.test_choppy_filter_allows_morning_low_vix)
+Choppy filter allows trades in morning even with low VIX ... ok
+test_choppy_filter_blocks_afternoon_low_vix (__main__.TestAfternoonChoppyFilter.test_choppy_filter_blocks_afternoon_low_vix)
+Afternoon choppy filter blocks trend strategies when VIX < 15 ... ok
+test_high_confidence_bypasses_momentum (__main__.TestMomentumFilterBypass.test_high_confidence_bypasses_momentum)
+High confidence (90%+) bypasses momentum filter ... ok
+test_low_confidence_blocked_by_momentum (__main__.TestMomentumFilterBypass.test_low_confidence_blocked_by_momentum)
+Low confidence signals blocked by momentum filter when market is trending ... ok
+test_combo_key_tracking (__main__.TestMagicSquareV4.test_combo_key_tracking)
+V4: Strike+Magic combo is tracked ... ok
+test_reset_daily_clears_tracking (__main__.TestMagicSquareV4.test_reset_daily_clears_tracking)
+Reset clears all tracking sets ... ok
+test_strike_deduplication (__main__.TestMagicSquareV4.test_strike_deduplication)
+V4: Same strike cannot be entered twice ... ok
+test_afternoon_reduced_size (__main__.TestTimeBasedSizing.test_afternoon_reduced_size)
+14:30 PM should be reduced size ... ok
+test_morning_full_size (__main__.TestTimeBasedSizing.test_morning_full_size)
+10:00 AM should be full size ... ok
+test_gap_calculation (__main__.TestGapUpORB.test_gap_calculation)
+Gap calculation is correct ... ok
+test_gap_threshold_configured (__main__.TestGapUpORB.test_gap_threshold_configured)
+Gap threshold is 0.3% ... ok
+test_dayhighlow_traditional_locks_at_120_candles (__main__.TestV4ORBOneHourWindow.test_dayhighlow_traditional_locks_at_120_candles)
+DayHighLowTraditionalModule locks range at exactly 120 candles ... ok
+test_dayhighlow_traditional_waits_for_60min (__main__.TestV4ORBOneHourWindow.test_dayhighlow_traditional_waits_for_60min)
+DayHighLowTraditionalModule does NOT lock range until 120 candles ... ok
+test_orb_candles_is_60min (__main__.TestV4ORBOneHourWindow.test_orb_candles_is_60min)
+ORB_CANDLES = 120 meaning 120 x 30s = 60 minutes ... ok
+test_ultimate_orb_also_uses_120_candles (__main__.TestV4ORBOneHourWindow.test_ultimate_orb_also_uses_120_candles)
+UltimateORBModule locks at same 120-candle window ... 26-06-26 09:15:01 | INFO | [DH/DL] ORB LOCKED 10:15 high=24049.00 low=24000.00
+ok
+test_all_18_modules_instantiate (__main__.TestV4AllModulesInstantiate.test_all_18_modules_instantiate) ... ok
+test_vix_or_move_configured (__main__.TestTrendFollowingV4.test_vix_or_move_configured)
+VIX or Move requirement is enabled ... ok
+test_bearish_pcr (__main__.TestPCR.test_bearish_pcr)
+PCR > 1.25 is bearish ... ok
+test_bullish_pcr (__main__.TestPCR.test_bullish_pcr)
+PCR < 0.75 is bullish ... ok
+test_neutral_pcr (__main__.TestPCR.test_neutral_pcr)
+PCR between 0.75 and 1.25 is neutral ... ok
+test_trade_manager_initialization (__main__.TestIntegration.test_trade_manager_initialization)
+Trade manager initializes with heat manager ... ok
+test_v4_enhancements_loaded (__main__.TestIntegration.test_v4_enhancements_loaded)
+All V4 enhancements are present ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.007s
+
+OK
+
+======================================================================
+SUMMARY
+======================================================================
+Tests Run: 36
+Passed: 36
+Failed: 0
+Errors: 0
+
+✅ ALL 36 TESTS PASSED - V4 Ready for Production

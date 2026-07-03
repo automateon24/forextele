@@ -1,0 +1,14 @@
+2026-04-03 09:27:19,821 - INFO - Historical data loaded: 2614 points
+2026-04-03 09:27:19,825 - INFO - Options chain loaded: 41 strikes
+2026-04-03 09:27:19,825 - INFO - Starting comprehensive backtesting...
+2026-04-03 09:27:19,826 - INFO - Calculating technical indicators...
+2026-04-03 09:27:19,863 - INFO - Technical indicators calculated
+2026-04-03 09:27:19,863 - INFO - Running Strategy 1/13: strategy_enhanced_day_high_low
+2026-04-03 09:27:19,864 - INFO - Testing Enhanced Day High/Low strategy...
+2026-04-03 09:27:19,965 - ERROR - Trade creation error: 23100
+2026-04-03 09:27:20,067 - ERROR - Trade creation error: 22650
+2026-04-03 09:27:20,181 - ERROR - Trade creation error: 22800
+2026-04-03 09:27:20,286 - ERROR - Trade creation error: 22750
+2026-04-03 09:27:20,391 - ERROR - Trade creation error: 22600
+2026-04-03 09:27:20,492 - ERROR - Trade creation error: 22950
+2026-04-03 09:27:20,592 - ERROR - Exit logic error: 'NoneType' object is not subscriptable

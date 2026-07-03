@@ -1,0 +1,14 @@
+Trades: 580
+Lots: 2.0
+Total PnL: Rs.35,146
+Best Day: Rs.9,590 (1.9%)
+Days >= Rs.25K: 0
+Days >= Rs.50K: 0
+Days >= Rs.75K: 0
+
+Per Index:
+NIFTY: 72 trades, Rs.15,769, MaxDD: Rs.-8,439
+BANKNIFTY: 88 trades, Rs.19,783, MaxDD: Rs.-6,268
+FINNIFTY: 292 trades, Rs.3,546, MaxDD: Rs.-16,163
+MIDCPNIFTY: 92 trades, Rs.-10,427, MaxDD: Rs.-9,177
+SENSEX: 36 trades, Rs.6,475, MaxDD: Rs.-2,729

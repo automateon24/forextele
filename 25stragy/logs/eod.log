@@ -1,0 +1,76 @@
+
+================================================================================
+  NIFTY OPTIONS TRADER - END OF DAY SUMMARY
+  Date: 2026-06-22
+================================================================================
+
+================================================================================
+  OVERALL RESULT : LOSS
+  TOTAL NET P&L  : Rs -8,726.25
+  TOTAL TRADES   : 4  |  WINS: 0  LOSSES: 4  WIN RATE: 0%
+  BEST TRADE     : Rs -551.25
+  WORST TRADE    : Rs -6,750.00
+================================================================================
+
+  STRATEGY BREAKDOWN
+  Strategy                       Dir    Tr   W   WR%  AvgEntry  AvgExit          P&L  Result
+  ------------------------------------------------------------------------------------------
+  RESIST_BREAK                   CE      1   0    0%      67.30    59.95      -551.25  LOSS (TIME_STOP)
+  ENHANCED_BULLISH               CE      1   0    0%      94.60    85.55      -678.75  LOSS (TIME_STOP)
+  PUT_SUPPORT                    CE      1   0    0%      69.50    59.55      -746.25  LOSS (TIME_STOP)
+  AI_BEARISH                     PE      1   0    0%      73.00    50.50    -6,750.00  LOSS (STOP_LOSS)
+
+  TRADE-BY-TRADE DETAIL
+  Time     Strategy                     Dir  Strike   Entry    Exit Premium%        P&L  Result
+  -----------------------------------------------------------------------------------------------
+  09:36:31 PUT_SUPPORT                  CE  24150.0   69.50   59.55   -14.3%     -746.25  L TIME_STOP
+  09:37:32 ENHANCED_BULLISH             CE  24100.0   94.60   85.55    -9.6%     -678.75  L TIME_STOP
+  09:44:08 AI_BEARISH                   PE    24100   73.00   50.50   -30.8%   -6,750.00  L STOP_LOSS
+  09:54:13 RESIST_BREAK                 CE  24150.0   67.30   59.95   -10.9%     -551.25  L TIME_STOP
+
+  DATA FOR NEXT PROGRAM / STRATEGY TUNING
+  ----------------------------------------------------------------------------
+  Strategy                       Dir  Strike   Entry    Exit      SL   Target   Conf
+  ----------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\cursor\options\niftyopt\EOD_ANALYSIS.py", line 177, in <module>
+    analyze(dt)
+  File "C:\cursor\options\niftyopt\EOD_ANALYSIS.py", line 136, in analyze
+    print(f"  {flag} {strat:<29} {dirn:<3} {strike:>7} {entry:>7.2f} {exit_p:>7.2f} {sl:>7.2f} {target:>8.2f} {conf:>6}")
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 2: character maps to <undefined>
+
+================================================================================
+  TOKEN STATUS
+================================================================================
+  Token expires : 2026-06-23T08:30:33
+  Status        : VALID
+
+================================================================================
+  ADAPTIVE ENGINE - WHAT IT LEARNED TODAY
+================================================================================
+  No adaptive log found for today
+
+================================================================================
+  SCHEDULER LOG - TOKEN REFRESH TODAY
+================================================================================
+   2026-06-22 08:30:03,713 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+   2026-06-22 08:30:32,663 INFO [AUTH] generateAccessToken SUCCESS
+   2026-06-22 08:30:32,667 INFO [SAVED] Token saved. Expires: 2026-06-23T08:30:33
+   [2026-06-22 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-23 08:30:33
+   [2026-06-22 08:30:42] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x1ef2db4a010>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+
+================================================================================
+  FILES FOR TOMORROW'S PROGRAMS
+  Copy these values into your next strategy/backtest
+================================================================================
+  Trades CSV  : daily_data\modular_trades_20260622.csv
+  V3 CSV      : daily_data\v3_trades_20260622.csv
+  Decisions   : daily_data\decisions_20260622.log
+  V5 Full Log : daily_data\trader_v5_20260622.log
+  Adaptive    : daily_data\adaptive_v4_20260622.log
+================================================================================
+
+  Press any key to close...

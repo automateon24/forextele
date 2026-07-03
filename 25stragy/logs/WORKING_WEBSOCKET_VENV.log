@@ -1,0 +1,27 @@
+2026-02-18 13:00:06,153 - INFO - Database setup completed
+2026-02-18 13:00:06,176 - INFO - WORKING WEBSOCKET VENV DEPLOYMENT
+2026-02-18 13:00:06,177 - INFO - ======================================================================
+2026-02-18 13:00:06,177 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 13:00:06,177 - INFO - Data Source: WebSocket (Spot) + API (Options)
+2026-02-18 13:00:06,177 - INFO - Update Interval: 5 seconds for options
+2026-02-18 13:00:06,179 - INFO - Python Version: 3.11.9 (Virtual Environment)
+2026-02-18 13:00:06,179 - INFO - ======================================================================
+2026-02-18 13:00:06,182 - INFO - Starting working WebSocket deployment with Python 3.11...
+2026-02-18 13:00:06,184 - INFO - WebSocket event loop started. Streaming Nifty data...
+2026-02-18 13:00:06,184 - ERROR - Failed to start WebSocket feed: This event loop is already running
+2026-02-18 13:00:06,192 - INFO - 
+======================================================================
+2026-02-18 13:00:06,192 - INFO - WORKING WEBSOCKET VENV DEPLOYMENT SUMMARY
+2026-02-18 13:00:06,192 - INFO - ======================================================================
+2026-02-18 13:00:06,193 - INFO - Total Duration: 0:00:00.016086
+2026-02-18 13:00:06,193 - INFO - Real-time Data Points: 0
+2026-02-18 13:00:06,193 - INFO - 
+Database: c:\cursor\options\niftyopt\data\WORKING_WEBSOCKET_VENV.db
+2026-02-18 13:00:06,193 - INFO - All market data and option chain saved successfully
+2026-02-18 13:00:06,194 - INFO - 
+FINAL STATUS: WEBSOCKET DEPLOYMENT COMPLETED
+2026-02-18 13:00:06,194 - INFO - WebSocket-based real-time deployment
+2026-02-18 13:00:06,194 - INFO - Python 3.11.9 Virtual Environment
+2026-02-18 13:00:06,194 - INFO - Paper trading mode - No real orders placed
+2026-02-18 13:00:06,195 - INFO - Ready for production deployment with real orders
+2026-02-18 13:00:06,195 - INFO - ======================================================================

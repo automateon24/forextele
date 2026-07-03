@@ -1,0 +1,7 @@
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | ================================================================================
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | 🚀 PRODUCTION TRADING SYSTEM STARTING
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | ================================================================================
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | 📅 Trading Date: 2026-02-27 01:44:51
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | 📁 Log Directory: C:\cursor\options\niftyopt\logs
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | 📊 Log Level: INFO
+2026-02-27 01:44:51 | INFO     | root            | setup_logging        | ================================================================================

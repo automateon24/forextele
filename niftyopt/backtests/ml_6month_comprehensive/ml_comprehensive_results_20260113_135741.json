@@ -1,0 +1,61 @@
+{
+  "baseline": {
+    "total_trades": 115,
+    "winning_trades": 12,
+    "losing_trades": 103,
+    "breakeven_trades": 0,
+    "win_rate": 0.10434782608695652,
+    "total_pnl": -7968.50600465061,
+    "total_return": -0.07968506004650609,
+    "total_return_pct": -7.968506004650609,
+    "gross_profit": 306.7839472500002,
+    "gross_loss": 8275.28995190061,
+    "profit_factor": 0.037072289796871744,
+    "avg_win": 25.565328937500016,
+    "avg_loss": 80.34262089223893,
+    "avg_trade": -69.29135656217922,
+    "largest_win": 75.37053312500004,
+    "largest_loss": -137.64722312499993,
+    "sharpe_ratio": -2.3325608408746237,
+    "max_drawdown": -0.07879560194624996,
+    "max_drawdown_pct": -7.879560194624996,
+    "max_drawdown_amount": -7879.560194624995,
+    "avg_holding_period_hours": 40.64202898550725,
+    "initial_capital": 100000.0,
+    "final_capital": 92031.49399534939
+  },
+  "ml_filtered": {
+    "total_trades": 0,
+    "winning_trades": 0,
+    "losing_trades": 0,
+    "breakeven_trades": 0,
+    "win_rate": 0.0,
+    "total_pnl": 0.0,
+    "total_return": 0.0,
+    "total_return_pct": 0.0,
+    "gross_profit": 0.0,
+    "gross_loss": 0.0,
+    "profit_factor": 0.0,
+    "avg_win": 0.0,
+    "avg_loss": 0.0,
+    "avg_trade": 0.0,
+    "largest_win": 0.0,
+    "largest_loss": 0.0,
+    "sharpe_ratio": 0.0,
+    "max_drawdown": 0.0,
+    "max_drawdown_pct": 0.0,
+    "max_drawdown_amount": 0.0,
+    "avg_holding_period_hours": 0.0,
+    "initial_capital": 100000.0,
+    "final_capital": 100000.0
+  },
+  "training_period": {
+    "start": "2025-06-27",
+    "end": "2025-11-24"
+  },
+  "test_period": {
+    "start": "2025-11-24",
+    "end": "2025-12-24"
+  },
+  "model_threshold": 0.6
+}

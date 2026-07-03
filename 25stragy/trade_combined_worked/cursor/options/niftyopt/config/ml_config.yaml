@@ -1,0 +1,142 @@
+# ML/AI Engine Configuration
+
+ml:
+  enabled: true
+  mode: "training"  # training, inference, both
+  
+# Feature Engineering
+features:
+  price_features:
+    returns_windows: [1, 5, 15, 60]  # minutes
+    ma_periods: [20, 50, 200]
+    volatility_windows: [5, 15, 60]
+    
+  options_features:
+    pcr_history_days: 180  # 6 months
+    oi_change_windows: [1, 5, 15]  # minutes
+    iv_history_days: 90
+    
+  historical_features:
+    include_probabilities: true
+    include_expected_move: true
+    include_vol_regime: true
+    
+  time_features:
+    hour_of_day: true
+    day_of_week: true
+    days_to_expiry: true
+    expiry_week_flag: true
+    
+  interaction_features:
+    enabled: true
+    combinations:
+      - ["pcr_total", "vix"]
+      - ["oi_change", "price_change"]
+      - ["skew", "vol_regime"]
+
+# Model Configuration
+models:
+  baseline:
+    type: "logistic_regression"
+    enabled: true
+    
+  primary:
+    type: "xgboost"  # xgboost, lightgbm
+    enabled: true
+    
+  advanced:
+    type: "lstm"  # lstm, gru
+    enabled: false  # Enable in Phase 2
+    
+# XGBoost/LightGBM Parameters
+xgboost:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_weight: 3
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  objective: "binary:logistic"
+  eval_metric: "logloss"
+  
+# Training Configuration
+training:
+  train_test_split:
+    train_pct: 0.70
+    validation_pct: 0.15
+    test_pct: 0.15
+    
+  validation_method: "walk_forward"  # walk_forward, time_series_split
+  
+  walk_forward:
+    train_window_days: 365  # 1 year
+    test_window_days: 30  # 1 month
+    step_days: 30
+    
+  target_labeling:
+    intraday:
+      horizon_minutes: 60
+      up_threshold_pct: 0.002  # 0.2%
+      down_threshold_pct: -0.002
+      
+    eod:
+      up_threshold_pct: 0.003  # 0.3%
+      down_threshold_pct: -0.003
+      
+    multi_day:
+      horizon_days: 5
+      up_threshold_pct: 0.01  # 1%
+      down_threshold_pct: -0.01
+
+# Model Evaluation
+evaluation:
+  metrics:
+    - "roc_auc"
+    - "log_loss"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "calibration_curve"
+    
+  min_roc_auc: 0.60  # Minimum acceptable AUC
+  min_calibration_error: 0.05  # Maximum calibration error
+
+# Retraining Schedule
+retraining:
+  full_retrain:
+    frequency: "monthly"  # monthly, quarterly
+    trigger_date: 1  # Day of month
+    
+  incremental_update:
+    enabled: true
+    frequency: "weekly"
+    min_new_samples: 100
+    
+  performance_monitoring:
+    enabled: true
+    check_frequency: "daily"
+    degradation_threshold: 0.05  # 5% drop in performance
+    
+# Model Storage
+model_storage:
+  base_path: "models/"
+  versioning: true
+  keep_versions: 5
+  
+  model_files:
+    intraday: "intraday_model.pkl"
+    eod: "eod_model.pkl"
+    multi_day: "multiday_model.pkl"
+    
+# Inference Configuration
+inference:
+  batch_size: 1  # Real-time: 1, Batch: 32
+  cache_features: true
+  cache_ttl_seconds: 60
+  
+  fallback:
+    enabled: true
+    fallback_to_rules: true  # Use rules if ML fails
+

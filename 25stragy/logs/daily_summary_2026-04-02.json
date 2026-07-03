@@ -1,0 +1,13 @@
+{
+  "date": "2026-04-02",
+  "initial_capital": 100000,
+  "current_capital": 100000,
+  "daily_pnl": 0,
+  "total_pnl": 0,
+  "trades_executed": 0,
+  "successful_trades": 0,
+  "max_drawdown": 0,
+  "win_rate": 0,
+  "trades": [],
+  "end_of_day_report": true
+}

@@ -1,0 +1,36 @@
+{
+  "backtest_date": "2026-04-19T16:18:49.130823",
+  "period": {
+    "start": "2021-01-01",
+    "end": "2023-12-01"
+  },
+  "capital": 100000,
+  "total_trades": 13,
+  "wins": 0,
+  "losses": 12,
+  "expired": 1,
+  "win_rate_pct": 0.0,
+  "total_pnl": -99920.0,
+  "final_capital": 80.0,
+  "roi_5yr_pct": -99.9,
+  "roi_per_year_pct": -20.0,
+  "avg_win": 0,
+  "avg_loss": -8168.0,
+  "max_drawdown": 99920.0,
+  "yearly": [
+    {
+      "year": 2021,
+      "trades": 11,
+      "wins": 0,
+      "pnl": -99705.5,
+      "win_rate": 0.0
+    },
+    {
+      "year": 2023,
+      "trades": 2,
+      "wins": 0,
+      "pnl": -215.0,
+      "win_rate": 0.0
+    }
+  ]
+}

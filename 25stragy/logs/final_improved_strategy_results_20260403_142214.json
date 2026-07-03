@@ -1,0 +1,37 @@
+{
+  "total_trades": 8,
+  "winning_trades": 8,
+  "losing_trades": 0,
+  "total_gross_pnl": 19291.500000000087,
+  "total_net_pnl": 18651.500000000087,
+  "total_investment": 258008.0000000002,
+  "total_broker_charges": 640,
+  "win_rate": 100.0,
+  "avg_net_pnl": 2331.437500000011,
+  "avg_roi": 7.220675357837392,
+  "profit_factor": 0,
+  "avg_daily_pnl": 18651.500000000087,
+  "trading_days": 1,
+  "trades_per_day": 8.0,
+  "capital_utilization": 258.0080000000002,
+  "capital": 100000,
+  "buy_stats": {
+    "total_trades": 8,
+    "winning_trades": 8,
+    "total_pnl": 18651.500000000087,
+    "win_rate": 100.0
+  },
+  "sell_stats": {
+    "total_trades": 0,
+    "winning_trades": 0,
+    "total_pnl": 0,
+    "win_rate": 0
+  },
+  "target_type_stats": {
+    "opposite_day_low": {
+      "total_trades": 8,
+      "winning_trades": 8,
+      "total_pnl": 18651.500000000087
+    }
+  }
+}

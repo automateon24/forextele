@@ -1,0 +1,487 @@
+# Strategies Configuration
+# Comprehensive table of all trading strategies with thresholds and parameters
+# Each strategy has specific thresholds and parameters for effective trade identification
+# Version: 2.0 - Added Momentum Breakout Strategy
+
+strategies:
+  # ============================================
+  # INTRADAY STRATEGIES (1 hour horizon)
+  # ============================================
+  
+  intraday_long_call:
+    name: "Intraday Long Call"
+    type: "SINGLE_LEG"
+    direction: "BULLISH"
+    horizon: "intraday"
+    description: "Buy ATM or ITM call for intraday bullish move"
+    
+    # Entry Conditions
+    entry_conditions:
+      min_confidence: 0.60
+      min_prob_up: 0.60
+      max_prob_down: 0.30
+      vol_regime: ["LOW", "NORMAL"]
+      time_of_day: ["OPEN", "NORMAL"]  # Not LATE
+      
+    # IV Conditions
+    iv_conditions:
+      max_iv_percentile: 75  # Don't buy when IV is too high
+      min_iv_percentile: 10  # Don't buy when IV is too low (no edge)
+      
+    # Strike Selection
+    strike_selection:
+      moneyness_range: 0.02  # ATM ± 2%
+      prefer_itm: true
+      min_oi: 15000
+      min_volume: 1000
+      max_spread_pct: 0.025
+      
+    # Risk Parameters
+    risk:
+      stop_loss_pct: 0.35  # 35% premium loss
+      target_pct: 0.50  # 50% premium gain
+      max_risk_per_trade: 0.015  # 1.5% of capital
+      position_size_multiplier: 1.0
+      
+    # Exit Conditions
+    exit_conditions:
+      time_based: true
+      exit_time: "15:20"  # Exit 10 min before market close
+      profit_target: true
+      stop_loss: true
+      trailing_stop: false
+      
+  intraday_long_put:
+    name: "Intraday Long Put"
+    type: "SINGLE_LEG"
+    direction: "BEARISH"
+    horizon: "intraday"
+    description: "Buy ATM or ITM put for intraday bearish move"
+    
+    entry_conditions:
+      min_confidence: 0.60
+      min_prob_down: 0.60
+      max_prob_up: 0.30
+      vol_regime: ["LOW", "NORMAL"]
+      time_of_day: ["OPEN", "NORMAL"]
+      
+    iv_conditions:
+      max_iv_percentile: 75
+      min_iv_percentile: 10
+      
+    strike_selection:
+      moneyness_range: 0.02
+      prefer_itm: true
+      min_oi: 15000
+      min_volume: 1000
+      max_spread_pct: 0.025
+      
+    risk:
+      stop_loss_pct: 0.35
+      target_pct: 0.50
+      max_risk_per_trade: 0.015
+      position_size_multiplier: 1.0
+      
+    exit_conditions:
+      time_based: true
+      exit_time: "15:20"
+      profit_target: true
+      stop_loss: true
+      trailing_stop: false
+      
+  intraday_bull_call_spread:
+    name: "Intraday Bull Call Spread"
+    type: "SPREAD"
+    direction: "BULLISH"
+    horizon: "intraday"
+    description: "Bull call spread for intraday bullish move with high IV"
+    
+    entry_conditions:
+      min_confidence: 0.65
+      min_prob_up: 0.65
+      max_prob_down: 0.25
+      vol_regime: ["HIGH", "EXTREME"]
+      time_of_day: ["OPEN", "NORMAL", "MIDDAY"]
+      
+    iv_conditions:
+      min_iv_percentile: 60  # Prefer high IV for spreads
+      max_iv_percentile: 95
+      
+    strike_selection:
+      long_strike_moneyness: -0.01  # Slightly ITM or ATM
+      short_strike_moneyness: 0.02  # 2% OTM
+      spread_width_pct: 0.02  # 2% spread width
+      min_oi: 10000
+      min_volume: 500
+      max_spread_pct: 0.03
+      
+    risk:
+      max_loss: "premium_paid"  # Defined risk
+      max_profit: "spread_width_minus_premium"
+      max_risk_per_trade: 0.02
+      position_size_multiplier: 1.2  # Can take slightly larger size (defined risk)
+      
+    exit_conditions:
+      time_based: true
+      exit_time: "15:20"
+      profit_target: true
+      stop_loss: true
+      close_at_50pct_profit: true
+      
+  intraday_bear_put_spread:
+    name: "Intraday Bear Put Spread"
+    type: "SPREAD"
+    direction: "BEARISH"
+    horizon: "intraday"
+    description: "Bear put spread for intraday bearish move with high IV"
+    
+    entry_conditions:
+      min_confidence: 0.65
+      min_prob_down: 0.65
+      max_prob_up: 0.25
+      vol_regime: ["HIGH", "EXTREME"]
+      time_of_day: ["OPEN", "NORMAL", "MIDDAY"]
+      
+    iv_conditions:
+      min_iv_percentile: 60
+      max_iv_percentile: 95
+      
+    strike_selection:
+      long_strike_moneyness: 0.01  # Slightly ITM or ATM
+      short_strike_moneyness: -0.02  # 2% OTM
+      spread_width_pct: 0.02
+      min_oi: 10000
+      min_volume: 500
+      max_spread_pct: 0.03
+      
+    risk:
+      max_loss: "premium_paid"
+      max_profit: "spread_width_minus_premium"
+      max_risk_per_trade: 0.02
+      position_size_multiplier: 1.2
+      
+    exit_conditions:
+      time_based: true
+      exit_time: "15:20"
+      profit_target: true
+      stop_loss: true
+      close_at_50pct_profit: true
+      
+  # ============================================
+  # POSITIONAL STRATEGIES (2-5 days)
+  # ============================================
+  
+  positional_bull_call_spread:
+    name: "Positional Bull Call Spread"
+    type: "SPREAD"
+    direction: "BULLISH"
+    horizon: "positional"
+    description: "Bull call spread for 2-5 day bullish move"
+    
+    entry_conditions:
+      min_confidence: 0.70
+      min_prob_up: 0.70
+      max_prob_down: 0.20
+      vol_regime: ["NORMAL", "HIGH"]
+      time_of_day: ["OPEN", "NORMAL"]
+      days_to_expiry_min: 3
+      days_to_expiry_max: 7
+      
+    iv_conditions:
+      min_iv_percentile: 40
+      max_iv_percentile: 90
+      
+    strike_selection:
+      long_strike_moneyness: -0.01
+      short_strike_moneyness: 0.03  # Wider spread for positional
+      spread_width_pct: 0.03
+      min_oi: 15000
+      min_volume: 800
+      max_spread_pct: 0.04
+      
+    risk:
+      stop_loss_pct: 0.50  # 50% premium loss
+      target_pct: 0.80  # 80% of max profit
+      max_risk_per_trade: 0.02
+      position_size_multiplier: 1.0
+      
+    exit_conditions:
+      time_based: true
+      exit_days_before_expiry: 1
+      profit_target: true
+      stop_loss: true
+      early_exit_on_profit: true
+      
+  positional_bear_put_spread:
+    name: "Positional Bear Put Spread"
+    type: "SPREAD"
+    direction: "BEARISH"
+    horizon: "positional"
+    description: "Bear put spread for 2-5 day bearish move"
+    
+    entry_conditions:
+      min_confidence: 0.70
+      min_prob_down: 0.70
+      max_prob_up: 0.20
+      vol_regime: ["NORMAL", "HIGH"]
+      time_of_day: ["OPEN", "NORMAL"]
+      days_to_expiry_min: 3
+      days_to_expiry_max: 7
+      
+    iv_conditions:
+      min_iv_percentile: 40
+      max_iv_percentile: 90
+      
+    strike_selection:
+      long_strike_moneyness: 0.01
+      short_strike_moneyness: -0.03
+      spread_width_pct: 0.03
+      min_oi: 15000
+      min_volume: 800
+      max_spread_pct: 0.04
+      
+    risk:
+      stop_loss_pct: 0.50
+      target_pct: 0.80
+      max_risk_per_trade: 0.02
+      position_size_multiplier: 1.0
+      
+    exit_conditions:
+      time_based: true
+      exit_days_before_expiry: 1
+      profit_target: true
+      stop_loss: true
+      early_exit_on_profit: true
+      
+  # ============================================
+  # SWING STRATEGIES (5-20 days)
+  # ============================================
+  
+  swing_bull_call_spread:
+    name: "Swing Bull Call Spread"
+    type: "SPREAD"
+    direction: "BULLISH"
+    horizon: "swing"
+    description: "Bull call spread for 5-20 day bullish move"
+    
+    entry_conditions:
+      min_confidence: 0.75
+      min_prob_up: 0.75
+      max_prob_down: 0.15
+      vol_regime: ["NORMAL", "HIGH"]
+      time_of_day: ["OPEN", "NORMAL"]
+      days_to_expiry_min: 7
+      days_to_expiry_max: 15
+      
+    iv_conditions:
+      min_iv_percentile: 30
+      max_iv_percentile: 85
+      
+    strike_selection:
+      long_strike_moneyness: -0.02
+      short_strike_moneyness: 0.05  # Wider spread for swing
+      spread_width_pct: 0.05
+      min_oi: 20000
+      min_volume: 1000
+      max_spread_pct: 0.05
+      
+    risk:
+      stop_loss_pct: 0.60
+      target_pct: 0.90
+      max_risk_per_trade: 0.02
+      position_size_multiplier: 0.9  # Slightly smaller for longer hold
+      
+    exit_conditions:
+      time_based: true
+      exit_days_before_expiry: 2
+      profit_target: true
+      stop_loss: true
+      early_exit_on_profit: true
+      
+  swing_bear_put_spread:
+    name: "Swing Bear Put Spread"
+    type: "SPREAD"
+    direction: "BEARISH"
+    horizon: "swing"
+    description: "Bear put spread for 5-20 day bearish move"
+    
+    entry_conditions:
+      min_confidence: 0.75
+      min_prob_down: 0.75
+      max_prob_up: 0.15
+      vol_regime: ["NORMAL", "HIGH"]
+      time_of_day: ["OPEN", "NORMAL"]
+      days_to_expiry_min: 7
+      days_to_expiry_max: 15
+      
+    iv_conditions:
+      min_iv_percentile: 30
+      max_iv_percentile: 85
+      
+    strike_selection:
+      long_strike_moneyness: 0.02
+      short_strike_moneyness: -0.05
+      spread_width_pct: 0.05
+      min_oi: 20000
+      min_volume: 1000
+      max_spread_pct: 0.05
+      
+    risk:
+      stop_loss_pct: 0.60
+      target_pct: 0.90
+      max_risk_per_trade: 0.02
+      position_size_multiplier: 0.9
+      
+    exit_conditions:
+      time_based: true
+      exit_days_before_expiry: 2
+      profit_target: true
+      stop_loss: true
+      early_exit_on_profit: true
+      
+  # ============================================
+  # NEUTRAL/VOLATILITY STRATEGIES
+  # ============================================
+  
+  short_straddle:
+    name: "Short Straddle"
+    type: "NEUTRAL"
+    direction: "NEUTRAL"
+    horizon: "positional"
+    description: "Sell ATM call and put for range-bound high IV"
+    
+    entry_conditions:
+      min_confidence: 0.70
+      prob_up_range: [0.40, 0.60]  # Neutral range
+      prob_down_range: [0.40, 0.60]
+      vol_regime: ["HIGH", "EXTREME"]
+      time_of_day: ["OPEN", "NORMAL"]
+      days_to_expiry_min: 5
+      days_to_expiry_max: 10
+      
+    iv_conditions:
+      min_iv_percentile: 70  # Need high IV
+      max_iv_percentile: 95
+      
+    strike_selection:
+      strike_moneyness: 0.0  # ATM
+      min_oi: 25000
+      min_volume: 1500
+      max_spread_pct: 0.04
+      
+    risk:
+      max_loss: "unlimited"  # Naked short
+      max_profit: "premium_received"
+      max_risk_per_trade: 0.015
+      position_size_multiplier: 0.7  # Smaller size for unlimited risk
+      margin_required: true
+      
+    exit_conditions:
+      time_based: true
+      exit_days_before_expiry: 3
+      profit_target: true
+      stop_loss: true
+      profit_target_pct: 0.50  # Close at 50% profit
+      stop_loss_pct: 2.0  # 2x premium received
+      
+  short_strangle:
+    name: "Short Strangle"
+    type: "NEUTRAL"
+    direction: "NEUTRAL"
+    horizon: "positional"
+    description: "Sell OTM call and put for range-bound high IV"
+    
+    entry_conditions:
+      min_confidence: 0.65
+      prob_up_range: [0.40, 0.60]
+      prob_down_range: [0.40, 0.60]
+      vol_regime: ["HIGH", "EXTREME"]
+      time_of_day: ["OPEN", "NORMAL"]
+      days_to_expiry_min: 5
+      days_to_expiry_max: 10
+      
+    iv_conditions:
+      min_iv_percentile: 70
+      max_iv_percentile: 95
+      
+    strike_selection:
+      call_strike_moneyness: 0.02  # 2% OTM
+      put_strike_moneyness: -0.02  # 2% OTM
+      min_oi: 20000
+      min_volume: 1200
+      max_spread_pct: 0.05
+      
+    risk:
+      max_loss: "unlimited"
+      max_profit: "premium_received"
+      max_risk_per_trade: 0.015
+      position_size_multiplier: 0.7
+      margin_required: true
+      
+    exit_conditions:
+      time_based: true
+      exit_days_before_expiry: 3
+      profit_target: true
+      stop_loss: true
+      profit_target_pct: 0.50
+      stop_loss_pct: 2.0
+
+# ============================================
+# STRATEGY SELECTION RULES
+# ============================================
+
+strategy_selection:
+  # Priority order for strategy selection
+  priority:
+    - intraday_long_call
+    - intraday_long_put
+    - intraday_bull_call_spread
+    - intraday_bear_put_spread
+    - positional_bull_call_spread
+    - positional_bear_put_spread
+    - swing_bull_call_spread
+    - swing_bear_put_spread
+    - short_straddle
+    - short_strangle
+  
+  # Override rules (when to prefer one strategy over another)
+  overrides:
+    - condition: "vol_regime == 'EXTREME' AND horizon == 'intraday'"
+      prefer: ["intraday_bull_call_spread", "intraday_bear_put_spread"]
+      avoid: ["intraday_long_call", "intraday_long_put"]
+      
+    - condition: "iv_percentile > 80 AND prob_up between 0.40 and 0.60"
+      prefer: ["short_straddle", "short_strangle"]
+      avoid: ["directional_strategies"]
+      
+    - condition: "time_of_day == 'LATE'"
+      prefer: []
+      avoid: ["all_new_positions"]  # Only exits/hedges
+
+# ============================================
+# GLOBAL PARAMETERS
+# ============================================
+
+global_parameters:
+  # Data requirements
+  data_requirements:
+    min_historical_days: 252  # 1 year minimum
+    require_options_chain: true
+    require_vix: true
+    require_greeks: true
+    
+  # Backtesting specific
+  backtesting:
+    use_historical_data_only: true
+    allow_future_data_leak: false
+    realistic_execution: true
+    include_slippage: true
+    include_commissions: true
+    
+  # Performance thresholds
+  performance_thresholds:
+    min_sharpe_ratio: 1.0
+    min_win_rate: 0.50
+    max_drawdown_pct: 0.20
+    min_profit_factor: 1.2
+    min_total_trades: 30  # Minimum trades for statistical significance

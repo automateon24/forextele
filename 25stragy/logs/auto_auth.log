@@ -1,0 +1,2 @@
+2026-04-23 15:15:22,298 - INFO - [SETUP] Created config template at config\dhan_auto_config.yaml
+2026-04-23 15:15:22,298 - INFO - [SETUP] Please fill in your TOTP secret and credentials

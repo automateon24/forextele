@@ -1,0 +1,1 @@
+timestamp,event,trade_id,module,strategy,direction,strike,entry,exit,sl,target,pnl,exit_reason,confidence,reason,unreal_pnl

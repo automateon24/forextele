@@ -1,0 +1,172 @@
+{
+  "STRONG_MOMENTUM": {
+    "strategy": "STRONG_MOMENTUM",
+    "trades": 1,
+    "win_rate": 0.0,
+    "total_pnl": -6754.50000000008,
+    "avg_pnl": -6754.50000000008,
+    "roi": -14.108321497201265,
+    "capital_utilization": 47.876000000000026,
+    "status": "ACTIVE"
+  },
+  "HIGH_VOLUME": {
+    "strategy": "HIGH_VOLUME",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "ADX_TREND": {
+    "strategy": "ADX_TREND",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 44039.00000000489,
+    "avg_pnl": 22019.500000002445,
+    "roi": 80.63855885670509,
+    "capital_utilization": 54.08400000000183,
+    "status": "ACTIVE"
+  },
+  "STOCHASTIC_OVERSOLD": {
+    "strategy": "STOCHASTIC_OVERSOLD",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -2424.5000000000437,
+    "avg_pnl": -1212.2500000000218,
+    "roi": -2.532061993483209,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  },
+  "WILLIAMS_REVERSAL": {
+    "strategy": "WILLIAMS_REVERSAL",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -2321.499999999978,
+    "avg_pnl": -1160.749999999989,
+    "roi": -2.4244924388002103,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  },
+  "MULTI_TIMEFRAME": {
+    "strategy": "MULTI_TIMEFRAME",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -1565.500000000029,
+    "avg_pnl": -782.7500000000146,
+    "roi": -6.079139484312002,
+    "capital_utilization": 25.75200000000004,
+    "status": "ACTIVE"
+  },
+  "AI_ENHANCED": {
+    "strategy": "AI_ENHANCED",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -2787.4999999999636,
+    "avg_pnl": -1393.7499999999818,
+    "roi": -13.432440246723004,
+    "capital_utilization": 20.75200000000004,
+    "status": "ACTIVE"
+  },
+  "TREND_FOLLOWING": {
+    "strategy": "TREND_FOLLOWING",
+    "trades": 2,
+    "win_rate": 50.0,
+    "total_pnl": 2864.00000000016,
+    "avg_pnl": 1432.00000000008,
+    "roi": 14.025160189967584,
+    "capital_utilization": 23.252000000000045,
+    "status": "ACTIVE"
+  },
+  "DAY_HIGH_LOW": {
+    "strategy": "DAY_HIGH_LOW",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 5472.499999999891,
+    "avg_pnl": 2736.2499999999454,
+    "roi": 8.322940747049348,
+    "capital_utilization": 65.75200000000004,
+    "status": "ACTIVE"
+  },
+  "RSI_DIVERGENCE": {
+    "strategy": "RSI_DIVERGENCE",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 1081.4999999999054,
+    "avg_pnl": 540.7499999999527,
+    "roi": 1.1294803241706752,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  },
+  "BOLLINGER_SQUEEZE": {
+    "strategy": "BOLLINGER_SQUEEZE",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 16519.500000000007,
+    "avg_pnl": 8259.750000000004,
+    "roi": 71.80692585082353,
+    "capital_utilization": 23.252000000000045,
+    "status": "ACTIVE"
+  },
+  "MACD_DIVERGENCE": {
+    "strategy": "MACD_DIVERGENCE",
+    "trades": 2,
+    "win_rate": 50.0,
+    "total_pnl": -3184.00000000016,
+    "avg_pnl": -1592.00000000008,
+    "roi": -3.3252569136938743,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  },
+  "CCI_EXTREME": {
+    "strategy": "CCI_EXTREME",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -14204.000000000051,
+    "avg_pnl": -7102.0000000000255,
+    "roi": -14.83415490015879,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  },
+  "MFI_DIVERGENCE": {
+    "strategy": "MFI_DIVERGENCE",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -1865.999999999949,
+    "avg_pnl": -932.9999999999745,
+    "roi": -1.9487843595955678,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  },
+  "ATR_BREAKOUT": {
+    "strategy": "ATR_BREAKOUT",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 10074.500000000116,
+    "avg_pnl": 5037.250000000058,
+    "roi": 48.5471279876643,
+    "capital_utilization": 20.75200000000004,
+    "status": "ACTIVE"
+  },
+  "VOLUME_PRICE_TREND": {
+    "strategy": "VOLUME_PRICE_TREND",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MOMENTUM_REVERSAL": {
+    "strategy": "MOMENTUM_REVERSAL",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_pnl": -18287.500000000146,
+    "avg_pnl": -9143.750000000073,
+    "roi": -19.09881777926324,
+    "capital_utilization": 95.75200000000005,
+    "status": "ACTIVE"
+  }
+}

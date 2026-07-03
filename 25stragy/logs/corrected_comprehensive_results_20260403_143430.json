@@ -1,0 +1,92 @@
+{
+  "STRONG_MOMENTUM": {
+    "strategy": "STRONG_MOMENTUM",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "HIGH_VOLUME": {
+    "strategy": "HIGH_VOLUME",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "ADX_TREND": {
+    "strategy": "ADX_TREND",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "STOCHASTIC_OVERSOLD": {
+    "strategy": "STOCHASTIC_OVERSOLD",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "WILLIAMS_REVERSAL": {
+    "strategy": "WILLIAMS_REVERSAL",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MULTI_TIMEFRAME": {
+    "strategy": "MULTI_TIMEFRAME",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "ERROR"
+  },
+  "AI_ENHANCED": {
+    "strategy": "AI_ENHANCED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "TREND_FOLLOWING": {
+    "strategy": "TREND_FOLLOWING",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 9855.500000000065,
+    "avg_pnl": 4927.750000000033,
+    "roi": 26.563803287018466,
+    "capital_utilization": 33.252000000000045,
+    "status": "ACTIVE"
+  },
+  "DAY_HIGH_LOW": {
+    "strategy": "DAY_HIGH_LOW",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 9855.500000000065,
+    "avg_pnl": 4927.750000000033,
+    "roi": 26.563803287018466,
+    "capital_utilization": 33.252000000000045,
+    "status": "ACTIVE"
+  }
+}

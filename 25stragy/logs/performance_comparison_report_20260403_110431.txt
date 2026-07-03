@@ -1,0 +1,20 @@
+PERFORMANCE COMPARISON REPORT
+==================================================
+Generated: 2026-04-03T11:04:31.429093
+
+OVERALL METRICS:
+--------------------
+total_trades: {'original': 3197, 'fine_tuned': 17, 'reduction_percent': 99.46825148576791}
+win_rate: {'original': 46.887707225523926, 'fine_tuned': 47.05882352941176, 'improvement_percent': 0.17111630388783539}
+avg_pnl_per_trade: {'original': -89.90491085392613, 'fine_tuned': 197.17647058825926, 'improvement_amount': 287.0813814421854}
+total_pnl: {'original': -287426.0000000018, 'fine_tuned': 3352.0000000004075, 'improvement_amount': 290778.0000000022}
+drawdown_reduction: {'original_estimated': 86227.80000000054, 'fine_tuned_estimated': 335.20000000004075, 'reduction_percent': 99.61126226112688}
+
+STRATEGY COMPARISON:
+-------------------------
+strategy_adx_trend: {'original': {'total_trades': 1589, 'winning_trades': 970, 'losing_trades': 619, 'total_pnl': 1206148.0, 'win_rate': 61.04468219005664, 'avg_pnl_per_trade': 759.0610446821901}, 'fine_tuned': {'total_trades': 17, 'winning_trades': 8, 'losing_trades': 9, 'total_pnl': 3352.0000000004075, 'win_rate': 47.05882352941176, 'avg_pnl_per_trade': 197.17647058825926}, 'trades_reduction': 98.93014474512272, 'pnl_change': -1202795.9999999995, 'win_rate_change': -13.98585866064488}
+strategy_rsi_oversold: {'original': {'total_trades': 129, 'winning_trades': 96, 'losing_trades': 33, 'total_pnl': 171371.99999999936, 'win_rate': 74.4186046511628, 'avg_pnl_per_trade': 1328.465116279065}, 'fine_tuned': {'total_trades': 0, 'winning_trades': 0, 'losing_trades': 0, 'total_pnl': 0, 'win_rate': 0, 'avg_pnl_per_trade': 0}, 'trades_reduction': 100.0, 'pnl_change': -171371.99999999936, 'win_rate_change': -74.4186046511628}
+strategy_macd_crossover: {'original': {'total_trades': 91, 'winning_trades': 50, 'losing_trades': 41, 'total_pnl': 18408.49999999973, 'win_rate': 54.94505494505495, 'avg_pnl_per_trade': 202.29120879120583}, 'fine_tuned': {'total_trades': 0, 'winning_trades': 0, 'losing_trades': 0, 'total_pnl': 0, 'win_rate': 0, 'avg_pnl_per_trade': 0}, 'trades_reduction': 100.0, 'pnl_change': -18408.49999999973, 'win_rate_change': -54.94505494505495}
+strategy_bollinger_bands: {'original': {'total_trades': 201, 'winning_trades': 70, 'losing_trades': 131, 'total_pnl': -150548.49999999936, 'win_rate': 34.82587064676617, 'avg_pnl_per_trade': -748.9975124378078}, 'fine_tuned': {'total_trades': 0, 'winning_trades': 0, 'losing_trades': 0, 'total_pnl': 0, 'win_rate': 0, 'avg_pnl_per_trade': 0}, 'trades_reduction': 100.0, 'pnl_change': 150548.49999999936, 'win_rate_change': -34.82587064676617}
+strategy_stochastic_oscillator: {'original': {'total_trades': 46, 'winning_trades': 16, 'losing_trades': 30, 'total_pnl': -51003.50000000035, 'win_rate': 34.78260869565217, 'avg_pnl_per_trade': -1108.7717391304425}, 'fine_tuned': {'total_trades': 0, 'winning_trades': 0, 'losing_trades': 0, 'total_pnl': 0, 'win_rate': 0, 'avg_pnl_per_trade': 0}, 'trades_reduction': 100.0, 'pnl_change': 51003.50000000035, 'win_rate_change': -34.78260869565217}
+strategy_mean_reversion: {'original': {'total_trades': 335, 'winning_trades': 103, 'losing_trades': 232, 'total_pnl': -322713.99999999936, 'win_rate': 30.74626865671642, 'avg_pnl_per_trade': -963.3253731343265}, 'fine_tuned': {'total_trades': 0, 'winning_trades': 0, 'losing_trades': 0, 'total_pnl': 0, 'win_rate': 0, 'avg_pnl_per_trade': 0}, 'trades_reduction': 100.0, 'pnl_change': 322713.99999999936, 'win_rate_change': -30.74626865671642}

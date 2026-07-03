@@ -1,0 +1,64 @@
+[
+    {
+        "date": "2026-07-03",
+        "index": "NIFTY",
+        "decision_time": "15:25",
+        "prediction": "gap_up",
+        "probability": 0.8,
+        "expected_gap_pct": 0.45,
+        "confidence_bucket": "high",
+        "recommended_lots": 1,
+        "rationale": [
+            "SGX/GIFT Strong (+0.45%)",
+            "Buy Imbalance (65%)",
+            "Bullish 15m Momentum (+0.30%)"
+        ],
+        "news_override_flag": false
+    },
+    {
+        "date": "2026-07-03",
+        "index": "BANKNIFTY",
+        "decision_time": "15:25",
+        "prediction": "gap_up",
+        "probability": 0.8,
+        "expected_gap_pct": 0.45,
+        "confidence_bucket": "high",
+        "recommended_lots": 1,
+        "rationale": [
+            "SGX/GIFT Strong (+0.45%)",
+            "Futures Premium High (+0.25%)",
+            "Buy Imbalance (65%)"
+        ],
+        "news_override_flag": false
+    },
+    {
+        "date": "2026-07-03",
+        "index": "SENSEX",
+        "decision_time": "15:25",
+        "prediction": "gap_up",
+        "probability": 0.75,
+        "expected_gap_pct": 0.3,
+        "confidence_bucket": "medium",
+        "recommended_lots": 1,
+        "rationale": [
+            "SGX/GIFT Strong (+0.45%)",
+            "Buy Imbalance (65%)"
+        ],
+        "news_override_flag": false
+    },
+    {
+        "date": "2026-07-03",
+        "index": "MIDCPNIFTY",
+        "decision_time": "15:25",
+        "prediction": "gap_up",
+        "probability": 0.75,
+        "expected_gap_pct": 0.3,
+        "confidence_bucket": "medium",
+        "recommended_lots": 1,
+        "rationale": [
+            "SGX/GIFT Strong (+0.45%)",
+            "Buy Imbalance (65%)"
+        ],
+        "news_override_flag": false
+    }
+]

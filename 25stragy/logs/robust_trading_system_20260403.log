@@ -1,0 +1,15 @@
+2026-04-03 09:09:28,990 - INFO - Logging system initialized
+2026-04-03 09:09:29,000 - ERROR - Configuration loading error: 'risk_management'
+2026-04-03 09:10:38,249 - INFO - Logging system initialized
+2026-04-03 09:10:38,257 - INFO - Configuration loaded successfully
+2026-04-03 09:10:38,352 - INFO - Historical data loaded: 2614 points
+2026-04-03 09:10:38,373 - INFO - Options chain loaded: 41 strikes
+2026-04-03 09:10:38,446 - INFO - Trading state initialized
+2026-04-03 09:10:38,448 - INFO - Starting trading loop
+2026-04-03 09:10:38,448 - INFO - Trading system started
+2026-04-03 09:10:38,449 - INFO - Market closed - waiting
+2026-04-03 09:11:38,451 - INFO - Market closed - waiting
+2026-04-03 09:12:38,452 - INFO - Market closed - waiting
+2026-04-03 09:13:14,944 - INFO - Shutdown signal received
+2026-04-03 09:13:14,946 - INFO - Daily summary saved: C:/cursor/options/niftyopt/logs/daily_summary_2026-04-03.json
+2026-04-03 09:13:14,946 - INFO - Trading system stopped

@@ -1,0 +1,17 @@
+2026-02-25 09:08:42,379 - INFO - STARTING REAL-TIME STRATEGY EXECUTOR
+2026-02-25 09:08:42,380 - INFO - ============================================================
+2026-02-25 09:08:42,579 - INFO - Connected to Dhan API
+2026-02-25 09:08:42,579 - INFO - Starting real-time strategy execution
+2026-02-25 09:08:42,580 - INFO - Trading window: 09:00 to 15:15
+2026-02-25 09:08:42,947 - INFO - Market Data: Spot 25512.6, Change 0.00%
+2026-02-25 09:08:42,953 - ERROR - Options chain error: 0
+2026-02-25 09:09:12,961 - INFO - Market Data: Spot 25512.6, Change 0.00%
+2026-02-25 09:09:12,967 - ERROR - Options chain error: 0
+2026-02-25 09:09:42,976 - INFO - Market Data: Spot 25512.6, Change 0.00%
+2026-02-25 09:09:42,982 - ERROR - Options chain error: 0
+2026-02-25 09:10:12,988 - INFO - Market Data: Spot 25512.6, Change 0.00%
+2026-02-25 09:10:12,994 - ERROR - Options chain error: 0
+2026-02-25 09:10:43,001 - INFO - Market Data: Spot 25512.6, Change 0.00%
+2026-02-25 09:10:43,008 - ERROR - Options chain error: 0
+2026-02-25 09:11:13,018 - INFO - Market Data: Spot 25512.6, Change 0.00%
+2026-02-25 09:11:13,024 - ERROR - Options chain error: 0

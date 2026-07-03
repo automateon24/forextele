@@ -1,0 +1,61 @@
+2026-02-18 11:57:48,793 - INFO - Database setup completed
+2026-02-18 11:57:48,814 - INFO - SIMPLE WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 11:57:48,814 - INFO - ======================================================================
+2026-02-18 11:57:48,815 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 11:57:48,815 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 11:57:48,815 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 11:57:48,815 - INFO - Duration: Continuous until market close
+2026-02-18 11:57:48,815 - INFO - ======================================================================
+2026-02-18 11:57:48,816 - ERROR - Failed to initialize WebSocket feed: DhanFeed.__init__() missing 1 required positional argument: 'instruments'
+2026-02-18 11:57:48,817 - ERROR - Failed to start WebSocket feed. Exiting...
+2026-02-18 11:58:04,261 - INFO - Database setup completed
+2026-02-18 11:58:04,282 - INFO - SIMPLE WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 11:58:04,283 - INFO - ======================================================================
+2026-02-18 11:58:04,283 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 11:58:04,283 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 11:58:04,284 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 11:58:04,284 - INFO - Duration: Continuous until market close
+2026-02-18 11:58:04,284 - INFO - ======================================================================
+2026-02-18 11:58:04,284 - ERROR - Failed to initialize WebSocket feed: There is no current event loop in thread 'MainThread'.
+2026-02-18 11:58:04,285 - ERROR - Failed to start WebSocket feed. Exiting...
+2026-02-18 12:06:55,587 - INFO - Database setup completed
+2026-02-18 12:06:55,607 - INFO - Corrected Dhan API initialized successfully
+2026-02-18 12:06:55,608 - INFO - SIMPLE WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:06:55,608 - INFO - ======================================================================
+2026-02-18 12:06:55,608 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:06:55,608 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:06:55,609 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:06:55,609 - INFO - Duration: Continuous until market close
+2026-02-18 12:06:55,609 - INFO - ======================================================================
+2026-02-18 12:06:55,609 - ERROR - Failed to initialize WebSocket feed: There is no current event loop in thread 'MainThread'.
+2026-02-18 12:06:55,609 - ERROR - Failed to start WebSocket feed. Exiting...
+2026-02-18 12:09:40,997 - INFO - Database setup completed
+2026-02-18 12:09:41,019 - INFO - Corrected Dhan API initialized successfully
+2026-02-18 12:09:41,019 - INFO - SIMPLE WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:09:41,020 - INFO - ======================================================================
+2026-02-18 12:09:41,020 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:09:41,020 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:09:41,021 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:09:41,021 - INFO - Duration: Continuous until market close
+2026-02-18 12:09:41,021 - INFO - ======================================================================
+2026-02-18 12:09:41,021 - ERROR - dhanhq library not available. Install with: py -m pip install dhanhq
+2026-02-18 12:10:13,169 - INFO - Database setup completed
+2026-02-18 12:10:13,191 - INFO - Corrected Dhan API initialized successfully
+2026-02-18 12:10:13,192 - INFO - SIMPLE WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:10:13,192 - INFO - ======================================================================
+2026-02-18 12:10:13,192 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:10:13,192 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:10:13,193 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:10:13,193 - INFO - Duration: Continuous until market close
+2026-02-18 12:10:13,193 - INFO - ======================================================================
+2026-02-18 12:10:25,186 - INFO - Database setup completed
+2026-02-18 12:10:25,207 - INFO - Corrected Dhan API initialized successfully
+2026-02-18 12:10:25,207 - INFO - SIMPLE WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:10:25,208 - INFO - ======================================================================
+2026-02-18 12:10:25,208 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:10:25,209 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 12:10:25,209 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:10:25,209 - INFO - Duration: Continuous until market close
+2026-02-18 12:10:25,209 - INFO - ======================================================================
+2026-02-18 12:10:25,211 - ERROR - Failed to start WebSocket feed: DhanFeed.__init__() got an unexpected keyword argument 'subscription_code'
+2026-02-18 12:10:25,211 - ERROR - Failed to start WebSocket feed. Exiting...

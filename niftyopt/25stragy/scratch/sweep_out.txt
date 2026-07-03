@@ -1,0 +1,20 @@
+[DNA MATRIX] Loaded 36 strategies x 4 indices = 144 DNA combinations
+Pre-loading option and EOD data for sweep...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+================================================================================
+CAPITAL SWEEP RESULTS:
+Cap/Index (Rs.)  | Total Trades | Win Rate   | Total PnL (Rs.)  | Max Drawdown   | ROI (%)   
+--------------------------------------------------------------------------------
+  Rs. 50,000       | 1100         |     66.5% | Rs.  +203,378.45 | Rs. -13,686.65 |    101.7%
+  Rs. 75,000       | 1139         |     65.4% | Rs.  +334,131.53 | Rs. -22,281.61 |    111.4%
+  Rs. 100,000      | 1151         |     65.7% | Rs.  +517,793.94 | Rs. -27,889.15 |    129.4%
+  Rs. 125,000      | 1141         |     66.2% | Rs.  +681,370.74 | Rs. -31,080.43 |    136.3%
+  Rs. 150,000      | 1127         |     65.9% | Rs.  +842,733.22 | Rs. -41,124.34 |    140.5%

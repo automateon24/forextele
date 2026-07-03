@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-02-14T08:59:55.172305",
+    "target_date": "2025-12-24",
+    "horizon": "intraday",
+    "input_features": {
+      "historical_probs": {
+        "prob_up": 0.6,
+        "prob_down": 0.3
+      },
+      "flow_score": 0.7,
+      "pcr": null,
+      "oi_regime": null,
+      "skew": null,
+      "breadth": null,
+      "vol_regime": "NORMAL",
+      "time_of_day": "OPEN",
+      "event_flag": null
+    },
+    "probabilities": {
+      "prob_up": 0.65,
+      "prob_down": 0.25,
+      "prob_flat": 0.1,
+      "confidence": 0.7
+    },
+    "decision": {
+      "probabilities": {
+        "prob_up": 0.65,
+        "prob_down": 0.25,
+        "prob_flat": 0.1,
+        "confidence": 0.7
+      },
+      "direction": "BULLISH",
+      "strategy": "LONG_CALL",
+      "strikes": null,
+      "expiry": null,
+      "size": null
+    },
+    "metadata": {
+      "regime": {
+        "timeframe": "intraday",
+        "vol_regime": "normal",
+        "trend_regime": "trend_up"
+      }
+    },
+    "decision_id": "2025-12-24_intraday_085955",
+    "execution": {
+      "decision_id": "2025-12-24_intraday_085955",
+      "entry_time": "2026-02-14T09:04:55.172305",
+      "exit_time": null,
+      "entry_price": 150.0,
+      "exit_price": null,
+      "commissions": 20.0,
+      "slippage": null,
+      "metadata": {}
+    },
+    "result": {
+      "realized_pnl": 50.0,
+      "max_favourable_move": null,
+      "max_adverse_move": null,
+      "actual_direction": "UP",
+      "actual_return": null,
+      "metadata": {
+        "regime": {
+          "timeframe": "intraday",
+          "vol_regime": "normal",
+          "trend_regime": "trend_up"
+        }
+      }
+    }
+  }
+]

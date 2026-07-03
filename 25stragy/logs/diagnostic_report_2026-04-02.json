@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-02",
+  "investigation": "Today no trades despite 500+ point movement",
+  "real_data_available": false,
+  "simulated_movement": {
+    "start_price": 22750.0,
+    "end_price": 23293.47435897436,
+    "total_movement": 543.4743589743593,
+    "percentage": 2.388898281205975
+  },
+  "expected_signals": 65,
+  "actual_trades": 0,
+  "potential_issues": [
+    {
+      "issue": "API Data Fetching",
+      "description": "System may not have received real-time data",
+      "impact": "HIGH",
+      "solution": "Check API connection and data flow"
+    },
+    {
+      "issue": "Strategy Thresholds",
+      "description": "Entry thresholds may be too high",
+      "impact": "HIGH",
+      "solution": "Lower entry thresholds for volatile days"
+    },
+    {
+      "issue": "Option Chain Data",
+      "description": "Options chain may not have loaded properly",
+      "impact": "HIGH",
+      "solution": "Verify options chain fetching"
+    },
+    {
+      "issue": "Risk Management",
+      "description": "Risk checks may be too strict",
+      "impact": "MEDIUM",
+      "solution": "Adjust risk parameters"
+    },
+    {
+      "issue": "Signal Generation",
+      "description": "Signal algorithms may have bugs",
+      "impact": "HIGH",
+      "solution": "Debug signal generation logic"
+    },
+    {
+      "issue": "Market Status Detection",
+      "description": "System may think market is closed",
+      "impact": "HIGH",
+      "solution": "Check market hours logic"
+    }
+  ],
+  "recommendations": [
+    "Check API data fetching logs",
+    "Verify options chain loading",
+    "Review strategy thresholds",
+    "Debug signal generation",
+    "Test with lower thresholds"
+  ]
+}

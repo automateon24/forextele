@@ -1,0 +1,126 @@
+[DNA MATRIX] Loaded 36 strategies x 4 indices = 144 DNA combinations
+======================================================================
+RUNNING V15 REFINED STAGNANCY CUT BACKTEST
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+Loaded 4 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX']
+
+Running backtests in parallel...
+  [NIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [FINNIFTY] Done — 434 trades
+  [FINNIFTY] Completed: 434 trades
+  [BANKNIFTY] Done — 401 trades
+  [BANKNIFTY] Completed: 401 trades
+  [SENSEX] Done — 426 trades
+  [SENSEX] Completed: 426 trades
+  [NIFTY] Done — 525 trades
+  [NIFTY] Completed: 525 trades
+
+
+======================================================================
+BACKTEST V8 AI — MULTI-INDEX SCALE TARGET (155 calendar days)
+  4 indices × 36 strategies × Dynamic lot sizing
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 1786
+  Win rate           : 61.4%
+  Total PnL          : Rs.+886,767
+  Avg PnL/day        : Rs.+6,821  (1.36%)
+  Monthly est.       : Rs.+150,068  (30.0%)
+  Green days         : 89/130 (68%)
+  Max drawdown       : Rs.-28,069
+  5% daily target    : 13 days hit (Rs.25,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  NIFTY            525   62%     +242,228    119     +2,036    +44,782
+  BANKNIFTY        401   65%     +159,862     94     +1,701    +37,415
+  FINNIFTY         434   61%     +189,665     84     +2,258    +49,674
+  SENSEX           426   59%     +295,012     98     +3,010    +66,227
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  AI_ENHANCED                  41   51%       -2,884      -70
+  ATR_BREAK                   188   62%     +110,990     +590
+  BEAR_TREND_FOLLOWER          36   72%      +37,453   +1,040
+  BOLLINGER_SQUEEZE            50   74%      +43,960     +879
+  BREAKOUT                      6   83%       +4,211     +702
+  DAY_LOW_BULLISH              11   64%       +8,150     +741
+  EMA_CROSSOVER                49   57%      +16,228     +331
+  GAMMA_BLAST                  12   67%      +18,498   +1,542
+  LONG_UNWIND                 161   63%      +68,457     +425
+  MACD_DIVERGENCE             411   56%     +120,781     +294
+  MAGIC_SQUARE                  2  100%      +14,318   +7,159
+  MOMENTUM_BURST              226   65%     +163,767     +725
+  OPTIONS_GREEKS              212   58%       -4,194      -20
+  PUT_WRITER_SUPPORT           12   75%       +4,416     +368
+  RESIST_BREAK                  2  100%       +2,752   +1,376
+  RSI_REVERSAL                 12   42%       +3,041     +253
+  SCALPING                     35   77%      +51,226   +1,464
+  TREND_FOLLOWING              81   70%      +50,408     +622
+  ULTIMATE_DAY_HIGH_LOW        50   60%      +32,462     +649
+  VOLUME_CLIMAX                 9   33%         +733      +81
+  VWAP_BOUNCE                 126   59%      +67,756     +538
+  ZERO_HERO                    54   70%      +74,239   +1,375
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  TIME         875     -531,230     -607
+  TSL          807   +1,716,876   +2,127
+  STAGNANT      80     -126,042   -1,576
+  SL            21     -206,507   -9,834
+  TARGET         3      +33,669  +11,223
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.500 (0.1%)   : 84/130
+  Days >= Rs.1,000 (0.2%) : 77/130
+  Days >= Rs.2,500 (0.5%) : 71/130
+  Days >= Rs.5,000 (1.0%) : 58/130
+  Days >= Rs.25,000 (5.0%): 13/130
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs.+121,753  (+24.4%)  ########################
+  2025-03  Rs.+133,202  (+26.6%)  ##########################
+  2025-04  Rs. +88,832  (+17.8%)  #################
+  2025-05  Rs.  -9,857  ( -2.0%)  #
+  2026-01  Rs.+259,900  (+52.0%)  ##############################
+  2026-02  Rs.+205,587  (+41.1%)  ##############################
+  2026-03  Rs. +23,268  ( +4.7%)  ####
+  2026-04  Rs. +64,651  (+12.9%)  ############
+  2026-05  Rs.    -569  ( -0.1%)  
+
+  TOP 10 DAYS:
+  2025-03-03  Rs. +66,912  BA:AI_ENHAN(CE) | BA:MACD_DIV(PE) | BA:AI_ENHAN(CE) | SE:DAY_LOW_(CE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:TREND_FO(PE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:ATR_BREA(PE) | SE:LONG_UNW(PE) | NI:MACD_DIV(PE) | NI:AI_ENHAN(CE) | NI:AI_ENHAN(CE)
+  2026-01-23  Rs. +63,719  FI:BEAR_TRE(PE) | FI:MACD_DIV(PE) | FI:OPTIONS_(CE) | FI:MACD_DIV(CE) | BA:MACD_DIV(PE) | BA:MOMENTUM(PE) | SE:BEAR_TRE(PE) | SE:MACD_DIV(PE) | SE:GAMMA_BL(PE) | SE:GAMMA_BL(PE) | NI:BEAR_TRE(PE) | NI:MACD_DIV(PE)
+  2025-02-11  Rs. +48,165  FI:BEAR_TRE(PE) | FI:MOMENTUM(PE) | FI:ATR_BREA(PE) | FI:MOMENTUM(PE) | FI:BOLLINGE(PE) | FI:ATR_BREA(PE) | FI:MACD_DIV(CE) | FI:OPTIONS_(CE) | BA:BEAR_TRE(PE) | BA:MOMENTUM(PE) | BA:ATR_BREA(PE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:ATR_BREA(PE) | BA:BOLLINGE(PE) | BA:MACD_DIV(CE) | BA:TREND_FO(PE) | BA:OPTIONS_(CE) | BA:MOMENTUM(PE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:ATR_BREA(PE) | SE:MOMENTUM(PE) | SE:ATR_BREA(PE) | SE:RSI_REVE(CE) | SE:MACD_DIV(CE) | SE:MOMENTUM(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE) | NI:ATR_BREA(PE) | NI:MOMENTUM(PE) | NI:ATR_BREA(PE) | NI:MACD_DIV(CE) | NI:RSI_REVE(CE)
+  2026-04-28  Rs. +40,822  FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | SE:BEAR_TRE(PE) | SE:OPTIONS_(CE) | SE:OPTIONS_(CE)
+  2026-02-13  Rs. +38,812  FI:BEAR_TRE(PE) | FI:OPTIONS_(CE) | FI:TREND_FO(PE) | FI:MOMENTUM(PE) | BA:BEAR_TRE(PE) | BA:OPTIONS_(CE) | BA:TREND_FO(PE) | BA:MOMENTUM(PE) | BA:MACD_DIV(CE) | BA:MACD_DIV(PE) | SE:ULTIMATE(CE) | SE:ULTIMATE(CE) | NI:AI_ENHAN(CE) | NI:AI_ENHAN(CE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE) | NI:TREND_FO(PE) | NI:MOMENTUM(PE) | NI:VWAP_BOU(PE) | NI:ATR_BREA(PE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE)
+  2026-02-24  Rs. +33,194  FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(CE) | FI:ZERO_HER(CE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:GAMMA_BL(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | SE:OPTIONS_(CE) | SE:MOMENTUM(PE) | SE:ATR_BREA(PE) | SE:OPTIONS_(CE) | SE:TREND_FO(PE) | SE:MOMENTUM(PE)
+  2026-01-05  Rs. +32,482  FI:MACD_DIV(CE) | FI:VWAP_BOU(PE) | FI:EMA_CROS(PE) | FI:ATR_BREA(PE) | FI:VWAP_BOU(PE) | FI:ATR_BREA(PE) | FI:MOMENTUM(PE) | FI:BOLLINGE(PE) | FI:ATR_BREA(PE) | BA:BOLLINGE(PE) | BA:ATR_BREA(PE) | BA:OPTIONS_(CE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:ATR_BREA(PE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:ATR_BREA(PE) | SE:MACD_DIV(CE) | SE:VWAP_BOU(PE) | SE:ATR_BREA(PE) | SE:BOLLINGE(PE) | SE:ATR_BREA(PE) | NI:AI_ENHAN(CE) | NI:MACD_DIV(CE) | NI:ATR_BREA(PE) | NI:ULTIMATE(PE) | NI:LONG_UNW(PE) | NI:VWAP_BOU(PE) | NI:EMA_CROS(PE) | NI:ATR_BREA(PE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE) | NI:LONG_UNW(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE) | NI:ATR_BREA(PE) | NI:LONG_UNW(PE)
+  2026-02-04  Rs. +29,258  FI:MACD_DIV(CE) | FI:SCALPING(CE) | BA:ULTIMATE(CE) | BA:ATR_BREA(CE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:ATR_BREA(PE) | SE:ULTIMATE(CE) | NI:VWAP_BOU(CE) | NI:MOMENTUM(CE) | NI:VOLUME_C(PE)
+  2025-04-23  Rs. +28,424  BA:ZERO_HER(PE) | BA:ZERO_HER(PE) | BA:ZERO_HER(PE) | BA:ZERO_HER(PE) | BA:ZERO_HER(PE) | BA:MACD_DIV(CE) | BA:ZERO_HER(PE) | BA:ZERO_HER(PE) | BA:ZERO_HER(PE) | SE:VWAP_BOU(PE) | SE:MACD_DIV(PE) | SE:SCALPING(CE) | SE:VWAP_BOU(CE) | NI:MACD_DIV(PE) | NI:VWAP_BOU(CE) | NI:ATR_BREA(CE)
+  2026-01-19  Rs. +28,196  FI:SCALPING(CE) | FI:VWAP_BOU(CE) | BA:SCALPING(CE) | BA:VWAP_BOU(CE) | SE:MAGIC_SQ(PE) | SE:MACD_DIV(CE) | SE:LONG_UNW(PE) | SE:MACD_DIV(PE) | SE:LONG_UNW(PE) | SE:SCALPING(CE) | SE:OPTIONS_(PE) | NI:MACD_DIV(CE) | NI:LONG_UNW(PE) | NI:MACD_DIV(PE) | NI:LONG_UNW(PE) | NI:ULTIMATE(CE) | NI:OPTIONS_(PE)
+
+  WORST 5 DAYS:
+  2026-05-19  Rs. -24,274  SE:TREND_FO[TIME] | SE:MOMENTUM[TIME] | SE:VWAP_BOU[TIME] | SE:ATR_BREA[TIME] | SE:MACD_DIV[TIME] | SE:ULTIMATE[TIME] | SE:MOMENTUM[TSL] | SE:VWAP_BOU[TSL] | SE:ATR_BREA[TSL] | SE:MACD_DIV[TSL] | SE:MOMENTUM[TIME] | SE:VWAP_BOU[TIME] | SE:ATR_BREA[TIME] | NI:TREND_FO[TIME] | NI:MOMENTUM[TIME] | NI:VWAP_BOU[TIME] | NI:ATR_BREA[TIME] | NI:MACD_DIV[TIME] | NI:MOMENTUM[TIME] | NI:VWAP_BOU[TSL] | NI:ATR_BREA[TIME] | NI:MACD_DIV[TIME] | NI:MOMENTUM[TSL] | NI:VWAP_BOU[TSL] | NI:ATR_BREA[TSL] | NI:MACD_DIV[TSL]
+  2025-03-24  Rs. -17,807  FI:MACD_DIV[TSL] | FI:OPTIONS_[TSL] | FI:MACD_DIV[TSL] | FI:MOMENTUM[TIME] | BA:OPTIONS_[STAGNANT] | BA:OPTIONS_[TIME] | BA:MACD_DIV[TIME] | BA:MOMENTUM[TSL] | BA:MOMENTUM[TSL] | SE:MACD_DIV[SL] | SE:MACD_DIV[TSL] | SE:MOMENTUM[SL] | NI:OPTIONS_[TSL] | NI:MACD_DIV[TIME] | NI:MACD_DIV[TSL] | NI:MOMENTUM[TSL]
+  2026-05-06  Rs. -15,985  SE:OPTIONS_[SL] | SE:OPTIONS_[SL] | NI:OPTIONS_[TIME] | NI:OPTIONS_[TIME]
+  2026-05-21  Rs. -13,696  FI:MOMENTUM[SL] | FI:ATR_BREA[SL] | FI:OPTIONS_[TSL] | FI:TREND_FO[TSL] | BA:OPTIONS_[TIME] | BA:TREND_FO[TSL] | BA:MOMENTUM[TSL] | SE:OPTIONS_[TSL] | SE:TREND_FO[TSL] | SE:OPTIONS_[TIME] | NI:TREND_FO[TIME]
+  2026-02-27  Rs. -13,028  FI:BEAR_TRE[STAGNANT] | FI:MOMENTUM[STAGNANT] | FI:ATR_BREA[STAGNANT] | FI:MOMENTUM[TIME] | FI:ATR_BREA[TIME] | FI:MACD_DIV[TSL] | FI:MACD_DIV[TSL] | FI:TREND_FO[TIME] | BA:OPTIONS_[TIME] | BA:OPTIONS_[TIME] | NI:BEAR_TRE[TIME] | NI:ATR_BREA[TIME] | NI:VWAP_BOU[TIME]

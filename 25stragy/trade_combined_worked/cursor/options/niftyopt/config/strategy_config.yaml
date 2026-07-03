@@ -1,0 +1,158 @@
+# 🎯 STRATEGY CONFIGURATION FILE
+# ===================================
+# Master configuration for all 8 trading strategies
+# Each strategy can be independently tuned from this file
+
+# Global Settings
+global:
+  capital_per_strategy: 100000  # ₹1,00,000 per strategy
+  lot_size: 75
+  data_source: "historical"  # "historical", "dhan", "nse_yahoo"
+  backtest_mode: true
+  live_mode: false
+  logging_level: "INFO"
+  
+# Data Source Configuration
+data_sources:
+  historical:
+    data_path: "data/enhanced_options"
+    timeframes: ["5min", "15min", "30min", "1hour", "daily"]
+    refresh_interval: 30  # seconds
+    
+  dhan:
+    client_id: "1101936133"
+    access_token: "JWT_TOKEN_HERE"
+    refresh_interval: 30  # seconds
+    
+  nse_yahoo:
+    refresh_interval: 30  # seconds
+    
+# Strategy 1: ENHANCED_DAY_HIGH_LOW
+enhanced_day_high_low:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.7
+  take_profit_percent: 70
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  lookback_period: 10
+  rejection_threshold: 0.005  # 0.5%
+  rsi_range_pe: [55, 70]  # PE signals
+  rsi_range_ce: [30, 45]  # CE signals
+  min_volume: 50000
+  confidence_threshold: 0.7
+  
+# Strategy 2: RSI_OVERSOLD
+rsi_oversold:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.5
+  take_profit_percent: 60
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  oversold_threshold: 40
+  rsi_period: 14
+  min_volume: 30000
+  confidence_threshold: 0.7
+  
+# Strategy 3: RSI_OVERBOUGHT
+rsi_overbought:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.5
+  take_profit_percent: 60
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  overbought_threshold: 60
+  rsi_period: 14
+  min_volume: 30000
+  confidence_threshold: 0.7
+  
+# Strategy 4: STRONG_MOMENTUM_BULL
+strong_momentum_bull:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.6
+  take_profit_percent: 65
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  momentum_threshold: 0.003  # 0.3%
+  volume_multiplier: 1.2
+  min_volume: 40000
+  confidence_threshold: 0.7
+  
+# Strategy 5: STRONG_MOMENTUM_BEAR
+strong_momentum_bear:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.6
+  take_profit_percent: 65
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  momentum_threshold: -0.003  # -0.3%
+  volume_multiplier: 1.2
+  min_volume: 40000
+  confidence_threshold: 0.7
+  
+# Strategy 6: HIGH_VOLUME_BULL
+high_volume_bull:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.5
+  take_profit_percent: 60
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  volume_multiplier: 1.1
+  volume_period: 15
+  min_volume: 60000
+  price_change_threshold: 0.001  # 0.1%
+  confidence_threshold: 0.7
+  
+# Strategy 7: HIGH_VOLUME_BEAR
+high_volume_bear:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.5
+  take_profit_percent: 60
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  volume_multiplier: 1.1
+  volume_period: 15
+  min_volume: 60000
+  price_change_threshold: -0.001  # -0.1%
+  confidence_threshold: 0.7
+  
+# Strategy 8: 72_CANDLE_BREAKOUT
+candle_breakout:
+  enabled: true
+  timeframe: "15min"
+  position_size_percent: 0.5
+  take_profit_percent: 65
+  stop_loss_percent: 20
+  trailing_stop_percent: 15
+  lookback_period: 72
+  breakout_threshold: 0.001  # 0.1%
+  min_volume: 40000
+  confidence_threshold: 0.7
+
+# Logging Configuration
+logging:
+  trade_log_file: "logs/trades.csv"
+  strategy_log_file: "logs/strategy_performance.log"
+  error_log_file: "logs/errors.log"
+  performance_log_file: "logs/performance.csv"
+  
+# Visualization Configuration
+visualization:
+  enabled: true
+  window_size: 100  # candles
+  update_interval: 5  # seconds
+  chart_height: 600
+  chart_width: 1200
+  
+# Risk Management
+risk_management:
+  max_daily_loss_percent: 5.0
+  max_concurrent_trades: 3
+  max_position_size_percent: 0.8
+  emergency_stop: false

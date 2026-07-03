@@ -1,0 +1,81 @@
+{
+  "live_trading_settings": {
+    "initial_capital": 100000,
+    "max_positions": 5,
+    "max_daily_trades": 3,
+    "position_size_percent": 0.15,
+    "daily_loss_limit_percent": 5.0,
+    "max_drawdown_limit_percent": 10.0,
+    "trade_cooldown_seconds": 300
+  },
+  "market_hours": {
+    "market_open": "09:15",
+    "market_close": "15:30",
+    "trading_days": [
+      "MONDAY",
+      "TUESDAY",
+      "WEDNESDAY",
+      "THURSDAY",
+      "FRIDAY"
+    ],
+    "holidays": []
+  },
+  "strategy_parameters": {
+    "ultimate_day_high_low": {
+      "day_high_threshold": 0.005,
+      "day_low_threshold": 0.005,
+      "momentum_threshold": 0.003,
+      "min_volume_multiplier": 1.2,
+      "rsi_range": [
+        30,
+        70
+      ],
+      "initial_stop_loss_percent": 0.018,
+      "profit_target_percent": 0.016,
+      "trailing_activation_percent": 0.008,
+      "trailing_distance_percent": 0.004,
+      "target_extension_percent": 0.002
+    },
+    "risk_management": {
+      "max_position_size_percent": 0.15,
+      "min_signal_strength": 0.6,
+      "volatility_adjustment": true,
+      "dynamic_position_sizing": true
+    }
+  },
+  "data_sources": {
+    "primary": "simulated",
+    "fallback": "historical",
+    "update_interval_seconds": 30,
+    "data_retention_days": 30
+  },
+  "monitoring": {
+    "log_level": "INFO",
+    "save_interval_minutes": 5,
+    "performance_tracking": true,
+    "alert_thresholds": {
+      "max_drawdown_percent": 8.0,
+      "daily_loss_percent": 4.0,
+      "consecutive_losses": 5
+    }
+  },
+  "backtest_to_live_adjustments": {
+    "slippage_percent": 0.001,
+    "brokerage_per_trade": 25,
+    "impact_cost_percent": 0.0005,
+    "liquidity_adjustment": true,
+    "execution_delay_seconds": 1
+  },
+  "paper_trading": {
+    "enabled": true,
+    "paper_brokerage": true,
+    "real_market_data": false,
+    "simulation_mode": "realistic"
+  },
+  "production_deployment": {
+    "enabled": false,
+    "real_capital": false,
+    "risk_limits": "strict",
+    "monitoring_alerts": true
+  }
+}

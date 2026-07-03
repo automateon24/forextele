@@ -1,0 +1,132 @@
+{
+  "STRONG_MOMENTUM_LOSING": {
+    "strategy": "STRONG_MOMENTUM_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "HIGH_VOLUME_LOSING": {
+    "strategy": "HIGH_VOLUME_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "STOCHASTIC_OVERSOLD_LOSING": {
+    "strategy": "STOCHASTIC_OVERSOLD_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "WILLIAMS_REVERSAL_LOSING": {
+    "strategy": "WILLIAMS_REVERSAL_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MULTI_TIMEFRAME_LOSING": {
+    "strategy": "MULTI_TIMEFRAME_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "AI_ENHANCED_LOSING": {
+    "strategy": "AI_ENHANCED_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "CCI_EXTREME_LOSING": {
+    "strategy": "CCI_EXTREME_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MFI_DIVERGENCE_LOSING": {
+    "strategy": "MFI_DIVERGENCE_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MOMENTUM_REVERSAL_LOSING": {
+    "strategy": "MOMENTUM_REVERSAL_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "MACD_DIVERGENCE_LOSING": {
+    "strategy": "MACD_DIVERGENCE_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "RSI_DIVERGENCE_LOSING": {
+    "strategy": "RSI_DIVERGENCE_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "BOLLINGER_SQUEEZE_LOSING": {
+    "strategy": "BOLLINGER_SQUEEZE_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "ATR_BREAKOUT_LOSING": {
+    "strategy": "ATR_BREAKOUT_LOSING",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  }
+}

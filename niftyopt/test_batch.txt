@@ -1,0 +1,582 @@
+
+========================================================================
+  MODULAR TRADER V3  |  18 STRATEGIES  |  REAL DHAN API
+  Python  : c:\cursor\options\niftyopt\venv\Scripts\python.exe
+  Script  : c:\cursor\options\niftyopt\MODULAR_TRADER_V3.py
+  Logs    : c:\cursor\options\niftyopt\daily_data\v3_YYYYMMDD.log
+  Capital : 18 x Rs.50,000 = Rs.9,00,000
+========================================================================
+
+  Strategies: All 18 active (No ML / No Adaptive)
+  Entry window: 9:30 AM - 2:30 PM
+  EOD exit: 3:15 PM auto-forced
+
+  Press Ctrl+C to stop manually at any time
+========================================================================
+
+26-06-15 09:49:37 | INFO | ==========================================================================================
+26-06-15 09:49:37 | INFO | MODULAR TRADER V3 - ALL 18 STRATEGIES + LIVE HEALTH MONITOR
+26-06-15 09:49:37 | INFO | ==========================================================================================
+26-06-15 09:49:37 | INFO | ✅ REAL DHAN API ONLY - No simulation/fallback
+26-06-15 09:49:37 | INFO | ✅ ₹50,000 capital per strategy (₹900,000 total)
+26-06-15 09:49:37 | INFO | ✅ Comprehensive logging
+26-06-15 09:49:37 | INFO | ✅ Best strategy: ULTIMATE_DAY_HIGH_LOW (ORB-45)
+26-06-15 09:49:37 | INFO | ✅ Bonus: MAGIC_SQUARE strategy from V4
+26-06-15 09:49:37 | INFO | ==========================================================================================
+26-06-15 09:49:37 | INFO | [DATAFEED] ✅ Dhan API connected
+26-06-15 09:49:37 | INFO | [RELOAD] No open trades to reload
+26-06-15 09:49:37 | INFO | [INIT] 20 strategy modules loaded
+26-06-15 09:49:37 | INFO | [INIT]    1. ULTIMATE_DAY_HIGH_LOW
+26-06-15 09:49:37 | INFO | [INIT]    2. DAY_HIGH_BEARISH
+26-06-15 09:49:37 | INFO | [INIT]    3. DAY_LOW_BULLISH
+26-06-15 09:49:37 | INFO | [INIT]    4. DAY_LOW_BOUNCE
+26-06-15 09:49:37 | INFO | [INIT]    5. ENHANCED_BEARISH_REVERSAL
+26-06-15 09:49:37 | INFO | [INIT]    6. ENHANCED_BULLISH_REVERSAL
+26-06-15 09:49:37 | INFO | [INIT]    7. DAY_HIGH_LOW_TRADITIONAL
+26-06-15 09:49:37 | INFO | [INIT]    8. TREND_FOLLOWING
+26-06-15 09:49:37 | INFO | [INIT]    9. AI_ENHANCED
+26-06-15 09:49:37 | INFO | [INIT]   10. MEAN_REVERSION
+26-06-15 09:49:37 | INFO | [INIT]   11. SCALPING
+26-06-15 09:49:37 | INFO | [INIT]   12. BREAKOUT
+26-06-15 09:49:37 | INFO | [INIT]   13. VOLATILITY_BREAKOUT
+26-06-15 09:49:37 | INFO | [INIT]   14. OPTIONS_GREEKS
+26-06-15 09:49:37 | INFO | [INIT]   15. MAGIC_SQUARE
+26-06-15 09:49:37 | INFO | [INIT]   16. SHORT_UNWIND
+26-06-15 09:49:37 | INFO | [INIT]   17. LONG_UNWIND
+26-06-15 09:49:37 | INFO | [INIT]   18. WRITER_RESIST_BREAK
+26-06-15 09:49:37 | INFO | [INIT]   19. PUT_WRITER_SUPPORT
+26-06-15 09:49:37 | INFO | [INIT]   20. ORD_BLOCK
+26-06-15 09:49:37 | INFO | [INIT] Capital: 20 × ₹50,000 = ₹1,000,000
+26-06-15 09:49:37 | INFO | [INIT] Lot size: 75
+26-06-15 09:49:37 | INFO | ==========================================================================================
+26-06-15 09:49:37 | INFO | [RUN] Starting main loop - 18 STRATEGIES ACTIVE (V3) | DUAL-LOOP 10s/30s
+26-06-15 09:49:37 | INFO | [SESSION START] Modular Trader V3 - 18 Strategies + LiveHealthMonitor
+26-06-15 09:49:41 | INFO | Spot=23973.70 O=23984.85 H=24011.4 L=23927.35 (35 candles)
+26-06-15 09:49:41 | INFO | Chain: 31 strikes ATM=23950 expiry=2026-06-16
+26-06-15 09:49:41 | INFO | PCR: 0.999 | Put OI:138,011,055 Call OI:138,188,115
+26-06-15 09:49:41 | INFO | Market bias: NEUTRAL [raw_pcr=0.999 zone=NEUTRAL confirmed=NEUTRAL cnt=1/3]
+26-06-15 09:49:41 | INFO | VWAP: 23952.68
+==========================================================================================
+ CYCLE 0 | 09:49:41 | NIFTY 23973.70 | O:23984.8 H:24011.4 L:23927.3 | PCR:0.999 | BIAS:NEUTRAL
+ ATM:23950 CE:104.65 PE:99.15 | Data:OK
+==========================================================================================
+
+ #   STRATEGY                   STATUS     CONTRACT        ENTRY      LTP   UNREAL P&L      NET P&L  TRADES
+------------------------------------------------------------------------------------------
+ 1   ULTIMATE_DAY_HIGH_LOW      WAITING    -                   -        -            -       +0.00       0
+ 2   DAY_HIGH_BEARISH           WAITING    -                   -        -            -       +0.00       0
+ 3   DAY_LOW_BULLISH            WAITING    -                   -        -            -       +0.00       0
+ 4   DAY_LOW_BOUNCE             WAITING    -                   -        -            -       +0.00       0
+ 5   ENHANCED_BEARISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 6   ENHANCED_BULLISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 7   DAY_HIGH_LOW_TRADITIONAL   WAITING    -                   -        -            -       +0.00       0
+ 8   TREND_FOLLOWING            WAITING    -                   -        -            -       +0.00       0
+ 9   AI_ENHANCED                WAITING    -                   -        -            -       +0.00       0
+ 10  MEAN_REVERSION             WAITING    -                   -        -            -       +0.00       0
+ 11  SCALPING                   WAITING    -                   -        -            -       +0.00       0
+ 12  BREAKOUT                   WAITING    -                   -        -            -       +0.00       0
+ 13  VOLATILITY_BREAKOUT        WAITING    -                   -        -            -       +0.00       0
+ 14  OPTIONS_GREEKS             WAITING    -                   -        -            -       +0.00       0
+ 15  MAGIC_SQUARE               WAITING    -                   -        -            -       +0.00       0
+ 16  SHORT_UNWIND               WAITING    -                   -        -            -       +0.00       0
+ 17  LONG_UNWIND                WAITING    -                   -        -            -       +0.00       0
+ 18  WRITER_RESIST_BREAK        WAITING    -                   -        -            -       +0.00       0
+ 19  PUT_WRITER_SUPPORT         WAITING    -                   -        -            -       +0.00       0
+ 20  ORD_BLOCK                  WAITING    -                   -        -            -       +0.00       0
+------------------------------------------------------------------------------------------
+ TOTAL NET P&L: ₹+0.00 | Unrealized: ₹+0.00 | Trades: 0
+ CAPITAL: 20 × ₹50,000 = ₹1,000,000
+ DAILY LIMIT: ₹-100,000 | Used: ₹0 (0.0%) [░░░░░░░░░░░░░░░░░░░░]
+
+ CE Open: 0 | PE Open: 0 | UNLIMITED
+==========================================================================================
+ Press Ctrl+C to stop
+==========================================================================================
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] CYC#1 spot=23974 pcr=0.999/NEUTRAL rsi=79 dev=-0.05% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=35
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB not locked (need 15 candles, have 35)
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | 15min range not locked (have 35 candles)
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=79 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.05% (need ±0.5%) RSI=79; dev too small
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=4pts (need 15)
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 35)
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.00 bias=NEUTRAL
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23974 need spot>24024
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:49:41 | INFO | [HEALTH 09:49:41] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.73%) resist=24000 (+0.11%) RSI=79
+26-06-15 09:49:41 | INFO | [ORB] Levels locked: High=23962.15 Low=23939.95
+26-06-15 09:49:41 | INFO | [SIGNAL] ENHANCED_BEARISH_REVERSAL: ENHANCED_BEARISH PE (conf: 75%) - High 24011 RSI=78.9 PCR=0.999
+26-06-15 09:49:41 | INFO | [DHLTrad] 15-min range locked: H=23962.15 L=23939.95
+26-06-15 09:49:41 | INFO | [SIGNAL] OPTIONS_GREEKS: GREEKS_CE CE (conf: 70%) - Delta skew 0.56 CE bias + spot>EMA20
+26-06-15 09:49:41 | INFO | [MAGIC_SQUARE] Found PE24150 premium=229.20 matches square 225 (delta=-0.70)
+26-06-15 09:49:41 | INFO | [SIGNAL] MAGIC_SQUARE: MAGIC_225 PE (conf: 60%) - Premium 229 matches magic square 225 at strike 24150
+26-06-15 09:49:41 | INFO | [ORD_BLOCK] Touched CALL resistance 24000 at spot=23974 RSI=79
+26-06-15 09:49:41 | INFO | [FILTER] Blocking ENHANCED_BEARISH_REVERSAL PE - Price near VWAP (0.09% away = choppy zone)
+26-06-15 09:49:41 | INFO | [FILTER] Blocking OPTIONS_GREEKS CE - Price near VWAP (0.09% away = choppy zone)
+26-06-15 09:49:41 | INFO | [FILTER] Blocking MAGIC_SQUARE PE - Price near VWAP (0.09% away = choppy zone)
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] CYC#2 spot=23969 pcr=0.999/NEUTRAL rsi=74 dev=-0.07% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=35
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=74>35
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=74>35
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=74 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.07% (need ±0.5%) RSI=74; dev too small
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=0pts (need 15)
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 35)
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.00 bias=NEUTRAL
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23969 need spot>24024
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:49:51 | INFO | [HEALTH 09:49:51] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.71%) resist=24000 (+0.13%) RSI=74
+26-06-15 09:49:51 | INFO | [MAGIC_SQUARE] Found PE24250 premium=312.80 matches square 324 (delta=-0.78)
+26-06-15 09:49:51 | INFO | [SIGNAL] MAGIC_SQUARE: MAGIC_324 PE (conf: 60%) - Premium 313 matches magic square 324 at strike 24250
+26-06-15 09:49:51 | INFO | [FILTER] Blocking MAGIC_SQUARE PE - Price near VWAP (0.07% away = choppy zone)
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] CYC#3 spot=23971 pcr=0.999/NEUTRAL rsi=71 dev=-0.06% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=36
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=71>35
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=71>35
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=71 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.06% (need ±0.5%) RSI=71; dev too small
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=3pts (need 15)
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 36)
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.00 bias=NEUTRAL
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23971 need spot>24024
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:50:01 | INFO | [HEALTH 09:50:01] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.72%) resist=24000 (+0.12%) RSI=71
+26-06-15 09:50:15 | INFO | Spot=23973.05 O=23984.85 H=24011.4 L=23927.35 (36 candles)
+26-06-15 09:50:15 | INFO | Chain: 31 strikes ATM=23950 expiry=2026-06-16
+26-06-15 09:50:15 | INFO | PCR: 0.999 | Put OI:138,011,055 Call OI:138,213,920
+26-06-15 09:50:15 | INFO | Market bias: NEUTRAL [raw_pcr=0.999 zone=NEUTRAL confirmed=NEUTRAL cnt=2/3]
+26-06-15 09:50:15 | INFO | VWAP: 23953.20
+==========================================================================================
+ CYCLE 3 | 09:50:15 | NIFTY 23973.05 | O:23984.8 H:24011.4 L:23927.3 | PCR:0.999 | BIAS:NEUTRAL
+ ATM:23950 CE:104.45 PE:99.50 | Data:OK
+==========================================================================================
+
+ #   STRATEGY                   STATUS     CONTRACT        ENTRY      LTP   UNREAL P&L      NET P&L  TRADES
+------------------------------------------------------------------------------------------
+ 1   ULTIMATE_DAY_HIGH_LOW      WAITING    -                   -        -            -       +0.00       0
+ 2   DAY_HIGH_BEARISH           WAITING    -                   -        -            -       +0.00       0
+ 3   DAY_LOW_BULLISH            WAITING    -                   -        -            -       +0.00       0
+ 4   DAY_LOW_BOUNCE             WAITING    -                   -        -            -       +0.00       0
+ 5   ENHANCED_BEARISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 6   ENHANCED_BULLISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 7   DAY_HIGH_LOW_TRADITIONAL   WAITING    -                   -        -            -       +0.00       0
+ 8   TREND_FOLLOWING            WAITING    -                   -        -            -       +0.00       0
+ 9   AI_ENHANCED                WAITING    -                   -        -            -       +0.00       0
+ 10  MEAN_REVERSION             WAITING    -                   -        -            -       +0.00       0
+ 11  SCALPING                   WAITING    -                   -        -            -       +0.00       0
+ 12  BREAKOUT                   WAITING    -                   -        -            -       +0.00       0
+ 13  VOLATILITY_BREAKOUT        WAITING    -                   -        -            -       +0.00       0
+ 14  OPTIONS_GREEKS             WAITING    -                   -        -            -       +0.00       0
+ 15  MAGIC_SQUARE               WAITING    -                   -        -            -       +0.00       0
+ 16  SHORT_UNWIND               WAITING    -                   -        -            -       +0.00       0
+ 17  LONG_UNWIND                WAITING    -                   -        -            -       +0.00       0
+ 18  WRITER_RESIST_BREAK        WAITING    -                   -        -            -       +0.00       0
+ 19  PUT_WRITER_SUPPORT         WAITING    -                   -        -            -       +0.00       0
+ 20  ORD_BLOCK                  WAITING    -                   -        -            -       +0.00       0
+------------------------------------------------------------------------------------------
+ TOTAL NET P&L: ₹+0.00 | Unrealized: ₹+0.00 | Trades: 0
+ CAPITAL: 20 × ₹50,000 = ₹1,000,000
+ DAILY LIMIT: ₹-100,000 | Used: ₹0 (0.0%) [░░░░░░░░░░░░░░░░░░░░]
+
+ CE Open: 0 | PE Open: 0 | UNLIMITED
+==========================================================================================
+ Press Ctrl+C to stop
+==========================================================================================
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] CYC#4 spot=23973 pcr=0.999/NEUTRAL rsi=73 dev=-0.05% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=36
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=73>35
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=73>35
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=73 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.05% (need ±0.5%) RSI=73; dev too small
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=0pts (need 15)
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 36)
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.00 bias=NEUTRAL
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23973 need spot>24024
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:50:15 | INFO | [HEALTH 09:50:15] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.73%) resist=24000 (+0.11%) RSI=73
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] CYC#5 spot=23973 pcr=0.999/NEUTRAL rsi=73 dev=-0.05% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=36
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=73>35
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=73>35
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=73 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.05% (need ±0.5%) RSI=73; dev too small
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=1pts (need 15)
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 36)
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.00 bias=NEUTRAL
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23973 need spot>24024
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:50:25 | INFO | [HEALTH 09:50:25] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.73%) resist=24000 (+0.11%) RSI=73
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] CYC#6 spot=23971 pcr=0.999/NEUTRAL rsi=72 dev=-0.06% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=36
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.00<1.1
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=72>35
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=72>35
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=72 PCR=1.00 bias=NEUTRAL EMA=above
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.06% (need ±0.5%) RSI=72; dev too small
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=2pts (need 15)
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 36)
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.00 bias=NEUTRAL
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23971 need spot>24024
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:50:35 | INFO | [HEALTH 09:50:35] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.72%) resist=24000 (+0.12%) RSI=72
+26-06-15 09:50:48 | INFO | Spot=23967.65 O=23984.85 H=24011.4 L=23927.35 (36 candles)
+26-06-15 09:50:48 | INFO | Chain: 31 strikes ATM=23950 expiry=2026-06-16
+26-06-15 09:50:48 | INFO | PCR: 1.005 | Put OI:139,010,755 Call OI:138,257,925
+26-06-15 09:50:48 | INFO | Market bias: NEUTRAL [raw_pcr=1.005 zone=NEUTRAL confirmed=NEUTRAL cnt=3/3]
+26-06-15 09:50:48 | INFO | VWAP: 23953.05
+==========================================================================================
+ CYCLE 6 | 09:50:48 | NIFTY 23967.65 | O:23984.8 H:24011.4 L:23927.3 | PCR:1.005 | BIAS:NEUTRAL
+ ATM:23950 CE:101.35 PE:102.05 | Data:OK
+==========================================================================================
+
+ #   STRATEGY                   STATUS     CONTRACT        ENTRY      LTP   UNREAL P&L      NET P&L  TRADES
+------------------------------------------------------------------------------------------
+ 1   ULTIMATE_DAY_HIGH_LOW      WAITING    -                   -        -            -       +0.00       0
+ 2   DAY_HIGH_BEARISH           WAITING    -                   -        -            -       +0.00       0
+ 3   DAY_LOW_BULLISH            WAITING    -                   -        -            -       +0.00       0
+ 4   DAY_LOW_BOUNCE             WAITING    -                   -        -            -       +0.00       0
+ 5   ENHANCED_BEARISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 6   ENHANCED_BULLISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 7   DAY_HIGH_LOW_TRADITIONAL   WAITING    -                   -        -            -       +0.00       0
+ 8   TREND_FOLLOWING            WAITING    -                   -        -            -       +0.00       0
+ 9   AI_ENHANCED                WAITING    -                   -        -            -       +0.00       0
+ 10  MEAN_REVERSION             WAITING    -                   -        -            -       +0.00       0
+ 11  SCALPING                   WAITING    -                   -        -            -       +0.00       0
+ 12  BREAKOUT                   WAITING    -                   -        -            -       +0.00       0
+ 13  VOLATILITY_BREAKOUT        WAITING    -                   -        -            -       +0.00       0
+ 14  OPTIONS_GREEKS             WAITING    -                   -        -            -       +0.00       0
+ 15  MAGIC_SQUARE               WAITING    -                   -        -            -       +0.00       0
+ 16  SHORT_UNWIND               WAITING    -                   -        -            -       +0.00       0
+ 17  LONG_UNWIND                WAITING    -                   -        -            -       +0.00       0
+ 18  WRITER_RESIST_BREAK        WAITING    -                   -        -            -       +0.00       0
+ 19  PUT_WRITER_SUPPORT         WAITING    -                   -        -            -       +0.00       0
+ 20  ORD_BLOCK                  WAITING    -                   -        -            -       +0.00       0
+------------------------------------------------------------------------------------------
+ TOTAL NET P&L: ₹+0.00 | Unrealized: ₹+0.00 | Trades: 0
+ CAPITAL: 20 × ₹50,000 = ₹1,000,000
+ DAILY LIMIT: ₹-100,000 | Used: ₹0 (0.0%) [░░░░░░░░░░░░░░░░░░░░]
+
+ CE Open: 0 | PE Open: 0 | UNLIMITED
+==========================================================================================
+ Press Ctrl+C to stop
+==========================================================================================
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] CYC#7 spot=23968 pcr=1.005/NEUTRAL rsi=67 dev=-0.07% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=36
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.01<1.1
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=67>35
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=67>35
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=67 PCR=1.01 bias=NEUTRAL EMA=above
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.07% (need ±0.5%) RSI=67; dev too small
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=6pts (need 15)
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 36)
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.01 bias=NEUTRAL
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23968 need spot>24024
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:50:48 | INFO | [HEALTH 09:50:48] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.13%) RSI=67
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] CYC#8 spot=23967 pcr=1.005/NEUTRAL rsi=67 dev=-0.07% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=36
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.01<1.1
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=67>35
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=67>35
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=67 PCR=1.01 bias=NEUTRAL EMA=above
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.07% (need ±0.5%) RSI=67; dev too small
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=7pts (need 15)
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 36)
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.01 bias=NEUTRAL
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23967 need spot>24024
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:50:59 | INFO | [HEALTH 09:50:59] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.14%) RSI=67
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] CYC#9 spot=23967 pcr=1.005/NEUTRAL rsi=78 dev=-0.08% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=37
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.01<1.1
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=78>35
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=78>35
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=78 PCR=1.01 bias=NEUTRAL EMA=above
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.08% (need ±0.5%) RSI=78; dev too small
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=6pts (need 15)
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 37)
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.01 bias=NEUTRAL
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23967 need spot>24024
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:51:09 | INFO | [HEALTH 09:51:09] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.14%) RSI=78
+26-06-15 09:51:22 | INFO | Spot=23965.00 O=23984.85 H=24011.4 L=23927.35 (37 candles)
+26-06-15 09:51:22 | INFO | Chain: 31 strikes ATM=23950 expiry=2026-06-16
+26-06-15 09:51:22 | INFO | PCR: 1.015 | Put OI:140,043,800 Call OI:137,947,485
+26-06-15 09:51:22 | INFO | Market bias: NEUTRAL [raw_pcr=1.015 zone=NEUTRAL confirmed=NEUTRAL cnt=4/3]
+26-06-15 09:51:22 | INFO | VWAP: 23953.36
+==========================================================================================
+ CYCLE 9 | 09:51:22 | NIFTY 23965.00 | O:23984.8 H:24011.4 L:23927.3 | PCR:1.015 | BIAS:NEUTRAL
+ ATM:23950 CE:99.10 PE:103.80 | Data:OK
+==========================================================================================
+
+ #   STRATEGY                   STATUS     CONTRACT        ENTRY      LTP   UNREAL P&L      NET P&L  TRADES
+------------------------------------------------------------------------------------------
+ 1   ULTIMATE_DAY_HIGH_LOW      WAITING    -                   -        -            -       +0.00       0
+ 2   DAY_HIGH_BEARISH           WAITING    -                   -        -            -       +0.00       0
+ 3   DAY_LOW_BULLISH            WAITING    -                   -        -            -       +0.00       0
+ 4   DAY_LOW_BOUNCE             WAITING    -                   -        -            -       +0.00       0
+ 5   ENHANCED_BEARISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 6   ENHANCED_BULLISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 7   DAY_HIGH_LOW_TRADITIONAL   WAITING    -                   -        -            -       +0.00       0
+ 8   TREND_FOLLOWING            WAITING    -                   -        -            -       +0.00       0
+ 9   AI_ENHANCED                WAITING    -                   -        -            -       +0.00       0
+ 10  MEAN_REVERSION             WAITING    -                   -        -            -       +0.00       0
+ 11  SCALPING                   WAITING    -                   -        -            -       +0.00       0
+ 12  BREAKOUT                   WAITING    -                   -        -            -       +0.00       0
+ 13  VOLATILITY_BREAKOUT        WAITING    -                   -        -            -       +0.00       0
+ 14  OPTIONS_GREEKS             WAITING    -                   -        -            -       +0.00       0
+ 15  MAGIC_SQUARE               WAITING    -                   -        -            -       +0.00       0
+ 16  SHORT_UNWIND               WAITING    -                   -        -            -       +0.00       0
+ 17  LONG_UNWIND                WAITING    -                   -        -            -       +0.00       0
+ 18  WRITER_RESIST_BREAK        WAITING    -                   -        -            -       +0.00       0
+ 19  PUT_WRITER_SUPPORT         WAITING    -                   -        -            -       +0.00       0
+ 20  ORD_BLOCK                  WAITING    -                   -        -            -       +0.00       0
+------------------------------------------------------------------------------------------
+ TOTAL NET P&L: ₹+0.00 | Unrealized: ₹+0.00 | Trades: 0
+ CAPITAL: 20 × ₹50,000 = ₹1,000,000
+ DAILY LIMIT: ₹-100,000 | Used: ₹0 (0.0%) [░░░░░░░░░░░░░░░░░░░░]
+
+ CE Open: 0 | PE Open: 0 | UNLIMITED
+==========================================================================================
+ Press Ctrl+C to stop
+==========================================================================================
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] CYC#10 spot=23965 pcr=1.015/NEUTRAL rsi=75 dev=-0.08% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=37
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.02<1.1
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=75>35
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=75>35
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=75 PCR=1.02 bias=NEUTRAL EMA=above
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.08% (need ±0.5%) RSI=75; dev too small
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=8pts (need 15)
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 37)
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.02 bias=NEUTRAL
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=False
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23965 need spot>24024
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:51:22 | INFO | [HEALTH 09:51:22] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.69%) resist=24000 (+0.15%) RSI=75
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] CYC#11 spot=23966 pcr=1.015/NEUTRAL rsi=77 dev=-0.08% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=37
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.02<1.1
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=77>35
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=77>35
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=77 PCR=1.02 bias=NEUTRAL EMA=above
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.08% (need ±0.5%) RSI=77; dev too small
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=6pts (need 15)
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 37)
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.02 bias=NEUTRAL
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23966 need spot>24024
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:51:32 | INFO | [HEALTH 09:51:32] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.14%) RSI=77
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] CYC#12 spot=23967 pcr=1.015/NEUTRAL rsi=79 dev=-0.07% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=37
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.02<1.1
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=79 PCR=1.02 bias=NEUTRAL EMA=above
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.07% (need ±0.5%) RSI=79; dev too small
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=5pts (need 15)
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 37)
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.02 bias=NEUTRAL
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23967 need spot>24024
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:51:42 | INFO | [HEALTH 09:51:42] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.14%) RSI=79
+26-06-15 09:51:55 | WARNING | [DATAFEED] ⚠️ No option chain
+==========================================================================================
+ CYCLE 12 | 09:51:55 | NIFTY 23967.30 | O:23984.8 H:24011.4 L:23927.3 | PCR:1.015 | BIAS:NEUTRAL
+ ATM:23950 CE:99.10 PE:103.80 | Data:OK
+==========================================================================================
+
+ #   STRATEGY                   STATUS     CONTRACT        ENTRY      LTP   UNREAL P&L      NET P&L  TRADES
+------------------------------------------------------------------------------------------
+ 1   ULTIMATE_DAY_HIGH_LOW      WAITING    -                   -        -            -       +0.00       0
+ 2   DAY_HIGH_BEARISH           WAITING    -                   -        -            -       +0.00       0
+ 3   DAY_LOW_BULLISH            WAITING    -                   -        -            -       +0.00       0
+ 4   DAY_LOW_BOUNCE             WAITING    -                   -        -            -       +0.00       0
+ 5   ENHANCED_BEARISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 6   ENHANCED_BULLISH_REVERSAL  WAITING    -                   -        -            -       +0.00       0
+ 7   DAY_HIGH_LOW_TRADITIONAL   WAITING    -                   -        -            -       +0.00       0
+ 8   TREND_FOLLOWING            WAITING    -                   -        -            -       +0.00       0
+ 9   AI_ENHANCED                WAITING    -                   -        -            -       +0.00       0
+ 10  MEAN_REVERSION             WAITING    -                   -        -            -       +0.00       0
+ 11  SCALPING                   WAITING    -                   -        -            -       +0.00       0
+ 12  BREAKOUT                   WAITING    -                   -        -            -       +0.00       0
+ 13  VOLATILITY_BREAKOUT        WAITING    -                   -        -            -       +0.00       0
+ 14  OPTIONS_GREEKS             WAITING    -                   -        -            -       +0.00       0
+ 15  MAGIC_SQUARE               WAITING    -                   -        -            -       +0.00       0
+ 16  SHORT_UNWIND               WAITING    -                   -        -            -       +0.00       0
+ 17  LONG_UNWIND                WAITING    -                   -        -            -       +0.00       0
+ 18  WRITER_RESIST_BREAK        WAITING    -                   -        -            -       +0.00       0
+ 19  PUT_WRITER_SUPPORT         WAITING    -                   -        -            -       +0.00       0
+ 20  ORD_BLOCK                  WAITING    -                   -        -            -       +0.00       0
+------------------------------------------------------------------------------------------
+ TOTAL NET P&L: ₹+0.00 | Unrealized: ₹+0.00 | Trades: 0
+ CAPITAL: 20 × ₹50,000 = ₹1,000,000
+ DAILY LIMIT: ₹-100,000 | Used: ₹0 (0.0%) [░░░░░░░░░░░░░░░░░░░░]
+
+ CE Open: 0 | PE Open: 0 | UNLIMITED
+==========================================================================================
+ Press Ctrl+C to stop
+==========================================================================================
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] CYC#13 spot=23967 pcr=1.015/NEUTRAL rsi=79 dev=-0.07% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=37
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.02<1.1
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=79 PCR=1.02 bias=NEUTRAL EMA=above
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.07% (need ±0.5%) RSI=79; dev too small
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=5pts (need 15)
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 37)
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.02 bias=NEUTRAL
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23967 need spot>24024
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:51:55 | INFO | [HEALTH 09:51:55] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.14%) RSI=79
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] CYC#14 spot=23968 pcr=1.015/NEUTRAL rsi=78 dev=-0.07% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=38
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.02<1.1
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=78>35
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=78>35
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=78 PCR=1.02 bias=NEUTRAL EMA=above
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.07% (need ±0.5%) RSI=78; dev too small
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=9pts (need 15)
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 38)
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.02 bias=NEUTRAL
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23968 need spot>24024
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:52:05 | INFO | [HEALTH 09:52:05] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.70%) resist=24000 (+0.14%) RSI=78
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] CYC#15 spot=23970 pcr=1.015/NEUTRAL rsi=79 dev=-0.06% | OPEN:0 CE:0 PE:0 | P&L:Rs+0 | candles=38
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] ULTIMATE_DAY_HIGH_LOW        | WAITING                      | t=0/3 pnl=+0 | ORB H=23962 L=23940 waiting breakout
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] DAY_HIGH_BEARISH             | WAITING                      | t=0/3 pnl=+0 | PCR=1.02<1.1
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] DAY_LOW_BULLISH              | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] DAY_LOW_BOUNCE               | WAITING                      | t=0/3 pnl=+0 | OK
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] ENHANCED_BEARISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | READY
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] ENHANCED_BULLISH_REVERSAL    | WAITING                      | t=0/3 pnl=+0 | RSI=79>35
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] DAY_HIGH_LOW_TRADITIONAL     | WAITING                      | t=0/3 pnl=+0 | H=23962 L=23940 broke_up=False ret_up=False
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] TREND_FOLLOWING              | WAITING                      | t=0/3 pnl=+0 | gap=+1.53% (need ±0.2%)
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] AI_ENHANCED                  | WAITING                      | t=0/3 pnl=+0 | RSI=79 PCR=1.02 bias=NEUTRAL EMA=above
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] MEAN_REVERSION               | WAITING                      | t=0/3 pnl=+0 | dev=-0.06% (need ±0.5%) RSI=79; dev too small
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] SCALPING                     | WAITING                      | t=0/3 pnl=+0 | 5c_move=7pts (need 15)
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] BREAKOUT                     | WAITING                      | t=0/3 pnl=+0 | need 73 candles (have 38)
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] VOLATILITY_BREAKOUT          | WAITING                      | t=0/3 pnl=+0 | ATM_IV=16.7% (need>=18.0) EMA5=>EMA20
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] OPTIONS_GREEKS               | WAITING                      | t=0/3 pnl=+0 | spot above EMA20 PCR=1.02 bias=NEUTRAL
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] MAGIC_SQUARE                 | WAITING                      | t=0/10 pnl=+0 | expiry=False theta_limit=0.15 scanning ATM±10 strikes
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] SHORT_UNWIND                 | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] LONG_UNWIND                  | WAITING                      | t=0/3 pnl=+0 | prev_oi=YES spot_rising=True
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] WRITER_RESIST_BREAK          | WAITING                      | t=0/3 pnl=+0 | max_call_OI=24000 spot=23970 need spot>24024
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] PUT_WRITER_SUPPORT           | WAITING                      | t=0/3 pnl=+0 | max_put_OI=23800 broken=False day_low=23927
+26-06-15 09:52:15 | INFO | [HEALTH 09:52:15] ORDER_BLOCK_REVERSAL         | WAITING                      | t=0/3 pnl=+0 | support=23800 (+0.71%) resist=24000 (+0.13%) RSI=79

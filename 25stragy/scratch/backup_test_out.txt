@@ -1,0 +1,127 @@
+[DNA MATRIX] Loaded 36 strategies x 4 indices = 144 DNA combinations
+======================================================================
+BACKTEST V8 AI — SCALING MULTI-STRATEGY ENGINE
+  Dynamic Lot Sizing | 36 Strategies | Parallelized Execution
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+Loaded 4 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX']
+
+======================================================================
+Running backtests in parallel...
+======================================================================
+  [NIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [SENSEX] Done — 42 trades
+  [SENSEX] Completed: 42 trades
+  [FINNIFTY] Done — 96 trades
+  [FINNIFTY] Completed: 96 trades
+  [BANKNIFTY] Done — 63 trades
+  [BANKNIFTY] Completed: 63 trades
+  [NIFTY] Done — 77 trades
+  [NIFTY] Completed: 77 trades
+
+
+======================================================================
+BACKTEST V8 AI — MULTI-INDEX SCALE TARGET (155 calendar days)
+  4 indices × 36 strategies × Dynamic lot sizing
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 278
+  Win rate           : 73.0%
+  Total PnL          : Rs.+161,587
+  Avg PnL/day        : Rs.+1,737  (0.35%)
+  Monthly est.       : Rs.+38,225  (7.6%)
+  Green days         : 63/93 (68%)
+  Max drawdown       : Rs.-10,874
+  5% daily target    : 0 days hit (Rs.25,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  NIFTY             77   68%      +56,775     53     +1,071    +23,567
+  BANKNIFTY         63   71%      +18,973     32       +593    +13,044
+  FINNIFTY          96   74%      +46,964     46     +1,021    +22,461
+  SENSEX            42   83%      +38,874     26     +1,495    +32,894
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  AI_ENHANCED                  14   57%         -454      -32
+  ATR_BREAK                    20   60%       +3,953     +198
+  BEAR_TREND_FOLLOWER          36   75%       +9,916     +275
+  BOLLINGER_SQUEEZE            11   82%       +9,039     +822
+  DAY_HIGH_BEARISH              4   75%       +1,590     +398
+  DAY_LOW_BULLISH               4  100%       +4,888   +1,222
+  EMA_CROSSOVER                 6   83%       +3,986     +664
+  ENHANCED_BULLISH              2   50%         +646     +323
+  GAMMA_BLAST                  12   67%       +3,739     +312
+  MACD_DIVERGENCE              24   75%      +27,864   +1,161
+  MAGIC_SQUARE                  2  100%       +6,589   +3,295
+  MOMENTUM_BURST               32   72%      +26,253     +820
+  OPTIONS_GREEKS               15   73%      +13,663     +911
+  PUT_WRITER_SUPPORT            3   67%         -921     -307
+  RSI_REVERSAL                  3  100%       +5,379   +1,793
+  SCALPING                      6  100%       +7,720   +1,287
+  ULTIMATE_DAY_HIGH_LOW        18   78%         +883      +49
+  VOLUME_CLIMAX                 3   67%       +6,897   +2,299
+  VWAP_BOUNCE                   9   89%      +12,276   +1,364
+  ZERO_HERO                    54   69%      +17,681     +327
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  TSL          159     +256,047   +1,610
+  TIME         114      -77,028     -676
+  SL             5      -17,432   -3,486
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.500 (0.1%)   : 53/93
+  Days >= Rs.1,000 (0.2%) : 47/93
+  Days >= Rs.2,500 (0.5%) : 33/93
+  Days >= Rs.5,000 (1.0%) : 15/93
+  Days >= Rs.25,000 (5.0%): 0/93
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs. +11,570  ( +2.3%)  ##
+  2025-03  Rs. +25,210  ( +5.0%)  #####
+  2025-04  Rs.  +4,516  ( +0.9%)  
+  2025-05  Rs.  -6,056  ( -1.2%)  #
+  2026-01  Rs. +57,126  (+11.4%)  ###########
+  2026-02  Rs. +44,403  ( +8.9%)  ########
+  2026-03  Rs.  -5,736  ( -1.1%)  #
+  2026-04  Rs. +28,864  ( +5.8%)  #####
+  2026-05  Rs.  +1,689  ( +0.3%)  
+
+  TOP 10 DAYS:
+  2025-02-11  Rs. +19,275  SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | FI:BEAR_TRE(PE) | BA:BEAR_TRE(PE) | BA:MOMENTUM(PE) | BA:ATR_BREA(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE) | NI:ATR_BREA(PE)
+  2026-02-04  Rs. +13,176  SE:MOMENTUM(PE) | SE:VWAP_BOU(PE)
+  2026-01-05  Rs. +13,030  FI:MACD_DIV(CE) | NI:MACD_DIV(CE)
+  2026-04-09  Rs. +12,378  NI:MOMENTUM(PE) | NI:ATR_BREA(PE)
+  2025-02-28  Rs. +12,313  FI:AI_ENHAN(CE) | FI:AI_ENHAN(CE) | FI:BEAR_TRE(PE) | FI:ULTIMATE(PE) | FI:EMA_CROS(PE) | FI:BOLLINGE(PE) | BA:AI_ENHAN(CE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE) | NI:ATR_BREA(PE)
+  2026-01-23  Rs. +11,549  SE:BEAR_TRE(PE) | SE:GAMMA_BL(PE) | SE:GAMMA_BL(PE) | FI:BEAR_TRE(PE) | FI:MACD_DIV(PE) | NI:BEAR_TRE(PE) | NI:MACD_DIV(PE)
+  2026-02-10  Rs. +10,983  SE:SCALPING(CE) | SE:MOMENTUM(CE) | SE:VOLUME_C(PE) | FI:BOLLINGE(CE) | BA:SCALPING(CE) | BA:OPTIONS_(PE) | BA:MOMENTUM(CE) | NI:SCALPING(CE) | NI:MOMENTUM(CE) | NI:VOLUME_C(PE)
+  2026-02-09  Rs. +10,222  SE:EMA_CROS(PE) | FI:ULTIMATE(CE) | FI:OPTIONS_(PE) | BA:MOMENTUM(PE) | BA:VWAP_BOU(PE) | BA:BOLLINGE(PE) | BA:ATR_BREA(PE) | NI:MACD_DIV(CE)
+  2025-03-20  Rs. +10,161  FI:ULTIMATE(CE) | BA:ULTIMATE(CE) | NI:MOMENTUM(CE) | NI:ATR_BREA(CE)
+  2026-04-28  Rs.  +9,258  SE:BEAR_TRE(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE)
+
+  WORST 5 DAYS:
+  2025-02-04  Rs. -19,632  BA:MOMENTUM[TIME] | BA:ATR_BREA[TIME] | NI:MOMENTUM[TIME] | NI:ATR_BREA[TIME]
+  2025-05-02  Rs.  -6,056  FI:BEAR_TRE[TIME] | BA:BEAR_TRE[TIME] | NI:BEAR_TRE[TIME]
+  2026-03-10  Rs.  -5,912  NI:ULTIMATE[TIME]
+  2025-04-03  Rs.  -5,778  NI:MACD_DIV[TIME]
+  2025-04-04  Rs.  -5,096  FI:AI_ENHAN[TIME] | FI:AI_ENHAN[TIME]
+
+  Saved 278 trades -> backtest_results/v8_multiindex_trades.csv

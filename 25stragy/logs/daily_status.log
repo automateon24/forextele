@@ -1,0 +1,114 @@
+[2026-04-27 16:57:51] [INFO] Token refresh SUCCESS. Expires: TEST - 2026-04-28 08:30:00
+[2026-04-27 16:57:52] [INFO] Telegram notification sent
+[2026-04-27 16:58:13] [ERROR] Token refresh FAILED: generateAccessToken failed - check TOTP/PIN/internet
+[2026-04-27 16:58:14] [INFO] Telegram notification sent
+[2026-04-27 16:59:33] [ERROR] Token refresh FAILED: generateAccessToken failed - check TOTP/PIN/internet
+[2026-04-27 16:59:34] [INFO] Telegram notification sent
+[2026-04-27 17:02:04] [INFO] Token refresh SUCCESS. Expires: 2026-04-28 17:02:05
+[2026-04-27 17:02:05] [INFO] Telegram notification sent
+[2026-04-28 08:49:37] [INFO] Token refresh SUCCESS. Expires: 2026-04-29 08:49:38
+[2026-04-28 08:49:39] [INFO] Telegram notification sent
+[2026-04-28 08:53:16] [INFO] Token refresh SUCCESS. Expires: 2026-04-29 08:53:17
+[2026-04-28 08:53:18] [INFO] Telegram notification sent
+[2026-04-29 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-04-30 08:30:09
+[2026-04-29 08:30:09] [INFO] Telegram notification sent
+[2026-04-30 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-05-01 08:30:06
+[2026-04-30 08:30:06] [INFO] Telegram notification sent
+[2026-05-10 18:38:25] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:38:27
+[2026-05-10 18:38:28] [INFO] Telegram notification sent
+[2026-05-10 18:43:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:43:34
+[2026-05-10 18:43:35] [INFO] Telegram notification sent
+[2026-05-10 18:53:01] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:53:03
+[2026-05-10 18:53:03] [INFO] Telegram notification sent
+[2026-05-10 18:55:43] [INFO] Token refresh SUCCESS. Expires: 2026-05-11 18:55:45
+[2026-05-10 18:55:45] [INFO] Telegram notification sent
+[2026-05-11 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-05-12 08:30:09
+[2026-05-11 08:30:11] [INFO] Telegram notification sent
+[2026-05-12 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-05-13 08:30:08
+[2026-05-12 08:30:10] [INFO] Telegram notification sent
+[2026-05-13 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-14 08:30:33
+[2026-05-13 08:30:35] [INFO] Telegram notification sent
+[2026-05-14 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-05-15 08:30:09
+[2026-05-14 08:30:11] [INFO] Telegram notification sent
+[2026-05-15 08:30:09] [INFO] Token refresh SUCCESS. Expires: 2026-05-16 08:30:10
+[2026-05-15 08:30:12] [INFO] Telegram notification sent
+[2026-05-16 08:30:08] [INFO] Token refresh SUCCESS. Expires: 2026-05-17 08:30:09
+[2026-05-16 08:30:10] [INFO] Telegram notification sent
+[2026-05-17 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-05-18 08:30:33
+[2026-05-17 08:30:37] [INFO] Telegram notification sent
+[2026-05-18 08:30:38] [INFO] Token refresh SUCCESS. Expires: 2026-05-19 08:30:39
+[2026-05-18 08:30:43] [INFO] Telegram notification sent
+[2026-05-19 08:31:42] [INFO] Token refresh SUCCESS. Expires: 2026-05-20 08:31:42
+[2026-05-19 08:31:45] [INFO] Telegram notification sent
+[2026-05-20 08:44:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-21 08:44:33
+[2026-05-20 08:44:36] [INFO] Telegram notification sent
+[2026-05-21 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-22 08:30:33
+[2026-05-21 08:30:35] [INFO] Telegram notification sent
+[2026-05-22 08:30:10] [INFO] Token refresh SUCCESS. Expires: 2026-05-23 08:30:10
+[2026-05-22 08:30:12] [INFO] Telegram notification sent
+[2026-05-23 08:30:09] [INFO] Token refresh SUCCESS. Expires: 2026-05-24 08:30:10
+[2026-05-23 08:30:12] [INFO] Telegram notification sent
+[2026-05-24 08:30:10] [INFO] Token refresh SUCCESS. Expires: 2026-05-25 08:30:11
+[2026-05-24 08:30:12] [INFO] Telegram notification sent
+[2026-05-25 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-05-26 08:30:33
+[2026-05-25 08:30:43] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x23419f2fe50>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[2026-05-26 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-05-27 08:30:08
+[2026-05-26 08:30:07] [INFO] Telegram notification sent
+[2026-05-27 08:34:02] [INFO] Token refresh SUCCESS. Expires: 2026-05-28 08:34:04
+[2026-05-27 08:34:05] [INFO] Telegram notification sent
+[2026-05-28 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-05-29 08:30:08
+[2026-05-28 08:30:10] [INFO] Telegram notification sent
+[2026-05-29 08:30:06] [INFO] Token refresh SUCCESS. Expires: 2026-05-30 08:30:06
+[2026-05-29 08:30:08] [INFO] Telegram notification sent
+[2026-05-30 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-05-31 08:30:08
+[2026-05-30 08:30:10] [INFO] Telegram notification sent
+[2026-05-31 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-06-01 08:30:34
+[2026-05-31 08:30:35] [INFO] Telegram notification sent
+[2026-06-01 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-02 08:30:06
+[2026-06-01 08:30:08] [INFO] Telegram notification sent
+[2026-06-02 08:30:09] [INFO] Token refresh SUCCESS. Expires: 2026-06-03 08:30:09
+[2026-06-02 08:30:11] [INFO] Telegram notification sent
+[2026-06-03 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-04 08:30:06
+[2026-06-03 08:30:08] [INFO] Telegram notification sent
+[2026-06-04 08:30:07] [INFO] Token refresh SUCCESS. Expires: 2026-06-05 08:30:07
+[2026-06-04 08:30:09] [INFO] Telegram notification sent
+[2026-06-05 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-06-06 08:30:33
+[2026-06-05 08:30:35] [INFO] Telegram notification sent
+[2026-06-06 08:30:06] [INFO] Token refresh SUCCESS. Expires: 2026-06-07 08:30:07
+[2026-06-06 08:30:09] [INFO] Telegram notification sent
+[2026-06-07 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-08 08:30:05
+[2026-06-07 08:30:07] [INFO] Telegram notification sent
+[2026-06-08 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-09 08:30:05
+[2026-06-08 08:30:07] [INFO] Telegram notification sent
+[2026-06-09 08:30:04] [INFO] Token refresh SUCCESS. Expires: 2026-06-10 08:30:04
+[2026-06-09 08:30:06] [INFO] Telegram notification sent
+[2026-06-10 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-11 08:30:33
+[2026-06-10 08:30:35] [INFO] Telegram notification sent
+[2026-06-11 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-12 08:30:33
+[2026-06-11 08:30:35] [INFO] Telegram notification sent
+[2026-06-12 08:30:33] [INFO] Token refresh SUCCESS. Expires: 2026-06-13 08:30:33
+[2026-06-12 08:30:35] [INFO] Telegram notification sent
+[2026-06-13 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-14 08:30:33
+[2026-06-13 08:30:35] [INFO] Telegram notification sent
+[2026-06-14 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-15 08:30:06
+[2026-06-14 08:30:07] [INFO] Telegram notification sent
+[2026-06-15 08:30:06] [INFO] Token refresh SUCCESS. Expires: 2026-06-16 08:30:06
+[2026-06-15 08:30:08] [INFO] Telegram notification sent
+[2026-06-16 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-17 08:30:33
+[2026-06-16 08:30:35] [INFO] Telegram notification sent
+[2026-06-17 08:31:13] [ERROR] Token refresh FAILED: generateAccessToken failed - check TOTP/PIN/internet
+[2026-06-17 08:31:16] [INFO] Telegram notification sent
+[2026-06-18 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-19 08:30:06
+[2026-06-18 08:30:16] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x2346fcad010>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[2026-06-19 08:31:03] [INFO] Token refresh SUCCESS. Expires: 2026-06-20 08:31:03
+[2026-06-19 08:31:13] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x26d7193cfd0>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[2026-06-20 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-21 08:30:33
+[2026-06-20 08:30:42] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x2221a2aabd0>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[2026-06-22 08:30:32] [INFO] Token refresh SUCCESS. Expires: 2026-06-23 08:30:33
+[2026-06-22 08:30:42] [ERROR] Telegram error: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8716774883:AAFbzhRN8uZPdwCEmUwoepXR1D4BlmZThKA/sendMessage (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.telegram.org', port=443) at 0x1ef2db4a010>, 'Connection to api.telegram.org timed out. (connect timeout=10)'))
+[2026-06-23 08:30:04] [INFO] Token refresh SUCCESS. Expires: 2026-06-24 08:30:05
+[2026-06-23 08:30:05] [INFO] Telegram notification sent
+[2026-06-24 08:31:03] [INFO] Token refresh SUCCESS. Expires: 2026-06-25 08:31:04
+[2026-06-24 08:31:05] [INFO] Telegram notification sent
+[2026-06-25 08:30:05] [INFO] Token refresh SUCCESS. Expires: 2026-06-26 08:30:06
+[2026-06-25 08:30:07] [INFO] Telegram notification sent

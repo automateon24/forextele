@@ -1,0 +1,136 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Configuration secrets (if any)
+config/secrets.yaml
+config/*_secrets.yaml
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Custom NiftyOpt Rules to exclude massive raw data, logs, and backups ---
+# Exclude all archives
+*.zip
+*.7z
+*.rar
+*.tar.gz
+
+# Exclude large raw spreadsheets, csv, parquet, and logs
+*.csv
+*.xlsx
+*.log
+*.parquet
+*.pkl
+*.h5
+*.hdf5
+
+# Exclude all data directories
+data/
+Dhan_Data/
+Dhan_Data_2/
+ml_models/
+actual_working_reports/
+all_17_strategies_reports/
+api_fetch_results/
+complete_deep_backtest_fixed_reports/
+comprehensive_5year_backtest_results/
+comprehensive_9strategy_detailed_results/
+comprehensive_backtest_reports/
+comprehensive_critical_bug_fix_reports/
+comprehensive_csv_report/
+comprehensive_multi_strategy_results/
+comprehensive_reports/
+corrected_9strategy_realistic_results/
+day_high_low_balanced/
+day_high_low_corrected/
+day_high_low_csv/
+day_high_low_improved/
+day_high_low_roi_optimized/
+dhan_api_test_results/
+fetch_all_real_data_results/
+final_5year_backtest_results/
+final_comprehensive_backtest_results/
+final_csv_report/
+final_profitable_reports/
+final_working_profit_reports/
+final_working_reports/
+guaranteed_profit_reports/
+guaranteed_trades_reports/
+live_dhan_api_test_results/
+live_trading_data/
+optimization_reports/
+optimized_trading_reports/
+options_data_logs/
+real_options_backtest_reports/
+real_websocket_trading_data/
+realistic_5year_backtest_results/
+restored_profitable_reports/
+results/
+sanity_test_results/
+simplified_bug_analysis_reports/
+ultimate_fixed_reports/
+ultimate_massive_profit_reports/
+ultimate_profit_fix_reports/
+ultimate_working_reports/
+virtual_trading_reports/
+
+# Exclude all duplicate backups and logs
+backups/
+backup_*/
+archive/
+logs/
+daily_data/
+paper_trading_data/
+production_data/
+real_production_data/

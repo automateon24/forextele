@@ -1,0 +1,387 @@
+{
+  "strategies": {
+    "DAY_LOW_BULLISH": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1200,
+      "entry_end": 1350,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.80, "max_d": 5, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "DAY_HIGH_BEARISH": {
+      "direction": "PE",
+      "strike": "ATM",
+      "entry_start": 1230,
+      "entry_end": 1245,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.82, "max_d": 3, "min_p": 50, "max_p": 500, "boost": 0.03
+    },
+    "MEAN_REVERSION": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1100,
+      "entry_end": 1300,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.06, "tsl_t": 0.04, "tgt": 0.35, "sl": 0.30, "thresh": 0.82, "max_d": 4, "min_p": 45, "max_p": 600, "boost": 0.05
+    },
+    "VOLATILITY_BREAKOUT": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1100,
+      "entry_end": 1400,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.70, "sl": 0.35, "thresh": 0.85, "max_d": 4, "min_p": 60, "max_p": 700, "boost": 0.05
+    },
+    "EARLY_BREAKDOWN": {
+      "direction": "PE",
+      "strike": "ATM",
+      "entry_start": 1000,
+      "entry_end": 1100,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.90, "max_d": 2, "min_p": 40, "max_p": 400, "boost": 0.08
+    },
+    "BEAR_TREND_FOLLOWER": {
+      "direction": "PE",
+      "strike": "ATM",
+      "entry_start": 1130,
+      "entry_end": 1300,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.12, "tsl_t": 0.10, "tgt": 0.80, "sl": 0.35, "thresh": 0.88, "max_d": 3, "min_p": 45, "max_p": 500, "boost": 0.05
+    },
+    "BULL_TREND_FOLLOWER": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1130,
+      "entry_end": 1230,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.12, "tsl_t": 0.10, "tgt": 0.80, "sl": 0.35, "thresh": 0.88, "max_d": 3, "min_p": 45, "max_p": 500, "boost": 0.05
+    },
+    "ORDER_BLOCK_REVERSAL": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1100,
+      "entry_end": 1300,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.84, "max_d": 4, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "WIDE_RANGE_RIDER": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1100,
+      "entry_end": 1145,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.07, "tsl_t": 0.05, "tgt": 0.50, "sl": 0.30, "thresh": 0.82, "max_d": 3, "min_p": 60, "max_p": 600, "boost": 0.03
+    },
+    "MAGIC_SQUARE": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1100,
+      "entry_end": 1300,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.05, "tsl_t": 0.03, "tgt": 0.20, "sl": 0.20, "thresh": 0.85, "max_d": 3, "min_p": 100, "max_p": 400, "boost": 0.05
+    },
+    "SHORT_UNWIND": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1300,
+      "entry_end": 1330,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.04, "tsl_t": 0.02, "tgt": 0.20, "sl": 0.15, "thresh": 0.90, "max_d": 1, "min_p": 100, "max_p": 350, "boost": 0.03
+    },
+    "ENHANCED_BEARISH": {
+      "direction": "PE",
+      "strike": "ATM",
+      "entry_start": 1015,
+      "entry_end": 1345,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.12, "tsl_t": 0.10, "tgt": 0.80, "sl": 0.35, "thresh": 0.75, "max_d": 3, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "ULTIMATE_DAY_HIGH_LOW": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1000,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.15, "tsl_t": 0.12, "tgt": 1.00, "sl": 0.40, "thresh": 0.75, "max_d": 2, "min_p": 100, "max_p": 700, "boost": 0.08
+    },
+    "SCALPING": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1200,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": true,
+      "direction_bias": "CE",
+      "tsl_a": 0.06, "tsl_t": 0.04, "tgt": 0.25, "sl": 0.20, "thresh": 0.90, "max_d": 5, "min_p": 80, "max_p": 250, "boost": 0.05
+    },
+    "OPTIONS_GREEKS": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1200,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.50, "sl": 0.30, "thresh": 0.85, "max_d": 3, "min_p": 70, "max_p": 500, "boost": 0.05
+    },
+    "AI_ENHANCED": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1200,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.82, "max_d": 4, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "BREAKOUT": {
+      "direction": "PE",
+      "strike": "ATM+1",
+      "entry_start": 1300,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.85, "max_d": 3, "min_p": 40, "max_p": 400, "boost": 0.05
+    },
+    "GAMMA_BLAST": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1300,
+      "entry_end": 1520,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.15, "tsl_t": 0.12, "tgt": 2.00, "sl": 0.50, "thresh": 0.80, "max_d": 2, "min_p": 5, "max_p": 150, "boost": 0.10
+    },
+    "ZERO_HERO": {
+      "direction": "BOTH",
+      "strike": "ATM+2",
+      "entry_start": 930,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.12, "tsl_t": 0.10, "tgt": 1.00, "sl": 0.35, "thresh": 0.85, "max_d": 2, "min_p": 5, "max_p": 100, "boost": 0.05
+    },
+    "MORNING_BREAKOUT": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1000,
+      "entry_end": 1100,
+      "require_vwap": true,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.30, "thresh": 0.88, "max_d": 2, "min_p": 40, "max_p": 400, "boost": 0.08
+    },
+    "LONG_UNWIND": {
+      "direction": "PE",
+      "strike": "ATM",
+      "entry_start": 1300,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.50, "sl": 0.30, "thresh": 0.82, "max_d": 3, "min_p": 50, "max_p": 400, "boost": 0.05
+    },
+    "PUT_WRITER_SUPPORT": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1100,
+      "entry_end": 1400,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.08, "tsl_t": 0.06, "tgt": 0.40, "sl": 0.25, "thresh": 0.85, "max_d": 3, "min_p": 50, "max_p": 200, "boost": 0.05
+    },
+    "RESIST_BREAK": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1300,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.08, "tsl_t": 0.06, "tgt": 0.50, "sl": 0.20, "thresh": 0.85, "max_d": 3, "min_p": 50, "max_p": 250, "boost": 0.05
+    },
+    "DAY_HIGH_LOW_TRADITIONAL": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1015,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.35, "thresh": 0.80, "max_d": 3, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "ENHANCED_BULLISH": {
+      "direction": "CE",
+      "strike": "ATM",
+      "entry_start": 1200,
+      "entry_end": 1300,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.10, "tsl_t": 0.08, "tgt": 0.60, "sl": 0.30, "thresh": 0.82, "max_d": 3, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "TREND_FOLLOWING": {
+      "direction": "PE",
+      "strike": "ATM",
+      "entry_start": 1300,
+      "entry_end": 1300,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "PE",
+      "tsl_a": 0.04, "tsl_t": 0.02, "tgt": 0.20, "sl": 0.20, "thresh": 0.92, "max_d": 1, "min_p": 80, "max_p": 400, "boost": 0.03
+    },
+    "MOMENTUM_BURST": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": true,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.06, "tsl_t": 0.04, "tgt": 0.40, "sl": 0.25, "thresh": 0.85, "max_d": 2, "min_p": 60, "max_p": 400, "boost": 0.05
+    },
+    "VWAP_BOUNCE": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": true,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.05, "tsl_t": 0.03, "tgt": 0.30, "sl": 0.20, "thresh": 0.87, "max_d": 2, "min_p": 70, "max_p": 350, "boost": 0.04
+    },
+    "OPENING_DRIVE": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 915,
+      "entry_end": 945,
+      "require_vwap": true,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.08, "tsl_t": 0.06, "tgt": 0.50, "sl": 0.30, "thresh": 0.88, "max_d": 2, "min_p": 50, "max_p": 400, "boost": 0.06
+    },
+    "PREMIUM_CRUSH": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.04, "tsl_t": 0.02, "tgt": 0.20, "sl": 0.15, "thresh": 0.86, "max_d": 3, "min_p": 90, "max_p": 300, "boost": 0.04
+    },
+    "RSI_REVERSAL": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.05, "tsl_t": 0.03, "tgt": 0.30, "sl": 0.20, "thresh": 0.85, "max_d": 2, "min_p": 60, "max_p": 400, "boost": 0.04
+    },
+    "EMA_CROSSOVER": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": true,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.07, "tsl_t": 0.05, "tgt": 0.45, "sl": 0.25, "thresh": 0.88, "max_d": 2, "min_p": 55, "max_p": 450, "boost": 0.05
+    },
+    "BOLLINGER_SQUEEZE": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": true,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.06, "tsl_t": 0.04, "tgt": 0.40, "sl": 0.25, "thresh": 0.87, "max_d": 2, "min_p": 65, "max_p": 400, "boost": 0.05
+    },
+    "VOLUME_CLIMAX": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.05, "tsl_t": 0.03, "tgt": 0.35, "sl": 0.20, "thresh": 0.89, "max_d": 2, "min_p": 70, "max_p": 350, "boost": 0.04
+    },
+    "ATR_BREAK": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": true,
+      "require_volume": true,
+      "direction_bias": "",
+      "tsl_a": 0.08, "tsl_t": 0.06, "tgt": 0.55, "sl": 0.30, "thresh": 0.86, "max_d": 2, "min_p": 50, "max_p": 500, "boost": 0.05
+    },
+    "MACD_DIVERGENCE": {
+      "direction": "BOTH",
+      "strike": "ATM",
+      "entry_start": 1030,
+      "entry_end": 1430,
+      "require_vwap": false,
+      "require_volume": false,
+      "direction_bias": "",
+      "tsl_a": 0.06, "tsl_t": 0.04, "tgt": 0.40, "sl": 0.25, "thresh": 0.87, "max_d": 2, "min_p": 60, "max_p": 400, "boost": 0.04
+    }
+  },
+  "strategy_regime_matrix": {
+    "TREND_FOLLOWING":       { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "DAY_LOW_BULLISH":       { "TRENDING_BULL": true,  "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "DAY_HIGH_BEARISH":      { "TRENDING_BULL": false, "TRENDING_BEAR": true,  "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "SCALPING":              { "TRENDING_BULL": false, "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "MEAN_REVERSION":        { "TRENDING_BULL": false, "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "ULTIMATE_DAY_HIGH_LOW": { "TRENDING_BULL": false, "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "MAGIC_SQUARE":          { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "SHORT_UNWIND":          { "TRENDING_BULL": false, "TRENDING_BEAR": true,  "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "LONG_UNWIND":           { "TRENDING_BULL": true,  "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "AI_ENHANCED":           { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "DAY_HIGH_LOW_TRADITIONAL": { "TRENDING_BULL": false, "TRENDING_BEAR": false, "RANGE_BOUND": true, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "BREAKOUT":              { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "VOLATILITY_BREAKOUT":   { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": true,  "NORMAL": true },
+    "GAMMA_BLAST":           { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": true,  "NORMAL": true },
+    "OPTIONS_GREEKS":        { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": true,  "HIGH_VOLATILITY": true,  "NORMAL": true },
+    "ENHANCED_BULLISH":      { "TRENDING_BULL": true,  "TRENDING_BEAR": false, "RANGE_BOUND": false, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "ENHANCED_BEARISH":      { "TRENDING_BULL": false, "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "PUT_WRITER_SUPPORT":    { "TRENDING_BULL": true,  "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "RESIST_BREAK":          { "TRENDING_BULL": true,  "TRENDING_BEAR": false, "RANGE_BOUND": false, "HIGH_VOLATILITY": false, "NORMAL": true },
+    "ORDER_BLOCK_REVERSAL":  { "TRENDING_BULL": false, "TRENDING_BEAR": false, "RANGE_BOUND": true,  "HIGH_VOLATILITY": false, "NORMAL": true },
+    "ZERO_HERO":             { "TRENDING_BULL": true,  "TRENDING_BEAR": true,  "RANGE_BOUND": false, "HIGH_VOLATILITY": true,  "NORMAL": true }
+  }
+}

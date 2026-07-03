@@ -1,0 +1,220 @@
+{
+  "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+  "test_date": "2026-02-27 10:51:29",
+  "total_tests": 16,
+  "passed_tests": 15,
+  "failed_tests": 1,
+  "error_tests": 0,
+  "test_results": [
+    {
+      "test_name": "Strategy Initialization",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.688721,
+      "details": "Strategy initialized successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "initialization_time": 1.688737
+      }
+    },
+    {
+      "test_name": "Configuration Loading",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.652978,
+      "details": "Configuration loaded successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "config_keys": 13
+      }
+    },
+    {
+      "test_name": "Method Existence",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.720858,
+      "details": "All required methods exist",
+      "error_message": null,
+      "performance_metrics": {
+        "method_count": 3
+      }
+    },
+    {
+      "test_name": "Parameter Validation",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.6541,
+      "details": "All parameters valid",
+      "error_message": null,
+      "performance_metrics": {
+        "parameter_count": 4
+      }
+    },
+    {
+      "test_name": "Signal Generation",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 2.01364,
+      "details": "Generated 0 valid signals",
+      "error_message": null,
+      "performance_metrics": {
+        "signal_count": 0
+      }
+    },
+    {
+      "test_name": "Trade Execution",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "functional",
+      "status": "FAIL",
+      "execution_time": 1.781104,
+      "details": "Trade execution returned None",
+      "error_message": "execute_trade should return a trade object",
+      "performance_metrics": null
+    },
+    {
+      "test_name": "Position Management",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 1.585258,
+      "details": "Position management completed, closed 0 positions",
+      "error_message": null,
+      "performance_metrics": {
+        "closed_positions": 0
+      }
+    },
+    {
+      "test_name": "Data Processing",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 1.628562,
+      "details": "Data processing completed successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "data_points": 10
+      }
+    },
+    {
+      "test_name": "Data Integrity",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 1.560414,
+      "details": "Data integrity tests passed for all scenarios",
+      "error_message": null,
+      "performance_metrics": {
+        "test_scenarios": 3
+      }
+    },
+    {
+      "test_name": "Performance Bounds",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 1.645684,
+      "details": "Performance acceptable: 0.00s for 1000 data points",
+      "error_message": null,
+      "performance_metrics": {
+        "execution_time": 8e-06,
+        "data_points": 1000
+      }
+    },
+    {
+      "test_name": "Risk Management",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 1.58614,
+      "details": "Risk management parameters are valid",
+      "error_message": null,
+      "performance_metrics": {
+        "risk_params_checked": 3
+      }
+    },
+    {
+      "test_name": "Memory Usage",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 16.902385,
+      "details": "Memory usage acceptable: 1.00MB increase",
+      "error_message": null,
+      "performance_metrics": {
+        "memory_increase_mb": 1.0
+      }
+    },
+    {
+      "test_name": "Infinite Loops",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 1.564594,
+      "details": "No infinite loops detected",
+      "error_message": null,
+      "performance_metrics": {
+        "test_execution_time": 1.564601
+      }
+    },
+    {
+      "test_name": "Memory Leaks",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 165.300852,
+      "details": "No memory leaks detected: 6.99MB increase",
+      "error_message": null,
+      "performance_metrics": {
+        "memory_increase_mb": 6.9921875
+      }
+    },
+    {
+      "test_name": "Division by Zero",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 1.688506,
+      "details": "No division by zero errors detected",
+      "error_message": null,
+      "performance_metrics": {
+        "zero_value_tests": 1
+      }
+    },
+    {
+      "test_name": "Null Pointers",
+      "strategy_name": "ENHANCED_DAY_HIGH_LOW",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 1.550991,
+      "details": "No null pointer exceptions detected",
+      "error_message": null,
+      "performance_metrics": {
+        "null_tests": 2
+      }
+    }
+  ],
+  "critical_issues": [],
+  "performance_summary": {
+    "total_execution_time": 205.524787,
+    "avg_execution_time": 12.8452991875,
+    "max_execution_time": 165.300852,
+    "min_execution_time": 1.550991,
+    "tests_by_type": {
+      "unit": 4,
+      "functional": 4,
+      "sanity": 4,
+      "critical": 4
+    },
+    "tests_by_status": {
+      "PASS": 15,
+      "FAIL": 1,
+      "ERROR": 0
+    }
+  },
+  "overall_status": "NEEDS_FIXES"
+}

@@ -1,0 +1,369 @@
+2026-04-27 16:31:42,560 INFO [TOTP] Code generated (valid for ~18s)
+2026-04-27 16:31:42,563 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-27 16:31:43,118 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-27 16:31:43,118 ERROR [AUTH] generateAccessToken failed: 200 {"message":"Invalid TOTP","status":"error"}
+2026-04-27 16:31:43,121 ERROR [FATAL] All token generation methods failed.
+2026-04-27 16:43:57,290 INFO [TOTP] Waiting 5s for fresh TOTP window...
+2026-04-27 16:44:02,292 INFO [TOTP] Code generated (valid for ~28s)
+2026-04-27 16:44:02,292 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-27 16:44:02,848 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-27 16:44:02,848 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-27 16:44:02,851 INFO [SAVED] Token saved. Expires: 2026-04-28T16:44:04
+2026-04-27 16:58:02,548 INFO [TOTP] Code generated (valid for ~28s)
+2026-04-27 16:58:02,549 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-27 16:58:13,496 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-27 16:58:13,496 ERROR [AUTH] generateAccessToken failed: 200 {"message":"Invalid TOTP","status":"error"}
+2026-04-27 16:58:13,499 ERROR [FATAL] All token generation methods failed.
+2026-04-27 16:59:28,924 INFO [TOTP] Waiting 4s for fresh TOTP window...
+2026-04-27 16:59:32,925 INFO [TOTP] Code generated (valid for ~28s)
+2026-04-27 16:59:32,925 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-27 16:59:33,451 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-27 16:59:33,451 ERROR [AUTH] generateAccessToken failed: 200 {"message":"Token can be generated once every 2 minutes.","status":"error"}
+2026-04-27 16:59:33,454 ERROR [FATAL] All token generation methods failed.
+2026-04-27 17:02:03,488 INFO [TOTP] Code generated (valid for ~27s)
+2026-04-27 17:02:03,488 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-27 17:02:04,440 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-27 17:02:04,440 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-27 17:02:04,444 INFO [SAVED] Token saved. Expires: 2026-04-28T17:02:05
+2026-04-28 08:49:37,072 INFO [TOTP] Code generated (valid for ~23s)
+2026-04-28 08:49:37,075 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-28 08:49:37,712 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-28 08:49:37,713 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-28 08:49:37,715 INFO [SAVED] Token saved. Expires: 2026-04-29T08:49:38
+2026-04-28 08:51:12,332 INFO [TOTP] Code generated (valid for ~18s)
+2026-04-28 08:51:12,333 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-28 08:51:13,227 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-28 08:51:13,228 WARNING [AUTH] Rate limited - waiting 2 minutes before retry...
+2026-04-28 08:53:15,229 INFO [TOTP] Code generated (valid for ~15s)
+2026-04-28 08:53:16,660 INFO [AUTH] Attempt 2: HTTP 200
+2026-04-28 08:53:16,661 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-28 08:53:16,666 INFO [SAVED] Token saved. Expires: 2026-04-29T08:53:17
+2026-04-29 08:30:07,640 INFO [TOTP] Code generated (valid for ~23s)
+2026-04-29 08:30:07,642 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-29 08:30:08,718 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-29 08:30:08,718 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-29 08:30:08,724 INFO [SAVED] Token saved. Expires: 2026-04-30T08:30:09
+2026-04-30 08:30:04,492 INFO [TOTP] Code generated (valid for ~26s)
+2026-04-30 08:30:04,493 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-04-30 08:30:05,683 INFO [AUTH] Attempt 1: HTTP 200
+2026-04-30 08:30:05,683 INFO [AUTH] generateAccessToken SUCCESS
+2026-04-30 08:30:05,687 INFO [SAVED] Token saved. Expires: 2026-05-01T08:30:06
+2026-05-10 18:38:24,487 INFO [TOTP] Code generated (valid for ~6s)
+2026-05-10 18:38:24,489 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:38:25,490 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:38:25,491 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:38:25,500 INFO [SAVED] Token saved. Expires: 2026-05-11T18:38:27
+2026-05-10 18:43:26,492 INFO [TOTP] Waiting 6s for fresh TOTP window...
+2026-05-10 18:43:32,499 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-10 18:43:32,499 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:43:33,003 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:43:33,004 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:43:33,008 INFO [SAVED] Token saved. Expires: 2026-05-11T18:43:34
+2026-05-10 18:53:01,188 INFO [TOTP] Code generated (valid for ~29s)
+2026-05-10 18:53:01,193 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:53:01,564 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:53:01,565 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:53:01,569 INFO [SAVED] Token saved. Expires: 2026-05-11T18:53:03
+2026-05-10 18:55:42,982 INFO [TOTP] Code generated (valid for ~18s)
+2026-05-10 18:55:42,986 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-10 18:55:43,702 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-10 18:55:43,703 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-10 18:55:43,708 INFO [SAVED] Token saved. Expires: 2026-05-11T18:55:45
+2026-05-11 08:30:07,864 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-11 08:30:07,865 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-11 08:30:08,354 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-11 08:30:08,354 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-11 08:30:08,363 INFO [SAVED] Token saved. Expires: 2026-05-12T08:30:09
+2026-05-12 08:30:07,297 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-12 08:30:07,298 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-12 08:30:07,784 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-12 08:30:07,784 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-12 08:30:07,789 INFO [SAVED] Token saved. Expires: 2026-05-13T08:30:08
+2026-05-13 08:30:26,299 INFO [TOTP] Waiting 6s for fresh TOTP window...
+2026-05-13 08:30:32,318 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-13 08:30:32,319 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-13 08:30:33,323 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-13 08:30:33,323 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-13 08:30:33,332 INFO [SAVED] Token saved. Expires: 2026-05-14T08:30:33
+2026-05-14 08:30:08,255 INFO [TOTP] Code generated (valid for ~22s)
+2026-05-14 08:30:08,256 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-14 08:30:08,972 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-14 08:30:08,973 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-14 08:30:08,977 INFO [SAVED] Token saved. Expires: 2026-05-15T08:30:09
+2026-05-15 08:30:09,286 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-15 08:30:09,289 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-15 08:30:09,928 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-15 08:30:09,928 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-15 08:30:09,934 INFO [SAVED] Token saved. Expires: 2026-05-16T08:30:10
+2026-05-16 08:30:07,934 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-16 08:30:07,935 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-16 08:30:08,477 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-16 08:30:08,478 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-16 08:30:08,483 INFO [SAVED] Token saved. Expires: 2026-05-17T08:30:09
+2026-05-17 08:30:11,865 INFO [TOTP] Code generated (valid for ~19s)
+2026-05-17 08:30:11,866 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-17 08:30:22,424 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-17 08:30:22,425 WARNING [AUTH] TOTP used already - waiting 10s for next window...
+2026-05-17 08:30:32,425 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-17 08:30:32,874 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-17 08:30:32,882 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-17 08:30:32,886 INFO [SAVED] Token saved. Expires: 2026-05-18T08:30:33
+2026-05-18 08:30:37,830 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-18 08:30:37,833 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-18 08:30:38,535 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-18 08:30:38,536 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-18 08:30:38,541 INFO [SAVED] Token saved. Expires: 2026-05-19T08:30:39
+2026-05-19 08:30:07,689 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-19 08:30:07,690 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-19 08:30:45,868 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-19 08:30:45,892 WARNING [AUTH] TOTP used already - waiting 17s for next window...
+2026-05-19 08:31:41,249 INFO [TOTP] Code generated (valid for ~19s)
+2026-05-19 08:31:42,331 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-19 08:31:42,345 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-19 08:31:42,376 INFO [SAVED] Token saved. Expires: 2026-05-20T08:31:42
+2026-05-20 08:44:00,104 INFO [TOTP] Code generated (valid for ~30s)
+2026-05-20 08:44:00,106 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-20 08:44:14,540 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-20 08:44:14,542 WARNING [AUTH] TOTP used already - waiting 18s for next window...
+2026-05-20 08:44:32,543 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-20 08:44:33,088 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-20 08:44:33,102 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-20 08:44:33,106 INFO [SAVED] Token saved. Expires: 2026-05-21T08:44:33
+2026-05-21 08:30:10,233 INFO [TOTP] Code generated (valid for ~20s)
+2026-05-21 08:30:10,240 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-21 08:30:20,906 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-21 08:30:20,907 WARNING [AUTH] TOTP used already - waiting 12s for next window...
+2026-05-21 08:30:32,908 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-21 08:30:33,251 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-21 08:30:33,252 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-21 08:30:33,257 INFO [SAVED] Token saved. Expires: 2026-05-22T08:30:33
+2026-05-22 08:30:09,318 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-22 08:30:09,320 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-22 08:30:10,125 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-22 08:30:10,125 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-22 08:30:10,130 INFO [SAVED] Token saved. Expires: 2026-05-23T08:30:10
+2026-05-23 08:30:09,152 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-23 08:30:09,154 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-23 08:30:09,986 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-23 08:30:09,986 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-23 08:30:09,998 INFO [SAVED] Token saved. Expires: 2026-05-24T08:30:10
+2026-05-24 08:30:09,665 INFO [TOTP] Code generated (valid for ~21s)
+2026-05-24 08:30:09,666 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-24 08:30:10,601 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-24 08:30:10,601 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-24 08:30:10,608 INFO [SAVED] Token saved. Expires: 2026-05-25T08:30:11
+2026-05-25 08:30:05,308 INFO [TOTP] Code generated (valid for ~25s)
+2026-05-25 08:30:05,309 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-25 08:30:05,832 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-25 08:30:05,832 WARNING [AUTH] TOTP used already - waiting 27s for next window...
+2026-05-25 08:30:32,832 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-25 08:30:33,178 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-25 08:30:33,178 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-25 08:30:33,182 INFO [SAVED] Token saved. Expires: 2026-05-26T08:30:33
+2026-05-26 08:30:04,768 INFO [TOTP] Code generated (valid for ~26s)
+2026-05-26 08:30:04,771 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-26 08:30:05,483 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-26 08:30:05,484 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-26 08:30:05,489 INFO [SAVED] Token saved. Expires: 2026-05-27T08:30:08
+2026-05-27 08:30:20,682 INFO [TOTP] Code generated (valid for ~10s)
+2026-05-27 08:30:20,686 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-27 08:30:21,440 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-27 08:30:21,443 WARNING [AUTH] TOTP used already - waiting 11s for next window...
+2026-05-27 08:30:32,444 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-27 08:30:42,826 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-27 08:30:42,826 WARNING [AUTH] TOTP used already - waiting 20s for next window...
+2026-05-27 08:31:02,828 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-27 08:33:20,086 INFO [TOTP] Code generated (valid for ~10s)
+2026-05-27 08:33:20,087 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-27 08:33:30,597 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-27 08:33:30,598 WARNING [AUTH] TOTP used already - waiting 32s for next window...
+2026-05-27 08:34:02,599 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-27 08:34:02,940 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-27 08:34:02,941 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-27 08:34:02,952 INFO [SAVED] Token saved. Expires: 2026-05-28T08:34:04
+2026-05-28 08:30:07,235 INFO [TOTP] Code generated (valid for ~23s)
+2026-05-28 08:30:07,238 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-28 08:30:07,839 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-28 08:30:07,839 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-28 08:30:07,844 INFO [SAVED] Token saved. Expires: 2026-05-29T08:30:08
+2026-05-29 08:30:05,504 INFO [TOTP] Code generated (valid for ~25s)
+2026-05-29 08:30:05,507 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-29 08:30:06,009 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-29 08:30:06,009 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-29 08:30:06,014 INFO [SAVED] Token saved. Expires: 2026-05-30T08:30:06
+2026-05-30 08:30:06,973 INFO [TOTP] Code generated (valid for ~24s)
+2026-05-30 08:30:06,976 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-30 08:30:07,619 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-30 08:30:07,620 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-30 08:30:07,625 INFO [SAVED] Token saved. Expires: 2026-05-31T08:30:08
+2026-05-31 08:30:06,359 INFO [TOTP] Code generated (valid for ~24s)
+2026-05-31 08:30:06,361 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-05-31 08:30:16,913 INFO [AUTH] Attempt 1: HTTP 200
+2026-05-31 08:30:16,914 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-05-31 08:30:32,915 INFO [TOTP] Code generated (valid for ~28s)
+2026-05-31 08:30:33,507 INFO [AUTH] Attempt 2: HTTP 200
+2026-05-31 08:30:33,508 INFO [AUTH] generateAccessToken SUCCESS
+2026-05-31 08:30:33,512 INFO [SAVED] Token saved. Expires: 2026-06-01T08:30:34
+2026-06-01 08:30:05,409 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-01 08:30:05,411 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-01 08:30:05,909 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-01 08:30:05,910 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-01 08:30:05,914 INFO [SAVED] Token saved. Expires: 2026-06-02T08:30:06
+2026-06-02 08:30:08,433 INFO [TOTP] Code generated (valid for ~22s)
+2026-06-02 08:30:08,434 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-02 08:30:09,192 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-02 08:30:09,192 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-02 08:30:09,202 INFO [SAVED] Token saved. Expires: 2026-06-03T08:30:09
+2026-06-03 08:30:05,238 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-03 08:30:05,240 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-03 08:30:05,820 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-03 08:30:05,821 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-03 08:30:05,827 INFO [SAVED] Token saved. Expires: 2026-06-04T08:30:06
+2026-06-04 08:30:06,464 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-04 08:30:06,470 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-04 08:30:07,115 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-04 08:30:07,116 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-04 08:30:07,123 INFO [SAVED] Token saved. Expires: 2026-06-05T08:30:07
+2026-06-05 08:30:10,805 INFO [TOTP] Code generated (valid for ~20s)
+2026-06-05 08:30:10,806 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-05 08:30:21,499 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-05 08:30:21,499 WARNING [AUTH] TOTP used already - waiting 11s for next window...
+2026-06-05 08:30:32,501 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-05 08:30:33,069 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-05 08:30:33,069 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-05 08:30:33,073 INFO [SAVED] Token saved. Expires: 2026-06-06T08:30:33
+2026-06-06 08:30:06,188 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-06 08:30:06,190 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-06 08:30:06,957 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-06 08:30:06,958 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-06 08:30:06,964 INFO [SAVED] Token saved. Expires: 2026-06-07T08:30:07
+2026-06-07 08:30:04,451 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-07 08:30:04,453 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-07 08:30:05,205 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-07 08:30:05,205 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-07 08:30:05,209 INFO [SAVED] Token saved. Expires: 2026-06-08T08:30:05
+2026-06-08 08:30:04,580 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-08 08:30:04,582 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-08 08:30:05,125 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-08 08:30:05,125 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-08 08:30:05,129 INFO [SAVED] Token saved. Expires: 2026-06-09T08:30:05
+2026-06-09 08:30:03,633 INFO [TOTP] Code generated (valid for ~27s)
+2026-06-09 08:30:03,635 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-09 08:30:04,227 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-09 08:30:04,227 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-09 08:30:04,231 INFO [SAVED] Token saved. Expires: 2026-06-10T08:30:04
+2026-06-10 08:30:05,718 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-10 08:30:05,719 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-10 08:30:16,252 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-10 08:30:16,252 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-10 08:30:32,253 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-10 08:30:32,795 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-10 08:30:32,795 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-10 08:30:32,800 INFO [SAVED] Token saved. Expires: 2026-06-11T08:30:33
+2026-06-11 08:30:05,706 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-11 08:30:05,711 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-11 08:30:16,160 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-11 08:30:16,160 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-11 08:30:32,161 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-11 08:30:32,489 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-11 08:30:32,489 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-11 08:30:32,495 INFO [SAVED] Token saved. Expires: 2026-06-12T08:30:33
+2026-06-12 08:30:06,192 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-12 08:30:06,194 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-12 08:30:16,727 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-12 08:30:16,728 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-12 08:30:32,729 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-12 08:30:33,120 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-12 08:30:33,121 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-12 08:30:33,124 INFO [SAVED] Token saved. Expires: 2026-06-13T08:30:33
+2026-06-13 08:30:05,870 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-13 08:30:05,871 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-13 08:30:16,304 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-13 08:30:16,304 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-13 08:30:32,305 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-13 08:30:32,660 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-13 08:30:32,661 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-13 08:30:32,665 INFO [SAVED] Token saved. Expires: 2026-06-14T08:30:33
+2026-06-14 08:30:05,036 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-14 08:30:05,037 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-14 08:30:05,432 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-14 08:30:05,432 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-14 08:30:05,436 INFO [SAVED] Token saved. Expires: 2026-06-15T08:30:06
+2026-06-15 08:30:05,748 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-15 08:30:05,749 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-15 08:30:06,305 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-15 08:30:06,308 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-15 08:30:06,320 INFO [SAVED] Token saved. Expires: 2026-06-16T08:30:06
+2026-06-16 08:30:04,142 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-16 08:30:04,144 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-16 08:30:14,578 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-16 08:30:14,579 WARNING [AUTH] TOTP used already - waiting 18s for next window...
+2026-06-16 08:30:32,579 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-16 08:30:32,986 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-16 08:30:32,986 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-16 08:30:32,989 INFO [SAVED] Token saved. Expires: 2026-06-17T08:30:33
+2026-06-17 08:30:06,002 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-17 08:30:06,004 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-17 08:30:06,425 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-17 08:30:06,425 WARNING [AUTH] TOTP used already - waiting 26s for next window...
+2026-06-17 08:30:32,426 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-17 08:30:32,846 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-17 08:30:32,846 WARNING [AUTH] TOTP used already - waiting 30s for next window...
+2026-06-17 08:31:02,847 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-17 08:31:13,120 INFO [AUTH] Attempt 3: HTTP 200
+2026-06-17 08:31:13,120 ERROR [AUTH] generateAccessToken failed: 200 {"message":"Invalid TOTP","status":"error"}
+2026-06-17 08:31:13,123 ERROR [FATAL] All token generation methods failed.
+2026-06-18 08:30:05,494 INFO [TOTP] Code generated (valid for ~25s)
+2026-06-18 08:30:05,494 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-18 08:30:05,973 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-18 08:30:05,973 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-18 08:30:05,979 INFO [SAVED] Token saved. Expires: 2026-06-19T08:30:06
+2026-06-19 08:30:06,054 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-19 08:30:06,054 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-19 08:30:16,547 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-19 08:30:16,547 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-19 08:30:32,548 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-19 08:30:32,974 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-19 08:30:32,974 WARNING [AUTH] TOTP used already - waiting 30s for next window...
+2026-06-19 08:31:02,975 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-19 08:31:03,329 INFO [AUTH] Attempt 3: HTTP 200
+2026-06-19 08:31:03,331 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-19 08:31:03,334 INFO [SAVED] Token saved. Expires: 2026-06-20T08:31:03
+2026-06-20 08:30:06,221 INFO [TOTP] Code generated (valid for ~24s)
+2026-06-20 08:30:06,222 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-20 08:30:16,613 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-20 08:30:16,613 WARNING [AUTH] TOTP used already - waiting 16s for next window...
+2026-06-20 08:30:32,614 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-20 08:30:32,923 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-20 08:30:32,923 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-20 08:30:32,926 INFO [SAVED] Token saved. Expires: 2026-06-21T08:30:33
+2026-06-22 08:30:03,712 INFO [TOTP] Code generated (valid for ~27s)
+2026-06-22 08:30:03,713 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-22 08:30:04,219 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-22 08:30:04,219 WARNING [AUTH] TOTP used already - waiting 28s for next window...
+2026-06-22 08:30:32,221 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-22 08:30:32,663 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-22 08:30:32,663 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-22 08:30:32,667 INFO [SAVED] Token saved. Expires: 2026-06-23T08:30:33
+2026-06-23 08:30:04,261 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-23 08:30:04,261 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-23 08:30:04,761 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-23 08:30:04,762 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-23 08:30:04,767 INFO [SAVED] Token saved. Expires: 2026-06-24T08:30:05
+2026-06-24 08:30:04,270 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-24 08:30:04,272 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-24 08:30:14,707 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-24 08:30:14,707 WARNING [AUTH] TOTP used already - waiting 18s for next window...
+2026-06-24 08:30:32,708 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-24 08:30:42,981 INFO [AUTH] Attempt 2: HTTP 200
+2026-06-24 08:30:42,982 WARNING [AUTH] TOTP used already - waiting 20s for next window...
+2026-06-24 08:31:02,983 INFO [TOTP] Code generated (valid for ~28s)
+2026-06-24 08:31:03,570 INFO [AUTH] Attempt 3: HTTP 200
+2026-06-24 08:31:03,570 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-24 08:31:03,574 INFO [SAVED] Token saved. Expires: 2026-06-25T08:31:04
+2026-06-25 08:30:04,992 INFO [TOTP] Code generated (valid for ~26s)
+2026-06-25 08:30:04,993 INFO [AUTH] Calling generateAccessToken for client 1101936133...
+2026-06-25 08:30:05,455 INFO [AUTH] Attempt 1: HTTP 200
+2026-06-25 08:30:05,455 INFO [AUTH] generateAccessToken SUCCESS
+2026-06-25 08:30:05,460 INFO [SAVED] Token saved. Expires: 2026-06-26T08:30:06
+2026-07-01 14:36:13,831 INFO [EXPIRED] Token expired or missing - generating fresh token...

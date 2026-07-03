@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-04-19T17:01:09.745051",
+  "period": {
+    "start": "2021-01-01",
+    "end": "2024-06-28"
+  },
+  "capital": 10000000,
+  "total_trades": 48,
+  "wins": 3,
+  "losses": 41,
+  "expired": 0,
+  "win_rate_pct": 6.2,
+  "total_pnl": -128111.0,
+  "final_capital": 9871889.0,
+  "roi_5yr_pct": -1.3,
+  "roi_per_yr_pct": -0.3,
+  "avg_win": 12665.0,
+  "avg_loss": -4054.0,
+  "max_drawdown": 128111.0,
+  "peak_capital": 10000000,
+  "real_exit_pct": 100.0,
+  "yearly": [
+    {
+      "year": 2021,
+      "trades": 14,
+      "wins": 1,
+      "pnl": -36000.0,
+      "wr": 7.142857142857142
+    },
+    {
+      "year": 2022,
+      "trades": 13,
+      "wins": 1,
+      "pnl": -43091.0,
+      "wr": 7.6923076923076925
+    },
+    {
+      "year": 2023,
+      "trades": 12,
+      "wins": 0,
+      "pnl": -25594.0,
+      "wr": 0.0
+    },
+    {
+      "year": 2024,
+      "trades": 9,
+      "wins": 1,
+      "pnl": -23426.0,
+      "wr": 11.11111111111111
+    }
+  ]
+}

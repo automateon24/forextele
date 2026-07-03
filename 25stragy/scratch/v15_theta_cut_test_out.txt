@@ -1,0 +1,126 @@
+[DNA MATRIX] Loaded 36 strategies x 4 indices = 144 DNA combinations
+======================================================================
+RUNNING V15 THETA-PRESERVATION CUT BACKTEST
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+Loaded 4 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX']
+
+Running backtests in parallel...
+  [NIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [FINNIFTY] Done — 434 trades
+  [FINNIFTY] Completed: 434 trades
+  [BANKNIFTY] Done — 401 trades
+  [BANKNIFTY] Completed: 401 trades
+  [SENSEX] Done — 426 trades
+  [SENSEX] Completed: 426 trades
+  [NIFTY] Done — 525 trades
+  [NIFTY] Completed: 525 trades
+
+
+======================================================================
+BACKTEST V8 AI — MULTI-INDEX SCALE TARGET (155 calendar days)
+  4 indices × 36 strategies × Dynamic lot sizing
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 1786
+  Win rate           : 29.8%
+  Total PnL          : Rs.-373,203
+  Avg PnL/day        : Rs.-2,871  (-0.57%)
+  Monthly est.       : Rs.-63,157  (-12.6%)
+  Green days         : 45/130 (35%)
+  Max drawdown       : Rs.-372,688
+  5% daily target    : 3 days hit (Rs.25,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  NIFTY            525   25%     -169,962    119     -1,428    -31,422
+  BANKNIFTY        401   30%     -137,053     94     -1,458    -32,076
+  FINNIFTY         434   34%     -123,193     84     -1,467    -32,265
+  SENSEX           426   32%      +57,005     98       +582    +12,797
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  AI_ENHANCED                  41   27%      -13,576     -331
+  ATR_BREAK                   188   34%      -15,812      -84
+  BEAR_TREND_FOLLOWER          36   44%      +19,195     +533
+  BOLLINGER_SQUEEZE            50   32%       +1,249      +25
+  BREAKOUT                      6   33%       +1,441     +240
+  DAY_LOW_BULLISH              11   64%       +8,150     +741
+  EMA_CROSSOVER                49   31%       -9,364     -191
+  GAMMA_BLAST                  12   42%      +11,266     +939
+  LONG_UNWIND                 161   25%      -56,051     -348
+  MACD_DIVERGENCE             411   25%      -63,925     -156
+  MAGIC_SQUARE                  2   50%       +3,436   +1,718
+  MOMENTUM_BURST              226   31%       +9,325      +41
+  OPTIONS_GREEKS              212   25%     -157,215     -742
+  PUT_WRITER_SUPPORT           12   33%      -11,413     -951
+  RESIST_BREAK                  2    0%       -3,821   -1,910
+  RSI_REVERSAL                 12   33%       +1,841     +153
+  SCALPING                     35   49%      +15,567     +445
+  TREND_FOLLOWING              81   38%       +4,370      +54
+  ULTIMATE_DAY_HIGH_LOW        50   40%      +12,576     +252
+  VOLUME_CLIMAX                 9   33%         +640      +71
+  VWAP_BOUNCE                 126   26%      -14,682     -117
+  ZERO_HERO                    54   31%     -116,399   -2,156
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  THETA_CUT   1090   -1,200,138   -1,101
+  TSL          412     +998,005   +2,422
+  TIME         260      +29,641     +114
+  SL            22     -223,543  -10,161
+  TARGET         2      +22,832  +11,416
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.500 (0.1%)   : 41/130
+  Days >= Rs.1,000 (0.2%) : 37/130
+  Days >= Rs.2,500 (0.5%) : 27/130
+  Days >= Rs.5,000 (1.0%) : 21/130
+  Days >= Rs.25,000 (5.0%): 3/130
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs. -80,885  (-16.2%)  ################
+  2025-03  Rs. -33,602  ( -6.7%)  ######
+  2025-04  Rs. -53,145  (-10.6%)  ##########
+  2025-05  Rs.  -3,734  ( -0.7%)  
+  2026-01  Rs.  +5,950  ( +1.2%)  #
+  2026-02  Rs.-136,442  (-27.3%)  ###########################
+  2026-03  Rs. -19,490  ( -3.9%)  ###
+  2026-04  Rs.    +738  ( +0.1%)  
+  2026-05  Rs. -52,592  (-10.5%)  ##########
+
+  TOP 10 DAYS:
+  2025-03-03  Rs. +64,344  BA:AI_ENHAN(CE) | BA:MACD_DIV(PE) | BA:AI_ENHAN(CE) | SE:DAY_LOW_(CE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:LONG_UNW(PE) | SE:TREND_FO(PE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:ATR_BREA(PE) | SE:LONG_UNW(PE) | NI:MACD_DIV(PE) | NI:AI_ENHAN(CE) | NI:AI_ENHAN(CE)
+  2026-01-23  Rs. +51,504  FI:BEAR_TRE(PE) | FI:MACD_DIV(PE) | FI:OPTIONS_(CE) | FI:MACD_DIV(CE) | BA:MACD_DIV(PE) | BA:MOMENTUM(PE) | SE:BEAR_TRE(PE) | SE:MACD_DIV(PE) | SE:GAMMA_BL(PE) | SE:GAMMA_BL(PE) | NI:BEAR_TRE(PE) | NI:MACD_DIV(PE)
+  2025-02-11  Rs. +32,920  FI:BEAR_TRE(PE) | FI:MOMENTUM(PE) | FI:ATR_BREA(PE) | FI:MOMENTUM(PE) | FI:BOLLINGE(PE) | FI:ATR_BREA(PE) | FI:MACD_DIV(CE) | FI:OPTIONS_(CE) | BA:BEAR_TRE(PE) | BA:MOMENTUM(PE) | BA:ATR_BREA(PE) | BA:MOMENTUM(PE) | BA:BOLLINGE(PE) | BA:ATR_BREA(PE) | BA:BOLLINGE(PE) | BA:MACD_DIV(CE) | BA:TREND_FO(PE) | BA:OPTIONS_(CE) | BA:MOMENTUM(PE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | SE:ATR_BREA(PE) | SE:MOMENTUM(PE) | SE:ATR_BREA(PE) | SE:RSI_REVE(CE) | SE:MACD_DIV(CE) | SE:MOMENTUM(PE) | NI:MOMENTUM(PE) | NI:BOLLINGE(PE) | NI:ATR_BREA(PE) | NI:MOMENTUM(PE) | NI:ATR_BREA(PE) | NI:MACD_DIV(CE) | NI:RSI_REVE(CE)
+  2026-01-22  Rs. +22,621  FI:BEAR_TRE(PE) | FI:MACD_DIV(PE) | FI:MACD_DIV(CE) | FI:OPTIONS_(CE) | FI:TREND_FO(PE) | FI:MACD_DIV(PE) | BA:ULTIMATE(CE) | BA:BEAR_TRE(PE) | BA:MACD_DIV(CE) | BA:TREND_FO(PE) | BA:MACD_DIV(PE) | SE:BEAR_TRE(PE) | SE:MOMENTUM(PE) | SE:ATR_BREA(PE) | SE:OPTIONS_(CE) | SE:MACD_DIV(CE) | SE:TREND_FO(PE) | SE:MACD_DIV(PE) | NI:BEAR_TRE(PE) | NI:OPTIONS_(CE) | NI:MACD_DIV(CE) | NI:GAMMA_BL(PE) | NI:TREND_FO(PE) | NI:MACD_DIV(PE)
+  2026-04-08  Rs. +22,220  SE:ULTIMATE(CE) | SE:ULTIMATE(CE) | NI:ATR_BREA(CE) | NI:OPTIONS_(PE) | NI:MACD_DIV(PE)
+  2026-04-28  Rs. +14,097  FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | FI:ZERO_HER(PE) | SE:BEAR_TRE(PE) | SE:OPTIONS_(CE) | SE:OPTIONS_(CE)
+  2026-02-10  Rs. +13,573  FI:SCALPING(CE) | FI:VWAP_BOU(CE) | FI:OPTIONS_(PE) | BA:SCALPING(CE) | BA:OPTIONS_(PE) | BA:MOMENTUM(CE) | BA:ATR_BREA(PE) | BA:ULTIMATE(PE) | BA:EMA_CROS(PE) | SE:SCALPING(CE) | SE:MOMENTUM(CE) | SE:VOLUME_C(PE) | SE:VWAP_BOU(PE) | NI:SCALPING(CE) | NI:MOMENTUM(CE) | NI:VOLUME_C(PE) | NI:ULTIMATE(PE) | NI:EMA_CROS(PE)
+  2025-02-21  Rs. +11,277  FI:MACD_DIV(PE) | FI:MOMENTUM(PE) | FI:OPTIONS_(CE) | FI:MACD_DIV(CE) | FI:TREND_FO(PE) | BA:TREND_FO(PE) | BA:OPTIONS_(CE) | BA:MACD_DIV(CE) | BA:MOMENTUM(PE) | BA:VWAP_BOU(PE) | SE:MACD_DIV(PE) | SE:MOMENTUM(PE) | SE:GAMMA_BL(PE) | SE:TREND_FO(PE) | SE:OPTIONS_(CE) | SE:MACD_DIV(CE) | SE:MOMENTUM(PE) | SE:VWAP_BOU(PE) | NI:MACD_DIV(PE) | NI:OPTIONS_(CE) | NI:MACD_DIV(CE) | NI:VWAP_BOU(PE)
+  2025-02-25  Rs.  +9,934  BA:MACD_DIV(CE) | NI:MACD_DIV(CE) | NI:ATR_BREA(CE)
+  2026-01-27  Rs.  +9,066  SE:MACD_DIV(CE) | SE:VWAP_BOU(CE) | SE:MACD_DIV(PE) | NI:MACD_DIV(CE) | NI:ATR_BREA(CE)
+
+  WORST 5 DAYS:
+  2025-03-24  Rs. -33,888  FI:MACD_DIV[THETA_CUT] | FI:OPTIONS_[TSL] | FI:MACD_DIV[TSL] | FI:MOMENTUM[THETA_CUT] | BA:OPTIONS_[THETA_CUT] | BA:OPTIONS_[THETA_CUT] | BA:MACD_DIV[THETA_CUT] | BA:MOMENTUM[THETA_CUT] | BA:MOMENTUM[THETA_CUT] | SE:MACD_DIV[THETA_CUT] | SE:MACD_DIV[THETA_CUT] | SE:MOMENTUM[SL] | NI:OPTIONS_[THETA_CUT] | NI:MACD_DIV[THETA_CUT] | NI:MACD_DIV[THETA_CUT] | NI:MOMENTUM[THETA_CUT]
+  2025-04-23  Rs. -31,559  BA:ZERO_HER[SL] | BA:ZERO_HER[THETA_CUT] | BA:ZERO_HER[THETA_CUT] | BA:ZERO_HER[TSL] | BA:ZERO_HER[THETA_CUT] | BA:MACD_DIV[THETA_CUT] | BA:ZERO_HER[TIME] | BA:ZERO_HER[TIME] | BA:ZERO_HER[TIME] | SE:VWAP_BOU[THETA_CUT] | SE:MACD_DIV[THETA_CUT] | SE:SCALPING[THETA_CUT] | SE:VWAP_BOU[THETA_CUT] | NI:MACD_DIV[THETA_CUT] | NI:VWAP_BOU[THETA_CUT] | NI:ATR_BREA[THETA_CUT]
+  2026-02-27  Rs. -30,902  FI:BEAR_TRE[THETA_CUT] | FI:MOMENTUM[THETA_CUT] | FI:ATR_BREA[THETA_CUT] | FI:MOMENTUM[THETA_CUT] | FI:ATR_BREA[THETA_CUT] | FI:MACD_DIV[TSL] | FI:MACD_DIV[TSL] | FI:TREND_FO[THETA_CUT] | BA:OPTIONS_[THETA_CUT] | BA:OPTIONS_[THETA_CUT] | NI:BEAR_TRE[THETA_CUT] | NI:ATR_BREA[THETA_CUT] | NI:VWAP_BOU[TIME]
+  2026-01-05  Rs. -27,711  FI:MACD_DIV[THETA_CUT] | FI:VWAP_BOU[TSL] | FI:EMA_CROS[TSL] | FI:ATR_BREA[TSL] | FI:VWAP_BOU[THETA_CUT] | FI:ATR_BREA[THETA_CUT] | FI:MOMENTUM[THETA_CUT] | FI:BOLLINGE[THETA_CUT] | FI:ATR_BREA[THETA_CUT] | BA:BOLLINGE[THETA_CUT] | BA:ATR_BREA[THETA_CUT] | BA:OPTIONS_[THETA_CUT] | BA:MOMENTUM[THETA_CUT] | BA:BOLLINGE[THETA_CUT] | BA:MOMENTUM[THETA_CUT] | BA:BOLLINGE[THETA_CUT] | BA:ATR_BREA[THETA_CUT] | BA:MOMENTUM[THETA_CUT] | BA:BOLLINGE[THETA_CUT] | BA:ATR_BREA[THETA_CUT] | SE:MACD_DIV[TSL] | SE:VWAP_BOU[THETA_CUT] | SE:ATR_BREA[THETA_CUT] | SE:BOLLINGE[THETA_CUT] | SE:ATR_BREA[THETA_CUT] | NI:AI_ENHAN[THETA_CUT] | NI:MACD_DIV[THETA_CUT] | NI:ATR_BREA[THETA_CUT] | NI:ULTIMATE[THETA_CUT] | NI:LONG_UNW[THETA_CUT] | NI:VWAP_BOU[THETA_CUT] | NI:EMA_CROS[THETA_CUT] | NI:ATR_BREA[THETA_CUT] | NI:LONG_UNW[THETA_CUT] | NI:LONG_UNW[THETA_CUT] | NI:LONG_UNW[THETA_CUT] | NI:MOMENTUM[THETA_CUT] | NI:BOLLINGE[THETA_CUT] | NI:ATR_BREA[THETA_CUT] | NI:LONG_UNW[THETA_CUT]
+  2026-05-21  Rs. -27,674  FI:MOMENTUM[SL] | FI:ATR_BREA[SL] | FI:OPTIONS_[THETA_CUT] | FI:TREND_FO[THETA_CUT] | BA:OPTIONS_[THETA_CUT] | BA:TREND_FO[THETA_CUT] | BA:MOMENTUM[THETA_CUT] | SE:OPTIONS_[TSL] | SE:TREND_FO[THETA_CUT] | SE:OPTIONS_[THETA_CUT] | NI:TREND_FO[TIME]

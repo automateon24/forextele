@@ -1,0 +1,82 @@
+{
+  "ADX_TREND_OPTIMIZED": {
+    "strategy": "ADX_TREND_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "BOLLINGER_SQUEEZE_OPTIMIZED": {
+    "strategy": "BOLLINGER_SQUEEZE_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "ATR_BREAKOUT_OPTIMIZED": {
+    "strategy": "ATR_BREAKOUT_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "DAY_HIGH_LOW_OPTIMIZED": {
+    "strategy": "DAY_HIGH_LOW_OPTIMIZED",
+    "trades": 2,
+    "win_rate": 100.0,
+    "total_pnl": 38269.499999999825,
+    "avg_pnl": 19134.749999999913,
+    "roi": 34.51015771724954,
+    "capital_utilization": 101.88000000000012,
+    "status": "ACTIVE"
+  },
+  "RSI_DIVERGENCE_OPTIMIZED": {
+    "strategy": "RSI_DIVERGENCE_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "TREND_FOLLOWING_OPTIMIZED": {
+    "strategy": "TREND_FOLLOWING_OPTIMIZED",
+    "trades": 1,
+    "win_rate": 100.0,
+    "total_pnl": 30279.999999999854,
+    "avg_pnl": 30279.999999999854,
+    "roi": 49.232570239333725,
+    "capital_utilization": 61.50400000000009,
+    "status": "ACTIVE"
+  },
+  "STOCHASTIC_OVERSOLD_OPTIMIZED": {
+    "strategy": "STOCHASTIC_OVERSOLD_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "WILLIAMS_REVERSAL_OPTIMIZED": {
+    "strategy": "WILLIAMS_REVERSAL_OPTIMIZED",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  }
+}

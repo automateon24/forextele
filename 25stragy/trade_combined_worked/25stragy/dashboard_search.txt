@@ -1,0 +1,340 @@
+8: import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+21: const [activeTab, setActiveTab] = useState('overview')
+30: const [allStrategies, setAllStrategies] = useState<any[]>([])
+33: description: 'Professional copy trading strategies',
+62: // Live Market Ticker and Dhan Status states
+71: const [dhanStatus, setDhanStatus] = useState<any>(null)
+72: const [isRefreshingDhan, setIsRefreshingDhan] = useState(false)
+79: if (allStrategies.length === 0) setIsLoading(true)
+84: api.getAllStrategiesWithStatus(),
+98: if (results[0].status === 'fulfilled') setAllStrategies(results[0].value.strategies || []);
+154: const fetchDhanStatus = async () => {
+158: setDhanStatus(res.token);
+161: console.error("Failed to fetch Dhan status:", error);
+165: const handleRefreshDhanToken = async () => {
+166: setIsRefreshingDhan(true);
+167: toast.info("Refreshing Dhan TOTP & Generating Access Token...");
+171: toast.success("Dhan token refreshed successfully!");
+172: if (res.token) setDhanStatus(res.token);
+177: toast.error("Network error during Dhan refresh");
+179: setIsRefreshingDhan(false);
+195: const res = await api.getDhanMarketData();
+218: fetchDhanStatus();
+221: fetchDhanStatus();
+283: // const response = await api.toggleClientActive(id)
+285: c.id === id ? { ...c, is_active: !c.is_active } : c
+363: setAllStrategies(prev => prev.map(s =>
+408: const activeUsers = registeredClients.filter(c => c.is_active).length
+409: const suspendedUsers = registeredClients.filter(c => !c.is_active).length
+417: { id: 'strategies', label: 'All Available Strategies', icon: Zap },
+483: onClick={() => { setActiveTab('approvals'); setIsNotificationsOpen(false); }}
+500: onClick={() => { setActiveTab('wallets'); setIsNotificationsOpen(false); }}
+531: {/* Live Performance & Dhan Connection Strip (Two Tier) */}
+545: {/* DHAN LIVE MASTER CONNECTION STATUS */}
+548: <div className={`w-2 h-2 rounded-full ${dhanStatus?.valid ? 'bg-emerald-400 animate-pulse' : 'bg-red-400'}`} />
+549: <span className="font-bold text-slate-300 tracking-wide text-[10.5px]">DHAN MASTER</span>
+552: {dhanStatus ? (
+556: <span className={`font-bold text-[9.5px] px-1.5 py-0.5 rounded bg-slate-900 border ${dhanStatus.valid ? 'border-emerald-500/20 text-emerald-400' : 'border-red-500/20 text-red-400'}`}>
+557: {dhanStatus.valid ? 'ACTIVE' : 'EXPIRED'}
+563: {dhanStatus.hours_remaining || 0}h {Math.round((dhanStatus.minutes_remaining || 0) % 60)}m
+568: <span className="text-slate-300 font-medium text-[10.5px]">{dhanStatus.client_id || '1101936133'}</span>
+574: disabled={isRefreshingDhan}
+575: onClick={handleRefreshDhanToken}
+578: <RefreshCw className={`w-2.5 h-2.5 ${isRefreshingDhan ? 'animate-spin' : ''}`} />
+579: {isRefreshingDhan ? 'Syncing...' : 'TOTP Refresh'}
+588: onClick={handleRefreshDhanToken}
+589: disabled={isRefreshingDhan}
+658: onClick={() => setActiveTab(item.id)}
+660: activeTab === item.id
+681: {/* OVERVIEW TAB */}
+682: {activeTab === 'overview' && (
+702: Active Users
+706: <div className="text-3xl font-bold text-white">{activeUsers}</div>
+743: <CardDescription className="text-slate-400">Total revenue from all strategies</CardDescription>
+748: {runningProfit?.strategies_pnl && Object.entries(runningProfit.strategies_pnl).map(([name, pnl]: [string, any]) => (
+756: {(!runningProfit?.strategies_pnl || Object.keys(runningProfit.strategies_pnl).length === 0) && (
+757: <div className="text-xs text-slate-600 italic">No active strategy performance yet</div>
+796: {/* CLIENTS TAB */}
+797: {activeTab === 'clients' && (
+868: <Table>
+869: <TableHeader>
+870: <TableRow className="border-slate-800">
+871: <TableHead className="text-slate-400">Client</TableHead>
+872: <TableHead className="text-slate-400">Status</TableHead>
+873: <TableHead className="text-slate-400">Plan</TableHead>
+874: <TableHead className="text-slate-400">Wallet</TableHead>
+875: <TableHead className="text-slate-400">Last Active</TableHead>
+876: <TableHead className="text-slate-400">Actions</TableHead>
+877: </TableRow>
+878: </TableHeader>
+879: <TableBody>
+881: <TableRow key={client.id} className="border-slate-800">
+882: <TableCell>
+887: </TableCell>
+888: <TableCell>
+890: client.is_active ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'
+892: {client.is_active ? 'ACTIVE' : 'SUSPENDED'}
+894: </TableCell>
+895: <TableCell>
+901: </TableCell>
+902: <TableCell className="text-white">₹{(client.wallet_balance || 0).toLocaleString()}</TableCell>
+903: <TableCell className="text-slate-400">{client.last_login ? new Date(client.last_login).toLocaleDateString() : 'Never'}</TableCell>
+904: <TableCell>
+907: {client.is_active ? <ToggleRight className="w-4 h-4 text-emerald-400" /> : <ToggleLeft className="w-4 h-4 text-slate-500" />}
+913: </TableCell>
+914: </TableRow>
+916: </TableBody>
+917: </Table>
+923: {/* WALLETS TAB */}
+924: {activeTab === 'wallets' && (
+935: <Table>
+936: <TableHeader>
+937: <TableRow className="border-slate-800">
+938: <TableHead className="text-slate-400">Client ID</TableHead>
+939: <TableHead className="text-slate-400">Amount</TableHead>
+940: <TableHead className="text-slate-400">Description</TableHead>
+941: <TableHead className="text-slate-400">Requested</TableHead>
+942: <TableHead className="text-slate-400">Actions</TableHead>
+943: </TableRow>
+944: </TableHeader>
+945: <TableBody>
+947: <TableRow key={request.id} className="border-slate-800">
+948: <TableCell className="text-white">Client #{request.client_id}</TableCell>
+949: <TableCell className="text-emerald-400 font-medium">₹{request.amount.toLocaleString()}</TableCell>
+950: <TableCell className="text-slate-400">{request.description || 'Wallet Recharge'}</TableCell>
+951: <TableCell className="text-slate-400">{new Date(request.request_date).toLocaleString()}</TableCell>
+952: <TableCell>
+961: </TableCell>
+962: </TableRow>
+965: <TableRow>
+966: <TableCell colSpan={5} className="text-center text-slate-400 py-8">
+968: </TableCell>
+969: </TableRow>
+971: </TableBody>
+972: </Table>
+1006: {/* ANALYTICS TAB */}
+1007: {activeTab === 'analytics' && (
+1031: <p className="text-sm text-slate-400">Active Strategies</p>
+1032: <p className="text-2xl font-bold text-white mt-1">{allStrategies.filter(s => s.enabled).length}</p>
+1033: <p className="text-xs text-slate-400">of {allStrategies.length} total</p>
+1065: {allStrategies.filter(s => s.enabled).map((strategy) => {
+1066: const stratPnl = runningProfit?.strategies_pnl?.[strategy.name] || 0;
+1095: {allStrategies.filter(s => s.enabled).length === 0 && (
+1097: No active strategies for today.
+1106: {/* MASTER SETUP TAB */}
+1107: {activeTab === 'master' && (
+1114: <CardDescription className="text-slate-400">Enable/disable strategies and set commission rates</CardDescription>
+1118: {allStrategies.map((strategy) => (
+1203: {/* SETTINGS TAB */}
+1204: {activeTab === 'settings' && (
+1354: {/* ALL STRATEGIES TAB */}
+1355: {activeTab === 'strategies' && (
+1358: <h2 className="text-2xl font-bold text-white">All Strategies</h2>
+1363: {allStrategies.map((strategy) => (
+1380: <Badge className="bg-emerald-500/20 text-emerald-400">Active</Badge>
+1428: {/* TRADE HISTORY TAB */}
+1429: {activeTab === 'trade-history' && (
+1434: <Table>
+1435: <TableHeader>
+1436: <TableRow className="border-slate-800">
+1437: <TableHead className="text-slate-400">Symbol</TableHead>
+1438: <TableHead className="text-slate-400">Side</TableHead>
+1439: <TableHead className="text-slate-400">Quantity</TableHead>
+1440: <TableHead className="text-slate-400">Entry</TableHead>
+1441: <TableHead className="text-slate-400">Exit</TableHead>
+1442: <TableHead className="text-slate-400">P&L</TableHead>
+1443: <TableHead className="text-slate-400">Status</TableHead>
+1444: <TableHead className="text-slate-400">Strategy</TableHead>
+1445: </TableRow>
+1446: </TableHeader>
+1447: <TableBody>
+1449: <TableRow key={trade.id} className="border-slate-800">
+1450: <TableCell className="text-white">{trade.symbol} {trade.strike}{trade.option_type}</TableCell>
+1451: <TableCell>
+1455: </TableCell>
+1456: <TableCell className="text-slate-300">{trade.quantity}</TableCell>
+1457: <TableCell className="text-slate-300">₹{trade.entry_price}</TableCell>
+1458: <TableCell className="text-slate-300">{trade.exit_price ? `₹${trade.exit_price}` : '-'}</TableCell>
+1459: <TableCell className={trade.pnl >= 0 ? 'text-emerald-400' : 'text-red-400'}>
+1461: </TableCell>
+1462: <TableCell>
+1466: </TableCell>
+1467: <TableCell className="text-slate-400 text-sm">{trade.strategy}</TableCell>
+1468: </TableRow>
+1470: </TableBody>
+1471: </Table>
+1477: {/* TRADE LOGS TAB */}
+1478: {activeTab === 'trade-logs' && (
+1483: <Table>
+1484: <TableHeader>
+1485: <TableRow className="border-slate-800">
+1486: <TableHead className="text-slate-400">Time</TableHead>
+1487: <TableHead className="text-slate-400">Event</TableHead>
+1488: <TableHead className="text-slate-400">Message</TableHead>
+1489: <TableHead className="text-slate-400">Trade ID</TableHead>
+1490: </TableRow>
+1491: </TableHeader>
+1492: <TableBody>
+1494: <TableRow key={log.id} className="border-slate-800">
+1495: <TableCell className="text-slate-400 text-sm">{new Date(log.timestamp).toLocaleTimeString()}</TableCell>
+1496: <TableCell>
+1498: </TableCell>
+1499: <TableCell className="text-white">{log.message}</TableCell>
+1500: <TableCell className="text-slate-400">#{log.trade_id}</TableCell>
+1501: </TableRow>
+1503: </TableBody>
+1504: </Table>
+1510: {/* RUNNING PROFIT TAB */}
+1511: {activeTab === 'running-profit' && (
+1569: {/* PERFORMANCE TAB */}
+1570: {activeTab === 'performance' && (
+1621: <Table>
+1622: <TableHeader>
+1623: <TableRow className="border-slate-800">
+1624: <TableHead className="text-slate-400">Symbol</TableHead>
+1625: <TableHead className="text-slate-400">Type</TableHead>
+1626: <TableHead className="text-slate-400">Buy Price</TableHead>
+1627: <TableHead className="text-slate-400">Sell Price</TableHead>
+1628: <TableHead className="text-slate-400">PnL</TableHead>
+1629: </TableRow>
+1630: </TableHeader>
+1631: <TableBody>
+1633: <TableRow key={idx} className="border-slate-800">
+1634: <TableCell className="text-white font-medium">{trade.Symbol || 'NIFTY'}</TableCell>
+1635: <TableCell className="text-slate-300">{trade.Type || 'OPT'}</TableCell>
+1636: <TableCell className="text-emerald-400">₹{trade.BuyPrice || '0'}</TableCell>
+1637: <TableCell className="text-red-400">₹{trade.SellPrice || '0'}</TableCell>
+1638: <TableCell className={parseFloat(trade.PnL) >= 0 ? 'text-emerald-400' : 'text-red-400'}>
+1640: </TableCell>
+1641: </TableRow>
+1644: <TableRow>
+1645: <TableCell colSpan={5} className="text-center py-10 text-slate-500">
+1647: </TableCell>
+1648: </TableRow>
+1650: </TableBody>
+1651: </Table>
+1657: {/* SYSTEM LOGS TAB */}
+1658: {activeTab === 'system-logs' && (
+1663: <Table>
+1664: <TableHeader>
+1665: <TableRow className="border-slate-800">
+1666: <TableHead className="text-slate-400">Time</TableHead>
+1667: <TableHead className="text-slate-400">Level</TableHead>
+1668: <TableHead className="text-slate-400">Source</TableHead>
+1669: <TableHead className="text-slate-400">Message</TableHead>
+1670: </TableRow>
+1671: </TableHeader>
+1672: <TableBody>
+1674: <TableRow key={log.id} className="border-slate-800">
+1675: <TableCell className="text-slate-400 text-sm">{new Date(log.timestamp).toLocaleTimeString()}</TableCell>
+1676: <TableCell>
+1685: </TableCell>
+1686: <TableCell className="text-slate-300">{log.source}</TableCell>
+1687: <TableCell className="text-white">{log.message}</TableCell>
+1688: </TableRow>
+1690: </TableBody>
+1691: </Table>
+1697: {/* GROUPS TAB */}
+1698: {activeTab === 'groups' && (
+1717: <div className="text-slate-300">{group.strategy_count} Strategies</div>
+1733: {/* HELP TAB */}
+1734: {activeTab === 'help' && (
+1738: {/* APPROVALS TAB */}
+1739: {activeTab === 'approvals' && (
+1760: <Table>
+1761: <TableHeader>
+1762: <TableRow className="border-slate-700">
+1763: <TableHead className="text-slate-400">Client</TableHead>
+1764: <TableHead className="text-slate-400">Strategy</TableHead>
+1765: <TableHead className="text-slate-400">Type</TableHead>
+1766: <TableHead className="text-slate-400">Price</TableHead>
+1767: <TableHead className="text-slate-400">Requested</TableHead>
+1768: <TableHead className="text-slate-400 text-right">Actions</TableHead>
+1769: </TableRow>
+1770: </TableHeader>
+1771: <TableBody>
+1773: <TableRow key={req.id} className="border-slate-700">
+1774: <TableCell>
+1777: </TableCell>
+1778: <TableCell className="text-slate-300">{req.strategy_name}</TableCell>
+1779: <TableCell>
+1783: </TableCell>
+1784: <TableCell className="text-white">₹{req.amount}</TableCell>
+1785: <TableCell className="text-slate-400 text-sm">{new Date(req.created_at).toLocaleString()}</TableCell>
+1786: <TableCell className="text-right">
+1795: </TableCell>
+1796: </TableRow>
+1798: </TableBody>
+1799: </Table>
+1816: <Table>
+1817: <TableHeader>
+1818: <TableRow className="border-slate-700">
+1819: <TableHead className="text-slate-400">Client</TableHead>
+1820: <TableHead className="text-slate-400">Amount</TableHead>
+1821: <TableHead className="text-slate-400">Description</TableHead>
+1822: <TableHead className="text-slate-400">Requested</TableHead>
+1823: <TableHead className="text-slate-400 text-right">Actions</TableHead>
+1824: </TableRow>
+1825: </TableHeader>
+1826: <TableBody>
+1828: <TableRow key={req.id} className="border-slate-700">
+1829: <TableCell>
+1832: </TableCell>
+1833: <TableCell className="text-emerald-400 font-bold text-lg">₹{req.amount}</TableCell>
+1834: <TableCell className="text-slate-300">{req.description}</TableCell>
+1835: <TableCell className="text-slate-400 text-sm">{new Date(req.created_at).toLocaleString()}</TableCell>
+1836: <TableCell className="text-right">
+1845: </TableCell>
+1846: </TableRow>
+1848: </TableBody>
+1849: </Table>
+1856: {/* APPROVALS TAB */}
+1857: {activeTab === 'approvals' && (
+1878: <Table>
+1879: <TableHeader>
+1880: <TableRow className="border-slate-700">
+1881: <TableHead className="text-slate-400">Client</TableHead>
+1882: <TableHead className="text-slate-400">Strategy</TableHead>
+1883: <TableHead className="text-slate-400">Type</TableHead>
+1884: <TableHead className="text-slate-400">Price</TableHead>
+1885: <TableHead className="text-slate-400">Requested</TableHead>
+1886: <TableHead className="text-slate-400 text-right">Actions</TableHead>
+1887: </TableRow>
+1888: </TableHeader>
+1889: <TableBody>
+1891: <TableRow key={req.id} className="border-slate-700">
+1892: <TableCell>
+1895: </TableCell>
+1896: <TableCell className="text-slate-300">{req.strategy_name}</TableCell>
+1897: <TableCell>
+1901: </TableCell>
+1902: <TableCell className="text-white">₹{req.amount}</TableCell>
+1903: <TableCell className="text-slate-400 text-sm">{new Date(req.created_at).toLocaleString()}</TableCell>
+1904: <TableCell className="text-right">
+1913: </TableCell>
+1914: </TableRow>
+1916: </TableBody>
+1917: </Table>
+1934: <Table>
+1935: <TableHeader>
+1936: <TableRow className="border-slate-700">
+1937: <TableHead className="text-slate-400">Client</TableHead>
+1938: <TableHead className="text-slate-400">Amount</TableHead>
+1939: <TableHead className="text-slate-400">Description</TableHead>
+1940: <TableHead className="text-slate-400">Requested</TableHead>
+1941: <TableHead className="text-slate-400 text-right">Actions</TableHead>
+1942: </TableRow>
+1943: </TableHeader>
+1944: <TableBody>
+1946: <TableRow key={req.id} className="border-slate-700">
+1947: <TableCell>
+1950: </TableCell>
+1951: <TableCell className="text-emerald-400 font-bold text-lg">₹{req.amount}</TableCell>
+1952: <TableCell className="text-slate-300">{req.description}</TableCell>
+1953: <TableCell className="text-slate-400 text-sm">{new Date(req.created_at).toLocaleString()}</TableCell>
+1954: <TableCell className="text-right">
+1963: </TableCell>
+1964: </TableRow>
+1966: </TableBody>
+1967: </Table>
+1982: Select which clients can access strategy: {allStrategies.find(s => s.id === selectedStrategyForClients)?.name}

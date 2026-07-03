@@ -1,0 +1,37 @@
+2026-02-18 11:53:41,804 - INFO - Database setup completed
+2026-02-18 11:53:41,825 - INFO - WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 11:53:41,825 - INFO - ======================================================================
+2026-02-18 11:53:41,826 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 11:53:41,826 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 11:53:41,826 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 11:53:41,827 - INFO - Duration: Continuous until market close
+2026-02-18 11:53:41,827 - INFO - ======================================================================
+2026-02-18 11:53:41,830 - ERROR - dhanhq library not available. Install with: pip install dhanhq
+2026-02-18 11:54:59,544 - INFO - Database setup completed
+2026-02-18 11:54:59,565 - INFO - WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 11:54:59,565 - INFO - ======================================================================
+2026-02-18 11:54:59,565 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 11:54:59,566 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 11:54:59,566 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 11:54:59,566 - INFO - Duration: Continuous until market close
+2026-02-18 11:54:59,566 - INFO - ======================================================================
+2026-02-18 11:54:59,566 - ERROR - dhanhq library not available. Install with: pip install dhanhq
+2026-02-18 11:55:11,349 - INFO - Database setup completed
+2026-02-18 11:55:11,369 - INFO - WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 11:55:11,370 - INFO - ======================================================================
+2026-02-18 11:55:11,370 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 11:55:11,370 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 11:55:11,370 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 11:55:11,371 - INFO - Duration: Continuous until market close
+2026-02-18 11:55:11,371 - INFO - ======================================================================
+2026-02-18 11:55:11,371 - ERROR - dhanhq library not available. Install with: pip install dhanhq
+2026-02-18 11:55:42,455 - INFO - Database setup completed
+2026-02-18 11:55:42,477 - INFO - WEBSOCKET REAL-TIME DEPLOYMENT - 9 STRATEGIES
+2026-02-18 11:55:42,478 - INFO - ======================================================================
+2026-02-18 11:55:42,478 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 11:55:42,478 - INFO - Data Source: Dhan WebSocket (Real-time, No Rate Limits)
+2026-02-18 11:55:42,479 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 11:55:42,479 - INFO - Duration: Continuous until market close
+2026-02-18 11:55:42,479 - INFO - ======================================================================
+2026-02-18 11:55:42,479 - ERROR - Failed to initialize WebSocket feed: DhanFeed.__init__() got an unexpected keyword argument 'subscription_code'
+2026-02-18 11:55:42,479 - ERROR - Failed to start WebSocket feed. Exiting...

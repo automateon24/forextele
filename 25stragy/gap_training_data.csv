@@ -1,0 +1,9 @@
+date,index,predicted_dir,predicted_prob,actual_gap_pct,is_correct,fade_occurred,action_taken
+2026-07-03,NIFTY,gap_up,0.8,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,BANKNIFTY,gap_up,0.8,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,SENSEX,gap_up,0.75,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,MIDCPNIFTY,gap_up,0.75,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,NIFTY,gap_up,0.8,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,BANKNIFTY,gap_up,0.8,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,SENSEX,gap_up,0.75,0.5,True,False,HOLD_FOR_30_MINS
+2026-07-03,MIDCPNIFTY,gap_up,0.75,0.5,True,False,HOLD_FOR_30_MINS

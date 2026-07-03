@@ -1,0 +1,109 @@
+[DNA MATRIX] Loaded 36 strategies x 4 indices = 144 DNA combinations
+======================================================================
+BACKTEST V8 AI — SCALING MULTI-STRATEGY ENGINE
+  Dynamic Lot Sizing | 36 Strategies | Parallelized Execution
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+Loaded 4 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX']
+
+======================================================================
+Running backtests in parallel...
+======================================================================
+  [NIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [FINNIFTY] Done — 8 trades
+  [FINNIFTY] Completed: 8 trades
+  [BANKNIFTY] Done — 7 trades
+  [BANKNIFTY] Completed: 7 trades
+  [SENSEX] Done — 4 trades
+  [SENSEX] Completed: 4 trades
+  [NIFTY] Done — 17 trades
+  [NIFTY] Completed: 17 trades
+
+
+======================================================================
+BACKTEST V8 AI — MULTI-INDEX SCALE TARGET (155 calendar days)
+  4 indices × 36 strategies × Dynamic lot sizing
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 36
+  Win rate           : 55.6%
+  Total PnL          : Rs.-6,442
+  Avg PnL/day        : Rs.-280  (-0.06%)
+  Monthly est.       : Rs.-6,162  (-1.2%)
+  Green days         : 12/23 (52%)
+  Max drawdown       : Rs.-15,131
+  5% daily target    : 0 days hit (Rs.25,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  NIFTY             17   41%      -13,875     14       -991    -21,803
+  BANKNIFTY          7   71%         +401      5        +80     +1,765
+  FINNIFTY           8   50%          -49      5        -10       -216
+  SENSEX             4  100%       +7,080      3     +2,360    +51,922
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  AI_ENHANCED                  33   55%       -4,402     -133
+  PUT_WRITER_SUPPORT            3   67%       -2,041     -680
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  TIME          21      -23,965   -1,141
+  TSL           15      +17,523   +1,168
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.500 (0.1%)   : 12/23
+  Days >= Rs.1,000 (0.2%) : 10/23
+  Days >= Rs.2,500 (0.5%) : 4/23
+  Days >= Rs.5,000 (1.0%) : 0/23
+  Days >= Rs.25,000 (5.0%): 0/23
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs.     +51  ( +0.0%)  
+  2025-03  Rs.  +3,883  ( +0.8%)  
+  2025-04  Rs.  -5,838  ( -1.2%)  #
+  2026-01  Rs.  -7,008  ( -1.4%)  #
+  2026-02  Rs.  +2,227  ( +0.4%)  
+  2026-03  Rs.  -2,348  ( -0.5%)  
+  2026-04  Rs.  +4,009  ( +0.8%)  
+  2026-05  Rs.  -1,419  ( -0.3%)  
+
+  TOP 10 DAYS:
+  2025-03-10  Rs.  +4,922  SE:AI_ENHAN(CE) | SE:AI_ENHAN(CE)
+  2025-02-28  Rs.  +3,415  FI:AI_ENHAN(CE) | FI:AI_ENHAN(CE) | BA:AI_ENHAN(CE)
+  2026-04-24  Rs.  +2,655  FI:PUT_WRIT(CE)
+  2025-02-19  Rs.  +2,536  NI:AI_ENHAN(CE)
+  2026-02-13  Rs.  +2,120  NI:AI_ENHAN(CE) | NI:AI_ENHAN(CE)
+  2025-02-13  Rs.  +1,384  NI:AI_ENHAN(CE)
+  2025-04-02  Rs.  +1,211  SE:AI_ENHAN(CE)
+  2026-02-03  Rs.  +1,182  NI:AI_ENHAN(CE)
+  2025-03-28  Rs.  +1,041  FI:AI_ENHAN(CE)
+  2025-03-03  Rs.  +1,018  BA:AI_ENHAN(CE)
+
+  WORST 5 DAYS:
+  2026-01-05  Rs.  -7,008  NI:AI_ENHAN[TIME]
+  2025-02-24  Rs.  -5,534  NI:PUT_WRIT[TIME]
+  2025-04-04  Rs.  -5,096  FI:AI_ENHAN[TIME] | FI:AI_ENHAN[TIME]
+  2025-03-04  Rs.  -2,422  BA:AI_ENHAN[TSL] | BA:AI_ENHAN[TIME] | NI:AI_ENHAN[TIME]
+  2026-03-05  Rs.  -2,348  FI:AI_ENHAN[TIME] | FI:AI_ENHAN[TIME] | NI:AI_ENHAN[TIME] | NI:AI_ENHAN[TIME]
+
+  Saved 36 trades -> backtest_results/v8_multiindex_trades.csv
+
+=== STDERR ===

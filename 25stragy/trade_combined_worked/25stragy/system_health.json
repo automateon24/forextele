@@ -1,0 +1,16 @@
+{
+    "master_switch": "START",
+    "dhan_api": {
+        "status": "RATE_LIMITED",
+        "msg": "Error 805: Backing off for 15s"
+    },
+    "telegram_engine": {
+        "status": "OK",
+        "msg": ""
+    },
+    "v15_engine": {
+        "status": "OK",
+        "msg": ""
+    },
+    "unread_alerts": 0
+}

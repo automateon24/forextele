@@ -1,0 +1,20 @@
+2026-02-18 11:30:08,295 - INFO - Configuration loaded successfully
+2026-02-18 11:30:08,341 - INFO - Database setup completed
+2026-02-18 11:30:08,342 - INFO - STARTING REAL LIVE DEPLOYMENT WITH DHAN API
+2026-02-18 11:30:08,342 - INFO - ======================================================================
+2026-02-18 11:30:08,343 - INFO - Mode: Paper Trading (No Real Orders)
+2026-02-18 11:30:08,343 - INFO - Data Source: REAL Dhan API
+2026-02-18 11:30:08,343 - INFO - Strategies: 9 Trading Strategies
+2026-02-18 11:30:08,343 - INFO - ======================================================================
+2026-02-18 11:30:08,344 - ERROR - Dhan access token not found in config
+2026-02-18 11:30:08,345 - ERROR - Failed to initialize Dhan client. Exiting...
+2026-02-18 11:30:38,182 - INFO - Configuration loaded successfully
+2026-02-18 11:30:38,186 - INFO - Database setup completed
+2026-02-18 11:30:38,186 - INFO - STARTING REAL LIVE DEPLOYMENT WITH DHAN API
+2026-02-18 11:30:38,186 - INFO - ======================================================================
+2026-02-18 11:30:38,187 - INFO - Mode: Paper Trading (No Real Orders)
+2026-02-18 11:30:38,187 - INFO - Data Source: REAL Dhan API
+2026-02-18 11:30:38,187 - INFO - Strategies: 9 Trading Strategies
+2026-02-18 11:30:38,187 - INFO - ======================================================================
+2026-02-18 11:30:38,188 - ERROR - Dhan client initialization failed: module 'dhanhq' has no attribute 'Client'
+2026-02-18 11:30:38,188 - ERROR - Failed to initialize Dhan client. Exiting...

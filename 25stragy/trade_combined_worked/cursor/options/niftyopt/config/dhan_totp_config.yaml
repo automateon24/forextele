@@ -1,0 +1,15 @@
+access_token: null
+api_key: a5f0b17e
+api_secret: eda373ae-9f3d-4f2b-865a-f5fafd46cf0a
+auto_refresh: true
+base_url: https://api.dhan.co
+client_id: '1101936133'
+log_file: logs/dhan_totp_auth.log
+log_level: INFO
+phone_number: '9008400869'
+pin: '615512'
+refresh_before_expiry: 300
+retry_attempts: 3
+timeout: 30
+token_expiry: null
+totp_secret: LCWOC6JL2EDAEA4AJMYFZVJPYM3GZMND

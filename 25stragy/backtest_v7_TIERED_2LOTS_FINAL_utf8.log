@@ -1,0 +1,123 @@
+﻿[DNA MATRIX] Loaded 36 strategies ╫ 4 indices = 144 DNA combinations
+======================================================================
+BACKTEST V7 ù ALL 5 INDICES ù REAL FETCHED DATA ONLY
+  1 lot per index | 8 locked strategies | parallel threads
+======================================================================
+
+Loading option data for all indices...
+  [NIFTY] Loading parquets...
+  [NIFTY] 786,163 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [BANKNIFTY] Loading parquets...
+  [BANKNIFTY] 824,201 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [FINNIFTY] Loading parquets...
+  [FINNIFTY] 774,848 rows | 155 days | 2025-02-03 -> 2026-05-27
+  [SENSEX] Loading parquets...
+  [SENSEX] 701,234 rows | 144 days | 2025-02-03 -> 2026-05-27
+
+Loaded 4 indices: ['NIFTY', 'BANKNIFTY', 'FINNIFTY', 'SENSEX']
+
+======================================================================
+Running backtests in parallel...
+======================================================================
+  [NIFTY] Labelling regimes on 155 days...
+  [FINNIFTY] Labelling regimes on 155 days...
+  [BANKNIFTY] Labelling regimes on 155 days...
+  [SENSEX] Labelling regimes on 144 days...
+  [SENSEX] Done ù 45 trades
+  [SENSEX] Completed: 45 trades
+  [BANKNIFTY] Done ù 88 trades
+  [BANKNIFTY] Completed: 88 trades
+  [FINNIFTY] Done ù 313 trades
+  [FINNIFTY] Completed: 313 trades
+  [NIFTY] Done ù 145 trades
+  [NIFTY] Completed: 145 trades
+
+
+======================================================================
+BACKTEST V7 ù MULTI-INDEX REAL DATA  (155 calendar days)
+  5 indices ╫ 8 locked strategies ╫ 1 lot each
+======================================================================
+
+  COMBINED (all indices)
+  Trades             : 591
+  Win rate           : 82.1%
+  Total PnL          : Rs.+174,966
+  Avg PnL/day        : Rs.+1,548  (1.55%)
+  Monthly est.       : Rs.+34,064  (34.1%)
+  Green days         : 76/113 (67%)
+  Max drawdown       : Rs.-15,501
+  5% daily target    : 21 days hit (Rs.5,000+)
+
+  PER INDEX:
+  Index         Trades   WR%          PnL   Days    Avg/day    Monthly
+  -----------------------------------------------------------------
+  NIFTY            145   75%      +76,051     86       +884    +19,455
+  BANKNIFTY         88   89%      +19,965     22       +907    +19,965
+  FINNIFTY         313   84%      +69,316     71       +976    +21,478
+  SENSEX            45   80%       +9,634     11       +876    +19,268
+
+  PER STRATEGY (combined):
+  Strategy                      N   WR%        Total    Avg/T
+  ------------------------------------------------------------
+  BEAR_TREND_FOLLOWER          16   88%      +10,514     +657
+  BULL_TREND_FOLLOWER          10  100%      +14,697   +1,470
+  DAY_HIGH_BEARISH              6   83%       +7,270   +1,212
+  DAY_LOW_BULLISH              16   94%      +14,493     +906
+  EARLY_BREAKDOWN              15   93%       +7,550     +503
+  ENHANCED_BEARISH            106   83%      +12,569     +119
+  ENHANCED_BULLISH             11   73%       +6,362     +578
+  MAGIC_SQUARE                140   76%      +22,304     +159
+  MEAN_REVERSION               11   73%       +6,091     +554
+  MORNING_BREAKOUT             25   88%       +3,317     +133
+  ORDER_BLOCK_REVERSAL         24   92%      +14,181     +591
+  SHORT_UNWIND                 15   40%       -3,210     -214
+  TREND_FOLLOWING               3   33%       -3,204   -1,068
+  VOLATILITY_BREAKOUT         102   82%      +32,822     +322
+  WIDE_RANGE_RIDER             91   90%      +29,211     +321
+
+  EXIT BREAKDOWN (combined):
+  Exit           N        Total      Avg
+  --------------------------------------
+  TSL          470     +363,437     +773
+  TIME         106     -185,237   -1,748
+  TARGET         9      +20,540   +2,282
+  SL             6      -23,774   -3,962
+
+  DAILY PnL DISTRIBUTION:
+  Days >= Rs.500          : 73/113
+  Days >= Rs.1000         : 68/113
+  Days >= Rs.2000         : 58/113
+  Days >= Rs.3000         : 45/113
+  Days >= Rs.5000 (5%)    : 21/113
+
+  MONTHLY BREAKDOWN:
+  2025-02  Rs. +57,483  (+57.5%)  ##############################
+  2025-03  Rs. +32,913  (+32.9%)  ##############################
+  2025-04  Rs.  -5,386  ( -5.4%)  #####
+  2025-05  Rs.  +2,499  ( +2.5%)  ##
+  2026-01  Rs. +40,546  (+40.5%)  ##############################
+  2026-02  Rs. +29,469  (+29.5%)  #############################
+  2026-03  Rs.    -196  ( -0.2%)  
+  2026-04  Rs.  +5,518  ( +5.5%)  #####
+  2026-05  Rs. +12,120  (+12.1%)  ############
+
+  TOP 10 DAYS:
+  2026-05-21  Rs. +13,599  FI:ENHANCED(PE) | FI:VOLATILI(CE) | FI:EARLY_BR(PE) | FI:MAGIC_SQ(CE) | FI:WIDE_RAN(PE) | NI:EARLY_BR(PE) | NI:BEAR_TRE(PE)
+  2025-02-07  Rs. +11,223  FI:ENHANCED(PE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(CE) | FI:WIDE_RAN(PE) | NI:MEAN_REV(PE) | NI:MAGIC_SQ(CE) | NI:ENHANCED(CE) | NI:BEAR_TRE(PE)
+  2025-02-05  Rs.  +9,459  BA:ENHANCED(PE) | BA:VOLATILI(CE) | BA:MAGIC_SQ(CE) | BA:WIDE_RAN(PE) | NI:DAY_LOW_(CE) | NI:ENHANCED(CE) | NI:MAGIC_SQ(PE)
+  2026-01-05  Rs.  +9,042  FI:ENHANCED(PE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(CE) | FI:WIDE_RAN(PE) | NI:WIDE_RAN(CE) | NI:MAGIC_SQ(CE)
+  2026-02-18  Rs.  +7,923  FI:ENHANCED(PE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(CE) | FI:WIDE_RAN(PE) | NI:WIDE_RAN(PE) | NI:MAGIC_SQ(PE) | NI:ENHANCED(PE) | NI:ORDER_BL(PE)
+  2026-03-02  Rs.  +7,419  FI:ENHANCED(PE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(CE) | FI:WIDE_RAN(PE) | FI:ORDER_BL(PE) | NI:BEAR_TRE(PE)
+  2025-02-13  Rs.  +6,990  FI:ENHANCED(PE) | FI:MORNING_(CE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(PE) | NI:DAY_HIGH(PE) | NI:DAY_HIGH(PE) | NI:MAGIC_SQ(CE)
+  2026-01-30  Rs.  +6,704  BA:ENHANCED(PE) | BA:VOLATILI(CE) | BA:MAGIC_SQ(CE) | BA:WIDE_RAN(PE) | NI:DAY_HIGH(PE) | NI:MAGIC_SQ(CE)
+  2025-02-28  Rs.  +6,499  FI:ENHANCED(PE) | FI:MORNING_(CE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(PE) | FI:WIDE_RAN(PE) | NI:MEAN_REV(CE)
+  2025-02-17  Rs.  +6,398  FI:MORNING_(CE) | FI:ENHANCED(PE) | FI:VOLATILI(CE) | FI:MAGIC_SQ(PE) | FI:WIDE_RAN(PE) | NI:MAGIC_SQ(CE) | NI:WIDE_RAN(CE)
+
+  WORST 5 DAYS:
+  2026-02-02  Rs.  -7,869  FI:ENHANCED[SL] | FI:VOLATILI[TSL] | FI:EARLY_BR[TSL] | FI:MAGIC_SQ[TIME] | FI:WIDE_RAN[TSL] | FI:ORDER_BL[TSL]
+  2026-03-18  Rs.  -7,122  NI:MORNING_[TIME]
+  2025-04-15  Rs.  -6,735  FI:ENHANCED[TSL] | FI:VOLATILI[TSL] | FI:MAGIC_SQ[TSL] | NI:MAGIC_SQ[TIME] | NI:DAY_HIGH[TIME] | NI:MEAN_REV[TIME] | NI:SHORT_UN[TIME]
+  2025-04-22  Rs.  -6,233  FI:MORNING_[TSL] | FI:VOLATILI[TARGET] | FI:ENHANCED[TIME] | FI:MAGIC_SQ[TIME] | FI:WIDE_RAN[TIME]
+  2026-01-29  Rs.  -6,200  FI:ENHANCED[TSL] | FI:VOLATILI[TIME] | FI:MAGIC_SQ[TIME] | FI:WIDE_RAN[TSL] | NI:MAGIC_SQ[TIME]
+
+  Saved 591 trades -> backtest_results/v7_multiindex_trades.csv

@@ -1,0 +1,21 @@
+{
+  "fetch_date": "2026-04-19T15:56:27.825353",
+  "date_range": {
+    "start": "2021-01-01",
+    "end": "2026-04-19"
+  },
+  "elapsed_min": 3,
+  "files": {
+    "nifty_daily": "c:\\cursor\\options\\niftyopt\\backtest_real_data\\nifty_daily_ohlc.csv",
+    "friday_closes": "c:\\cursor\\options\\niftyopt\\backtest_real_data\\nifty_friday_closes.csv",
+    "30min_candles": "c:\\cursor\\options\\niftyopt\\backtest_real_data\\nifty_30min_candles.csv",
+    "monday_915": "c:\\cursor\\options\\niftyopt\\backtest_real_data\\nifty_monday_915_candle.csv",
+    "vix_daily": "c:\\cursor\\options\\niftyopt\\backtest_real_data\\vix_daily.csv",
+    "vix_fridays": "c:\\cursor\\options\\niftyopt\\backtest_real_data\\vix_friday_closes.csv"
+  },
+  "rows_fetched": {
+    "nifty_daily": 1294,
+    "monday_915": 262,
+    "vix_daily": 1294
+  }
+}

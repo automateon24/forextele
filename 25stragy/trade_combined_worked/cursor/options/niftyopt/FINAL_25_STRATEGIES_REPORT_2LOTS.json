@@ -1,0 +1,214 @@
+{
+  "timestamp": "2026-06-06T17:19:57.172212",
+  "configuration": {
+    "lots_per_trade": 2,
+    "cutoff_system": "tiered_11_12_30_13_00",
+    "active_strategies": 15,
+    "disabled_strategies": [
+      "TREND_FOLLOWING",
+      "SHORT_UNWIND"
+    ]
+  },
+  "overall": {
+    "total_trades": 591,
+    "win_rate": 82.06429780033841,
+    "total_pnl": 174965.80000000002,
+    "avg_per_trade": 296.0504230118444,
+    "avg_per_day": 1548.3699115044246,
+    "daily_return_pct": 0.3870924778761062
+  },
+  "risk_metrics": {
+    "max_drawdown": -15501.389999999985,
+    "green_days": 76,
+    "red_days": 37,
+    "green_day_pct": 67.2566371681416,
+    "best_day": 13598.6,
+    "worst_day": -7868.6
+  },
+  "per_index": [
+    {
+      "index": "NIFTY",
+      "trades": 145,
+      "wr": 75.17241379310344,
+      "pnl": 76050.85,
+      "avg_day": 884.3122093023256,
+      "max_dd": -10925.199999999997,
+      "monthly": "+9,506"
+    },
+    {
+      "index": "BANKNIFTY",
+      "trades": 88,
+      "wr": 88.63636363636364,
+      "pnl": 19964.760000000002,
+      "avg_day": 907.489090909091,
+      "max_dd": -1496.1399999999994,
+      "monthly": "+4,991"
+    },
+    {
+      "index": "FINNIFTY",
+      "trades": 313,
+      "wr": 83.70607028753993,
+      "pnl": 69315.93999999999,
+      "avg_day": 976.2808450704224,
+      "max_dd": -20215.999999999996,
+      "monthly": "+7,702"
+    },
+    {
+      "index": "SENSEX",
+      "trades": 45,
+      "wr": 80.0,
+      "pnl": 9634.25,
+      "avg_day": 875.8409090909091,
+      "max_dd": -680.71,
+      "monthly": "+1,606"
+    }
+  ],
+  "per_strategy": [
+    {
+      "strategy": "VOLATILITY_BREAKOUT",
+      "trades": 102,
+      "wr": 82.35294117647058,
+      "pnl": 32821.97,
+      "avg": 321.78401960784316,
+      "status": "+ GOOD"
+    },
+    {
+      "strategy": "WIDE_RANGE_RIDER",
+      "trades": 91,
+      "wr": 90.10989010989012,
+      "pnl": 29210.789999999997,
+      "avg": 320.99769230769226,
+      "status": "* TOP"
+    },
+    {
+      "strategy": "MAGIC_SQUARE",
+      "trades": 140,
+      "wr": 75.71428571428571,
+      "pnl": 22304.169999999995,
+      "avg": 159.31549999999996,
+      "status": "+ GOOD"
+    },
+    {
+      "strategy": "BULL_TREND_FOLLOWER",
+      "trades": 10,
+      "wr": 100.0,
+      "pnl": 14697.4,
+      "avg": 1469.74,
+      "status": "* TOP"
+    },
+    {
+      "strategy": "DAY_LOW_BULLISH",
+      "trades": 16,
+      "wr": 93.75,
+      "pnl": 14492.8,
+      "avg": 905.8,
+      "status": "* TOP"
+    },
+    {
+      "strategy": "ORDER_BLOCK_REVERSAL",
+      "trades": 24,
+      "wr": 91.66666666666666,
+      "pnl": 14181.0,
+      "avg": 590.875,
+      "status": "* TOP"
+    },
+    {
+      "strategy": "ENHANCED_BEARISH",
+      "trades": 106,
+      "wr": 83.01886792452831,
+      "pnl": 12568.55,
+      "avg": 118.57122641509433,
+      "status": "+ GOOD"
+    },
+    {
+      "strategy": "BEAR_TREND_FOLLOWER",
+      "trades": 16,
+      "wr": 87.5,
+      "pnl": 10513.9,
+      "avg": 657.11875,
+      "status": "* TOP"
+    },
+    {
+      "strategy": "EARLY_BREAKDOWN",
+      "trades": 15,
+      "wr": 93.33333333333333,
+      "pnl": 7550.35,
+      "avg": 503.3566666666667,
+      "status": "* TOP"
+    },
+    {
+      "strategy": "DAY_HIGH_BEARISH",
+      "trades": 6,
+      "wr": 83.33333333333334,
+      "pnl": 7269.6,
+      "avg": 1211.6000000000001,
+      "status": "+ GOOD"
+    },
+    {
+      "strategy": "ENHANCED_BULLISH",
+      "trades": 11,
+      "wr": 72.72727272727273,
+      "pnl": 6361.9,
+      "avg": 578.3545454545455,
+      "status": "~ OK"
+    },
+    {
+      "strategy": "MEAN_REVERSION",
+      "trades": 11,
+      "wr": 72.72727272727273,
+      "pnl": 6091.1,
+      "avg": 553.7363636363636,
+      "status": "~ OK"
+    },
+    {
+      "strategy": "MORNING_BREAKOUT",
+      "trades": 25,
+      "wr": 88.0,
+      "pnl": 3316.5699999999997,
+      "avg": 132.66279999999998,
+      "status": "+ GOOD"
+    },
+    {
+      "strategy": "TREND_FOLLOWING",
+      "trades": 3,
+      "wr": 33.33333333333333,
+      "pnl": -3204.3,
+      "avg": -1068.1000000000001,
+      "status": "x LOSER"
+    },
+    {
+      "strategy": "SHORT_UNWIND",
+      "trades": 15,
+      "wr": 40.0,
+      "pnl": -3210.0,
+      "avg": -214.0,
+      "status": "x LOSER"
+    }
+  ],
+  "exit_breakdown": {
+    "count": {
+      "TSL": 470,
+      "TARGET": 9,
+      "SL": 6,
+      "TIME": 106
+    },
+    "total": {
+      "TSL": 363436.7,
+      "TARGET": 20540.35,
+      "SL": -23774.25,
+      "TIME": -185237.0
+    },
+    "avg": {
+      "TSL": 773.27,
+      "TARGET": 2282.26,
+      "SL": -3962.38,
+      "TIME": -1747.52
+    },
+    "win_rate": {
+      "TSL": 0.99,
+      "TARGET": 1.0,
+      "SL": 0.0,
+      "TIME": 0.09
+    }
+  }
+}

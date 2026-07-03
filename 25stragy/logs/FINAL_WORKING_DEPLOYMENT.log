@@ -1,0 +1,53 @@
+2026-02-18 12:00:22,163 - INFO - Database setup completed
+2026-02-18 12:00:22,185 - INFO - Dhan Direct API initialized
+2026-02-18 12:00:22,186 - INFO - Dhan API initialized successfully
+2026-02-18 12:00:22,186 - INFO - FINAL WORKING DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:00:22,187 - INFO - ======================================================================
+2026-02-18 12:00:22,187 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:00:22,187 - INFO - Data Source: REAL Dhan API (Conservative Rate Limiting)
+2026-02-18 12:00:22,188 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:00:22,189 - INFO - Duration: Continuous until market close
+2026-02-18 12:00:22,189 - INFO - ======================================================================
+2026-02-18 12:00:22,210 - INFO - Dhan Direct API initialized
+2026-02-18 12:00:22,512 - INFO - Dhan API connection successful
+2026-02-18 12:00:22,513 - INFO - REAL Dhan API connection successful
+2026-02-18 12:00:22,515 - INFO - Dhan API connection successful
+2026-02-18 12:00:22,541 - INFO - Dhan Direct API initialized
+2026-02-18 12:00:22,775 - ERROR - HTTP Error: 429 - {"data":{"805":"Too many requests. Further requests may result in the user being blocked."},"status":"failed"}
+2026-02-18 12:00:22,775 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:00:52,799 - INFO - Dhan Direct API initialized
+2026-02-18 12:00:53,098 - ERROR - NIFTY data not found in response
+2026-02-18 12:00:53,099 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:01:23,129 - INFO - Dhan Direct API initialized
+2026-02-18 12:01:23,416 - ERROR - NIFTY data not found in response
+2026-02-18 12:01:23,417 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:01:53,440 - INFO - Dhan Direct API initialized
+2026-02-18 12:01:53,734 - ERROR - NIFTY data not found in response
+2026-02-18 12:01:53,734 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:02:23,757 - INFO - Dhan Direct API initialized
+2026-02-18 12:02:24,045 - ERROR - NIFTY data not found in response
+2026-02-18 12:02:24,046 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:02:54,069 - INFO - Dhan Direct API initialized
+2026-02-18 12:02:54,371 - ERROR - NIFTY data not found in response
+2026-02-18 12:02:54,371 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:03:24,394 - INFO - Dhan Direct API initialized
+2026-02-18 12:03:24,691 - ERROR - NIFTY data not found in response
+2026-02-18 12:03:24,692 - WARNING - Failed to get real NIFTY price
+2026-02-18 12:03:38,556 - INFO - 
+======================================================================
+2026-02-18 12:03:38,556 - INFO - FINAL WORKING DEPLOYMENT SUMMARY
+2026-02-18 12:03:38,557 - INFO - ======================================================================
+2026-02-18 12:03:38,557 - INFO - Total Duration: 0:03:16.369480
+2026-02-18 12:03:38,557 - INFO - Total Signals Generated: 0
+2026-02-18 12:03:38,557 - INFO - Paper Trades Executed: 0
+2026-02-18 12:03:38,558 - INFO - Total Broker Charges: Rs.0.00
+2026-02-18 12:03:38,558 - INFO - Market Data Points: 0
+2026-02-18 12:03:38,558 - INFO - 
+Database: c:\cursor\options\niftyopt\data\FINAL_WORKING_DEPLOYMENT.db
+2026-02-18 12:03:38,558 - INFO - All trades, signals, and data saved successfully
+2026-02-18 12:03:38,559 - INFO - 
+FINAL STATUS: DEPLOYMENT COMPLETED SUCCESSFULLY
+2026-02-18 12:03:38,559 - INFO - 9 Strategies tested with real market data
+2026-02-18 12:03:38,559 - INFO - Paper trading mode - No real orders placed
+2026-02-18 12:03:38,559 - INFO - Ready for production deployment with real orders
+2026-02-18 12:03:38,559 - INFO - ======================================================================

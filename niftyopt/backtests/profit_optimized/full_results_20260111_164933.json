@@ -1,0 +1,51 @@
+{
+  "backtest_results": {
+    "metrics": {
+      "total_trades": 0,
+      "winning_trades": 0,
+      "losing_trades": 0,
+      "breakeven_trades": 0,
+      "win_rate": 0.0,
+      "total_pnl": 0.0,
+      "total_return": 0.0,
+      "total_return_pct": 0.0,
+      "gross_profit": 0.0,
+      "gross_loss": 0.0,
+      "profit_factor": 0.0,
+      "avg_win": 0.0,
+      "avg_loss": 0.0,
+      "avg_trade": 0.0,
+      "largest_win": 0.0,
+      "largest_loss": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown": 0.0,
+      "max_drawdown_pct": 0.0,
+      "max_drawdown_amount": 0.0,
+      "avg_holding_period_hours": 0.0,
+      "initial_capital": 100000.0,
+      "final_capital": 100000.0
+    },
+    "trades": [],
+    "equity_curve": "            date  portfolio_value  realized_pnl  unrealized_pnl\n0     2024-12-02         100000.0             0             0.0\n1     2024-12-02         100000.0             0             0.0\n2     2024-12-02         100000.0             0             0.0\n3     2024-12-02         100000.0             0             0.0\n4     2024-12-02         100000.0             0             0.0\n...          ...              ...           ...             ...\n1349  2024-12-31         100000.0             0             0.0\n1350  2024-12-31         100000.0             0             0.0\n1351  2024-12-31         100000.0             0             0.0\n1352  2024-12-31         100000.0             0             0.0\n1353  2024-12-31         100000.0             0             0.0\n\n[1354 rows x 4 columns]",
+    "summary": {
+      "start_date": "2024-12-01",
+      "end_date": "2024-12-31",
+      "symbol": "NIFTY",
+      "initial_capital": 100000.0,
+      "final_capital": 100000.0,
+      "total_trades": 0
+    }
+  },
+  "detailed_analysis": {
+    "summary": {},
+    "daily_breakdown": [],
+    "trade_table": [],
+    "win_loss_analysis": {},
+    "recovery_trades": []
+  },
+  "parameters": {
+    "initial_capital": 100000.0,
+    "target_daily_return": 0.05,
+    "max_trades_per_day": 5
+  }
+}

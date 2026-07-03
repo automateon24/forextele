@@ -1,0 +1,220 @@
+{
+  "strategy_name": "RSI_OVERSOLD",
+  "test_date": "2026-02-27 11:44:48",
+  "total_tests": 16,
+  "passed_tests": 15,
+  "failed_tests": 0,
+  "error_tests": 1,
+  "test_results": [
+    {
+      "test_name": "Strategy Initialization",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.483184,
+      "details": "Strategy initialized successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "initialization_time": 1.483196
+      }
+    },
+    {
+      "test_name": "Configuration Loading",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.559264,
+      "details": "Configuration loaded successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "config_keys": 13
+      }
+    },
+    {
+      "test_name": "Method Existence",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.536228,
+      "details": "All required methods exist",
+      "error_message": null,
+      "performance_metrics": {
+        "method_count": 3
+      }
+    },
+    {
+      "test_name": "Parameter Validation",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "unit",
+      "status": "PASS",
+      "execution_time": 1.764882,
+      "details": "All parameters valid",
+      "error_message": null,
+      "performance_metrics": {
+        "parameter_count": 4
+      }
+    },
+    {
+      "test_name": "Signal Generation",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 1.524651,
+      "details": "Generated 0 valid signals",
+      "error_message": null,
+      "performance_metrics": {
+        "signal_count": 0
+      }
+    },
+    {
+      "test_name": "Trade Execution",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 1.518374,
+      "details": "Trade executed successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "trade_price": 0
+      }
+    },
+    {
+      "test_name": "Position Management",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 1.592189,
+      "details": "Position management completed, closed 0 positions",
+      "error_message": null,
+      "performance_metrics": {
+        "closed_positions": 0
+      }
+    },
+    {
+      "test_name": "Data Processing",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "functional",
+      "status": "PASS",
+      "execution_time": 1.654798,
+      "details": "Data processing completed successfully",
+      "error_message": null,
+      "performance_metrics": {
+        "data_points": 10
+      }
+    },
+    {
+      "test_name": "Data Integrity",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 1.53807,
+      "details": "Data integrity tests passed for all scenarios",
+      "error_message": null,
+      "performance_metrics": {
+        "test_scenarios": 3
+      }
+    },
+    {
+      "test_name": "Performance Bounds",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 1.66894,
+      "details": "Performance acceptable: 0.00s for 1000 data points",
+      "error_message": null,
+      "performance_metrics": {
+        "execution_time": 9e-06,
+        "data_points": 1000
+      }
+    },
+    {
+      "test_name": "Risk Management",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 1.674813,
+      "details": "Risk management parameters are valid",
+      "error_message": null,
+      "performance_metrics": {
+        "risk_params_checked": 3
+      }
+    },
+    {
+      "test_name": "Memory Usage",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "sanity",
+      "status": "PASS",
+      "execution_time": 15.888918,
+      "details": "Memory usage acceptable: 0.88MB increase",
+      "error_message": null,
+      "performance_metrics": {
+        "memory_increase_mb": 0.8828125
+      }
+    },
+    {
+      "test_name": "Infinite Loops",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 1.581986,
+      "details": "No infinite loops detected",
+      "error_message": null,
+      "performance_metrics": {
+        "test_execution_time": 1.581993
+      }
+    },
+    {
+      "test_name": "Memory Leaks",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 173.345366,
+      "details": "No memory leaks detected: 3.96MB increase",
+      "error_message": null,
+      "performance_metrics": {
+        "memory_increase_mb": 3.95703125
+      }
+    },
+    {
+      "test_name": "Division by Zero",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "critical",
+      "status": "PASS",
+      "execution_time": 1.787406,
+      "details": "No division by zero errors detected",
+      "error_message": null,
+      "performance_metrics": {
+        "zero_value_tests": 1
+      }
+    },
+    {
+      "test_name": "Null Pointers",
+      "strategy_name": "RSI_OVERSOLD",
+      "test_type": "critical",
+      "status": "ERROR",
+      "execution_time": 1.662869,
+      "details": "Null pointer test failed",
+      "error_message": "'NoneType' object is not subscriptable",
+      "performance_metrics": null
+    }
+  ],
+  "critical_issues": [],
+  "performance_summary": {
+    "total_execution_time": 211.78193800000003,
+    "avg_execution_time": 13.236371125,
+    "max_execution_time": 173.345366,
+    "min_execution_time": 1.483184,
+    "tests_by_type": {
+      "unit": 4,
+      "functional": 4,
+      "sanity": 4,
+      "critical": 4
+    },
+    "tests_by_status": {
+      "PASS": 15,
+      "FAIL": 0,
+      "ERROR": 1
+    }
+  },
+  "overall_status": "CRITICAL_ISSUES"
+}

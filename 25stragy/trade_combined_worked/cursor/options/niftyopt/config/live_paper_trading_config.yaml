@@ -1,0 +1,53 @@
+# Live Paper Trading System Configuration
+# Ready for forward testing with Dhan API
+
+broker:
+  dhan:
+    client_id: "1101936133"
+    access_token: "your_access_token_here"  # Update with your actual token
+    
+trading:
+  paper_trading: true  # Always true for paper trading
+  lot_size: 75         # Full NIFTY lot from successful backtest
+  max_positions: 10    # Maximum concurrent positions
+  leverage: 5.0        # Options leverage from successful backtest
+  
+risk_management:
+  stop_loss_factor: 0.70  # 30% stop-loss
+  target_factor: 1.40     # 40% target
+  max_drawdown: 50000      # Maximum drawdown limit
+  
+strategies:
+  enabled:
+    - "Ultimate_Day_High_Low"
+    - "DAY_HIGH_BEARISH"
+    - "DAY_LOW_BULLISH"
+    - "ENHANCED_BEARISH_REVERSAL"
+    - "ENHANCED_BULLISH_REVERSAL"
+    - "Day_High_Low"
+    - "Trend_Following"
+    - "AI_Enhanced"
+    - "Mean_Reversion"
+  
+  parameters:
+    signal_threshold: 0.005  # 0.5% threshold for signals
+    confidence_min: 0.60    # Minimum confidence for trades
+    volatility_multiplier: 1.8
+    
+market:
+  nifty_id: 13
+  symbol: "NIFTY 50"
+  update_interval: 30  # seconds
+  
+logging:
+  level: "INFO"
+  file: "logs/live_paper_trading.log"
+  console: true
+  
+database:
+  file: "live_paper_trading.db"
+  
+reports:
+  directory: "reports"
+  daily_report: true
+  performance_tracking: true

@@ -1,0 +1,8 @@
+2026-02-18 12:19:35,355 - INFO - Database setup completed
+2026-02-18 12:19:35,377 - INFO - DEMO WEBSOCKET DEPLOYMENT - 9 STRATEGIES
+2026-02-18 12:19:35,377 - INFO - ======================================================================
+2026-02-18 12:19:35,377 - INFO - Mode: Paper Trading (NO REAL ORDERS)
+2026-02-18 12:19:35,378 - INFO - Data Source: SIMULATED WEBSOCKET DEMO
+2026-02-18 12:19:35,378 - INFO - Strategies: 9 Backtested Strategies
+2026-02-18 12:19:35,378 - INFO - Update Interval: 5 seconds
+2026-02-18 12:19:35,378 - INFO - ======================================================================

@@ -1,0 +1,54 @@
+2026-02-18 11:27:32,386 - INFO - Configuration loaded successfully
+2026-02-18 11:27:32,448 - INFO - Database setup completed
+2026-02-18 11:27:32,449 - INFO - STARTING LIVE DEPLOYMENT WITH CONTINUOUS LEARNING
+2026-02-18 11:27:32,449 - INFO - ======================================================================
+2026-02-18 11:27:32,449 - INFO - Mode: Paper Trading (No Real Orders)
+2026-02-18 11:27:32,449 - INFO - Features: Real-time Data Capture + AI Model Updates
+2026-02-18 11:27:32,450 - INFO - ======================================================================
+2026-02-18 11:27:32,451 - WARNING - Model file not found: momentum_model_v2.1.0.pkl
+2026-02-18 11:27:32,451 - WARNING - Model file not found: reversal_model_v2.1.0.pkl
+2026-02-18 11:27:32,452 - WARNING - Model file not found: trend_model_v2.1.0.pkl
+2026-02-18 11:27:32,452 - WARNING - Model file not found: volatility_model_v2.1.0.pkl
+2026-02-18 11:27:32,452 - INFO - Loaded 4 AI models
+2026-02-18 11:27:32,475 - INFO - Captured market data: NIFTY @ 19454.25
+2026-02-18 11:27:32,491 - INFO - Generated 4 AI signals
+2026-02-18 11:27:32,492 - INFO - Paper trade executed: Momentum - HOLD (Conf: 0.75)
+2026-02-18 11:27:32,492 - INFO - Paper trade executed: Reversal - HOLD (Conf: 0.75)
+2026-02-18 11:27:32,493 - INFO - Paper trade executed: Trend - HOLD (Conf: 0.75)
+2026-02-18 11:27:32,493 - INFO - Paper trade executed: Volatility - HOLD (Conf: 0.75)
+2026-02-18 11:27:32,493 - INFO - Performance Metrics:
+2026-02-18 11:27:32,493 - INFO -   Total Signals: 4
+2026-02-18 11:27:32,494 - INFO -   Model Accuracy: 75.00%
+2026-02-18 11:27:32,494 - INFO -   Learning Iterations: 0
+2026-02-18 11:27:32,494 - INFO -   Data Points Captured: 1
+2026-02-18 11:28:02,530 - INFO - Captured market data: NIFTY @ 19455.15
+2026-02-18 11:28:02,542 - INFO - Generated 4 AI signals
+2026-02-18 11:28:02,543 - INFO - Paper trade executed: Momentum - HOLD (Conf: 0.75)
+2026-02-18 11:28:02,543 - INFO - Paper trade executed: Reversal - HOLD (Conf: 0.75)
+2026-02-18 11:28:02,543 - INFO - Paper trade executed: Trend - HOLD (Conf: 0.75)
+2026-02-18 11:28:02,544 - INFO - Paper trade executed: Volatility - HOLD (Conf: 0.75)
+2026-02-18 11:28:02,544 - INFO - Performance Metrics:
+2026-02-18 11:28:02,544 - INFO -   Total Signals: 8
+2026-02-18 11:28:02,544 - INFO -   Model Accuracy: 75.00%
+2026-02-18 11:28:02,544 - INFO -   Learning Iterations: 0
+2026-02-18 11:28:02,545 - INFO -   Data Points Captured: 2
+2026-02-18 11:28:23,638 - INFO - 
+LIVE DEPLOYMENT SUMMARY
+2026-02-18 11:28:23,638 - INFO - ======================================================================
+2026-02-18 11:28:23,638 - INFO - Duration: -1 day, 23:59:59.999994
+2026-02-18 11:28:23,639 - INFO - Total Signals Generated: 8
+2026-02-18 11:28:23,639 - INFO - Model Accuracy: 75.00%
+2026-02-18 11:28:23,639 - INFO - Learning Iterations: 0
+2026-02-18 11:28:23,639 - INFO - Data Points Captured: 2
+2026-02-18 11:28:23,639 - INFO - 
+AI Models Status:
+2026-02-18 11:28:23,639 - INFO -   momentum_model: v1.0.0 (Accuracy: 80.00%)
+2026-02-18 11:28:23,640 - INFO -   reversal_model: v1.0.0 (Accuracy: 80.00%)
+2026-02-18 11:28:23,640 - INFO -   trend_model: v1.0.0 (Accuracy: 80.00%)
+2026-02-18 11:28:23,640 - INFO -   volatility_model: v1.0.0 (Accuracy: 80.00%)
+2026-02-18 11:28:23,640 - INFO - 
+Database: c:\cursor\options\niftyopt\data\live_trading_data.db
+2026-02-18 11:28:23,640 - INFO - All data and model updates saved successfully
+2026-02-18 11:28:23,640 - INFO - 
+Final Status: LIVE DEPLOYMENT COMPLETED SUCCESSFULLY
+2026-02-18 11:28:23,641 - INFO - System is ready for production with real trading

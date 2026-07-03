@@ -1,0 +1,92 @@
+{
+  "DAY_HIGH_LOW": {
+    "strategy": "DAY_HIGH_LOW",
+    "trades": 8,
+    "win_rate": 100.0,
+    "total_pnl": 32062.000000000044,
+    "avg_pnl": 4007.7500000000055,
+    "roi": 12.452156073092658,
+    "capital_utilization": 258.0080000000002,
+    "status": "ACTIVE"
+  },
+  "STRONG_MOMENTUM": {
+    "strategy": "STRONG_MOMENTUM",
+    "trades": 450,
+    "win_rate": 59.77777777777777,
+    "total_pnl": -873774.5000000017,
+    "avg_pnl": -1941.721111111115,
+    "roi": -25.146937240781497,
+    "capital_utilization": 11530.320000000002,
+    "status": "ACTIVE"
+  },
+  "HIGH_VOLUME": {
+    "strategy": "HIGH_VOLUME",
+    "trades": 0,
+    "win_rate": 0,
+    "total_pnl": 0,
+    "avg_pnl": 0,
+    "roi": 0,
+    "capital_utilization": 0,
+    "status": "INACTIVE"
+  },
+  "ADX_TREND": {
+    "strategy": "ADX_TREND",
+    "trades": 812,
+    "win_rate": 65.64039408866995,
+    "total_pnl": 910415.4999999997,
+    "avg_pnl": 1121.2013546798025,
+    "roi": 18.38088705470287,
+    "capital_utilization": 17476.760000000006,
+    "status": "ACTIVE"
+  },
+  "STOCHASTIC_OVERSOLD": {
+    "strategy": "STOCHASTIC_OVERSOLD",
+    "trades": 284,
+    "win_rate": 35.563380281690144,
+    "total_pnl": 1173909.5000000012,
+    "avg_pnl": 4133.484154929582,
+    "roi": 9.875559793904776,
+    "capital_utilization": 12674.284000000001,
+    "status": "ACTIVE"
+  },
+  "WILLIAMS_REVERSAL": {
+    "strategy": "WILLIAMS_REVERSAL",
+    "trades": 447,
+    "win_rate": 34.675615212527966,
+    "total_pnl": 1335407.000000003,
+    "avg_pnl": 2987.4876957494475,
+    "roi": 4.2694137370640055,
+    "capital_utilization": 19897.320000000003,
+    "status": "ACTIVE"
+  },
+  "MULTI_TIMEFRAME": {
+    "strategy": "MULTI_TIMEFRAME",
+    "trades": 1362,
+    "win_rate": 72.4669603524229,
+    "total_pnl": -117896.50000000438,
+    "avg_pnl": -86.5613069016185,
+    "roi": 2.7082064488045394,
+    "capital_utilization": 25430.028000000006,
+    "status": "ACTIVE"
+  },
+  "AI_ENHANCED": {
+    "strategy": "AI_ENHANCED",
+    "trades": 628,
+    "win_rate": 63.05732484076433,
+    "total_pnl": -890659.0000000008,
+    "avg_pnl": -1418.2468152866254,
+    "roi": -21.916501051509787,
+    "capital_utilization": 15669.180000000002,
+    "status": "ACTIVE"
+  },
+  "TREND_FOLLOWING": {
+    "strategy": "TREND_FOLLOWING",
+    "trades": 1977,
+    "win_rate": 74.00101163378856,
+    "total_pnl": -949420.4999999991,
+    "avg_pnl": -480.23292867981746,
+    "roi": -9.5898038641165,
+    "capital_utilization": 32822.880000000005,
+    "status": "ACTIVE"
+  }
+}

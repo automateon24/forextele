@@ -1,0 +1,47 @@
+{
+  "phase": "Phase 1",
+  "changes": {
+    "ml_threshold": "30% (was 65%) - DISABLED",
+    "momentum_threshold": "0.3 (was 0.5)",
+    "confidence_threshold": "0.05 (was 0.30)",
+    "max_trades_per_day": 2,
+    "commission_reporting": "No double counting (commission already in TradeSimulator)"
+  },
+  "metrics": {
+    "total_trades": 121,
+    "winning_trades": 21,
+    "losing_trades": 100,
+    "breakeven_trades": 0,
+    "win_rate": 0.17355371900826447,
+    "total_pnl": -44872.931755016085,
+    "total_return": -0.4487293175501608,
+    "total_return_pct": -44.87293175501608,
+    "gross_profit": 8459.389575000027,
+    "gross_loss": 53332.321330016115,
+    "profit_factor": 0.1586165642904235,
+    "avg_win": 402.82807500000126,
+    "avg_loss": 533.3232133001611,
+    "avg_trade": -370.85067566129,
+    "largest_win": 2063.6711625000007,
+    "largest_loss": -3843.1692974999996,
+    "sharpe_ratio": -0.8702648018861333,
+    "max_drawdown": -0.4220744816949408,
+    "max_drawdown_pct": -42.20744816949408,
+    "max_drawdown_amount": -42244.44476999987,
+    "avg_holding_period_hours": 0.0,
+    "initial_capital": 100000.0,
+    "final_capital": 55127.068244983915
+  },
+  "total_trades": 121,
+  "winning_trades": 21,
+  "losing_trades": 100,
+  "win_rate": 0.17355371900826447,
+  "total_pnl": -44872.931755016114,
+  "total_return_pct": -44.87293175501612,
+  "profit_factor": 0.15861656429042345,
+  "total_commission": 29040.0,
+  "period": {
+    "start": "2025-07-03",
+    "end": "2025-12-24"
+  }
+}

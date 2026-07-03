@@ -1,0 +1,219 @@
+{
+  "timestamp": "2025-12-23T21:22:03.653969",
+  "approved": true,
+  "summary": {
+    "passed": 37,
+    "failed": 0,
+    "warnings": 3
+  },
+  "results": {
+    "passed": [
+      {
+        "test": "Python Version",
+        "message": "3.12.10",
+        "details": {}
+      },
+      {
+        "test": "Package: pandas",
+        "message": "Installed",
+        "details": {}
+      },
+      {
+        "test": "Package: numpy",
+        "message": "Installed",
+        "details": {}
+      },
+      {
+        "test": "Package: dhanhq",
+        "message": "Installed",
+        "details": {}
+      },
+      {
+        "test": "Package: pyyaml",
+        "message": "Installed",
+        "details": {}
+      },
+      {
+        "test": "Package: structlog",
+        "message": "Installed",
+        "details": {}
+      },
+      {
+        "test": "Package: pyarrow",
+        "message": "Installed",
+        "details": {}
+      },
+      {
+        "test": "Dhan Credentials",
+        "message": "Found in environment",
+        "details": {}
+      },
+      {
+        "test": "Configuration File",
+        "message": "Loaded successfully",
+        "details": {}
+      },
+      {
+        "test": "Dhan Handler Initialization",
+        "message": "Handler initialized (connection check may fail)",
+        "details": {}
+      },
+      {
+        "test": "NSE Handler",
+        "message": "VIX fetched: 9.38",
+        "details": {}
+      },
+      {
+        "test": "Dhan Handler",
+        "message": "Initialized",
+        "details": {}
+      },
+      {
+        "test": "NSE Handler",
+        "message": "Initialized",
+        "details": {}
+      },
+      {
+        "test": "Data Standardizer",
+        "message": "Initialized",
+        "details": {}
+      },
+      {
+        "test": "Raw Data Directory",
+        "message": "C:\\options\\niftyopt\\data\\raw",
+        "details": {}
+      },
+      {
+        "test": "Processed Data Directory",
+        "message": "C:\\options\\niftyopt\\data\\processed",
+        "details": {}
+      },
+      {
+        "test": "EOD Data Loading",
+        "message": "21 rows, columns: ['date', 'open', 'high', 'low', 'close', 'volume', 'symbol']",
+        "details": {}
+      },
+      {
+        "test": "Intraday Data Loading",
+        "message": "375 rows",
+        "details": {}
+      },
+      {
+        "test": "Options Chain Loading",
+        "message": "440 rows, 220 strikes",
+        "details": {}
+      },
+      {
+        "test": "VIX Data Loading",
+        "message": "1 rows, VIX: 9.38",
+        "details": {}
+      },
+      {
+        "test": "EOD Column Names",
+        "message": "All lowercase",
+        "details": {}
+      },
+      {
+        "test": "EOD Data Types",
+        "message": "All correct",
+        "details": {}
+      },
+      {
+        "test": "EOD Schema Validation",
+        "message": "Passed",
+        "details": {}
+      },
+      {
+        "test": "Intraday Column Names",
+        "message": "All lowercase",
+        "details": {}
+      },
+      {
+        "test": "Intraday Schema Validation",
+        "message": "Passed",
+        "details": {}
+      },
+      {
+        "test": "EOD Missing Values",
+        "message": "No missing critical data",
+        "details": {}
+      },
+      {
+        "test": "EOD Price Relationships",
+        "message": "All valid",
+        "details": {}
+      },
+      {
+        "test": "EOD Duplicates",
+        "message": "No duplicates",
+        "details": {}
+      },
+      {
+        "test": "EOD Date Ordering",
+        "message": "Chronologically ordered",
+        "details": {}
+      },
+      {
+        "test": "Invalid Date Range",
+        "message": "Handled gracefully",
+        "details": {}
+      },
+      {
+        "test": "Invalid Symbol",
+        "message": "Handled gracefully",
+        "details": {}
+      },
+      {
+        "test": "Future Date",
+        "message": "Handled gracefully",
+        "details": {}
+      },
+      {
+        "test": "Log Directory",
+        "message": "C:\\options\\niftyopt\\logs",
+        "details": {}
+      },
+      {
+        "test": "Logger Functionality",
+        "message": "Logger working",
+        "details": {}
+      },
+      {
+        "test": "EOD Load Time",
+        "message": "0.01s for 21 rows",
+        "details": {}
+      },
+      {
+        "test": "Consecutive Loads",
+        "message": "3 consecutive loads successful",
+        "details": {}
+      },
+      {
+        "test": "Memory Usage",
+        "message": "Reasonable memory usage (0 bytes increase)",
+        "details": {}
+      }
+    ],
+    "failed": [],
+    "warnings": [
+      {
+        "test": "connection",
+        "message": "Dhan API Connection - Connection check failed: API returned status: failure",
+        "details": {
+          "latency_ms": 35.12859344482422
+        }
+      },
+      {
+        "test": "logging",
+        "message": "Log Files",
+        "details": "No log files found (may be normal if no errors)"
+      },
+      {
+        "test": "performance",
+        "message": "Caching Performance",
+        "details": "Cache not significantly faster (0.009s vs 0.011s)"
+      }
+    ],
+    "info": []
+  }
+}
