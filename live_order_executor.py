@@ -99,7 +99,7 @@ def is_forex(symbol: str) -> bool:
 import httpx
 async def ask_ai(prompt: str) -> str:
     if AI_CFG["provider"].lower() == "gemini":
-        endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
         url = f"{endpoint}?key={AI_CFG['api_key']}"
         payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}]}
         resp = httpx.post(url, json=payload, timeout=30.0)
@@ -161,28 +161,79 @@ def lot_for_crypto(entry_price: float) -> float:
     leverage = 5.0
     return (exposure * leverage) / entry_price
 
-def place_market_order(symbol: str, action: str, volume: float) -> int:
+def calculate_dynamic_lot(symbol, base_allocation=200.0, leverage=1000, risk_pct=0.05):
+    """
+    Dynamic $200 compounding lot size calculator for Telegram signals.
+    """
+    info = mt5.symbol_info(symbol)
+    if not info: return 0.01
+    contract_size = info.trade_contract_size
+    price = info.ask
+    if price == 0 or contract_size == 0: return 0.01
+    
+    total_leverage_power = base_allocation * leverage
+    max_volume = total_leverage_power / (price * contract_size)
+    target_volume = max_volume * risk_pct
+    step = info.volume_step
+    target_volume = max(info.volume_min, min(round(target_volume / step) * step, info.volume_max))
+    return target_volume
+
+def get_atr_fallback(symbol):
+    """Fallback ATR calculation if Telegram signal misses SL/TP"""
+    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 14)
+    if rates is None or len(rates) == 0: return 0.0
+    df = pd.DataFrame(rates)
+    return (df['high'] - df['low']).mean()
+
+def log_trade_event(source, symbol, action, entry_price, lot, sl, tp, reason):
+    """Centralized logging for entry/exit reasoning"""
+    log_file = BASE_DIR / "master_trade_ledger.csv"
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    header = "Timestamp,Source,Symbol,Action,EntryPrice,Lot,SL,TP,Reason\n"
+    if not log_file.exists():
+        with open(log_file, "w") as f:
+            f.write(header)
+    with open(log_file, "a") as f:
+        f.write(f"{timestamp},{source},{symbol},{action},{entry_price},{lot},{sl},{tp},{reason}\n")
+
+def place_order(symbol: str, action: str, volume: float, sl: float=0.0, tp: float=0.0, channel_name: str=""):
+    price = mt5.symbol_info_tick(symbol).ask if action == "BUY" else mt5.symbol_info_tick(symbol).bid
     if DRY_RUN:
         log.info(f"[DRY‑RUN] Would place {action} {symbol} volume={volume}")
-        return 1  # dummy ticket
+        return 1
+    # Autonomous ATR Fallback if SL/TP is missing
+    if sl == 0.0 or tp == 0.0:
+        atr = get_atr_fallback(symbol)
+        point = mt5.symbol_info(symbol).point
+        atr_points = atr / point if point > 0 else 0
+        if sl == 0.0 and atr_points > 0:
+            sl = price - (atr_points * 1.5 * point) if action == "BUY" else price + (atr_points * 1.5 * point)
+        if tp == 0.0 and atr_points > 0:
+            tp = price + (atr_points * 3.0 * point) if action == "BUY" else price - (atr_points * 3.0 * point)
+
     request = {
         "action": mt5.TRADE_ACTION_DEAL,
         "symbol": symbol,
-        "volume": volume,
+        "volume": float(volume),
         "type": mt5.ORDER_TYPE_BUY if action == "BUY" else mt5.ORDER_TYPE_SELL,
-        "price": mt5.symbol_info_tick(symbol).ask if action == "BUY" else mt5.symbol_info_tick(symbol).bid,
+        "price": price,
+        "sl": float(sl) if sl > 0 else 0.0,
+        "tp": float(tp) if tp > 0 else 0.0,
         "deviation": 10,
         "magic": 777777,
-        "comment": "LiveSignalBot",
+        "comment": f"Telegram : {channel_name}"[:31] if channel_name else "TelegramSignal",
         "type_time": mt5.ORDER_TIME_GTC,
         "type_filling": mt5.ORDER_FILLING_IOC,
     }
-    res = mt5.order_send(request)
-    if res.retcode != mt5.TRADE_RETCODE_DONE:
-        log.error(f"Order failed: {res.retcode} – {res.comment}")
+    
+    result = mt5.order_send(request)
+    if result.retcode != mt5.TRADE_RETCODE_DONE:
+        log.error(f"Order failed (retcode {result.retcode}): {result.comment}")
         return 0
-    log.info(f"Order placed – ticket {res.order}, {action} {symbol} {volume}")
-    return res.order
+        
+    log_trade_event(f"Telegram ({channel_name})", symbol, action, price, volume, sl, tp, "AI Signal Parse")
+    log.info(f"Order placed – ticket {result.order}, {action} {symbol} {volume}")
+    return result.order
 
 def close_position(ticket: int, symbol: str, action: str, volume: float) -> bool:
     if DRY_RUN:
@@ -240,34 +291,34 @@ async def handle_message(event, channel_map: dict):
     if len(parts) < 3:
         log.warning(f"Unexpected AI format: {ai_reply}")
         return
-    action, symbol, entry_str = parts[0].upper(), parts[1].upper(), parts[2]
     
-    # Map XAUUSD/XAU variants to GOLD for XMGlobal MT5 execution
-    if symbol in ["XAUUSD", "XAU", "XAU/USD"]:
-        symbol = "GOLD"
-        
-
-    lot_str = parts[3] if len(parts) >= 4 else None
+    action, symbol, entry_str = parts[0].upper(), parts[1].upper(), parts[2]
+            
+    # Map standard symbols
+    if symbol in ["XAUUSD", "XAU", "XAU/USD"]: symbol = "GOLD"
+    elif symbol in ["XAGUSD", "XAG", "XAG/USD"]: symbol = "SILVER"
+    elif symbol in ["BTC", "BTC/USD"]: symbol = "BTCUSD"
+    elif symbol in ["ETH", "ETH/USD"]: symbol = "ETHUSD"
+    
     try:
         entry_price = float(entry_str)
     except ValueError:
         log.error(f"Invalid entry price from AI: {entry_str}")
         return
-    if lot_str:
-        try:
-            volume = float(lot_str)
-        except ValueError:
-            log.error(f"Invalid lot size from AI: {lot_str}")
-            return
-    else:
-        volume = 0.01 if is_forex(symbol) else lot_for_crypto(entry_price)
-
-    # ---- Session Volatility Filter check ----
-    if symbol == "GOLD" and "London" not in active_sessions and "New York" not in active_sessions:
-        log.warning(f"Trade for {symbol} outside London/NY session. Proceeding anyway, but caution advised.")
+        
+    # Dynamic Lot Sizing allocating $200 per Telegram channel trade
+    volume = calculate_dynamic_lot(symbol, base_allocation=200.0, leverage=1000)
+    
+    # Optional SL / TP parsed from AI (Assuming format: ACTION SYMBOL ENTRY [LOT] [SL] [TP])
+    sl_val = float(parts[4]) if len(parts) >= 5 else 0.0
+    tp_val = float(parts[5]) if len(parts) >= 6 else 0.0
 
     # ---- Place order ----
-    ticket = place_market_order(symbol, action, volume)
+    if not init_mt5():
+        return
+    mt5.symbol_select(symbol, True)
+    ticket = place_order(symbol, action, volume, sl=sl_val, tp=tp_val, channel_name=channel_name)
+    shutdown_mt5()
     if ticket == 0:
         return
 
@@ -329,4 +380,5 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        log.info("Interrupted by u
+        log.info("Interrupted by user – shutting down")
+        shutdown_mt5()

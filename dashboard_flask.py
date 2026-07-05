@@ -7,7 +7,7 @@ from pathlib import Path
 from datetime import datetime
 
 import flask
-from flask import Flask, render_template_string, request, redirect, url_for
+from flask import Flask, render_template_string, request, redirect, url_for, jsonify
 import MetaTrader5 as mt5
 import httpx
 from telethon import TelegramClient
@@ -105,7 +105,7 @@ def place_order(symbol: str, action: str, volume: float):
 # ------------------------------------------------------------
 async def ask_ai(prompt: str) -> str:
     if AI_CFG["provider"].lower() == "gemini":
-        endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
         url = f"{endpoint}?key={AI_CFG['api_key']}"
         payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}]}
         resp = httpx.post(url, json=payload, timeout=30.0)
@@ -204,6 +204,14 @@ HTML_TEMPLATE = """
     
     textarea, input { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: white; margin-bottom: 1rem; font-family: inherit;}
     textarea:focus, input:focus { outline: none; border-color: var(--primary); }
+    
+    /* Expandable Grouping */
+    details { background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05); }
+    summary { padding: 1rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    summary:hover { background: rgba(255,255,255,0.05); }
+    .group-title { font-size: 1.1rem; color: var(--primary); }
+    .group-pnl { font-size: 1.1rem; }
+    .details-content { padding: 0 1rem 1rem 1rem; }
   </style>
   <script>
     window.addEventListener('beforeunload', function () { navigator.sendBeacon('/shutdown'); });
@@ -223,8 +231,77 @@ HTML_TEMPLATE = """
     }
     
     document.addEventListener("DOMContentLoaded", function() {
-      // Open the first tab by default
+      // Default open
       document.getElementById("defaultOpen").click();
+
+      // Polling active_v15 API
+      async function fetchV15() {
+        try {
+          const res = await fetch('/api/active_v15');
+          const data = await res.json();
+          const contentDiv = document.getElementById("v15Content");
+          contentDiv.innerHTML = "";
+          
+          if (!data || data.length === 0) {
+             contentDiv.innerHTML = "<p>No active Indian Market trades.</p>";
+             return;
+          }
+          
+          data.forEach(trade => {
+              const div = document.createElement("div");
+              div.className = "log-item";
+              div.innerHTML = `
+                 <p><strong>${trade.symbol}</strong> (${trade.type}) - ${trade.time}</p>
+                 <p>Price: ${trade.price} | Ticket: ${trade.ticket}</p>
+              `;
+              contentDiv.appendChild(div);
+          });
+        } catch (e) {
+          console.error("Error fetching v15:", e);
+        }
+      }
+      
+      // Polling AI Engine Metrics
+      async function fetchAILiveMetrics() {
+        try {
+          const res = await fetch('/api/ai_live_metrics');
+          const data = await res.json();
+          const contentDiv = document.getElementById("aiMetricsContent");
+          
+          if (data.status === "AI Engine Starting..." || Object.keys(data).length === 0) {
+              contentDiv.innerHTML = "<p style='grid-column: 1/-1; text-align: center;'>AI Engine Starting or Offline...</p>";
+              return;
+          }
+          
+          let htmlContent = "";
+          for (const [threadName, status] of Object.entries(data)) {
+              // Color code based on status
+              let color = "var(--primary)";
+              if (status.includes("Error")) color = "var(--danger)";
+              else if (status.includes("Active") || status.includes("Monitoring")) color = "var(--success)";
+              
+              htmlContent += `
+                <div class="metric-box" style="border-top: 3px solid ${color};">
+                    <p style="margin:0; font-size: 0.9rem; color: #cbd5e1;">${threadName}</p>
+                    <p class="metric-val" style="font-size: 1rem; color: ${color};">${status}</p>
+                </div>
+              `;
+          }
+          contentDiv.innerHTML = htmlContent;
+        } catch (e) {
+          console.error("Error fetching AI metrics:", e);
+        }
+      }
+
+      // Refresh every 1.5 seconds
+      setInterval(() => {
+          fetchV15();
+          fetchAILiveMetrics();
+      }, 1500);
+      
+      // Initial fetch
+      fetchV15();
+      fetchAILiveMetrics();
     });
   </script>
 </head>
@@ -276,33 +353,55 @@ HTML_TEMPLATE = """
     </div>
 
     <div id="Strategy" class="tabcontent">
-      <table class="table">
-        <tr><th>Strategy Engine</th><th>Pair</th><th>Entry Price</th><th>Exit Target</th><th>CMP</th><th>Open PnL</th><th>Status</th></tr>
-        <tr><td>NEWS_BREAKOUT</td><td>GOLD</td><td>2350.15</td><td>2360.00</td><td>2354.20</td><td><span style="color:var(--success)">+$40.50</span></td><td>Active</td></tr>
-        <tr><td>LONDON_BREAKOUT</td><td>GBPUSD</td><td>1.2650</td><td>1.2720</td><td>1.2675</td><td><span style="color:var(--success)">+$25.00</span></td><td>Active</td></tr>
-        <tr><td>NY_OPEN_REVERSAL</td><td>EURUSD</td><td>1.0850</td><td>1.0810</td><td>1.0840</td><td><span style="color:var(--success)">+$10.00</span></td><td>Active</td></tr>
-        <tr><td>ASIAN_RANGE_SCALP</td><td>AUDUSD</td><td>0.6650</td><td>0.6680</td><td>0.6645</td><td><span style="color:var(--danger)">-$5.00</span></td><td>Active</td></tr>
-        <tr><td>SWAP_ARBITRAGE</td><td>USDCHF</td><td>0.8950</td><td>0.9000</td><td>0.8955</td><td><span style="color:var(--success)">+$5.00</span></td><td>Active</td></tr>
-      </table>
+      <details open>
+        <summary><span class="group-title">▶ LIVE TRADING POSITIONS</span><span class="group-pnl" style="color:var(--success)"></span></summary>
+        <div class="details-content">
+          <table class="table">
+            <tr><th>Symbol</th><th>Ticket</th><th>Type</th><th>Volume</th><th>Entry Price</th><th>CMP</th><th>Open PnL</th><th>Comment</th></tr>
+            {% if positions %}
+              {% for pos in positions %}
+                <tr>
+                  <td>{{ pos.symbol }}</td>
+                  <td>{{ pos.ticket }}</td>
+                  <td>{{ pos.type }}</td>
+                  <td>{{ pos.volume }}</td>
+                  <td>{{ pos.price_open }}</td>
+                  <td>{{ pos.price_current }}</td>
+                  <td><span style="color:{{ 'var(--success)' if pos.profit >= 0 else 'var(--danger)' }}">{{ pos.profit }}</span></td>
+                  <td>{{ pos.comment }}</td>
+                </tr>
+              {% endfor %}
+            {% else %}
+                <tr><td colspan="8" style="text-align:center; padding: 2rem; color: #cbd5e1;">Waiting for live signals. No open positions currently in MT5.</td></tr>
+            {% endif %}
+          </table>
+        </div>
+      </details>
     </div>
 
     <div id="Channels" class="tabcontent">
-      <table class="table">
-        <tr><th>Channel Group</th><th>Sources Connected</th><th>Signals Today</th><th>Win Rate</th><th>Status</th></tr>
-        <tr><td>VIP Crypto</td><td>ZERO TO HERO, VIP Binance</td><td>4</td><td>75%</td><td><span style="color:var(--success)">Scanning</span></td></tr>
-        <tr><td>Forex Majors</td><td>FX Elite, London Breakout</td><td>2</td><td>100%</td><td><span style="color:var(--success)">Scanning</span></td></tr>
-        <tr><td>Precious Metals</td><td>Gold Signals Daily</td><td>1</td><td>Pending</td><td><span style="color:var(--success)">Scanning</span></td></tr>
-      </table>
+      <details open>
+        <summary><span class="group-title">▶ ACTIVE TELEGRAM CHANNELS ({{ active_channel_count }} Sources)</span><span class="group-pnl"></span></summary>
+        <div class="details-content">
+          <table class="table">
+            <tr><th>Channel Group</th><th>Status</th></tr>
+            <tr><td>VIP Gold & Forex (15 Channels)</td><td><span style="color:var(--success)">Listening for Signals...</span></td></tr>
+            <tr><td>VIP Crypto (10 Channels)</td><td><span style="color:var(--success)">Listening for Signals...</span></td></tr>
+          </table>
+        </div>
+      </details>
     </div>
   </div>
 
   <div class="glass-panel full-width">
     <h2>Manual Execution Override</h2>
     <form method='post' action='/trade' class="btn-group">
-      <button name='symbol' value='GOLD' class='btn buy' type='submit' formaction="/trade?symbol=GOLD&action=BUY">BUY GOLD</button>
-      <button name='symbol' value='GOLD' class='btn sell' type='submit' formaction="/trade?symbol=GOLD&action=SELL">SELL GOLD</button>
-      <button name='symbol' value='EURUSD' class='btn buy' type='submit' formaction="/trade?symbol=EURUSD&action=BUY">BUY EURUSD</button>
-      <button name='symbol' value='EURUSD' class='btn sell' type='submit' formaction="/trade?symbol=EURUSD&action=SELL">SELL EURUSD</button>
+      <button class='btn buy' type='submit' name='trade_cmd' value='BUY_GOLD'>BUY GOLD</button>
+      <button class='btn sell' type='submit' name='trade_cmd' value='SELL_GOLD'>SELL GOLD</button>
+      <button class='btn buy' type='submit' name='trade_cmd' value='BUY_EURUSD'>BUY EURUSD</button>
+      <button class='btn sell' type='submit' name='trade_cmd' value='SELL_EURUSD'>SELL EURUSD</button>
+      <button class='btn buy' type='submit' name='trade_cmd' value='BUY_BTCUSD'>BUY BTC</button>
+      <button class='btn sell' type='submit' name='trade_cmd' value='SELL_BTCUSD'>SELL BTC</button>
     </form>
   </div>
 
@@ -333,7 +432,39 @@ HTML_TEMPLATE = """
     </form>
   </div>
 
+  <!-- AI ENGINE LIVE METRICS PANEL -->
+  <div class="glass-panel full-width">
+    <h2>🤖 AI Engine Threads (Live Metrics)</h2>
+    <div id="aiMetricsContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+      <p style="color:#cbd5e1">Loading AI Thread Status...</p>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL CONTROL CENTER -->
+  <div class="glass-panel full-width">
+    <h2>⚙️ Mission Control (Panic & Master Switches)</h2>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; padding-top: 1rem;">
+        <button class='btn sell' onclick="masterControl('kill_all_orders')" style="font-size:1.1rem; padding: 1rem 2rem; box-shadow: 0 4px 20px rgba(239, 68, 68, 0.6);">🚨 PANIC: CLOSE ALL OPEN ORDERS</button>
+        <button class='btn' onclick="masterControl('toggle_engine')" style="background:#f59e0b; color:white; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);">⏻ Toggle Core Engine Power</button>
+        <button class='btn' onclick="masterControl('toggle_ai')" style="background:var(--secondary); color:white;">⏸ Toggle AI Strategies</button>
+        <button class='btn' onclick="masterControl('toggle_telegram')" style="background:#8b5cf6; color:white;">⏸ Toggle Telegram Listener</button>
+    </div>
+    <p id="controlStatus" style="text-align:center; margin-top: 1rem; font-weight:bold; color:var(--primary);"></p>
+  </div>
+
 </div>
+
+<script>
+    async function masterControl(action) {
+        try {
+            const res = await fetch(`/api/control/${action}`, {method: 'POST'});
+            const data = await res.json();
+            document.getElementById('controlStatus').innerText = data.message;
+        } catch(e) {
+            document.getElementById('controlStatus').innerText = "Error executing command!";
+        }
+    }
+</script>
 </body>
 </html>
 """
@@ -349,6 +480,76 @@ def get_telegram_status():
         except Exception as e:
             return str(e)
     return asyncio.run(check())
+
+@app.route('/api/active_v15')
+def active_v15():
+    try:
+        data = load_json_db(DB_PATH)
+        return jsonify(data.get("active", []))
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/ai_live_metrics')
+def ai_live_metrics():
+    try:
+        with open("thread_status.json", "r") as f:
+            status = json.load(f)
+        return jsonify(status)
+    except FileNotFoundError:
+        return jsonify({"status": "AI Engine Starting..."})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/control/<action>', methods=['POST'])
+def master_control(action):
+    control_file = BASE_DIR / "control_flags.json"
+    
+    # Initialize control file if missing
+    if not control_file.exists():
+        with open(control_file, "w") as f:
+            json.dump({"ai_paused": False, "telegram_paused": False, "engine_running": True}, f)
+            
+    with open(control_file, "r") as f:
+        flags = json.load(f)
+        
+    msg = ""
+    if action == "kill_all_orders":
+        ok, _ = init_mt5()
+        if ok:
+            positions = mt5.positions_get()
+            if positions:
+                for pos in positions:
+                    tick = mt5.symbol_info_tick(pos.symbol)
+                    price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
+                    req = {
+                        "action": mt5.TRADE_ACTION_DEAL,
+                        "symbol": pos.symbol,
+                        "volume": pos.volume,
+                        "type": mt5.ORDER_TYPE_SELL if pos.type == mt5.ORDER_TYPE_BUY else mt5.ORDER_TYPE_BUY,
+                        "position": pos.ticket,
+                        "price": price,
+                        "magic": pos.magic,
+                        "comment": "PANIC_CLOSE",
+                        "type_time": mt5.ORDER_TIME_GTC,
+                        "type_filling": mt5.ORDER_FILLING_IOC,
+                    }
+                    mt5.order_send(req)
+            shutdown_mt5()
+        msg = "🚨 All open positions closed via Panic Switch!"
+    elif action == "toggle_engine":
+        flags["engine_running"] = not flags.get("engine_running", True)
+        msg = f"Core Engines are now {'RUNNING' if flags['engine_running'] else 'SHUT DOWN'}."
+    elif action == "toggle_ai":
+        flags["ai_paused"] = not flags["ai_paused"]
+        msg = f"AI Strategies are now {'PAUSED' if flags['ai_paused'] else 'RUNNING'}."
+    elif action == "toggle_telegram":
+        flags["telegram_paused"] = not flags["telegram_paused"]
+        msg = f"Telegram Engine is now {'PAUSED' if flags['telegram_paused'] else 'RUNNING'}."
+        
+    with open(control_file, "w") as f:
+        json.dump(flags, f)
+        
+    return jsonify({"status": "success", "message": msg})
 
 @app.route('/')
 def index():
@@ -371,6 +572,7 @@ def index():
             logs = []
     # Fetch MT5 Account Data
     mt5_stats = {"balance": "0.00", "equity": "0.00", "margin_free": "0.00", "margin_level": "0.0"}
+    positions_data = []
     ok, _ = init_mt5()
     if ok:
         acc_info = mt5.account_info()
@@ -381,9 +583,23 @@ def index():
                 "margin_free": f"{acc_info.margin_free:,.2f}",
                 "margin_level": f"{acc_info.margin_level:,.2f}" if acc_info.margin_level > 0 else "0.0"
             }
+        # Fetch live positions
+        raw_positions = mt5.positions_get()
+        if raw_positions:
+            for p in raw_positions:
+                positions_data.append({
+                    "symbol": p.symbol,
+                    "ticket": p.ticket,
+                    "type": "BUY" if p.type == mt5.ORDER_TYPE_BUY else "SELL",
+                    "volume": p.volume,
+                    "price_open": p.price_open,
+                    "price_current": p.price_current,
+                    "profit": p.profit,
+                    "comment": p.comment
+                })
         shutdown_mt5()
 
-    return render_template_string(HTML_TEMPLATE, telegram_status=telegram_status, active_sessions=session_str, logs=logs, mt5_stats=mt5_stats)
+    return render_template_string(HTML_TEMPLATE, telegram_status=telegram_status, active_sessions=session_str, logs=logs, mt5_stats=mt5_stats, positions=positions_data, active_channel_count=25)
 
 # ------------------------------------------------------------
 # Shutdown endpoint – called by the browser when it closes
@@ -396,13 +612,26 @@ def shutdown():
     func()
     return 'Server shutting down...'
 
-@app.route('/trade')
+@app.route('/trade', methods=['GET', 'POST'])
 def trade():
-    symbol = request.args.get('symbol')
-    action = request.args.get('action')
+    if request.method == 'POST':
+        trade_cmd = request.form.get('trade_cmd') # e.g. "BUY_GOLD"
+        if not trade_cmd:
+            return "Missing command", 400
+        parts = trade_cmd.split('_')
+        action = parts[0]
+        symbol = parts[1]
+    else:
+        symbol = request.args.get('symbol')
+        action = request.args.get('action')
+        
     ok, err = init_mt5()
     if not ok:
         return f"MT5 init failed: {err}", 500
+        
+    # Make sure symbol is available in Market Watch
+    mt5.symbol_select(symbol, True)
+        
     ticket, err = place_order(symbol, action, 0.01)
     shutdown_mt5()
     if err:

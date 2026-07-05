@@ -1,0 +1,140 @@
+2026-07-05 12:10:27,436 INFO Starting MT5 Strategy Execution Engine...
+2026-07-05 12:16:22,266 INFO Starting MT5 Strategy Execution Engine...
+2026-07-05 12:16:22,333 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:16:22,480 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:17:22,577 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:17:22,787 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:18:22,857 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:18:23,067 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:19:23,120 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:19:23,326 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:20:23,380 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:20:23,589 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:21:23,643 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:21:23,849 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:22:23,902 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:22:24,108 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:23:24,163 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:23:24,369 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:24:24,426 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:24:24,633 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:25:24,690 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:25:24,897 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:26:24,951 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:26:25,158 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:27:25,213 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:27:25,420 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:28:25,475 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:28:25,681 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:29:25,740 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:29:25,965 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:30:26,019 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:30:26,225 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:31:26,279 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:31:26,486 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:32:26,552 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:32:26,759 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:33:26,811 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:33:27,017 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:34:27,071 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:34:27,280 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:35:27,332 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:35:27,538 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:36:27,589 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:36:27,796 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:37:27,849 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:37:28,055 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:38:28,110 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:38:28,425 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:39:28,478 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:39:28,690 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:40:28,744 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:40:28,951 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:41:29,008 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:41:29,214 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:42:29,269 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:42:29,479 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:43:29,533 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:43:29,739 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:44:29,804 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:44:30,011 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:45:30,063 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:45:30,270 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:46:30,328 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:46:30,535 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:47:30,600 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:47:30,806 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:48:30,860 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:48:31,066 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:49:31,123 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:49:31,330 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:50:31,385 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:50:31,591 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:51:31,646 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:51:31,875 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:52:31,926 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:52:32,133 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:53:32,185 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:53:32,420 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:54:32,473 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:54:32,679 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:55:32,737 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:55:32,943 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:56:32,995 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:56:33,208 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:57:33,261 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:57:33,489 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:58:33,541 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:58:33,748 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 12:59:33,801 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 12:59:34,015 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:00:34,068 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:00:34,294 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:01:34,353 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:01:34,578 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:02:34,631 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:02:34,837 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:03:34,895 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:03:35,102 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:04:35,158 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:04:35,364 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:05:35,439 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:05:35,645 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:06:35,700 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:06:35,945 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:07:36,002 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:07:36,209 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:08:36,261 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:08:36,467 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:09:36,524 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:09:36,749 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:10:36,804 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:10:37,036 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:11:37,090 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:11:37,297 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:12:37,363 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:12:37,592 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:13:37,648 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:13:37,855 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:14:37,910 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:14:38,117 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:15:38,176 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:15:38,384 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:16:38,450 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:16:38,658 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:17:38,713 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:17:38,921 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:18:38,981 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:18:39,632 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:19:39,690 INFO [TREND_FOLLOWING] Trigger on GOLD. RSI: 55.59
+2026-07-05 13:19:39,898 ERROR Strategy Order failed: 10018 - Market closed
+2026-07-05 13:23:11,507 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-05 13:23:11,529 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-05 13:23:11,530 - [INFO] - [XAUUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,531 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,533 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,568 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,576 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,592 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,752 - [INFO] - [XAGUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-05 13:23:11,753 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
