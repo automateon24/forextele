@@ -92,8 +92,13 @@ def place_order(symbol, trade_type, lot, strat_name, magic_number=888888):
     """
     Executes the trade on MT5 with the explicit Strategy Name attached as a comment.
     """
+    tick = mt5.symbol_info_tick(symbol)
+    if tick is None:
+        logging.error(f"[{symbol}] Failed to get tick data (Market Closed?)")
+        return None
+        
     action = mt5.ORDER_TYPE_BUY if trade_type == "BUY" else mt5.ORDER_TYPE_SELL
-    price = mt5.symbol_info_tick(symbol).ask if action == mt5.ORDER_TYPE_BUY else mt5.symbol_info_tick(symbol).bid
+    price = tick.ask if action == mt5.ORDER_TYPE_BUY else tick.bid
     
     request = {
         "action": mt5.TRADE_ACTION_DEAL,
@@ -150,10 +155,12 @@ def trailing_stop_manager(base_dna):
                 tsl_t = dna.get("tsl_t", 0.02)
                 
                 info = mt5.symbol_info(symbol)
-                if not info: continue
+                if not info or info.point == 0: continue
                 
                 point = info.point
-                price_current = mt5.symbol_info_tick(symbol).bid if pos.type == mt5.ORDER_TYPE_BUY else mt5.symbol_info_tick(symbol).ask
+                tick = mt5.symbol_info_tick(symbol)
+                if tick is None: continue
+                price_current = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
                 
                 # Dynamic ATR Trailing SL logic could be inserted here
                 # Simplified check to show the concept

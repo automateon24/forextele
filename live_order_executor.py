@@ -197,7 +197,12 @@ def log_trade_event(source, symbol, action, entry_price, lot, sl, tp, reason):
         f.write(f"{timestamp},{source},{symbol},{action},{entry_price},{lot},{sl},{tp},{reason}\n")
 
 def place_order(symbol: str, action: str, volume: float, sl: float=0.0, tp: float=0.0, channel_name: str=""):
-    price = mt5.symbol_info_tick(symbol).ask if action == "BUY" else mt5.symbol_info_tick(symbol).bid
+    tick = mt5.symbol_info_tick(symbol)
+    if tick is None:
+        log.error(f"[{symbol}] Failed to get tick data (Market Closed?)")
+        return 0
+    price = tick.ask if action == "BUY" else tick.bid
+    
     if DRY_RUN:
         log.info(f"[DRY‑RUN] Would place {action} {symbol} volume={volume}")
         return 1
