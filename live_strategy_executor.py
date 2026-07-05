@@ -224,6 +224,37 @@ def process_symbol(symbol, base_dna):
             rates = mt5.copy_rates_from_pos(symbol, tf, 0, 50)
             if rates is not None and len(rates) > 0:
                 THREAD_STATUS[symbol] = f"Active | TF: {dna.get('optimal_timeframe', 'M5')} | Polling Mkt"
+                
+                # --- ALGORITHMIC ENTRY LOGIC ---
+                df = pd.DataFrame(rates)
+                df['close'] = df['close'].astype(float)
+                
+                # Fast and Slow MA logic based on DNA (or defaults)
+                fast_ma_period = int(dna.get("fast_ma", 9))
+                slow_ma_period = int(dna.get("slow_ma", 21))
+                
+                if len(df) > slow_ma_period:
+                    df['fast_ma'] = df['close'].rolling(window=fast_ma_period).mean()
+                    df['slow_ma'] = df['close'].rolling(window=slow_ma_period).mean()
+                    
+                    fast_current = df['fast_ma'].iloc[-1]
+                    slow_current = df['slow_ma'].iloc[-1]
+                    fast_prev = df['fast_ma'].iloc[-2]
+                    slow_prev = df['slow_ma'].iloc[-2]
+                    
+                    # Golden Cross (BUY)
+                    if fast_prev < slow_prev and fast_current > slow_current:
+                        lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                        if lot > 0:
+                            place_order(symbol, "BUY", lot, "MOMENTUM_BURST")
+                            time.sleep(60) # Wait 60s after trade to avoid duplicate entries
+                            
+                    # Death Cross (SELL)
+                    elif fast_prev > slow_prev and fast_current < slow_current:
+                        lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                        if lot > 0:
+                            place_order(symbol, "SELL", lot, "MOMENTUM_BURST")
+                            time.sleep(60)
             else:
                 THREAD_STATUS[symbol] = "Waiting for ticks..."
             
