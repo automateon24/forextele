@@ -219,49 +219,78 @@ def process_symbol(symbol, base_dna):
                 time.sleep(5)
                 continue
                 
-            # Step 2: Extract specific DNA for this symbol
-            # Using a mock search for the best timeframe
-            strat_key = f"{symbol}:MEAN_REVERSION:M5"
-            dna = base_dna.get(strat_key, {"tsl_a": 0.1, "optimal_timeframe": "M5"})
+            # Extract ALL DNA assigned to this specific symbol
+            symbol_dnas = {k: v for k, v in base_dna.items() if k.startswith(f"{symbol}:")}
             
-            tf_map = {"M1": mt5.TIMEFRAME_M1, "M5": mt5.TIMEFRAME_M5, "M15": mt5.TIMEFRAME_M15}
-            tf = tf_map.get(dna.get("optimal_timeframe", "M5"), mt5.TIMEFRAME_M5)
-            
-            # Request M1 or M5 Data directly without blocking other threads
-            rates = mt5.copy_rates_from_pos(symbol, tf, 0, 50)
-            if rates is not None and len(rates) > 0:
-                THREAD_STATUS[symbol] = f"Active | TF: {dna.get('optimal_timeframe', 'M5')} | Polling Mkt"
+            if not symbol_dnas:
+                THREAD_STATUS[symbol] = "No DNA assigned."
+                time.sleep(5)
+                continue
                 
-                # --- ALGORITHMIC ENTRY LOGIC ---
+            THREAD_STATUS[symbol] = f"Active | Scanning {len(symbol_dnas)} Strategies"
+            
+            # Fetch generic M5 data for algorithmic calculation
+            rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 100)
+            if rates is not None and len(rates) > 0:
                 df = pd.DataFrame(rates)
                 df['close'] = df['close'].astype(float)
                 
-                # Fast and Slow MA logic based on DNA (or defaults)
-                fast_ma_period = int(dna.get("fast_ma", 9))
-                slow_ma_period = int(dna.get("slow_ma", 21))
-                
-                if len(df) > slow_ma_period:
-                    df['fast_ma'] = df['close'].rolling(window=fast_ma_period).mean()
-                    df['slow_ma'] = df['close'].rolling(window=slow_ma_period).mean()
+                # --- ALGORITHMIC FACTORY LOOP ---
+                for strat_key, dna in symbol_dnas.items():
+                    strat_name = strat_key.split(":")[1]
                     
-                    fast_current = df['fast_ma'].iloc[-1]
-                    slow_current = df['slow_ma'].iloc[-1]
-                    fast_prev = df['fast_ma'].iloc[-2]
-                    slow_prev = df['slow_ma'].iloc[-2]
-                    
-                    # Golden Cross (BUY)
-                    if fast_prev < slow_prev and fast_current > slow_current:
-                        lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                        if lot > 0:
-                            place_order(symbol, "BUY", lot, "MOMENTUM_BURST")
-                            time.sleep(60) # Wait 60s after trade to avoid duplicate entries
+                    if "GAP" in strat_name:
+                        # Gap Fill Logic: Check if opening price was significantly away from previous close
+                        if len(df) >= 2:
+                            prev_close = df['close'].iloc[-2]
+                            curr_open = df['open'].iloc[-1]
+                            curr_close = df['close'].iloc[-1]
+                            gap_size = abs(curr_open - prev_close)
+                            # If Gap > Threshold, fade the gap
+                            if gap_size > (prev_close * 0.001):
+                                if curr_open > prev_close and curr_close < curr_open: # Gap Up -> Sell
+                                    lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                    place_order(symbol, "SELL", lot, strat_name)
+                                    time.sleep(60)
+                                elif curr_open < prev_close and curr_close > curr_open: # Gap Down -> Buy
+                                    lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                    place_order(symbol, "BUY", lot, strat_name)
+                                    time.sleep(60)
+                                    
+                    elif "RSI" in strat_name or "MEAN_REVERSION" in strat_name:
+                        # Dummy RSI logic representation
+                        if len(df) > 14:
+                            delta = df['close'].diff()
+                            gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
+                            loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
+                            rs = gain / loss
+                            rsi = 100 - (100 / (1 + rs)).iloc[-1]
                             
-                    # Death Cross (SELL)
-                    elif fast_prev > slow_prev and fast_current < slow_current:
-                        lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                        if lot > 0:
-                            place_order(symbol, "SELL", lot, "MOMENTUM_BURST")
-                            time.sleep(60)
+                            if rsi < 30: # Oversold
+                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                place_order(symbol, "BUY", lot, strat_name)
+                                time.sleep(60)
+                            elif rsi > 70: # Overbought
+                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                place_order(symbol, "SELL", lot, strat_name)
+                                time.sleep(60)
+                                
+                    elif "TREND" in strat_name or "MOMENTUM" in strat_name:
+                        # Standard MA Crossover
+                        if len(df) > 21:
+                            fast_current = df['close'].rolling(9).mean().iloc[-1]
+                            slow_current = df['close'].rolling(21).mean().iloc[-1]
+                            fast_prev = df['close'].rolling(9).mean().iloc[-2]
+                            slow_prev = df['close'].rolling(21).mean().iloc[-2]
+                            
+                            if fast_prev < slow_prev and fast_current > slow_current:
+                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                place_order(symbol, "BUY", lot, strat_name)
+                                time.sleep(60)
+                            elif fast_prev > slow_prev and fast_current < slow_current:
+                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                place_order(symbol, "SELL", lot, strat_name)
+                                time.sleep(60)
             else:
                 THREAD_STATUS[symbol] = "Waiting for ticks..."
             
