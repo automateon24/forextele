@@ -1,0 +1,354 @@
+:root {
+  --bg-dark: #121418;
+  --bg-card: #1a1d24;
+  --bg-panel: #16181d;
+  --border-color: #2a2e39;
+  --text-main: #f1f5f9;
+  --text-muted: #64748b;
+  --color-green: #10b981;
+  --color-red: #ef4444;
+  --color-blue: #3b82f6;
+  --color-yellow: #facc15;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dashboard-container {
+  padding: 1rem 1.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-section h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-blue);
+  letter-spacing: 1px;
+}
+
+.badge.production {
+  font-size: 0.65rem;
+  color: var(--color-green);
+  border: 1px solid var(--color-green);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.btn-system {
+  background: transparent;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-system.active {
+  border: 1px solid var(--color-green);
+  color: var(--color-green);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.btn-system.error {
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.tags-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.tag-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #2a2e39 0%, #1a1d24 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  min-width: 110px;
+}
+
+.tag-pill.active {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.tag-pill.kill-switch, .tag-pill.clickable {
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.tag-pill.kill-switch {
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.tag-pill.kill-switch:hover {
+  text-shadow: 0 0 8px rgba(239,68,68,0.5);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.tag-pill.clickable:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.time-display {
+  color: var(--text-main);
+}
+
+/* TICKER GRID */
+.ticker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ticker-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ticker-card.vix-card {
+  border-color: var(--color-yellow);
+}
+
+.ticker-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ticker-top .symbol {
+  color: var(--text-muted);
+}
+
+.ticker-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ticker-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  row-gap: 0.3rem;
+}
+
+.ticker-details span {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.ticker-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* TAB TOGGLE */
+.tab-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* METRICS ROW */
+.metrics-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-box {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.metric-label {
+  font-size: 0.65rem;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.metric-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* PANEL CONTAINER */
+.panel-container {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panel-body {
+  padding: 0;
+}
+
+.no-trades {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.no-trades-sub {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* DATA TABLE */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.data-table th {
+  padding: 0.75rem 1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.symbol-cell {
+  font-weight: 700;
+}
+
+.strategy-cell {
+  color: var(--text-muted);
+}
+
+.dir-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.65rem;
+}
+
+.dir-badge.buy {
+  border: 1px solid var(--color-green);
+  color: var(--color-green);
+}
+
+.dir-badge.sell {
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+}
+
+.profit-text {
+  color: var(--color-green);
+}
+
+.loss-text {
+  color: var(--color-red);
+}
+
+/* TERMINAL */
+.terminal-body {
+  padding: 1rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  height: 250px;
+  overflow-y: auto;
+  background: #0d0f12;
+}
+
+.log-line {
+  margin: 0.4rem 0;
+}
+
+.log-time {
+  color: var(--text-muted);
+}

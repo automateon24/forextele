@@ -1,0 +1,6 @@
+MetaTrader5
+telethon
+httpx
+websockets
+pandas
+numpy

@@ -5517,3 +5517,90 @@
 2026-07-08 02:30:28,967 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
 2026-07-08 02:30:29,198 - [ERROR] - [AUDUSD] CRITICAL WARNING: Hard SL/TP application failed for ticket 2146736079! Code: 10016 Comment: Invalid stops
 2026-07-08 02:30:29,198 - [INFO] - [AUDUSD] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2146736079
+2026-07-08 02:32:53,352 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 02:32:53,355 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 02:32:53,358 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,359 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,360 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,362 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,363 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,364 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,367 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:32:53,367 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,379 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 02:41:43,382 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 02:41:43,384 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,385 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,386 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,386 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,388 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,389 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,391 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:41:43,392 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:45:42,361 - [INFO] - [USDJPY] Phase 2 Dynamic Scaling: Calculated 0.01 Lots based on $200.0 @ 1000x
+2026-07-08 02:45:42,602 - [ERROR] - [USDJPY] CRITICAL WARNING: Hard SL/TP application failed for ticket 2146736526! Code: 10016 Comment: Invalid stops
+2026-07-08 02:45:42,602 - [INFO] - [USDJPY] SUCCESS - Opened SELL | Strat: BEAR_TREND_FOLLOWER | Ticket: 2146736526
+2026-07-08 02:46:45,417 - [INFO] - [ETHUSD] Phase 2 Dynamic Scaling: Calculated 5.61 Lots based on $200.0 @ 1000x
+2026-07-08 02:46:45,887 - [INFO] - [ETHUSD] Hard SL successfully attached to ticket 2146736743
+2026-07-08 02:46:45,887 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: VOLATILITY_BREAKOUT | Ticket: 2146736743
+2026-07-08 02:51:57,532 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 02:51:57,537 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 02:51:57,541 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,557 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,577 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,596 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,608 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,624 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,653 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:51:57,670 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,645 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 02:53:45,649 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 02:53:45,651 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,652 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,653 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,654 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,655 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,657 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,658 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:53:45,658 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 02:56:26,478 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 63651.0
+2026-07-08 03:01:02,613 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 03:01:02,616 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 03:01:02,619 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,620 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,620 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,622 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,623 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,624 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,625 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:01:02,626 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,572 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 03:04:03,575 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 03:04:03,577 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,578 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,579 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,580 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,581 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,583 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,586 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:04:03,587 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,903 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 03:09:31,907 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 03:09:31,909 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,910 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,912 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,913 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,915 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,915 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,916 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:09:31,918 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,685 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 03:13:22,689 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 03:13:22,691 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,692 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,692 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,694 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,695 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,696 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,698 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 03:13:22,698 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.

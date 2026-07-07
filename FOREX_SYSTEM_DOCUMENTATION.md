@@ -1,74 +1,37 @@
-# AutomateON - Global Forex & Crypto Trading System
-**Version:** 2.0 (Migration from Indian Options to XM-Global MT5)
-**Date:** July 2026
+# AutomateON - Forex AI Swarm System Documentation
 
-## Overview
-This document outlines the complete architecture, strategies, and operational parameters of the AI-driven trading system designed for Global Markets (Forex, Gold, and Crypto). The system has been fully migrated from its original Indian Market (Dhan/Shoonya) foundation to support 24/7 global operations via MetaTrader 5 (MT5).
+## System Overview
+The AutomateON Forex AI Swarm is an autonomous, decentralized, multi-agent trading system designed to ingest Telegram signals, parse them using LLMs (Ollama), manage dynamic risk execution on MT5, and display real-time telemetry on an institutional React dashboard.
 
-## 1. Core Architecture
-- **Broker Interface:** MetaTrader 5 via `MetaTrader5` Python library.
-- **Account:** XM-Global Demo (ID: `167573094`, Server: `XMGlobal-MT5`).
-- **Capital Allocation:** $3,000 Total Capital (Allocated at $200 per Pair/Asset).
-- **Execution Engine:** `live_order_executor.py` handles real-time execution, lot sizing, and 30-minute auto-close logic.
-- **UI Dashboard:** `dashboard_flask.py` provides a tab-based command center for Strategy Allocation and Telegram Channel tracking.
+## Core Services (The Swarm)
+The architecture is orchestrated by the **Master Swarm Runner** (`master_swarm_runner.py`), which launches and actively monitors the following isolated services via a 24/7 Health Monitor thread:
 
-## 2. Trading Strategies (39 Total)
-The 36 legacy Indian Option strategies have been fully ported to spot assets by removing Greeks (Delta, Theta) and Strike Dependencies. Three specialized Global strategies were added.
+1. **Telegram Signal Engine (`telegram_signal_engine.py`)**
+   - **Dual-Account Listener**: Connects to both `telegram_session.session` and `telegram_session2.session` concurrently via Telethon.
+   - **VIP Channel Filter**: Hardcoded to strictly scan exactly 23 verified VIP channels across Crypto and Forex/Gold categories.
+   - **Spam Filtering**: All messages are forwarded to Ollama, which intrinsically filters out junk and promotional messages.
 
-### Key Strategy Groups:
-1. **Trend & Momentum (Ported from V3/V4):** Standard Trend Following mapped directly to `BUY/SELL`.
-2. **Session Based (New for Forex):**
-   - `LONDON_BREAKOUT`: Triggers at 08:00 UTC.
-   - `NY_OPEN_REVERSAL`: Triggers at 13:30 UTC.
-   - `ASIAN_RANGE_SCALP`: Triggers at 00:00 UTC.
-3. **News Breakout (Straddle Engine):** 
-   - Uses MT5 Pending Orders (`Buy Stop` / `Sell Stop`) placed 10 pips above/below CMP immediately prior to major economic news releases.
+2. **AI Strategy Executor (`live_strategy_executor.py`)**
+   - Implements automated technical analysis (e.g., Breakout V15 strategy) over 8 core assets.
+   - Applies strict market gap logic to prevent trading during weekend/rollover gaps.
+   - Calculates dynamic lot sizing to enforce a rigid 1% risk per trade based on equity and SL distance.
 
-## 3. Dual-Account Telegram AI Pipeline
-The system listens to Telegram channels across two separate accounts (Primary + `9008400969`) to bypass joining limits.
+3. **Position Manager & Trail Boss (`swarm_position_manager.py`)**
+   - Monitors active MT5 positions independently of the entry logic.
+   - Applies dynamic Trailing Stop Loss logic using ATR calculations to lock in profits automatically.
 
-**AI Processing (Gemini/OpenAI):**
-- Unstructured messages are parsed by generative AI into strict `ACTION SYMBOL ENTRY LOT` format.
-- `live_order_executor.py` filters these against the active market sessions to enforce volatility safety constraints.
+4. **WebSocket Telemetry Bridge (`dashboard_websocket.py`)**
+   - Runs a WebSocket server on Port 8888.
+   - Pushes live asset prices, spreads, open position status, and win-rate metrics using a strict 24-hour MT5 deal history to the frontend UI.
 
-### The 25 Elite VIP Whitelist
-Through algorithmic evaluation of over 250 channels, 25 high-purity (5-Star) sources have been hard-locked into the live engine:
+## Institutional Dashboard (UI/UX)
+- Located in `C:\anlyzeforex\Ai_forextele\dashboard_ui`.
+- **4x2 Compact CSS Grid**: Displays 8 assets across 2 rows. 
+  - Row 1: EURUSD, GBPUSD, USDJPY, AUDUSD. 
+  - Row 2: GOLD, SILVER, BTCUSD, ETHUSD.
+- Features a completely dark-themed, metallic institutional design that parses MT5 JSON data feeds securely.
 
-**Gold / Forex Focus:**
-1. Scalping Gold
-2. GOLD Snipers
-3. Sureshot FX
-4. SureShot GOLD (VIP)
-5. Sureshot FX VIP
-6. GOLD TRADE SIGNALS
-7. ZERO TO HERO PRIMIUM GROUP
-8. EASY FOREX
-9. GOLD TRADER
-10. GLOBAL GOLD INSIGHT
-11. GLOBAL PROFIT CLUB
-12. tradebussunessfx_007
-13. GOLD_MAST78
-14. forexero
-15. forexking1132
-
-**Crypto / Mixed Focus:**
-16. Market Trader Crypto Forex
-17. Coin Chief
-18. Binance Killers VIP
-19. Crypto World Updates
-20. Binance 360
-21. DIL SE TRADER Crypto
-22. CryptoSimplicity News
-23. Crypto Radar
-24. King Crypto Scalp [ LIVE ]
-25. earlypumpdetector
-
-## 4. Weekend vs Weekday Operation
-- **Forex & Metals (Gold/Silver):** Trading is active 24/5 (Closes Friday night, opens Sunday night).
-- **Crypto (BTC/ETH):** Trading continues 24/7.
-The `live_order_executor.py` natively supports 24/7 continuous execution, gracefully handling `Market Closed` errors for Forex pairs while allowing Crypto orders to process during the weekend.
-
-## 5. Security & Deployment
-- The system prevents duplicate order firing using a state tracker and message hash.
-- **GitHub Repository:** `automateon24/forextele` (Created to separate concerns from the `India_trade` core repo).
-- Passwords and API keys are isolated in `ai_config.json` and `mt5_config.json`.
+## Operational Procedures & QA
+- **Crash Recovery**: If any component (e.g., the WebSocket or MT5 API) faults, the Master Runner intercepts the failure and re-spawns the thread automatically.
+- **QA Code Cleansing**: All Unicode/emoji printing has been scrubbed from `master_swarm_runner.py` to prevent Windows console encoding crashes, guaranteeing uninterrupted 24/7 lifecycle.
+- **System Launch**: The entire environment can be initialized by running `py master_swarm_runner.py` inside the root directory.

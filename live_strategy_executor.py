@@ -390,6 +390,22 @@ def process_symbol(symbol, base_dna):
                                 lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                 place_order(symbol, "SELL", lot, strat_name)
                                 last_trade_time = time.time()
+
+                    elif "BREAKOUT" in strat_name:
+                        # V15 Breakout Logic: Trade momentum when breaking 20-period highs/lows
+                        if len(df) > 20:
+                            recent_high = df['high'].iloc[-21:-1].max()
+                            recent_low = df['low'].iloc[-21:-1].min()
+                            curr_close = df['close'].iloc[-1]
+                            
+                            if curr_close > recent_high and (time.time() - last_trade_time > 60):
+                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                place_order(symbol, "BUY", lot, strat_name)
+                                last_trade_time = time.time()
+                            elif curr_close < recent_low and (time.time() - last_trade_time > 60):
+                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
+                                place_order(symbol, "SELL", lot, strat_name)
+                                last_trade_time = time.time()
             else:
                 THREAD_STATUS[symbol] = "Waiting for ticks..."
             
