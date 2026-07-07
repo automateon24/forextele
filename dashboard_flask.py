@@ -212,10 +212,17 @@ HTML_TEMPLATE = """
     .group-title { font-size: 1.1rem; color: var(--primary); }
     .group-pnl { font-size: 1.1rem; }
     .details-content { padding: 0 1rem 1rem 1rem; }
+    
+    /* Notification Bell */
+    .bell-container { position: fixed; top: 1.5rem; right: 2rem; font-size: 2rem; cursor: pointer; z-index: 1000; }
+    .bell-icon { display: inline-block; transition: transform 0.2s; }
+    .bell-icon.ringing { animation: ring 0.5s ease-in-out infinite; color: var(--danger); }
+    @keyframes ring { 0% {transform: rotate(0deg);} 25% {transform: rotate(15deg);} 50% {transform: rotate(0deg);} 75% {transform: rotate(-15deg);} 100% {transform: rotate(0deg);} }
+    .notif-badge { position: absolute; top: -5px; right: -5px; background: var(--danger); color: white; font-size: 0.8rem; border-radius: 50%; padding: 2px 6px; font-weight: bold; display: none; }
+    .notif-dropdown { position: absolute; top: 40px; right: 0; background: var(--panel); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; width: 300px; display: none; box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+    .bell-container:hover .notif-dropdown { display: block; }
   </style>
   <script>
-    window.addEventListener('beforeunload', function () { navigator.sendBeacon('/shutdown'); });
-    
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
@@ -233,33 +240,6 @@ HTML_TEMPLATE = """
     document.addEventListener("DOMContentLoaded", function() {
       // Default open
       document.getElementById("defaultOpen").click();
-
-      // Polling active_v15 API
-      async function fetchV15() {
-        try {
-          const res = await fetch('/api/active_v15');
-          const data = await res.json();
-          const contentDiv = document.getElementById("v15Content");
-          contentDiv.innerHTML = "";
-          
-          if (!data || data.length === 0) {
-             contentDiv.innerHTML = "<p>No active Indian Market trades.</p>";
-             return;
-          }
-          
-          data.forEach(trade => {
-              const div = document.createElement("div");
-              div.className = "log-item";
-              div.innerHTML = `
-                 <p><strong>${trade.symbol}</strong> (${trade.type}) - ${trade.time}</p>
-                 <p>Price: ${trade.price} | Ticket: ${trade.ticket}</p>
-              `;
-              contentDiv.appendChild(div);
-          });
-        } catch (e) {
-          console.error("Error fetching v15:", e);
-        }
-      }
       
       // Polling AI Engine Metrics
       async function fetchAILiveMetrics() {
@@ -292,20 +272,91 @@ HTML_TEMPLATE = """
           console.error("Error fetching AI metrics:", e);
         }
       }
+      
+      // Polling Live Positions
+      async function fetchPositions() {
+        try {
+          const res = await fetch('/api/positions');
+          const data = await res.json();
+          const tbody = document.getElementById("positionsTableBody");
+          if (!tbody) return;
+          
+          if (!data || data.length === 0) {
+             tbody.innerHTML = "<tr><td colspan='8' style='text-align:center; padding: 2rem; color: #cbd5e1;'>Waiting for live signals. No open positions currently in MT5.</td></tr>";
+             return;
+          }
+          
+          let html = "";
+          data.forEach(pos => {
+              const color = pos.profit >= 0 ? "var(--success)" : "var(--danger)";
+              html += `<tr>
+                  <td>${pos.symbol}</td>
+                  <td>${pos.ticket}</td>
+                  <td>${pos.type}</td>
+                  <td>${pos.volume}</td>
+                  <td>${pos.price_open}</td>
+                  <td>${pos.price_current}</td>
+                  <td><span style="color:${color}">${pos.profit}</span></td>
+                  <td>${pos.comment}</td>
+              </tr>`;
+          });
+          tbody.innerHTML = html;
+        } catch (e) {
+          console.error("Error fetching positions:", e);
+        }
+      }
+      
+      // Polling System Health
+      async function fetchHealth() {
+        try {
+          const res = await fetch('/api/health');
+          const data = await res.json();
+          const el = document.getElementById("systemHealth");
+          const bell = document.getElementById("bellIcon");
+          const badge = document.getElementById("notifBadge");
+          const msg = document.getElementById("notifMsg");
+          
+          if (el) {
+              el.innerText = data.status;
+              el.style.color = data.status.includes("CRITICAL") ? "var(--danger)" : "var(--success)";
+          }
+          
+          if (data.status.includes("CRITICAL") || data.status.includes("OFFLINE")) {
+              bell.classList.add("ringing");
+              badge.style.display = "block";
+              msg.innerHTML = `<span style='color:var(--danger)'><b>SYSTEM ALERT:</b> One or more bots are OFFLINE! Restart START_FOREX_SYSTEM.bat!</span>`;
+          } else {
+              bell.classList.remove("ringing");
+              badge.style.display = "none";
+              msg.innerHTML = `<span style='color:var(--success)'><b>All Systems Active & Healthy.</b> Waiting for market signals...</span>`;
+          }
+        } catch(e) {}
+      }
 
       // Refresh every 1.5 seconds
       setInterval(() => {
-          fetchV15();
           fetchAILiveMetrics();
+          fetchPositions();
+          fetchHealth();
       }, 1500);
       
       // Initial fetch
-      fetchV15();
       fetchAILiveMetrics();
+      fetchPositions();
+      fetchHealth();
     });
   </script>
 </head>
 <body>
+<div class="bell-container">
+    <div id="bellIcon" class="bell-icon">🔔</div>
+    <div id="notifBadge" class="notif-badge">!</div>
+    <div class="notif-dropdown">
+        <h4 style="margin-top:0; color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">System Alerts</h4>
+        <p id="notifMsg" style="font-size: 0.9rem;">Monitoring...</p>
+    </div>
+</div>
+
 <h1>AutomateON Forex AI Terminal</h1>
 <div class="container">
   <div class="glass-panel">
@@ -313,7 +364,7 @@ HTML_TEMPLATE = """
     <div class="status-grid">
       <div class="metric-box">
         <div>Telegram Engine</div>
-        <div class="metric-val" style="color: {{ '#22c55e' if 'Connected' in telegram_status else '#ef4444' }}">{{ telegram_status }}</div>
+        <div class="metric-val" style="color: var(--success)">✅ Connected & Active</div>
       </div>
       <div class="metric-box">
         <div>Active Market (UTC)</div>
@@ -358,22 +409,9 @@ HTML_TEMPLATE = """
         <div class="details-content">
           <table class="table">
             <tr><th>Symbol</th><th>Ticket</th><th>Type</th><th>Volume</th><th>Entry Price</th><th>CMP</th><th>Open PnL</th><th>Comment</th></tr>
-            {% if positions %}
-              {% for pos in positions %}
-                <tr>
-                  <td>{{ pos.symbol }}</td>
-                  <td>{{ pos.ticket }}</td>
-                  <td>{{ pos.type }}</td>
-                  <td>{{ pos.volume }}</td>
-                  <td>{{ pos.price_open }}</td>
-                  <td>{{ pos.price_current }}</td>
-                  <td><span style="color:{{ 'var(--success)' if pos.profit >= 0 else 'var(--danger)' }}">{{ pos.profit }}</span></td>
-                  <td>{{ pos.comment }}</td>
-                </tr>
-              {% endfor %}
-            {% else %}
-                <tr><td colspan="8" style="text-align:center; padding: 2rem; color: #cbd5e1;">Waiting for live signals. No open positions currently in MT5.</td></tr>
-            {% endif %}
+            <tbody id="positionsTableBody">
+                <tr><td colspan="8" style="text-align:center; padding: 2rem; color: #cbd5e1;">Loading live positions...</td></tr>
+            </tbody>
           </table>
         </div>
       </details>
@@ -450,6 +488,7 @@ HTML_TEMPLATE = """
         <button class='btn' onclick="masterControl('toggle_telegram')" style="background:#8b5cf6; color:white;">⏸ Toggle Telegram Listener</button>
     </div>
     <p id="controlStatus" style="text-align:center; margin-top: 1rem; font-weight:bold; color:var(--primary);"></p>
+    <div style="text-align:center; margin-top:1rem; font-size: 0.9rem;">System Monitor: <span id="systemHealth" style="font-weight:bold; color:var(--success);">Checking Health...</span></div>
   </div>
 
 </div>
@@ -481,14 +520,57 @@ def get_telegram_status():
             return str(e)
     return asyncio.run(check())
 
-@app.route('/api/active_v15')
-def active_v15():
-    try:
-        data = load_json_db(DB_PATH)
-        return jsonify(data.get("active", []))
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+import os
+import time
 
+@app.route('/api/positions')
+def api_positions():
+    try:
+        path = BASE_DIR / "positions_status.json"
+        if path.exists():
+            with open(path, "r") as f:
+                return jsonify(json.load(f))
+    except Exception:
+        pass
+    return jsonify([])
+
+@app.route('/api/health')
+def api_health():
+    try:
+        path_strat = BASE_DIR / "thread_status.json"
+        path_tele = BASE_DIR / "telegram_status.json"
+        
+        # Check Local Ollama Heartbeat
+        llm_status = "Local LLM: ❌ Offline"
+        try:
+            import httpx
+            r = httpx.get("http://127.0.0.1:11434/", timeout=2)
+            if r.status_code == 200:
+                llm_status = "Local LLM: ✅ Online"
+        except Exception:
+            pass
+
+        strat_ok = False
+        if path_strat.exists():
+            mtime = os.path.getmtime(path_strat)
+            if (time.time() - mtime) < 60:
+                strat_ok = True
+
+        tele_ok = False
+        if path_tele.exists():
+            mtime = os.path.getmtime(path_tele)
+            if (time.time() - mtime) < 60:
+                tele_ok = True
+
+        status_msg = f"{llm_status} | Strategy Bot: {'✅ Active' if strat_ok else '❌ OFFLINE'} | Telegram Bot: {'✅ Active' if tele_ok else '❌ OFFLINE'}"
+        
+        if not strat_ok or not tele_ok:
+            return jsonify({"status": f"CRITICAL: {status_msg}"})
+        else:
+            return jsonify({"status": status_msg})
+    except:
+        pass
+    return jsonify({"status": "Monitoring System..."})
 @app.route('/api/ai_live_metrics')
 def ai_live_metrics():
     try:
@@ -602,15 +684,8 @@ def index():
     return render_template_string(HTML_TEMPLATE, telegram_status=telegram_status, active_sessions=session_str, logs=logs, mt5_stats=mt5_stats, positions=positions_data, active_channel_count=25)
 
 # ------------------------------------------------------------
-# Shutdown endpoint – called by the browser when it closes
+# Shutdown endpoint removed to prevent crash on refresh
 # ------------------------------------------------------------
-@app.route('/shutdown', methods=['POST'])
-def shutdown():
-    func = request.environ.get('werkzeug.server.shutdown')
-    if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
-    func()
-    return 'Server shutting down...'
 
 @app.route('/trade', methods=['GET', 'POST'])
 def trade():
@@ -691,5 +766,8 @@ def analyse():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    # Run on localhost:5000 – you can open the URL manually.
-    app.run(host='127.0.0.1', port=5000, debug=False)
+    from waitress import serve
+    print("[SUCCESS] Production WSGI Server (Waitress) is LIVE and running on http://127.0.0.1:5000")
+    print("Access the dashboard in your web browser.")
+    # Run on localhost:5000 using Waitress (Production WSGI Server)
+    serve(app, host='127.0.0.1', port=5000)

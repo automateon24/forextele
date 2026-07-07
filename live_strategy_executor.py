@@ -116,8 +116,51 @@ def place_order(symbol, trade_type, lot, strat_name, magic_number=888888):
     if result.retcode != mt5.TRADE_RETCODE_DONE:
         logging.error(f"[{symbol}] Order Failed! Code: {result.retcode}")
         return None
+        
+    ticket = result.order
     
-    logging.info(f"[{symbol}] SUCCESS - Opened {trade_type} | Strat: {strat_name} | Ticket: {result.order}")
+    # PHASE 2: Dynamic ATR-based Stop Loss and Take Profit
+    try:
+        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 14)
+        if rates is not None and len(rates) > 0:
+            atr = sum((r['high'] - r['low']) for r in rates) / len(rates)
+        else:
+            atr = 0.0
+    except:
+        atr = 0.0
+
+    point = mt5.symbol_info(symbol).point
+    digits = mt5.symbol_info(symbol).digits
+    
+    if atr > 0:
+        # Dynamic ATR Stops: SL = 1.5x ATR, TP = 3.0x ATR
+        sl_points = atr * 1.5
+        tp_points = atr * 3.0
+    else:
+        # Fallback to hard 50 pips if ATR fails
+        pip_mult = 10 if digits in [3, 5] else 1
+        sl_points = 50 * pip_mult * point
+        tp_points = 100 * pip_mult * point
+
+    sl_price = price - sl_points if action == mt5.ORDER_TYPE_BUY else price + sl_points
+    tp_price = price + tp_points if action == mt5.ORDER_TYPE_BUY else price - tp_points
+    
+    sl_request = {
+        "action": mt5.TRADE_ACTION_SLTP,
+        "position": ticket,
+        "symbol": symbol,
+        "sl": round(sl_price, digits),
+        "tp": round(tp_price, digits),
+        "magic": magic_number
+    }
+    
+    sl_res = mt5.order_send(sl_request)
+    if sl_res.retcode != mt5.TRADE_RETCODE_DONE:
+        logging.error(f"[{symbol}] CRITICAL WARNING: Hard SL/TP application failed for ticket {ticket}! Code: {sl_res.retcode} Comment: {sl_res.comment}")
+    else:
+        logging.info(f"[{symbol}] Hard SL successfully attached to ticket {ticket}")
+    
+    logging.info(f"[{symbol}] SUCCESS - Opened {trade_type} | Strat: {strat_name} | Ticket: {ticket}")
     return result
 
 def trailing_stop_manager(base_dna):
@@ -134,8 +177,12 @@ def trailing_stop_manager(base_dna):
         try:
             positions = mt5.positions_get()
             if positions is None:
-                time.sleep(1)
-                continue
+                # MT5 might be disconnected, try to reconnect
+                if not init_mt5():
+                    THREAD_STATUS["TRAILING_ENGINE"] = "Error: MT5 Disconnected"
+                    time.sleep(5)
+                    continue
+                positions = () # Set to empty tuple if no positions after reconnecting
                 
             for pos in positions:
                 # Only manage our algorithmic trades
@@ -146,42 +193,80 @@ def trailing_stop_manager(base_dna):
                 ticket = pos.ticket
                 comment = pos.comment
                 
-                # Fetch the exact DNA used for this position
-                strat_key = f"{symbol}:{comment}:M1" # Fallback to M1 default
-                # In a live environment, we dynamically match this better.
-                dna = base_dna.get(strat_key, {"tsl_a": 0.05, "tsl_t": 0.02})
-                
-                tsl_a = dna.get("tsl_a", 0.05)
-                tsl_t = dna.get("tsl_t", 0.02)
-                
                 info = mt5.symbol_info(symbol)
-                if not info or info.point == 0: continue
-                
+                if not info: continue
+                digits = info.digits
                 point = info.point
                 tick = mt5.symbol_info_tick(symbol)
-                if tick is None: continue
+                if tick is None or point == 0: continue
                 price_current = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
+                open_price = pos.price_open
                 
-                # Dynamic ATR Trailing SL logic could be inserted here
-                # Simplified check to show the concept
-                profit_points = (price_current - pos.price_open) / point if pos.type == mt5.ORDER_TYPE_BUY else (pos.price_open - price_current) / point
+                profit_points = (price_current - open_price) / point if pos.type == mt5.ORDER_TYPE_BUY else (open_price - price_current) / point
                 
-                # If profit > Activation Threshold (e.g. 50 points), move SL
-                if profit_points > (tsl_a * 1000):
-                    new_sl = price_current - (tsl_t * 1000 * point) if pos.type == mt5.ORDER_TYPE_BUY else price_current + (tsl_t * 1000 * point)
+                # Dynamic ATR Trailing SL logic (TP1 / TP2 / TP3)
+                try:
+                    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 14)
+                    if rates is not None and len(rates) > 0:
+                        atr = sum((r['high'] - r['low']) for r in rates) / len(rates)
+                    else:
+                        atr = 0.0
+                except:
+                    atr = 0.0
                     
-                    # Only modify if new SL is better than old SL
-                    if pos.sl == 0.0 or (pos.type == mt5.ORDER_TYPE_BUY and new_sl > pos.sl) or (pos.type == mt5.ORDER_TYPE_SELL and new_sl < pos.sl):
-                        request = {
-                            "action": mt5.TRADE_ACTION_SLTP,
-                            "position": ticket,
-                            "symbol": symbol,
-                            "sl": new_sl,
-                            "tp": pos.tp,
-                        }
-                        mt5.order_send(request)
-                        logging.info(f"[{symbol}] Trailing Stop tightened for Ticket {ticket} -> {new_sl:.5f}")
+                atr_points = (atr / point) if point > 0 and atr > 0 else 150 # Fallback 150 points
+                
+                tp1 = atr_points * 1.0
+                tp2 = atr_points * 2.0
+                
+                new_sl = pos.sl
+                if profit_points >= tp2:
+                    # Hit TP2, move SL to TP1
+                    new_sl = open_price + (tp1 * point) if pos.type == mt5.ORDER_TYPE_BUY else open_price - (tp1 * point)
+                elif profit_points >= tp1:
+                    # Hit TP1, move SL to Breakeven (+15 points for fees)
+                    new_sl = open_price + (15 * point) if pos.type == mt5.ORDER_TYPE_BUY else open_price - (15 * point)
+                    
+                new_sl = round(new_sl, digits)
+                should_update = False
+                if pos.type == mt5.ORDER_TYPE_BUY and new_sl > pos.sl and new_sl < price_current:
+                    should_update = True
+                elif pos.type == mt5.ORDER_TYPE_SELL and (pos.sl == 0.0 or new_sl < pos.sl) and new_sl > price_current:
+                    should_update = True
+                    
+                if should_update and new_sl != pos.sl:
+                    request = {
+                        "action": mt5.TRADE_ACTION_SLTP,
+                        "position": ticket,
+                        "symbol": symbol,
+                        "sl": new_sl,
+                        "tp": pos.tp,
+                    }
+                    mt5.order_send(request)
+                    logging.info(f"[{symbol}] Strategy Step-Trail: Locked SL to {new_sl}")
                         
+            # Dump positions for Dashboard
+            pos_data = []
+            for pos in positions:
+                tick = mt5.symbol_info_tick(pos.symbol)
+                curr_price = 0.0
+                if tick:
+                    curr_price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
+                pos_data.append({
+                    "symbol": pos.symbol,
+                    "ticket": pos.ticket,
+                    "type": "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL",
+                    "volume": pos.volume,
+                    "price_open": pos.price_open,
+                    "price_current": curr_price,
+                    "profit": pos.profit,
+                    "comment": pos.comment
+                })
+            try:
+                with open(BASE_DIR / "positions_status.json", "w") as f:
+                    json.dump(pos_data, f)
+            except: pass
+            
             THREAD_STATUS["TRAILING_ENGINE"] = f"Monitoring {len(positions)} Positions"
             time.sleep(1) # Check every second
             
@@ -197,6 +282,7 @@ def process_symbol(symbol, base_dna):
     logging.info(f"[{symbol}] Thread Started. Polling for AI Entry conditions.")
     
     control_file = BASE_DIR / "control_flags.json"
+    last_trade_time = 0
     
     while True:
         try:
@@ -216,11 +302,17 @@ def process_symbol(symbol, base_dna):
             # Step 1: Check MT5 connection
             if mt5.terminal_info() is None:
                 THREAD_STATUS[symbol] = "Error: MT5 Disconnected"
+                init_mt5() # Attempt auto-reconnect
                 time.sleep(5)
                 continue
                 
+            # Map XM Global symbols back to standard DNA keys
+            dna_symbol_key = symbol
+            if symbol == "GOLD": dna_symbol_key = "XAUUSD"
+            elif symbol == "SILVER": dna_symbol_key = "XAGUSD"
+            
             # Extract ALL DNA assigned to this specific symbol
-            symbol_dnas = {k: v for k, v in base_dna.items() if k.startswith(f"{symbol}:")}
+            symbol_dnas = {k: v for k, v in base_dna.items() if k.startswith(f"{dna_symbol_key}:")}
             
             if not symbol_dnas:
                 THREAD_STATUS[symbol] = "No DNA assigned."
@@ -228,6 +320,13 @@ def process_symbol(symbol, base_dna):
                 continue
                 
             THREAD_STATUS[symbol] = f"Active | Scanning {len(symbol_dnas)} Strategies"
+            
+            # Step 2: Prevent trade stacking. If we already have an open trade for this symbol, wait.
+            open_positions = mt5.positions_get(symbol=symbol)
+            if open_positions is not None and len([p for p in open_positions if p.magic == 888888]) > 0:
+                THREAD_STATUS[symbol] = "Active | Trade currently open"
+                time.sleep(5)
+                continue
             
             # Fetch generic M5 data for algorithmic calculation
             rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 100)
@@ -247,15 +346,15 @@ def process_symbol(symbol, base_dna):
                             curr_close = df['close'].iloc[-1]
                             gap_size = abs(curr_open - prev_close)
                             # If Gap > Threshold, fade the gap
-                            if gap_size > (prev_close * 0.001):
+                            if gap_size > (prev_close * 0.001) and (time.time() - last_trade_time > 60):
                                 if curr_open > prev_close and curr_close < curr_open: # Gap Up -> Sell
                                     lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                     place_order(symbol, "SELL", lot, strat_name)
-                                    time.sleep(60)
+                                    last_trade_time = time.time()
                                 elif curr_open < prev_close and curr_close > curr_open: # Gap Down -> Buy
                                     lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                     place_order(symbol, "BUY", lot, strat_name)
-                                    time.sleep(60)
+                                    last_trade_time = time.time()
                                     
                     elif "RSI" in strat_name or "MEAN_REVERSION" in strat_name:
                         # Dummy RSI logic representation
@@ -266,14 +365,14 @@ def process_symbol(symbol, base_dna):
                             rs = gain / loss
                             rsi = 100 - (100 / (1 + rs)).iloc[-1]
                             
-                            if rsi < 30: # Oversold
+                            if rsi < 30 and (time.time() - last_trade_time > 60): # Oversold
                                 lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                 place_order(symbol, "BUY", lot, strat_name)
-                                time.sleep(60)
-                            elif rsi > 70: # Overbought
+                                last_trade_time = time.time()
+                            elif rsi > 70 and (time.time() - last_trade_time > 60): # Overbought
                                 lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                 place_order(symbol, "SELL", lot, strat_name)
-                                time.sleep(60)
+                                last_trade_time = time.time()
                                 
                     elif "TREND" in strat_name or "MOMENTUM" in strat_name:
                         # Standard MA Crossover
@@ -283,14 +382,14 @@ def process_symbol(symbol, base_dna):
                             fast_prev = df['close'].rolling(9).mean().iloc[-2]
                             slow_prev = df['close'].rolling(21).mean().iloc[-2]
                             
-                            if fast_prev < slow_prev and fast_current > slow_current:
+                            if fast_prev < slow_prev and fast_current > slow_current and (time.time() - last_trade_time > 60):
                                 lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                 place_order(symbol, "BUY", lot, strat_name)
-                                time.sleep(60)
-                            elif fast_prev > slow_prev and fast_current < slow_current:
+                                last_trade_time = time.time()
+                            elif fast_prev > slow_prev and fast_current < slow_current and (time.time() - last_trade_time > 60):
                                 lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
                                 place_order(symbol, "SELL", lot, strat_name)
-                                time.sleep(60)
+                                last_trade_time = time.time()
             else:
                 THREAD_STATUS[symbol] = "Waiting for ticks..."
             
@@ -314,7 +413,7 @@ def run_live_engine():
         
     logging.info("Starting Multi-Threaded AI Strategy Executor...")
     dna_db = get_optimized_dna()
-    symbols_to_trade = ["XAUUSD", "BTCUSD", "ETHUSD", "EURUSD", "GBPUSD", "USDJPY", "XAGUSD", "AUDUSD"]
+    symbols_to_trade = ["GOLD", "BTCUSD", "ETHUSD", "EURUSD", "GBPUSD", "USDJPY", "SILVER", "AUDUSD"]
     
     # Start ThreadPoolExecutor (Adding +1 for the Trailing Manager)
     with concurrent.futures.ThreadPoolExecutor(max_workers=len(symbols_to_trade) + 1) as executor:

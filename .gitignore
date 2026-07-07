@@ -1,0 +1,18 @@
+# Virtual Environments
+Lib/
+Scripts/
+__pycache__/
+*.pyc
+
+# Logs and Session Files
+*.log
+*.session
+*.session-journal
+
+# Executables and Binaries
+*.exe
+*.dll
+
+# IDE and Temp files
+*.code-workspace
+*.temp

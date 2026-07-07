@@ -2,8 +2,11 @@ import asyncio
 import json
 import logging
 import re
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
+
+SYMBOL_COOLDOWN = {}
 
 # ------------------------------------------------------------
 # Configuration –‑ adjust paths if you move the repo
@@ -53,7 +56,6 @@ def load_channel_map() -> dict:
         "sureshot_fx": "Sureshot FX",
         "-1001661400724": "SureShot GOLD (VIP)",
         "-1001986940315": "GOLD TRADE SIGNALS",
-        "-1002871728862": "ZERO TO HERO PRIMIUM GROUP",
         "-1001520053536": "Coin Chief",
         "-1001234364040": "Binance Killers VIP",
         "-1001652601224": "Crypto World Updates",
@@ -62,7 +64,6 @@ def load_channel_map() -> dict:
         "-1001737978232": "CryptoSimplicity News",
         "-1001754095061": "Crypto Radar",
         "-1001422000261": "Sureshot FX VIP",
-        "tradebussunessfx_007": "tradebussunessfx_007",
         "GOLD_MAST78": "GOLD_MAST78",
         "forexero": "forexero",
         "forexking1132": "forexking1132",
@@ -97,33 +98,58 @@ def is_forex(symbol: str) -> bool:
 # AI request –‑ simple wrapper (replace with actual Gemini/OpenAI call)
 # ------------------------------------------------------------
 import httpx
+import asyncio
+
 async def ask_ai(prompt: str) -> str:
-    if AI_CFG["provider"].lower() == "gemini":
-        endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-        url = f"{endpoint}?key={AI_CFG['api_key']}"
-        payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}]}
-        resp = httpx.post(url, json=payload, timeout=30.0)
-        resp.raise_for_status()
-        return resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-    else:  # OpenAI fallback
-        endpoint = "https://api.openai.com/v1/chat/completions"
-        headers = {"Authorization": f"Bearer {AI_CFG['api_key']}"}
-        payload = {
-            "model": "gpt-4o-mini",
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.0,
-        }
-        resp = httpx.post(endpoint, json=payload, headers=headers, timeout=30.0)
-        resp.raise_for_status()
-        return resp.json()["choices"][0]["message"]["content"].strip()
+    for attempt in range(3):
+        try:
+            if AI_CFG["provider"].lower() == "gemini":
+                # Using Ollama Local API
+                endpoint = "http://127.0.0.1:11434/api/generate"
+                payload = {
+                    "model": "llama3.2",
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "temperature": 0.0,
+                        "num_thread": 4
+                    }
+                }
+                resp = httpx.post(endpoint, json=payload, timeout=45.0)
+                resp.raise_for_status()
+                return resp.json()["response"].strip()
+            else:  # OpenAI fallback
+                endpoint = "https://api.openai.com/v1/chat/completions"
+                headers = {"Authorization": f"Bearer {AI_CFG['api_key']}"}
+                payload = {
+                    "model": "gpt-4o-mini",
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0.0,
+                }
+                resp = httpx.post(endpoint, json=payload, headers=headers, timeout=30.0)
+                resp.raise_for_status()
+                return resp.json()["choices"][0]["message"]["content"].strip()
+        except httpx.HTTPStatusError as e:
+            if attempt < 2:
+                log.warning(f"AI API Error (Attempt {attempt+1}): {e.response.status_code}. Retrying in 2 seconds...")
+                await asyncio.sleep(2)
+            else:
+                log.error(f"AI API Final Failure: {e}")
+                raise
+        except Exception as e:
+            if attempt < 2:
+                log.warning(f"AI API Exception (Attempt {attempt+1}): {e}. Retrying in 2 seconds...")
+                await asyncio.sleep(2)
+            else:
+                raise
 
 def build_prompt(message: str, channel_name: str) -> str:
     return (
         f"You are a Forex trading assistant. The following Telegram message came from the channel \"{channel_name}\". "
         f"It may contain a trade signal, a promotion, or just chatter.\n"
         f"If it contains a *real* trade signal, respond with **exactly** one line in the form:\n"
-        f"    ACTION SYMBOL ENTRY_PRICE [LOT]\n"
-        f"where ACTION is BUY or SELL, SYMBOL is like EURUSD or GBPJPY. IMPORTANT: If the signal is for Gold (XAUUSD, XAU, etc), use the symbol GOLD. ENTRY_PRICE is a number, and LOT is optional. "
+        f"    ACTION SYMBOL ENTRY_PRICE SL TP\n"
+        f"where ACTION is BUY or SELL, SYMBOL is like EURUSD or GBPJPY (use GOLD for XAU). ENTRY_PRICE, SL, and TP are numbers. If SL or TP is not given, output 0.\n"
         f"If there is no genuine trade, reply with the single word: NO_TRADE.\n"
         f"Message:\n{message}"
     )
@@ -180,10 +206,13 @@ def calculate_dynamic_lot(symbol, base_allocation=200.0, leverage=1000, risk_pct
 
 def get_atr_fallback(symbol):
     """Fallback ATR calculation if Telegram signal misses SL/TP"""
-    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 14)
-    if rates is None or len(rates) == 0: return 0.0
-    df = pd.DataFrame(rates)
-    return (df['high'] - df['low']).mean()
+    try:
+        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 14)
+        if rates is None or len(rates) == 0: return 0.0
+        tr_sum = sum((r['high'] - r['low']) for r in rates)
+        return tr_sum / len(rates)
+    except:
+        return 0.0
 
 def log_trade_event(source, symbol, action, entry_price, lot, sl, tp, reason):
     """Centralized logging for entry/exit reasoning"""
@@ -222,8 +251,6 @@ def place_order(symbol: str, action: str, volume: float, sl: float=0.0, tp: floa
         "volume": float(volume),
         "type": mt5.ORDER_TYPE_BUY if action == "BUY" else mt5.ORDER_TYPE_SELL,
         "price": price,
-        "sl": float(sl) if sl > 0 else 0.0,
-        "tp": float(tp) if tp > 0 else 0.0,
         "deviation": 10,
         "magic": 777777,
         "comment": f"Telegram : {channel_name}"[:31] if channel_name else "TelegramSignal",
@@ -236,9 +263,28 @@ def place_order(symbol: str, action: str, volume: float, sl: float=0.0, tp: floa
         log.error(f"Order failed (retcode {result.retcode}): {result.comment}")
         return 0
         
+    ticket = result.order
+    
+    # Step 2: Apply Hard Stop Loss and Take Profit
+    if sl > 0 or tp > 0:
+        digits = mt5.symbol_info(symbol).digits
+        sl_request = {
+            "action": mt5.TRADE_ACTION_SLTP,
+            "position": ticket,
+            "symbol": symbol,
+            "sl": round(float(sl), digits) if sl > 0 else 0.0,
+            "tp": round(float(tp), digits) if tp > 0 else 0.0,
+            "magic": 777777
+        }
+        sl_res = mt5.order_send(sl_request)
+        if sl_res.retcode != mt5.TRADE_RETCODE_DONE:
+            log.error(f"SL/TP modification failed for ticket {ticket}: {sl_res.comment}")
+        else:
+            log.info(f"SL/TP successfully applied to ticket {ticket}")
+
     log_trade_event(f"Telegram ({channel_name})", symbol, action, price, volume, sl, tp, "AI Signal Parse")
-    log.info(f"Order placed – ticket {result.order}, {action} {symbol} {volume}")
-    return result.order
+    log.info(f"Order placed – ticket {ticket}, {action} {symbol} {volume} (SL: {sl}, TP: {tp})")
+    return ticket
 
 def close_position(ticket: int, symbol: str, action: str, volume: float) -> bool:
     if DRY_RUN:
@@ -305,6 +351,21 @@ async def handle_message(event, channel_map: dict):
     elif symbol in ["BTC", "BTC/USD"]: symbol = "BTCUSD"
     elif symbol in ["ETH", "ETH/USD"]: symbol = "ETHUSD"
     
+    # ---- Safeguard 1: Signal Spam Cooldown ----
+    now = time.time()
+    if now - SYMBOL_COOLDOWN.get(symbol, 0) < 3600:
+        log.warning(f"Rejecting {symbol} signal - active 60-minute cooldown!")
+        return
+        
+    # ---- Safeguard 2: Global Position Limit ----
+    if init_mt5():
+        positions = mt5.positions_get()
+        if positions and len(positions) >= 3:
+            log.warning("Rejecting signal - Global Position Limit (3) reached!")
+            shutdown_mt5()
+            return
+        shutdown_mt5()
+    
     try:
         entry_price = float(entry_str)
     except ValueError:
@@ -314,9 +375,9 @@ async def handle_message(event, channel_map: dict):
     # Dynamic Lot Sizing allocating $200 per Telegram channel trade
     volume = calculate_dynamic_lot(symbol, base_allocation=200.0, leverage=1000)
     
-    # Optional SL / TP parsed from AI (Assuming format: ACTION SYMBOL ENTRY [LOT] [SL] [TP])
-    sl_val = float(parts[4]) if len(parts) >= 5 else 0.0
-    tp_val = float(parts[5]) if len(parts) >= 6 else 0.0
+    # SL / TP parsed from AI (Format: ACTION SYMBOL ENTRY SL TP)
+    sl_val = float(parts[3]) if len(parts) >= 4 else 0.0
+    tp_val = float(parts[4]) if len(parts) >= 5 else 0.0
 
     # ---- Place order ----
     if not init_mt5():
@@ -326,13 +387,86 @@ async def handle_message(event, channel_map: dict):
     shutdown_mt5()
     if ticket == 0:
         return
+        
+    # Mark symbol as traded to activate 60-minute cooldown
+    SYMBOL_COOLDOWN[symbol] = time.time()
 
-    # ---- Schedule reverse order after 30 min ----
-    close_time = datetime.now() + timedelta(minutes=30)
-    async def close_task():
-        await asyncio.sleep((close_time - datetime.now()).total_seconds())
-        close_position(ticket, symbol, action, volume)
-    asyncio.create_task(close_task())
+# ------------------------------------------------------------
+# Safeguard 3: Robust Orphan Trade Monitor
+# ------------------------------------------------------------
+async def monitor_orphans():
+    log.info("Starting background orphan monitor (30-min auto-close)")
+    counter = 0
+    while True:
+        try:
+            # Write Telegram Engine Heartbeat
+            try:
+                with open(BASE_DIR / "telegram_status.json", "w") as f:
+                    json.dump({"last_heartbeat": time.time(), "status": "Active"}, f)
+            except:
+                pass
+                
+            if counter % 6 == 0:
+                if init_mt5():
+                    positions = mt5.positions_get()
+                    if positions:
+                        now = time.time()
+                        for pos in positions:
+                            if pos.magic == 777777: # Only manage Telegram bot trades
+                                # --- DYNAMIC TP1 / TP2 / TP3 STEP-TRAILING LOGIC ---
+                                point = mt5.symbol_info(pos.symbol).point
+                                digits = mt5.symbol_info(pos.symbol).digits
+                                tick = mt5.symbol_info_tick(pos.symbol)
+                                
+                                if tick and point > 0:
+                                    current_price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
+                                    open_price = pos.price_open
+                                    profit_points = (current_price - open_price)/point if pos.type == mt5.ORDER_TYPE_BUY else (open_price - current_price)/point
+                                    
+                                    atr = get_atr_fallback(pos.symbol)
+                                    atr_points = (atr / point) if point > 0 and atr > 0 else 150 # Fallback 150 points
+                                    
+                                    tp1 = atr_points * 1.0
+                                    tp2 = atr_points * 2.0
+                                    
+                                    new_sl = pos.sl
+                                    if profit_points >= tp2:
+                                        # Hit TP2 (2x ATR), move SL to TP1
+                                        new_sl = open_price + (tp1 * point) if pos.type == mt5.ORDER_TYPE_BUY else open_price - (tp1 * point)
+                                    elif profit_points >= tp1:
+                                        # Hit TP1 (1x ATR), move SL to Breakeven (+15 points for fees)
+                                        new_sl = open_price + (15 * point) if pos.type == mt5.ORDER_TYPE_BUY else open_price - (15 * point)
+                                        
+                                    new_sl = round(new_sl, digits)
+                                    # Update if the new SL is tighter than current SL
+                                    should_update = False
+                                    if pos.type == mt5.ORDER_TYPE_BUY and new_sl > pos.sl and new_sl < current_price:
+                                        should_update = True
+                                    elif pos.type == mt5.ORDER_TYPE_SELL and (pos.sl == 0.0 or new_sl < pos.sl) and new_sl > current_price:
+                                        should_update = True
+                                        
+                                    if should_update and new_sl != pos.sl:
+                                        req = {
+                                            "action": mt5.TRADE_ACTION_SLTP,
+                                            "position": pos.ticket,
+                                            "symbol": pos.symbol,
+                                            "sl": new_sl,
+                                            "tp": pos.tp
+                                        }
+                                        res = mt5.order_send(req)
+                                        if res.retcode == mt5.TRADE_RETCODE_DONE:
+                                            log.info(f"[{pos.symbol}] Dynamic Step-Trail (TP Logic): Locked SL to {new_sl}")
+
+                                # --- TIME-BASED AUTO CLOSE ---
+                                if (now - pos.time) > 1800:
+                                    action_type = "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL"
+                                    log.info(f"Auto-closing orphaned position {pos.ticket} ({pos.symbol}) after 30 mins")
+                                    close_position(pos.ticket, pos.symbol, action_type, pos.volume)
+                    shutdown_mt5()
+            counter += 1
+        except Exception as e:
+            log.error(f"Orphan monitor error: {e}")
+        await asyncio.sleep(10)
 
 # ------------------------------------------------------------
 # Entry point –‑ start Telethon client and listen
@@ -362,19 +496,29 @@ async def main():
         log.warning(f"Could not start client 2: {e}")
         client2 = None
 
-    chat_list = [int(k) if str(k).lstrip('-').isdigit() else k for k in channel_map.keys()]
-    
-    @client1.on(events.NewMessage(chats=chat_list))
+    @client1.on(events.NewMessage())
     async def on_new1(event):
-        await handle_message(event, channel_map)
+        chat = await event.get_chat()
+        chat_id_str = str(chat.id)
+        chat_id_str_100 = f"-100{abs(chat.id)}"
+        if chat_id_str in channel_map or chat_id_str_100 in channel_map:
+            await handle_message(event, channel_map)
+        elif hasattr(chat, "username") and chat.username and chat.username in channel_map:
+            await handle_message(event, channel_map)
         
     if client2:
-        @client2.on(events.NewMessage(chats=chat_list))
+        @client2.on(events.NewMessage())
         async def on_new2(event):
-            await handle_message(event, channel_map)
+            chat = await event.get_chat()
+            chat_id_str = str(chat.id)
+            chat_id_str_100 = f"-100{abs(chat.id)}"
+            if chat_id_str in channel_map or chat_id_str_100 in channel_map:
+                await handle_message(event, channel_map)
+            elif hasattr(chat, "username") and chat.username and chat.username in channel_map:
+                await handle_message(event, channel_map)
 
     log.info("Listening for new signals on all active accounts… (press Ctrl+C to stop)")
-    tasks = [client1.run_until_disconnected()]
+    tasks = [client1.run_until_disconnected(), monitor_orphans()]
     if client2:
         tasks.append(client2.run_until_disconnected())
     
