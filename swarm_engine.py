@@ -66,8 +66,7 @@ class OllamaSwarmEngine:
             return {"status": "REJECTED", "reason": "Classified as JUNK by Watcher"}
             
         if classification == "UPDATE":
-            # Pass to an update handler (Phase 2 expansion)
-            self._log_audit(account_id, channel_name, raw_message, {}, "UPDATE", "Signal is an update/closure")
+            # Silently drop updates
             return {"status": "UPDATE_REQUIRED", "raw": raw_message}
             
         if classification != "NEW_TRADE":
@@ -88,7 +87,7 @@ class OllamaSwarmEngine:
             log.info(f"[TRIGGER] Extraction Successful: {trade_data['action']} {trade_data['symbol']}")
         except json.JSONDecodeError:
             log.error(f"[TRIGGER] Failed to output valid JSON. Output: {trigger_resp}")
-            self._log_audit(account_id, channel_name, raw_message, {}, "FAILED", "Trigger hallucinated non-JSON output")
+            # Silently drop if trigger fails to extract valid JSON (meaning it wasn't a real signal)
             return {"status": "FAILED", "reason": "Trigger hallucinated non-JSON output"}
 
         # 3. The Governor
@@ -100,7 +99,6 @@ class OllamaSwarmEngine:
             risk_decision = json.loads(clean_gov)
         except json.JSONDecodeError:
             log.error(f"[GOVERNOR] Failed to output valid JSON. Output: {governor_resp}")
-            self._log_audit(account_id, channel_name, raw_message, trade_data, "FAILED", "Governor hallucinated non-JSON output")
             return {"status": "FAILED", "reason": "Governor hallucinated non-JSON output"}
 
         if not risk_decision.get("approved", False):
@@ -155,7 +153,13 @@ class OllamaSwarmEngine:
                 
         # Clean raw message
         clean_raw = raw_message.replace('\n', ' ')[:150] + "..." if len(raw_message) > 150 else raw_message.replace('\n', ' ')
-        parsed_str = f"{parsed_data.get('action', '')} {parsed_data.get('symbol', '')} @ {parsed_data.get('entry', '')}" if status == "APPROVED" else "N/A"
+        
+        # Always show parsed data if it exists, even if rejected
+        action = parsed_data.get('action', '')
+        symbol = parsed_data.get('symbol', '')
+        entry = parsed_data.get('entry', '')
+        
+        parsed_str = f"{action} {symbol} @ {entry}" if symbol else "N/A"
         
         with open(audit_file, "a", newline='', encoding="utf-8") as f:
             writer = csv.writer(f)
