@@ -45,81 +45,41 @@ def get_optimized_dna():
         logging.warning("AI DNA not found. Falling back to default.")
         return {}
 
-def calculate_dynamic_lot(symbol, base_allocation=200.0, leverage=1000, risk_pct=0.05):
+def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     """
-    PHASE 2: Dynamic Compounding Margin Sizing
-    Calculates the exact lot size based on a $200 allocated compounding margin
-    using 1000x leverage. Aggressively scales lot sizes to hit 40% daily ROI limits.
+    STRICT 1% RISK ALGORITHM:
+    Calculates exact lot size based on account equity and Stop-Loss distance in points.
     """
     info = mt5.symbol_info(symbol)
-    if not info:
-        return 0.01 # Fallback to micro-lot if symbol info fails
+    if not info: return 0.01
     
-    # 1. Fetch current account equity
     account = mt5.account_info()
-    if account is None:
+    if not account: return 0.01
+        
+    equity = account.equity
+    risk_amount = equity * risk_pct
+    
+    tick_value = info.trade_tick_value
+    if tick_value == 0 or sl_points_count <= 0:
         return 0.01
         
-    # We pretend the equity is isolated to our base allocation for compounding
-    # If this was real compounding, we'd track the $200 growth. 
-    # For now, we simulate the aggressive scaling:
-    total_leverage_power = base_allocation * leverage
+    true_volume = risk_amount / (sl_points_count * tick_value)
     
-    # Contract size dictates how much 1 lot costs
-    contract_size = info.trade_contract_size
-    price = info.ask
+    step = info.volume_step if info.volume_step > 0 else 0.01
+    scaled_lot = round(true_volume / step) * step
     
-    # Calculate max possible volume we can buy with $200 at 1000x leverage
-    if price == 0 or contract_size == 0:
-        return 0.01
-        
-    max_volume = total_leverage_power / (price * contract_size)
-    
-    # Risk exactly `risk_pct` (e.g. 5%) of our maximum leveraged volume for the trade
-    target_volume = max_volume * risk_pct
-    
-    # Round to the broker's allowed step (e.g., 0.01)
-    step = info.volume_step
-    target_volume = round(target_volume / step) * step
-    
-    # Ensure it's within bounds
-    target_volume = max(info.volume_min, min(target_volume, info.volume_max))
-    
-    logging.info(f"[{symbol}] Phase 2 Dynamic Scaling: Calculated {target_volume:.2f} Lots based on ${base_allocation} @ 1000x")
-    return target_volume
+    return max(info.volume_min, min(scaled_lot, info.volume_max))
 
-def place_order(symbol, trade_type, lot, strat_name, magic_number=888888):
+def place_order(symbol, trade_type, strat_name, magic_number=888888):
     """
-    Executes the trade on MT5 with the explicit Strategy Name attached as a comment.
+    Executes the trade on MT5 with embedded ATR Stop-Loss to prevent naked positions.
     """
     tick = mt5.symbol_info_tick(symbol)
     if tick is None:
         logging.error(f"[{symbol}] Failed to get tick data (Market Closed?)")
         return None
-        
-    action = mt5.ORDER_TYPE_BUY if trade_type == "BUY" else mt5.ORDER_TYPE_SELL
-    price = tick.ask if action == mt5.ORDER_TYPE_BUY else tick.bid
-    
-    request = {
-        "action": mt5.TRADE_ACTION_DEAL,
-        "symbol": symbol,
-        "volume": float(lot),
-        "type": action,
-        "price": price,
-        "magic": magic_number,
-        "comment": strat_name,  # Attaching strategy name for tracking!
-        "type_time": mt5.ORDER_TIME_GTC,
-        "type_filling": mt5.ORDER_FILLING_IOC,
-    }
-    
-    result = mt5.order_send(request)
-    if result.retcode != mt5.TRADE_RETCODE_DONE:
-        logging.error(f"[{symbol}] Order Failed! Code: {result.retcode}")
-        return None
-        
-    ticket = result.order
-    
-    # PHASE 2: Dynamic ATR-based Stop Loss and Take Profit
+
+    # Calculate ATR first
     try:
         rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 14)
         if rates is not None and len(rates) > 0:
@@ -129,38 +89,50 @@ def place_order(symbol, trade_type, lot, strat_name, magic_number=888888):
     except:
         atr = 0.0
 
-    point = mt5.symbol_info(symbol).point
-    digits = mt5.symbol_info(symbol).digits
+    info = mt5.symbol_info(symbol)
+    point = info.point
+    digits = info.digits
     
     if atr > 0:
-        # Dynamic ATR Stops: SL = 1.5x ATR, TP = 3.0x ATR
-        sl_points = atr * 1.5
-        tp_points = atr * 3.0
+        sl_points_raw = atr * 1.5
+        tp_points_raw = atr * 3.0
     else:
-        # Fallback to hard 50 pips if ATR fails
         pip_mult = 10 if digits in [3, 5] else 1
-        sl_points = 50 * pip_mult * point
-        tp_points = 100 * pip_mult * point
+        sl_points_raw = 50 * pip_mult * point
+        tp_points_raw = 100 * pip_mult * point
 
-    sl_price = price - sl_points if action == mt5.ORDER_TYPE_BUY else price + sl_points
-    tp_price = price + tp_points if action == mt5.ORDER_TYPE_BUY else price - tp_points
+    sl_points_count = sl_points_raw / point if point > 0 else 1000
     
-    sl_request = {
-        "action": mt5.TRADE_ACTION_SLTP,
-        "position": ticket,
+    # Calculate strict 1% risk lot sizing
+    lot = calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01)
+
+    action = mt5.ORDER_TYPE_BUY if trade_type == "BUY" else mt5.ORDER_TYPE_SELL
+    price = tick.ask if action == mt5.ORDER_TYPE_BUY else tick.bid
+    
+    sl_price = price - sl_points_raw if action == mt5.ORDER_TYPE_BUY else price + sl_points_raw
+    tp_price = price + tp_points_raw if action == mt5.ORDER_TYPE_BUY else price - tp_points_raw
+
+    request = {
+        "action": mt5.TRADE_ACTION_DEAL,
         "symbol": symbol,
+        "volume": float(lot),
+        "type": action,
+        "price": price,
         "sl": round(sl_price, digits),
         "tp": round(tp_price, digits),
-        "magic": magic_number
+        "deviation": 20,
+        "magic": magic_number,
+        "comment": strat_name,
+        "type_time": mt5.ORDER_TIME_GTC,
+        "type_filling": mt5.ORDER_FILLING_IOC,
     }
     
-    sl_res = mt5.order_send(sl_request)
-    if sl_res.retcode != mt5.TRADE_RETCODE_DONE:
-        logging.error(f"[{symbol}] CRITICAL WARNING: Hard SL/TP application failed for ticket {ticket}! Code: {sl_res.retcode} Comment: {sl_res.comment}")
-    else:
-        logging.info(f"[{symbol}] Hard SL successfully attached to ticket {ticket}")
-    
-    logging.info(f"[{symbol}] SUCCESS - Opened {trade_type} | Strat: {strat_name} | Ticket: {ticket}")
+    result = mt5.order_send(request)
+    if result.retcode != mt5.TRADE_RETCODE_DONE:
+        logging.error(f"[{symbol}] Order Failed! Code: {result.retcode} Comment: {result.comment}")
+        return None
+        
+    logging.info(f"[{symbol}] SUCCESS - Opened {trade_type} | Strat: {strat_name} | Lot: {lot} | SL: {sl_price}")
     return result
 
 def trailing_stop_manager(base_dna):
@@ -348,12 +320,10 @@ def process_symbol(symbol, base_dna):
                             # If Gap > Threshold, fade the gap
                             if gap_size > (prev_close * 0.001) and (time.time() - last_trade_time > 60):
                                 if curr_open > prev_close and curr_close < curr_open: # Gap Up -> Sell
-                                    lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                    place_order(symbol, "SELL", lot, strat_name)
+                                    place_order(symbol, "SELL", strat_name)
                                     last_trade_time = time.time()
                                 elif curr_open < prev_close and curr_close > curr_open: # Gap Down -> Buy
-                                    lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                    place_order(symbol, "BUY", lot, strat_name)
+                                    place_order(symbol, "BUY", strat_name)
                                     last_trade_time = time.time()
                                     
                     elif "RSI" in strat_name or "MEAN_REVERSION" in strat_name:
@@ -366,12 +336,10 @@ def process_symbol(symbol, base_dna):
                             rsi = 100 - (100 / (1 + rs)).iloc[-1]
                             
                             if rsi < 30 and (time.time() - last_trade_time > 60): # Oversold
-                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                place_order(symbol, "BUY", lot, strat_name)
+                                place_order(symbol, "BUY", strat_name)
                                 last_trade_time = time.time()
                             elif rsi > 70 and (time.time() - last_trade_time > 60): # Overbought
-                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                place_order(symbol, "SELL", lot, strat_name)
+                                place_order(symbol, "SELL", strat_name)
                                 last_trade_time = time.time()
                                 
                     elif "TREND" in strat_name or "MOMENTUM" in strat_name:
@@ -383,12 +351,10 @@ def process_symbol(symbol, base_dna):
                             slow_prev = df['close'].rolling(21).mean().iloc[-2]
                             
                             if fast_prev < slow_prev and fast_current > slow_current and (time.time() - last_trade_time > 60):
-                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                place_order(symbol, "BUY", lot, strat_name)
+                                place_order(symbol, "BUY", strat_name)
                                 last_trade_time = time.time()
                             elif fast_prev > slow_prev and fast_current < slow_current and (time.time() - last_trade_time > 60):
-                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                place_order(symbol, "SELL", lot, strat_name)
+                                place_order(symbol, "SELL", strat_name)
                                 last_trade_time = time.time()
 
                     elif "BREAKOUT" in strat_name:
@@ -399,12 +365,10 @@ def process_symbol(symbol, base_dna):
                             curr_close = df['close'].iloc[-1]
                             
                             if curr_close > recent_high and (time.time() - last_trade_time > 60):
-                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                place_order(symbol, "BUY", lot, strat_name)
+                                place_order(symbol, "BUY", strat_name)
                                 last_trade_time = time.time()
                             elif curr_close < recent_low and (time.time() - last_trade_time > 60):
-                                lot = calculate_dynamic_lot(symbol, base_allocation=200.0)
-                                place_order(symbol, "SELL", lot, strat_name)
+                                place_order(symbol, "SELL", strat_name)
                                 last_trade_time = time.time()
             else:
                 THREAD_STATUS[symbol] = "Waiting for ticks..."
