@@ -51,6 +51,7 @@ function App() {
   // Ledger Splitting Logic
   const allClosedDeals = data.mt5?.closed_deals || []
   const activeClosedDeals = activeTab === 'STRATEGIES' ? allClosedDeals.filter(d => d.magic !== 999999) : allClosedDeals.filter(d => d.magic === 999999)
+  const totalClosedProfit = activeClosedDeals.reduce((sum, d) => sum + (d.profit || 0), 0)
   
   // Isolated 50/50 Capital Base (or 5K fixed logic based on current equity / 2)
   const ledgerCapital = (account.equity || 10000) / 2
@@ -203,12 +204,12 @@ function App() {
         <div className="panel-header">
           Today's Completed Trades ({activeTab})
         </div>
-        <div className="panel-body">
+        <div className="panel-body" style={{maxHeight: '300px', overflowY: 'auto'}}>
           {activeClosedDeals.length === 0 ? (
             <div className="no-trades-sub">No completed trades today for {activeTab}.</div>
           ) : (
             <table className="data-table">
-              <thead>
+              <thead style={{position: 'sticky', top: 0, backgroundColor: '#0f172a', zIndex: 1}}>
                 <tr>
                   <th>TIME</th>
                   <th>SYMBOL</th>
@@ -231,6 +232,12 @@ function App() {
                     </td>
                   </tr>
                 ))}
+                <tr style={{borderTop: '2px solid #334155', backgroundColor: '#1e293b'}}>
+                  <td colSpan="4" style={{textAlign: 'right', fontWeight: 'bold', padding: '10px 5px'}}>TOTAL REALIZED PNL:</td>
+                  <td className={totalClosedProfit >= 0 ? 'profit-text' : 'loss-text'} style={{textAlign: 'right', fontWeight: 'bold', padding: '10px 5px', fontSize: '14px'}}>
+                    {totalClosedProfit >= 0 ? '+' : ''}{formatMoney(totalClosedProfit)}
+                  </td>
+                </tr>
               </tbody>
             </table>
           )}
@@ -290,14 +297,15 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                {(data.all_channels || []).map((chName, i) => {
+                {(data.all_channels || []).map((chNameRaw, i) => {
+                  const chName = chNameRaw || '';
                   // Get today's date in YYYY-MM-DD
                   const todayStr = new Date().toLocaleString('en-CA', {timeZone: 'Asia/Kolkata'}).split(',')[0];
                   
                   // Find all signals for this channel (case-insensitive) AND filter for TODAY
                   const channelSignals = (data.signal_audit || []).filter(s => {
                     const isChannelMatch = s.Channel && s.Channel.toLowerCase().includes(chName.toLowerCase());
-                    const isToday = s.Timestamp && s.Timestamp.startsWith(todayStr);
+                    const isToday = s.Timestamp && typeof s.Timestamp === 'string' && s.Timestamp.startsWith(todayStr);
                     return isChannelMatch && isToday;
                   });
                   
@@ -343,15 +351,19 @@ function App() {
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  {channelSignals.map((sig, idx) => (
-                                    <tr key={idx}>
-                                      <td style={{padding: '5px'}}>{sig.Timestamp.split(' ')[1]}</td>
-                                      <td style={{padding: '5px'}}>{sig.Account}</td>
-                                      <td style={{padding: '5px', maxWidth: '300px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{sig.Raw_Signal}</td>
-                                      <td style={{padding: '5px'}}>{sig.Parsed_Signal}</td>
-                                      <td style={{padding: '5px', color: sig.Status === 'SUCCESS' ? '#10b981' : (sig.Status === 'REJECTED' ? '#ef4444' : '#fff')}}>{sig.Status}</td>
-                                    </tr>
-                                  ))}
+                                  {channelSignals.map((sig, idx) => {
+                                    const ts = sig.Timestamp || '';
+                                    const timeStr = ts.includes(' ') ? ts.split(' ')[1] : ts;
+                                    return (
+                                      <tr key={idx}>
+                                        <td style={{padding: '5px'}}>{timeStr}</td>
+                                        <td style={{padding: '5px'}}>{sig.Account || '-'}</td>
+                                        <td style={{padding: '5px', maxWidth: '300px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{sig.Raw_Signal || '-'}</td>
+                                        <td style={{padding: '5px'}}>{sig.Parsed_Signal || '-'}</td>
+                                        <td style={{padding: '5px', color: sig.Status === 'SUCCESS' ? '#10b981' : (sig.Status === 'REJECTED' ? '#ef4444' : '#fff')}}>{sig.Status || '-'}</td>
+                                      </tr>
+                                    );
+                                  })}
                                 </tbody>
                               </table>
                             </div>
