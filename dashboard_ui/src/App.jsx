@@ -53,11 +53,14 @@ function App() {
   const activeClosedDeals = activeTab === 'STRATEGIES' ? allClosedDeals.filter(d => d.magic !== 999999) : allClosedDeals.filter(d => d.magic === 999999)
   const totalClosedProfit = activeClosedDeals.reduce((sum, d) => sum + (d.profit || 0), 0)
   
-  // Isolated 50/50 Capital Base (or 5K fixed logic based on current equity / 2)
-  const ledgerCapital = (account.equity || 10000) / 2
-  // We assume margin is dynamically split for visual purposes
-  const activeMargin = activePosList.reduce((sum, p) => sum + 100 /* Mock margin per lot if real not avail */, 0) // Placeholder
-  const marginAlloc = (account.margin || 0) / 2 // Just dividing total margin evenly for visuals
+  // Truly Isolated Ledger Accounting
+  const startingBase = 5000 // 5K sandbox
+  const ledgerCapital = startingBase + currentPnl + totalUnrealized
+  
+  // Pro-rate the Used Margin based on actual lot sizes used by each ledger
+  const totalVolume = positions.reduce((sum, p) => sum + (p.volume || 0), 0)
+  const activeVolume = activePosList.reduce((sum, p) => sum + (p.volume || 0), 0)
+  const marginAlloc = totalVolume > 0 ? ((account.margin || 0) * (activeVolume / totalVolume)) : 0
 
   
   const formatMoney = (val) => {
