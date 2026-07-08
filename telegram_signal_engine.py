@@ -21,7 +21,9 @@ log = logging.getLogger(__name__)
 FOREX_GOLD_VIPS = [
     "scalping gold", "goldsnipers11", "sureshot fx", "sureshot gold", 
     "gold trade signals", "easy forex", "gold trader", "global gold insight",
-    "global profit club", "gold_mast78", "forexero", "forexking1132"
+    "global profit club", "gold_mast78", "forexero", "forexking1132",
+    "xauusd signal 99%", "josefina trader", "forex trading master",
+    "gold sniper pips", "messy forex", "forex trading tips", "rasrasanforex"
 ]
 
 CRYPTO_VIPS = [
