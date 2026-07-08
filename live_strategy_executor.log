@@ -5782,3 +5782,179 @@
 2026-07-08 14:12:14,355 - [INFO] - [SILVER] Hard SL successfully attached to ticket 2147137427
 2026-07-08 14:12:14,355 - [INFO] - [SILVER] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147137427
 2026-07-08 14:16:05,511 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 61890.0
+2026-07-08 14:23:41,269 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 14:23:41,273 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 14:23:41,276 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,277 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,278 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,279 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,280 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,281 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,282 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:23:41,283 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 14:26:06,349 - [INFO] - [GOLD] Phase 2 Dynamic Scaling: Calculated 0.02 Lots based on $200.0 @ 1000x
+2026-07-08 14:26:06,818 - [INFO] - [GOLD] Hard SL successfully attached to ticket 2147166260
+2026-07-08 14:26:06,818 - [INFO] - [GOLD] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147166260
+2026-07-08 14:28:41,394 - [INFO] - [SILVER] Phase 2 Dynamic Scaling: Calculated 0.03 Lots based on $200.0 @ 1000x
+2026-07-08 14:28:41,869 - [INFO] - [SILVER] Hard SL successfully attached to ticket 2147172363
+2026-07-08 14:28:41,871 - [INFO] - [SILVER] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147172363
+2026-07-08 14:39:17,042 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
+2026-07-08 14:39:17,513 - [INFO] - [AUDUSD] Hard SL successfully attached to ticket 2147186684
+2026-07-08 14:39:17,513 - [INFO] - [AUDUSD] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147186684
+2026-07-08 14:42:26,909 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 14:42:27,388 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147190475
+2026-07-08 14:42:27,388 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147190475
+2026-07-08 15:04:09,619 - [INFO] - [AUDUSD] Strategy Step-Trail: Locked SL to 0.69108
+2026-07-08 15:06:12,386 - [INFO] - [SILVER] Strategy Step-Trail: Locked SL to 58.322
+2026-07-08 15:28:39,429 - [INFO] - [GOLD] Phase 2 Dynamic Scaling: Calculated 0.02 Lots based on $200.0 @ 1000x
+2026-07-08 15:28:39,877 - [INFO] - [GOLD] Hard SL successfully attached to ticket 2147243470
+2026-07-08 15:28:39,877 - [INFO] - [GOLD] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147243470
+2026-07-08 16:04:59,335 - [INFO] - [SILVER] Phase 2 Dynamic Scaling: Calculated 0.03 Lots based on $200.0 @ 1000x
+2026-07-08 16:04:59,806 - [INFO] - [SILVER] Hard SL successfully attached to ticket 2147277712
+2026-07-08 16:04:59,809 - [INFO] - [SILVER] SUCCESS - Opened BUY | Strat: BEAR_TREND_FOLLOWER | Ticket: 2147277712
+2026-07-08 16:12:28,161 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4043.56
+2026-07-08 16:12:59,603 - [INFO] - [AUDUSD] Strategy Step-Trail: Locked SL to 0.69178
+2026-07-08 16:13:09,877 - [INFO] - [AUDUSD] Strategy Step-Trail: Locked SL to 0.69179
+2026-07-08 16:20:04,817 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 61939.2
+2026-07-08 16:54:59,746 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
+2026-07-08 16:55:00,190 - [INFO] - [AUDUSD] Hard SL successfully attached to ticket 2147313394
+2026-07-08 16:55:00,190 - [INFO] - [AUDUSD] SUCCESS - Opened SELL | Strat: BEAR_TREND_FOLLOWER | Ticket: 2147313394
+2026-07-08 17:08:09,928 - [INFO] - [GOLD] Phase 2 Dynamic Scaling: Calculated 0.02 Lots based on $200.0 @ 1000x
+2026-07-08 17:08:10,407 - [INFO] - [GOLD] Hard SL successfully attached to ticket 2147323306
+2026-07-08 17:08:10,407 - [INFO] - [GOLD] SUCCESS - Opened SELL | Strat: BEAR_TREND_FOLLOWER | Ticket: 2147323306
+2026-07-08 17:14:21,646 - [INFO] - [GOLD] Phase 2 Dynamic Scaling: Calculated 0.02 Lots based on $200.0 @ 1000x
+2026-07-08 17:14:22,117 - [INFO] - [GOLD] Hard SL successfully attached to ticket 2147331693
+2026-07-08 17:14:22,117 - [INFO] - [GOLD] SUCCESS - Opened BUY | Strat: VOLATILITY_BREAKOUT | Ticket: 2147331693
+2026-07-08 17:17:13,552 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62124.28
+2026-07-08 17:17:25,840 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62124.45
+2026-07-08 17:22:21,737 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62127.42
+2026-07-08 17:24:19,449 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62127.51
+2026-07-08 17:24:25,706 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62128.13
+2026-07-08 17:47:51,635 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4063.29
+2026-07-08 17:59:45,567 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
+2026-07-08 17:59:46,009 - [INFO] - [AUDUSD] Hard SL successfully attached to ticket 2147388434
+2026-07-08 17:59:46,010 - [INFO] - [AUDUSD] SUCCESS - Opened BUY | Strat: VOLATILITY_BREAKOUT | Ticket: 2147388434
+2026-07-08 18:20:01,126 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 18:20:01,572 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147413564
+2026-07-08 18:20:01,572 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: BEAR_TREND_FOLLOWER | Ticket: 2147413564
+2026-07-08 18:36:59,695 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62037.3
+2026-07-08 19:18:03,234 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33658
+2026-07-08 19:19:11,099 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 19:19:11,600 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147491639
+2026-07-08 19:19:11,600 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: VOLATILITY_BREAKOUT | Ticket: 2147491639
+2026-07-08 19:34:58,797 - [INFO] - [GBPUSD] Phase 2 Dynamic Scaling: Calculated 0.07 Lots based on $200.0 @ 1000x
+2026-07-08 19:34:59,262 - [INFO] - [GBPUSD] Hard SL successfully attached to ticket 2147512079
+2026-07-08 19:34:59,263 - [INFO] - [GBPUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Ticket: 2147512079
+2026-07-08 19:36:37,696 - [INFO] - [GOLD] Phase 2 Dynamic Scaling: Calculated 0.02 Lots based on $200.0 @ 1000x
+2026-07-08 19:36:38,171 - [INFO] - [GOLD] Hard SL successfully attached to ticket 2147515218
+2026-07-08 19:36:38,172 - [INFO] - [GOLD] SUCCESS - Opened SELL | Strat: VOLATILITY_BREAKOUT | Ticket: 2147515218
+2026-07-08 19:42:21,907 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
+2026-07-08 19:42:22,400 - [INFO] - [AUDUSD] Hard SL successfully attached to ticket 2147526752
+2026-07-08 19:42:22,401 - [INFO] - [AUDUSD] SUCCESS - Opened SELL | Strat: VOLATILITY_BREAKOUT | Ticket: 2147526752
+2026-07-08 19:51:19,260 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 19:51:19,710 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147547925
+2026-07-08 19:51:19,710 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: VOLATILITY_BREAKOUT | Ticket: 2147547925
+2026-07-08 20:03:31,033 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 20:03:31,495 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147564116
+2026-07-08 20:03:31,495 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: BEAR_TREND_FOLLOWER | Ticket: 2147564116
+2026-07-08 20:06:08,516 - [INFO] - [SILVER] Phase 2 Dynamic Scaling: Calculated 0.03 Lots based on $200.0 @ 1000x
+2026-07-08 20:06:08,986 - [INFO] - [SILVER] Hard SL successfully attached to ticket 2147568063
+2026-07-08 20:06:08,987 - [INFO] - [SILVER] SUCCESS - Opened SELL | Strat: VOLATILITY_BREAKOUT | Ticket: 2147568063
+2026-07-08 20:06:48,551 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4062.71
+2026-07-08 20:43:49,109 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4049.29
+2026-07-08 20:43:50,342 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4049.28
+2026-07-08 20:43:55,591 - [INFO] - [SILVER] Strategy Step-Trail: Locked SL to 57.986
+2026-07-08 20:44:09,872 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4049.27
+2026-07-08 20:44:14,121 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4049.25
+2026-07-08 20:44:15,358 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4049.24
+2026-07-08 20:44:42,684 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4049.19
+2026-07-08 20:44:43,668 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 20:44:44,128 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147639482
+2026-07-08 20:44:44,129 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: VOLATILITY_BREAKOUT | Ticket: 2147639482
+2026-07-08 20:45:24,549 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33694
+2026-07-08 20:55:01,237 - [INFO] - [GOLD] Phase 2 Dynamic Scaling: Calculated 0.02 Lots based on $200.0 @ 1000x
+2026-07-08 20:55:01,704 - [INFO] - [GOLD] Hard SL successfully attached to ticket 2147661413
+2026-07-08 20:55:01,705 - [INFO] - [GOLD] SUCCESS - Opened BUY | Strat: MEAN_REVERSION | Ticket: 2147661413
+2026-07-08 21:00:20,535 - [INFO] - [AUDUSD] Strategy Step-Trail: Locked SL to 0.69168
+2026-07-08 21:40:43,204 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4028.01
+2026-07-08 21:50:37,276 - [INFO] - [BTCUSD] Phase 2 Dynamic Scaling: Calculated 0.16 Lots based on $200.0 @ 1000x
+2026-07-08 21:50:37,747 - [INFO] - [BTCUSD] Hard SL successfully attached to ticket 2147725554
+2026-07-08 21:50:37,748 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: BEAR_TREND_FOLLOWER | Ticket: 2147725554
+2026-07-08 21:54:58,378 - [INFO] - [GBPUSD] Phase 2 Dynamic Scaling: Calculated 0.07 Lots based on $200.0 @ 1000x
+2026-07-08 21:54:58,843 - [INFO] - [GBPUSD] Hard SL successfully attached to ticket 2147727883
+2026-07-08 21:54:58,843 - [INFO] - [GBPUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Ticket: 2147727883
+2026-07-08 22:04:08,438 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
+2026-07-08 22:04:08,897 - [INFO] - [AUDUSD] Hard SL successfully attached to ticket 2147738636
+2026-07-08 22:04:08,897 - [INFO] - [AUDUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Ticket: 2147738636
+2026-07-08 22:13:47,462 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.25
+2026-07-08 22:13:48,699 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.26
+2026-07-08 22:13:51,945 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.27
+2026-07-08 22:14:02,267 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.3
+2026-07-08 22:14:03,510 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.31
+2026-07-08 22:14:43,885 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.33
+2026-07-08 22:14:45,120 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.34
+2026-07-08 22:14:47,365 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.39
+2026-07-08 22:14:48,601 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.4
+2026-07-08 22:14:49,845 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.51
+2026-07-08 22:14:50,172 - [INFO] - [AUDUSD] Phase 2 Dynamic Scaling: Calculated 0.14 Lots based on $200.0 @ 1000x
+2026-07-08 22:14:50,648 - [INFO] - [AUDUSD] Hard SL successfully attached to ticket 2147757016
+2026-07-08 22:14:50,648 - [INFO] - [AUDUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Ticket: 2147757016
+2026-07-08 22:14:50,657 - [INFO] - [GBPUSD] Phase 2 Dynamic Scaling: Calculated 0.07 Lots based on $200.0 @ 1000x
+2026-07-08 22:14:51,365 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.53
+2026-07-08 22:14:51,365 - [INFO] - [GBPUSD] Hard SL successfully attached to ticket 2147757037
+2026-07-08 22:14:51,369 - [INFO] - [GBPUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Ticket: 2147757037
+2026-07-08 22:21:59,507 - [INFO] - [SILVER] Phase 2 Dynamic Scaling: Calculated 0.03 Lots based on $200.0 @ 1000x
+2026-07-08 22:21:59,966 - [INFO] - [SILVER] Hard SL successfully attached to ticket 2147766438
+2026-07-08 22:21:59,966 - [INFO] - [SILVER] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Ticket: 2147766438
+2026-07-08 22:25:09,134 - [INFO] - [GOLD] Strategy Step-Trail: Locked SL to 4040.56
+2026-07-08 22:31:41,660 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 22:31:41,665 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 22:31:41,667 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,668 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,669 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,670 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,672 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,673 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,674 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:31:41,675 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 22:37:07,042 - [INFO] - [GOLD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Lot: 0.06 | SL: 4086.610357142857
+2026-07-08 22:37:12,031 - [INFO] - [AUDUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Lot: 1.19 | SL: 0.69405
+2026-07-08 22:41:37,122 - [INFO] - [GBPUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Lot: 0.79 | SL: 1.3410771428571429
+2026-07-08 22:50:34,556 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 61929.1
+2026-07-08 22:50:53,700 - [INFO] - [GBPUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Lot: 0.75 | SL: 1.3423053571428571
+2026-07-08 23:00:07,785 - [INFO] - [SILVER] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Lot: 0.05 | SL: 58.770857142857146
+2026-07-08 23:02:25,624 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14208
+2026-07-08 23:03:27,069 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62149.18
+2026-07-08 23:06:59,083 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 62149.32
+2026-07-08 23:13:28,337 - [INFO] - [EURUSD] SUCCESS - Opened SELL | Strat: MEAN_REVERSION | Lot: 1.07 | SL: 1.1431
+2026-07-08 23:16:15,916 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 23:16:15,921 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 23:16:15,923 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,924 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,925 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,927 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,928 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,928 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,930 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:16:15,932 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:24:30,980 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.34071
+2026-07-08 23:38:22,198 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 23:38:22,201 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 23:38:22,204 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,204 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,205 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,206 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,210 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,211 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,211 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:38:22,213 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,721 - [INFO] - Starting Multi-Threaded AI Strategy Executor...
+2026-07-08 23:46:28,725 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-08 23:46:28,728 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,729 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,731 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,733 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,734 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,734 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,736 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-08 23:46:28,738 - [INFO] - [AUDUSD] Thread Started. Polling for AI Entry conditions.
