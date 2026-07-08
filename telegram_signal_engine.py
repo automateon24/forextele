@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 import os
 import json
+import unicodedata
 from swarm_engine import OllamaSwarmEngine
 
 BASE_DIR = Path(__file__).parent
@@ -23,7 +24,9 @@ FOREX_GOLD_VIPS = [
     "gold trade signals", "easy forex", "gold trader", "global gold insight",
     "global profit club", "gold_mast78", "forexero", "forexking1132",
     "xauusd signal 99%", "josefina trader", "forex trading master",
-    "gold sniper pips", "messy forex", "forex trading tips", "rasrasanforex"
+    "gold sniper pips", "messy forex", "forex trading tips", "rasrasanforex",
+    "riaogoldforex", "gold snipers", "michael gold trader", "grade profit forex",
+    "forex market", "gold dreams trader", "xau profit zone", "saviour gold ea"
 ]
 
 CRYPTO_VIPS = [
@@ -59,8 +62,8 @@ async def main():
             raw_title = getattr(chat, 'title', '')
             raw_user = getattr(chat, 'username', '')
             
-            chat_title = raw_title.lower() if raw_title else ''
-            chat_user = raw_user.lower() if raw_user else ''
+            chat_title = unicodedata.normalize('NFKC', raw_title).lower() if raw_title else ''
+            chat_user = unicodedata.normalize('NFKC', raw_user).lower() if raw_user else ''
             
             valid_channel = False
             channel_group = "UNKNOWN"
