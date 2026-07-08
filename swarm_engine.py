@@ -62,7 +62,7 @@ class OllamaSwarmEngine:
             return {"status": "FAILED"}
         
         if classification == "JUNK":
-            self._log_audit(account_id, channel_name, raw_message, {}, "REJECTED", "Classified as JUNK by Watcher")
+            # Silently drop promotional spam without polluting the audit log
             return {"status": "REJECTED", "reason": "Classified as JUNK by Watcher"}
             
         if classification == "UPDATE":
@@ -71,7 +71,7 @@ class OllamaSwarmEngine:
             return {"status": "UPDATE_REQUIRED", "raw": raw_message}
             
         if classification != "NEW_TRADE":
-            self._log_audit(account_id, channel_name, raw_message, {}, "REJECTED", "Watcher returned invalid classification")
+            # Silently drop unknown formats
             return {"status": "UNKNOWN", "reason": "Watcher returned invalid classification"}
 
         # 2. The Trigger
