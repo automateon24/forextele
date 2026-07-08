@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -190,7 +190,7 @@ function App() {
         <div className="panel-header">
           Active Positions ({activeTab === 'STRATEGIES' ? 'Ultimate Strategies' : 'Telegram Signals'})
         </div>
-        <div className="panel-body">
+        <div className="panel-body" style={{maxHeight: '250px', overflowY: 'auto'}}>
           <TradeTable 
             positions={activeTab === 'STRATEGIES' ? strategyPositions : telegramPositions} 
             formatMoney={formatMoney} 
@@ -387,7 +387,7 @@ function TradeTable({ positions, formatMoney, formatPrice }) {
   
   return (
     <table className="data-table">
-      <thead>
+      <thead style={{position: 'sticky', top: 0, backgroundColor: '#0f172a', zIndex: 1}}>
         <tr>
           <th>SYMBOL</th>
           <th>STRATEGY NAME</th>
