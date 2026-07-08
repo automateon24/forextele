@@ -41,6 +41,15 @@ class MT5ExecutionEngine:
         log.info("Successfully connected to MetaTrader 5 Broker.")
         return True
 
+    def get_available_symbols(self) -> list:
+        if not self.connected:
+            if not self.connect(): return []
+        symbols = mt5.symbols_get()
+        if symbols:
+            # Filter common ones to keep context small, or just return names
+            return [s.name for s in symbols if "USD" in s.name or "EUR" in s.name or "GBP" in s.name or "JPY" in s.name or "GOLD" in s.name or "BTC" in s.name or "ETH" in s.name][:50]
+        return []
+
     def calculate_lot_size(self, symbol: str, entry_price: float, sl_price: float, risk_pct: float = 0.01) -> float:
         """
         Dynamically calculate the lot size based on 1% equity risk and exact Stop-Loss distance.

@@ -71,7 +71,10 @@ class OllamaSwarmEngine:
 
         # 2. The Trigger
         log.info("[TRIGGER] Extracting trade data...")
-        trigger_resp = await self._ask_ollama(self.prompts["TRIGGER_PROMPT"], raw_message)
+        active_symbols = self.mt5_engine.get_available_symbols()
+        symbols_context = f"\n\nBROKER AVAILABLE SYMBOLS: {', '.join(active_symbols)}"
+        
+        trigger_resp = await self._ask_ollama(self.prompts["TRIGGER_PROMPT"], raw_message + symbols_context)
         
         try:
             # Clean possible markdown from Ollama
