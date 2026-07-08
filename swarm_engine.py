@@ -115,6 +115,16 @@ class OllamaSwarmEngine:
         final_trade["status"] = "APPROVED"
         final_trade["risk_modifier"] = risk_modifier
         
+        # Explicit Crypto Altcoin Block (Only allow BTC and ETH)
+        symbol = final_trade.get("symbol", "").upper()
+        base_asset = symbol.replace("USDT", "").replace("USD", "")
+        if base_asset not in ["EUR", "GBP", "AUD", "NZD", "CAD", "CHF", "JPY", "XAU", "XAG", "BTC", "ETH", "GOLD", "SILVER", ""]:
+            # If the base asset is not a major forex or BTC/ETH/Gold, reject it
+            reason = f"Altcoin '{base_asset}' is not supported by this MT5 account. Only BTC and ETH are allowed."
+            log.warning(f"[SWARM_ENGINE] VETO: {reason}")
+            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+            return {"status": "REJECTED", "reason": reason}
+        
         # --- PHASE 3: EXECUTION HANDOFF ---
         log.info("[HANDOFF] Routing payload to MT5 Broker...")
         success = self.mt5_engine.execute_trade(final_trade)

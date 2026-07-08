@@ -2,9 +2,10 @@ import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 function App() {
-  const [data, setData] = useState({ mt5: null, ai_logs: [], server_time: '', telegram_status: '', strategies_scanning: 0, active_channels: [] })
+  const [data, setData] = useState({ mt5: null, ai_logs: [], signal_audit: [], all_channels: [], server_time: '', telegram_status: '', strategies_scanning: 0, active_channels: [] })
   const [connected, setConnected] = useState(false)
   const [activeTab, setActiveTab] = useState('STRATEGIES') // 'STRATEGIES' or 'TELEGRAM'
+  const [expandedChannel, setExpandedChannel] = useState(null)
   
   const terminalRef = useRef(null)
   const wsRef = useRef(null)
@@ -239,6 +240,7 @@ function App() {
             <table className="data-table" style={{fontSize: '11px'}}>
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>CHANNEL NAME</th>
                   <th>TODAY TRADES</th>
                   <th style={{maxWidth: '150px'}}>LATEST SIGNAL RECEIVED</th>
@@ -249,10 +251,15 @@ function App() {
               </thead>
               <tbody>
                 {(data.all_channels || []).map((chName, i) => {
-                  // Find all signals for this channel (case-insensitive)
-                  const channelSignals = (data.signal_audit || []).filter(s => 
-                    s.Channel && s.Channel.toLowerCase().includes(chName.toLowerCase())
-                  );
+                  // Get today's date in YYYY-MM-DD
+                  const todayStr = new Date().toLocaleString('en-CA', {timeZone: 'Asia/Kolkata'}).split(',')[0];
+                  
+                  // Find all signals for this channel (case-insensitive) AND filter for TODAY
+                  const channelSignals = (data.signal_audit || []).filter(s => {
+                    const isChannelMatch = s.Channel && s.Channel.toLowerCase().includes(chName.toLowerCase());
+                    const isToday = s.Timestamp && s.Timestamp.startsWith(todayStr);
+                    return isChannelMatch && isToday;
+                  });
                   
                   const tradeCount = channelSignals.length;
                   const latestSignal = tradeCount > 0 ? channelSignals[0] : null; // Backend reversed list so [0] is newest
@@ -264,17 +271,54 @@ function App() {
                     else if (latestSignal.Status === 'UPDATE') statusColor = '#3b82f6';
                   }
                   
+                  const isExpanded = expandedChannel === chName;
+                  
                   return (
-                    <tr key={i}>
-                      <td style={{color: '#60a5fa', fontWeight: 'bold'}}>{chName.toUpperCase()}</td>
-                      <td style={{textAlign: 'center', fontWeight: 'bold'}}>{tradeCount > 0 ? tradeCount : '-'}</td>
-                      <td style={{maxWidth: '150px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: '#cbd5e1'}} title={latestSignal ? latestSignal.Raw_Signal : ''}>
-                        {latestSignal ? latestSignal.Raw_Signal : '-'}
-                      </td>
-                      <td style={{color: '#a855f7'}}>{latestSignal ? latestSignal.Parsed_Signal : '-'}</td>
-                      <td style={{color: statusColor, fontWeight: 'bold'}}>{latestSignal ? latestSignal.Status : 'AWAITING SIGNAL'}</td>
-                      <td>{latestSignal ? latestSignal.Reason : '-'}</td>
-                    </tr>
+                    <React.Fragment key={i}>
+                      <tr onClick={() => setExpandedChannel(isExpanded ? null : chName)} style={{cursor: 'pointer', backgroundColor: isExpanded ? '#1e293b' : 'transparent'}}>
+                        <td>{i + 1}</td>
+                        <td style={{color: '#60a5fa', fontWeight: 'bold'}}>
+                          {isExpanded ? '▼ ' : '▶ '}{chName.toUpperCase()}
+                        </td>
+                        <td style={{textAlign: 'center', fontWeight: 'bold'}}>{tradeCount > 0 ? tradeCount : '-'}</td>
+                        <td style={{maxWidth: '150px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: '#cbd5e1'}} title={latestSignal ? latestSignal.Raw_Signal : ''}>
+                          {latestSignal ? latestSignal.Raw_Signal : '-'}
+                        </td>
+                        <td style={{color: '#a855f7'}}>{latestSignal ? latestSignal.Parsed_Signal : '-'}</td>
+                        <td style={{color: statusColor, fontWeight: 'bold'}}>{latestSignal ? latestSignal.Status : 'AWAITING SIGNAL'}</td>
+                        <td>{latestSignal ? latestSignal.Reason : '-'}</td>
+                      </tr>
+                      {isExpanded && tradeCount > 0 && (
+                        <tr>
+                          <td colSpan="7" style={{padding: '0', backgroundColor: '#0f172a'}}>
+                            <div style={{padding: '10px 20px', borderLeft: '4px solid #3b82f6'}}>
+                              <table style={{width: '100%', fontSize: '10px', color: '#94a3b8'}}>
+                                <thead>
+                                  <tr style={{borderBottom: '1px solid #334155'}}>
+                                    <th style={{padding: '5px'}}>TIME</th>
+                                    <th style={{padding: '5px'}}>ACCOUNT</th>
+                                    <th style={{padding: '5px'}}>RAW SIGNAL</th>
+                                    <th style={{padding: '5px'}}>PARSED OUTPUT</th>
+                                    <th style={{padding: '5px'}}>STATUS</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {channelSignals.map((sig, idx) => (
+                                    <tr key={idx}>
+                                      <td style={{padding: '5px'}}>{sig.Timestamp.split(' ')[1]}</td>
+                                      <td style={{padding: '5px'}}>{sig.Account}</td>
+                                      <td style={{padding: '5px', maxWidth: '300px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{sig.Raw_Signal}</td>
+                                      <td style={{padding: '5px'}}>{sig.Parsed_Signal}</td>
+                                      <td style={{padding: '5px', color: sig.Status === 'SUCCESS' ? '#10b981' : (sig.Status === 'REJECTED' ? '#ef4444' : '#fff')}}>{sig.Status}</td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      )}
+                    </React.Fragment>
                   )
                 })}
               </tbody>
