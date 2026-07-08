@@ -71,6 +71,14 @@ def get_mt5_data():
                     
     win_rate = (wins / (wins + losses) * 100) if (wins + losses) > 0 else 0.0
     
+    # Read Thread Status
+    thread_status = {}
+    try:
+        with open(BASE_DIR / "thread_status.json", "r") as f:
+            thread_status = json.load(f)
+    except:
+        pass
+
     # Fetch live spreads and trends for Tickers
     target_symbols = ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "GOLD", "SILVER", "BTCUSD", "ETHUSD"]
     tickers_data = []
@@ -80,17 +88,20 @@ def get_mt5_data():
         if tick and info:
             spread = (tick.ask - tick.bid) / info.point
             price = tick.bid
-            status = "CONSOLIDATION"
+            status = thread_status.get(sym, "CONSOLIDATION").upper()
             spread_val = round(spread, 1)
+            swap = info.swap_long if hasattr(info, 'swap_long') else 0
         else:
             price = 0
             status = "MARKET CLOSED"
             spread_val = 0
+            swap = 0
             
         tickers_data.append({
             "symbol": sym,
             "price": price,
             "spread": spread_val,
+            "swap": round(swap, 2),
             "trend": "NORMAL",
             "status": status
         })

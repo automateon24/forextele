@@ -38,7 +38,7 @@ class SwarmThreadManager:
         try:
             for line in iter(process.stdout.readline, ''):
                 if line:
-                    print(f"[{name}] {line.strip()}", flush=True)
+                    log.info(f"[{name}] {line.strip()}")
         except ValueError:
             pass # Process closed
 

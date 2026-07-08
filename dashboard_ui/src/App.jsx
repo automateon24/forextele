@@ -105,7 +105,7 @@ function App() {
             <div className="ticker-price">{formatPrice(t.price)}</div>
             <div className="ticker-details">
               <div>Spread: <span>{t.spread}</span></div>
-              <div>Swap: <span>0%</span></div>
+              <div>Swap: <span>{t.swap !== undefined ? t.swap : 0}%</span></div>
             </div>
             <div className="ticker-status" style={{color: t.color}}>{t.status}</div>
           </div>
