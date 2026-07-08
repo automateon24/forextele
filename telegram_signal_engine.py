@@ -51,8 +51,14 @@ async def main():
     async def handler(event):
         try:
             chat = await event.get_chat()
-            chat_title = getattr(chat, 'title', '').lower()
-            chat_user = getattr(chat, 'username', '').lower()
+            if chat is None:
+                return
+                
+            raw_title = getattr(chat, 'title', '')
+            raw_user = getattr(chat, 'username', '')
+            
+            chat_title = raw_title.lower() if raw_title else ''
+            chat_user = raw_user.lower() if raw_user else ''
             
             valid_channel = False
             channel_group = "UNKNOWN"

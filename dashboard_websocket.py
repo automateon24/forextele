@@ -79,13 +79,21 @@ def get_mt5_data():
         info = mt5.symbol_info(sym)
         if tick and info:
             spread = (tick.ask - tick.bid) / info.point
-            tickers_data.append({
-                "symbol": sym,
-                "price": tick.bid,
-                "spread": round(spread, 1),
-                "trend": "NORMAL", # Would be calculated by strategy
-                "status": "CONSOLIDATION"
-            })
+            price = tick.bid
+            status = "CONSOLIDATION"
+            spread_val = round(spread, 1)
+        else:
+            price = 0
+            status = "MARKET CLOSED"
+            spread_val = 0
+            
+        tickers_data.append({
+            "symbol": sym,
+            "price": price,
+            "spread": spread_val,
+            "trend": "NORMAL",
+            "status": status
+        })
 
     return {
         "account": {
