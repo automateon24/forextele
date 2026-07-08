@@ -56,20 +56,28 @@ def get_mt5_data():
     yesterday = now - timedelta(hours=24)
     history_deals = mt5.history_deals_get(yesterday, now)
     
-    realized_pnl = 0.0
-    wins = 0
-    losses = 0
+    tele_pnl = 0.0
+    tele_wins = 0
+    tele_losses = 0
+    
+    strat_pnl = 0.0
+    strat_wins = 0
+    strat_losses = 0
     
     if history_deals:
         for deal in history_deals:
             if deal.entry == mt5.DEAL_ENTRY_OUT: # Only closed positions
-                realized_pnl += deal.profit
-                if deal.profit > 0:
-                    wins += 1
-                elif deal.profit < 0:
-                    losses += 1
+                if deal.magic == 999999:
+                    tele_pnl += deal.profit
+                    if deal.profit > 0: tele_wins += 1
+                    elif deal.profit < 0: tele_losses += 1
+                else:
+                    strat_pnl += deal.profit
+                    if deal.profit > 0: strat_wins += 1
+                    elif deal.profit < 0: strat_losses += 1
                     
-    win_rate = (wins / (wins + losses) * 100) if (wins + losses) > 0 else 0.0
+    tele_win_rate = (tele_wins / (tele_wins + tele_losses) * 100) if (tele_wins + tele_losses) > 0 else 0.0
+    strat_win_rate = (strat_wins / (strat_wins + strat_losses) * 100) if (strat_wins + strat_losses) > 0 else 0.0
     
     # Read Thread Status
     thread_status = {}
@@ -116,10 +124,15 @@ def get_mt5_data():
         },
         "positions": active_positions,
         "timestamp": time.time(),
-        "today_pnl": realized_pnl,
-        "wins": wins,
-        "losses": losses,
-        "win_rate": round(win_rate, 1),
+        "today_pnl": strat_pnl + tele_pnl,
+        "tele_pnl": tele_pnl,
+        "strat_pnl": strat_pnl,
+        "tele_wins": tele_wins,
+        "tele_losses": tele_losses,
+        "tele_win_rate": round(tele_win_rate, 1),
+        "strat_wins": strat_wins,
+        "strat_losses": strat_losses,
+        "strat_win_rate": round(strat_win_rate, 1),
         "tickers": tickers_data
     }
 

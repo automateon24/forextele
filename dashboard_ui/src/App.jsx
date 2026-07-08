@@ -39,7 +39,13 @@ function App() {
   const telegramPositions = positions.filter(p => p.magic === 999999)
   const strategyPositions = positions.filter(p => p.magic === 888888 || p.magic === 111111 || p.magic !== 999999) // Catch-all for strategy/test
 
-  const totalUnrealized = positions.reduce((sum, p) => sum + (p.profit || 0), 0)
+  const activePosList = activeTab === 'STRATEGIES' ? strategyPositions : telegramPositions
+  const totalUnrealized = activePosList.reduce((sum, p) => sum + (p.profit || 0), 0)
+  
+  const currentWins = activeTab === 'STRATEGIES' ? (data.mt5?.strat_wins || 0) : (data.mt5?.tele_wins || 0)
+  const currentLosses = activeTab === 'STRATEGIES' ? (data.mt5?.strat_losses || 0) : (data.mt5?.tele_losses || 0)
+  const currentWinRate = activeTab === 'STRATEGIES' ? (data.mt5?.strat_win_rate || 0.0) : (data.mt5?.tele_win_rate || 0.0)
+  const currentPnl = activeTab === 'STRATEGIES' ? (data.mt5?.strat_pnl || 0.0) : (data.mt5?.tele_pnl || 0.0)
   
   const formatMoney = (val) => {
     if (val === null || val === undefined || isNaN(val)) return '$0.00'
@@ -141,19 +147,19 @@ function App() {
           <div className="metric-sub">{formatNumber((account.margin / account.equity)*100)}% Allocation</div>
         </div>
         <div className="metric-box">
-          <div className="metric-label">TOTAL TRADES</div>
-          <div className="metric-value">{positions.length}</div>
-          <div className="metric-sub">{positions.length} Active / {data.mt5?.wins !== undefined ? data.mt5.wins + data.mt5.losses : 0} Closed</div>
+          <div className="metric-label">TOTAL TRADES ({activeTab})</div>
+          <div className="metric-value">{activePosList.length}</div>
+          <div className="metric-sub">{activePosList.length} Active / {currentWins + currentLosses} Closed</div>
         </div>
         <div className="metric-box">
-          <div className="metric-label">WIN RATE</div>
-          <div className="metric-value" style={{color: (data.mt5?.win_rate || 0) >= 50 ? '#10b981' : '#ef4444'}}>{data.mt5?.win_rate || 0.0}%</div>
-          <div className="metric-sub">{data.mt5?.wins || 0} W / {data.mt5?.losses || 0} L</div>
+          <div className="metric-label">WIN RATE ({activeTab})</div>
+          <div className="metric-value" style={{color: currentWinRate >= 50 ? '#10b981' : '#ef4444'}}>{currentWinRate}%</div>
+          <div className="metric-sub">{currentWins} W / {currentLosses} L</div>
         </div>
         <div className="metric-box">
-          <div className="metric-label">TODAY'S REALIZED PNL</div>
-          <div className={`metric-value ${data.mt5?.today_pnl >= 0 ? 'profit-text' : 'loss-text'}`}>
-            {data.mt5?.today_pnl >= 0 ? '+' : ''}{formatMoney(data.mt5?.today_pnl || 0)}
+          <div className="metric-label">REALIZED PNL ({activeTab})</div>
+          <div className={`metric-value ${currentPnl >= 0 ? 'profit-text' : 'loss-text'}`}>
+            {currentPnl >= 0 ? '+' : ''}{formatMoney(currentPnl)}
           </div>
           <div className="metric-sub">Booked Trades</div>
         </div>
@@ -162,7 +168,7 @@ function App() {
           <div className={`metric-value ${totalUnrealized >= 0 ? 'profit-text' : 'loss-text'}`}>
             {totalUnrealized >= 0 ? '+' : ''}{formatMoney(totalUnrealized)}
           </div>
-          <div className="metric-sub">Open Positions</div>
+          <div className="metric-sub">Open {activeTab} Positions</div>
         </div>
       </div>
 
