@@ -8,9 +8,11 @@ import time
 from datetime import datetime
 import pytz
 import tailer # Make sure this is installed or we use a custom tail logic
+import csv
 
 BASE_DIR = Path(__file__).parent
 MT5_CFG_PATH = BASE_DIR / "mt5_config.json"
+AUDIT_CSV_PATH = BASE_DIR / "signals_audit.csv"
 
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - [WS_BRIDGE] - %(message)s')
@@ -149,6 +151,19 @@ def get_latest_ai_logs():
             pass
     return logs
 
+def get_signal_audit():
+    """Reads the last 50 entries from signals_audit.csv"""
+    audit = []
+    if AUDIT_CSV_PATH.exists():
+        try:
+            with open(AUDIT_CSV_PATH, "r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                audit = list(reader)[-50:] # Get last 50 rows
+                audit.reverse() # Newest first
+        except Exception as e:
+            log.error(f"Error reading audit csv: {e}")
+    return audit
+
 async def broadcast_telemetry(websocket):
     """Continuously push JSON to the React Frontend every second"""
     log.info("React Dashboard Client Connected.")
@@ -156,12 +171,14 @@ async def broadcast_telemetry(websocket):
         while True:
             mt5_data = get_mt5_data()
             logs = get_latest_ai_logs()
+            audit = get_signal_audit()
             
             ist = pytz.timezone('Asia/Kolkata')
             
             payload = {
                 "mt5": mt5_data,
                 "ai_logs": logs,
+                "signal_audit": audit,
                 "server_time": datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST"),
                 "telegram_status": "🟢 TELEGRAM LIVE",
                 "strategies_scanning": 8,

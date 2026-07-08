@@ -57,7 +57,10 @@ async def main():
     API_HASH_2 = "b9d59de22c25223f94f0e513c04279df"
     client2 = TelegramClient(str(SESSION_2), API_ID_2, API_HASH_2)
     
-    async def handler(event):
+    async def handler_acc1(event): await process_event(event, "Account 1")
+    async def handler_acc2(event): await process_event(event, "Account 2")
+
+    async def process_event(event, account_id):
         try:
             chat = await event.get_chat()
             if chat is None:
@@ -92,17 +95,18 @@ async def main():
             if not text:
                 return
                 
+            channel_name_str = getattr(chat, 'title', chat_user)
             log.info("=========================================")
-            log.info(f"[{channel_group}] Signal Detected from '{getattr(chat, 'title', chat_user)}'! Routing to Swarm...")
+            log.info(f"[{channel_group}] Signal Detected from '{channel_name_str}'! Routing to Swarm...")
             
-            asyncio.create_task(swarm.process_telegram_signal(text))
+            asyncio.create_task(swarm.process_telegram_signal(text, channel_name_str, account_id))
             
         except Exception as e:
             log.error(f"Listener Exception: {e}")
 
     # Register handler on both clients
-    client1.on(events.NewMessage())(handler)
-    client2.on(events.NewMessage())(handler)
+    client1.on(events.NewMessage())(handler_acc1)
+    client2.on(events.NewMessage())(handler_acc2)
     
     log.info("Connecting Account 1...")
     await client1.start()

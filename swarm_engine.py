@@ -2,6 +2,8 @@ import asyncio
 import httpx
 import json
 import logging
+import csv
+from datetime import datetime
 from pathlib import Path
 from real_mt5_execution import MT5ExecutionEngine
 
@@ -39,7 +41,7 @@ class OllamaSwarmEngine:
                 log.error(f"Ollama API Error: {e}")
                 return ""
 
-    async def process_telegram_signal(self, raw_message: str):
+    async def process_telegram_signal(self, raw_message: str, channel_name: str = "Unknown", account_id: str = "Unknown"):
         """
         The Master Tri-Agent Pipeline.
         Passes the message through Watcher -> Trigger -> Governor.
@@ -60,13 +62,16 @@ class OllamaSwarmEngine:
             return {"status": "FAILED"}
         
         if classification == "JUNK":
+            self._log_audit(account_id, channel_name, raw_message, {}, "REJECTED", "Classified as JUNK by Watcher")
             return {"status": "REJECTED", "reason": "Classified as JUNK by Watcher"}
             
         if classification == "UPDATE":
             # Pass to an update handler (Phase 2 expansion)
+            self._log_audit(account_id, channel_name, raw_message, {}, "UPDATE", "Signal is an update/closure")
             return {"status": "UPDATE_REQUIRED", "raw": raw_message}
             
         if classification != "NEW_TRADE":
+            self._log_audit(account_id, channel_name, raw_message, {}, "REJECTED", "Watcher returned invalid classification")
             return {"status": "UNKNOWN", "reason": "Watcher returned invalid classification"}
 
         # 2. The Trigger
@@ -83,6 +88,7 @@ class OllamaSwarmEngine:
             log.info(f"[TRIGGER] Extraction Successful: {trade_data['action']} {trade_data['symbol']}")
         except json.JSONDecodeError:
             log.error(f"[TRIGGER] Failed to output valid JSON. Output: {trigger_resp}")
+            self._log_audit(account_id, channel_name, raw_message, {}, "FAILED", "Trigger hallucinated non-JSON output")
             return {"status": "FAILED", "reason": "Trigger hallucinated non-JSON output"}
 
         # 3. The Governor
@@ -94,10 +100,12 @@ class OllamaSwarmEngine:
             risk_decision = json.loads(clean_gov)
         except json.JSONDecodeError:
             log.error(f"[GOVERNOR] Failed to output valid JSON. Output: {governor_resp}")
+            self._log_audit(account_id, channel_name, raw_message, trade_data, "FAILED", "Governor hallucinated non-JSON output")
             return {"status": "FAILED", "reason": "Governor hallucinated non-JSON output"}
 
         if not risk_decision.get("approved", False):
             log.warning(f"[GOVERNOR] VETOED TRADE! Reason: {risk_decision.get('rejection_reason')}")
+            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", risk_decision.get('rejection_reason'))
             return {"status": "REJECTED", "reason": risk_decision.get('rejection_reason')}
             
         log.info(f"[GOVERNOR] TRADE APPROVED! Final Parameters Set.")
@@ -115,7 +123,44 @@ class OllamaSwarmEngine:
         else:
             final_trade["execution_status"] = "FAILED"
             
+        self._log_audit(account_id, channel_name, raw_message, final_trade, "APPROVED", "Passed Watcher & Governor logic")
         return final_trade
+        
+    def _log_audit(self, account_id, channel_name, raw_message, parsed_data, status, reason):
+        """Logs the final disposition of a signal to the audit CSV."""
+        audit_file = BASE_DIR / "signals_audit.csv"
+        file_exists = audit_file.exists()
+        
+        # Calculate today trade number
+        trade_num = 1
+        if file_exists:
+            try:
+                with open(audit_file, "r", encoding="utf-8") as f:
+                    # just count lines for trade number
+                    lines = f.readlines()
+                    if len(lines) > 1:
+                        trade_num = len(lines)
+            except:
+                pass
+                
+        # Clean raw message
+        clean_raw = raw_message.replace('\n', ' ')[:150] + "..." if len(raw_message) > 150 else raw_message.replace('\n', ' ')
+        parsed_str = f"{parsed_data.get('action', '')} {parsed_data.get('symbol', '')} @ {parsed_data.get('entry', '')}" if status == "APPROVED" else "N/A"
+        
+        with open(audit_file, "a", newline='', encoding="utf-8") as f:
+            writer = csv.writer(f)
+            if not file_exists:
+                writer.writerow(["Timestamp", "Account", "Channel", "Raw_Signal", "Parsed_Signal", "Status", "Reason", "Trade_Number"])
+            writer.writerow([
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                account_id,
+                channel_name,
+                clean_raw,
+                parsed_str,
+                status,
+                reason,
+                trade_num
+            ])
 
 # Standalone test execution
 if __name__ == "__main__":
