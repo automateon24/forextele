@@ -29,7 +29,8 @@ FOREX_GOLD_VIPS = [
     "forex market", "gold dreams trader", "xau profit zone", "saviour gold ea",
     "culersforex", "global profit culb", "gold scalper", "victory forex", 
     "source fx hub", "mr.david, xau/usd club", "gold fx network",
-    "dubai capital fx group 3", "onyx alpha trades", "xauusd accurate signals"
+    "dubai capital fx group 3", "onyx alpha trades", "xauusd accurate signals",
+    "mrgoldenway trader", "vip-mrgoldencircle", "max leverage"
 ]
 
 CRYPTO_VIPS = [
