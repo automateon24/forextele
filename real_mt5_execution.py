@@ -167,8 +167,36 @@ class MT5ExecutionEngine:
         log.info(f"Sending Order to Broker: {action} {volume} {symbol} @ {final_price} | SL: {sl} | TP: {tp}")
         
         result = mt5.order_send(request)
+        
+        # Retry logic for 10016 Invalid Stops
+        if result.retcode == 10016:
+            log.warning("Retcode 10016 (Invalid Stops) detected! Recalculating ATR-based SL/TP and retrying...")
+            
+            # Simple ATR proxy: 1000 points for Gold, 500 for Forex
+            atr_points = 1000 if "GOLD" in symbol or "XAU" in symbol else 500
+            fallback_dist = atr_points * point
+            
+            # Recalculate strictly based on current Market Price to guarantee validity
+            current_ask = mt5.symbol_info_tick(symbol).ask
+            current_bid = mt5.symbol_info_tick(symbol).bid
+            
+            if action == "BUY":
+                request["price"] = current_ask
+                request["sl"] = current_ask - fallback_dist
+                request["tp"] = current_ask + fallback_dist
+            else:
+                request["price"] = current_bid
+                request["sl"] = current_bid + fallback_dist
+                request["tp"] = current_bid - fallback_dist
+                
+            request["action"] = mt5.TRADE_ACTION_DEAL # Force market deal on retry
+            request["type_filling"] = mt5.ORDER_FILLING_IOC
+            
+            log.info(f"Retry Order: {action} {volume} {symbol} @ {request['price']} | SL: {request['sl']} | TP: {request['tp']}")
+            result = mt5.order_send(request)
+
         if result.retcode != mt5.TRADE_RETCODE_DONE:
-            log.error(f"Order failed! Retcode: {result.retcode} Comment: {result.comment}")
+            log.error(f"Order failed definitively! Retcode: {result.retcode} Comment: {result.comment}")
             return False
             
         log.info(f"SUCCESS! Trade {result.order} opened by Swarm AI.")
