@@ -111,39 +111,60 @@ class MT5ExecutionEngine:
             log.error(f"Tick data unavailable for {symbol}.")
             return False
             
-        price = tick.ask if action == "BUY" else tick.bid
-        sl = round(swarm_payload.get("final_sl", 0.0), info.digits)
-        tp = round(swarm_payload.get("final_tp1", 0.0), info.digits)
+        extracted_entry = float(swarm_payload.get("entry", 0.0))
+        
+        # If no entry provided, use Market
+        if extracted_entry <= 0:
+            extracted_entry = price
+            
+        action_type = mt5.TRADE_ACTION_DEAL
+        order_type = mt5.ORDER_TYPE_BUY if action == "BUY" else mt5.ORDER_TYPE_SELL
+        final_price = price
         
         # Extract sentiment modifier
         risk_modifier = float(swarm_payload.get("risk_modifier", 1.0))
         final_risk_pct = 0.01 * risk_modifier
-
-        # Calculate Lot Size (Governor approved the trade, we scale it accurately)
-        volume = self.calculate_lot_size(symbol, price, sl, risk_pct=final_risk_pct)
         
-        # Prepare Order
-        order_type = mt5.ORDER_TYPE_BUY if action == "BUY" else mt5.ORDER_TYPE_SELL
-        
+        # Determine Pending Order Logic
+        point = info.point
+        if abs(extracted_entry - price) > (10 * point):
+            action_type = mt5.TRADE_ACTION_PENDING
+            final_price = extracted_entry
+            if action == "BUY":
+                order_type = mt5.ORDER_TYPE_BUY_LIMIT if extracted_entry < price else mt5.ORDER_TYPE_BUY_STOP
+            else:
+                order_type = mt5.ORDER_TYPE_SELL_LIMIT if extracted_entry > price else mt5.ORDER_TYPE_SELL_STOP
+                
+        # Validate Stops against final_price to prevent Retcode 10016 (Invalid Stops)
         sl = round(swarm_payload.get("final_sl", 0.0), info.digits)
         tp = round(swarm_payload.get("final_tp1", 0.0), info.digits)
         
+        if action == "BUY":
+            if tp > 0 and tp <= final_price: tp = 0 # Invalid TP
+            if sl > 0 and sl >= final_price: sl = 0 # Invalid SL
+        else:
+            if tp > 0 and tp >= final_price: tp = 0
+            if sl > 0 and sl <= final_price: sl = 0
+
+        # Calculate Lot Size (Governor approved the trade, we scale it accurately using validated SL)
+        volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
+
         request = {
-            "action": mt5.TRADE_ACTION_DEAL,
+            "action": action_type,
             "symbol": symbol,
             "volume": float(volume),
             "type": order_type,
-            "price": float(price),
+            "price": float(final_price),
             "sl": float(sl),
             "tp": float(tp),
             "deviation": 20,
             "magic": magic_number,
             "comment": "AI_SWARM",
             "type_time": mt5.ORDER_TIME_GTC,
-            "type_filling": mt5.ORDER_FILLING_IOC,
+            "type_filling": mt5.ORDER_FILLING_IOC if action_type == mt5.TRADE_ACTION_DEAL else mt5.ORDER_FILLING_RETURN,
         }
         
-        log.info(f"Sending Order to Broker: {action} {volume} {symbol} @ {price} | SL: {sl} | TP: {tp}")
+        log.info(f"Sending Order to Broker: {action} {volume} {symbol} @ {final_price} | SL: {sl} | TP: {tp}")
         
         result = mt5.order_send(request)
         if result.retcode != mt5.TRADE_RETCODE_DONE:
