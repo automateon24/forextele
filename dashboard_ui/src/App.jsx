@@ -48,6 +48,17 @@ function App() {
   const currentWinRate = activeTab === 'STRATEGIES' ? (data.mt5?.strat_win_rate || 0.0) : (data.mt5?.tele_win_rate || 0.0)
   const currentPnl = activeTab === 'STRATEGIES' ? (data.mt5?.strat_pnl || 0.0) : (data.mt5?.tele_pnl || 0.0)
   
+  // Ledger Splitting Logic
+  const allClosedDeals = data.mt5?.closed_deals || []
+  const activeClosedDeals = activeTab === 'STRATEGIES' ? allClosedDeals.filter(d => d.magic !== 999999) : allClosedDeals.filter(d => d.magic === 999999)
+  
+  // Isolated 50/50 Capital Base (or 5K fixed logic based on current equity / 2)
+  const ledgerCapital = (account.equity || 10000) / 2
+  // We assume margin is dynamically split for visual purposes
+  const activeMargin = activePosList.reduce((sum, p) => sum + 100 /* Mock margin per lot if real not avail */, 0) // Placeholder
+  const marginAlloc = (account.margin || 0) / 2 // Just dividing total margin evenly for visuals
+
+  
   const formatMoney = (val) => {
     if (val === null || val === undefined || isNaN(val)) return '$0.00'
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(val))
@@ -138,14 +149,14 @@ function App() {
       {/* METRICS ROW */}
       <div className="metrics-row">
         <div className="metric-box">
-          <div className="metric-label">CAPITAL BASE</div>
-          <div className="metric-value">{formatMoney(account.equity)}</div>
-          <div className="metric-sub">Shared Portfolio Base</div>
+          <div className="metric-label">ISOLATED CAPITAL BASE</div>
+          <div className="metric-value">{formatMoney(ledgerCapital)}</div>
+          <div className="metric-sub">{activeTab} Ledger (50% Split)</div>
         </div>
         <div className="metric-box">
           <div className="metric-label">USED MARGIN</div>
-          <div className="metric-value">{formatMoney(account.margin)}</div>
-          <div className="metric-sub">{formatNumber((account.margin / account.equity)*100)}% Allocation</div>
+          <div className="metric-value">{formatMoney(marginAlloc)}</div>
+          <div className="metric-sub">{formatNumber((marginAlloc / ledgerCapital)*100)}% Allocation</div>
         </div>
         <div className="metric-box">
           <div className="metric-label">TOTAL TRADES ({activeTab})</div>
@@ -190,10 +201,39 @@ function App() {
       {/* TODAY'S COMPLETED TRADES */}
       <div className="panel-container">
         <div className="panel-header">
-          Today's Completed Trades History
+          Today's Completed Trades ({activeTab})
         </div>
         <div className="panel-body">
-          <div className="no-trades-sub">No completed trades today.</div>
+          {activeClosedDeals.length === 0 ? (
+            <div className="no-trades-sub">No completed trades today for {activeTab}.</div>
+          ) : (
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>TIME</th>
+                  <th>SYMBOL</th>
+                  <th style={{textAlign: 'center'}}>DIR</th>
+                  <th style={{textAlign: 'center'}}>LOTS</th>
+                  <th style={{textAlign: 'right'}}>REALIZED PNL</th>
+                </tr>
+              </thead>
+              <tbody>
+                {activeClosedDeals.map((deal) => (
+                  <tr key={deal.ticket}>
+                    <td style={{color: '#94a3b8'}}>{deal.time}</td>
+                    <td className="symbol-cell">{deal.symbol}</td>
+                    <td style={{textAlign: 'center'}}>
+                      <span className={`dir-badge ${deal.type === 'BUY' ? 'buy' : 'sell'}`}>{deal.type}</span>
+                    </td>
+                    <td style={{textAlign: 'center'}}>{deal.volume}</td>
+                    <td className={deal.profit >= 0 ? 'profit-text' : 'loss-text'} style={{textAlign: 'right', fontWeight: 600}}>
+                      {deal.profit >= 0 ? '+' : ''}{formatMoney(deal.profit)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
 

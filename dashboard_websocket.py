@@ -67,9 +67,22 @@ def get_mt5_data():
     strat_wins = 0
     strat_losses = 0
     
+    closed_deals = []
+    
     if history_deals:
         for deal in history_deals:
             if deal.entry == mt5.DEAL_ENTRY_OUT: # Only closed positions
+                # Collect for frontend
+                closed_deals.append({
+                    "ticket": deal.ticket,
+                    "symbol": deal.symbol,
+                    "type": "BUY" if deal.type == mt5.DEAL_TYPE_BUY else "SELL",
+                    "volume": deal.volume,
+                    "profit": deal.profit,
+                    "magic": deal.magic,
+                    "time": datetime.fromtimestamp(deal.time).strftime("%H:%M:%S")
+                })
+                
                 if deal.magic == 999999:
                     tele_pnl += deal.profit
                     if deal.profit > 0: tele_wins += 1
@@ -81,6 +94,7 @@ def get_mt5_data():
                     
     tele_win_rate = (tele_wins / (tele_wins + tele_losses) * 100) if (tele_wins + tele_losses) > 0 else 0.0
     strat_win_rate = (strat_wins / (strat_wins + strat_losses) * 100) if (strat_wins + strat_losses) > 0 else 0.0
+
     
     # Read Thread Status
     thread_status = {}
@@ -136,6 +150,7 @@ def get_mt5_data():
         "strat_wins": strat_wins,
         "strat_losses": strat_losses,
         "strat_win_rate": round(strat_win_rate, 1),
+        "closed_deals": closed_deals,
         "tickers": tickers_data
     }
 
