@@ -9,6 +9,7 @@ from datetime import datetime
 import pytz
 import tailer # Make sure this is installed or we use a custom tail logic
 import csv
+from telegram_signal_engine import FOREX_GOLD_VIPS, CRYPTO_VIPS
 
 BASE_DIR = Path(__file__).parent
 MT5_CFG_PATH = BASE_DIR / "mt5_config.json"
@@ -179,6 +180,7 @@ async def broadcast_telemetry(websocket):
                 "mt5": mt5_data,
                 "ai_logs": logs,
                 "signal_audit": audit,
+                "all_channels": FOREX_GOLD_VIPS + CRYPTO_VIPS,
                 "server_time": datetime.now(ist).strftime("%Y-%m-%d %H:%M:%S IST"),
                 "telegram_status": "🟢 TELEGRAM LIVE",
                 "strategies_scanning": 8,

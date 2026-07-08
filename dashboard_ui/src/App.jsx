@@ -229,55 +229,59 @@ function App() {
           )}
         </div>
       </div>
-      {/* SIGNAL AUDIT TABLE */}
-      <div className="panel-container">
-        <div className="panel-header" style={{color: '#facc15'}}>
-          ● SWARM AI SIGNAL AUDIT & ANALYSIS LOG
-        </div>
-        <div className="panel-body" style={{overflowX: 'auto'}}>
-          {(!data.signal_audit || data.signal_audit.length === 0) ? (
-             <div className="no-trades">No signals logged yet.</div>
-          ) : (
+      {/* SIGNAL AUDIT TABLE (ONLY SHOWS FOR TELEGRAM TAB) */}
+      {activeTab === 'TELEGRAM' && (
+        <div className="panel-container">
+          <div className="panel-header" style={{color: '#facc15'}}>
+            ● TELEGRAM CHANNEL LIVE TRACKER
+          </div>
+          <div className="panel-body" style={{overflowX: 'auto', maxHeight: '500px'}}>
             <table className="data-table" style={{fontSize: '11px'}}>
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>DATE</th>
-                  <th>ACCOUNT</th>
                   <th>CHANNEL NAME</th>
-                  <th style={{maxWidth: '150px'}}>RAW SIGNAL</th>
+                  <th>TODAY TRADES</th>
+                  <th style={{maxWidth: '150px'}}>LATEST SIGNAL RECEIVED</th>
                   <th>AI PARSED OUTPUT</th>
                   <th>EXECUTION STATUS</th>
                   <th>REASON / SWARM LOGIC</th>
                 </tr>
               </thead>
               <tbody>
-                {data.signal_audit.map((row, i) => {
+                {(data.all_channels || []).map((chName, i) => {
+                  // Find all signals for this channel (case-insensitive)
+                  const channelSignals = (data.signal_audit || []).filter(s => 
+                    s.Channel && s.Channel.toLowerCase().includes(chName.toLowerCase())
+                  );
+                  
+                  const tradeCount = channelSignals.length;
+                  const latestSignal = tradeCount > 0 ? channelSignals[0] : null; // Backend reversed list so [0] is newest
+                  
                   let statusColor = '#94a3b8';
-                  if (row.Status === 'SUCCESS') statusColor = '#10b981';
-                  else if (row.Status === 'REJECTED') statusColor = '#ef4444';
-                  else if (row.Status === 'UPDATE') statusColor = '#3b82f6';
+                  if (latestSignal) {
+                    if (latestSignal.Status === 'SUCCESS' || latestSignal.Status === 'APPROVED') statusColor = '#10b981';
+                    else if (latestSignal.Status === 'REJECTED' || latestSignal.Status === 'FAILED') statusColor = '#ef4444';
+                    else if (latestSignal.Status === 'UPDATE') statusColor = '#3b82f6';
+                  }
                   
                   return (
                     <tr key={i}>
-                      <td>{row.Trade_Number}</td>
-                      <td>{row.Timestamp}</td>
-                      <td>{row.Account}</td>
-                      <td style={{color: '#60a5fa', fontWeight: 'bold'}}>{row.Channel}</td>
-                      <td style={{maxWidth: '150px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: '#cbd5e1'}} title={row.Raw_Signal}>
-                        {row.Raw_Signal}
+                      <td style={{color: '#60a5fa', fontWeight: 'bold'}}>{chName.toUpperCase()}</td>
+                      <td style={{textAlign: 'center', fontWeight: 'bold'}}>{tradeCount > 0 ? tradeCount : '-'}</td>
+                      <td style={{maxWidth: '150px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: '#cbd5e1'}} title={latestSignal ? latestSignal.Raw_Signal : ''}>
+                        {latestSignal ? latestSignal.Raw_Signal : '-'}
                       </td>
-                      <td style={{color: '#a855f7'}}>{row.Parsed_Signal}</td>
-                      <td style={{color: statusColor, fontWeight: 'bold'}}>{row.Status}</td>
-                      <td>{row.Reason}</td>
+                      <td style={{color: '#a855f7'}}>{latestSignal ? latestSignal.Parsed_Signal : '-'}</td>
+                      <td style={{color: statusColor, fontWeight: 'bold'}}>{latestSignal ? latestSignal.Status : 'AWAITING SIGNAL'}</td>
+                      <td>{latestSignal ? latestSignal.Reason : '-'}</td>
                     </tr>
                   )
                 })}
               </tbody>
             </table>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
