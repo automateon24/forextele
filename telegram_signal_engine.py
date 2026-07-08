@@ -26,7 +26,8 @@ FOREX_GOLD_VIPS = [
     "xauusd signal 99%", "josefina trader", "forex trading master",
     "gold sniper pips", "messy forex", "forex trading tips", "rasrasanforex",
     "riaogoldforex", "gold snipers", "michael gold trader", "grade profit forex",
-    "forex market", "gold dreams trader", "xau profit zone", "saviour gold ea"
+    "forex market", "gold dreams trader", "xau profit zone", "saviour gold ea",
+    "culersforex", "global profit culb"
 ]
 
 CRYPTO_VIPS = [
