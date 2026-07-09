@@ -130,13 +130,19 @@ class MT5ExecutionEngine:
         
         # Determine Pending Order Logic
         point = info.point
-        if abs(extracted_entry - price) > (10 * point):
+        min_dist = info.trade_stops_level * point  # broker minimum stop distance
+        entry_diff = abs(extracted_entry - price)
+        
+        if entry_diff > max(10 * point, min_dist):
             action_type = mt5.TRADE_ACTION_PENDING
             final_price = extracted_entry
             if action == "BUY":
                 order_type = mt5.ORDER_TYPE_BUY_LIMIT if extracted_entry < price else mt5.ORDER_TYPE_BUY_STOP
             else:
                 order_type = mt5.ORDER_TYPE_SELL_LIMIT if extracted_entry > price else mt5.ORDER_TYPE_SELL_STOP
+            log.info(f"[MT5] Placing PENDING order at {final_price} (Market={price:.5f}, type={'LIMIT' if (action=='BUY' and extracted_entry < price) or (action=='SELL' and extracted_entry > price) else 'STOP'})")
+        else:
+            log.info(f"[MT5] Placing MARKET order at {price:.5f} (signal entry={extracted_entry}")
                 
         # Validate Stops against final_price to prevent Retcode 10016 (Invalid Stops)
         sl = round(swarm_payload.get("final_sl", 0.0), info.digits)

@@ -87,7 +87,8 @@ class OllamaSwarmEngine:
             log.info(f"[TRIGGER] Extraction Successful: {trade_data['action']} {trade_data['symbol']}")
         except json.JSONDecodeError:
             log.error(f"[TRIGGER] Failed to output valid JSON. Output: {trigger_resp}")
-            # Silently drop if trigger fails to extract valid JSON (meaning it wasn't a real signal)
+            # Log it so it appears in the UI table
+            self._log_audit(account_id, channel_name, raw_message, {}, "FAILED", "Trigger could not parse a valid trade structure from this signal")
             return {"status": "FAILED", "reason": "Trigger hallucinated non-JSON output"}
 
         # 3. The Governor
@@ -125,13 +126,18 @@ class OllamaSwarmEngine:
         
         # --- PHASE 3: EXECUTION HANDOFF ---
         log.info("[HANDOFF] Routing payload to MT5 Broker...")
-        success = self.mt5_engine.execute_trade(final_trade)
-        if success:
-            final_trade["execution_status"] = "SUCCESS"
-        else:
-            final_trade["execution_status"] = "FAILED"
+        try:
+            success = self.mt5_engine.execute_trade(final_trade)
+        except Exception as ex:
+            log.error(f"[EXECUTION] Critical exception during MT5 handoff: {ex}")
+            success = False
             
-        self._log_audit(account_id, channel_name, raw_message, final_trade, "APPROVED", "Passed Watcher & Governor logic")
+        exec_status = "SUCCESS" if success else "FAILED"
+        exec_reason = "Trade executed successfully on MT5" if success else "MT5 execution failed — check broker logs"
+        
+        self._log_audit(account_id, channel_name, raw_message, final_trade, exec_status, exec_reason)
+        
+        final_trade["execution_status"] = exec_status
         return final_trade
         
     def _log_audit(self, account_id, channel_name, raw_message, parsed_data, status, reason):
