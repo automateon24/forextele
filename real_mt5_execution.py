@@ -111,7 +111,10 @@ class MT5ExecutionEngine:
             log.error(f"Tick data unavailable for {symbol}.")
             return False
             
-        extracted_entry = float(swarm_payload.get("entry", 0.0))
+        price = tick.ask if action == "BUY" else tick.bid
+            
+        entry_val = swarm_payload.get("entry")
+        extracted_entry = float(entry_val) if entry_val is not None else 0.0
         
         # If no entry provided, use Market
         if extracted_entry <= 0:
