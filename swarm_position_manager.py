@@ -65,8 +65,24 @@ class SwarmPositionManager:
                 log.error(f"Ollama API Error: {e}")
                 return ""
 
-    def modify_sl(self, ticket, symbol, new_sl):
-        """Execute the SL modification on MT5"""
+    def modify_sl(self, ticket, symbol, new_sl, pos_type):
+        """Execute the SL modification on MT5 with broker distance validation."""
+        info = mt5.symbol_info(symbol)
+        tick = mt5.symbol_info_tick(symbol)
+        if not info or not tick:
+            log.error(f"Cannot validate SL for {symbol}: symbol info unavailable.")
+            return
+
+        point = info.point
+        min_stop_dist = info.trade_stops_level * point
+        current_price = tick.bid if pos_type == "BUY" else tick.ask
+
+        # Validate SL is outside the freeze zone
+        sl_distance = abs(current_price - new_sl)
+        if sl_distance < min_stop_dist:
+            log.warning(f"[TRAIL_BOSS] SL {new_sl} is inside broker min-stop distance ({min_stop_dist:.5f}) for {symbol}. Skipping move.")
+            return
+
         request = {
             "action": mt5.TRADE_ACTION_SLTP,
             "position": ticket,
@@ -75,9 +91,9 @@ class SwarmPositionManager:
         }
         result = mt5.order_send(request)
         if result.retcode != mt5.TRADE_RETCODE_DONE:
-            log.error(f"Failed to trail SL for {ticket}: {result.retcode}")
+            log.error(f"Failed to trail SL for {ticket}: {result.retcode} | {result.comment}")
         else:
-            log.info(f"Successfully trailed SL for {ticket} to {new_sl}")
+            log.info(f"✅ Successfully trailed SL for {ticket} to {new_sl}")
 
     async def run_loop(self):
         log.info("Trail Boss Engine Online. Monitoring active positions...")
@@ -109,7 +125,8 @@ class SwarmPositionManager:
                                     info = mt5.symbol_info(pos.symbol)
                                     rounded_sl = round(new_sl, info.digits)
                                     log.warning(f"🚨 TRAIL BOSS EXECUTING SL MOVE to {rounded_sl}!")
-                                    self.modify_sl(pos.ticket, pos.symbol, rounded_sl)
+                                    pos_type_str = "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL"
+                                    self.modify_sl(pos.ticket, pos.symbol, rounded_sl, pos_type_str)
                         except json.JSONDecodeError:
                             pass
             
