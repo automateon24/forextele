@@ -6,9 +6,27 @@ import csv
 from datetime import datetime
 from pathlib import Path
 from real_mt5_execution import MT5ExecutionEngine
+import MetaTrader5 as mt5
 
 BASE_DIR = Path(__file__).parent
 PROMPTS_FILE = BASE_DIR / "swarm_prompts.json"
+
+# ─── SPAM KEYWORD BLACKLIST (client-side, before Ollama) ────────────────────
+SPAM_KEYWORDS = [
+    "join fast", "join now", "join our", "join free", "vip today",
+    "vip free", "paid channel", "paid group", "subscribe", "click here",
+    "t.me/+", "whatsapp.com", "show me you active", "show me you're active",
+    "message me", "contact me", "limited time", "free for", "members free",
+    "lifetime subscription", "month subscription", "without money",
+    "accuracy", "jackpot", "enjoy your profit", "tp hit", "tp1 hit",
+    "tp2 hit", "tp3 hit", "pips profit", "pips jackpot", "ready?",
+    "who is ready", "who is active", "are you active", "are you ready",
+    "open a vip", "invite link", "invite you", "add you to",
+    "don't miss", "dont miss", "act fast", "limited slots",
+]
+
+# ─── DAILY CIRCUIT BREAKER ──────────────────────────────────────────────────
+MAX_DAILY_LOSS_PCT = 0.03  # Stop ALL Telegram trades if account drops 3% today
 
 log = logging.getLogger(__name__)
 
@@ -47,6 +65,37 @@ class OllamaSwarmEngine:
         Passes the message through Watcher -> Trigger -> Governor.
         """
         log.info("--- SWARM PIPELINE INITIATED ---")
+
+        # ── GATE 0: Client-side spam keyword blacklist (before Ollama) ──────
+        msg_lower = raw_message.lower()
+        for kw in SPAM_KEYWORDS:
+            if kw in msg_lower:
+                log.info(f"[SPAM_GATE] Blocked by keyword '{kw}' — silently discarded.")
+                return {"status": "REJECTED", "reason": f"Spam keyword: '{kw}'"}
+
+        # ── GATE 1: Minimum length check ─────────────────────────────────────
+        if len(raw_message.strip()) < 15:
+            log.info("[SPAM_GATE] Message too short — discarded.")
+            return {"status": "REJECTED", "reason": "Message too short"}
+
+        # ── GATE 2: Daily circuit breaker ────────────────────────────────────
+        try:
+            if mt5.terminal_info():
+                acc = mt5.account_info()
+                if acc:
+                    from datetime import timedelta
+                    now = datetime.now()
+                    yesterday = now - timedelta(hours=24)
+                    deals = mt5.history_deals_get(yesterday, now)
+                    if deals:
+                        daily_pnl = sum(d.profit for d in deals if d.magic == 999999 and d.entry == mt5.DEAL_ENTRY_OUT)
+                        daily_loss_pct = abs(daily_pnl) / acc.balance if daily_pnl < 0 else 0
+                        if daily_loss_pct >= MAX_DAILY_LOSS_PCT:
+                            log.warning(f"[CIRCUIT_BREAKER] Daily Telegram loss {daily_loss_pct:.1%} >= {MAX_DAILY_LOSS_PCT:.0%} limit. HALTING new Telegram trades.")
+                            self._log_audit(account_id, channel_name, raw_message, {}, "REJECTED", f"Circuit breaker: daily loss {daily_loss_pct:.1%} exceeded {MAX_DAILY_LOSS_PCT:.0%} limit")
+                            return {"status": "REJECTED", "reason": "Circuit breaker triggered"}
+        except Exception as cb_ex:
+            log.warning(f"[CIRCUIT_BREAKER] Could not check daily PnL: {cb_ex}")
         
         # 1. The Watcher
         watcher_resp = await self._ask_ollama(self.prompts["WATCHER_PROMPT"], raw_message)
@@ -113,6 +162,25 @@ class OllamaSwarmEngine:
         final_trade = {**trade_data, **risk_decision}
         final_trade["status"] = "APPROVED"
         final_trade["risk_modifier"] = risk_modifier
+
+        # ── GATE 3: Price Sanity Check (blocks hallucinated prices) ─────────
+        try:
+            if mt5.terminal_info():
+                symbol = final_trade.get("symbol", "")
+                if mt5.symbol_select(symbol, True):
+                    tick = mt5.symbol_info_tick(symbol)
+                    if tick:
+                        live_price = tick.ask if final_trade.get("action") == "BUY" else tick.bid
+                        entry_price = final_trade.get("entry")
+                        if entry_price and live_price and live_price > 0:
+                            deviation_pct = abs(entry_price - live_price) / live_price
+                            if deviation_pct > 0.02:  # More than 2% from live price
+                                reason = f"Price sanity fail: entry {entry_price} is {deviation_pct:.1%} from live {live_price:.5f}"
+                                log.warning(f"[PRICE_GATE] {reason}")
+                                self._log_audit(account_id, channel_name, raw_message, final_trade, "REJECTED", reason)
+                                return {"status": "REJECTED", "reason": reason}
+        except Exception as pg_ex:
+            log.warning(f"[PRICE_GATE] Could not validate price: {pg_ex}")
         
         # Explicit Crypto Altcoin Block (Only allow BTC and ETH)
         symbol = final_trade.get("symbol", "").upper()

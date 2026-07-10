@@ -47,8 +47,7 @@ def get_optimized_dna():
 
 def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     """
-    STRICT 1% RISK ALGORITHM:
-    Calculates exact lot size based on account equity and Stop-Loss distance in points.
+    STRICT 1% RISK ALGORITHM — hard capped at 0.10 lots max.
     """
     info = mt5.symbol_info(symbol)
     if not info: return 0.01
@@ -68,7 +67,66 @@ def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     step = info.volume_step if info.volume_step > 0 else 0.01
     scaled_lot = round(true_volume / step) * step
     
-    return max(info.volume_min, min(scaled_lot, info.volume_max))
+    raw_lot = max(info.volume_min, min(scaled_lot, info.volume_max))
+    
+    # ── HARD SAFETY CAP: Never exceed 0.10 lots per trade ─────────────────
+    MAX_LOT_CAP = 0.10
+    capped_lot = min(raw_lot, MAX_LOT_CAP)
+    if raw_lot > MAX_LOT_CAP:
+        logging.warning(f"[RISK_CAP] Lot size {raw_lot:.2f} capped to {MAX_LOT_CAP} for safety.")
+    return capped_lot
+
+
+def calculate_adx(symbol, timeframe=mt5.TIMEFRAME_M15, period=14):
+    """
+    Calculate ADX to detect trending vs ranging market.
+    ADX < 20 = ranging (safe for mean reversion)
+    ADX > 25 = strong trend (avoid mean reversion)
+    """
+    rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, period * 3)
+    if rates is None or len(rates) < period * 2:
+        return 50.0  # Assume trending if data unavailable (conservative)
+    
+    df = pd.DataFrame(rates)
+    df['tr'] = pd.concat([
+        df['high'] - df['low'],
+        (df['high'] - df['close'].shift()).abs(),
+        (df['low'] - df['close'].shift()).abs()
+    ], axis=1).max(axis=1)
+    
+    df['dm_pos'] = ((df['high'] - df['high'].shift()) > (df['low'].shift() - df['low'])).astype(float) * (df['high'] - df['high'].shift()).clip(lower=0)
+    df['dm_neg'] = ((df['low'].shift() - df['low']) > (df['high'] - df['high'].shift())).astype(float) * (df['low'].shift() - df['low']).clip(lower=0)
+    
+    atr = df['tr'].rolling(period).mean()
+    di_pos = 100 * (df['dm_pos'].rolling(period).mean() / atr)
+    di_neg = 100 * (df['dm_neg'].rolling(period).mean() / atr)
+    dx = (abs(di_pos - di_neg) / (di_pos + di_neg).replace(0, 1)) * 100
+    adx = dx.rolling(period).mean().iloc[-1]
+    return float(adx) if not pd.isna(adx) else 50.0
+
+
+def is_daily_loss_breaker_hit(max_loss_pct=0.03):
+    """
+    Returns True if today's strategy losses exceeded max_loss_pct of balance.
+    Halts new trades for the day if triggered.
+    """
+    try:
+        account = mt5.account_info()
+        if not account: return False
+        from datetime import timedelta
+        now = datetime.now()
+        yesterday = now - timedelta(hours=24)
+        deals = mt5.history_deals_get(yesterday, now)
+        if not deals: return False
+        daily_pnl = sum(d.profit for d in deals if d.magic == 888888 and d.entry == mt5.DEAL_ENTRY_OUT)
+        if daily_pnl < 0:
+            loss_pct = abs(daily_pnl) / account.balance
+            if loss_pct >= max_loss_pct:
+                logging.warning(f"[CIRCUIT_BREAKER] Strategy daily loss {loss_pct:.1%} >= {max_loss_pct:.0%}. Halting new entries.")
+                return True
+    except Exception as e:
+        logging.error(f"[CIRCUIT_BREAKER] Error checking daily loss: {e}")
+    return False
 
 def place_order(symbol, trade_type, strat_name, magic_number=888888):
     """
@@ -277,6 +335,12 @@ def process_symbol(symbol, base_dna):
                 init_mt5() # Attempt auto-reconnect
                 time.sleep(5)
                 continue
+
+            # Step 1b: Daily circuit breaker check
+            if is_daily_loss_breaker_hit(max_loss_pct=0.03):
+                THREAD_STATUS[symbol] = "PAUSED: Daily loss limit hit"
+                time.sleep(60)  # Check again in 60s
+                continue
                 
             # Map XM Global symbols back to standard DNA keys
             dna_symbol_key = symbol
@@ -327,7 +391,11 @@ def process_symbol(symbol, base_dna):
                                     last_trade_time = time.time()
                                     
                     elif "RSI" in strat_name or "MEAN_REVERSION" in strat_name:
-                        # Dummy RSI logic representation
+                        # RSI Mean Reversion — ONLY trade in ranging markets (ADX < 25)
+                        adx = calculate_adx(symbol)
+                        if adx >= 25:
+                            THREAD_STATUS[symbol] = f"Active | MEAN_REVERSION skipped (ADX={adx:.1f} trending)"
+                            continue  # Skip in trending markets to avoid counter-trend losses
                         if len(df) > 14:
                             delta = df['close'].diff()
                             gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
@@ -335,10 +403,10 @@ def process_symbol(symbol, base_dna):
                             rs = gain / loss
                             rsi = 100 - (100 / (1 + rs)).iloc[-1]
                             
-                            if rsi < 30 and (time.time() - last_trade_time > 60): # Oversold
+                            if rsi < 30 and (time.time() - last_trade_time > 60):
                                 place_order(symbol, "BUY", strat_name)
                                 last_trade_time = time.time()
-                            elif rsi > 70 and (time.time() - last_trade_time > 60): # Overbought
+                            elif rsi > 70 and (time.time() - last_trade_time > 60):
                                 place_order(symbol, "SELL", strat_name)
                                 last_trade_time = time.time()
                                 
