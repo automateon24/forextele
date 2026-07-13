@@ -45,6 +45,33 @@ def get_optimized_dna():
         logging.warning("AI DNA not found. Falling back to default.")
         return {}
 
+def calculate_adx(symbol, p=14):
+    try:
+        # Fetch M15 rates to calculate ADX
+        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, p * 3)
+        if rates is None or len(rates) == 0:
+            return 20
+        df = pd.DataFrame(rates)
+        tr = pd.concat([
+            df['high'] - df['low'],
+            (df['high'] - df['close'].shift()).abs(),
+            (df['low'] - df['close'].shift()).abs()
+        ], axis=1).max(axis=1)
+        dmp = ((df['high'] - df['high'].shift()) > (df['low'].shift() - df['low'])).astype(float) * (df['high'] - df['high'].shift()).clip(lower=0)
+        dmn = ((df['low'].shift() - df['low']) > (df['high'] - df['high'].shift())).astype(float) * (df['low'].shift() - df['low']).clip(lower=0)
+        atr = tr.rolling(p).mean()
+        di_p = 100 * (dmp.rolling(p).mean() / atr)
+        di_n = 100 * (dmn.rolling(p).mean() / atr)
+        dx = (abs(di_p - di_n) / (di_p + di_n).replace(0, 1)) * 100
+        adx = dx.rolling(p).mean()
+        val = adx.iloc[-1]
+        if pd.isna(val):
+            return 20
+        return float(val)
+    except Exception as e:
+        logging.error(f"Error calculating ADX for {symbol}: {e}")
+        return 20
+
 def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     """
     STRICT 1% RISK ALGORITHM — hard capped at 0.10 lots max.
@@ -128,7 +155,7 @@ def is_daily_loss_breaker_hit(max_loss_pct=0.03):
         logging.error(f"[CIRCUIT_BREAKER] Error checking daily loss: {e}")
     return False
 
-def place_order(symbol, trade_type, strat_name, magic_number=888888):
+def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
     """
     Executes the trade on MT5 with embedded ATR Stop-Loss to prevent naked positions.
     """
@@ -151,9 +178,15 @@ def place_order(symbol, trade_type, strat_name, magic_number=888888):
     point = info.point
     digits = info.digits
     
+    sl_atr_mult = 1.5
+    tp_atr_mult = 3.0
+    if dna is not None:
+        sl_atr_mult = max(float(dna.get("sl", 1.5)), 0.1)
+        tp_atr_mult = max(float(dna.get("tgt", 3.0)), 0.2)
+
     if atr > 0:
-        sl_points_raw = atr * 1.5
-        tp_points_raw = atr * 3.0
+        sl_points_raw = atr * sl_atr_mult
+        tp_points_raw = atr * tp_atr_mult
     else:
         pip_mult = 10 if digits in [3, 5] else 1
         sl_points_raw = 50 * pip_mult * point
@@ -161,7 +194,7 @@ def place_order(symbol, trade_type, strat_name, magic_number=888888):
 
     sl_points_count = sl_points_raw / point if point > 0 else 1000
     
-    # Calculate strict 1% risk lot sizing
+    # Calculate strict 1% risk lot sizing or hard limit cap
     lot = calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01)
 
     action = mt5.ORDER_TYPE_BUY if trade_type == "BUY" else mt5.ORDER_TYPE_SELL
@@ -405,125 +438,211 @@ def process_symbol(symbol, base_dna):
                 sn = strat_key.split(":")[1]
                 dr = dna.get("direction","BOTH")
                 try:
+                    # --- REGIME FILTER GUARD ---
+                    # Volatility Ratio from df15
+                    std_short = df15['close'].iloc[-5:].std()
+                    std_long  = df15['close'].iloc[-50:].std()
+                    vol_ratio = std_short / std_long if std_long > 0 else 1.0
+
+                    # ADX from live calculation
+                    adx_val = calculate_adx(symbol)
+
+                    # Classify Strategy Types
+                    is_trend_strategy = sn in ("TREND_FOLLOWING","BULL_TREND_FOLLOWER","BEAR_TREND_FOLLOWER","MOMENTUM_BURST","EMA_CROSSOVER","ZERO_HERO","MAGIC_SQUARE","AI_ENHANCED","SWAP_ARBITRAGE","SCALPING")
+                    is_reversion_strategy = sn in ("MEAN_REVERSION","RSI_REVERSAL","NY_OPEN_REVERSAL","ASIAN_RANGE_SCALP","BOLLINGER_SQUEEZE","DAY_HIGH_BEARISH","ENHANCED_BEARISH","DAY_LOW_BULLISH","ENHANCED_BULLISH","DAY_HIGH_LOW_TRADITIONAL","ULTIMATE_DAY_HIGH_LOW","ORDER_BLOCK_REVERSAL","VOLUME_CLIMAX","INSTITUTIONAL_SUPPORT")
+                    is_breakout_strategy = sn in ("BREAKOUT","VOLATILITY_BREAKOUT","ATR_BREAK","RESIST_BREAK","LONDON_BREAKOUT","MORNING_BREAKOUT","NEWS_BREAKOUT_STRADDLE","OPENING_DRIVE","WIDE_RANGE_RIDER")
+
+                    # Check rules
+                    if dna.get("active", True) is False: continue
+                    if symbol in ("GOLD", "SILVER") and sn in ("ZERO_HERO", "MAGIC_SQUARE", "AI_ENHANCED", "SWAP_ARBITRAGE", "SCALPING", "PIP_BLAST"): continue
+                    if is_trend_strategy and adx_val < 20: continue
+                    if is_reversion_strategy and adx_val >= 25: continue
+                    if is_breakout_strategy and vol_ratio < 0.8: continue
+                    if is_reversion_strategy and vol_ratio >= 1.5: continue
+
+                    thresh_val = float(dna.get("thresh", 0.85))
+                    pr = df5['close'].iloc[-1]
+
                     if sn == "BOLLINGER_SQUEEZE":
-                        mid, up, lo = _bb(df15); pr = df15['close'].iloc[-1]
-                        if (up-lo)/mid < 0.004:
-                            if pr > up and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr < lo and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        mid, up, lo = _bb(df15)
+                        width = (up - lo) / mid
+                        bol_squeeze_thresh = 0.004 * (thresh_val if thresh_val > 0 else 0.87)
+                        if width < bol_squeeze_thresh:
+                            if pr > up and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr < lo and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("DAY_HIGH_BEARISH","ENHANCED_BEARISH"):
                         if is_london or is_ny:
-                            dh = df1h['high'].iloc[-24:].max(); pr = df5['close'].iloc[-1]
-                            if pr >= dh*0.9995 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            mean_24 = df1h['close'].iloc[-24:].mean()
+                            std_24 = df1h['close'].iloc[-24:].std()
+                            std_24 = std_24 if std_24 > 0 else (pr * 0.001)
+                            z_score = (pr - mean_24) / std_24
+                            if z_score >= (thresh_val if thresh_val > 0 else 0.82) and dr in ("SELL","BOTH"):
+                                place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("DAY_LOW_BULLISH","ENHANCED_BULLISH"):
                         if is_london or is_ny:
-                            dl = df1h['low'].iloc[-24:].min(); pr = df5['close'].iloc[-1]
-                            if pr <= dl*1.0005 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
+                            mean_24 = df1h['close'].iloc[-24:].mean()
+                            std_24 = df1h['close'].iloc[-24:].std()
+                            std_24 = std_24 if std_24 > 0 else (pr * 0.001)
+                            z_score = (pr - mean_24) / std_24
+                            if z_score <= (thresh_val if thresh_val < 0 else -2.2) and dr in ("BUY","BOTH"):
+                                place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("DAY_HIGH_LOW_TRADITIONAL","ULTIMATE_DAY_HIGH_LOW"):
-                        dh=df1h['high'].iloc[-24:].max(); dl=df1h['low'].iloc[-24:].min(); pr=df5['close'].iloc[-1]
-                        if pr > dh and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif pr < dl and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        dh = df1h['high'].iloc[-24:].max()
+                        dl = df1h['low'].iloc[-24:].min()
+                        buffer = (dh - dl) * 0.01 * (thresh_val - 0.5)
+                        if pr > dh + buffer and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif pr < dl - buffer and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "LONDON_BREAKOUT":
                         if 7 <= utc_h <= 10:
-                            ah=df1h['high'].iloc[-9:-1].max(); al=df1h['low'].iloc[-9:-1].min(); pr=df5['close'].iloc[-1]
-                            if pr > ah: place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr < al: place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            ah = df1h['high'].iloc[-9:-1].max()
+                            al = df1h['low'].iloc[-9:-1].min()
+                            rng = ah - al
+                            if pr > ah + rng * 0.05 * thresh_val: place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr < al - rng * 0.05 * thresh_val: place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "ASIAN_RANGE_SCALP":
                         if is_asian:
-                            ah=df1h['high'].iloc[-4:].max(); al=df1h['low'].iloc[-4:].min(); mid=(ah+al)/2; pr=df5['close'].iloc[-1]
-                            if pr < mid and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr > mid and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            ah = df1h['high'].iloc[-4:].max()
+                            al = df1h['low'].iloc[-4:].min()
+                            mid = (ah + al) / 2
+                            if pr < mid and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr > mid and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "NY_OPEN_REVERSAL":
                         if 12 <= utc_h <= 14:
                             r = _rsi(df15)
-                            if r < 35 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif r > 65 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            oversold = 35 * thresh_val
+                            overbought = 100 - oversold
+                            if r < oversold and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif r > overbought and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "MORNING_BREAKOUT":
                         if 6 <= utc_h <= 9:
-                            ph=df1h['high'].iloc[-12:-4].max(); pl=df1h['low'].iloc[-12:-4].min(); pr=df5['close'].iloc[-1]
-                            if pr > ph: place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr < pl: place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            ph = df1h['high'].iloc[-12:-4].max()
+                            pl = df1h['low'].iloc[-12:-4].min()
+                            rng = ph - pl
+                            if pr > ph + rng * 0.05 * thresh_val: place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr < pl - rng * 0.05 * thresh_val: place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "MACD_DIVERGENCE":
-                        ml,ms,mlp,msp = _macd(df15)
-                        if mlp<msp and ml>ms and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif mlp>msp and ml<ms and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        ml, ms, mlp, msp = _macd(df15)
+                        if mlp < msp and ml > ms and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif mlp > msp and ml < ms and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "EMA_CROSSOVER":
-                        e9=_ema(df15,9); e21=_ema(df15,21)
-                        if e9.iloc[-2]<e21.iloc[-2] and e9.iloc[-1]>e21.iloc[-1] and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif e9.iloc[-2]>e21.iloc[-2] and e9.iloc[-1]<e21.iloc[-1] and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        e9 = _ema(df15,9); e21 = _ema(df15,21)
+                        if e9.iloc[-2] < e21.iloc[-2] and e9.iloc[-1] > e21.iloc[-1] and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif e9.iloc[-2] > e21.iloc[-2] and e9.iloc[-1] < e21.iloc[-1] and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "VWAP_BOUNCE":
-                        df5['tp2']=(df5['high']+df5['low']+df5['close'])/3
-                        vwap=(df5['tp2']*df5['volume']).cumsum()/df5['volume'].cumsum()
-                        vv=vwap.iloc[-1]; pr=df5['close'].iloc[-1]; pv=df5['close'].iloc[-2]
-                        if pv<vv and pr>vv and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif pv>vv and pr<vv and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        df5['tp2'] = (df5['high'] + df5['low'] + df5['close']) / 3
+                        vwap = (df5['tp2'] * df5['volume']).cumsum() / df5['volume'].cumsum()
+                        vv = vwap.iloc[-1]
+                        pv = df5['close'].iloc[-2]
+                        if pv < vv and pr > vv and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif pv > vv and pr < vv and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "ORDER_BLOCK_REVERSAL":
-                        rc=df1h.tail(20); bob=rc[rc['close']>rc['open']]['high'].max(); bok=rc[rc['close']<rc['open']]['low'].min(); pr=df5['close'].iloc[-1]
-                        if pr<=bok*1.001 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif pr>=bob*0.999 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        rc = df1h.tail(20)
+                        bob = rc[rc['close'] > rc['open']]['high'].max() if len(rc[rc['close'] > rc['open']]) > 0 else pr
+                        bok = rc[rc['close'] < rc['open']]['low'].min() if len(rc[rc['close'] < rc['open']]) > 0 else pr
+                        if pr <= bok * (1 + 0.001 * thresh_val) and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif pr >= bob * (1 - 0.001 * thresh_val) and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("BREAKOUT","VOLATILITY_BREAKOUT","ATR_BREAK","RESIST_BREAK"):
-                        rh=df15['high'].iloc[-21:-1].max(); rl=df15['low'].iloc[-21:-1].min(); pr=df5['close'].iloc[-1]
-                        if pr>rh and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif pr<rl and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        rh = df15['high'].iloc[-21:-1].max()
+                        rl = df15['low'].iloc[-21:-1].min()
+                        if pr > rh * (1 + 0.0002 * thresh_val) and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif pr < rl * (1 - 0.0002 * thresh_val) and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("MEAN_REVERSION","RSI_REVERSAL"):
                         if calculate_adx(symbol) >= 25: continue
-                        r=_rsi(df5)
-                        if r<30 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif r>70 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        r = _rsi(df5)
+                        oversold = 30 * thresh_val
+                        overbought = 100 - oversold
+                        if r < oversold and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif r > overbought and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("TREND_FOLLOWING","BULL_TREND_FOLLOWER","BEAR_TREND_FOLLOWER","MOMENTUM_BURST"):
                         if calculate_adx(symbol) < 20: continue
-                        e9=_ema(df15,9); e50=_ema(df15,50); r=_rsi(df15)
-                        if e9.iloc[-1]>e50.iloc[-1] and 45<r<70 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif e9.iloc[-1]<e50.iloc[-1] and 30<r<55 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        e9 = _ema(df15,9); e50 = _ema(df15,50); r = _rsi(df15)
+                        if e9.iloc[-1] > e50.iloc[-1] and 45 < r < 70 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif e9.iloc[-1] < e50.iloc[-1] and 30 < r < 55 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif "GAP" in sn:
-                        if len(df1h)>=2:
-                            pc=df1h['close'].iloc[-2]; co=df1h['open'].iloc[-1]; cc=df1h['close'].iloc[-1]; gp=(co-pc)/pc
-                            if abs(gp)>0.001:
-                                if gp>0 and cc<co and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
-                                elif gp<0 and cc>co and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
+                        if len(df1h) >= 2:
+                            pc = df1h['close'].iloc[-2]
+                            co = df1h['open'].iloc[-1]
+                            cc = df1h['close'].iloc[-1]
+                            gp = (co - pc) / pc
+                            if abs(gp) > 0.001:
+                                if gp > 0 and cc < co and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                                elif gp < 0 and cc > co and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "OPENING_DRIVE":
                         if utc_h in [8,9,13,14]:
-                            e9=_ema(df5,9); e21=_ema(df5,21)
-                            if e9.iloc[-1]>e21.iloc[-1] and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif e9.iloc[-1]<e21.iloc[-1] and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            e9 = _ema(df5,9); e21 = _ema(df5,21)
+                            if e9.iloc[-1] > e21.iloc[-1] and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif e9.iloc[-1] < e21.iloc[-1] and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "SHORT_SQUEEZE":
-                        r=_rsi(df5); _,up,_=_bb(df5)
-                        if r>60 and df5['close'].iloc[-1]>up and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
+                        r = _rsi(df5); _, up, _ = _bb(df5)
+                        if r > 60 and pr > up and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "LONG_LIQUIDATION":
-                        r=_rsi(df5); _,_,lo=_bb(df5)
-                        if r<40 and df5['close'].iloc[-1]<lo and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        r = _rsi(df5); _, _, lo = _bb(df5)
+                        if r < 40 and pr < lo and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("RANGE_CONTRACTION","EARLY_BREAKDOWN"):
-                        rg=(df1h['high']-df1h['low']).tail(5); pr=df5['close'].iloc[-1]; op=df1h['open'].iloc[-1]
-                        if rg.iloc[-1]<rg.mean()*0.6:
-                            if pr<op and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr>op and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
+                        rg = (df1h['high'] - df1h['low']).tail(5)
+                        op = df1h['open'].iloc[-1]
+                        if rg.iloc[-1] < rg.mean() * 0.6:
+                            if pr < op and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr > op and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "VOLUME_CLIMAX":
-                        av=df5['volume'].rolling(20).mean().iloc[-1]; pr=df5['close'].iloc[-1]; pv=df5['close'].iloc[-2]
-                        if df5['volume'].iloc[-1]>av*2:
-                            if pr<pv and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr>pv and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        av = df5['volume'].rolling(20).mean().iloc[-1]
+                        pv = df5['close'].iloc[-2]
+                        if df5['volume'].iloc[-1] > av * 2:
+                            if pr < pv and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr > pv and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "WIDE_RANGE_RIDER":
-                        lr=df1h['high'].iloc[-1]-df1h['low'].iloc[-1]; ar=(df1h['high']-df1h['low']).rolling(10).mean().iloc[-1]
-                        if lr>ar*1.5:
-                            pr=df5['close'].iloc[-1]; op=df1h['open'].iloc[-1]
-                            if pr>op and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr<op and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        lr = df1h['high'].iloc[-1] - df1h['low'].iloc[-1]
+                        ar = (df1h['high'] - df1h['low']).rolling(10).mean().iloc[-1]
+                        if lr > ar * 1.5:
+                            op = df1h['open'].iloc[-1]
+                            if pr > op and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr < op and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "NEWS_BREAKOUT_STRADDLE":
                         if utc_h in [8,9,13,14]:
-                            rh=df15['high'].iloc[-12:].max(); rl=df15['low'].iloc[-12:].min(); pr=df5['close'].iloc[-1]
-                            if pr>rh: place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                            elif pr<rl: place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            rh = df15['high'].iloc[-12:].max()
+                            rl = df15['low'].iloc[-12:].min()
+                            if pr > rh: place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                            elif pr < rl: place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn == "INSTITUTIONAL_SUPPORT":
-                        pr=df5['close'].iloc[-1]; info=mt5.symbol_info(symbol)
+                        info = mt5.symbol_info(symbol)
                         if info:
-                            rf=10**(info.digits-2); nr=round(pr*rf)/rf
-                            if abs(pr-nr)/pr<0.0005:
-                                r=_rsi(df5)
-                                if r<45 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                                elif r>55 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                            rf = 10**(info.digits - 2)
+                            nr = round(pr * rf) / rf
+                            if abs(pr - nr) / pr < 0.0005:
+                                r = _rsi(df5)
+                                if r < 45 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                                elif r > 55 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                     elif sn in ("ZERO_HERO","MAGIC_SQUARE","AI_ENHANCED","SCALPING","PIP_BLAST","SWAP_ARBITRAGE"):
-                        e9=_ema(df5,9); e21=_ema(df5,21); r=_rsi(df5,7)
-                        if e9.iloc[-1]>e21.iloc[-1] and r>55 and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn); last_trade_time=time.time(); can_trade=False
-                        elif e9.iloc[-1]<e21.iloc[-1] and r<45 and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn); last_trade_time=time.time(); can_trade=False
+                        e9 = _ema(df5, 9); e21 = _ema(df5, 21); r = _rsi(df5, 7)
+                        rsi_buy = 50 + (5 * thresh_val)
+                        rsi_sell = 50 - (5 * thresh_val)
+                        if e9.iloc[-1] > e21.iloc[-1] and r > rsi_buy and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif e9.iloc[-1] < e21.iloc[-1] and r < rsi_sell and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
+
                 except Exception as se:
                     logging.error(f"[{symbol}] Strategy {sn} error: {se}")
                     continue

@@ -9,7 +9,8 @@
       "tgt": 0.8625,
       "sl": 0.4082,
       "thresh": -2.2,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": true
     },
     "EURUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -20,7 +21,8 @@
       "tgt": 0.6407,
       "sl": 0.3545,
       "thresh": 0.82,
-      "boost": 0.036
+      "boost": 0.036,
+      "active": true
     },
     "EURUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -31,7 +33,8 @@
       "tgt": 0.1614,
       "sl": 0.1384,
       "thresh": 0.82,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "EURUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -42,7 +45,8 @@
       "tgt": 0.5614,
       "sl": 0.2807,
       "thresh": 0.85,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "EURUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -53,7 +57,8 @@
       "tgt": 0.7986,
       "sl": 0.4658,
       "thresh": 0.9,
-      "boost": 0.116
+      "boost": 0.116,
+      "active": false
     },
     "EURUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -64,7 +69,8 @@
       "tgt": 0.7922,
       "sl": 0.2994,
       "thresh": 0.88,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "EURUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -75,7 +81,8 @@
       "tgt": 0.7521,
       "sl": 0.329,
       "thresh": 0.88,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": true
     },
     "EURUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -86,7 +93,8 @@
       "tgt": 0.5689,
       "sl": 0.3319,
       "thresh": 0.84,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": true
     },
     "EURUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -97,7 +105,8 @@
       "tgt": 0.8318,
       "sl": 0.431,
       "thresh": 0.82,
-      "boost": 0.037
+      "boost": 0.037,
+      "active": false
     },
     "EURUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -108,7 +117,8 @@
       "tgt": 0.2842,
       "sl": 0.2842,
       "thresh": 0.85,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": false
     },
     "EURUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -119,7 +129,8 @@
       "tgt": 0.1861,
       "sl": 0.1396,
       "thresh": 0.9,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "EURUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -130,7 +141,8 @@
       "tgt": 1.0074,
       "sl": 0.4407,
       "thresh": 0.75,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": true
     },
     "EURUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -141,7 +153,8 @@
       "tgt": 0.9767,
       "sl": 0.3907,
       "thresh": 1.75,
-      "boost": 0.097
+      "boost": 0.097,
+      "active": false
     },
     "EURUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -152,7 +165,8 @@
       "tgt": 0.0356,
       "sl": 0.0231,
       "thresh": 0.9,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "EURUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -163,7 +177,8 @@
       "tgt": 0.6488,
       "sl": 0.3707,
       "thresh": 0.85,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": false
     },
     "EURUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -174,7 +189,8 @@
       "tgt": 0.834,
       "sl": 0.4865,
       "thresh": 0.82,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "EURUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -185,7 +201,8 @@
       "tgt": 0.5097,
       "sl": 0.2973,
       "thresh": 0.85,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": false
     },
     "EURUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -196,7 +213,8 @@
       "tgt": 0.3987,
       "sl": 0.0947,
       "thresh": 0.8,
-      "boost": 0.124
+      "boost": 0.124,
+      "active": true
     },
     "EURUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -207,7 +225,8 @@
       "tgt": 1.4998,
       "sl": 0.4259,
       "thresh": 0.85,
-      "boost": 0.074
+      "boost": 0.074,
+      "active": false
     },
     "EURUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -218,7 +237,8 @@
       "tgt": 0.4455,
       "sl": 0.2228,
       "thresh": 0.88,
-      "boost": 0.087
+      "boost": 0.087,
+      "active": false
     },
     "EURUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -229,7 +249,8 @@
       "tgt": 0.5973,
       "sl": 0.3584,
       "thresh": 0.82,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": false
     },
     "EURUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -240,7 +261,8 @@
       "tgt": 0.4709,
       "sl": 0.2943,
       "thresh": 0.85,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": true
     },
     "EURUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -251,7 +273,8 @@
       "tgt": 0.6099,
       "sl": 0.2323,
       "thresh": 0.85,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "EURUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -262,7 +285,8 @@
       "tgt": 0.8325,
       "sl": 0.4192,
       "thresh": 0.8,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": false
     },
     "EURUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -273,7 +297,8 @@
       "tgt": 0.7758,
       "sl": 0.3323,
       "thresh": -2.18,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": true
     },
     "EURUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -284,7 +309,8 @@
       "tgt": 0.169,
       "sl": 0.169,
       "thresh": 0.92,
-      "boost": 0.038
+      "boost": 0.038,
+      "active": false
     },
     "EURUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -295,7 +321,8 @@
       "tgt": 0.0752,
       "sl": 0.0385,
       "thresh": 0.85,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": false
     },
     "EURUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -306,7 +333,8 @@
       "tgt": 0.3758,
       "sl": 0.2052,
       "thresh": 0.87,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": false
     },
     "EURUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -317,7 +345,8 @@
       "tgt": 0.6477,
       "sl": 0.3886,
       "thresh": 0.88,
-      "boost": 0.064
+      "boost": 0.064,
+      "active": false
     },
     "EURUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -328,7 +357,8 @@
       "tgt": 0.2223,
       "sl": 0.1667,
       "thresh": 0.86,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "EURUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -339,7 +369,8 @@
       "tgt": 0.0908,
       "sl": 0.0605,
       "thresh": 0.85,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": false
     },
     "EURUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -350,7 +381,8 @@
       "tgt": 0.7226,
       "sl": 0.346,
       "thresh": 0.88,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "EURUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -361,7 +393,8 @@
       "tgt": 0.6217,
       "sl": 0.3357,
       "thresh": 0.87,
-      "boost": 0.075
+      "boost": 0.075,
+      "active": false
     },
     "EURUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -372,7 +405,8 @@
       "tgt": 0.4494,
       "sl": 0.2568,
       "thresh": 0.89,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": true
     },
     "EURUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -383,7 +417,8 @@
       "tgt": 0.7385,
       "sl": 0.3312,
       "thresh": 0.86,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "EURUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -394,7 +429,8 @@
       "tgt": 0.7201,
       "sl": 0.3704,
       "thresh": 0.87,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": false
     },
     "EURUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -405,7 +441,8 @@
       "tgt": 0.6478,
       "sl": 0.1943,
       "thresh": 0.85,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": true
     },
     "EURUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -416,7 +453,8 @@
       "tgt": 1.108,
       "sl": 0.4848,
       "thresh": 0.9,
-      "boost": 0.105
+      "boost": 0.105,
+      "active": false
     },
     "EURUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -427,7 +465,8 @@
       "tgt": 0.0576,
       "sl": 0.0384,
       "thresh": 0.82,
-      "boost": 0.039
+      "boost": 0.039,
+      "active": false
     },
     "EURUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -438,7 +477,8 @@
       "tgt": 2.0734,
       "sl": 0.1555,
       "thresh": 0.95,
-      "boost": 0.124
+      "boost": 0.124,
+      "active": false
     },
     "GBPUSD:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -449,7 +489,8 @@
       "tgt": 0.8687,
       "sl": 0.4112,
       "thresh": -2.2,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": true
     },
     "GBPUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -460,7 +501,8 @@
       "tgt": 0.5867,
       "sl": 0.3246,
       "thresh": 0.82,
-      "boost": 0.032
+      "boost": 0.032,
+      "active": true
     },
     "GBPUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -471,7 +513,8 @@
       "tgt": 0.1495,
       "sl": 0.1281,
       "thresh": 0.82,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": false
     },
     "GBPUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -482,7 +525,8 @@
       "tgt": 0.558,
       "sl": 0.279,
       "thresh": 0.85,
-      "boost": 0.06
+      "boost": 0.06,
+      "active": false
     },
     "GBPUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -493,7 +537,8 @@
       "tgt": 0.7281,
       "sl": 0.4247,
       "thresh": 0.9,
-      "boost": 0.117
+      "boost": 0.117,
+      "active": false
     },
     "GBPUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -504,7 +549,8 @@
       "tgt": 0.8615,
       "sl": 0.3256,
       "thresh": 0.88,
-      "boost": 0.063
+      "boost": 0.063,
+      "active": false
     },
     "GBPUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -515,7 +561,8 @@
       "tgt": 0.676,
       "sl": 0.2958,
       "thresh": 0.88,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": true
     },
     "GBPUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -526,7 +573,8 @@
       "tgt": 0.892,
       "sl": 0.5203,
       "thresh": 0.84,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": true
     },
     "GBPUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -537,7 +585,8 @@
       "tgt": 0.6733,
       "sl": 0.3489,
       "thresh": 0.82,
-      "boost": 0.033
+      "boost": 0.033,
+      "active": false
     },
     "GBPUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -548,7 +597,8 @@
       "tgt": 0.2439,
       "sl": 0.2439,
       "thresh": 0.85,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "GBPUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -559,7 +609,8 @@
       "tgt": 0.2362,
       "sl": 0.1772,
       "thresh": 0.9,
-      "boost": 0.039
+      "boost": 0.039,
+      "active": false
     },
     "GBPUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -570,7 +621,8 @@
       "tgt": 1.0305,
       "sl": 0.4508,
       "thresh": 0.75,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": true
     },
     "GBPUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -581,7 +633,8 @@
       "tgt": 1.1779,
       "sl": 0.4711,
       "thresh": 1.75,
-      "boost": 0.086
+      "boost": 0.086,
+      "active": false
     },
     "GBPUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -592,7 +645,8 @@
       "tgt": 0.044,
       "sl": 0.0286,
       "thresh": 0.9,
-      "boost": 0.062
+      "boost": 0.062,
+      "active": false
     },
     "GBPUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -603,7 +657,8 @@
       "tgt": 0.5263,
       "sl": 0.3008,
       "thresh": 0.85,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "GBPUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -614,7 +669,8 @@
       "tgt": 0.6027,
       "sl": 0.3516,
       "thresh": 0.82,
-      "boost": 0.072
+      "boost": 0.072,
+      "active": false
     },
     "GBPUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -625,7 +681,8 @@
       "tgt": 0.5868,
       "sl": 0.3423,
       "thresh": 0.85,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "GBPUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -636,7 +693,8 @@
       "tgt": 0.334,
       "sl": 0.0793,
       "thresh": 0.8,
-      "boost": 0.141
+      "boost": 0.141,
+      "active": true
     },
     "GBPUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -647,7 +705,8 @@
       "tgt": 1.4467,
       "sl": 0.4109,
       "thresh": 0.85,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "GBPUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -658,7 +717,8 @@
       "tgt": 0.4127,
       "sl": 0.2064,
       "thresh": 0.88,
-      "boost": 0.118
+      "boost": 0.118,
+      "active": false
     },
     "GBPUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -669,7 +729,8 @@
       "tgt": 0.7447,
       "sl": 0.4468,
       "thresh": 0.82,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": false
     },
     "GBPUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -680,7 +741,8 @@
       "tgt": 0.4084,
       "sl": 0.2552,
       "thresh": 0.85,
-      "boost": 0.06
+      "boost": 0.06,
+      "active": true
     },
     "GBPUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -691,7 +753,8 @@
       "tgt": 0.5612,
       "sl": 0.2138,
       "thresh": 0.85,
-      "boost": 0.05
+      "boost": 0.05,
+      "active": false
     },
     "GBPUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -702,7 +765,8 @@
       "tgt": 0.9239,
       "sl": 0.4653,
       "thresh": 0.8,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": false
     },
     "GBPUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -713,7 +777,8 @@
       "tgt": 0.8648,
       "sl": 0.3704,
       "thresh": -2.18,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": true
     },
     "GBPUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -724,7 +789,8 @@
       "tgt": 0.1599,
       "sl": 0.1599,
       "thresh": 0.92,
-      "boost": 0.041
+      "boost": 0.041,
+      "active": false
     },
     "GBPUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -735,7 +801,8 @@
       "tgt": 0.0614,
       "sl": 0.0314,
       "thresh": 0.85,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": false
     },
     "GBPUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -746,7 +813,8 @@
       "tgt": 0.5147,
       "sl": 0.281,
       "thresh": 0.87,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "GBPUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -757,7 +825,8 @@
       "tgt": 0.5001,
       "sl": 0.3,
       "thresh": 0.88,
-      "boost": 0.084
+      "boost": 0.084,
+      "active": false
     },
     "GBPUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -768,7 +837,8 @@
       "tgt": 0.2353,
       "sl": 0.1764,
       "thresh": 0.86,
-      "boost": 0.043
+      "boost": 0.043,
+      "active": false
     },
     "GBPUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -779,7 +849,8 @@
       "tgt": 0.1094,
       "sl": 0.0729,
       "thresh": 0.85,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": false
     },
     "GBPUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -790,7 +861,8 @@
       "tgt": 0.7194,
       "sl": 0.3445,
       "thresh": 0.88,
-      "boost": 0.075
+      "boost": 0.075,
+      "active": false
     },
     "GBPUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -801,7 +873,8 @@
       "tgt": 0.689,
       "sl": 0.372,
       "thresh": 0.87,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "GBPUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -812,7 +885,8 @@
       "tgt": 0.4611,
       "sl": 0.2635,
       "thresh": 0.89,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": true
     },
     "GBPUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -823,7 +897,8 @@
       "tgt": 0.874,
       "sl": 0.3919,
       "thresh": 0.86,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "GBPUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -834,7 +909,8 @@
       "tgt": 0.6067,
       "sl": 0.3121,
       "thresh": 0.87,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "GBPUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -845,7 +921,8 @@
       "tgt": 0.7239,
       "sl": 0.2172,
       "thresh": 0.85,
-      "boost": 0.084
+      "boost": 0.084,
+      "active": true
     },
     "GBPUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -856,7 +933,8 @@
       "tgt": 0.8436,
       "sl": 0.3691,
       "thresh": 0.9,
-      "boost": 0.106
+      "boost": 0.106,
+      "active": false
     },
     "GBPUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -867,7 +945,8 @@
       "tgt": 0.0385,
       "sl": 0.0257,
       "thresh": 0.82,
-      "boost": 0.045
+      "boost": 0.045,
+      "active": false
     },
     "GBPUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -878,7 +957,8 @@
       "tgt": 2.7345,
       "sl": 0.2051,
       "thresh": 0.95,
-      "boost": 0.15
+      "boost": 0.15,
+      "active": false
     },
     "USDJPY:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -889,7 +969,8 @@
       "tgt": 0.8189,
       "sl": 0.3876,
       "thresh": -2.2,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": true
     },
     "USDJPY:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -900,7 +981,8 @@
       "tgt": 0.8516,
       "sl": 0.4712,
       "thresh": 0.82,
-      "boost": 0.034
+      "boost": 0.034,
+      "active": true
     },
     "USDJPY:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -911,7 +993,8 @@
       "tgt": 0.1219,
       "sl": 0.1045,
       "thresh": 0.82,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "USDJPY:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -922,7 +1005,8 @@
       "tgt": 0.4933,
       "sl": 0.2467,
       "thresh": 0.85,
-      "boost": 0.074
+      "boost": 0.074,
+      "active": false
     },
     "USDJPY:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -933,7 +1017,8 @@
       "tgt": 0.7749,
       "sl": 0.452,
       "thresh": 0.9,
-      "boost": 0.095
+      "boost": 0.095,
+      "active": false
     },
     "USDJPY:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -944,7 +1029,8 @@
       "tgt": 0.6773,
       "sl": 0.256,
       "thresh": 0.88,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": false
     },
     "USDJPY:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -955,7 +1041,8 @@
       "tgt": 0.7627,
       "sl": 0.3337,
       "thresh": 0.88,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": true
     },
     "USDJPY:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -966,7 +1053,8 @@
       "tgt": 0.6476,
       "sl": 0.3778,
       "thresh": 0.84,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": true
     },
     "USDJPY:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -977,7 +1065,8 @@
       "tgt": 0.5477,
       "sl": 0.2838,
       "thresh": 0.82,
-      "boost": 0.043
+      "boost": 0.043,
+      "active": false
     },
     "USDJPY:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -988,7 +1077,8 @@
       "tgt": 0.286,
       "sl": 0.286,
       "thresh": 0.85,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "USDJPY:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -999,7 +1089,8 @@
       "tgt": 0.1999,
       "sl": 0.1499,
       "thresh": 0.9,
-      "boost": 0.035
+      "boost": 0.035,
+      "active": false
     },
     "USDJPY:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -1010,7 +1101,8 @@
       "tgt": 0.9393,
       "sl": 0.4109,
       "thresh": 0.75,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": true
     },
     "USDJPY:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -1021,7 +1113,8 @@
       "tgt": 1.0216,
       "sl": 0.4086,
       "thresh": 1.75,
-      "boost": 0.098
+      "boost": 0.098,
+      "active": false
     },
     "USDJPY:SCALPING:M1": {
       "direction": "BUY",
@@ -1032,7 +1125,8 @@
       "tgt": 0.0473,
       "sl": 0.0308,
       "thresh": 0.9,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "USDJPY:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -1043,7 +1137,8 @@
       "tgt": 0.7148,
       "sl": 0.4084,
       "thresh": 0.85,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "USDJPY:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -1054,7 +1149,8 @@
       "tgt": 0.7668,
       "sl": 0.4473,
       "thresh": 0.82,
-      "boost": 0.075
+      "boost": 0.075,
+      "active": false
     },
     "USDJPY:BREAKOUT:M15": {
       "direction": "SELL",
@@ -1065,7 +1161,8 @@
       "tgt": 0.3841,
       "sl": 0.2241,
       "thresh": 0.85,
-      "boost": 0.06
+      "boost": 0.06,
+      "active": false
     },
     "USDJPY:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -1076,7 +1173,8 @@
       "tgt": 0.3262,
       "sl": 0.0775,
       "thresh": 0.8,
-      "boost": 0.114
+      "boost": 0.114,
+      "active": true
     },
     "USDJPY:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -1087,7 +1185,8 @@
       "tgt": 1.3366,
       "sl": 0.3796,
       "thresh": 0.85,
-      "boost": 0.06
+      "boost": 0.06,
+      "active": false
     },
     "USDJPY:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -1098,7 +1197,8 @@
       "tgt": 0.3657,
       "sl": 0.1828,
       "thresh": 0.88,
-      "boost": 0.091
+      "boost": 0.091,
+      "active": false
     },
     "USDJPY:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -1109,7 +1209,8 @@
       "tgt": 0.7479,
       "sl": 0.4487,
       "thresh": 0.82,
-      "boost": 0.069
+      "boost": 0.069,
+      "active": false
     },
     "USDJPY:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -1120,7 +1221,8 @@
       "tgt": 0.5144,
       "sl": 0.3215,
       "thresh": 0.85,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": true
     },
     "USDJPY:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -1131,7 +1233,8 @@
       "tgt": 0.4726,
       "sl": 0.18,
       "thresh": 0.85,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "USDJPY:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -1142,7 +1245,8 @@
       "tgt": 0.6692,
       "sl": 0.337,
       "thresh": 0.8,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "USDJPY:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -1153,7 +1257,8 @@
       "tgt": 0.5735,
       "sl": 0.2456,
       "thresh": -2.18,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": true
     },
     "USDJPY:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -1164,7 +1269,8 @@
       "tgt": 0.1951,
       "sl": 0.1951,
       "thresh": 0.92,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "USDJPY:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -1175,7 +1281,8 @@
       "tgt": 0.0907,
       "sl": 0.0464,
       "thresh": 0.85,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": false
     },
     "USDJPY:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -1186,7 +1293,8 @@
       "tgt": 0.3994,
       "sl": 0.218,
       "thresh": 0.87,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "USDJPY:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -1197,7 +1305,8 @@
       "tgt": 0.6456,
       "sl": 0.3873,
       "thresh": 0.88,
-      "boost": 0.088
+      "boost": 0.088,
+      "active": false
     },
     "USDJPY:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -1208,7 +1317,8 @@
       "tgt": 0.1863,
       "sl": 0.1397,
       "thresh": 0.86,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "USDJPY:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -1219,7 +1329,8 @@
       "tgt": 0.1311,
       "sl": 0.0874,
       "thresh": 0.85,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "USDJPY:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -1230,7 +1341,8 @@
       "tgt": 0.4796,
       "sl": 0.2297,
       "thresh": 0.88,
-      "boost": 0.06
+      "boost": 0.06,
+      "active": false
     },
     "USDJPY:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -1241,7 +1353,8 @@
       "tgt": 0.6562,
       "sl": 0.3543,
       "thresh": 0.87,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "USDJPY:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -1252,7 +1365,8 @@
       "tgt": 0.5217,
       "sl": 0.2981,
       "thresh": 0.89,
-      "boost": 0.047
+      "boost": 0.047,
+      "active": true
     },
     "USDJPY:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -1263,7 +1377,8 @@
       "tgt": 0.8464,
       "sl": 0.3795,
       "thresh": 0.86,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "USDJPY:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -1274,7 +1389,8 @@
       "tgt": 0.5787,
       "sl": 0.2977,
       "thresh": 0.87,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": false
     },
     "USDJPY:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -1285,7 +1401,8 @@
       "tgt": 0.9121,
       "sl": 0.2736,
       "thresh": 0.85,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": true
     },
     "USDJPY:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1296,7 +1413,8 @@
       "tgt": 1.1717,
       "sl": 0.5126,
       "thresh": 0.9,
-      "boost": 0.093
+      "boost": 0.093,
+      "active": false
     },
     "USDJPY:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -1307,7 +1425,8 @@
       "tgt": 0.0489,
       "sl": 0.0326,
       "thresh": 0.82,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "USDJPY:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -1318,7 +1437,8 @@
       "tgt": 1.8181,
       "sl": 0.1364,
       "thresh": 0.95,
-      "boost": 0.148
+      "boost": 0.148,
+      "active": false
     },
     "AUDUSD:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -1329,7 +1449,8 @@
       "tgt": 0.6253,
       "sl": 0.296,
       "thresh": -2.2,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": true
     },
     "AUDUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -1340,7 +1461,8 @@
       "tgt": 0.7638,
       "sl": 0.4226,
       "thresh": 0.82,
-      "boost": 0.037
+      "boost": 0.037,
+      "active": true
     },
     "AUDUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -1351,7 +1473,8 @@
       "tgt": 0.1123,
       "sl": 0.0963,
       "thresh": 0.82,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "AUDUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -1362,7 +1485,8 @@
       "tgt": 0.4339,
       "sl": 0.2169,
       "thresh": 0.85,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": false
     },
     "AUDUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -1373,7 +1497,8 @@
       "tgt": 0.8615,
       "sl": 0.5026,
       "thresh": 0.9,
-      "boost": 0.109
+      "boost": 0.109,
+      "active": false
     },
     "AUDUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -1384,7 +1509,8 @@
       "tgt": 0.7991,
       "sl": 0.302,
       "thresh": 0.88,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "AUDUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -1395,7 +1521,8 @@
       "tgt": 0.686,
       "sl": 0.3001,
       "thresh": 0.88,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": true
     },
     "AUDUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1406,7 +1533,8 @@
       "tgt": 0.6416,
       "sl": 0.3742,
       "thresh": 0.84,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": true
     },
     "AUDUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -1417,7 +1545,8 @@
       "tgt": 0.8173,
       "sl": 0.4235,
       "thresh": 0.82,
-      "boost": 0.031
+      "boost": 0.031,
+      "active": false
     },
     "AUDUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -1428,7 +1557,8 @@
       "tgt": 0.299,
       "sl": 0.299,
       "thresh": 0.85,
-      "boost": 0.062
+      "boost": 0.062,
+      "active": false
     },
     "AUDUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -1439,7 +1569,8 @@
       "tgt": 0.2087,
       "sl": 0.1565,
       "thresh": 0.9,
-      "boost": 0.032
+      "boost": 0.032,
+      "active": false
     },
     "AUDUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -1450,7 +1581,8 @@
       "tgt": 1.0139,
       "sl": 0.4436,
       "thresh": 0.75,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": true
     },
     "AUDUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -1461,7 +1593,8 @@
       "tgt": 1.2909,
       "sl": 0.5163,
       "thresh": 1.75,
-      "boost": 0.118
+      "boost": 0.118,
+      "active": false
     },
     "AUDUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -1472,7 +1605,8 @@
       "tgt": 0.0442,
       "sl": 0.0287,
       "thresh": 0.9,
-      "boost": 0.05
+      "boost": 0.05,
+      "active": false
     },
     "AUDUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -1483,7 +1617,8 @@
       "tgt": 0.6458,
       "sl": 0.3691,
       "thresh": 0.85,
-      "boost": 0.075
+      "boost": 0.075,
+      "active": false
     },
     "AUDUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -1494,7 +1629,8 @@
       "tgt": 0.6661,
       "sl": 0.3886,
       "thresh": 0.82,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "AUDUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -1505,7 +1641,8 @@
       "tgt": 0.368,
       "sl": 0.2147,
       "thresh": 0.85,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "AUDUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -1516,7 +1653,8 @@
       "tgt": 0.3632,
       "sl": 0.0863,
       "thresh": 0.8,
-      "boost": 0.141
+      "boost": 0.141,
+      "active": true
     },
     "AUDUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -1527,7 +1665,8 @@
       "tgt": 1.3612,
       "sl": 0.3866,
       "thresh": 0.85,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "AUDUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -1538,7 +1677,8 @@
       "tgt": 0.5767,
       "sl": 0.2884,
       "thresh": 0.88,
-      "boost": 0.096
+      "boost": 0.096,
+      "active": false
     },
     "AUDUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -1549,7 +1689,8 @@
       "tgt": 0.7088,
       "sl": 0.4253,
       "thresh": 0.82,
-      "boost": 0.072
+      "boost": 0.072,
+      "active": false
     },
     "AUDUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -1560,7 +1701,8 @@
       "tgt": 0.5831,
       "sl": 0.3644,
       "thresh": 0.85,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": true
     },
     "AUDUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -1571,7 +1713,8 @@
       "tgt": 0.706,
       "sl": 0.269,
       "thresh": 0.85,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "AUDUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -1582,7 +1725,8 @@
       "tgt": 0.871,
       "sl": 0.4386,
       "thresh": 0.8,
-      "boost": 0.074
+      "boost": 0.074,
+      "active": false
     },
     "AUDUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -1593,7 +1737,8 @@
       "tgt": 0.7891,
       "sl": 0.338,
       "thresh": -2.18,
-      "boost": 0.063
+      "boost": 0.063,
+      "active": true
     },
     "AUDUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -1604,7 +1749,8 @@
       "tgt": 0.1777,
       "sl": 0.1777,
       "thresh": 0.92,
-      "boost": 0.039
+      "boost": 0.039,
+      "active": false
     },
     "AUDUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -1615,7 +1761,8 @@
       "tgt": 0.0922,
       "sl": 0.0472,
       "thresh": 0.85,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "AUDUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -1626,7 +1773,8 @@
       "tgt": 0.4936,
       "sl": 0.2695,
       "thresh": 0.87,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "AUDUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -1637,7 +1785,8 @@
       "tgt": 0.7079,
       "sl": 0.4247,
       "thresh": 0.88,
-      "boost": 0.064
+      "boost": 0.064,
+      "active": false
     },
     "AUDUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -1648,7 +1797,8 @@
       "tgt": 0.2509,
       "sl": 0.1881,
       "thresh": 0.86,
-      "boost": 0.043
+      "boost": 0.043,
+      "active": false
     },
     "AUDUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -1659,7 +1809,8 @@
       "tgt": 0.104,
       "sl": 0.0693,
       "thresh": 0.85,
-      "boost": 0.041
+      "boost": 0.041,
+      "active": false
     },
     "AUDUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -1670,7 +1821,8 @@
       "tgt": 0.5947,
       "sl": 0.2848,
       "thresh": 0.88,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "AUDUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -1681,7 +1833,8 @@
       "tgt": 0.6486,
       "sl": 0.3502,
       "thresh": 0.87,
-      "boost": 0.069
+      "boost": 0.069,
+      "active": false
     },
     "AUDUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -1692,7 +1845,8 @@
       "tgt": 0.5109,
       "sl": 0.2919,
       "thresh": 0.89,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": true
     },
     "AUDUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -1703,7 +1857,8 @@
       "tgt": 0.7521,
       "sl": 0.3373,
       "thresh": 0.86,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": false
     },
     "AUDUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -1714,7 +1869,8 @@
       "tgt": 0.6873,
       "sl": 0.3536,
       "thresh": 0.87,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "AUDUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -1725,7 +1881,8 @@
       "tgt": 0.8229,
       "sl": 0.2469,
       "thresh": 0.85,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": true
     },
     "AUDUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1736,7 +1893,8 @@
       "tgt": 0.7569,
       "sl": 0.3311,
       "thresh": 0.9,
-      "boost": 0.111
+      "boost": 0.111,
+      "active": false
     },
     "AUDUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -1747,7 +1905,8 @@
       "tgt": 0.0448,
       "sl": 0.0298,
       "thresh": 0.82,
-      "boost": 0.031
+      "boost": 0.031,
+      "active": false
     },
     "AUDUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -1758,7 +1917,8 @@
       "tgt": 2.2988,
       "sl": 0.1724,
       "thresh": 0.95,
-      "boost": 0.144
+      "boost": 0.144,
+      "active": false
     },
     "XAUUSD:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -1769,7 +1929,8 @@
       "tgt": 1.3062,
       "sl": 0.6183,
       "thresh": -2.2,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": true
     },
     "XAUUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -1780,7 +1941,8 @@
       "tgt": 1.3208,
       "sl": 0.7308,
       "thresh": 0.82,
-      "boost": 0.039
+      "boost": 0.039,
+      "active": true
     },
     "XAUUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -1791,7 +1953,8 @@
       "tgt": 0.2204,
       "sl": 0.189,
       "thresh": 0.82,
-      "boost": 0.064
+      "boost": 0.064,
+      "active": false
     },
     "XAUUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -1802,7 +1965,8 @@
       "tgt": 0.8282,
       "sl": 0.4141,
       "thresh": 0.85,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "XAUUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -1813,7 +1977,8 @@
       "tgt": 1.0122,
       "sl": 0.5905,
       "thresh": 0.9,
-      "boost": 0.117
+      "boost": 0.117,
+      "active": false
     },
     "XAUUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -1824,7 +1989,8 @@
       "tgt": 1.0478,
       "sl": 0.396,
       "thresh": 0.88,
-      "boost": 0.062
+      "boost": 0.062,
+      "active": false
     },
     "XAUUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -1835,7 +2001,8 @@
       "tgt": 1.0148,
       "sl": 0.444,
       "thresh": 0.88,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": true
     },
     "XAUUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1846,7 +2013,8 @@
       "tgt": 1.3336,
       "sl": 0.7779,
       "thresh": 0.84,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": true
     },
     "XAUUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -1857,7 +2025,8 @@
       "tgt": 1.2942,
       "sl": 0.6706,
       "thresh": 0.82,
-      "boost": 0.034
+      "boost": 0.034,
+      "active": false
     },
     "XAUUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -1868,7 +2037,8 @@
       "tgt": 0.3076,
       "sl": 0.3076,
       "thresh": 0.85,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "XAUUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -1879,7 +2049,8 @@
       "tgt": 0.3005,
       "sl": 0.2254,
       "thresh": 0.9,
-      "boost": 0.039
+      "boost": 0.039,
+      "active": false
     },
     "XAUUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -1890,7 +2061,8 @@
       "tgt": 1.4906,
       "sl": 0.6521,
       "thresh": 0.75,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": true
     },
     "XAUUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -1901,7 +2073,8 @@
       "tgt": 1.8443,
       "sl": 0.7377,
       "thresh": 1.75,
-      "boost": 0.11
+      "boost": 0.11,
+      "active": false
     },
     "XAUUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -1912,7 +2085,8 @@
       "tgt": 0.0703,
       "sl": 0.0457,
       "thresh": 0.9,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "XAUUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -1923,7 +2097,8 @@
       "tgt": 0.8514,
       "sl": 0.4865,
       "thresh": 0.85,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": false
     },
     "XAUUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -1934,7 +2109,8 @@
       "tgt": 1.2278,
       "sl": 0.7162,
       "thresh": 0.82,
-      "boost": 0.075
+      "boost": 0.075,
+      "active": false
     },
     "XAUUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -1945,7 +2121,8 @@
       "tgt": 0.6877,
       "sl": 0.4012,
       "thresh": 0.85,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "XAUUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -1956,7 +2133,8 @@
       "tgt": 0.5795,
       "sl": 0.1376,
       "thresh": 0.8,
-      "boost": 0.138
+      "boost": 0.138,
+      "active": true
     },
     "XAUUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -1967,7 +2145,8 @@
       "tgt": 2.0369,
       "sl": 0.5785,
       "thresh": 0.85,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": false
     },
     "XAUUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -1978,7 +2157,8 @@
       "tgt": 0.8195,
       "sl": 0.4097,
       "thresh": 0.88,
-      "boost": 0.113
+      "boost": 0.113,
+      "active": false
     },
     "XAUUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -1989,7 +2169,8 @@
       "tgt": 1.1142,
       "sl": 0.6685,
       "thresh": 0.82,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "XAUUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -2000,7 +2181,8 @@
       "tgt": 0.8127,
       "sl": 0.5079,
       "thresh": 0.85,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": true
     },
     "XAUUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -2011,7 +2193,8 @@
       "tgt": 1.0673,
       "sl": 0.4066,
       "thresh": 0.85,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": false
     },
     "XAUUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -2022,7 +2205,8 @@
       "tgt": 1.3192,
       "sl": 0.6644,
       "thresh": 0.8,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": false
     },
     "XAUUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -2033,7 +2217,8 @@
       "tgt": 0.9118,
       "sl": 0.3906,
       "thresh": -2.18,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": true
     },
     "XAUUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -2044,7 +2229,8 @@
       "tgt": 0.2436,
       "sl": 0.2436,
       "thresh": 0.92,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "XAUUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -2055,7 +2241,8 @@
       "tgt": 0.1196,
       "sl": 0.0612,
       "thresh": 0.85,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "XAUUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -2066,7 +2253,8 @@
       "tgt": 0.7739,
       "sl": 0.4225,
       "thresh": 0.87,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": false
     },
     "XAUUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -2077,7 +2265,8 @@
       "tgt": 0.7875,
       "sl": 0.4725,
       "thresh": 0.88,
-      "boost": 0.085
+      "boost": 0.085,
+      "active": false
     },
     "XAUUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -2088,7 +2277,8 @@
       "tgt": 0.3142,
       "sl": 0.2357,
       "thresh": 0.86,
-      "boost": 0.041
+      "boost": 0.041,
+      "active": false
     },
     "XAUUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -2099,7 +2289,8 @@
       "tgt": 0.1983,
       "sl": 0.1322,
       "thresh": 0.85,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "XAUUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -2110,7 +2301,8 @@
       "tgt": 1.0617,
       "sl": 0.5085,
       "thresh": 0.88,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "XAUUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -2121,7 +2313,8 @@
       "tgt": 0.7247,
       "sl": 0.3913,
       "thresh": 0.87,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "XAUUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -2132,7 +2325,8 @@
       "tgt": 0.6562,
       "sl": 0.375,
       "thresh": 0.89,
-      "boost": 0.054
+      "boost": 0.054,
+      "active": true
     },
     "XAUUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -2143,7 +2337,8 @@
       "tgt": 1.1437,
       "sl": 0.5129,
       "thresh": 0.86,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": false
     },
     "XAUUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -2154,7 +2349,8 @@
       "tgt": 0.9657,
       "sl": 0.4968,
       "thresh": 0.87,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "XAUUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -2165,7 +2361,8 @@
       "tgt": 1.3375,
       "sl": 0.4012,
       "thresh": 0.85,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": true
     },
     "XAUUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2176,7 +2373,8 @@
       "tgt": 1.2236,
       "sl": 0.5353,
       "thresh": 0.9,
-      "boost": 0.082
+      "boost": 0.082,
+      "active": false
     },
     "XAUUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -2187,7 +2385,8 @@
       "tgt": 0.0726,
       "sl": 0.0484,
       "thresh": 0.82,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": false
     },
     "XAUUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -2198,7 +2397,8 @@
       "tgt": 4.3237,
       "sl": 0.3243,
       "thresh": 0.95,
-      "boost": 0.147
+      "boost": 0.147,
+      "active": false
     },
     "XAGUSD:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -2209,7 +2409,8 @@
       "tgt": 0.927,
       "sl": 0.4388,
       "thresh": -2.2,
-      "boost": 0.063
+      "boost": 0.063,
+      "active": true
     },
     "XAGUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -2220,7 +2421,8 @@
       "tgt": 1.0454,
       "sl": 0.5785,
       "thresh": 0.82,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": true
     },
     "XAGUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -2231,7 +2433,8 @@
       "tgt": 0.237,
       "sl": 0.2032,
       "thresh": 0.82,
-      "boost": 0.062
+      "boost": 0.062,
+      "active": false
     },
     "XAGUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -2242,7 +2445,8 @@
       "tgt": 0.8313,
       "sl": 0.4157,
       "thresh": 0.85,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "XAGUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -2253,7 +2457,8 @@
       "tgt": 1.2509,
       "sl": 0.7297,
       "thresh": 0.9,
-      "boost": 0.119
+      "boost": 0.119,
+      "active": false
     },
     "XAGUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -2264,7 +2469,8 @@
       "tgt": 1.3763,
       "sl": 0.5202,
       "thresh": 0.88,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": false
     },
     "XAGUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -2275,7 +2481,8 @@
       "tgt": 0.997,
       "sl": 0.4362,
       "thresh": 0.88,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": true
     },
     "XAGUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2286,7 +2493,8 @@
       "tgt": 0.988,
       "sl": 0.5763,
       "thresh": 0.84,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": true
     },
     "XAGUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -2297,7 +2505,8 @@
       "tgt": 1.1295,
       "sl": 0.5852,
       "thresh": 0.82,
-      "boost": 0.036
+      "boost": 0.036,
+      "active": false
     },
     "XAGUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -2308,7 +2517,8 @@
       "tgt": 0.3712,
       "sl": 0.3712,
       "thresh": 0.85,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "XAGUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -2319,7 +2529,8 @@
       "tgt": 0.3977,
       "sl": 0.2983,
       "thresh": 0.9,
-      "boost": 0.032
+      "boost": 0.032,
+      "active": false
     },
     "XAGUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -2330,7 +2541,8 @@
       "tgt": 1.5835,
       "sl": 0.6928,
       "thresh": 0.75,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": true
     },
     "XAGUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -2341,7 +2553,8 @@
       "tgt": 1.9904,
       "sl": 0.7961,
       "thresh": 1.75,
-      "boost": 0.116
+      "boost": 0.116,
+      "active": false
     },
     "XAGUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -2352,7 +2565,8 @@
       "tgt": 0.0608,
       "sl": 0.0395,
       "thresh": 0.9,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": false
     },
     "XAGUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -2363,7 +2577,8 @@
       "tgt": 1.0,
       "sl": 0.5714,
       "thresh": 0.85,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": false
     },
     "XAGUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -2374,7 +2589,8 @@
       "tgt": 1.2186,
       "sl": 0.7108,
       "thresh": 0.82,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": false
     },
     "XAGUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -2385,7 +2601,8 @@
       "tgt": 0.7115,
       "sl": 0.415,
       "thresh": 0.85,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "XAGUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -2396,7 +2613,8 @@
       "tgt": 0.4524,
       "sl": 0.1075,
       "thresh": 0.8,
-      "boost": 0.126
+      "boost": 0.126,
+      "active": true
     },
     "XAGUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -2407,7 +2625,8 @@
       "tgt": 2.1891,
       "sl": 0.6217,
       "thresh": 0.85,
-      "boost": 0.069
+      "boost": 0.069,
+      "active": false
     },
     "XAGUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -2418,7 +2637,8 @@
       "tgt": 0.6782,
       "sl": 0.3391,
       "thresh": 0.88,
-      "boost": 0.086
+      "boost": 0.086,
+      "active": false
     },
     "XAGUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -2429,7 +2649,8 @@
       "tgt": 0.9301,
       "sl": 0.5581,
       "thresh": 0.82,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "XAGUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -2440,7 +2661,8 @@
       "tgt": 0.6236,
       "sl": 0.3897,
       "thresh": 0.85,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": true
     },
     "XAGUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -2451,7 +2673,8 @@
       "tgt": 0.8687,
       "sl": 0.3309,
       "thresh": 0.85,
-      "boost": 0.05
+      "boost": 0.05,
+      "active": false
     },
     "XAGUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -2462,7 +2685,8 @@
       "tgt": 1.1026,
       "sl": 0.5553,
       "thresh": 0.8,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": false
     },
     "XAGUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -2473,7 +2697,8 @@
       "tgt": 1.2796,
       "sl": 0.5481,
       "thresh": -2.18,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": true
     },
     "XAGUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -2484,7 +2709,8 @@
       "tgt": 0.2348,
       "sl": 0.2348,
       "thresh": 0.92,
-      "boost": 0.033
+      "boost": 0.033,
+      "active": false
     },
     "XAGUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -2495,7 +2721,8 @@
       "tgt": 0.1249,
       "sl": 0.0639,
       "thresh": 0.85,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "XAGUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -2506,7 +2733,8 @@
       "tgt": 0.6029,
       "sl": 0.3292,
       "thresh": 0.87,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "XAGUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -2517,7 +2745,8 @@
       "tgt": 0.985,
       "sl": 0.591,
       "thresh": 0.88,
-      "boost": 0.083
+      "boost": 0.083,
+      "active": false
     },
     "XAGUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -2528,7 +2757,8 @@
       "tgt": 0.3493,
       "sl": 0.262,
       "thresh": 0.86,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "XAGUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -2539,7 +2769,8 @@
       "tgt": 0.1966,
       "sl": 0.131,
       "thresh": 0.85,
-      "boost": 0.042
+      "boost": 0.042,
+      "active": false
     },
     "XAGUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -2550,7 +2781,8 @@
       "tgt": 0.9592,
       "sl": 0.4594,
       "thresh": 0.88,
-      "boost": 0.064
+      "boost": 0.064,
+      "active": false
     },
     "XAGUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -2561,7 +2793,8 @@
       "tgt": 0.9837,
       "sl": 0.5312,
       "thresh": 0.87,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": false
     },
     "XAGUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -2572,7 +2805,8 @@
       "tgt": 0.73,
       "sl": 0.4171,
       "thresh": 0.89,
-      "boost": 0.04
+      "boost": 0.04,
+      "active": true
     },
     "XAGUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -2583,7 +2817,8 @@
       "tgt": 1.3153,
       "sl": 0.5898,
       "thresh": 0.86,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "XAGUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -2594,7 +2829,8 @@
       "tgt": 0.7598,
       "sl": 0.3908,
       "thresh": 0.87,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "XAGUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -2605,7 +2841,8 @@
       "tgt": 1.1766,
       "sl": 0.353,
       "thresh": 0.85,
-      "boost": 0.075
+      "boost": 0.075,
+      "active": true
     },
     "XAGUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2616,7 +2853,8 @@
       "tgt": 1.7526,
       "sl": 0.7668,
       "thresh": 0.9,
-      "boost": 0.11
+      "boost": 0.11,
+      "active": false
     },
     "XAGUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -2627,7 +2865,8 @@
       "tgt": 0.0652,
       "sl": 0.0434,
       "thresh": 0.82,
-      "boost": 0.04
+      "boost": 0.04,
+      "active": false
     },
     "XAGUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -2638,7 +2877,8 @@
       "tgt": 3.9824,
       "sl": 0.2987,
       "thresh": 0.95,
-      "boost": 0.132
+      "boost": 0.132,
+      "active": false
     },
     "BTCUSD:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -2649,7 +2889,8 @@
       "tgt": 1.2154,
       "sl": 0.5753,
       "thresh": -2.2,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": true
     },
     "BTCUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -2660,7 +2901,8 @@
       "tgt": 1.5734,
       "sl": 0.8706,
       "thresh": 0.82,
-      "boost": 0.031
+      "boost": 0.031,
+      "active": true
     },
     "BTCUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -2671,7 +2913,8 @@
       "tgt": 0.2249,
       "sl": 0.1927,
       "thresh": 0.82,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "BTCUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -2682,7 +2925,8 @@
       "tgt": 0.9778,
       "sl": 0.4889,
       "thresh": 0.85,
-      "boost": 0.074
+      "boost": 0.074,
+      "active": false
     },
     "BTCUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -2693,7 +2937,8 @@
       "tgt": 1.4061,
       "sl": 0.8202,
       "thresh": 0.9,
-      "boost": 0.114
+      "boost": 0.114,
+      "active": false
     },
     "BTCUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -2704,7 +2949,8 @@
       "tgt": 1.613,
       "sl": 0.6097,
       "thresh": 0.88,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "BTCUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -2715,7 +2961,8 @@
       "tgt": 1.3032,
       "sl": 0.5701,
       "thresh": 0.88,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": true
     },
     "BTCUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2726,7 +2973,8 @@
       "tgt": 1.2414,
       "sl": 0.7242,
       "thresh": 0.84,
-      "boost": 0.051
+      "boost": 0.051,
+      "active": true
     },
     "BTCUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -2737,7 +2985,8 @@
       "tgt": 1.0621,
       "sl": 0.5503,
       "thresh": 0.82,
-      "boost": 0.037
+      "boost": 0.037,
+      "active": false
     },
     "BTCUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -2748,7 +2997,8 @@
       "tgt": 0.4914,
       "sl": 0.4914,
       "thresh": 0.85,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "BTCUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -2759,7 +3009,8 @@
       "tgt": 0.5363,
       "sl": 0.4022,
       "thresh": 0.9,
-      "boost": 0.036
+      "boost": 0.036,
+      "active": false
     },
     "BTCUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -2770,7 +3021,8 @@
       "tgt": 2.0384,
       "sl": 0.8918,
       "thresh": 0.75,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": true
     },
     "BTCUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -2781,7 +3033,8 @@
       "tgt": 2.4098,
       "sl": 0.9639,
       "thresh": 1.75,
-      "boost": 0.086
+      "boost": 0.086,
+      "active": false
     },
     "BTCUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -2792,7 +3045,8 @@
       "tgt": 0.0914,
       "sl": 0.0594,
       "thresh": 0.9,
-      "boost": 0.056
+      "boost": 0.056,
+      "active": false
     },
     "BTCUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -2803,7 +3057,8 @@
       "tgt": 1.3133,
       "sl": 0.7505,
       "thresh": 0.85,
-      "boost": 0.072
+      "boost": 0.072,
+      "active": false
     },
     "BTCUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -2814,7 +3069,8 @@
       "tgt": 1.4676,
       "sl": 0.8561,
       "thresh": 0.82,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": false
     },
     "BTCUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -2825,7 +3081,8 @@
       "tgt": 1.0267,
       "sl": 0.5989,
       "thresh": 0.85,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "BTCUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -2836,7 +3093,8 @@
       "tgt": 0.6838,
       "sl": 0.1624,
       "thresh": 0.8,
-      "boost": 0.137
+      "boost": 0.137,
+      "active": true
     },
     "BTCUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -2847,7 +3105,8 @@
       "tgt": 2.2911,
       "sl": 0.6507,
       "thresh": 0.85,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "BTCUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -2858,7 +3117,8 @@
       "tgt": 0.804,
       "sl": 0.402,
       "thresh": 0.88,
-      "boost": 0.101
+      "boost": 0.101,
+      "active": false
     },
     "BTCUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -2869,7 +3129,8 @@
       "tgt": 1.0347,
       "sl": 0.6208,
       "thresh": 0.82,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": false
     },
     "BTCUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -2880,7 +3141,8 @@
       "tgt": 0.7633,
       "sl": 0.477,
       "thresh": 0.85,
-      "boost": 0.074
+      "boost": 0.074,
+      "active": true
     },
     "BTCUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -2891,7 +3153,8 @@
       "tgt": 1.2464,
       "sl": 0.4748,
       "thresh": 0.85,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "BTCUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -2902,7 +3165,8 @@
       "tgt": 1.2955,
       "sl": 0.6524,
       "thresh": 0.8,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "BTCUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -2913,7 +3177,8 @@
       "tgt": 1.1195,
       "sl": 0.4795,
       "thresh": -2.18,
-      "boost": 0.063
+      "boost": 0.063,
+      "active": true
     },
     "BTCUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -2924,7 +3189,8 @@
       "tgt": 0.3504,
       "sl": 0.3504,
       "thresh": 0.92,
-      "boost": 0.041
+      "boost": 0.041,
+      "active": false
     },
     "BTCUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -2935,7 +3201,8 @@
       "tgt": 0.1632,
       "sl": 0.0836,
       "thresh": 0.85,
-      "boost": 0.069
+      "boost": 0.069,
+      "active": false
     },
     "BTCUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -2946,7 +3213,8 @@
       "tgt": 0.7327,
       "sl": 0.4001,
       "thresh": 0.87,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "BTCUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -2957,7 +3225,8 @@
       "tgt": 1.1431,
       "sl": 0.6858,
       "thresh": 0.88,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "BTCUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -2968,7 +3237,8 @@
       "tgt": 0.4229,
       "sl": 0.3172,
       "thresh": 0.86,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "BTCUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -2979,7 +3249,8 @@
       "tgt": 0.2133,
       "sl": 0.1422,
       "thresh": 0.85,
-      "boost": 0.046
+      "boost": 0.046,
+      "active": false
     },
     "BTCUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -2990,7 +3261,8 @@
       "tgt": 1.2368,
       "sl": 0.5923,
       "thresh": 0.88,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": false
     },
     "BTCUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -3001,7 +3273,8 @@
       "tgt": 1.0195,
       "sl": 0.5505,
       "thresh": 0.87,
-      "boost": 0.069
+      "boost": 0.069,
+      "active": false
     },
     "BTCUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -3012,7 +3285,8 @@
       "tgt": 0.7924,
       "sl": 0.4528,
       "thresh": 0.89,
-      "boost": 0.046
+      "boost": 0.046,
+      "active": true
     },
     "BTCUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -3023,7 +3297,8 @@
       "tgt": 1.4127,
       "sl": 0.6335,
       "thresh": 0.86,
-      "boost": 0.059
+      "boost": 0.059,
+      "active": false
     },
     "BTCUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -3034,7 +3309,8 @@
       "tgt": 1.0761,
       "sl": 0.5536,
       "thresh": 0.87,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "BTCUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -3045,7 +3321,8 @@
       "tgt": 1.3762,
       "sl": 0.4129,
       "thresh": 0.85,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": true
     },
     "BTCUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -3056,7 +3333,8 @@
       "tgt": 1.6654,
       "sl": 0.7286,
       "thresh": 0.9,
-      "boost": 0.096
+      "boost": 0.096,
+      "active": false
     },
     "BTCUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -3067,7 +3345,8 @@
       "tgt": 0.0899,
       "sl": 0.06,
       "thresh": 0.82,
-      "boost": 0.037
+      "boost": 0.037,
+      "active": false
     },
     "BTCUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -3078,7 +3357,8 @@
       "tgt": 4.2267,
       "sl": 0.317,
       "thresh": 0.95,
-      "boost": 0.143
+      "boost": 0.143,
+      "active": false
     },
     "ETHUSD:DAY_LOW_BULLISH:H1": {
       "direction": "BUY",
@@ -3089,7 +3369,8 @@
       "tgt": 1.4938,
       "sl": 0.7071,
       "thresh": -2.2,
-      "boost": 0.065
+      "boost": 0.065,
+      "active": true
     },
     "ETHUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -3100,7 +3381,8 @@
       "tgt": 1.1352,
       "sl": 0.6282,
       "thresh": 0.82,
-      "boost": 0.039
+      "boost": 0.039,
+      "active": true
     },
     "ETHUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -3111,7 +3393,8 @@
       "tgt": 0.2342,
       "sl": 0.2007,
       "thresh": 0.82,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "ETHUSD:VOLATILITY_BREAKOUT:M15": {
       "direction": "BUY",
@@ -3122,7 +3405,8 @@
       "tgt": 1.163,
       "sl": 0.5815,
       "thresh": 0.85,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "ETHUSD:EARLY_BREAKDOWN:H1": {
       "direction": "SELL",
@@ -3133,7 +3417,8 @@
       "tgt": 1.3695,
       "sl": 0.7989,
       "thresh": 0.9,
-      "boost": 0.09
+      "boost": 0.09,
+      "active": false
     },
     "ETHUSD:BEAR_TREND_FOLLOWER:M15": {
       "direction": "SELL",
@@ -3144,7 +3429,8 @@
       "tgt": 1.3518,
       "sl": 0.5109,
       "thresh": 0.88,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": false
     },
     "ETHUSD:BULL_TREND_FOLLOWER:M15": {
       "direction": "BUY",
@@ -3155,7 +3441,8 @@
       "tgt": 1.034,
       "sl": 0.4524,
       "thresh": 0.88,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": true
     },
     "ETHUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -3166,7 +3453,8 @@
       "tgt": 1.5552,
       "sl": 0.9072,
       "thresh": 0.84,
-      "boost": 0.061
+      "boost": 0.061,
+      "active": true
     },
     "ETHUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -3177,7 +3465,8 @@
       "tgt": 1.4203,
       "sl": 0.7359,
       "thresh": 0.82,
-      "boost": 0.037
+      "boost": 0.037,
+      "active": false
     },
     "ETHUSD:MAGIC_SQUARE:H1": {
       "direction": "BOTH",
@@ -3188,7 +3477,8 @@
       "tgt": 0.4156,
       "sl": 0.4156,
       "thresh": 0.85,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "ETHUSD:SHORT_SQUEEZE:H1": {
       "direction": "BUY",
@@ -3199,7 +3489,8 @@
       "tgt": 0.5161,
       "sl": 0.3871,
       "thresh": 0.9,
-      "boost": 0.045
+      "boost": 0.045,
+      "active": false
     },
     "ETHUSD:ENHANCED_BEARISH:H1": {
       "direction": "SELL",
@@ -3210,7 +3501,8 @@
       "tgt": 1.7428,
       "sl": 0.7625,
       "thresh": 0.75,
-      "boost": 0.066
+      "boost": 0.066,
+      "active": true
     },
     "ETHUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -3221,7 +3513,8 @@
       "tgt": 2.3361,
       "sl": 0.9344,
       "thresh": 1.75,
-      "boost": 0.088
+      "boost": 0.088,
+      "active": false
     },
     "ETHUSD:SCALPING:M1": {
       "direction": "BUY",
@@ -3232,7 +3525,8 @@
       "tgt": 0.0911,
       "sl": 0.0593,
       "thresh": 0.9,
-      "boost": 0.058
+      "boost": 0.058,
+      "active": false
     },
     "ETHUSD:SWAP_ARBITRAGE:H1": {
       "direction": "BOTH",
@@ -3243,7 +3537,8 @@
       "tgt": 1.0584,
       "sl": 0.6048,
       "thresh": 0.85,
-      "boost": 0.067
+      "boost": 0.067,
+      "active": false
     },
     "ETHUSD:AI_ENHANCED:H1": {
       "direction": "BOTH",
@@ -3254,7 +3549,8 @@
       "tgt": 1.519,
       "sl": 0.8861,
       "thresh": 0.82,
-      "boost": 0.074
+      "boost": 0.074,
+      "active": false
     },
     "ETHUSD:BREAKOUT:M15": {
       "direction": "SELL",
@@ -3265,7 +3561,8 @@
       "tgt": 0.8282,
       "sl": 0.4831,
       "thresh": 0.85,
-      "boost": 0.072
+      "boost": 0.072,
+      "active": false
     },
     "ETHUSD:PIP_BLAST:M1": {
       "direction": "BOTH",
@@ -3276,7 +3573,8 @@
       "tgt": 0.5063,
       "sl": 0.1202,
       "thresh": 0.8,
-      "boost": 0.101
+      "boost": 0.101,
+      "active": true
     },
     "ETHUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -3287,7 +3585,8 @@
       "tgt": 1.9881,
       "sl": 0.5646,
       "thresh": 0.85,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "ETHUSD:MORNING_BREAKOUT:M15": {
       "direction": "BUY",
@@ -3298,7 +3597,8 @@
       "tgt": 0.9927,
       "sl": 0.4964,
       "thresh": 0.88,
-      "boost": 0.098
+      "boost": 0.098,
+      "active": false
     },
     "ETHUSD:LONG_LIQUIDATION:H1": {
       "direction": "SELL",
@@ -3309,7 +3609,8 @@
       "tgt": 1.0405,
       "sl": 0.6243,
       "thresh": 0.82,
-      "boost": 0.06
+      "boost": 0.06,
+      "active": false
     },
     "ETHUSD:INSTITUTIONAL_SUPPORT:H1": {
       "direction": "BUY",
@@ -3320,7 +3621,8 @@
       "tgt": 1.0641,
       "sl": 0.6651,
       "thresh": 0.85,
-      "boost": 0.052
+      "boost": 0.052,
+      "active": true
     },
     "ETHUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -3331,7 +3633,8 @@
       "tgt": 1.0546,
       "sl": 0.4018,
       "thresh": 0.85,
-      "boost": 0.073
+      "boost": 0.073,
+      "active": false
     },
     "ETHUSD:DAY_HIGH_LOW_TRADITIONAL:H1": {
       "direction": "BUY",
@@ -3342,7 +3645,8 @@
       "tgt": 1.8412,
       "sl": 0.9272,
       "thresh": 0.8,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": false
     },
     "ETHUSD:ENHANCED_BULLISH:H1": {
       "direction": "BUY",
@@ -3353,7 +3657,8 @@
       "tgt": 1.581,
       "sl": 0.6772,
       "thresh": -2.18,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": true
     },
     "ETHUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -3364,7 +3669,8 @@
       "tgt": 0.3324,
       "sl": 0.3324,
       "thresh": 0.92,
-      "boost": 0.043
+      "boost": 0.043,
+      "active": false
     },
     "ETHUSD:MOMENTUM_BURST:M1": {
       "direction": "BOTH",
@@ -3375,7 +3681,8 @@
       "tgt": 0.1265,
       "sl": 0.0647,
       "thresh": 0.85,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": false
     },
     "ETHUSD:VWAP_BOUNCE:H1": {
       "direction": "BOTH",
@@ -3386,7 +3693,8 @@
       "tgt": 0.6864,
       "sl": 0.3748,
       "thresh": 0.87,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "ETHUSD:OPENING_DRIVE:H1": {
       "direction": "BOTH",
@@ -3397,7 +3705,8 @@
       "tgt": 1.1125,
       "sl": 0.6675,
       "thresh": 0.88,
-      "boost": 0.07
+      "boost": 0.07,
+      "active": false
     },
     "ETHUSD:RANGE_CONTRACTION:H1": {
       "direction": "BOTH",
@@ -3408,7 +3717,8 @@
       "tgt": 0.3851,
       "sl": 0.2888,
       "thresh": 0.86,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": false
     },
     "ETHUSD:RSI_REVERSAL:M5": {
       "direction": "BOTH",
@@ -3419,7 +3729,8 @@
       "tgt": 0.2087,
       "sl": 0.1391,
       "thresh": 0.85,
-      "boost": 0.046
+      "boost": 0.046,
+      "active": false
     },
     "ETHUSD:EMA_CROSSOVER:H1": {
       "direction": "BOTH",
@@ -3430,7 +3741,8 @@
       "tgt": 0.942,
       "sl": 0.4512,
       "thresh": 0.88,
-      "boost": 0.057
+      "boost": 0.057,
+      "active": false
     },
     "ETHUSD:BOLLINGER_SQUEEZE:H1": {
       "direction": "BOTH",
@@ -3441,7 +3753,8 @@
       "tgt": 0.861,
       "sl": 0.4649,
       "thresh": 0.87,
-      "boost": 0.071
+      "boost": 0.071,
+      "active": false
     },
     "ETHUSD:VOLUME_CLIMAX:H1": {
       "direction": "BOTH",
@@ -3452,7 +3765,8 @@
       "tgt": 0.9449,
       "sl": 0.5399,
       "thresh": 0.89,
-      "boost": 0.055
+      "boost": 0.055,
+      "active": true
     },
     "ETHUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -3463,7 +3777,8 @@
       "tgt": 1.4764,
       "sl": 0.6621,
       "thresh": 0.86,
-      "boost": 0.053
+      "boost": 0.053,
+      "active": false
     },
     "ETHUSD:MACD_DIVERGENCE:H1": {
       "direction": "BOTH",
@@ -3474,7 +3789,8 @@
       "tgt": 1.2497,
       "sl": 0.6428,
       "thresh": 0.87,
-      "boost": 0.044
+      "boost": 0.044,
+      "active": false
     },
     "ETHUSD:LONDON_BREAKOUT:M15": {
       "direction": "BOTH",
@@ -3485,7 +3801,8 @@
       "tgt": 1.3059,
       "sl": 0.3918,
       "thresh": 0.85,
-      "boost": 0.068
+      "boost": 0.068,
+      "active": true
     },
     "ETHUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -3496,7 +3813,8 @@
       "tgt": 1.5638,
       "sl": 0.6842,
       "thresh": 0.9,
-      "boost": 0.087
+      "boost": 0.087,
+      "active": false
     },
     "ETHUSD:ASIAN_RANGE_SCALP:M1": {
       "direction": "BOTH",
@@ -3507,7 +3825,8 @@
       "tgt": 0.0887,
       "sl": 0.0591,
       "thresh": 0.82,
-      "boost": 0.038
+      "boost": 0.038,
+      "active": false
     },
     "ETHUSD:NEWS_BREAKOUT_STRADDLE:H1": {
       "direction": "BOTH",
@@ -3518,7 +3837,8 @@
       "tgt": 5.3936,
       "sl": 0.4045,
       "thresh": 0.95,
-      "boost": 0.118
+      "boost": 0.118,
+      "active": false
     },
     "EURUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3529,7 +3849,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "GBPUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3540,7 +3861,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "USDJPY:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3551,7 +3873,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "AUDUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3562,7 +3885,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "XAUUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3573,7 +3897,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "XAGUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3584,7 +3909,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "BTCUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3595,7 +3921,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     },
     "ETHUSD:NEWS_BREAKOUT_STRADDLE:M1": {
       "direction": "BOTH",
@@ -3606,7 +3933,8 @@
       "tgt": 2.5,
       "sl": 0.1,
       "thresh": 0.95,
-      "boost": 0.2
+      "boost": 0.2,
+      "active": false
     }
   }
 }
