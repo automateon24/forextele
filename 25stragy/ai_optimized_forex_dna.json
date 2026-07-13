@@ -6,11 +6,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1437,
       "tsl_t": 0.115,
-      "tgt": 0.8625,
-      "sl": 0.4082,
+      "tgt": 3.0,
+      "sl": 0.5,
       "thresh": -2.2,
       "boost": 0.053,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 6.0
     },
     "EURUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -18,11 +20,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1068,
       "tsl_t": 0.0854,
-      "tgt": 0.6407,
-      "sl": 0.3545,
-      "thresh": 0.82,
+      "tgt": 1.8,
+      "sl": 0.3,
+      "thresh": 0.8,
       "boost": 0.036,
-      "active": true
+      "active": true,
+      "win_rate": 0.364,
+      "avg_rr": 6.375
     },
     "EURUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -78,11 +82,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1504,
       "tsl_t": 0.094,
-      "tgt": 0.7521,
-      "sl": 0.329,
-      "thresh": 0.88,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.056,
-      "active": true
+      "active": true,
+      "win_rate": 0.284,
+      "avg_rr": 2.781
     },
     "EURUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -90,11 +96,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0948,
       "tsl_t": 0.0759,
-      "tgt": 0.5689,
-      "sl": 0.3319,
-      "thresh": 0.84,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": 1.7,
       "boost": 0.055,
-      "active": true
+      "active": true,
+      "win_rate": 0.279,
+      "avg_rr": 3.565
     },
     "EURUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -138,11 +146,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1511,
       "tsl_t": 0.1259,
-      "tgt": 1.0074,
-      "sl": 0.4407,
-      "thresh": 0.75,
+      "tgt": 1.8,
+      "sl": 0.3,
+      "thresh": 0.8,
       "boost": 0.054,
-      "active": true
+      "active": true,
+      "win_rate": 0.364,
+      "avg_rr": 6.375
     },
     "EURUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -210,11 +220,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0299,
       "tsl_t": 0.0239,
-      "tgt": 0.3987,
-      "sl": 0.0947,
-      "thresh": 0.8,
+      "tgt": 0.6,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.124,
-      "active": true
+      "active": true,
+      "win_rate": 0.281,
+      "avg_rr": 2.013
     },
     "EURUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -258,11 +270,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0942,
       "tsl_t": 0.0706,
-      "tgt": 0.4709,
-      "sl": 0.2943,
-      "thresh": 0.85,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.07,
-      "active": true
+      "active": true,
+      "win_rate": 0.518,
+      "avg_rr": 2.236
     },
     "EURUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -294,11 +308,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1293,
       "tsl_t": 0.1034,
-      "tgt": 0.7758,
-      "sl": 0.3323,
-      "thresh": -2.18,
+      "tgt": 3.0,
+      "sl": 0.5,
+      "thresh": -2.2,
       "boost": 0.053,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 6.0
     },
     "EURUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -402,11 +418,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0642,
       "tsl_t": 0.0385,
-      "tgt": 0.4494,
-      "sl": 0.2568,
-      "thresh": 0.89,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.053,
-      "active": true
+      "active": true,
+      "win_rate": 0.636,
+      "avg_rr": 1.419
     },
     "EURUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -438,11 +456,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0518,
       "tsl_t": 0.0324,
-      "tgt": 0.6478,
-      "sl": 0.1943,
-      "thresh": 0.85,
+      "tgt": 0.6,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.067,
-      "active": true
+      "active": true,
+      "win_rate": 0.8,
+      "avg_rr": 0.91
     },
     "EURUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -486,11 +506,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1448,
       "tsl_t": 0.1158,
-      "tgt": 0.8687,
-      "sl": 0.4112,
-      "thresh": -2.2,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": -1.2,
       "boost": 0.07,
-      "active": true
+      "active": true,
+      "win_rate": 0.467,
+      "avg_rr": 3.624
     },
     "GBPUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -498,11 +520,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0978,
       "tsl_t": 0.0782,
-      "tgt": 0.5867,
-      "sl": 0.3246,
-      "thresh": 0.82,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.032,
-      "active": true
+      "active": true,
+      "win_rate": 0.483,
+      "avg_rr": 1.659
     },
     "GBPUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -558,11 +582,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1352,
       "tsl_t": 0.0845,
-      "tgt": 0.676,
-      "sl": 0.2958,
-      "thresh": 0.88,
+      "tgt": 1.0,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.066,
-      "active": true
+      "active": true,
+      "win_rate": 0.667,
+      "avg_rr": 0.723
     },
     "GBPUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -570,11 +596,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1487,
       "tsl_t": 0.1189,
-      "tgt": 0.892,
-      "sl": 0.5203,
-      "thresh": 0.84,
+      "tgt": 0.6,
+      "sl": 1.5,
+      "thresh": 1.0,
       "boost": 0.054,
-      "active": true
+      "active": true,
+      "win_rate": 0.719,
+      "avg_rr": 0.486
     },
     "GBPUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -618,11 +646,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1546,
       "tsl_t": 0.1288,
-      "tgt": 1.0305,
-      "sl": 0.4508,
-      "thresh": 0.75,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.073,
-      "active": true
+      "active": true,
+      "win_rate": 0.483,
+      "avg_rr": 1.659
     },
     "GBPUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -690,11 +720,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0251,
       "tsl_t": 0.02,
-      "tgt": 0.334,
-      "sl": 0.0793,
-      "thresh": 0.8,
+      "tgt": 0.6,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.141,
-      "active": true
+      "active": true,
+      "win_rate": 0.294,
+      "avg_rr": 1.947
     },
     "GBPUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -738,11 +770,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0817,
       "tsl_t": 0.0613,
-      "tgt": 0.4084,
-      "sl": 0.2552,
-      "thresh": 0.85,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.06,
-      "active": true
+      "active": true,
+      "win_rate": 0.431,
+      "avg_rr": 2.573
     },
     "GBPUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -774,11 +808,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1441,
       "tsl_t": 0.1153,
-      "tgt": 0.8648,
-      "sl": 0.3704,
-      "thresh": -2.18,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": -1.2,
       "boost": 0.055,
-      "active": true
+      "active": true,
+      "win_rate": 0.467,
+      "avg_rr": 3.624
     },
     "GBPUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -882,11 +918,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0659,
       "tsl_t": 0.0395,
-      "tgt": 0.4611,
-      "sl": 0.2635,
-      "thresh": 0.89,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.052,
-      "active": true
+      "active": true,
+      "win_rate": 0.667,
+      "avg_rr": 1.341
     },
     "GBPUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -918,11 +956,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0579,
       "tsl_t": 0.0362,
-      "tgt": 0.7239,
-      "sl": 0.2172,
-      "thresh": 0.85,
+      "tgt": 0.6,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.084,
-      "active": true
+      "active": true,
+      "win_rate": 0.667,
+      "avg_rr": 0.476
     },
     "GBPUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -966,11 +1006,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1365,
       "tsl_t": 0.1092,
-      "tgt": 0.8189,
-      "sl": 0.3876,
-      "thresh": -2.2,
+      "tgt": 2.5,
+      "sl": 1.5,
+      "thresh": -1.2,
       "boost": 0.065,
-      "active": true
+      "active": true,
+      "win_rate": 0.571,
+      "avg_rr": 2.049
     },
     "USDJPY:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -978,11 +1020,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1419,
       "tsl_t": 0.1136,
-      "tgt": 0.8516,
-      "sl": 0.4712,
-      "thresh": 0.82,
+      "tgt": 3.0,
+      "sl": 1.2,
+      "thresh": 1.8,
       "boost": 0.034,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 2.5
     },
     "USDJPY:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -1038,11 +1082,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1525,
       "tsl_t": 0.0953,
-      "tgt": 0.7627,
-      "sl": 0.3337,
-      "thresh": 0.88,
+      "tgt": 0.6,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.066,
-      "active": true
+      "active": true,
+      "win_rate": 0.741,
+      "avg_rr": 0.555
     },
     "USDJPY:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1050,11 +1096,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1079,
       "tsl_t": 0.0863,
-      "tgt": 0.6476,
-      "sl": 0.3778,
-      "thresh": 0.84,
+      "tgt": 2.5,
+      "sl": 0.8,
+      "thresh": 1.0,
       "boost": 0.056,
-      "active": true
+      "active": true,
+      "win_rate": 0.375,
+      "avg_rr": 3.185
     },
     "USDJPY:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -1098,11 +1146,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1409,
       "tsl_t": 0.1174,
-      "tgt": 0.9393,
-      "sl": 0.4109,
-      "thresh": 0.75,
+      "tgt": 3.0,
+      "sl": 1.2,
+      "thresh": 1.8,
       "boost": 0.071,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 2.5
     },
     "USDJPY:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -1170,11 +1220,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0245,
       "tsl_t": 0.0196,
-      "tgt": 0.3262,
-      "sl": 0.0775,
-      "thresh": 0.8,
+      "tgt": 3.0,
+      "sl": 0.3,
+      "thresh": 1.7,
       "boost": 0.114,
-      "active": true
+      "active": true,
+      "win_rate": 0.084,
+      "avg_rr": 10.703
     },
     "USDJPY:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -1218,11 +1270,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1029,
       "tsl_t": 0.0772,
-      "tgt": 0.5144,
-      "sl": 0.3215,
-      "thresh": 0.85,
+      "tgt": 3.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.054,
-      "active": true
+      "active": true,
+      "win_rate": 0.268,
+      "avg_rr": 8.86
     },
     "USDJPY:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -1254,11 +1308,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0956,
       "tsl_t": 0.0765,
-      "tgt": 0.5735,
-      "sl": 0.2456,
-      "thresh": -2.18,
+      "tgt": 2.5,
+      "sl": 1.5,
+      "thresh": -1.2,
       "boost": 0.055,
-      "active": true
+      "active": true,
+      "win_rate": 0.571,
+      "avg_rr": 2.049
     },
     "USDJPY:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -1362,11 +1418,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0745,
       "tsl_t": 0.0447,
-      "tgt": 0.5217,
-      "sl": 0.2981,
-      "thresh": 0.89,
+      "tgt": 2.5,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.047,
-      "active": true
+      "active": true,
+      "win_rate": 0.571,
+      "avg_rr": 1.912
     },
     "USDJPY:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -1398,11 +1456,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.073,
       "tsl_t": 0.0456,
-      "tgt": 0.9121,
-      "sl": 0.2736,
-      "thresh": 0.85,
+      "tgt": 0.6,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.066,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 0.5
     },
     "USDJPY:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1446,11 +1506,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1042,
       "tsl_t": 0.0834,
-      "tgt": 0.6253,
-      "sl": 0.296,
-      "thresh": -2.2,
+      "tgt": 2.5,
+      "sl": 1.2,
+      "thresh": -1.2,
       "boost": 0.055,
-      "active": true
+      "active": true,
+      "win_rate": 0.75,
+      "avg_rr": 2.894
     },
     "AUDUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -1458,11 +1520,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1273,
       "tsl_t": 0.1018,
-      "tgt": 0.7638,
-      "sl": 0.4226,
-      "thresh": 0.82,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.037,
-      "active": true
+      "active": true,
+      "win_rate": 0.632,
+      "avg_rr": 1.599
     },
     "AUDUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -1518,11 +1582,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1372,
       "tsl_t": 0.0857,
-      "tgt": 0.686,
-      "sl": 0.3001,
-      "thresh": 0.88,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.059,
-      "active": true
+      "active": true,
+      "win_rate": 0.337,
+      "avg_rr": 3.201
     },
     "AUDUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1530,11 +1596,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1069,
       "tsl_t": 0.0855,
-      "tgt": 0.6416,
-      "sl": 0.3742,
-      "thresh": 0.84,
+      "tgt": 2.5,
+      "sl": 1.5,
+      "thresh": 1.7,
       "boost": 0.071,
-      "active": true
+      "active": true,
+      "win_rate": 0.457,
+      "avg_rr": 1.982
     },
     "AUDUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -1578,11 +1646,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1521,
       "tsl_t": 0.1267,
-      "tgt": 1.0139,
-      "sl": 0.4436,
-      "thresh": 0.75,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.056,
-      "active": true
+      "active": true,
+      "win_rate": 0.632,
+      "avg_rr": 1.599
     },
     "AUDUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -1650,11 +1720,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0272,
       "tsl_t": 0.0218,
-      "tgt": 0.3632,
-      "sl": 0.0863,
-      "thresh": 0.8,
+      "tgt": 0.6,
+      "sl": 0.3,
+      "thresh": 1.7,
       "boost": 0.141,
-      "active": true
+      "active": true,
+      "win_rate": 0.251,
+      "avg_rr": 1.966
     },
     "AUDUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -1698,11 +1770,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1166,
       "tsl_t": 0.0875,
-      "tgt": 0.5831,
-      "sl": 0.3644,
-      "thresh": 0.85,
+      "tgt": 1.8,
+      "sl": 0.5,
+      "thresh": 0.7,
       "boost": 0.054,
-      "active": true
+      "active": true,
+      "win_rate": 0.4,
+      "avg_rr": 3.417
     },
     "AUDUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -1734,11 +1808,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.1315,
       "tsl_t": 0.1052,
-      "tgt": 0.7891,
-      "sl": 0.338,
-      "thresh": -2.18,
+      "tgt": 2.5,
+      "sl": 1.2,
+      "thresh": -1.2,
       "boost": 0.063,
-      "active": true
+      "active": true,
+      "win_rate": 0.75,
+      "avg_rr": 2.894
     },
     "AUDUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -1842,11 +1918,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.073,
       "tsl_t": 0.0438,
-      "tgt": 0.5109,
-      "sl": 0.2919,
-      "thresh": 0.89,
+      "tgt": 3.0,
+      "sl": 0.5,
+      "thresh": 0.7,
       "boost": 0.057,
-      "active": true
+      "active": true,
+      "win_rate": 0.5,
+      "avg_rr": 4.075
     },
     "AUDUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -1878,11 +1956,13 @@
       "optimal_session": "ASIAN/LONDON",
       "tsl_a": 0.0658,
       "tsl_t": 0.0411,
-      "tgt": 0.8229,
-      "sl": 0.2469,
-      "thresh": 0.85,
+      "tgt": 0.6,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.061,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 2.0
     },
     "AUDUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -1926,11 +2006,13 @@
       "optimal_session": "US",
       "tsl_a": 0.2177,
       "tsl_t": 0.1742,
-      "tgt": 1.3062,
-      "sl": 0.6183,
-      "thresh": -2.2,
+      "tgt": 2.5,
+      "sl": 1.2,
+      "thresh": -1.2,
       "boost": 0.053,
-      "active": true
+      "active": true,
+      "win_rate": 0.615,
+      "avg_rr": 2.417
     },
     "XAUUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -1938,11 +2020,13 @@
       "optimal_session": "US",
       "tsl_a": 0.2201,
       "tsl_t": 0.1761,
-      "tgt": 1.3208,
-      "sl": 0.7308,
-      "thresh": 0.82,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": 1.8,
       "boost": 0.039,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 2.0
     },
     "XAUUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -1998,11 +2082,13 @@
       "optimal_session": "US",
       "tsl_a": 0.203,
       "tsl_t": 0.1269,
-      "tgt": 1.0148,
-      "sl": 0.444,
-      "thresh": 0.88,
+      "tgt": 0.6,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.065,
-      "active": true
+      "active": true,
+      "win_rate": 0.68,
+      "avg_rr": 0.56
     },
     "XAUUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2010,11 +2096,13 @@
       "optimal_session": "US",
       "tsl_a": 0.2223,
       "tsl_t": 0.1778,
-      "tgt": 1.3336,
-      "sl": 0.7779,
-      "thresh": 0.84,
+      "tgt": 2.5,
+      "sl": 1.2,
+      "thresh": 1.7,
       "boost": 0.051,
-      "active": true
+      "active": true,
+      "win_rate": 0.6,
+      "avg_rr": 1.366
     },
     "XAUUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -2058,11 +2146,13 @@
       "optimal_session": "US",
       "tsl_a": 0.2236,
       "tsl_t": 0.1863,
-      "tgt": 1.4906,
-      "sl": 0.6521,
-      "thresh": 0.75,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": 1.8,
       "boost": 0.056,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 2.0
     },
     "XAUUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -2130,11 +2220,13 @@
       "optimal_session": "US",
       "tsl_a": 0.0435,
       "tsl_t": 0.0348,
-      "tgt": 0.5795,
-      "sl": 0.1376,
-      "thresh": 0.8,
+      "tgt": 0.6,
+      "sl": 0.3,
+      "thresh": 1.0,
       "boost": 0.138,
-      "active": true
+      "active": true,
+      "win_rate": 0.296,
+      "avg_rr": 2.491
     },
     "XAUUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -2178,11 +2270,13 @@
       "optimal_session": "US",
       "tsl_a": 0.1625,
       "tsl_t": 0.1219,
-      "tgt": 0.8127,
-      "sl": 0.5079,
-      "thresh": 0.85,
+      "tgt": 1.8,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.065,
-      "active": true
+      "active": true,
+      "win_rate": 0.523,
+      "avg_rr": 1.36
     },
     "XAUUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -2214,11 +2308,13 @@
       "optimal_session": "US",
       "tsl_a": 0.152,
       "tsl_t": 0.1216,
-      "tgt": 0.9118,
-      "sl": 0.3906,
-      "thresh": -2.18,
+      "tgt": 2.5,
+      "sl": 1.2,
+      "thresh": -1.2,
       "boost": 0.053,
-      "active": true
+      "active": true,
+      "win_rate": 0.615,
+      "avg_rr": 2.417
     },
     "XAUUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -2322,11 +2418,13 @@
       "optimal_session": "US",
       "tsl_a": 0.0937,
       "tsl_t": 0.0562,
-      "tgt": 0.6562,
-      "sl": 0.375,
-      "thresh": 0.89,
+      "tgt": 3.0,
+      "sl": 0.5,
+      "thresh": 0.7,
       "boost": 0.054,
-      "active": true
+      "active": true,
+      "win_rate": 0.75,
+      "avg_rr": 36.097
     },
     "XAUUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -2358,11 +2456,13 @@
       "optimal_session": "US",
       "tsl_a": 0.107,
       "tsl_t": 0.0669,
-      "tgt": 1.3375,
-      "sl": 0.4012,
-      "thresh": 0.85,
+      "tgt": 1.0,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.073,
-      "active": true
+      "active": true,
+      "win_rate": 0.75,
+      "avg_rr": 1.284
     },
     "XAUUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2406,11 +2506,13 @@
       "optimal_session": "US",
       "tsl_a": 0.1545,
       "tsl_t": 0.1236,
-      "tgt": 0.927,
-      "sl": 0.4388,
+      "tgt": 3.0,
+      "sl": 1.2,
       "thresh": -2.2,
       "boost": 0.063,
-      "active": true
+      "active": true,
+      "win_rate": 0.6,
+      "avg_rr": 2.66
     },
     "XAGUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -2418,9 +2520,9 @@
       "optimal_session": "US",
       "tsl_a": 0.1742,
       "tsl_t": 0.1394,
-      "tgt": 1.0454,
-      "sl": 0.5785,
-      "thresh": 0.82,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": 1.8,
       "boost": 0.042,
       "active": true
     },
@@ -2478,11 +2580,13 @@
       "optimal_session": "US",
       "tsl_a": 0.1994,
       "tsl_t": 0.1246,
-      "tgt": 0.997,
-      "sl": 0.4362,
-      "thresh": 0.88,
+      "tgt": 1.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.066,
-      "active": true
+      "active": true,
+      "win_rate": 0.306,
+      "avg_rr": 3.585
     },
     "XAGUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2490,11 +2594,13 @@
       "optimal_session": "US",
       "tsl_a": 0.1647,
       "tsl_t": 0.1317,
-      "tgt": 0.988,
-      "sl": 0.5763,
-      "thresh": 0.84,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.058,
-      "active": true
+      "active": true,
+      "win_rate": 0.7,
+      "avg_rr": 1.644
     },
     "XAGUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -2538,9 +2644,9 @@
       "optimal_session": "US",
       "tsl_a": 0.2375,
       "tsl_t": 0.1979,
-      "tgt": 1.5835,
-      "sl": 0.6928,
-      "thresh": 0.75,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": 1.8,
       "boost": 0.071,
       "active": true
     },
@@ -2610,11 +2716,13 @@
       "optimal_session": "US",
       "tsl_a": 0.0339,
       "tsl_t": 0.0271,
-      "tgt": 0.4524,
-      "sl": 0.1075,
-      "thresh": 0.8,
+      "tgt": 0.6,
+      "sl": 1.2,
+      "thresh": 1.3,
       "boost": 0.126,
-      "active": true
+      "active": true,
+      "win_rate": 0.573,
+      "avg_rr": 0.691
     },
     "XAGUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -2658,11 +2766,13 @@
       "optimal_session": "US",
       "tsl_a": 0.1247,
       "tsl_t": 0.0935,
-      "tgt": 0.6236,
-      "sl": 0.3897,
-      "thresh": 0.85,
+      "tgt": 1.8,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.052,
-      "active": true
+      "active": true,
+      "win_rate": 0.615,
+      "avg_rr": 1.453
     },
     "XAGUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -2694,11 +2804,13 @@
       "optimal_session": "US",
       "tsl_a": 0.2133,
       "tsl_t": 0.1706,
-      "tgt": 1.2796,
-      "sl": 0.5481,
-      "thresh": -2.18,
+      "tgt": 3.0,
+      "sl": 1.2,
+      "thresh": -2.2,
       "boost": 0.065,
-      "active": true
+      "active": true,
+      "win_rate": 0.6,
+      "avg_rr": 2.66
     },
     "XAGUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -2802,11 +2914,13 @@
       "optimal_session": "US",
       "tsl_a": 0.1043,
       "tsl_t": 0.0626,
-      "tgt": 0.73,
-      "sl": 0.4171,
-      "thresh": 0.89,
+      "tgt": 3.0,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.04,
-      "active": true
+      "active": true,
+      "win_rate": 0.5,
+      "avg_rr": 10.141
     },
     "XAGUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -2838,11 +2952,13 @@
       "optimal_session": "US",
       "tsl_a": 0.0941,
       "tsl_t": 0.0588,
-      "tgt": 1.1766,
-      "sl": 0.353,
-      "thresh": 0.85,
+      "tgt": 1.8,
+      "sl": 0.8,
+      "thresh": 0.7,
       "boost": 0.075,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 2.25
     },
     "XAGUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2886,11 +3002,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2026,
       "tsl_t": 0.1621,
-      "tgt": 1.2154,
-      "sl": 0.5753,
-      "thresh": -2.2,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": -1.2,
       "boost": 0.067,
-      "active": true
+      "active": true,
+      "win_rate": 0.538,
+      "avg_rr": 1.87
     },
     "BTCUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -2898,11 +3016,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2622,
       "tsl_t": 0.2098,
-      "tgt": 1.5734,
-      "sl": 0.8706,
-      "thresh": 0.82,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.031,
-      "active": true
+      "active": true,
+      "win_rate": 0.41,
+      "avg_rr": 3.119
     },
     "BTCUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -2958,11 +3078,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2606,
       "tsl_t": 0.1629,
-      "tgt": 1.3032,
-      "sl": 0.5701,
-      "thresh": 0.88,
+      "tgt": 0.6,
+      "sl": 0.3,
+      "thresh": 0.7,
       "boost": 0.067,
-      "active": true
+      "active": true,
+      "win_rate": 0.345,
+      "avg_rr": 2.187
     },
     "BTCUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -2970,11 +3092,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2069,
       "tsl_t": 0.1655,
-      "tgt": 1.2414,
-      "sl": 0.7242,
-      "thresh": 0.84,
+      "tgt": 1.0,
+      "sl": 0.8,
+      "thresh": 1.3,
       "boost": 0.051,
-      "active": true
+      "active": true,
+      "win_rate": 0.7,
+      "avg_rr": 1.129
     },
     "BTCUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -3018,11 +3142,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.3058,
       "tsl_t": 0.2548,
-      "tgt": 2.0384,
-      "sl": 0.8918,
-      "thresh": 0.75,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.052,
-      "active": true
+      "active": true,
+      "win_rate": 0.41,
+      "avg_rr": 3.119
     },
     "BTCUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -3090,11 +3216,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.0513,
       "tsl_t": 0.041,
-      "tgt": 0.6838,
-      "sl": 0.1624,
-      "thresh": 0.8,
+      "tgt": 1.0,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.137,
-      "active": true
+      "active": true,
+      "win_rate": 0.55,
+      "avg_rr": 0.795
     },
     "BTCUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -3138,11 +3266,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.1527,
       "tsl_t": 0.1145,
-      "tgt": 0.7633,
-      "sl": 0.477,
-      "thresh": 0.85,
+      "tgt": 2.5,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.074,
-      "active": true
+      "active": true,
+      "win_rate": 0.5,
+      "avg_rr": 1.432
     },
     "BTCUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -3174,11 +3304,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.1866,
       "tsl_t": 0.1493,
-      "tgt": 1.1195,
-      "sl": 0.4795,
-      "thresh": -2.18,
+      "tgt": 3.0,
+      "sl": 1.5,
+      "thresh": -1.2,
       "boost": 0.063,
-      "active": true
+      "active": true,
+      "win_rate": 0.538,
+      "avg_rr": 1.87
     },
     "BTCUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -3282,11 +3414,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.1132,
       "tsl_t": 0.0679,
-      "tgt": 0.7924,
-      "sl": 0.4528,
-      "thresh": 0.89,
+      "tgt": 2.5,
+      "sl": 0.8,
+      "thresh": 0.7,
       "boost": 0.046,
-      "active": true
+      "active": true,
+      "win_rate": 0.435,
+      "avg_rr": 3.121
     },
     "BTCUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -3318,11 +3452,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.1101,
       "tsl_t": 0.0688,
-      "tgt": 1.3762,
-      "sl": 0.4129,
-      "thresh": 0.85,
+      "tgt": 1.8,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.07,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 1.5
     },
     "BTCUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",
@@ -3366,11 +3502,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.249,
       "tsl_t": 0.1992,
-      "tgt": 1.4938,
-      "sl": 0.7071,
-      "thresh": -2.2,
+      "tgt": 1.0,
+      "sl": 0.8,
+      "thresh": -1.2,
       "boost": 0.065,
-      "active": true
+      "active": true,
+      "win_rate": 0.75,
+      "avg_rr": 1.725
     },
     "ETHUSD:DAY_HIGH_BEARISH:H1": {
       "direction": "SELL",
@@ -3378,11 +3516,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.1892,
       "tsl_t": 0.1514,
-      "tgt": 1.1352,
-      "sl": 0.6282,
-      "thresh": 0.82,
+      "tgt": 1.0,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.039,
-      "active": true
+      "active": true,
+      "win_rate": 0.632,
+      "avg_rr": 1.196
     },
     "ETHUSD:MEAN_REVERSION:M5": {
       "direction": "BOTH",
@@ -3438,11 +3578,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2068,
       "tsl_t": 0.1292,
-      "tgt": 1.034,
-      "sl": 0.4524,
-      "thresh": 0.88,
+      "tgt": 0.6,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.061,
-      "active": true
+      "active": true,
+      "win_rate": 0.705,
+      "avg_rr": 0.469
     },
     "ETHUSD:ORDER_BLOCK_REVERSAL:H1": {
       "direction": "BOTH",
@@ -3450,11 +3592,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2592,
       "tsl_t": 0.2074,
-      "tgt": 1.5552,
-      "sl": 0.9072,
-      "thresh": 0.84,
+      "tgt": 1.0,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.061,
-      "active": true
+      "active": true,
+      "win_rate": 0.778,
+      "avg_rr": 0.963
     },
     "ETHUSD:WIDE_RANGE_RIDER:H1": {
       "direction": "BOTH",
@@ -3498,11 +3642,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2614,
       "tsl_t": 0.2178,
-      "tgt": 1.7428,
-      "sl": 0.7625,
-      "thresh": 0.75,
+      "tgt": 1.0,
+      "sl": 1.5,
+      "thresh": -2.2,
       "boost": 0.066,
-      "active": true
+      "active": true,
+      "win_rate": 0.632,
+      "avg_rr": 1.196
     },
     "ETHUSD:ULTIMATE_DAY_HIGH_LOW:H1": {
       "direction": "BOTH",
@@ -3570,11 +3716,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.038,
       "tsl_t": 0.0304,
-      "tgt": 0.5063,
-      "sl": 0.1202,
-      "thresh": 0.8,
+      "tgt": 0.6,
+      "sl": 1.5,
+      "thresh": 0.7,
       "boost": 0.101,
-      "active": true
+      "active": true,
+      "win_rate": 0.678,
+      "avg_rr": 0.469
     },
     "ETHUSD:ZERO_HERO:H1": {
       "direction": "BOTH",
@@ -3618,11 +3766,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2128,
       "tsl_t": 0.1596,
-      "tgt": 1.0641,
-      "sl": 0.6651,
-      "thresh": 0.85,
+      "tgt": 1.8,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.052,
-      "active": true
+      "active": true,
+      "win_rate": 0.474,
+      "avg_rr": 2.463
     },
     "ETHUSD:RESIST_BREAK:H1": {
       "direction": "BUY",
@@ -3654,11 +3804,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.2635,
       "tsl_t": 0.2108,
-      "tgt": 1.581,
-      "sl": 0.6772,
-      "thresh": -2.18,
+      "tgt": 1.0,
+      "sl": 0.8,
+      "thresh": -1.2,
       "boost": 0.055,
-      "active": true
+      "active": true,
+      "win_rate": 0.75,
+      "avg_rr": 1.725
     },
     "ETHUSD:TREND_FOLLOWING:M15": {
       "direction": "SELL",
@@ -3762,11 +3914,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.135,
       "tsl_t": 0.081,
-      "tgt": 0.9449,
-      "sl": 0.5399,
-      "thresh": 0.89,
+      "tgt": 1.8,
+      "sl": 1.2,
+      "thresh": 0.7,
       "boost": 0.055,
-      "active": true
+      "active": true,
+      "win_rate": 0.667,
+      "avg_rr": 1.705
     },
     "ETHUSD:ATR_BREAK:H1": {
       "direction": "BOTH",
@@ -3798,11 +3952,13 @@
       "optimal_session": "24/7",
       "tsl_a": 0.1045,
       "tsl_t": 0.0653,
-      "tgt": 1.3059,
-      "sl": 0.3918,
-      "thresh": 0.85,
+      "tgt": 0.6,
+      "sl": 0.8,
+      "thresh": 0.7,
       "boost": 0.068,
-      "active": true
+      "active": true,
+      "win_rate": 1.0,
+      "avg_rr": 0.75
     },
     "ETHUSD:NY_OPEN_REVERSAL:H1": {
       "direction": "BOTH",

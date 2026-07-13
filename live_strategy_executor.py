@@ -194,8 +194,17 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
 
     sl_points_count = sl_points_raw / point if point > 0 else 1000
     
-    # Calculate strict 1% risk lot sizing or hard limit cap
-    lot = calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01)
+    # Calculate dynamic Kelly Criterion risk sizing
+    risk_pct = 0.01
+    if dna is not None:
+        win_rate = float(dna.get("win_rate", 0.35))
+        avg_rr = float(dna.get("avg_rr", 1.5))
+        if avg_rr > 0:
+            kelly_f = (win_rate * avg_rr - (1.0 - win_rate)) / avg_rr
+            risk_pct = max(0.01, min(0.05, kelly_f * 0.25))
+            logging.info(f"[{symbol}] Kelly Sizing: win_rate={win_rate:.1%}, R={avg_rr:.2f} -> kelly_f={kelly_f:.1%}, risk_pct={risk_pct:.1%}")
+            
+    lot = calculate_dynamic_lot(symbol, sl_points_count, risk_pct=risk_pct)
 
     action = mt5.ORDER_TYPE_BUY if trade_type == "BUY" else mt5.ORDER_TYPE_SELL
     price = tick.ask if action == mt5.ORDER_TYPE_BUY else tick.bid
