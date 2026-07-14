@@ -140,16 +140,27 @@ class OllamaSwarmEngine:
             self._log_audit(account_id, channel_name, raw_message, {}, "FAILED", "Trigger could not parse a valid trade structure from this signal")
             return {"status": "FAILED", "reason": "Trigger hallucinated non-JSON output"}
 
-        # 3. The Governor
+        # 3. The Governor (Hardcoded Python Logic for 100% Reliability & Speed)
         log.info("[GOVERNOR] Evaluating Risk Profile...")
-        governor_resp = await self._ask_ollama(self.prompts["GOVERNOR_PROMPT"], json.dumps(trade_data))
         
-        try:
-            clean_gov = governor_resp.replace("```json", "").replace("```", "").strip()
-            risk_decision = json.loads(clean_gov)
-        except json.JSONDecodeError:
-            log.error(f"[GOVERNOR] Failed to output valid JSON. Output: {governor_resp}")
-            return {"status": "FAILED", "reason": "Governor hallucinated non-JSON output"}
+        entry = trade_data.get("entry")
+        sl = trade_data.get("sl")
+        tp1 = trade_data.get("tp1")
+        
+        if entry is None or float(entry) <= 0:
+            risk_decision = {"approved": False, "rejection_reason": "No entry price provided"}
+        elif sl is None or float(sl) <= 0:
+            risk_decision = {"approved": False, "rejection_reason": "No Stop Loss provided"}
+        else:
+            risk_decision = {
+                "approved": True,
+                "rejection_reason": "",
+                "final_sl": sl,
+                "final_tp1": tp1,
+                "final_tp2": trade_data.get("tp2"),
+                "final_tp3": trade_data.get("tp3"),
+                "risk_reward_ratio": 1.5
+            }
 
         if not risk_decision.get("approved", False):
             log.warning(f"[GOVERNOR] VETOED TRADE! Reason: {risk_decision.get('rejection_reason')}")
@@ -249,6 +260,34 @@ class OllamaSwarmEngine:
                 reason,
                 trade_num
             ])
+            
+        # Write to JSON log for Dashboard visibility
+        json_log_file = BASE_DIR / "message_ai_log.json"
+        try:
+            logs = []
+            if json_log_file.exists():
+                with open(json_log_file, "r", encoding="utf-8") as jf:
+                    logs = json.load(jf)
+            
+            # Keep only last 200 logs
+            if len(logs) > 200:
+                logs = logs[-200:]
+                
+            entry = {
+                "channel_name": channel_name,
+                "message": raw_message,
+                "ai_reply": json.dumps(parsed_data) if parsed_data else '{"action": "NO_TRADE"}',
+                "order_status": "Success" if status == "SUCCESS" else "Failed",
+                "error_msg": reason if status != "SUCCESS" else None,
+                "ticket": parsed_data.get("ticket", None) if parsed_data else None,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            logs.append(entry)
+            
+            with open(json_log_file, "w", encoding="utf-8") as jf:
+                json.dump(logs, jf, indent=2)
+        except Exception as e:
+            log.error(f"Failed to write to JSON log: {e}")
 
 # Standalone test execution
 if __name__ == "__main__":
