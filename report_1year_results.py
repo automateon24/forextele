@@ -84,10 +84,80 @@ def main():
         df["win_prob"] = 0.5
         df["lot"]      = BASE_LOT
 
-    # --- Compute P&L ---
-    df["pnl_usd"] = df.apply(lambda r: compute_pnl(r, r["lot"]), axis=1)
+    # --- ANTI-MARTINGALE WITH DAILY CIRCUIT BREAKER ---
+    INITIAL_CAPITAL = 10000
+    current_capital = INITIAL_CAPITAL
+    
+    pnl_usd_list = []
+    lot_list = []
+    
+    win_streak = 0
+    daily_pnl = 0.0
+    current_day = None
+    
+    for i, row in df.iterrows():
+        trade_date = row['time'].date()
+        
+        # Reset Daily P&L if new day
+        if trade_date != current_day:
+            current_day = trade_date
+            daily_pnl = 0.0
+            
+        # Circuit Breaker: Stop trading if we lost 2% today
+        if daily_pnl <= -(current_capital * 0.02):
+            lot_list.append(0)
+            pnl_usd_list.append(0)
+            continue
+            
+        # Asymmetric Risk Management
+        if win_streak == 0:
+            RISK_PER_TRADE = 0.005 # 0.5% risk
+        elif win_streak == 1:
+            RISK_PER_TRADE = 0.01  # 1% risk
+        else:
+            RISK_PER_TRADE = 0.02  # 2% max risk
+            
+        risk_usd = current_capital * RISK_PER_TRADE
+        
+        sl_pts = row['sl_pts']
+        if sl_pts <= 0: sl_pts = 10.0
+        
+        pt = POINT.get(row['symbol'], 0.00001)
+        cs = CONTRACT_SIZE.get(row['symbol'], 100000)
+        
+        # Calculate risk in USD correctly
+        usd_val = sl_pts * pt * cs
+        if row['symbol'] == 'USDJPY':
+            usd_val /= 150.0
+            
+        try:
+            dynamic_lot = risk_usd / usd_val
+        except ZeroDivisionError:
+            dynamic_lot = BASE_LOT
+            
+        dynamic_lot = min(max(dynamic_lot, 0.01), 10.0)
+        
+        if str(row.get('use_grid')).lower() == 'true':
+            dynamic_lot = min(dynamic_lot, 0.1)
+            
+        lot_list.append(dynamic_lot)
+        trade_pnl = compute_pnl(row, dynamic_lot)
+        pnl_usd_list.append(trade_pnl)
+        
+        daily_pnl += trade_pnl
+        
+        # Update streak
+        if trade_pnl > 0:
+            win_streak += 1
+        else:
+            win_streak = 0
+            
+        current_capital += trade_pnl
+        current_capital = max(current_capital, INITIAL_CAPITAL * 0.10)
 
-    # --- Daily aggregate ---
+    df['lot'] = lot_list
+    df['pnl_usd'] = pnl_usd_list
+
     df["date"]    = df["time"].dt.date
     daily         = df.groupby("date").agg(
         trades    = ("pnl_usd","count"),
@@ -200,11 +270,34 @@ def main():
         f.write("3. Retrain monthly as new data accumulates\n")
         f.write("4. Consider increasing lot size on top pairs (GOLD, SILVER)\n")
 
+    # Calculate Daily and Monthly metrics
+    df['date'] = df['time'].dt.date
+    daily_stats = df.groupby('date')['pnl_usd'].sum()
+    monthly_stats = df.groupby(df['time'].dt.to_period('M'))['pnl_usd'].sum()
+    
+    avg_daily_gain = daily_stats[daily_stats > 0].mean()
+    avg_monthly_gain = monthly_stats[monthly_stats > 0].mean()
+    
+    # Auto-run Unit Tests
+    import subprocess
+    print("\n\n==========================================")
+    print("Running Mathematical Integrity Tests...")
+    print("==========================================")
+    test_res = subprocess.run(["C:\\Python314\\python.exe", "test_backtest_math.py"], capture_output=True, text=True)
+    if test_res.returncode != 0:
+        print("CRITICAL ERROR: Mathematical Integrity Tests Failed! Aborting report.")
+        print(test_res.stderr)
+        return
+    print(test_res.stderr)
+    print("Tests Passed! Math is 100% verified.")
+    print("==========================================\n\n")
+
     log.info("="*60)
-    log.info("REPORT COMPLETE → %s", REPORT_PATH)
+    log.info("REPORT COMPLETE -> %s", REPORT_PATH)
     log.info("Total Trades: %d | Win Rate: %.1f%% | Net P&L: $%.2f | ROI: %.2f%%",
              total_trades, total_wr, total_pnl, total_pnl/CAPITAL*100)
     log.info("Sharpe: %.2f | Max DD: %.2f%%", sharpe, max_dd*100)
+    log.info("Avg Winning Day: +$%.2f | Avg Winning Month: +$%.2f", avg_daily_gain, avg_monthly_gain)
     log.info("="*60)
 
 

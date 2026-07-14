@@ -118,46 +118,163 @@ def build_indicators(df15, df5, df1h):
 
 def simulate_outcomes(signals, df_m1, point):
     if not signals: return []
+    import numpy as np
     closes = df_m1['close'].values
     highs  = df_m1['high'].values
     lows   = df_m1['low'].values
     times  = df_m1.index.values.astype('datetime64[ns]')
 
+    signals = sorted(signals, key=lambda x: x['time'])
+    active_locks = {}
+    
     results = []
     for s in signals:
+        strat_key = s['strategy']
+        t_entry = np.datetime64(s['time'], 'ns')
+        
+        if strat_key in active_locks and t_entry <= active_locks[strat_key]:
+            continue 
+            
         entry   = s['entry']
         sl_pts  = s['sl_pts']
         tp_pts  = s['tp_pts']
         dr      = s['direction']
-        t_entry = np.datetime64(s['time'], 'ns')
-
-        sl_price = entry - sl_pts*point if dr=="BUY" else entry + sl_pts*point
-        tp_price = entry + tp_pts*point if dr=="BUY" else entry - tp_pts*point
-
-        idx = int(np.searchsorted(times, t_entry)) + 1
-        if idx >= len(closes): continue
+        atr_pts = s['atr'] / point
+        
+        is_buy  = (dr == "BUY")
+        idx_m1 = int(np.searchsorted(times, t_entry)) + 1
+        if idx_m1 >= len(closes): continue
 
         outcome  = "EXPIRED"
-        pnl_pts  = 0.0
-        # Scan forward ~24 hours of M1 bars maximum (1440 bars)
-        for fwd in range(idx, min(idx+1440, len(closes))):
-            h = highs[fwd]; l = lows[fwd]
-            if dr == "BUY":
-                if l <= sl_price: outcome="LOSS"; pnl_pts=-sl_pts; break
-                if h >= tp_price: outcome="WIN";  pnl_pts=tp_pts;  break
-            else:
-                if h >= sl_price: outcome="LOSS"; pnl_pts=-sl_pts; break
-                if l <= tp_price: outcome="WIN";  pnl_pts=tp_pts;  break
+        close_time = times[idx_m1]
+        if s['symbol'] == 'BTCUSD':
+            spread_pts = 300.0
+        elif s['symbol'] == 'ETHUSD':
+            spread_pts = 150.0
+        else:
+            spread_pts = 10.0 
 
-        if outcome == "EXPIRED":
-            pnl_pts = (closes[min(idx+1439,len(closes)-1)] - entry)/point * (1 if dr=="BUY" else -1)
-
-        results.append({**s, "outcome": outcome, "pnl_pts": round(pnl_pts,1)})
+        is_grid = strat_key in ("SCALPING", "ASIAN_RANGE_SCALP", "ZERO_HERO", "SWAP_ARBITRAGE")
+        
+        if is_grid:
+            max_levels = 3
+            grid_step = max(atr_pts * 1.5, 50.0)
+            level = 0
+            total_lots = 1.0
+            avg_entry = entry
+            
+            grid_sl_pts = sl_pts * 3.0
+            grid_tp_pts = tp_pts
+            
+            pnl_pts = 0.0
+            for fwd in range(idx_m1, min(idx_m1+1440, len(closes))):
+                h = highs[fwd]; l = lows[fwd]
+                
+                if is_buy:
+                    current_tp = avg_entry + grid_tp_pts * point
+                    current_sl = avg_entry - grid_sl_pts * point
+                    
+                    if h >= current_tp:
+                        outcome = "WIN"
+                        pnl_pts = (grid_tp_pts * total_lots) - (spread_pts * total_lots)
+                        close_time = times[fwd]
+                        break
+                        
+                    if l <= current_sl:
+                        outcome = "LOSS"
+                        pnl_pts = -(grid_sl_pts * total_lots) - (spread_pts * total_lots)
+                        close_time = times[fwd]
+                        break
+                        
+                    if level < max_levels and l <= avg_entry - (grid_step * point):
+                        level += 1
+                        new_lots = 2 ** level
+                        avg_entry = ((avg_entry * total_lots) + (l * new_lots)) / (total_lots + new_lots)
+                        total_lots += new_lots
+                else:
+                    current_tp = avg_entry - grid_tp_pts * point
+                    current_sl = avg_entry + grid_sl_pts * point
+                    
+                    if l <= current_tp:
+                        outcome = "WIN"
+                        pnl_pts = (grid_tp_pts * total_lots) - (spread_pts * total_lots)
+                        close_time = times[fwd]
+                        break
+                        
+                    if h >= current_sl:
+                        outcome = "LOSS"
+                        pnl_pts = -(grid_sl_pts * total_lots) - (spread_pts * total_lots)
+                        close_time = times[fwd]
+                        break
+                        
+                    if level < max_levels and h >= avg_entry + (grid_step * point):
+                        level += 1
+                        new_lots = 2 ** level
+                        avg_entry = ((avg_entry * total_lots) + (h * new_lots)) / (total_lots + new_lots)
+                        total_lots += new_lots
+            
+            if outcome == "EXPIRED":
+                final_close = closes[min(idx_m1+1439,len(closes)-1)]
+                pnl_pts = ((final_close - avg_entry) / point * (1 if is_buy else -1)) * total_lots - (spread_pts * total_lots)
+                
+            active_locks[strat_key] = close_time
+            results.append({**s, "outcome": outcome, "pnl_pts": round(pnl_pts,1)})
+            
+        else:
+            sl_price = entry - sl_pts*point if is_buy else entry + sl_pts*point
+            # Remove hard TP or set to massive 10 ATR to let TSL work
+            tp_price = entry + (atr_pts*10.0)*point if is_buy else entry - (atr_pts*10.0)*point
+            pnl_pts = 0.0
+            
+            # TSL Settings
+            trail_activation_pts = sl_pts * 1.5 # Activate TSL after 1.5 R profit
+            trail_distance_pts = sl_pts * 1.0 # Trail by 1 R
+            
+            max_fav_price = entry
+            min_fav_price = entry
+            
+            for fwd in range(idx_m1, min(idx_m1+2880, len(closes))):
+                h = highs[fwd]; l = lows[fwd]
+                
+                if is_buy:
+                    # Update Max Price
+                    if h > max_fav_price:
+                        max_fav_price = h
+                        if max_fav_price - entry > trail_activation_pts * point:
+                            new_sl = max_fav_price - trail_distance_pts * point
+                            if new_sl > sl_price:
+                                sl_price = new_sl
+                                
+                    if l <= sl_price: 
+                        outcome = "WIN" if sl_price > entry else "LOSS"
+                        pnl_pts = (sl_price - entry)/point - spread_pts
+                        close_time = times[fwd]; break
+                    if h >= tp_price: 
+                        outcome="WIN";  pnl_pts = (tp_price - entry)/point - spread_pts; close_time = times[fwd]; break
+                else:
+                    if l < min_fav_price:
+                        min_fav_price = l
+                        if entry - min_fav_price > trail_activation_pts * point:
+                            new_sl = min_fav_price + trail_distance_pts * point
+                            if new_sl < sl_price:
+                                sl_price = new_sl
+                                
+                    if h >= sl_price: 
+                        outcome = "WIN" if sl_price < entry else "LOSS"
+                        pnl_pts = (entry - sl_price)/point - spread_pts
+                        close_time = times[fwd]; break
+                    if l <= tp_price: 
+                        outcome="WIN";  pnl_pts = (entry - tp_price)/point - spread_pts; close_time = times[fwd]; break
+            
+            active_locks[strat_key] = close_time
+            if outcome == "EXPIRED":
+                pnl_pts = (closes[min(idx_m1+2879,len(closes)-1)] - entry)/point * (1 if is_buy else -1) - spread_pts
+            results.append({**s, "outcome": outcome, "pnl_pts": round(pnl_pts,1)})
+            
     return results
 
 def generate_signals(symbol, df15, df5, df1h_ended, dna_db):
-    dna_key = "XAUUSD" if symbol=="GOLD" else ("XAGUSD" if symbol=="SILVER" else symbol)
-    symbol_dnas = {k:v for k,v in dna_db.items() if k.startswith(f"{dna_key}:")}
+    symbol_dnas = {k:v for k,v in dna_db.items() if k.startswith(f"{symbol}_")}
     point  = POINT.get(symbol, 0.00001)
     digits = DIGITS.get(symbol, 5)
 
@@ -175,11 +292,11 @@ def generate_signals(symbol, df15, df5, df1h_ended, dna_db):
     signals = []
 
     for strat_key, dna in symbol_dnas.items():
-        sn = strat_key.split(":")[1]
+        sn = strat_key.replace(f"{symbol}_", "")
         if sn in DISABLED_STRATEGIES: continue
         
         dr = dna.get("direction","BOTH")
-        # Shift risk/reward to 1:1.5 to naturally bump win-rate over 50% before ML
+        # Shift risk/reward dynamically via DNA
         sl_atr = max(dna.get("sl", 2.0), 0.1)
         tp_atr = max(dna.get("tgt", 3.0), 0.2)
 
@@ -217,8 +334,16 @@ def generate_signals(symbol, df15, df5, df1h_ended, dna_db):
 
             atr = atr_s.iloc[i]
             if pd.isna(atr) or atr == 0: atr = atr_fallback
+            
+            # --- DYNAMIC TIME-BASED RISK/REWARD ---
+            golden_hours = dna.get('golden_hours', [])
+            if golden_hours and utc_h in golden_hours:
+                tp_atr_dynamic = max(dna.get('golden_rr', 3.0), 0.2)
+            else:
+                tp_atr_dynamic = max(dna.get('fallback_rr', 2.0), 0.2)
+                
             sl_pts = (sl_atr*atr)/point
-            tp_pts = (tp_atr*atr)/point
+            tp_pts = (tp_atr_dynamic*atr)/point
 
             thresh = float(dna.get("thresh",0.85))
             h1 = row if ('mean_24' in row and not pd.isna(row.get('mean_24',float('nan')))) else None
@@ -326,11 +451,30 @@ def generate_signals(symbol, df15, df5, df1h_ended, dna_db):
             except Exception:
                 continue
 
+            # GLOBAL SUPPORT/RESISTANCE & VOLUME FILTERS (Out of the box enhancement)
+            if sig:
+                # 1. Volume Exhaustion Filter
+                if row.get('volume', 1) > row.get('vol_avg', 1) * 3.5 and sn != "VOLUME_CLIMAX":
+                    sig = None # Exhaustion candle, do not enter standard trades
+                
+                # 2. Dynamic S/R Rejection
+                if sig and h1:
+                    distance_to_res = (h1['ah_8'] - row['close']) / point
+                    distance_to_sup = (row['close'] - h1['al_8']) / point
+                    
+                    # Reject BUY if buying directly into an 8-hour resistance ceiling (within 1 ATR)
+                    if sig == "BUY" and distance_to_res < (atr / point):
+                        sig = None
+                    # Reject SELL if shorting directly into an 8-hour support floor (within 1 ATR)
+                    elif sig == "SELL" and distance_to_sup < (atr / point):
+                        sig = None
+
             if sig:
                 signals.append({
-                    "time":      t, "symbol": symbol, "strategy": sn,
+                    "time":      str(t), "symbol": symbol, "strategy": sn,
                     "direction": sig, "entry":  row['close'],
                     "sl_pts":    sl_pts, "tp_pts": tp_pts, "atr": atr,
+                    "use_grid":  dna.get("use_grid", False),
                     "point":     point,
                     "hour":      utc_h,
                     "weekday":   t.weekday(),
