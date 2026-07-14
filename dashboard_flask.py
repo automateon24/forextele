@@ -138,110 +138,225 @@ HTML_TEMPLATE = """
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
-  <title>AutomateON Forex Terminal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swarm Trading OS | Terminal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #00d2ff;
-      --secondary: #3a7bd5;
-      --bg: #0f172a;
-      --panel: rgba(255, 255, 255, 0.05);
-      --text: #f8fafc;
-      --success: #22c55e;
-      --danger: #ef4444;
+      --bg-color: #0b0f19;
+      --panel-bg: rgba(17, 24, 39, 0.7);
+      --panel-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-blue: #3b82f6;
+      --accent-blue-glow: rgba(59, 130, 246, 0.4);
+      --accent-green: #10b981;
+      --accent-green-glow: rgba(16, 185, 129, 0.4);
+      --accent-red: #ef4444;
+      --accent-red-glow: rgba(239, 68, 68, 0.4);
+      --accent-purple: #8b5cf6;
+      --accent-purple-glow: rgba(139, 92, 246, 0.4);
     }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background: var(--bg);
-      background-image: radial-gradient(circle at 15% 50%, rgba(58, 123, 213, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 210, 255, 0.15), transparent 25%);
-      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
       min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%), 
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+      background-attachment: fixed;
+      padding: 2rem;
     }
-    h1 { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 2rem; background: -webkit-linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    h2 { font-size: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-top: 2rem;}
-    .container { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
-    .glass-panel {
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulseGlow 4s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.2)); }
+      100% { filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.4)); }
+    }
+    h2 { font-size: 1.2rem; font-weight: 600; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    h2::before { content: ""; display: block; width: 4px; height: 1.2rem; background: var(--accent-blue); border-radius: 2px; }
+
+    /* Layout */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+    }
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    @media (max-width: 1024px) {
+      .col-4, .col-6, .col-8 { grid-column: span 12; }
+    }
+
+    /* Panels */
+    .panel {
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
       border-radius: 16px;
       padding: 1.5rem;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .glass-panel:hover { transform: translateY(-2px); }
-    .full-width { grid-column: 1 / -1; }
+    .panel:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Metric Cards */
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+    .metric-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .metric-card:hover::after { opacity: 1; }
+    .metric-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+    .metric-val { font-size: 1.5rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+    .metric-val.green { color: var(--accent-green); text-shadow: 0 0 10px var(--accent-green-glow); }
+    .metric-val.blue { color: var(--accent-blue); text-shadow: 0 0 10px var(--accent-blue-glow); }
     
-    .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .metric-box { background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; text-align: center; }
-    .metric-val { font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-top: 0.5rem; }
+    /* Tables */
+    .table-container { width: 100%; overflow-x: auto; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.95rem; }
+    th { text-align: left; padding: 1rem; color: var(--text-muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; border-bottom: 1px solid var(--panel-border); }
+    td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    tr:last-child td { border-bottom: none; }
     
-    .btn { padding: 0.75rem 1.5rem; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; border-radius: 8px; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center;}
-    .buy { background: var(--success); color: white; box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4); }
-    .buy:hover { background: #16a34a; transform: scale(1.05); }
-    .sell { background: var(--danger); color: white; box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4); }
-    .sell:hover { background: #dc2626; transform: scale(1.05); }
-    
-    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
-    .log-item { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid var(--primary); }
-    .log-item p { margin: 0.25rem 0; font-size: 0.9rem; color: #cbd5e1; }
-    .log-item strong { color: #fff; }
-    
+    .badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge.buy { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge.sell { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); border: 1px solid rgba(239, 68, 68, 0.3); }
+
     /* Tabs CSS */
-    .tab { overflow: hidden; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1rem; }
-    .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 24px; transition: 0.3s; font-size: 1.1rem; font-weight: 600; color: var(--text); opacity: 0.6; border-radius: 8px 8px 0 0; }
-    .tab button:hover { background-color: rgba(255, 255, 255, 0.05); opacity: 0.8; }
-    .tab button.active { opacity: 1; border-bottom: 3px solid var(--primary); background-color: rgba(0, 0, 0, 0.2); }
+    .tab { overflow: hidden; border-bottom: 1px solid var(--panel-border); margin-bottom: 1rem; }
+    .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 24px; transition: 0.3s; font-size: 1.1rem; font-weight: 600; color: var(--text-muted); border-radius: 8px 8px 0 0; font-family: 'Outfit', sans-serif;}
+    .tab button:hover { background-color: rgba(255, 255, 255, 0.05); color: var(--text-main); }
+    .tab button.active { color: var(--accent-blue); border-bottom: 3px solid var(--accent-blue); background-color: rgba(0, 0, 0, 0.2); }
     .tabcontent { display: none; padding: 6px 12px; animation: fadeEffect 0.5s; }
     @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
     
-    .table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.95rem; }
-    .table th, .table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .table th { color: var(--primary); font-weight: 600; background: rgba(0,0,0,0.2); }
+    .metric-val.red { color: var(--accent-red); text-shadow: 0 0 10px var(--accent-red-glow); }
+
+    /* Buttons */
+    .btn-group { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .btn::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(rgba(255,255,255,0.1), transparent); opacity: 0; transition: opacity 0.2s;
+    }
+    .btn:hover::before { opacity: 1; }
+    .btn:active { transform: scale(0.97); }
     
-    textarea, input { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: white; margin-bottom: 1rem; font-family: inherit;}
-    textarea:focus, input:focus { outline: none; border-color: var(--primary); }
+    .btn-primary { background: var(--accent-blue); box-shadow: 0 4px 15px var(--accent-blue-glow); }
+    .btn-success { background: var(--accent-green); box-shadow: 0 4px 15px var(--accent-green-glow); }
+    .btn-danger { background: var(--accent-red); box-shadow: 0 4px 15px var(--accent-red-glow); }
+    .btn-warning { background: #f59e0b; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); }
+
+    /* Logs & Scrollbars */
+    .log-container { max-height: 300px; overflow-y: auto; padding-right: 0.5rem; }
+    .log-item { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border-left: 3px solid var(--accent-purple); font-size: 0.9rem; }
+    .log-item span.highlight { color: var(--accent-blue); font-family: 'JetBrains Mono', monospace; font-weight: 600;}
     
-    /* Expandable Grouping */
-    details { background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05); }
-    summary { padding: 1rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-    summary:hover { background: rgba(255,255,255,0.05); }
-    .group-title { font-size: 1.1rem; color: var(--primary); }
-    .group-pnl { font-size: 1.1rem; }
-    .details-content { padding: 0 1rem 1rem 1rem; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+    /* Status Indicator */
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; box-shadow: 0 0 8px currentColor; }
+    .status-dot.online { color: var(--accent-green); background: var(--accent-green); animation: blink 2s infinite; }
+    .status-dot.offline { color: var(--accent-red); background: var(--accent-red); }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     
-    /* Notification Bell */
-    .bell-container { position: fixed; top: 1.5rem; right: 2rem; font-size: 2rem; cursor: pointer; z-index: 1000; }
-    .bell-icon { display: inline-block; transition: transform 0.2s; }
-    .bell-icon.ringing { animation: ring 0.5s ease-in-out infinite; color: var(--danger); }
-    @keyframes ring { 0% {transform: rotate(0deg);} 25% {transform: rotate(15deg);} 50% {transform: rotate(0deg);} 75% {transform: rotate(-15deg);} 100% {transform: rotate(0deg);} }
-    .notif-badge { position: absolute; top: -5px; right: -5px; background: var(--danger); color: white; font-size: 0.8rem; border-radius: 50%; padding: 2px 6px; font-weight: bold; display: none; }
-    .notif-dropdown { position: absolute; top: 40px; right: 0; background: var(--panel); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; width: 300px; display: none; box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
-    .bell-container:hover .notif-dropdown { display: block; }
+    /* Header Bar */
+    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 1rem 2rem; border-radius: 16px; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .sys-health { font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 1.5rem; }
   </style>
   <script>
-    function openTab(evt, tabName) {
+    
+    function openTelegramTab(evt, tabName) {
       var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
+      tabcontent = document.getElementsByClassName("tele-tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
-      tablinks = document.getElementsByClassName("tablinks");
+      tablinks = document.getElementsByClassName("tele-tablinks");
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    
+
     document.addEventListener("DOMContentLoaded", function() {
-      // Default open
-      document.getElementById("defaultOpen").click();
+      if(document.getElementById("defaultTeleOpen")) {
+          document.getElementById("defaultTeleOpen").click();
+      }
       
-      // Polling AI Engine Metrics
+      const startTime = Date.now();
+      setInterval(() => {
+          const now = new Date();
+          document.getElementById('realTimeClock').innerText = now.toLocaleTimeString('en-US', { hour12: false });
+          
+          const elapsed = Math.floor((Date.now() - startTime) / 1000);
+          const h = String(Math.floor(elapsed / 3600)).padStart(2, '0');
+          const m = String(Math.floor((elapsed % 3600) / 60)).padStart(2, '0');
+          const s = String(elapsed % 60).padStart(2, '0');
+          document.getElementById('elapsedTime').innerText = `${h}:${m}:${s}`;
+      }, 1000);
+
+      
       async function fetchAILiveMetrics() {
         try {
           const res = await fetch('/api/ai_live_metrics');
@@ -249,31 +364,28 @@ HTML_TEMPLATE = """
           const contentDiv = document.getElementById("aiMetricsContent");
           
           if (data.status === "AI Engine Starting..." || Object.keys(data).length === 0) {
-              contentDiv.innerHTML = "<p style='grid-column: 1/-1; text-align: center;'>AI Engine Starting or Offline...</p>";
+              contentDiv.innerHTML = "<p style='color: var(--text-muted); text-align: center; width: 100%;'>AI Engine Starting or Offline...</p>";
               return;
           }
           
           let htmlContent = "";
           for (const [threadName, status] of Object.entries(data)) {
-              // Color code based on status
-              let color = "var(--primary)";
-              if (status.includes("Error")) color = "var(--danger)";
-              else if (status.includes("Active") || status.includes("Monitoring")) color = "var(--success)";
+              let color = "var(--accent-blue)";
+              let shadow = "var(--accent-blue-glow)";
+              if (status.includes("Error")) { color = "var(--accent-red)"; shadow = "var(--accent-red-glow)"; }
+              else if (status.includes("Active") || status.includes("Monitoring")) { color = "var(--accent-green)"; shadow = "var(--accent-green-glow)"; }
               
               htmlContent += `
-                <div class="metric-box" style="border-top: 3px solid ${color};">
-                    <p style="margin:0; font-size: 0.9rem; color: #cbd5e1;">${threadName}</p>
-                    <p class="metric-val" style="font-size: 1rem; color: ${color};">${status}</p>
+                <div class="metric-card" style="border-bottom: 2px solid ${color};">
+                    <div class="metric-label">${threadName}</div>
+                    <div class="metric-val" style="font-size: 1rem; color: ${color}; text-shadow: 0 0 10px ${shadow}; font-family: 'Outfit', sans-serif;">${status}</div>
                 </div>
               `;
           }
           contentDiv.innerHTML = htmlContent;
-        } catch (e) {
-          console.error("Error fetching AI metrics:", e);
-        }
+        } catch (e) { }
       }
       
-      // Polling Live Positions
       async function fetchPositions() {
         try {
           const res = await fetch('/api/positions');
@@ -282,59 +394,48 @@ HTML_TEMPLATE = """
           if (!tbody) return;
           
           if (!data || data.length === 0) {
-             tbody.innerHTML = "<tr><td colspan='8' style='text-align:center; padding: 2rem; color: #cbd5e1;'>Waiting for live signals. No open positions currently in MT5.</td></tr>";
+             tbody.innerHTML = "<tr><td colspan='8' style='text-align:center; padding: 3rem; color: var(--text-muted);'>No active market positions. Hunting for signals...</td></tr>";
              return;
           }
           
           let html = "";
           data.forEach(pos => {
-              const color = pos.profit >= 0 ? "var(--success)" : "var(--danger)";
+              const color = pos.profit >= 0 ? "var(--accent-green)" : "var(--accent-red)";
+              const glow = pos.profit >= 0 ? "var(--accent-green-glow)" : "var(--accent-red-glow)";
+              const badgeCls = pos.type === "BUY" ? "buy" : "sell";
               html += `<tr>
-                  <td>${pos.symbol}</td>
-                  <td>${pos.ticket}</td>
-                  <td>${pos.type}</td>
+                  <td style="font-weight: 700; color: #fff;">${pos.symbol}</td>
+                  <td style="color: var(--text-muted)">#${pos.ticket}</td>
+                  <td><span class="badge ${badgeCls}">${pos.type}</span></td>
                   <td>${pos.volume}</td>
                   <td>${pos.price_open}</td>
                   <td>${pos.price_current}</td>
-                  <td><span style="color:${color}">${pos.profit}</span></td>
-                  <td>${pos.comment}</td>
+                  <td style="color:${color}; text-shadow: 0 0 10px ${glow}; font-weight: 700;">${pos.profit >= 0 ? '+' : ''}${pos.profit.toFixed(2)}</td>
+                  <td style="font-size: 0.85rem; color: var(--accent-purple)">${pos.comment}</td>
               </tr>`;
           });
           tbody.innerHTML = html;
-        } catch (e) {
-          console.error("Error fetching positions:", e);
-        }
+          let totalRealized = 0;
+          for (const [strat, stats] of Object.entries(data)) {
+              totalRealized += parseFloat(stats.pnl);
+          }
+          const repnlEl = document.getElementById('realizedPnlMetric');
+          if (repnlEl) {
+              repnlEl.innerText = (totalRealized >= 0 ? "+$" : "-$") + Math.abs(totalRealized).toFixed(2);
+              repnlEl.className = "metric-val " + (totalRealized >= 0 ? "green" : "red");
+          }
+
+          let totalRunning = 0;
+          data.forEach(pos => { totalRunning += pos.profit; });
+          const rpnlEl = document.getElementById('runningPnlMetric');
+          if (rpnlEl) {
+              rpnlEl.innerText = (totalRunning >= 0 ? "+$" : "-$") + Math.abs(totalRunning).toFixed(2);
+              rpnlEl.className = "metric-val " + (totalRunning >= 0 ? "green" : "red");
+          }
+
+        } catch (e) { }
       }
       
-      // Polling System Health
-      async function fetchHealth() {
-        try {
-          const res = await fetch('/api/health');
-          const data = await res.json();
-          const el = document.getElementById("systemHealth");
-          const bell = document.getElementById("bellIcon");
-          const badge = document.getElementById("notifBadge");
-          const msg = document.getElementById("notifMsg");
-          
-          if (el) {
-              el.innerText = data.status;
-              el.style.color = data.status.includes("CRITICAL") ? "var(--danger)" : "var(--success)";
-          }
-          
-          if (data.status.includes("CRITICAL") || data.status.includes("OFFLINE")) {
-              bell.classList.add("ringing");
-              badge.style.display = "block";
-              msg.innerHTML = `<span style='color:var(--danger)'><b>SYSTEM ALERT:</b> One or more bots are OFFLINE! Restart START_FOREX_SYSTEM.bat!</span>`;
-          } else {
-              bell.classList.remove("ringing");
-              badge.style.display = "none";
-              msg.innerHTML = `<span style='color:var(--success)'><b>All Systems Active & Healthy.</b> Waiting for market signals...</span>`;
-          }
-        } catch(e) {}
-      }
-
-
-      // Polling Strategy PnL
       async function fetchStrategyPnl() {
         try {
           const res = await fetch('/api/strategy_pnl');
@@ -343,27 +444,39 @@ HTML_TEMPLATE = """
           if (!tbody) return;
           
           if (!data || Object.keys(data).length === 0) {
-             tbody.innerHTML = "<tr><td colspan='4' style='text-align:center; padding: 2rem; color: #cbd5e1;'>No closed trades today.</td></tr>";
+             tbody.innerHTML = "<tr><td colspan='4' style='text-align:center; padding: 2rem; color: var(--text-muted);'>No closed trades today.</td></tr>";
              return;
           }
           
           let html = "";
           for (const [strat, stats] of Object.entries(data)) {
-              const color = stats.pnl >= 0 ? "var(--success)" : "var(--danger)";
+              const color = stats.pnl >= 0 ? "var(--accent-green)" : "var(--accent-red)";
+              const glow = stats.pnl >= 0 ? "var(--accent-green-glow)" : "var(--accent-red-glow)";
               html += `<tr>
-                  <td>${strat}</td>
+                  <td style="color: var(--accent-blue); font-weight: 600; font-family: 'Outfit', sans-serif;">${strat}</td>
                   <td>${stats.trades}</td>
                   <td>${stats.win_rate}</td>
-                  <td><span style="color:${color}">$${parseFloat(stats.pnl).toFixed(2)}</span></td>
+                  <td style="color:${color}; text-shadow: 0 0 10px ${glow}; font-weight: 700;">$${parseFloat(stats.pnl).toFixed(2)}</td>
               </tr>`;
           }
           tbody.innerHTML = html;
-        } catch (e) {
-          console.error("Error fetching strategy pnl:", e);
-        }
+        } catch (e) { }
       }
 
-      // Refresh every 1.5 seconds
+      async function fetchHealth() {
+        try {
+          const res = await fetch('/api/health');
+          const data = await res.json();
+          const el = document.getElementById("systemHealth");
+          
+          if (el) {
+              const isCrit = data.status.includes("CRITICAL") || data.status.includes("OFFLINE");
+              const dotClass = isCrit ? "offline" : "online";
+              el.innerHTML = `<span class="status-dot ${dotClass}"></span> ${data.status}`;
+          }
+        } catch(e) {}
+      }
+
       setInterval(() => {
           fetchAILiveMetrics();
           fetchPositions();
@@ -371,183 +484,189 @@ HTML_TEMPLATE = """
           fetchStrategyPnl();
       }, 1500);
       
-      // Initial fetch
       fetchAILiveMetrics();
       fetchPositions();
       fetchHealth();
       fetchStrategyPnl();
     });
+    
+    async function masterControl(action) {
+        try {
+            const res = await fetch(`/api/control/${action}`, {method: 'POST'});
+            const data = await res.json();
+            alert(data.message);
+        } catch(e) {
+            alert("Error executing command!");
+        }
+    }
   </script>
 </head>
 <body>
-<div class="bell-container">
-    <div id="bellIcon" class="bell-icon">🔔</div>
-    <div id="notifBadge" class="notif-badge">!</div>
-    <div class="notif-dropdown">
-        <h4 style="margin-top:0; color:var(--primary); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">System Alerts</h4>
-        <p id="notifMsg" style="font-size: 0.9rem;">Monitoring...</p>
+
+<div class="header-bar">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#blue-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+                <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6" />
+                    <stop offset="100%" stop-color="#8b5cf6" />
+                </linearGradient>
+            </defs>
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <h1 style="margin: 0; font-size: 1.8rem;">Swarm OS</h1>
+    </div>
+    <div class="sys-health" id="systemHealth">
+        <span class="status-dot online"></span> Checking Health...
     </div>
 </div>
 
-<h1>AutomateON Forex AI Terminal</h1>
 <div class="container">
-  <div class="glass-panel">
-    <h2>System Status</h2>
-    <div class="status-grid">
-      <div class="metric-box">
-        <div>Telegram Engine</div>
-        <div class="metric-val" style="color: var(--success)">✅ Connected & Active</div>
+  
+  <!-- MT5 Account Data -->
+  <div class="panel col-4">
+    <h2>MT5 Wallet</h2>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-label">Balance</div>
+        <div class="metric-val blue">${{ mt5_stats.balance }}</div>
       </div>
-      <div class="metric-box">
-        <div>Active Market (UTC)</div>
-        <div class="metric-val">{{ active_sessions }}</div>
+      <div class="metric-card">
+        <div class="metric-label">Equity</div>
+        <div class="metric-val green">${{ mt5_stats.equity }}</div>
       </div>
-    </div>
-  </div>
-
-  <div class="glass-panel">
-    <h2>MT5 Account Overview</h2>
-    <div class="status-grid">
-      <div class="metric-box">
-        <div>Balance</div>
-        <div class="metric-val">${{ mt5_stats.balance }}</div>
-      </div>
-      <div class="metric-box">
-        <div>Equity</div>
-        <div class="metric-val">${{ mt5_stats.equity }}</div>
-      </div>
-      <div class="metric-box">
-        <div>Free Margin</div>
+      <div class="metric-card">
+        <div class="metric-label">Free Margin</div>
         <div class="metric-val">${{ mt5_stats.margin_free }}</div>
       </div>
-      <div class="metric-box">
-        <div>Margin Level</div>
+      <div class="metric-card">
+        <div class="metric-label">Margin Level</div>
         <div class="metric-val">{{ mt5_stats.margin_level }}%</div>
       </div>
     </div>
   </div>
 
-  <div class="glass-panel full-width">
-    <h2>Operations Center</h2>
-    
-    <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'Strategy')" id="defaultOpen">Live Strategy Allocation ($3k)</button>
-      <button class="tablinks" onclick="openTab(event, 'Channels')">Telegram Channels Grouping</button>
+  <!-- Operations Controls -->
+  <div class="panel col-8">
+    <h2>Mission Control</h2>
+    <div class="metric-grid" style="margin-bottom: 1rem;">
+      <div class="metric-card" style="padding: 0.5rem 1rem;">
+        <div class="metric-label" style="font-size: 0.7rem;">Market Status</div>
+        <div class="metric-val" style="font-size: 1rem; color:var(--accent-green)">{{ active_sessions }}</div>
+      </div>
+      <div class="metric-card" style="padding: 0.5rem 1rem;">
+        <div class="metric-label" style="font-size: 0.7rem;">Telegram Connect</div>
+        <div class="metric-val" style="font-size: 1rem;">{{ telegram_status }}</div>
+      </div>
+      <div class="metric-card" style="padding: 0.5rem 1rem;">
+        <div class="metric-label" style="font-size: 0.7rem;">Uptime</div>
+        <div class="metric-val" id="elapsedTime" style="font-size: 1rem; color:var(--accent-blue)">00:00:00</div>
+      </div>
+      <div class="metric-card" style="padding: 0.5rem 1rem;">
+        <div class="metric-label" style="font-size: 0.7rem;">Local Time</div>
+        <div class="metric-val" id="realTimeClock" style="font-size: 1rem;">00:00:00</div>
+      </div>
     </div>
+    <div class="btn-group" style="margin-top: 1rem;">
+        <button class='btn btn-danger' onclick="masterControl('kill_all_orders')" style="flex: 1; padding: 1rem; font-size: 1rem;">🚨 PANIC: CLOSE ALL OPEN ORDERS</button>
+    </div>
+    <div class="btn-group" style="margin-top: 1rem;">
+        <button class='btn btn-warning' onclick="masterControl('toggle_engine')" style="flex: 1;">⏻ Toggle Core Engine</button>
+        <button class='btn btn-primary' onclick="masterControl('toggle_ai')" style="flex: 1;">⏸ Toggle AI Strategies</button>
+        <button class='btn btn-primary' style="background: var(--accent-purple); box-shadow: 0 4px 15px var(--accent-purple-glow); flex: 1;" onclick="masterControl('toggle_telegram')">⏸ Toggle Telegram Listener</button>
+    </div>
+  </div>
 
-    <div id="Strategy" class="tabcontent">
-      <details open>
-        <summary><span class="group-title">▶ LIVE TRADING POSITIONS</span><span class="group-pnl" style="color:var(--success)"></span></summary>
-        <div class="details-content">
-          <table class="table">
-            <tr><th>Symbol</th><th>Ticket</th><th>Type</th><th>Volume</th><th>Entry Price</th><th>CMP</th><th>Open PnL</th><th>Comment</th></tr>
-            <tbody id="positionsTableBody">
-                <tr><td colspan="8" style="text-align:center; padding: 2rem; color: #cbd5e1;">Loading live positions...</td></tr>
-            </tbody>
-          </table>
+  <!-- Live Positions -->
+  <div class="panel col-12">
+    <div style="display:flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem;">
+        <h2 style="margin: 0;">Live Algorithmic Positions</h2>
+        <div style="display: flex; gap: 1rem;">
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 0.5rem 1rem; text-align: center;">
+                <div class="metric-label" style="font-size: 0.7rem; margin:0;">Running P&L</div>
+                <div id="runningPnlMetric" class="metric-val" style="font-size: 1.2rem;">$0.00</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 0.5rem 1rem; text-align: center;">
+                <div class="metric-label" style="font-size: 0.7rem; margin:0;">Realized P&L</div>
+                <div id="realizedPnlMetric" class="metric-val" style="font-size: 1.2rem;">$0.00</div>
+            </div>
         </div>
-      </details>
-      
-      <details open style="margin-top: 1rem;">
-        <summary><span class="group-title">▶ TODAY'S CLOSED STRATEGY PNL</span></summary>
-        <div class="details-content">
-          <table class="table">
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+            <tr><th>Symbol</th><th>Ticket</th><th>Type</th><th>Volume</th><th>Entry Price</th><th>CMP</th><th>Open PnL</th><th>Strategy</th></tr>
+        </thead>
+        <tbody id="positionsTableBody">
+            <tr><td colspan="8" style="text-align:center; padding: 3rem; color: var(--text-muted);">Initializing Engine...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Strategy PnL -->
+  <div class="panel col-6">
+    <h2>Today's Realized P&L (By Strategy)</h2>
+    <div class="table-container">
+      <table>
+        <thead>
             <tr><th>Strategy</th><th>Trades</th><th>Win Rate</th><th>Net P&L</th></tr>
-            <tbody id="strategyPnlTableBody">
-                <tr><td colspan="4" style="text-align:center; padding: 2rem; color: #cbd5e1;">Loading strategy PnL...</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
+        </thead>
+        <tbody id="strategyPnlTableBody">
+            <tr><td colspan="4" style="text-align:center; padding: 2rem; color: var(--text-muted);">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- AI Thread Metrics -->
+  <div class="panel col-6">
+    <h2>AI Engine Diagnostics</h2>
+    <div id="aiMetricsContent" class="metric-grid">
+      <p style="color: var(--text-muted); text-align: center; width: 100%;">Loading AI Thread Status...</p>
+    </div>
+  </div>
+  
+  <!-- Telegram AI Logs -->
+  <div class="panel col-12">
+    <div class="tab">
+      <button class="tele-tablinks active" onclick="openTelegramTab(event, 'TeleStream')" id="defaultTeleOpen">AI Parsing Stream</button>
+      <button class="tele-tablinks" onclick="openTelegramTab(event, 'TeleChannels')">Active Channels</button>
     </div>
 
-    <div id="Channels" class="tabcontent">
-      <details open>
-        <summary><span class="group-title">▶ ACTIVE TELEGRAM CHANNELS ({{ active_channel_count }} Sources)</span><span class="group-pnl"></span></summary>
-        <div class="details-content">
-          <table class="table">
+    <div id="TeleStream" class="tele-tabcontent" style="display: block;">
+        <div class="log-container">
+        {% if logs %}
+          {% for entry in logs %}
+            <div class="log-item">
+               <div style="display:flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                   <span style="font-weight: 600; color: #fff;">{{ entry.channel_name }}</span>
+                   <span class="badge {{ 'buy' if 'Success' in entry.order_status else 'sell' }}">{{ entry.order_status }}</span>
+               </div>
+               <p style="color: var(--text-muted); margin-bottom: 0.5rem;">{{ entry.message|truncate(120) }}</p>
+               <p>AI Output: <span class="highlight">{{ entry.ai_reply }}</span></p>
+               {% if entry.error_msg %}<p style="color: var(--accent-red); margin-top: 0.25rem;">Err: {{ entry.error_msg }}</p>{% endif %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Listening for VIP signals on Telegram network...</p>
+        {% endif %}
+        </div>
+    </div>
+    
+    <div id="TeleChannels" class="tele-tabcontent">
+        <div class="table-container">
+          <table>
             <tr><th>Channel Group</th><th>Status</th></tr>
-            <tr><td>VIP Gold & Forex (15 Channels)</td><td><span style="color:var(--success)">Listening for Signals...</span></td></tr>
-            <tr><td>VIP Crypto (10 Channels)</td><td><span style="color:var(--success)">Listening for Signals...</span></td></tr>
+            <tr><td>VIP Gold & Forex (15 Channels)</td><td><span style="color:var(--accent-green); text-shadow: 0 0 10px var(--accent-green-glow);">Listening for Signals...</span></td></tr>
+            <tr><td>VIP Crypto (10 Channels)</td><td><span style="color:var(--accent-green); text-shadow: 0 0 10px var(--accent-green-glow);">Listening for Signals...</span></td></tr>
           </table>
         </div>
-      </details>
     </div>
-  </div>
-
-  <div class="glass-panel full-width">
-    <h2>Manual Execution Override</h2>
-    <form method='post' action='/trade' class="btn-group">
-      <button class='btn buy' type='submit' name='trade_cmd' value='BUY_GOLD'>BUY GOLD</button>
-      <button class='btn sell' type='submit' name='trade_cmd' value='SELL_GOLD'>SELL GOLD</button>
-      <button class='btn buy' type='submit' name='trade_cmd' value='BUY_EURUSD'>BUY EURUSD</button>
-      <button class='btn sell' type='submit' name='trade_cmd' value='SELL_EURUSD'>SELL EURUSD</button>
-      <button class='btn buy' type='submit' name='trade_cmd' value='BUY_BTCUSD'>BUY BTC</button>
-      <button class='btn sell' type='submit' name='trade_cmd' value='SELL_BTCUSD'>SELL BTC</button>
-    </form>
-  </div>
-
-  <div class="glass-panel">
-    <h2>AI Signal Live Stream</h2>
-    <div class='log'>
-    {% if logs %}
-      {% for entry in logs %}
-        <div class="log-item">
-           <p><strong>Channel:</strong> {{ entry.channel_name }}</p>
-           <p><strong>Message:</strong> {{ entry.message|truncate(100) }}</p>
-           <p><strong>AI Parsed:</strong> <span style="color:var(--primary)">{{ entry.ai_reply }}</span></p>
-           <p><strong>Status:</strong> {{ entry.order_status }}{% if entry.error_msg %} – {{ entry.error_msg }}{% endif %}</p>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p style="color:#cbd5e1">Listening for signals on multiple accounts...</p>
-    {% endif %}
-    </div>
-  </div>
-
-  <div class="glass-panel">
-    <h2>Manual AI Analysis</h2>
-    <form method='post' action='/analyse'>
-      <textarea name='msg' rows='4' placeholder='Paste a Telegram message here to test AI parsing and execution...'></textarea>
-      <input type='text' name='channel' placeholder='Simulated Channel Name (optional)'>
-      <button type='submit' class='btn' style="background:var(--secondary);color:white;width:100%">Run Analysis & Execute</button>
-    </form>
-  </div>
-
-  <!-- AI ENGINE LIVE METRICS PANEL -->
-  <div class="glass-panel full-width">
-    <h2>🤖 AI Engine Threads (Live Metrics)</h2>
-    <div id="aiMetricsContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-      <p style="color:#cbd5e1">Loading AI Thread Status...</p>
-    </div>
-  </div>
-
-  <!-- PROFESSIONAL CONTROL CENTER -->
-  <div class="glass-panel full-width">
-    <h2>⚙️ Mission Control (Panic & Master Switches)</h2>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; padding-top: 1rem;">
-        <button class='btn sell' onclick="masterControl('kill_all_orders')" style="font-size:1.1rem; padding: 1rem 2rem; box-shadow: 0 4px 20px rgba(239, 68, 68, 0.6);">🚨 PANIC: CLOSE ALL OPEN ORDERS</button>
-        <button class='btn' onclick="masterControl('toggle_engine')" style="background:#f59e0b; color:white; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);">⏻ Toggle Core Engine Power</button>
-        <button class='btn' onclick="masterControl('toggle_ai')" style="background:var(--secondary); color:white;">⏸ Toggle AI Strategies</button>
-        <button class='btn' onclick="masterControl('toggle_telegram')" style="background:#8b5cf6; color:white;">⏸ Toggle Telegram Listener</button>
-    </div>
-    <p id="controlStatus" style="text-align:center; margin-top: 1rem; font-weight:bold; color:var(--primary);"></p>
-    <div style="text-align:center; margin-top:1rem; font-size: 0.9rem;">System Monitor: <span id="systemHealth" style="font-weight:bold; color:var(--success);">Checking Health...</span></div>
   </div>
 
 </div>
 
-<script>
-    async function masterControl(action) {
-        try {
-            const res = await fetch(`/api/control/${action}`, {method: 'POST'});
-            const data = await res.json();
-            document.getElementById('controlStatus').innerText = data.message;
-        } catch(e) {
-            document.getElementById('controlStatus').innerText = "Error executing command!";
-        }
-    }
-</script>
 </body>
 </html>
 """
