@@ -8,9 +8,19 @@ import MetaTrader5 as mt5
 from datetime import datetime
 import concurrent.futures
 
+import joblib
+
 BASE_DIR = Path(r"c:\anlyzeforex\forextele")
 CONFIG_PATH = BASE_DIR / "mt5_config.json"
 DNA_PATH = BASE_DIR / "25stragy" / "ai_optimized_forex_dna.json"
+
+ML_MODEL_PATH = BASE_DIR / "final_model_sucess.joblib"
+try:
+    ML_MODEL = joblib.load(ML_MODEL_PATH)
+    logging.info(f"Successfully loaded ML Model: {ML_MODEL_PATH}")
+except Exception as e:
+    logging.error(f"Failed to load ML Model: {e}")
+    ML_MODEL = None
 
 logging.basicConfig(
     filename=BASE_DIR / 'live_strategy_executor.log',
@@ -74,7 +84,11 @@ def calculate_adx(symbol, p=14):
 
 def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     """
-    STRICT 1% RISK ALGORITHM — hard capped at 0.10 lots max.
+    PHASE 2: Anti-Martingale Asymmetric Risk Sizing.
+    Base Risk is 0.5%.
+    If the last 2 trades were wins -> double risk to 1.0%.
+    If the last 2 trades were losses -> half risk to 0.25% (recovery mode).
+    STRICT CAP at 2.0%.
     """
     info = mt5.symbol_info(symbol)
     if not info: return 0.01
@@ -83,6 +97,31 @@ def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     if not account: return 0.01
         
     equity = account.equity
+    
+    # Analyze MT5 History for Streak
+    from datetime import datetime, timedelta
+    try:
+        now = datetime.now()
+        yesterday = now - timedelta(days=7) # Look back a week for closed trades
+        deals = mt5.history_deals_get(yesterday, now)
+        if deals:
+            # Filter for closed deals with our magic number
+            closed_deals = [d for d in deals if d.magic == 888888 and d.entry == mt5.DEAL_ENTRY_OUT]
+            # Sort by time
+            closed_deals = sorted(closed_deals, key=lambda x: x.time)
+            if len(closed_deals) >= 2:
+                last_deal = closed_deals[-1]
+                prev_deal = closed_deals[-2]
+                if last_deal.profit > 0 and prev_deal.profit > 0:
+                    risk_pct = min(0.02, risk_pct * 2.0)
+                    logging.info(f"[{symbol}] Anti-Martingale: 2 Wins in a row! Doubling risk to {risk_pct:.2%}")
+                elif last_deal.profit < 0 and prev_deal.profit < 0:
+                    risk_pct = max(0.0025, risk_pct * 0.5)
+                    logging.info(f"[{symbol}] Anti-Martingale: 2 Losses in a row! Halving risk to {risk_pct:.2%}")
+    except Exception as e:
+        logging.error(f"[{symbol}] Anti-Martingale Error: {e}")
+        pass # Default to passed risk_pct
+        
     risk_amount = equity * risk_pct
     
     tick_value = info.trade_tick_value
@@ -96,11 +135,11 @@ def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     
     raw_lot = max(info.volume_min, min(scaled_lot, info.volume_max))
     
-    # ── HARD SAFETY CAP: Never exceed 0.10 lots per trade ─────────────────
-    MAX_LOT_CAP = 0.10
+    # ── HARD SAFETY CAP: Never exceed 0.50 lots per trade ─────────────────
+    MAX_LOT_CAP = 0.50
     capped_lot = min(raw_lot, MAX_LOT_CAP)
     if raw_lot > MAX_LOT_CAP:
-        logging.warning(f"[RISK_CAP] Lot size {raw_lot:.2f} capped to {MAX_LOT_CAP} for safety.")
+        logging.warning(f"[{symbol}] [RISK_CAP] Lot size {raw_lot:.2f} capped to {MAX_LOT_CAP} for safety.")
     return capped_lot
 
 
@@ -132,24 +171,38 @@ def calculate_adx(symbol, timeframe=mt5.TIMEFRAME_M15, period=14):
     return float(adx) if not pd.isna(adx) else 50.0
 
 
-def is_daily_loss_breaker_hit(max_loss_pct=0.03):
+def is_daily_loss_breaker_hit(max_loss_pct=0.02):
     """
-    Returns True if today's strategy losses exceeded max_loss_pct of balance.
+    PHASE 2: 2% Strict Daily Circuit Breaker
+    Returns True if today's strategy losses (realized + floating) exceeded max_loss_pct of balance.
     Halts new trades for the day if triggered.
     """
     try:
         account = mt5.account_info()
         if not account: return False
-        from datetime import timedelta
-        now = datetime.now()
-        yesterday = now - timedelta(hours=24)
-        deals = mt5.history_deals_get(yesterday, now)
-        if not deals: return False
-        daily_pnl = sum(d.profit for d in deals if d.magic == 888888 and d.entry == mt5.DEAL_ENTRY_OUT)
-        if daily_pnl < 0:
-            loss_pct = abs(daily_pnl) / account.balance
+        
+        from datetime import datetime, timedelta
+        # Calculate start of current UTC day
+        now_utc = datetime.utcnow()
+        start_of_day = datetime(now_utc.year, now_utc.month, now_utc.day)
+        
+        deals = mt5.history_deals_get(start_of_day, now_utc)
+        realized_pnl = 0.0
+        if deals:
+            realized_pnl = sum(d.profit for d in deals if d.magic == 888888 and d.entry == mt5.DEAL_ENTRY_OUT)
+            
+        # Add open floating P&L
+        floating_pnl = 0.0
+        positions = mt5.positions_get()
+        if positions:
+            floating_pnl = sum(p.profit for p in positions if p.magic == 888888)
+            
+        total_daily_pnl = realized_pnl + floating_pnl
+        
+        if total_daily_pnl < 0:
+            loss_pct = abs(total_daily_pnl) / account.balance
             if loss_pct >= max_loss_pct:
-                logging.warning(f"[CIRCUIT_BREAKER] Strategy daily loss {loss_pct:.1%} >= {max_loss_pct:.0%}. Halting new entries.")
+                logging.warning(f"[CIRCUIT_BREAKER] 🛑 Daily Loss {loss_pct:.1%} >= Limit {max_loss_pct:.0%}. HALTING NEW TRADES.")
                 return True
     except Exception as e:
         logging.error(f"[CIRCUIT_BREAKER] Error checking daily loss: {e}")
@@ -158,6 +211,7 @@ def is_daily_loss_breaker_hit(max_loss_pct=0.03):
 def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
     """
     Executes the trade on MT5 with embedded ATR Stop-Loss to prevent naked positions.
+    Incorporates Phase 1: ML Model Inference & Time-Decoded Dual-Zone R/R
     """
     tick = mt5.symbol_info_tick(symbol)
     if tick is None:
@@ -178,11 +232,38 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
     point = info.point
     digits = info.digits
     
+    # ── Phase 3: Live Spread Protection ──
+    spread = info.spread
+    max_spread = 20  # Fallback
+    if "USD" in symbol or "JPY" in symbol:
+        if symbol == "BTCUSD": max_spread = 500
+        elif symbol == "ETHUSD": max_spread = 200
+        elif symbol in ("GOLD", "XAUUSD"): max_spread = 50
+        elif symbol in ("SILVER", "XAGUSD"): max_spread = 40
+        else: max_spread = 15 # Forex standard limit
+    
+    if spread > max_spread:
+        logging.warning(f"[{symbol}] 🚨 Spread Protection: Live Spread ({spread}) > Max Allowable ({max_spread}). Trade Aborted.")
+        return None
+
+    
+    # ── Phase 1: Golden Hours Dual-Zone R/R ──
+    utc_now = datetime.utcnow()
+    utc_h = utc_now.hour
+    weekday = utc_now.weekday()
+    
     sl_atr_mult = 1.5
     tp_atr_mult = 3.0
+    
     if dna is not None:
         sl_atr_mult = max(float(dna.get("sl", 1.5)), 0.1)
-        tp_atr_mult = max(float(dna.get("tgt", 3.0)), 0.2)
+        golden_hours = dna.get("golden_hours", [])
+        if golden_hours and utc_h in golden_hours:
+            tp_atr_mult = max(float(dna.get("golden_rr", 3.0)), 0.2)
+            logging.info(f"[{symbol}] Trade in Golden Hour ({utc_h} UTC). Targeting {tp_atr_mult} R:R.")
+        else:
+            tp_atr_mult = max(float(dna.get("fallback_rr", 2.0)), 0.2)
+            logging.info(f"[{symbol}] Trade outside Golden Hour ({utc_h} UTC). Targeting reduced {tp_atr_mult} R:R.")
 
     if atr > 0:
         sl_points_raw = atr * sl_atr_mult
@@ -191,9 +272,62 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
         pip_mult = 10 if digits in [3, 5] else 1
         sl_points_raw = 50 * pip_mult * point
         tp_points_raw = 100 * pip_mult * point
-
+        
     sl_points_count = sl_points_raw / point if point > 0 else 1000
-    
+    tp_points_count = tp_points_raw / point if point > 0 else 2000
+
+    # ── Phase 1: ML Model Live Inference ──
+    if ML_MODEL is not None:
+        try:
+            # Calculate live features
+            adx_val = calculate_adx(symbol)
+            
+            # Fast RSI
+            rsi_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 20)
+            if rsi_rates is not None and len(rsi_rates) >= 15:
+                df_rsi = pd.DataFrame(rsi_rates)
+                d = df_rsi['close'].diff()
+                g = d.where(d > 0, 0).rolling(14).mean()
+                l = (-d.where(d < 0, 0)).rolling(14).mean()
+                rsi_val = (100 - 100 / (1 + g / l.replace(0, float('nan')))).iloc[-1]
+            else:
+                rsi_val = 50.0
+                
+            # Determine Session
+            if 0 <= utc_h < 8: session = 'ASIAN'
+            elif 8 <= utc_h < 13: session = 'LONDON'
+            else: session = 'NY'
+                
+            import pandas as pd
+            feature_dict = {
+                "symbol": symbol,
+                "strategy": strat_name,
+                "direction": trade_type,
+                "session": session,
+                "hour": utc_h,
+                "weekday": weekday,
+                "rsi_val": rsi_val,
+                "adx_val": adx_val,
+                "atr": sl_points_raw, # We fed sl_points_raw / point in backtest, but ATR in backtest was just the pip amount. Wait! Let's just give it raw ATR.
+                "sl_pts": sl_points_count,
+                "tp_pts": tp_points_count
+            }
+            
+            # Need to match backtest atr definition: backtest atr feature was `s['atr'] / point`.
+            feature_dict["atr"] = atr / point if point > 0 else 0
+            
+            df_features = pd.DataFrame([feature_dict])
+            prob = ML_MODEL.predict_proba(df_features)[0][1]
+            
+            if prob < 0.50:
+                logging.info(f"[{symbol}] ML FILTERED TRADE: {strat_name} | {trade_type} | Win Prob: {prob:.1%} < 50%.")
+                return None
+            else:
+                logging.info(f"[{symbol}] ML APPROVED: {strat_name} | {trade_type} | Win Prob: {prob:.1%} >= 50%.")
+                
+        except Exception as ml_err:
+            logging.error(f"[{symbol}] ML Inference Error: {ml_err}. Proceeding without ML.")
+
     # Calculate dynamic Kelly Criterion risk sizing
     risk_pct = 0.01
     if dna is not None:
@@ -202,7 +336,6 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
         if avg_rr > 0:
             kelly_f = (win_rate * avg_rr - (1.0 - win_rate)) / avg_rr
             risk_pct = max(0.01, min(0.05, kelly_f * 0.25))
-            logging.info(f"[{symbol}] Kelly Sizing: win_rate={win_rate:.1%}, R={avg_rr:.2f} -> kelly_f={kelly_f:.1%}, risk_pct={risk_pct:.1%}")
             
     lot = calculate_dynamic_lot(symbol, sl_points_count, risk_pct=risk_pct)
 
