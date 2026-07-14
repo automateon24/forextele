@@ -333,17 +333,49 @@ HTML_TEMPLATE = """
         } catch(e) {}
       }
 
+
+      // Polling Strategy PnL
+      async function fetchStrategyPnl() {
+        try {
+          const res = await fetch('/api/strategy_pnl');
+          const data = await res.json();
+          const tbody = document.getElementById("strategyPnlTableBody");
+          if (!tbody) return;
+          
+          if (!data || Object.keys(data).length === 0) {
+             tbody.innerHTML = "<tr><td colspan='4' style='text-align:center; padding: 2rem; color: #cbd5e1;'>No closed trades today.</td></tr>";
+             return;
+          }
+          
+          let html = "";
+          for (const [strat, stats] of Object.entries(data)) {
+              const color = stats.pnl >= 0 ? "var(--success)" : "var(--danger)";
+              html += `<tr>
+                  <td>${strat}</td>
+                  <td>${stats.trades}</td>
+                  <td>${stats.win_rate}</td>
+                  <td><span style="color:${color}">$${parseFloat(stats.pnl).toFixed(2)}</span></td>
+              </tr>`;
+          }
+          tbody.innerHTML = html;
+        } catch (e) {
+          console.error("Error fetching strategy pnl:", e);
+        }
+      }
+
       // Refresh every 1.5 seconds
       setInterval(() => {
           fetchAILiveMetrics();
           fetchPositions();
           fetchHealth();
+          fetchStrategyPnl();
       }, 1500);
       
       // Initial fetch
       fetchAILiveMetrics();
       fetchPositions();
       fetchHealth();
+      fetchStrategyPnl();
     });
   </script>
 </head>
@@ -411,6 +443,18 @@ HTML_TEMPLATE = """
             <tr><th>Symbol</th><th>Ticket</th><th>Type</th><th>Volume</th><th>Entry Price</th><th>CMP</th><th>Open PnL</th><th>Comment</th></tr>
             <tbody id="positionsTableBody">
                 <tr><td colspan="8" style="text-align:center; padding: 2rem; color: #cbd5e1;">Loading live positions...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      
+      <details open style="margin-top: 1rem;">
+        <summary><span class="group-title">▶ TODAY'S CLOSED STRATEGY PNL</span></summary>
+        <div class="details-content">
+          <table class="table">
+            <tr><th>Strategy</th><th>Trades</th><th>Win Rate</th><th>Net P&L</th></tr>
+            <tbody id="strategyPnlTableBody">
+                <tr><td colspan="4" style="text-align:center; padding: 2rem; color: #cbd5e1;">Loading strategy PnL...</td></tr>
             </tbody>
           </table>
         </div>
@@ -522,6 +566,17 @@ def get_telegram_status():
 
 import os
 import time
+
+@app.route('/api/strategy_pnl')
+def api_strategy_pnl():
+    try:
+        path = BASE_DIR / "strategy_pnl_today.json"
+        if path.exists():
+            with open(path, "r") as f:
+                return jsonify(json.load(f))
+    except Exception:
+        pass
+    return jsonify({})
 
 @app.route('/api/positions')
 def api_positions():
