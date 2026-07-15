@@ -43,7 +43,18 @@ def load_channels():
     # Deprecated: We now use dynamic Title/Username matching for the 23 VIPs
     return {}
 
+async def heartbeat_loop():
+    while True:
+        try:
+            status_file = BASE_DIR / "telegram_status.json"
+            with open(status_file, "w") as f:
+                import time
+                json.dump({"last_heartbeat": time.time(), "status": "Active"}, f)
+        except: pass
+        await asyncio.sleep(10)
+
 async def main():
+    asyncio.create_task(heartbeat_loop())
     log.info("Booting Autonomous Dual-Account Telegram Listener...")
     swarm = OllamaSwarmEngine()
     

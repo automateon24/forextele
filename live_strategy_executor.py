@@ -14,6 +14,15 @@ BASE_DIR = Path(r"c:\anlyzeforex\forextele")
 CONFIG_PATH = BASE_DIR / "mt5_config.json"
 DNA_PATH = BASE_DIR / "25stragy" / "ai_optimized_forex_dna.json"
 
+logging.basicConfig(
+    filename=BASE_DIR / 'live_strategy_executor.log',
+    level=logging.INFO,
+    format='%(asctime)s - [%(levelname)s] - %(message)s'
+)
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+logging.getLogger('').addHandler(console)
+
 ML_MODEL_PATH = BASE_DIR / "final_model_sucess.joblib"
 try:
     ML_MODEL = joblib.load(ML_MODEL_PATH)
@@ -21,13 +30,6 @@ try:
 except Exception as e:
     logging.error(f"Failed to load ML Model: {e}")
     ML_MODEL = None
-
-logging.basicConfig(
-    filename=BASE_DIR / 'live_strategy_executor.log',
-    level=logging.INFO,
-    format='%(asctime)s - [%(levelname)s] - %(message)s'
-)
-console = logging.StreamHandler()
 console.setLevel(logging.INFO)
 logging.getLogger('').addHandler(console)
 
@@ -273,6 +275,18 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
         sl_points_raw = 50 * pip_mult * point
         tp_points_raw = 100 * pip_mult * point
         
+    # --- Safe Stop Enforcement ---
+    min_dist = info.trade_stops_level * point
+    if min_dist <= 0:
+        min_dist = 50 * point if digits in [3, 5] else 5 * point
+        
+    # Hard minimums to prevent 10016 Invalid Stops
+    hard_min = 1000 * point if "XAU" in symbol or "GOLD" in symbol else 100 * point
+    if "BTC" in symbol: hard_min = 5000 * point
+    
+    sl_points_raw = max(sl_points_raw, min_dist * 1.5, hard_min)
+    tp_points_raw = max(tp_points_raw, min_dist * 2.0, hard_min * 2)
+        
     sl_points_count = sl_points_raw / point if point > 0 else 1000
     tp_points_count = tp_points_raw / point if point > 0 else 2000
 
@@ -355,12 +369,18 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
         "tp": round(tp_price, digits),
         "deviation": 20,
         "magic": magic_number,
-        "comment": strat_name,
+        "comment": f"AI: {strat_name[:14]} {magic_number}"[:31],
         "type_time": mt5.ORDER_TIME_GTC,
         "type_filling": mt5.ORDER_FILLING_IOC,
     }
     
     result = mt5.order_send(request)
+    if result.retcode == 10016:
+        logging.warning(f"[{symbol}] Retcode 10016 (Invalid Stops). Retrying with widened safety stops...")
+        request["sl"] = round(price - (sl_points_raw * 1.5) if action == mt5.ORDER_TYPE_BUY else price + (sl_points_raw * 1.5), digits)
+        request["tp"] = round(price + (tp_points_raw * 1.5) if action == mt5.ORDER_TYPE_BUY else price - (tp_points_raw * 1.5), digits)
+        result = mt5.order_send(request)
+        
     if result.retcode != mt5.TRADE_RETCODE_DONE:
         logging.error(f"[{symbol}] Order Failed! Code: {result.retcode} Comment: {result.comment}")
         return None
@@ -507,6 +527,27 @@ def process_symbol(symbol, base_dna):
             # Step 1: Check MT5 connection
             if mt5.terminal_info() is None:
                 THREAD_STATUS[symbol] = "Error: MT5 Disconnected"
+                
+                # Send Alert
+                try:
+                    alert_path = BASE_DIR / "alerts.json"
+                    alerts = []
+                    if alert_path.exists():
+                        with open(alert_path, "r", encoding="utf-8") as af:
+                            try: alerts = json.load(af)
+                            except: pass
+                    # Throttle alerts so we don't spam
+                    if not any(a["source"] == "MT5 Terminal" for a in alerts[-3:]):
+                        alerts.append({
+                            "source": "MT5 Terminal",
+                            "message": f"MT5 Disconnected on {symbol} thread. Attempting auto-reconnect.",
+                            "level": "WARNING",
+                            "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        })
+                        with open(alert_path, "w", encoding="utf-8") as af:
+                            json.dump(alerts, af, indent=2)
+                except: pass
+                
                 init_mt5() # Attempt auto-reconnect
                 time.sleep(5)
                 continue
@@ -517,13 +558,9 @@ def process_symbol(symbol, base_dna):
                 time.sleep(60)  # Check again in 60s
                 continue
                 
-            # Map XM Global symbols back to standard DNA keys
-            dna_symbol_key = symbol
-            if symbol == "GOLD": dna_symbol_key = "XAUUSD"
-            elif symbol == "SILVER": dna_symbol_key = "XAGUSD"
-            
             # Extract ALL DNA assigned to this specific symbol
-            symbol_dnas = {k: v for k, v in base_dna.items() if k.startswith(f"{dna_symbol_key}:")}
+            strategies_dict = base_dna.get("strategies", base_dna)
+            symbol_dnas = {k: v for k, v in strategies_dict.items() if k.startswith(f"{symbol}_")}
             
             if not symbol_dnas:
                 THREAD_STATUS[symbol] = "No DNA assigned."
@@ -577,7 +614,7 @@ def process_symbol(symbol, base_dna):
             # --- FULL 40-STRATEGY ALGORITHMIC FACTORY LOOP ---
             for strat_key, dna in symbol_dnas.items():
                 if not can_trade: break
-                sn = strat_key.split(":")[1]
+                sn = strat_key.split("_", 1)[1]
                 dr = dna.get("direction","BOTH")
                 try:
                     # --- REGIME FILTER GUARD ---
@@ -861,6 +898,17 @@ def strategy_pnl_tracker():
             THREAD_STATUS["PNL_TRACKER"] = f"Error: {e}"
             time.sleep(5)
 
+
+def status_dumper_loop():
+    import time
+    import json
+    while True:
+        try:
+            with open(BASE_DIR / "thread_status.json", "w") as f:
+                json.dump(THREAD_STATUS, f)
+        except: pass
+        time.sleep(5)
+
 def run_live_engine():
     if not init_mt5():
         return
@@ -875,6 +923,7 @@ def run_live_engine():
     futures = {}
     futures[executor.submit(trailing_stop_manager, dna_db)] = "TRAILING_ENGINE"
     futures[executor.submit(strategy_pnl_tracker)] = "PNL_TRACKER"
+    futures[executor.submit(status_dumper_loop)] = "STATUS_DUMPER"
     for sym in symbols_to_trade:
         futures[executor.submit(process_symbol, sym, dna_db)] = sym
         
@@ -888,6 +937,24 @@ def run_live_engine():
                     exc = future.exception()
                     if exc:
                         logging.error(f"[{sym_or_engine}] Thread CRASHED: {exc}. Restarting...")
+                        try:
+                            # Send Alert to Dashboard
+                            alert_path = BASE_DIR / "alerts.json"
+                            import json, datetime
+                            alerts = []
+                            if alert_path.exists():
+                                with open(alert_path, "r", encoding="utf-8") as af:
+                                    try: alerts = json.load(af)
+                                    except: pass
+                            alerts.append({
+                                "source": f"Strategy Engine ({sym_or_engine})",
+                                "message": f"Thread crashed: {str(exc)}. Engine is attempting auto-restart.",
+                                "level": "CRITICAL",
+                                "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            })
+                            with open(alert_path, "w", encoding="utf-8") as af:
+                                json.dump(alerts, af, indent=2)
+                        except: pass
                     else:
                         logging.warning(f"[{sym_or_engine}] Thread Exited. Restarting...")
                 except Exception as e:

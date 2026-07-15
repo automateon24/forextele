@@ -349,9 +349,23 @@ HTML_TEMPLATE = """
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     
     /* Header Bar */
-    .header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 1rem 2rem; border-radius: 16px; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .header-bar { position: relative; z-index: 9999; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 1rem 2rem; border-radius: 16px; backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .sys-health { font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 1.5rem; }
-  </style>
+  
+    .bell-icon { position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); transition: background 0.3s; }
+    .bell-icon:hover { background: rgba(255,255,255,0.1); }
+    .bell-badge { position: absolute; top: 5px; right: 5px; width: 10px; height: 10px; background: var(--accent-red); border-radius: 50%; box-shadow: 0 0 8px var(--accent-red-glow); animation: pulse 1.5s infinite; display: none; }
+    .alerts-dropdown { position: absolute; top: 60px; right: 20px; width: 350px; max-height: 400px; background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 1000; overflow-y: auto; display: none; flex-direction: column; }
+    .alert-item { padding: 12px 15px; border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 5px; }
+    .alert-item:last-child { border-bottom: none; }
+    .alert-time { font-size: 0.8rem; color: var(--text-muted); }
+    .alert-msg { font-size: 0.95rem; color: #fff; }
+    .alert-crit { border-left: 3px solid var(--accent-red); }
+    .alert-warn { border-left: 3px solid var(--accent-yellow); }
+    .alert-clear { padding: 10px; text-align: center; cursor: pointer; background: rgba(255,255,255,0.02); font-weight: bold; color: var(--accent-blue); }
+    .alert-clear:hover { background: rgba(255,255,255,0.05); }
+    </style>
+
   <script>
     
     function openTelegramTab(evt, tabName) {
@@ -368,13 +382,66 @@ HTML_TEMPLATE = """
       evt.currentTarget.className += " active";
     }
 
+
+    let alertCount = 0;
+    window.toggleAlerts = function() {
+        const el = document.getElementById('alertsDropdown');
+        el.style.display = el.style.display === 'flex' ? 'none' : 'flex';
+        if(el.style.display === 'flex') {
+            document.getElementById('bellBadge').style.display = 'none';
+        }
+    };
+    
+    window.clearAlerts = async function() {
+        try {
+            await fetch('/api/alerts/clear', {method: 'POST'});
+            document.getElementById('alertsDropdown').innerHTML = '<div style="padding:15px; text-align:center; color:var(--text-muted);">No new alerts</div>';
+            document.getElementById('bellBadge').style.display = 'none';
+        } catch(e) {}
+    };
+    
+    async function fetchAlerts() {
+        try {
+            const res = await fetch('/api/alerts');
+            const data = await res.json();
+            if(data.length > 0 && data.length !== alertCount) {
+                alertCount = data.length;
+                const drop = document.getElementById('alertsDropdown');
+                if (drop.style.display !== 'flex') {
+                    document.getElementById('bellBadge').style.display = 'block';
+                }
+                let html = '';
+                [...data].reverse().forEach(alert => {
+                    const cls = alert.level === 'CRITICAL' ? 'alert-crit' : 'alert-warn';
+                    const color = alert.level === 'CRITICAL' ? 'var(--accent-red)' : 'var(--accent-yellow)';
+                    html += `<div class="alert-item ${cls}">
+                        <div style="display:flex; justify-content:space-between;">
+                            <span style="font-weight:bold; color:${color}; font-size:0.85rem;">${alert.source}</span>
+                            <span class="alert-time">${alert.timestamp}</span>
+                        </div>
+                        <div class="alert-msg">${alert.message}</div>
+                    </div>`;
+                });
+                html += `<div class="alert-clear" onclick="clearAlerts()">Clear All</div>`;
+                drop.innerHTML = html;
+            } else if (data.length === 0) {
+                alertCount = 0;
+                document.getElementById('alertsDropdown').innerHTML = '<div style="padding:15px; text-align:center; color:var(--text-muted);">No new alerts</div>';
+                document.getElementById('bellBadge').style.display = 'none';
+            }
+        } catch(e) {}
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
       if(document.getElementById("defaultTeleOpen")) {
           document.getElementById("defaultTeleOpen").click();
       }
       
       const startTime = Date.now();
+
+
       setInterval(() => {
+
           const now = new Date();
           document.getElementById('realTimeClock').innerText = now.toLocaleTimeString('en-US', { hour12: false });
           
@@ -444,15 +511,8 @@ HTML_TEMPLATE = """
               </tr>`;
           });
           tbody.innerHTML = html;
-          let totalRealized = 0;
-          for (const [strat, stats] of Object.entries(data)) {
-              totalRealized += parseFloat(stats.pnl);
-          }
-          const repnlEl = document.getElementById('realizedPnlMetric');
-          if (repnlEl) {
-              repnlEl.innerText = (totalRealized >= 0 ? "+$" : "-$") + Math.abs(totalRealized).toFixed(2);
-              repnlEl.className = "metric-val " + (totalRealized >= 0 ? "green" : "red");
-          }
+          tbody.innerHTML = html;
+          // Realized PNL is calculated in fetchStrategyPnl
 
           let totalRunning = 0;
           data.forEach(pos => { totalRunning += pos.profit; });
@@ -477,87 +537,130 @@ HTML_TEMPLATE = """
              return;
           }
           
+          let totalRealized = 0;
           let html = "";
           for (const [strat, stats] of Object.entries(data)) {
-              const color = stats.pnl >= 0 ? "var(--accent-green)" : "var(--accent-red)";
-              const glow = stats.pnl >= 0 ? "var(--accent-green-glow)" : "var(--accent-red-glow)";
+              const pnl = parseFloat(stats.pnl) || 0;
+              totalRealized += pnl;
+              const color = pnl >= 0 ? "var(--accent-green)" : "var(--accent-red)";
+              const glow = pnl >= 0 ? "var(--accent-green-glow)" : "var(--accent-red-glow)";
               html += `<tr>
                   <td style="color: var(--accent-blue); font-weight: 600; font-family: 'Outfit', sans-serif;">${strat}</td>
                   <td>${stats.trades}</td>
                   <td>${stats.win_rate}</td>
-                  <td style="color:${color}; text-shadow: 0 0 10px ${glow}; font-weight: 700;">$${parseFloat(stats.pnl).toFixed(2)}</td>
+                  <td style="color:${color}; text-shadow: 0 0 10px ${glow}; font-weight: 700;">$${pnl.toFixed(2)}</td>
               </tr>`;
           }
           tbody.innerHTML = html;
+          
+          const repnlEl = document.getElementById('realizedPnlMetric');
+          if (repnlEl) {
+              repnlEl.innerText = (totalRealized >= 0 ? "+$" : "-$") + Math.abs(totalRealized).toFixed(2);
+              repnlEl.className = "metric-val " + (totalRealized >= 0 ? "green" : "red");
+          }
         } catch (e) { }
       }
 
-      
-      async function updateChannelTable(logs, positions) {
-          if (!logs) return;
-          // Reverse logs so oldest are processed first, newest overwrite
-          [...logs].reverse().forEach(log => {
-             // We don't have channel ID directly in log yet, just name. 
-             // We need to match by name or update the log to include ID.
-             // For now, we search the table for the name.
-             const table = document.getElementById("channelTable");
-             const trs = table.getElementsByTagName("tr");
-             let targetCid = null;
-             for (let i = 0; i < trs.length; i++) {
-                 if (trs[i].innerHTML.includes(log.channel_name)) {
-                     targetCid = trs[i].id.replace("row_", "");
-                     break;
-                 }
-             }
-             if (targetCid) {
-                 document.getElementById("analysis_" + targetCid).innerText = log.message;
-                 
-                 let aiParsed;
-                 try { aiParsed = JSON.parse(log.ai_reply); } catch(e) { aiParsed = {action: "ERROR"}; }
-                 
-                 const actionTd = document.getElementById("action_" + targetCid);
-                 const pricesTd = document.getElementById("prices_" + targetCid);
-                 const timeTd = document.getElementById("time_" + targetCid);
-                 
-                 timeTd.innerText = log.timestamp || new Date().toLocaleTimeString();
-                 
-                 if (aiParsed.action && aiParsed.action !== "NO_TRADE" && aiParsed.action !== "ERROR") {
-                     actionTd.innerHTML = `<span class="badge ${aiParsed.action.toLowerCase()}">${aiParsed.action}</span> <b>${aiParsed.symbol}</b>`;
-                     pricesTd.innerHTML = `<span style="color:var(--text-muted)">E:</span> ${aiParsed.entry || '-'} | <span style="color:var(--accent-green)">TP:</span> ${aiParsed.tp || '-'} | <span style="color:var(--accent-red)">SL:</span> ${aiParsed.sl || '-'}`;
-                     
-                     // Check running profit from positions
-                     const profitTd = document.getElementById("profit_" + targetCid);
-                     let foundPos = false;
-                     if(positions) {
-                         positions.forEach(pos => {
-                             if (pos.comment === log.channel_name || pos.symbol === aiParsed.symbol) {
-                                 const color = pos.profit >= 0 ? "var(--accent-green)" : "var(--accent-red)";
-                                 profitTd.innerHTML = `<span style="color:${color}; font-weight:bold;">$${pos.profit.toFixed(2)}</span>`;
-                                 foundPos = true;
-                             }
-                         });
-                     }
-                     if(!foundPos) profitTd.innerText = "Closed / No Active";
-                 } else {
-                     actionTd.innerText = "NO_TRADE";
-                     pricesTd.innerText = "-";
-                     document.getElementById("profit_" + targetCid).innerText = "-";
-                 }
-             }
-          });
-      }
-      
       async function fetchLogs() {
           try {
               const res = await fetch('/api/logs');
               const data = await res.json();
-              
               const posRes = await fetch('/api/positions');
               const posData = await posRes.json();
-              
               updateChannelTable(data, posData);
           } catch (e) {}
       }
+
+      async function updateChannelTable(logs, positions) {
+            if (!logs) return;
+            
+            const groupedLogs = {};
+            logs.forEach(log => {
+                if (!groupedLogs[log.channel_name]) {
+                    groupedLogs[log.channel_name] = [];
+                }
+                groupedLogs[log.channel_name].push(log);
+            });
+
+            const table = document.getElementById("channelTable");
+            const trs = table.getElementsByTagName("tr");
+            
+            for (let i = 0; i < trs.length; i++) {
+                const tr = trs[i];
+                if (!tr.id || !tr.id.startsWith("row_")) continue;
+                const cid = tr.id.replace("row_", "");
+                
+                let channelLogs = null;
+                for (const [key, val] of Object.entries(groupedLogs)) {
+                    if (tr.innerHTML.includes(key)) {
+                        channelLogs = val;
+                        break;
+                    }
+                }
+                
+                if (channelLogs && channelLogs.length > 0) {
+                    channelLogs.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
+                    
+                    const latest = channelLogs[0];
+                    let aiParsed;
+                    try { aiParsed = JSON.parse(latest.ai_reply); } catch(e) { aiParsed = {action: "ERROR"}; }
+                    
+                    let latestActionHtml = "-";
+                    let latestPricesHtml = "-";
+                    if (aiParsed.action && aiParsed.action !== "NO_TRADE" && aiParsed.action !== "ERROR") {
+                        latestActionHtml = `<span class="badge ${aiParsed.action.toLowerCase().replace(' ', '-')}">${aiParsed.action}</span> <b>${aiParsed.symbol}</b>`;
+                        latestPricesHtml = `<span style="color:var(--text-muted)">E:</span> ${aiParsed.entry || '-'} | <span style="color:var(--accent-green)">TP:</span> ${aiParsed.final_tp1 || aiParsed.tp1 || aiParsed.tp || '-'} | <span style="color:var(--accent-red)">SL:</span> ${aiParsed.final_sl || aiParsed.sl || '-'}`;
+                    } else if (aiParsed.action === "NO_TRADE") {
+                        latestActionHtml = "NO_TRADE";
+                    }
+                    
+                    let htmlAnalysis = `<div style="margin-bottom:5px;">${latest.message}</div>`;
+                    
+                    if (channelLogs.length > 1) {
+                        htmlAnalysis += `<button onclick="const el = document.getElementById('hist_${cid}'); el.style.display = el.style.display === 'none' ? 'block' : 'none'" style="background:var(--panel-bg); color:var(--accent-blue); border:1px solid var(--border-color); padding:2px 8px; border-radius:4px; cursor:pointer; font-size:0.8rem; margin-top:5px;">Show ${channelLogs.length - 1} Older Messages ▼</button>`;
+                        
+                        htmlAnalysis += `<div id="hist_${cid}" style="display:none; margin-top:10px; padding:10px; background:rgba(0,0,0,0.2); border-left:2px solid var(--accent-blue); border-radius:4px; font-size:0.9rem; max-height:200px; overflow-y:auto;">`;
+                        
+                        for (let j = 1; j < channelLogs.length; j++) {
+                            const old = channelLogs[j];
+                            let oldParsed;
+                            try { oldParsed = JSON.parse(old.ai_reply); } catch(e) { oldParsed = {action: "ERROR"}; }
+                            let oldAct = "-";
+                            let oldPrc = "-";
+                            if (oldParsed.action && oldParsed.action !== "NO_TRADE" && oldParsed.action !== "ERROR") {
+                                oldAct = `<span style="color:#aaa;">[${old.timestamp}]</span> <span class="badge ${oldParsed.action.toLowerCase().replace(' ', '-')}">${oldParsed.action}</span> <b>${oldParsed.symbol}</b>`;
+                                oldPrc = `E: ${oldParsed.entry || '-'} | TP: ${oldParsed.final_tp1 || oldParsed.tp1 || oldParsed.tp || '-'} | SL: ${oldParsed.final_sl || oldParsed.sl || '-'}`;
+                            } else {
+                                oldAct = `<span style="color:#aaa;">[${old.timestamp}]</span> NO_TRADE`;
+                            }
+                            htmlAnalysis += `<div style="margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--border-color);">
+                                <div style="color:#ccc; font-style:italic;">"${old.message.substring(0, 150)}..."</div>
+                                <div style="margin-top:4px;">${oldAct} &rarr; <span style="font-size:0.85rem; color:var(--accent-purple);">${oldPrc}</span></div>
+                            </div>`;
+                        }
+                        htmlAnalysis += `</div>`;
+                    }
+                    
+                    document.getElementById("analysis_" + cid).innerHTML = htmlAnalysis;
+                    document.getElementById("action_" + cid).innerHTML = latestActionHtml;
+                    document.getElementById("prices_" + cid).innerHTML = latestPricesHtml;
+                    document.getElementById("time_" + cid).innerText = latest.timestamp || new Date().toLocaleTimeString();
+                    
+                    const profitTd = document.getElementById("profit_" + cid);
+                    let foundPos = false;
+                    if(positions) {
+                        positions.forEach(pos => {
+                            if (pos.comment === latest.channel_name || pos.symbol === aiParsed.symbol) {
+                                const color = pos.profit >= 0 ? "var(--accent-green)" : "var(--accent-red)";
+                                profitTd.innerHTML = `<span style="color:${color}; font-weight:bold;">$${pos.profit.toFixed(2)}</span>`;
+                                foundPos = true;
+                            }
+                        });
+                    }
+                    if(!foundPos) profitTd.innerText = "Closed / No Active";
+                }
+            }
+        }
 
       async function fetchHealth() {
         try {
@@ -573,12 +676,18 @@ HTML_TEMPLATE = """
         } catch(e) {}
       }
 
+
+
       setInterval(() => {
+
           fetchAILiveMetrics();
           fetchPositions();
           fetchHealth();
           fetchStrategyPnl();
+
           fetchLogs();
+          fetchAlerts();
+
       }, 1500);
       
       fetchAILiveMetrics();
@@ -613,10 +722,25 @@ HTML_TEMPLATE = """
         </svg>
         <h1 style="margin: 0; font-size: 1.8rem;">Swarm OS</h1>
     </div>
-    <div class="sys-health" id="systemHealth">
-        <span class="status-dot online"></span> Checking Health...
+
+    <div style="display:flex; align-items:center; gap: 1rem;">
+        <div class="bell-icon" onclick="toggleAlerts()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <div class="bell-badge" id="bellBadge"></div>
+        </div>
+        <div class="sys-health" id="systemHealth">
+            <span class="status-dot online"></span> Checking Health...
+        </div>
+    </div>
+    
+    <div class="alerts-dropdown" id="alertsDropdown">
+        <!-- Alerts will be injected here -->
     </div>
 </div>
+
 
 <div class="container">
   
@@ -791,19 +915,42 @@ HTML_TEMPLATE = """
 """
 
 def get_telegram_status():
-    async def check():
-        client = TelegramClient(str(SESSION_FILE), TELEGRAM_API_ID, TELEGRAM_API_HASH)
+    status_file = BASE_DIR / "telegram_status.json"
+    if status_file.exists():
         try:
-            await client.connect()
-            authorized = await client.is_user_authorized()
-            await client.disconnect()
-            return authorized
+            import json, time
+            from pathlib import Path
+            with open(status_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return True if data.get("status") in ["Running", "Active"] else "Stopped"
         except Exception as e:
             return str(e)
-    return asyncio.run(check())
+    return "Unknown" 
 
 import os
 import time
+
+
+@app.route('/api/alerts')
+def api_alerts():
+    try:
+        path = BASE_DIR / "alerts.json"
+        if path.exists():
+            with open(path, "r", encoding="utf-8") as f:
+                return jsonify(json.load(f))
+    except Exception:
+        pass
+    return jsonify([])
+
+@app.route('/api/alerts/clear', methods=['POST'])
+def api_alerts_clear():
+    try:
+        path = BASE_DIR / "alerts.json"
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump([], f)
+        return jsonify({"status": "success"})
+    except Exception:
+        return jsonify({"status": "error"}), 500
 
 @app.route('/api/logs')
 def api_logs():
@@ -811,7 +958,7 @@ def api_logs():
         path = BASE_DIR / "message_ai_log.json"
         if path.exists():
             with open(path, "r", encoding="utf-8") as f:
-                return jsonify(json.load(f))
+                return jsonify(json.load(f)[-200:])
     except Exception:
         pass
     return jsonify([])

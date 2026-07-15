@@ -168,7 +168,7 @@ class MT5ExecutionEngine:
             "tp": float(tp),
             "deviation": 20,
             "magic": magic_number,
-            "comment": "AI_SWARM",
+            "comment": swarm_payload.get("comment", "AI_SWARM")[:31],
             "type_time": mt5.ORDER_TIME_GTC,
             "type_filling": mt5.ORDER_FILLING_IOC if action_type == mt5.TRADE_ACTION_DEAL else mt5.ORDER_FILLING_RETURN,
         }
@@ -206,6 +206,24 @@ class MT5ExecutionEngine:
 
         if result.retcode != mt5.TRADE_RETCODE_DONE:
             log.error(f"Order failed definitively! Retcode: {result.retcode} Comment: {result.comment}")
+            # Write to alerts
+            try:
+                alert_path = BASE_DIR / "alerts.json"
+                import json, datetime
+                alerts = []
+                if alert_path.exists():
+                    with open(alert_path, "r", encoding="utf-8") as af:
+                        try: alerts = json.load(af)
+                        except: pass
+                alerts.append({
+                    "source": f"MT5 Execution ({symbol})",
+                    "message": f"Order Failed: {result.comment} (Code {result.retcode}). Price: {final_price} | SL: {sl} | TP: {tp}",
+                    "level": "CRITICAL",
+                    "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                })
+                with open(alert_path, "w", encoding="utf-8") as af:
+                    json.dump(alerts, af, indent=2)
+            except: pass
             return False
             
         log.info(f"SUCCESS! Trade {result.order} opened by Swarm AI.")

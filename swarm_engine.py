@@ -149,14 +149,47 @@ class OllamaSwarmEngine:
         
         if entry is None or float(entry) <= 0:
             risk_decision = {"approved": False, "rejection_reason": "No entry price provided"}
-        elif sl is None or float(sl) <= 0:
-            risk_decision = {"approved": False, "rejection_reason": "No Stop Loss provided"}
         else:
+            entry = float(entry)
+            symbol = trade_data.get("symbol", "").upper()
+            action = trade_data.get("action", "BUY").upper()
+            
+            # Default ATR proxies if missing
+            is_gold = "XAU" in symbol or "GOLD" in symbol
+            atr_sl_dist = 10.0 if is_gold else 0.0050
+            atr_tp_dist = 20.0 if is_gold else 0.0100
+            
+            sl = trade_data.get("sl")
+            tp1 = trade_data.get("tp1")
+            
+            # Safe float conversion
+            try:
+                sl_val = float(sl) if sl is not None and sl != "" else 0.0
+            except:
+                sl_val = 0.0
+                
+            try:
+                tp1_val = float(tp1) if tp1 is not None and tp1 != "" else 0.0
+            except:
+                tp1_val = 0.0
+            
+            if sl_val <= 0:
+                log.info(f"[GOVERNOR] SL missing or invalid, auto-calculating ATR proxy for {symbol}")
+                sl = entry - atr_sl_dist if "BUY" in action else entry + atr_sl_dist
+            else:
+                sl = sl_val
+                
+            if tp1_val <= 0:
+                log.info(f"[GOVERNOR] TP missing or invalid, auto-calculating ATR proxy for {symbol}")
+                tp1 = entry + atr_tp_dist if "BUY" in action else entry - atr_tp_dist
+            else:
+                tp1 = tp1_val
+                
             risk_decision = {
                 "approved": True,
                 "rejection_reason": "",
-                "final_sl": sl,
-                "final_tp1": tp1,
+                "final_sl": float(sl),
+                "final_tp1": float(tp1),
                 "final_tp2": trade_data.get("tp2"),
                 "final_tp3": trade_data.get("tp3"),
                 "risk_reward_ratio": 1.5
@@ -173,6 +206,10 @@ class OllamaSwarmEngine:
         final_trade = {**trade_data, **risk_decision}
         final_trade["status"] = "APPROVED"
         final_trade["risk_modifier"] = risk_modifier
+
+        # Hard-coded Broker specific overrides (Force AI compliance)
+        if final_trade.get("symbol") in ["XAUUSD", "XAU", "XAU/USD"]:
+            final_trade["symbol"] = "GOLD"
 
         # ── GATE 3: Price Sanity Check (blocks hallucinated prices) ─────────
         try:
@@ -206,7 +243,9 @@ class OllamaSwarmEngine:
         # --- PHASE 3: EXECUTION HANDOFF ---
         log.info("[HANDOFF] Routing payload to MT5 Broker...")
         try:
-            success = self.mt5_engine.execute_trade(final_trade)
+            short_chan = channel_name[:12].strip()
+            final_trade["comment"] = f"Tele: {short_chan} 777777"
+            success = self.mt5_engine.execute_trade(final_trade, magic_number=777777)
         except Exception as ex:
             log.error(f"[EXECUTION] Critical exception during MT5 handoff: {ex}")
             success = False
