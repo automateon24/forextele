@@ -26,7 +26,7 @@ SPAM_KEYWORDS = [
 ]
 
 # ─── DAILY CIRCUIT BREAKER ──────────────────────────────────────────────────
-MAX_DAILY_LOSS_PCT = 0.03  # Stop ALL Telegram trades if account drops 3% today
+MAX_DAILY_LOSS_PCT = 999.0 # Disabled for paper trading  # Stop ALL Telegram trades if account drops 3% today
 
 log = logging.getLogger(__name__)
 
@@ -88,7 +88,7 @@ class OllamaSwarmEngine:
                     yesterday = now - timedelta(hours=24)
                     deals = mt5.history_deals_get(yesterday, now)
                     if deals:
-                        daily_pnl = sum(d.profit for d in deals if d.magic == 999999 and d.entry == mt5.DEAL_ENTRY_OUT)
+                        daily_pnl = sum(d.profit for d in deals if d.magic == 777777 and d.entry == mt5.DEAL_ENTRY_OUT)
                         daily_loss_pct = abs(daily_pnl) / acc.balance if daily_pnl < 0 else 0
                         if daily_loss_pct >= MAX_DAILY_LOSS_PCT:
                             log.warning(f"[CIRCUIT_BREAKER] Daily Telegram loss {daily_loss_pct:.1%} >= {MAX_DAILY_LOSS_PCT:.0%} limit. HALTING new Telegram trades.")

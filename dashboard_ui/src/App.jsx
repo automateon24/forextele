@@ -37,8 +37,8 @@ function App() {
   const account = data.mt5?.account || {}
   const positions = data.mt5?.positions || []
   
-  const telegramPositions = positions.filter(p => p.magic === 999999)
-  const strategyPositions = positions.filter(p => p.magic === 888888 || p.magic === 111111 || p.magic !== 999999) // Catch-all for strategy/test
+  const telegramPositions = positions.filter(p => p.magic === 777777 || p.magic === 999999)
+  const strategyPositions = positions.filter(p => p.magic === 888888 || p.magic === 111111 || (p.magic !== 777777 && p.magic !== 999999)) // Catch-all for strategy/test
 
   const activePosList = activeTab === 'STRATEGIES' ? strategyPositions : telegramPositions
   const totalUnrealized = activePosList.reduce((sum, p) => sum + (p.profit || 0), 0)
@@ -50,7 +50,7 @@ function App() {
   
   // Ledger Splitting Logic
   const allClosedDeals = data.mt5?.closed_deals || []
-  const activeClosedDeals = activeTab === 'STRATEGIES' ? allClosedDeals.filter(d => d.magic !== 999999) : allClosedDeals.filter(d => d.magic === 999999)
+  const activeClosedDeals = activeTab === 'STRATEGIES' ? allClosedDeals.filter(d => d.magic !== 777777 && d.magic !== 999999) : allClosedDeals.filter(d => d.magic === 777777 || d.magic === 999999)
   const totalClosedProfit = activeClosedDeals.reduce((sum, d) => sum + (d.profit || 0), 0)
   
   // Truly Isolated Ledger Accounting
@@ -361,7 +361,7 @@ function App() {
                                       <tr key={idx}>
                                         <td style={{padding: '5px'}}>{timeStr}</td>
                                         <td style={{padding: '5px'}}>{sig.Account || '-'}</td>
-                                        <td style={{padding: '5px', maxWidth: '300px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{sig.Raw_Signal || '-'}</td>
+                                        <td style={{padding: '5px', whiteSpace: 'pre-wrap', wordBreak: 'break-word', maxWidth: '400px'}}>{sig.Raw_Signal || '-'}</td>
                                         <td style={{padding: '5px'}}>{sig.Parsed_Signal || '-'}</td>
                                         <td style={{padding: '5px', color: sig.Status === 'SUCCESS' ? '#10b981' : (sig.Status === 'REJECTED' ? '#ef4444' : '#fff')}}>{sig.Status || '-'}</td>
                                       </tr>
@@ -406,7 +406,7 @@ function TradeTable({ positions, formatMoney, formatPrice }) {
         {positions.map((pos) => (
           <tr key={pos.ticket}>
             <td className="symbol-cell">{pos.symbol}</td>
-            <td className="strategy-cell">{pos.magic === 999999 ? 'Telegram_Signal' : (pos.magic === 111111 ? 'Manual_Test' : 'V15_Breakout')}</td>
+            <td className="strategy-cell" style={{fontWeight: 'bold', color: '#cbd5e1'}}>{pos.comment ? pos.comment : (pos.magic === 777777 || pos.magic === 999999 ? 'Telegram_Signal' : 'V15_Breakout')}</td>
             <td style={{textAlign: 'center'}}>
               <span className={`dir-badge ${pos.type === 0 ? 'buy' : 'sell'}`}>{pos.type === 0 ? 'BUY' : 'SELL'}</span>
             </td>

@@ -174,6 +174,7 @@ def calculate_adx(symbol, timeframe=mt5.TIMEFRAME_M15, period=14):
 
 
 def is_daily_loss_breaker_hit(max_loss_pct=0.02):
+    return False # Disabled for paper trading
     """
     PHASE 2: 2% Strict Daily Circuit Breaker
     Returns True if today's strategy losses (realized + floating) exceeded max_loss_pct of balance.
@@ -236,13 +237,13 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
     
     # ── Phase 3: Live Spread Protection ──
     spread = info.spread
-    max_spread = 20  # Fallback
+    max_spread = 40  # Fallback
     if "USD" in symbol or "JPY" in symbol:
-        if symbol == "BTCUSD": max_spread = 500
-        elif symbol == "ETHUSD": max_spread = 200
-        elif symbol in ("GOLD", "XAUUSD"): max_spread = 50
-        elif symbol in ("SILVER", "XAGUSD"): max_spread = 40
-        else: max_spread = 15 # Forex standard limit
+        if symbol == "BTCUSD": max_spread = 8000
+        elif symbol == "ETHUSD": max_spread = 1000
+        elif symbol in ("GOLD", "XAUUSD"): max_spread = 100
+        elif symbol in ("SILVER", "XAGUSD"): max_spread = 80
+        else: max_spread = 40 # Forex standard limit
     
     if spread > max_spread:
         logging.warning(f"[{symbol}] 🚨 Spread Protection: Live Spread ({spread}) > Max Allowable ({max_spread}). Trade Aborted.")
@@ -467,8 +468,9 @@ def trailing_stop_manager(base_dna):
                         "sl": new_sl,
                         "tp": pos.tp,
                     }
-                    mt5.order_send(request)
-                    logging.info(f"[{symbol}] Strategy Step-Trail: Locked SL to {new_sl}")
+                    res = mt5.order_send(request)
+                    if res and res.retcode == mt5.TRADE_RETCODE_DONE:
+                        logging.info(f"[{symbol}] Strategy Step-Trail: Locked SL to {new_sl}")
                         
             # Dump positions for Dashboard
             pos_data = []

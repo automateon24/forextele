@@ -95,6 +95,14 @@ class MT5ExecutionEngine:
         symbol = swarm_payload.get("symbol")
         action = swarm_payload.get("action", "BUY").upper()
         
+        # PREVENT REPEATED ORDERS: Check if position already exists
+        positions = mt5.positions_get(symbol=symbol)
+        if positions:
+            for p in positions:
+                if p.magic == magic_number:
+                    log.warning(f"Blocking duplicate {action} for {symbol}. Order {p.ticket} is already active.")
+                    return False
+        
         # Select symbol
         if not mt5.symbol_select(symbol, True):
             log.error(f"Symbol {symbol} not found in Market Watch.")
@@ -154,7 +162,18 @@ class MT5ExecutionEngine:
         else:
             if tp > 0 and tp >= final_price: tp = 0
             if sl > 0 and sl <= final_price: sl = 0
-
+            
+        # AUTO ATR-BASED INJECTION FOR MISSING STOPS (As requested by User)
+        if sl == 0 or tp == 0:
+            atr_points = 1000 if "GOLD" in symbol or "XAU" in symbol else 500
+            fallback_dist = atr_points * info.point
+            if action == "BUY":
+                if sl == 0: sl = round(final_price - fallback_dist, info.digits)
+                if tp == 0: tp = round(final_price + fallback_dist * 1.5, info.digits)
+            else:
+                if sl == 0: sl = round(final_price + fallback_dist, info.digits)
+                if tp == 0: tp = round(final_price - fallback_dist * 1.5, info.digits)
+                
         # Calculate Lot Size (Governor approved the trade, we scale it accurately using validated SL)
         volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
 

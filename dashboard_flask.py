@@ -1226,4 +1226,4 @@ if __name__ == '__main__':
     print("[SUCCESS] Production WSGI Server (Waitress) is LIVE and running on http://127.0.0.1:5000")
     print("Access the dashboard in your web browser.")
     # Run on localhost:5000 using Waitress (Production WSGI Server)
-    serve(app, host='127.0.0.1', port=5000)
+    serve(app, host='127.0.0.1', port=5000, threads=1)
