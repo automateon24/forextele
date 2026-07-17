@@ -8,15 +8,33 @@ from pathlib import Path
 from real_mt5_execution import MT5ExecutionEngine
 import MetaTrader5 as mt5
 
+# ─── ML TRAINING DATA PATH ──────────────────────────────────────────────────
+ML_TRAINING_FILE = Path(__file__).parent / "ml_training_data.csv"
+
+def _log_ml_event(channel, symbol, action, entry, sl, tp, status, live_price_at_signal):
+    """Append one row to the ML training CSV for post-hoc pattern learning."""
+    file_exists = ML_TRAINING_FILE.exists()
+    try:
+        with open(ML_TRAINING_FILE, "a", newline='', encoding="utf-8") as f:
+            w = csv.writer(f)
+            if not file_exists:
+                w.writerow(["timestamp","channel","symbol","action","entry","sl","tp",
+                             "live_price_at_signal","price_deviation_pct","status"])
+            dev = round(abs((float(entry)-float(live_price_at_signal))/float(live_price_at_signal))*100, 4) if entry and live_price_at_signal else None
+            w.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        channel, symbol, action, entry, sl, tp, live_price_at_signal, dev, status])
+    except Exception as e:
+        logging.getLogger(__name__).warning(f"[ML_LOG] Could not write training data: {e}")
+
 BASE_DIR = Path(__file__).parent
 PROMPTS_FILE = BASE_DIR / "swarm_prompts.json"
 
 # ─── SPAM KEYWORD BLACKLIST (client-side, before Ollama) ────────────────────
 SPAM_KEYWORDS = [
-    "join fast", "join now", "join our", "join free", "vip today",
-    "vip free", "paid channel", "paid group", "subscribe", "click here",
-    "t.me/+", "whatsapp.com", "show me you active", "show me you're active",
-    "message me", "contact me", "limited time", "free for", "members free",
+    "join fast", "join now", "join our", "vip today",
+    "paid channel", "paid group", "subscribe", "click here",
+    "whatsapp.com", "show me you active", "show me you're active",
+    "message me", "contact me", "limited time",
     "lifetime subscription", "month subscription", "without money",
     "accuracy", "jackpot", "enjoy your profit", "tp hit", "tp1 hit",
     "tp2 hit", "tp3 hit", "pips profit", "pips jackpot", "ready?",
@@ -147,8 +165,16 @@ class OllamaSwarmEngine:
         sl = trade_data.get("sl")
         tp1 = trade_data.get("tp1")
         
-        if entry is None or float(entry) <= 0:
-            risk_decision = {"approved": False, "rejection_reason": "No entry price provided"}
+        if entry is None or (isinstance(entry, (int,float)) and float(entry) <= 0) or entry == "":
+            # ── MARKET ORDER FALLBACK: no entry → execute at live market price ──
+            log.info("[GOVERNOR] No entry price in signal — switching to MARKET execution")
+            risk_decision = {"approved": True, "rejection_reason": "",
+                             "entry_override": "MARKET",
+                             "final_sl": 0.0, "final_tp1": 0.0,
+                             "final_tp2": None, "final_tp3": None,
+                             "risk_reward_ratio": 1.5}
+            # Inject market as entry so the executor uses live price
+            trade_data["entry"] = None
         else:
             entry = float(entry)
             symbol = trade_data.get("symbol", "").upper()
@@ -222,7 +248,14 @@ class OllamaSwarmEngine:
                         entry_price = final_trade.get("entry")
                         if entry_price and live_price and live_price > 0:
                             deviation_pct = abs(entry_price - live_price) / live_price
-                            if deviation_pct > 0.02:  # More than 2% from live price
+                            # Log to ML training data regardless of outcome
+                            _log_ml_event(channel_name, symbol,
+                                          final_trade.get("action"),
+                                          entry_price, final_trade.get("final_sl"),
+                                          final_trade.get("final_tp1"),
+                                          "PASSED" if deviation_pct <= 0.15 else "PRICE_GATE_REJECT",
+                                          live_price)
+                            if deviation_pct > 0.15:  # Widened to 15% — covers crypto/gold swings
                                 reason = f"Price sanity fail: entry {entry_price} is {deviation_pct:.1%} from live {live_price:.5f}"
                                 log.warning(f"[PRICE_GATE] {reason}")
                                 self._log_audit(account_id, channel_name, raw_message, final_trade, "REJECTED", reason)
@@ -230,15 +263,18 @@ class OllamaSwarmEngine:
         except Exception as pg_ex:
             log.warning(f"[PRICE_GATE] Could not validate price: {pg_ex}")
         
-        # Explicit Crypto Altcoin Block (Only allow BTC and ETH)
+        # ── Symbol validation: let MT5 decide if unsupported — log for ML study
         symbol = final_trade.get("symbol", "").upper()
-        base_asset = symbol.replace("USDT", "").replace("USD", "")
-        if base_asset not in ["EUR", "GBP", "AUD", "NZD", "CAD", "CHF", "JPY", "XAU", "XAG", "BTC", "ETH", "GOLD", "SILVER", ""]:
-            # If the base asset is not a major forex or BTC/ETH/Gold, reject it
-            reason = f"Altcoin '{base_asset}' is not supported by this MT5 account. Only BTC and ETH are allowed."
-            log.warning(f"[SWARM_ENGINE] VETO: {reason}")
-            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
-            return {"status": "REJECTED", "reason": reason}
+        base_asset = symbol.replace("USDT", "").replace("USD", "").replace("PERP", "")
+        SUPPORTED = {"EUR","GBP","AUD","NZD","CAD","CHF","JPY","XAU","XAG",
+                     "BTC","ETH","GOLD","SILVER","US30","NAS100","SP500","OIL",""}
+        if base_asset not in SUPPORTED:
+            # Don't hard-reject — log as ALTCOIN and let MT5 attempt execution
+            # This feeds the ML training data on which exotic pairs ever succeed
+            log.info(f"[SWARM_ENGINE] Altcoin '{base_asset}' detected — forwarding to MT5 for broker check")
+            _log_ml_event(channel_name, symbol, final_trade.get("action"),
+                          final_trade.get("entry"), final_trade.get("final_sl"),
+                          final_trade.get("final_tp1"), "ALTCOIN_ATTEMPT", None)
         
         # --- PHASE 3: EXECUTION HANDOFF ---
         log.info("[HANDOFF] Routing payload to MT5 Broker...")

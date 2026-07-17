@@ -8,6 +8,10 @@ BASE_DIR = Path(__file__).parent
 MT5_CFG_PATH = BASE_DIR / "mt5_config.json"
 
 log = logging.getLogger(__name__)
+file_handler = logging.FileHandler(BASE_DIR / 'mt5_orders.log')
+file_handler.setFormatter(logging.Formatter('%(asctime)s - [%(levelname)s] - %(message)s'))
+log.addHandler(file_handler)
+log.setLevel(logging.INFO)
 
 class MT5ExecutionEngine:
     def __init__(self):
@@ -141,14 +145,14 @@ class MT5ExecutionEngine:
         min_dist = info.trade_stops_level * point  # broker minimum stop distance
         entry_diff = abs(extracted_entry - price)
         
-        if entry_diff > max(10 * point, min_dist):
+        if entry_diff > max(30 * point, min_dist):  # Widened from 10 to 30 points
             action_type = mt5.TRADE_ACTION_PENDING
             final_price = extracted_entry
             if action == "BUY":
-                order_type = mt5.ORDER_TYPE_BUY_LIMIT if extracted_entry < price else mt5.ORDER_TYPE_BUY_STOP
+                order_type = mt5.ORDER_TYPE_BUY_STOP if extracted_entry > price else mt5.ORDER_TYPE_BUY_LIMIT
             else:
-                order_type = mt5.ORDER_TYPE_SELL_LIMIT if extracted_entry > price else mt5.ORDER_TYPE_SELL_STOP
-            log.info(f"[MT5] Placing PENDING order at {final_price} (Market={price:.5f}, type={'LIMIT' if (action=='BUY' and extracted_entry < price) or (action=='SELL' and extracted_entry > price) else 'STOP'})")
+                order_type = mt5.ORDER_TYPE_SELL_STOP if extracted_entry < price else mt5.ORDER_TYPE_SELL_LIMIT
+            log.info(f"[MT5] Placing PENDING order at {final_price} (Market={price:.5f}, type={'STOP' if (action=='BUY' and extracted_entry > price) or (action=='SELL' and extracted_entry < price) else 'LIMIT'})")
         else:
             log.info(f"[MT5] Placing MARKET order at {price:.5f} (signal entry={extracted_entry}")
                 
@@ -196,7 +200,18 @@ class MT5ExecutionEngine:
         
         result = mt5.order_send(request)
         
-        # Retry logic for 10016 Invalid Stops
+        # ── Retry on 10018 Market Closed: wait 5 seconds then re-try once as MARKET order
+        if result and result.retcode == 10018:
+            log.warning("Retcode 10018 (Market Closed) — waiting 5s and retrying as MARKET order...")
+            import time; time.sleep(5)
+            tick2 = mt5.symbol_info_tick(symbol)
+            if tick2:
+                request["action"] = mt5.TRADE_ACTION_DEAL
+                request["type"] = mt5.ORDER_TYPE_BUY if action == "BUY" else mt5.ORDER_TYPE_SELL
+                request["price"] = tick2.ask if action == "BUY" else tick2.bid
+                request["type_filling"] = mt5.ORDER_FILLING_IOC
+                log.info(f"[MT5] Retry MARKET order @ {request['price']}")
+                result = mt5.order_send(request)
         if result.retcode == 10016:
             log.warning("Retcode 10016 (Invalid Stops) detected! Recalculating ATR-based SL/TP and retrying...")
             
@@ -224,7 +239,7 @@ class MT5ExecutionEngine:
             result = mt5.order_send(request)
 
         if result.retcode != mt5.TRADE_RETCODE_DONE:
-            log.error(f"Order failed definitively! Retcode: {result.retcode} Comment: {result.comment}")
+            log.error(f"Order failed definitively! Retcode: {result.retcode} | Comment: {result.comment} | Symbol: {symbol} | Price: {final_price} | SL: {sl} | TP: {tp} | Type: {order_type}")
             # Write to alerts
             try:
                 alert_path = BASE_DIR / "alerts.json"
