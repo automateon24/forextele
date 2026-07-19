@@ -167,10 +167,10 @@ class MT5ExecutionEngine:
             if tp > 0 and tp >= final_price: tp = 0
             if sl > 0 and sl <= final_price: sl = 0
             
-        # AUTO ATR-BASED INJECTION FOR MISSING STOPS (As requested by User)
+        # AUTO DYNAMIC INJECTION FOR MISSING STOPS (Proportional to Asset Price)
         if sl == 0 or tp == 0:
-            atr_points = 1000 if "GOLD" in symbol or "XAU" in symbol else 500
-            fallback_dist = atr_points * info.point
+            # 0.5% of the asset's current price gives it room to breathe past the spread
+            fallback_dist = final_price * 0.005
             if action == "BUY":
                 if sl == 0: sl = round(final_price - fallback_dist, info.digits)
                 if tp == 0: tp = round(final_price + fallback_dist * 1.5, info.digits)
@@ -213,11 +213,10 @@ class MT5ExecutionEngine:
                 log.info(f"[MT5] Retry MARKET order @ {request['price']}")
                 result = mt5.order_send(request)
         if result.retcode == 10016:
-            log.warning("Retcode 10016 (Invalid Stops) detected! Recalculating ATR-based SL/TP and retrying...")
+            log.warning("Retcode 10016 (Invalid Stops) detected! Recalculating dynamic SL/TP and retrying...")
             
-            # Simple ATR proxy: 1000 points for Gold, 500 for Forex
-            atr_points = 1000 if "GOLD" in symbol or "XAU" in symbol else 500
-            fallback_dist = atr_points * point
+            # Dynamic proxy: 0.5% of asset price
+            fallback_dist = final_price * 0.005
             
             # Recalculate strictly based on current Market Price to guarantee validity
             current_ask = mt5.symbol_info_tick(symbol).ask
