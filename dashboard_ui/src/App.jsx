@@ -53,8 +53,9 @@ function App() {
   const activeClosedDeals = activeTab === 'STRATEGIES' ? allClosedDeals.filter(d => d.magic !== 777777 && d.magic !== 999999) : allClosedDeals.filter(d => d.magic === 777777 || d.magic === 999999)
   const totalClosedProfit = activeClosedDeals.reduce((sum, d) => sum + (d.profit || 0), 0)
   
-  // Truly Isolated Ledger Accounting
-  const startingBase = 5000 // 5K sandbox
+  // Truly Isolated Ledger Accounting (Live MT5 Balance)
+  const totalBalance = account.balance || 0
+  const startingBase = activeTab === 'STRATEGIES' ? 2500 : (totalBalance > 2500 ? totalBalance - 2500 : 0)
   const ledgerCapital = startingBase + currentPnl + totalUnrealized
   
   // Pro-rate the Used Margin based on actual lot sizes used by each ledger
@@ -99,7 +100,7 @@ function App() {
       {/* TOP HEADER */}
       <div className="app-header">
         <div className="brand-section">
-          <h2>Swarm OS Forex</h2>
+          <h2>Swarm OS Forex V2</h2>
           <span className="badge production">PRODUCTION</span>
           <button className={`btn-system ${connected ? 'active' : 'error'}`} onClick={() => sendCommand('START_BOT')}>
             {connected ? '▶ SYSTEM ACTIVE' : '▲ SYSTEM ERROR'}
@@ -152,10 +153,10 @@ function App() {
 
       {/* METRICS ROW */}
       <div className="metrics-row">
-        <div className="metric-box">
+          <div className="metric-box">
           <div className="metric-label">ISOLATED CAPITAL BASE</div>
           <div className="metric-value">{formatMoney(ledgerCapital)}</div>
-          <div className="metric-sub">{activeTab} Ledger (50% Split)</div>
+          <div className="metric-sub">{activeTab} Ledger ({activeTab === 'STRATEGIES' ? 'Fixed $2.5K' : 'Live Remainder'})</div>
         </div>
         <div className="metric-box">
           <div className="metric-label">USED MARGIN</div>

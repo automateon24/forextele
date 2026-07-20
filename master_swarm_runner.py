@@ -31,6 +31,7 @@ class SwarmThreadManager:
             "WEBSOCKET_BRIDGE": "dashboard_websocket.py",  # To be built in Phase 4
             "POSITION_MANAGER": "swarm_position_manager.py", # Trail Boss Intelligence
             "ALGORITHMIC_FOREX_ENGINE": "algorithmic_forex_engine.py", # 41/45 Strategy Engine
+            "HEALTH_MONITOR": "realtime_health_monitor.py", # V2 Realtime Drift & Slippage Monitor
         }
         self.running = True
         

@@ -56,8 +56,13 @@ def get_mt5_data():
     from datetime import timedelta
     # Calculate Today's Realized PnL and Win Rate
     now = datetime.now()
-    yesterday = now - timedelta(hours=24)
-    history_deals = mt5.history_deals_get(yesterday, now)
+    try:
+        with open(BASE_DIR / "reset_time.txt", "r") as f:
+            start_time = datetime.fromtimestamp(int(f.read().strip()))
+    except:
+        start_time = now - timedelta(hours=24)
+        
+    history_deals = mt5.history_deals_get(start_time, now)
     
     tele_pnl = 0.0
     tele_wins = 0
