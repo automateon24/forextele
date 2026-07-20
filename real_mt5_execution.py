@@ -178,6 +178,20 @@ class MT5ExecutionEngine:
                 if sl == 0: sl = round(final_price + fallback_dist, info.digits)
                 if tp == 0: tp = round(final_price - fallback_dist * 1.5, info.digits)
                 
+        # --- LIQUIDITY SWEEP PROTECTION (V-Shape Defense) ---
+        # Fetch Daily High and Low
+        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 2)
+        if rates is not None and len(rates) > 0:
+            daily_high = rates[-1]['high']
+            daily_low = rates[-1]['low']
+            
+            if action == "BUY" and abs(final_price - daily_high) / daily_high < 0.0015:
+                log.warning(f"🚨 LIQUIDITY SWEEP RISK: Buying near Daily High ({daily_high}). Cutting SL in half.")
+                sl = round(final_price - (abs(final_price - sl) / 2), info.digits)
+            elif action == "SELL" and abs(final_price - daily_low) / daily_low < 0.0015:
+                log.warning(f"🚨 LIQUIDITY SWEEP RISK: Selling near Daily Low ({daily_low}). Cutting SL in half.")
+                sl = round(final_price + (abs(sl - final_price) / 2), info.digits)
+                
         # Calculate Lot Size (Governor approved the trade, we scale it accurately using validated SL)
         volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
 

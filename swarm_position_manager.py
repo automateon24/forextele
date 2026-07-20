@@ -95,13 +95,42 @@ class SwarmPositionManager:
         else:
             log.info(f"✅ Successfully trailed SL for {ticket} to {new_sl}")
 
+    def close_position(self, ticket, symbol, pos_type, volume, current_price):
+        """Close a position immediately (used for Dead Trade Ejector)."""
+        request = {
+            "action": mt5.TRADE_ACTION_DEAL,
+            "symbol": symbol,
+            "volume": volume,
+            "type": mt5.ORDER_TYPE_SELL if pos_type == "BUY" else mt5.ORDER_TYPE_BUY,
+            "position": ticket,
+            "price": current_price,
+            "type_filling": mt5.ORDER_FILLING_IOC
+        }
+        result = mt5.order_send(request)
+        if result.retcode != mt5.TRADE_RETCODE_DONE:
+            log.error(f"Failed to close position {ticket}: {result.retcode} | {result.comment}")
+        else:
+            log.info(f"🚨 DEAD TRADE EJECTOR: Force-closed position {ticket} ({symbol})")
+
     async def run_loop(self):
         log.info("Trail Boss Engine Online. Monitoring active positions...")
         while True:
             positions = mt5.positions_get()
             if positions:
+                current_time = time.time()
                 for pos in positions:
                     if pos.magic == 999999: # Only Swarm Trades
+                        pos_type_str = "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL"
+                        
+                        # --- DEAD TRADE EJECTOR LOGIC ---
+                        # If trade is open > 45 mins and in loss, kill it
+                        trade_duration_mins = (current_time - pos.time) / 60
+                        if trade_duration_mins > 45 and pos.profit < 0:
+                            log.warning(f"[DEAD_TRADE_EJECTOR] {pos.symbol} {pos_type_str} open for {trade_duration_mins:.1f}m in loss. EJECTING!")
+                            current_price = mt5.symbol_info_tick(pos.symbol).bid if pos_type_str == "BUY" else mt5.symbol_info_tick(pos.symbol).ask
+                            self.close_position(pos.ticket, pos.symbol, pos_type_str, pos.volume, current_price)
+                            continue # Skip the trailing stop logic below for this trade
+                        
                         atr = self.calculate_atr(pos.symbol)
                         state_payload = {
                             "symbol": pos.symbol,

@@ -30,6 +30,7 @@ class SwarmThreadManager:
             "STRATEGY_ENGINE": "live_strategy_executor.py",
             "WEBSOCKET_BRIDGE": "dashboard_websocket.py",  # To be built in Phase 4
             "POSITION_MANAGER": "swarm_position_manager.py", # Trail Boss Intelligence
+            "ALGORITHMIC_FOREX_ENGINE": "algorithmic_forex_engine.py", # 41/45 Strategy Engine
         }
         self.running = True
         
