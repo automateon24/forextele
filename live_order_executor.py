@@ -201,7 +201,7 @@ def calculate_dynamic_lot(symbol, base_allocation=200.0, leverage=1000, risk_pct
     max_volume = total_leverage_power / (price * contract_size)
     target_volume = max_volume * risk_pct
     step = info.volume_step
-    target_volume = max(info.volume_min, min(round(target_volume / step) * step, info.volume_max))
+    target_volume = max(info.volume_min, min(round(target_volume / step) * step, info.volume_max, 1.00))
     return target_volume
 
 def get_atr_fallback(symbol):
@@ -226,6 +226,7 @@ def log_trade_event(source, symbol, action, entry_price, lot, sl, tp, reason):
         f.write(f"{timestamp},{source},{symbol},{action},{entry_price},{lot},{sl},{tp},{reason}\n")
 
 def place_order(symbol: str, action: str, volume: float, sl: float=0.0, tp: float=0.0, channel_name: str=""):
+    volume = min(float(volume), 1.00)  # HARD SAFETY CAP: Never exceed 1.00 lot
     tick = mt5.symbol_info_tick(symbol)
     if tick is None:
         log.error(f"[{symbol}] Failed to get tick data (Market Closed?)")

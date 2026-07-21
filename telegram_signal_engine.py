@@ -80,8 +80,8 @@ async def main():
             raw_title = getattr(chat, 'title', '')
             raw_user = getattr(chat, 'username', '')
             
-            chat_title = unicodedata.normalize('NFKC', raw_title).lower() if raw_title else ''
-            chat_user = unicodedata.normalize('NFKC', raw_user).lower() if raw_user else ''
+            chat_title = raw_title.encode('ascii', 'ignore').decode('ascii').lower() if raw_title else ''
+            chat_user = raw_user.encode('ascii', 'ignore').decode('ascii').lower() if raw_user else ''
             
             valid_channel = False
             channel_group = "UNKNOWN"
@@ -102,8 +102,12 @@ async def main():
             if not valid_channel:
                 return
                 
-            text = event.raw_text
-            if not text:
+            raw_msg_text = event.raw_text
+            if not raw_msg_text:
+                return
+                
+            text = raw_msg_text.encode('ascii', 'ignore').decode('ascii')
+            if not text.strip():
                 return
                 
             channel_name_str = getattr(chat, 'title', chat_user)

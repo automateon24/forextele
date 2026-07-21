@@ -86,7 +86,11 @@ class MT5ExecutionEngine:
         step = info.volume_step if info.volume_step > 0 else 0.01
         scaled_lot = round(true_volume / step) * step
         
-        return max(info.volume_min, min(scaled_lot, info.volume_max))
+        # ABSOLUTE HARD SAFETY GOVERNOR CAP: Never exceed 1.00 lot under any circumstances
+        HARD_MAX_LOT = 1.00
+        calculated_lot = max(info.volume_min, min(scaled_lot, info.volume_max, HARD_MAX_LOT))
+        log.info(f"[{symbol}] Calculated lot size: {calculated_lot:.2f} (raw={scaled_lot:.2f}, max_cap={HARD_MAX_LOT})")
+        return calculated_lot
 
     def execute_trade(self, swarm_payload: dict, magic_number: int = 999999) -> bool:
         """
@@ -194,6 +198,7 @@ class MT5ExecutionEngine:
                 
         # Calculate Lot Size (Governor approved the trade, we scale it accurately using validated SL)
         volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
+        volume = min(float(volume), 1.00)  # ABSOLUTE HARD GOVERNOR SAFETY CAP
 
         request = {
             "action": action_type,
@@ -214,8 +219,12 @@ class MT5ExecutionEngine:
         
         result = mt5.order_send(request)
         
+        if result is None:
+            log.error(f"mt5.order_send returned None. Last error: {mt5.last_error()} | Request: {request}")
+            return False
+            
         # ── Retry on 10018 Market Closed: wait 5 seconds then re-try once as MARKET order
-        if result and result.retcode == 10018:
+        if result.retcode == 10018:
             log.warning("Retcode 10018 (Market Closed) — waiting 5s and retrying as MARKET order...")
             import time; time.sleep(5)
             tick2 = mt5.symbol_info_tick(symbol)
@@ -226,6 +235,10 @@ class MT5ExecutionEngine:
                 request["type_filling"] = mt5.ORDER_FILLING_IOC
                 log.info(f"[MT5] Retry MARKET order @ {request['price']}")
                 result = mt5.order_send(request)
+                if result is None:
+                    log.error(f"mt5.order_send returned None on retry. Last error: {mt5.last_error()} | Request: {request}")
+                    return False
+                    
         if result.retcode == 10016:
             log.warning("Retcode 10016 (Invalid Stops) detected! Recalculating dynamic SL/TP and retrying...")
             

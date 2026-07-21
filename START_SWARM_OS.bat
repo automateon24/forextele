@@ -23,8 +23,8 @@ echo [3/4] Launching AI Swarm Backend (master_swarm_runner.py)...
 start "SWARM BACKEND" cmd /k "cd /d C:\anlyzeforex\forextele && py master_swarm_runner.py"
 
 :: Start React Frontend in its own persistent window  
-echo [4/4] Launching React Dashboard (localhost:5555)...
-start "SWARM DASHBOARD" cmd /k "cd /d C:\anlyzeforex\forextele\dashboard_ui && npm run dev -- --port 5555"
+echo [4/4] Launching React Dashboard (localhost:5555 / 127.0.0.1:5555)...
+start "SWARM DASHBOARD" cmd /k "cd /d C:\anlyzeforex\forextele\dashboard_ui && npm run dev -- --host 0.0.0.0 --port 5555"
 
 echo.
 echo =============================================
