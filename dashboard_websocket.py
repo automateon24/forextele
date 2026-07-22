@@ -113,12 +113,13 @@ def get_mt5_data():
     target_symbols = ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "GOLD", "SILVER", "BTCUSD", "ETHUSD"]
     tickers_data = []
     for sym in target_symbols:
+        mt5.symbol_select(sym, True)
         tick = mt5.symbol_info_tick(sym)
         info = mt5.symbol_info(sym)
         if tick and info:
-            spread = (tick.ask - tick.bid) / info.point
+            spread = (tick.ask - tick.bid) / info.point if info.point > 0 else 0
             price = tick.bid
-            status = thread_status.get(sym, "CONSOLIDATION").upper()
+            status = thread_status.get(sym, "LIVE").upper()
             spread_val = round(spread, 1)
             swap = info.swap_long if hasattr(info, 'swap_long') else 0
         else:
