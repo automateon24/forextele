@@ -569,6 +569,24 @@ def process_symbol(symbol, base_dna):
                 time.sleep(5)
                 continue
                 
+            # --- SPREAD GUARD & BROKER PROTECTION ---
+            mt5.symbol_select(symbol, True)
+            tick_info = mt5.symbol_info_tick(symbol)
+            sym_info = mt5.symbol_info(symbol)
+            if tick_info and sym_info and sym_info.point > 0:
+                spread_pips = (tick_info.ask - tick_info.bid) / sym_info.point
+                max_allowed_spread = 300.0 if symbol in ("BTCUSD", "ETHUSD") else 50.0
+                if spread_pips > max_allowed_spread:
+                    THREAD_STATUS[symbol] = f"PAUSED: High spread ({spread_pips:.1f} > {max_allowed_spread})"
+                    time.sleep(10)
+                    continue
+
+            # --- EXCLUDE HIGH-SPREAD CRYPTO SCALPING ---
+            if symbol in ("BTCUSD", "ETHUSD"):
+                THREAD_STATUS[symbol] = "Disabled: Crypto spread too wide for scalping"
+                time.sleep(60)
+                continue
+
             THREAD_STATUS[symbol] = f"Active | Scanning {len(symbol_dnas)} Strategies"
             
             # Step 2: Prevent trade stacking. If we already have an open trade for this symbol, wait.
@@ -611,7 +629,7 @@ def process_symbol(symbol, base_dna):
             is_asian  = 0  <= utc_h < 8
             is_london = 7  <= utc_h < 13
             is_ny     = 12 <= utc_h < 21
-            can_trade = time.time() - last_trade_time > 120
+            can_trade = time.time() - last_trade_time > 900  # 15 min cooldown
 
             # --- FULL 40-STRATEGY ALGORITHMIC FACTORY LOOP ---
             for strat_key, dna in symbol_dnas.items():
