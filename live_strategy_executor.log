@@ -19928,3 +19928,431 @@
 2026-07-22 23:40:03,783 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
 2026-07-22 23:40:03,884 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
 2026-07-22 23:40:04,243 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.06 | SL: 66147.40714285715
+2026-07-22 23:59:59,070 - [INFO] - [ETHUSD] Strategy Step-Trail: Locked SL to 1943.47
+2026-07-23 00:02:47,391 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 65959.9
+2026-07-23 00:08:38,422 - [INFO] - [ETHUSD] Strategy Step-Trail: Locked SL to 1934.81
+2026-07-23 00:10:00,022 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33683
+2026-07-23 00:10:06,390 - [INFO] - [USDJPY] Trade in Golden Hour (18 UTC). Targeting 3.0 R:R.
+2026-07-23 00:10:06,411 - [ERROR] - [USDJPY] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 00:10:06,683 - [INFO] - [USDJPY] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.36 | SL: 163.20499999999998
+2026-07-23 00:16:08,427 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33688
+2026-07-23 00:26:18,455 - [INFO] - [ETHUSD] Trade in Golden Hour (18 UTC). Targeting 3.0 R:R.
+2026-07-23 00:26:18,465 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 00:26:18,473 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 2.59 capped to 0.5 for safety.
+2026-07-23 00:26:21,052 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1937.7057142857143
+2026-07-23 01:15:00,479 - [INFO] - [BTCUSD] Trade outside Golden Hour (19 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 01:15:00,613 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 01:15:00,705 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 01:15:03,539 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: INSTITUTIONAL_SUPPORT | Lot: 0.06 | SL: 66017.76071428572
+2026-07-23 01:31:18,119 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.337
+2026-07-23 01:31:56,704 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33701
+2026-07-23 01:31:56,906 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33706
+2026-07-23 01:38:01,045 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33702
+2026-07-23 01:38:01,278 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33707
+2026-07-23 02:31:13,885 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:33:14,611 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:35:14,927 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:37:15,053 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (126) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:39:15,641 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (126) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:41:16,176 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:43:16,955 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:45:17,829 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:47:18,243 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:48:26,464 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14109
+2026-07-23 02:49:18,453 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:49:37,037 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (55) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:50:23,441 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (47) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:51:18,623 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:51:37,694 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:53:19,606 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:53:37,951 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:55:19,848 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:55:38,169 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:57:20,746 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:57:38,438 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:59:21,374 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 02:59:39,143 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:01:22,141 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (163) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:01:40,146 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:03:22,230 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:03:40,229 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (68) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:05:22,500 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:05:41,166 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (66) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:06:00,599 - [INFO] - [BTCUSD] Trade in Golden Hour (21 UTC). Targeting 3.0 R:R.
+2026-07-23 03:06:00,613 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 03:06:00,885 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.18 | SL: 65916.23928571428
+2026-07-23 03:07:22,557 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:08:10,085 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (60) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:09:23,584 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:10:10,690 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (52) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:10:44,101 - [INFO] - [ETHUSD] Trade in Golden Hour (21 UTC). Targeting 3.0 R:R.
+2026-07-23 03:10:44,113 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 03:10:44,129 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 3.91 capped to 0.5 for safety.
+2026-07-23 03:10:44,461 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.5 | SL: 1932.307857142857
+2026-07-23 03:11:23,700 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:12:45,696 - [INFO] - [ETHUSD] Trade in Golden Hour (21 UTC). Targeting 3.0 R:R.
+2026-07-23 03:12:45,830 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 03:12:45,868 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 3.90 capped to 0.5 for safety.
+2026-07-23 03:12:46,189 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.5 | SL: 1931.8942857142858
+2026-07-23 03:13:04,785 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (48) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:13:04,841 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (48) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:13:24,277 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:15:05,768 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:15:24,703 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:15:48,921 - [INFO] - [ETHUSD] Trade in Golden Hour (21 UTC). Targeting 3.0 R:R.
+2026-07-23 03:15:48,930 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 03:15:48,946 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 4.12 capped to 0.5 for safety.
+2026-07-23 03:15:49,166 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.5 | SL: 1930.969285714286
+2026-07-23 03:17:06,683 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (51) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:17:25,530 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:19:25,286 - [WARNING] - [EURUSD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:19:25,811 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (164) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:21:26,197 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (160) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:23:26,815 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:25:50,142 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (167) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:27:50,375 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (157) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:29:51,602 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (117) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:30:56,858 - [WARNING] - [GBPUSD] \U0001f6a8 Spread Protection: Live Spread (50) > Max Allowable (40). Trade Aborted.
+2026-07-23 03:31:52,249 - [INFO] - [GBPUSD] Trade in Golden Hour (22 UTC). Targeting 3.0 R:R.
+2026-07-23 03:31:52,349 - [ERROR] - [GBPUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 03:31:52,460 - [INFO] - [GBPUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 03:31:54,326 - [INFO] - [GBPUSD] SUCCESS - Opened BUY | Strat: INSTITUTIONAL_SUPPORT | Lot: 0.42 | SL: 1.3363300000000002
+2026-07-23 04:05:03,087 - [INFO] - [EURUSD] Trade outside Golden Hour (22 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:05:03,106 - [ERROR] - [EURUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:05:03,131 - [INFO] - [EURUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:05:03,424 - [INFO] - [EURUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.42 | SL: 1.14163
+2026-07-23 04:15:13,485 - [INFO] - [BTCUSD] Trade in Golden Hour (22 UTC). Targeting 3.0 R:R.
+2026-07-23 04:15:13,609 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:15:13,687 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:15:14,094 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.46 | SL: 66021.97857142858
+2026-07-23 04:19:36,643 - [INFO] - [BTCUSD] Trade in Golden Hour (22 UTC). Targeting 3.0 R:R.
+2026-07-23 04:19:36,690 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:19:36,724 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:19:38,513 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.43 | SL: 65954.61428571428
+2026-07-23 04:20:00,921 - [INFO] - [ETHUSD] Trade outside Golden Hour (22 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:20:00,936 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:20:00,939 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:20:00,942 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 9.46 capped to 0.5 for safety.
+2026-07-23 04:20:00,947 - [WARNING] - [ETHUSD] Retcode 10016 (Invalid Stops). Retrying with widened safety stops...
+2026-07-23 04:20:01,807 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.5 | SL: 1934.0514285714285
+2026-07-23 04:42:45,018 - [INFO] - [BTCUSD] Trade in Golden Hour (23 UTC). Targeting 3.0 R:R.
+2026-07-23 04:42:45,031 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:42:45,042 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:42:46,234 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.4 | SL: 65903.96428571428
+2026-07-23 04:44:28,367 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:44:28,375 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:44:28,378 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:44:28,379 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 7.54 capped to 0.5 for safety.
+2026-07-23 04:44:28,671 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1927.1307142857145
+2026-07-23 04:44:47,064 - [INFO] - [BTCUSD] Trade in Golden Hour (23 UTC). Targeting 3.0 R:R.
+2026-07-23 04:44:47,108 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:44:47,113 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:44:47,573 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: MACD_DIVERGENCE | Lot: 0.37 | SL: 65958.88571428572
+2026-07-23 04:46:29,839 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:46:29,849 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:46:29,852 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:46:29,853 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 7.46 capped to 0.5 for safety.
+2026-07-23 04:46:30,095 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1930.0535714285716
+2026-07-23 04:51:16,211 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:51:16,240 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:51:16,261 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:51:16,262 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 7.20 capped to 0.5 for safety.
+2026-07-23 04:51:16,618 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1930.7250000000001
+2026-07-23 04:51:26,265 - [INFO] - [BTCUSD] Trade in Golden Hour (23 UTC). Targeting 3.0 R:R.
+2026-07-23 04:51:26,317 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:51:26,320 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:51:26,650 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.37 | SL: 66016.42857142858
+2026-07-23 04:53:16,735 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:53:16,769 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:53:16,776 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:53:16,776 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 6.98 capped to 0.5 for safety.
+2026-07-23 04:53:17,025 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1931.5721428571428
+2026-07-23 04:55:17,120 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:55:17,142 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:55:17,153 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:55:17,153 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 6.88 capped to 0.5 for safety.
+2026-07-23 04:55:17,577 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1932.1342857142859
+2026-07-23 04:57:17,784 - [INFO] - [BTCUSD] Trade in Golden Hour (23 UTC). Targeting 3.0 R:R.
+2026-07-23 04:57:17,796 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:57:17,818 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:57:18,173 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.34 | SL: 66085.32142857143
+2026-07-23 04:57:18,672 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 04:57:18,682 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 04:57:18,685 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 04:57:18,685 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 6.67 capped to 0.5 for safety.
+2026-07-23 04:57:18,977 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1933.7464285714286
+2026-07-23 05:24:44,410 - [INFO] - [BTCUSD] Trade in Golden Hour (23 UTC). Targeting 3.0 R:R.
+2026-07-23 05:24:44,817 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 05:24:45,465 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 05:24:45,653 - [INFO] - [BTCUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 05:24:46,805 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 05:24:48,662 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.38 | SL: 65986.1857142857
+2026-07-23 05:24:48,804 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 05:24:49,009 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 7.09 capped to 0.5 for safety.
+2026-07-23 05:24:50,994 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: MACD_DIVERGENCE | Lot: 0.5 | SL: 1929.9992857142856
+2026-07-23 05:26:51,731 - [INFO] - [ETHUSD] Trade outside Golden Hour (23 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 05:26:51,741 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 05:26:51,744 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 05:26:51,744 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 7.13 capped to 0.5 for safety.
+2026-07-23 05:26:52,080 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: MACD_DIVERGENCE | Lot: 0.5 | SL: 1930.5192857142856
+2026-07-23 05:29:57,902 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:29:58,645 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:31:59,157 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:31:59,358 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:33:59,704 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:34:00,063 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:36:00,366 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:36:01,248 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:38:01,908 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:38:01,969 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:39:09,508 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66086.4
+2026-07-23 05:40:02,244 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (74) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:40:02,484 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:42:03,678 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:44:03,930 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:44:57,715 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:46:14,434 - [INFO] - [ETHUSD] Trade in Golden Hour (0 UTC). Targeting 3.0 R:R.
+2026-07-23 05:46:14,444 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 05:46:14,448 - [INFO] - [ETHUSD] Anti-Martingale: 2 Wins in a row! Doubling risk to 2.00%
+2026-07-23 05:46:14,448 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 6.69 capped to 0.5 for safety.
+2026-07-23 05:46:17,132 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.5 | SL: 1929.2621428571429
+2026-07-23 05:46:58,646 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:48:59,045 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:51:00,269 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:53:01,533 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:55:02,065 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:57:02,746 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 05:59:03,582 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:14:57,469 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:16:57,695 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:19:00,737 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (68) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:21:01,299 - [INFO] - [BTCUSD] Trade in Golden Hour (0 UTC). Targeting 3.0 R:R.
+2026-07-23 06:21:01,359 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:21:01,400 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:21:01,644 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ASIAN_RANGE_SCALP | Lot: 0.07 | SL: 66222.47142857143
+2026-07-23 06:21:01,681 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:23:01,898 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:24:57,614 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33748
+2026-07-23 06:25:02,766 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:27:02,870 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:28:12,001 - [INFO] - [EURUSD] Trade outside Golden Hour (0 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 06:28:12,011 - [ERROR] - [EURUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:28:12,028 - [INFO] - [EURUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:28:12,380 - [INFO] - [EURUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.09 | SL: 1.14067
+2026-07-23 06:28:12,620 - [INFO] - [EURUSD] Trade outside Golden Hour (0 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 06:28:12,635 - [ERROR] - [EURUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:28:12,652 - [INFO] - [EURUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:28:12,968 - [INFO] - [EURUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.09 | SL: 1.14067
+2026-07-23 06:28:54,999 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33765
+2026-07-23 06:29:08,548 - [INFO] - [USDJPY] Strategy Step-Trail: Locked SL to 163.09
+2026-07-23 06:29:57,910 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 06:31:11,807 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14182
+2026-07-23 06:31:12,510 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14182
+2026-07-23 06:31:54,865 - [INFO] - [EURUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:31:54,876 - [ERROR] - [EURUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:31:54,879 - [INFO] - [EURUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:31:55,173 - [INFO] - [EURUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.1 | SL: 1.14107
+2026-07-23 06:33:59,797 - [INFO] - [USDJPY] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:33:59,806 - [ERROR] - [USDJPY] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:33:59,814 - [INFO] - [USDJPY] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:34:00,046 - [INFO] - [USDJPY] SUCCESS - Opened BUY | Strat: ASIAN_RANGE_SCALP | Lot: 0.16 | SL: 162.988
+2026-07-23 06:35:55,588 - [INFO] - [BTCUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:35:55,602 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:35:55,610 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:35:56,521 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ASIAN_RANGE_SCALP | Lot: 0.07 | SL: 66309.60714285714
+2026-07-23 06:39:49,777 - [INFO] - [ETHUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:39:49,800 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:39:49,812 - [INFO] - [ETHUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:39:49,815 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 1.55 capped to 0.5 for safety.
+2026-07-23 06:39:51,630 - [INFO] - [ETHUSD] SUCCESS - Opened BUY | Strat: ASIAN_RANGE_SCALP | Lot: 0.5 | SL: 1927.837142857143
+2026-07-23 06:46:00,949 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66176.7
+2026-07-23 06:47:17,831 - [INFO] - [ETHUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:47:17,841 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:47:17,847 - [INFO] - [ETHUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:47:17,847 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 1.61 capped to 0.5 for safety.
+2026-07-23 06:47:18,142 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1933.902142857143
+2026-07-23 06:51:02,236 - [INFO] - [ETHUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:51:02,263 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:51:02,430 - [INFO] - [ETHUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:51:02,430 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 1.58 capped to 0.5 for safety.
+2026-07-23 06:51:03,151 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1934.9642857142856
+2026-07-23 06:53:04,015 - [INFO] - [ETHUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:53:04,038 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:53:04,091 - [INFO] - [ETHUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:53:04,091 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 1.59 capped to 0.5 for safety.
+2026-07-23 06:53:04,573 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1935.0942857142857
+2026-07-23 06:55:05,519 - [INFO] - [ETHUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:55:05,531 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:55:05,571 - [INFO] - [ETHUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:55:05,572 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 1.56 capped to 0.5 for safety.
+2026-07-23 06:55:09,253 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1936.7921428571428
+2026-07-23 06:58:01,399 - [INFO] - [ETHUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 06:58:01,427 - [ERROR] - [ETHUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 06:58:01,454 - [INFO] - [ETHUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 06:58:01,456 - [WARNING] - [ETHUSD] [RISK_CAP] Lot size 1.56 capped to 0.5 for safety.
+2026-07-23 06:58:01,689 - [INFO] - [ETHUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.5 | SL: 1938.0371428571427
+2026-07-23 07:00:31,475 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66041.47
+2026-07-23 07:00:49,456 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66041.23
+2026-07-23 07:00:49,723 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66041.09
+2026-07-23 07:00:52,238 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66040.73
+2026-07-23 07:01:37,590 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66040.7
+2026-07-23 07:01:41,203 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66040.16
+2026-07-23 07:01:41,897 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66040.14
+2026-07-23 07:01:42,652 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66040.04
+2026-07-23 07:01:43,430 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66039.41
+2026-07-23 07:01:43,991 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66039.26
+2026-07-23 07:01:44,766 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66039.09
+2026-07-23 07:01:47,330 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66038.39
+2026-07-23 07:01:48,616 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66038.19
+2026-07-23 07:06:19,404 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66038.16
+2026-07-23 07:06:22,953 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66037.91
+2026-07-23 07:06:24,234 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66037.54
+2026-07-23 07:06:25,510 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66037.31
+2026-07-23 07:06:26,800 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66037.06
+2026-07-23 07:06:27,040 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66036.94
+2026-07-23 07:06:28,331 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66036.81
+2026-07-23 07:07:24,757 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66036.54
+2026-07-23 07:07:27,023 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66036.36
+2026-07-23 07:07:36,341 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66036.26
+2026-07-23 07:07:37,593 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66036.08
+2026-07-23 07:07:42,877 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66035.87
+2026-07-23 07:07:44,120 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66035.58
+2026-07-23 07:07:44,434 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66035.21
+2026-07-23 07:07:45,380 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66034.93
+2026-07-23 07:07:48,651 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66034.76
+2026-07-23 07:07:53,936 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66034.0
+2026-07-23 07:08:00,153 - [INFO] - [USDJPY] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 07:08:00,165 - [ERROR] - [USDJPY] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 07:08:00,169 - [INFO] - [USDJPY] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 07:08:00,415 - [INFO] - [USDJPY] SUCCESS - Opened BUY | Strat: ASIAN_RANGE_SCALP | Lot: 0.15 | SL: 162.915
+2026-07-23 07:08:16,227 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66033.76
+2026-07-23 07:08:30,076 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66032.91
+2026-07-23 07:08:54,413 - [INFO] - [BTCUSD] Strategy Step-Trail: Locked SL to 66032.75
+2026-07-23 07:09:01,280 - [INFO] - [BTCUSD] Trade in Golden Hour (1 UTC). Targeting 3.0 R:R.
+2026-07-23 07:09:01,299 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 07:09:01,353 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 07:09:01,753 - [INFO] - [BTCUSD] SUCCESS - Opened BUY | Strat: ASIAN_RANGE_SCALP | Lot: 0.06 | SL: 65631.14285714286
+2026-07-23 07:18:38,464 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:18:39,262 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:19:01,769 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33766
+2026-07-23 07:20:38,491 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:22:38,865 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:23:19,620 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (55) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:24:38,934 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:25:19,905 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (55) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:26:39,434 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:27:20,688 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:28:39,848 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:29:21,163 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:29:56,375 - [INFO] - [USDJPY] Strategy Step-Trail: Locked SL to 163.029
+2026-07-23 07:30:40,242 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:32:41,413 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:34:41,449 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:35:57,497 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33767
+2026-07-23 07:36:42,305 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:38:42,883 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:40:43,173 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (73) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:42:43,619 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:44:45,479 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:46:48,011 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:48:48,515 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:50:52,724 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:52:55,256 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:54:57,285 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:55:44,510 - [INFO] - [ETHUSD] Strategy Step-Trail: Locked SL to 1931.68
+2026-07-23 07:56:57,712 - [INFO] - [BTCUSD] Trade in Golden Hour (2 UTC). Targeting 3.0 R:R.
+2026-07-23 07:56:57,725 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 07:56:57,766 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 07:56:58,004 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.06 | SL: 65786.51428571428
+2026-07-23 07:56:58,259 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 07:58:58,391 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (68) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:00:59,218 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:02:04,434 - [INFO] - [BTCUSD] Trade in Golden Hour (2 UTC). Targeting 3.0 R:R.
+2026-07-23 08:02:04,446 - [ERROR] - [BTCUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 08:02:04,500 - [INFO] - [BTCUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 08:02:05,396 - [INFO] - [BTCUSD] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.07 | SL: 65876.89285714286
+2026-07-23 08:02:59,730 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:04:01,242 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33768
+2026-07-23 08:05:00,154 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:06:30,021 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14222
+2026-07-23 08:07:02,378 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:09:07,238 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:11:08,372 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:13:10,173 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (74) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:15:00,576 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (53) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:15:11,058 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:16:11,285 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33769
+2026-07-23 08:17:00,825 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (53) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:17:11,425 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (73) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:19:01,473 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (58) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:19:12,410 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:21:04,529 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (54) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:21:17,572 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:23:05,297 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (52) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:23:17,766 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:25:07,380 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (59) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:25:19,510 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:27:08,263 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (53) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:27:20,373 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:28:09,808 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.3377
+2026-07-23 08:28:10,080 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14236
+2026-07-23 08:29:09,239 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (54) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:29:21,298 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:30:18,683 - [INFO] - [EURUSD] Strategy Step-Trail: Locked SL to 1.14237
+2026-07-23 08:31:09,749 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (58) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:31:22,054 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:33:10,573 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (58) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:33:22,138 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (73) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:35:11,091 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:35:14,289 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33771
+2026-07-23 08:35:22,739 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (74) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:37:11,922 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (53) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:37:26,339 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:39:16,988 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:39:26,608 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:41:17,415 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (54) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:41:32,653 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (73) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:42:09,098 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33772
+2026-07-23 08:43:05,437 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33773
+2026-07-23 08:43:23,081 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:43:33,257 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:43:48,605 - [INFO] - [EURUSD] Trade in Golden Hour (3 UTC). Targeting 3.0 R:R.
+2026-07-23 08:43:48,640 - [ERROR] - [EURUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 08:43:48,786 - [INFO] - [EURUSD] Anti-Martingale: 2 Losses in a row! Halving risk to 0.50%
+2026-07-23 08:43:49,049 - [INFO] - [EURUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.09 | SL: 1.14158
+2026-07-23 08:45:23,475 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:45:34,280 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:47:24,462 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (55) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:47:35,735 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (69) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:47:56,910 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33774
+2026-07-23 08:49:24,855 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (56) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:49:35,960 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:50:01,999 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33775
+2026-07-23 08:51:24,975 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (53) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:51:35,980 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:52:42,771 - [INFO] - [GBPUSD] Strategy Step-Trail: Locked SL to 1.33776
+2026-07-23 08:53:25,145 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (53) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:53:36,161 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:55:26,170 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:55:37,169 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (72) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:57:27,196 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (58) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:57:37,189 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (71) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:59:27,266 - [WARNING] - [GOLD] \U0001f6a8 Spread Protection: Live Spread (57) > Max Allowable (40). Trade Aborted.
+2026-07-23 08:59:38,212 - [WARNING] - [SILVER] \U0001f6a8 Spread Protection: Live Spread (70) > Max Allowable (40). Trade Aborted.
+2026-07-23 21:25:40,623 - [INFO] - Successfully loaded ML Model: c:\anlyzeforex\forextele\final_model_sucess.joblib
+2026-07-23 21:25:40,644 - [INFO] - Starting Multi-Threaded AI Strategy Executor (CRASH RESISTANT)...
+2026-07-23 21:25:40,665 - [INFO] - [SYSTEM] Trailing Stop Engine Online.
+2026-07-23 21:25:40,665 - [INFO] - [SYSTEM] Strategy PnL Tracker Engine Online.
+2026-07-23 21:25:40,668 - [INFO] - [GOLD] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,669 - [INFO] - [BTCUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,670 - [INFO] - [ETHUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,671 - [INFO] - [EURUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,671 - [INFO] - [GBPUSD] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,672 - [INFO] - [USDJPY] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,672 - [INFO] - [SILVER] Thread Started. Polling for AI Entry conditions.
+2026-07-23 21:25:40,887 - [INFO] - [USDJPY] Trade in Golden Hour (15 UTC). Targeting 3.0 R:R.
+2026-07-23 21:25:40,912 - [INFO] - [EURUSD] Trade outside Golden Hour (15 UTC). Targeting reduced 2.0 R:R.
+2026-07-23 21:25:40,922 - [ERROR] - [USDJPY] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 21:25:41,204 - [INFO] - [USDJPY] SUCCESS - Opened SELL | Strat: ZERO_HERO | Lot: 0.29 | SL: 163.879
+2026-07-23 21:25:41,210 - [ERROR] - [EURUSD] ML Inference Error: cannot access local variable 'pd' where it is not associated with a value. Proceeding without ML.
+2026-07-23 21:25:41,441 - [INFO] - [EURUSD] SUCCESS - Opened BUY | Strat: ZERO_HERO | Lot: 0.18 | SL: 1.13659

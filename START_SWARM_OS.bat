@@ -9,9 +9,8 @@ echo.
 
 :: Kill any existing instances cleanly
 echo [1/4] Clearing old processes...
-taskkill /F /IM python.exe /T >nul 2>&1
-taskkill /F /IM py.exe /T >nul 2>&1
-taskkill /F /IM node.exe /T >nul 2>&1
+powershell -Command "Get-CimInstance Win32_Process -Filter 'Name = ''python.exe'' or Name = ''py.exe''' | Where-Object { $_.CommandLine -like '*anlyzeforex*' -or $_.CommandLine -like '*forextele*' } | Stop-Process -Force -ErrorAction SilentlyContinue"
+powershell -Command "Get-CimInstance Win32_Process -Filter 'Name = ''node.exe''' | Where-Object { $_.CommandLine -like '*anlyzeforex*' -or $_.CommandLine -like '*forextele*' } | Stop-Process -Force -ErrorAction SilentlyContinue"
 
 :: Kill any process using port 5555 or 8888
 echo [2/4] Releasing network ports...
@@ -36,3 +35,4 @@ echo.
 echo  Two windows launched. This launcher can be closed.
 echo  The Swarm will keep running independently.
 echo.
+
