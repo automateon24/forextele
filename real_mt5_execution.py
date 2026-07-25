@@ -103,6 +103,13 @@ class MT5ExecutionEngine:
         symbol = swarm_payload.get("symbol")
         action = swarm_payload.get("action", "BUY").upper()
         
+        # WEEKEND SCHEDULE GUARD: Protect Forex/Metals from weekend order rejection loops
+        from datetime import datetime
+        utc_now = datetime.utcnow()
+        if utc_now.weekday() >= 5 and symbol not in ("BTCUSD", "ETHUSD", "BTC", "ETH", "SOLUSD", "XRPUSD", "BNBUSD"):
+            log.warning(f"[WEEKEND GUARD] Blocking Telegram execution for {symbol}. Traditional markets are closed on weekends until Monday Open.")
+            return False
+
         # PREVENT REPEATED ORDERS: Check if position already exists
         positions = mt5.positions_get(symbol=symbol)
         if positions:

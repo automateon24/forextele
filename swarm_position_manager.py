@@ -120,6 +120,11 @@ class SwarmPositionManager:
                 current_time = time.time()
                 for pos in positions:
                     if pos.magic == 999999: # Only Swarm Trades
+                        tick = mt5.symbol_info_tick(pos.symbol)
+                        if tick is None or (current_time - tick.time > 300):
+                            # Skip if market is closed or offline (no new ticks in 5 mins, e.g. weekend Forex)
+                            continue
+                            
                         pos_type_str = "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL"
                         
                         # --- DEAD TRADE EJECTOR LOGIC ---

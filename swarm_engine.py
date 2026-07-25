@@ -63,6 +63,7 @@ class OllamaSwarmEngine:
             "model": self.model,
             "prompt": full_prompt,
             "stream": False,
+            "format": "json",
             "options": {
                 "temperature": 0.0 # Strict determinism for trading
             }
