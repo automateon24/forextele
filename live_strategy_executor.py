@@ -137,11 +137,11 @@ def calculate_dynamic_lot(symbol, sl_points_count, risk_pct=0.01):
     
     raw_lot = max(info.volume_min, min(scaled_lot, info.volume_max))
     
-    # ── HARD SAFETY CAP: Never exceed 0.50 lots per trade ─────────────────
-    MAX_LOT_CAP = 0.50
+    # ── HARD SAFETY CAP: Strictly cap lot sizes to 0.05 lots for $1,500 micro account capital protection ──
+    MAX_LOT_CAP = 0.05
     capped_lot = min(raw_lot, MAX_LOT_CAP)
     if raw_lot > MAX_LOT_CAP:
-        logging.warning(f"[{symbol}] [RISK_CAP] Lot size {raw_lot:.2f} capped to {MAX_LOT_CAP} for safety.")
+        logging.warning(f"[{symbol}] [RISK_CAP] Lot size {raw_lot:.2f} capped to {MAX_LOT_CAP} for micro-account safety.")
     return capped_lot
 
 
@@ -308,7 +308,6 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
             elif 8 <= utc_h < 13: session = 'LONDON'
             else: session = 'NY'
                 
-            import pandas as pd
             feature_dict = {
                 "symbol": symbol,
                 "strategy": strat_name,
@@ -640,20 +639,31 @@ def process_symbol(symbol, base_dna):
             for _df in [df5, df15, df1h, df_primary]:
                 for _c in ['close','open','high','low']:
                     _df[_c] = _df[_c].astype(float)
+                if 'tick_volume' in _df.columns:
+                    _df['volume'] = _df['tick_volume'].astype(float)
+                elif 'volume' not in _df.columns:
+                    _df['volume'] = 1.0
 
             def _rsi(df, p=14):
                 d=df['close'].diff(); g=d.where(d>0,0).rolling(p).mean(); l=(-d.where(d<0,0)).rolling(p).mean()
-                return (100-100/(1+g/l.replace(0,float('nan')))).iloc[-1]
+                return (100-100/(1+g/l.replace(0,float('nan')))).iloc[-2]
             def _bb(df, p=20, s=2.0):
                 m=df['close'].rolling(p).mean(); b=df['close'].rolling(p).std()*s
-                return m.iloc[-1], (m+b).iloc[-1], (m-b).iloc[-1]
+                return m.iloc[-2], (m+b).iloc[-2], (m-b).iloc[-2]
             def _macd(df):
                 ef=df['close'].ewm(span=12).mean(); es=df['close'].ewm(span=26).mean()
                 ln=ef-es; sg=ln.ewm(span=9).mean()
-                return ln.iloc[-1], sg.iloc[-1], ln.iloc[-2], sg.iloc[-2]
+                return ln.iloc[-2], sg.iloc[-2], ln.iloc[-3], sg.iloc[-3]
             def _ema(df, n): return df['close'].ewm(span=n).mean()
 
             utc_h = datetime.utcnow().hour
+            
+            # ROLLOVER SPREAD LOCKOUT: Block strategy entries during 21:00-23:00 UTC spread widening
+            if 21 <= utc_h < 23 and not is_crypto:
+                THREAD_STATUS[symbol] = "ROLLOVER PAUSE: Awaiting 23:00 UTC Spread Normalization"
+                time.sleep(30)
+                continue
+                
             is_asian  = 0  <= utc_h < 8
             is_london = 7  <= utc_h < 13
             is_ny     = 12 <= utc_h < 21
@@ -688,7 +698,8 @@ def process_symbol(symbol, base_dna):
                     if is_reversion_strategy and vol_ratio >= 1.5: continue
 
                     thresh_val = float(dna.get("thresh", 0.85))
-                    pr = df5['close'].iloc[-1]
+                    # Repainting-Proof: Evaluate closed candle (iloc[-2]) instead of developing candle
+                    pr = df5['close'].iloc[-2]
 
                     if sn == "BOLLINGER_SQUEEZE":
                         mid, up, lo = _bb(df15)
