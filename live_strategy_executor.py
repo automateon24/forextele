@@ -9,6 +9,7 @@ from datetime import datetime
 import concurrent.futures
 
 import joblib
+from smc_confluence_engine import SMCConfluenceEngine
 
 BASE_DIR = Path(r"c:\anlyzeforex\forextele")
 CONFIG_PATH = BASE_DIR / "mt5_config.json"
@@ -22,6 +23,8 @@ logging.basicConfig(
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
 logging.getLogger('').addHandler(console)
+
+SMC_ENGINE = SMCConfluenceEngine()
 
 ML_MODEL_PATH = BASE_DIR / "final_model_sucess.joblib"
 try:
@@ -351,6 +354,25 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
                 return None
             else:
                 logging.info(f"[{symbol}] ML APPROVED: {strat_name} | {trade_type} | Win Prob: {prob:.1%} >= Threshold {prob_threshold:.0%}.")
+
+            # ── QUAD-CONFLUENCE: SMC ENGINE INTEGRATION ──
+            smc_res = SMC_ENGINE.get_smc_analysis(symbol, trade_type)
+            smc_score = smc_res.get("smc_confluence_score", 0.50)
+            logging.info(f"[{symbol}] SMC SCAN: {strat_name} {trade_type} -> Score: {smc_score:.2f} | H1 Trend: {smc_res.get('h1_trend')} | FVG Aligned: {smc_res.get('fvg_aligned')}")
+
+            if smc_score < 0.35:
+                logging.info(f"[{symbol}] SMC VETO: Strategy {strat_name} {trade_type} rejected due to weak SMC Confluence ({smc_score:.2f} < 0.35)")
+                return None
+
+            # Override SL with SMC Structural SL if available
+            struct_sl = smc_res.get("structural_sl", 0.0)
+            if struct_sl > 0:
+                price_ref = tick.ask if trade_type == "BUY" else tick.bid
+                calc_sl_dist = abs(price_ref - struct_sl)
+                if calc_sl_dist > (min_dist * 2.0):
+                    sl_points_raw = calc_sl_dist
+                    sl_points_count = sl_points_raw / point if point > 0 else 1000
+                    logging.info(f"[{symbol}] SMC STRUCTURAL SL SET: {struct_sl} ({sl_points_count:.1f} pts)")
                 
         except Exception as ml_err:
             logging.error(f"[{symbol}] ML Inference Error: {ml_err}. Proceeding without ML.")
