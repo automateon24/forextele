@@ -414,12 +414,16 @@ async def monitor_orphans():
                         now = time.time()
                         for pos in positions:
                             if pos.magic == 777777: # Only manage Telegram bot trades
+                                tick = mt5.symbol_info_tick(pos.symbol)
+                                if tick is None or (now - tick.time > 300):
+                                    # Market closed or offline (no ticks in last 5 minutes, e.g., weekend); skip modification & close attempts
+                                    continue
+                                    
                                 # --- DYNAMIC TP1 / TP2 / TP3 STEP-TRAILING LOGIC ---
                                 point = mt5.symbol_info(pos.symbol).point
                                 digits = mt5.symbol_info(pos.symbol).digits
-                                tick = mt5.symbol_info_tick(pos.symbol)
                                 
-                                if tick and point > 0:
+                                if point > 0:
                                     current_price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
                                     open_price = pos.price_open
                                     profit_points = (current_price - open_price)/point if pos.type == mt5.ORDER_TYPE_BUY else (open_price - current_price)/point
