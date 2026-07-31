@@ -921,6 +921,40 @@ def process_symbol(symbol, base_dna):
                         if e9.iloc[-1] > e21.iloc[-1] and r > rsi_buy and dr in ("BUY","BOTH"): place_order(symbol,"BUY",sn,dna=dna); last_trade_time=time.time(); can_trade=False
                         elif e9.iloc[-1] < e21.iloc[-1] and r < rsi_sell and dr in ("SELL","BOTH"): place_order(symbol,"SELL",sn,dna=dna); last_trade_time=time.time(); can_trade=False
 
+                    # ── NEW STRATEGY 1: ELLIOTT WAVE THEORY ──
+                    elif sn in ("ELLIOTT_WAVE", "ELLIOTT_IMPULSE_WAVE3", "ELLIOTT_CORRECTIVE_C"):
+                        w_ema12 = _ema(df15, 12); w_ema36 = _ema(df15, 36)
+                        w_rsi = _rsi(df15, 14)
+                        if w_ema12.iloc[-1] > w_ema36.iloc[-1] and w_rsi > 58 and dr in ("BUY", "BOTH"):
+                            place_order(symbol, "BUY", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif w_ema12.iloc[-1] < w_ema36.iloc[-1] and w_rsi < 42 and dr in ("SELL", "BOTH"):
+                            place_order(symbol, "SELL", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+
+                    # ── NEW STRATEGY 2: WYCKOFF METHOD (SPRING & UPTHRUST) ──
+                    elif sn in ("WYCKOFF_ACCUMULATION_SPRING", "WYCKOFF_DISTRIBUTION_UPTHRUST", "WYCKOFF_METHOD"):
+                        tr_high = df1h['high'].iloc[-20:-2].max()
+                        tr_low = df1h['low'].iloc[-20:-2].min()
+                        c_prev = df1h['close'].iloc[-3]
+                        c_curr = df1h['close'].iloc[-2]
+
+                        if c_prev < tr_low and c_curr > tr_low and dr in ("BUY", "BOTH"):
+                            place_order(symbol, "BUY", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif c_prev > tr_high and c_curr < tr_high and dr in ("SELL", "BOTH"):
+                            place_order(symbol, "SELL", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+
+                    # ── NEW STRATEGY 3: ADVANCED CHART PATTERN SUITE (DOUBLE TOP/BOTTOM, H&S, TRIANGLES, FLAGS) ──
+                    elif sn in ("CHART_PATTERN_SUITE", "DOUBLE_BOTTOM_TOP", "HEAD_AND_SHOULDERS", "TRIANGLE_FLAG_BREAKOUT"):
+                        h_peaks = df15['high'].iloc[-20:].nlargest(2).values
+                        l_troughs = df15['low'].iloc[-20:].nsmallest(2).values
+                        
+                        is_double_bottom = len(l_troughs) >= 2 and abs(l_troughs[0] - l_troughs[1]) / l_troughs[0] < 0.002
+                        is_double_top = len(h_peaks) >= 2 and abs(h_peaks[0] - h_peaks[1]) / h_peaks[0] < 0.002
+
+                        if is_double_bottom and pr > df15['close'].iloc[-5:].max() and dr in ("BUY", "BOTH"):
+                            place_order(symbol, "BUY", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+                        elif is_double_top and pr < df15['close'].iloc[-5:].min() and dr in ("SELL", "BOTH"):
+                            place_order(symbol, "SELL", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+
                 except Exception as se:
                     logging.error(f"[{symbol}] Strategy {sn} error: {se}")
                     continue

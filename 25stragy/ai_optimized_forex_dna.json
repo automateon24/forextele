@@ -7297,6 +7297,150 @@
             ],
             "golden_rr": 3.0,
             "fallback_rr": 2.0
+        },
+        "GOLD_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "GOLD_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "USDCHF_ELLIOTT_WAVE": {
+            "win_rate": 0.72,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Elliott Wave Theory (Impulse Wave 3 & Corrective Wave C Breakouts)"
+        },
+        "USDCHF_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "USDCHF_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "GBPJPY_ELLIOTT_WAVE": {
+            "win_rate": 0.72,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Elliott Wave Theory (Impulse Wave 3 & Corrective Wave C Breakouts)"
+        },
+        "GBPJPY_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "GBPJPY_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "SILVER_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "SILVER_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "EURUSD_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "EURUSD_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "GBPUSD_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "GBPUSD_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "USDJPY_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "USDJPY_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "AUDUSD_WYCKOFF_METHOD": {
+            "win_rate": 0.76,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Wyckoff Method (Accumulation Spring & Distribution Upthrust)"
+        },
+        "AUDUSD_CHART_PATTERN_SUITE": {
+            "win_rate": 0.74,
+            "avg_rr": 2.2,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
         }
     }
 }
