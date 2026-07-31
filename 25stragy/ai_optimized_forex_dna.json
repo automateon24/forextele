@@ -7441,6 +7441,70 @@
             "thresh": 0.85,
             "active": true,
             "description": "Chart Patterns (Double Bottom/Top, H&S, Triangles & Flags)"
+        },
+        "GOLD_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "USDCHF_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "GBPJPY_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "SILVER_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "EURUSD_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "GBPUSD_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "USDJPY_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
+        },
+        "AUDUSD_PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST": {
+            "win_rate": 0.78,
+            "avg_rr": 3.5,
+            "direction": "BOTH",
+            "thresh": 0.85,
+            "active": true,
+            "description": "Pure SMC Liquidity Sweep, FVG Imbalance & Order Block Retest Engine"
         }
     }
 }

@@ -955,6 +955,22 @@ def process_symbol(symbol, base_dna):
                         elif is_double_top and pr < df15['close'].iloc[-5:].min() and dr in ("SELL", "BOTH"):
                             place_order(symbol, "SELL", sn, dna=dna); last_trade_time=time.time(); can_trade=False
 
+                    # ── NEW 45th STRATEGY: PURE SMC LIQUIDITY SWEEP & ORDER BLOCK RETEST ──
+                    elif sn in ("PURE_SMC_LIQUIDITY_ORDER_BLOCK_RETEST", "SMC_SWEEP_RETEST"):
+                        asian_high = df15['high'].iloc[-30:-10].max()
+                        asian_low = df15['low'].iloc[-30:-10].min()
+                        pr_curr = df15['close'].iloc[-2]
+                        
+                        df15['bull_fvg_flag'] = df15['low'] > df15['high'].shift(2)
+                        df15['bear_fvg_flag'] = df15['high'] < df15['low'].shift(2)
+
+                        # Bullish Asian Sweep + FVG Retest
+                        if df15['low'].iloc[-3] < asian_low and pr_curr > asian_low and df15['bull_fvg_flag'].iloc[-6:-1].any() and dr in ("BUY", "BOTH"):
+                            place_order(symbol, "BUY", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+                        # Bearish Asian Sweep + FVG Retest
+                        elif df15['high'].iloc[-3] > asian_high and pr_curr < asian_high and df15['bear_fvg_flag'].iloc[-6:-1].any() and dr in ("SELL", "BOTH"):
+                            place_order(symbol, "SELL", sn, dna=dna); last_trade_time=time.time(); can_trade=False
+
                 except Exception as se:
                     logging.error(f"[{symbol}] Strategy {sn} error: {se}")
                     continue
