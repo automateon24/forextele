@@ -308,6 +308,17 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
             elif 8 <= utc_h < 13: session = 'LONDON'
             else: session = 'NY'
                 
+            # ── Component 2: ADX Market Regime Classifier (Trend vs Range) ──
+            is_trend_strat = any(kw in strat_name.upper() for kw in ["TREND", "MOMENTUM", "BREAKOUT", "MA_CROSS", "SURFER", "CROSSOVER"])
+            is_range_strat = any(kw in strat_name.upper() for kw in ["ZERO_HERO", "WIDE_RANGE", "REVERSION", "RSI_OS", "RSI_OB"])
+
+            if adx_val > 25.0 and is_range_strat:
+                logging.info(f"[{symbol}] REGIME VETO: Strong Trend ADX ({adx_val:.1f} > 25). Mean-reversion strat {strat_name} Aborted.")
+                return None
+            elif adx_val < 20.0 and is_trend_strat:
+                logging.info(f"[{symbol}] REGIME VETO: Ranging Market ADX ({adx_val:.1f} < 20). Breakout/Trend strat {strat_name} Aborted.")
+                return None
+
             feature_dict = {
                 "symbol": symbol,
                 "strategy": strat_name,
@@ -317,22 +328,29 @@ def place_order(symbol, trade_type, strat_name, dna=None, magic_number=888888):
                 "weekday": weekday,
                 "rsi_val": rsi_val,
                 "adx_val": adx_val,
-                "atr": sl_points_raw, # We fed sl_points_raw / point in backtest, but ATR in backtest was just the pip amount. Wait! Let's just give it raw ATR.
+                "atr": atr / point if point > 0 else 0,
                 "sl_pts": sl_points_count,
                 "tp_pts": tp_points_count
             }
             
-            # Need to match backtest atr definition: backtest atr feature was `s['atr'] / point`.
-            feature_dict["atr"] = atr / point if point > 0 else 0
-            
             df_features = pd.DataFrame([feature_dict])
             prob = ML_MODEL.predict_proba(df_features)[0][1]
             
-            if prob < 0.55:
-                logging.info(f"[{symbol}] ML FILTERED TRADE: {strat_name} | {trade_type} | Win Prob: {prob:.1%} < 55%.")
+            # ── Component 3: Adaptive Pair-Specific ML Veto Thresholds ──
+            if symbol in ("USDCHF", "GBPJPY", "SILVER"):
+                prob_threshold = 0.52  # Proven high-edge pairs get lower threshold to capture profits
+            elif symbol in ("GOLD", "GBPUSD", "EURUSD"):
+                prob_threshold = 0.58  # Standard pairs require 58% probability
+            elif symbol in ("BTCUSD", "ETHUSD"):
+                prob_threshold = 0.68  # Volatile crypto pairs require strict 68% conviction
+            else:
+                prob_threshold = 0.55  # Default threshold
+
+            if prob < prob_threshold:
+                logging.info(f"[{symbol}] ML FILTERED TRADE: {strat_name} | {trade_type} | Win Prob: {prob:.1%} < Threshold {prob_threshold:.0%}.")
                 return None
             else:
-                logging.info(f"[{symbol}] ML APPROVED: {strat_name} | {trade_type} | Win Prob: {prob:.1%} >= 55%.")
+                logging.info(f"[{symbol}] ML APPROVED: {strat_name} | {trade_type} | Win Prob: {prob:.1%} >= Threshold {prob_threshold:.0%}.")
                 
         except Exception as ml_err:
             logging.error(f"[{symbol}] ML Inference Error: {ml_err}. Proceeding without ML.")

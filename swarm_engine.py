@@ -46,6 +46,12 @@ SPAM_KEYWORDS = [
 # ─── DAILY CIRCUIT BREAKER ──────────────────────────────────────────────────
 MAX_DAILY_LOSS_PCT = 999.0 # Disabled for paper trading  # Stop ALL Telegram trades if account drops 3% today
 
+# ─── CHANNEL BLACKLIST (Block high-noise / format-broken channels) ───────────
+CHANNEL_BLACKLIST = [
+    "binance 360", "crypto world updates", "gold dreams trader",
+    "max leverage", "dil se trader crypto"
+]
+
 log = logging.getLogger(__name__)
 
 class OllamaSwarmEngine:
@@ -84,6 +90,12 @@ class OllamaSwarmEngine:
         Passes the message through Watcher -> Trigger -> Governor.
         """
         log.info("--- SWARM PIPELINE INITIATED ---")
+
+        # ── GATE -1: Channel Blacklist Check ──────────────────────────────
+        ch_lower = channel_name.lower()
+        if any(bl in ch_lower for bl in CHANNEL_BLACKLIST):
+            log.info(f"[CHANNEL_GATE] Channel '{channel_name}' is blacklisted due to signal noise — discarded.")
+            return {"status": "REJECTED", "reason": f"Blacklisted channel: '{channel_name}'"}
 
         # ── GATE 0: Client-side spam keyword blacklist (before Ollama) ──────
         msg_lower = raw_message.lower()
