@@ -103,6 +103,14 @@ class MT5ExecutionEngine:
         symbol = swarm_payload.get("symbol")
         action = swarm_payload.get("action", "BUY").upper()
         
+        # ── USER DIRECTIVE: TELEGRAM SIGNALS RESTRICTED TO FOREX, GOLD & SILVER ONLY ──
+        if magic_number in (777777, 999999):
+            sym_upper = str(symbol).upper()
+            is_crypto = any(kw in sym_upper for kw in ["BTC", "ETH", "USDT", "CRYPTO", "APE", "ONDO", "NEAR", "AKE", "SOL", "XRP", "DOGE"])
+            if is_crypto:
+                log.warning(f"[TELEGRAM_RESTRICTION] 🛑 Blocking Telegram trade execution for {symbol}. Telegram signals are restricted to Forex, Gold & Silver only.")
+                return False
+
         # WEEKEND SCHEDULE GUARD: Protect Forex/Metals from weekend order rejection loops
         from datetime import datetime
         utc_now = datetime.utcnow()

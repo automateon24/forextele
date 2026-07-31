@@ -174,6 +174,16 @@ class OllamaSwarmEngine:
         # 3. The Governor (Hardcoded Python Logic for 100% Reliability & Speed)
         log.info("[GOVERNOR] Evaluating Risk Profile...")
         
+        # ── USER DIRECTIVE: TELEGRAM SIGNALS RESTRICTED TO FOREX, GOLD & SILVER ONLY ──
+        symbol = str(trade_data.get("symbol", "")).upper()
+        is_crypto = any(kw in symbol for kw in ["BTC", "ETH", "USDT", "CRYPTO", "APE", "ONDO", "NEAR", "AKE", "SOL", "XRP", "DOGE", "P-ETH", "P-BTC"])
+        is_forex_or_metal = any(kw in symbol for kw in ["GOLD", "XAU", "SILVER", "XAG", "EUR", "GBP", "USD", "JPY", "CHF", "AUD", "NZD", "CAD"])
+
+        if is_crypto or not is_forex_or_metal:
+            log.warning(f"[TELEGRAM_RESTRICTION] 🛑 Signal Symbol '{symbol}' rejected. Telegram signals are strictly restricted to Forex, Gold & Silver only.")
+            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Telegram Crypto Restriction: Symbol '{symbol}' rejected. Forex, Gold & Silver only.")
+            return {"status": "REJECTED", "reason": f"Telegram signals restricted to Forex, Gold & Silver only. Rejected '{symbol}'."}
+
         entry = trade_data.get("entry")
         sl = trade_data.get("sl")
         tp1 = trade_data.get("tp1")
