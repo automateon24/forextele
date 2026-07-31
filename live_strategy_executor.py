@@ -964,11 +964,17 @@ def process_symbol(symbol, base_dna):
                         df15['bull_fvg_flag'] = df15['low'] > df15['high'].shift(2)
                         df15['bear_fvg_flag'] = df15['high'] < df15['low'].shift(2)
 
-                        # Bullish Asian Sweep + FVG Retest
-                        if df15['low'].iloc[-3] < asian_low and pr_curr > asian_low and df15['bull_fvg_flag'].iloc[-6:-1].any() and dr in ("BUY", "BOTH"):
+                        # Check H1 trend structure
+                        h1_ema50 = df1h['close'].ewm(span=50).mean().iloc[-1]
+                        h1_ema200 = df1h['close'].ewm(span=200).mean().iloc[-1]
+                        h1_is_bull = h1_ema50 > h1_ema200
+                        h1_is_bear = h1_ema50 < h1_ema200
+
+                        # Bullish Asian Sweep + FVG Retest + H1 Bullish Confluence
+                        if df15['low'].iloc[-3] < asian_low and pr_curr > asian_low and df15['bull_fvg_flag'].iloc[-6:-1].any() and h1_is_bull and dr in ("BUY", "BOTH"):
                             place_order(symbol, "BUY", sn, dna=dna); last_trade_time=time.time(); can_trade=False
-                        # Bearish Asian Sweep + FVG Retest
-                        elif df15['high'].iloc[-3] > asian_high and pr_curr < asian_high and df15['bear_fvg_flag'].iloc[-6:-1].any() and dr in ("SELL", "BOTH"):
+                        # Bearish Asian Sweep + FVG Retest + H1 Bearish Confluence
+                        elif df15['high'].iloc[-3] > asian_high and pr_curr < asian_high and df15['bear_fvg_flag'].iloc[-6:-1].any() and h1_is_bear and dr in ("SELL", "BOTH"):
                             place_order(symbol, "SELL", sn, dna=dna); last_trade_time=time.time(); can_trade=False
 
                 except Exception as se:
