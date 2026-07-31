@@ -112,6 +112,36 @@ class SwarmPositionManager:
         else:
             log.info(f"🚨 DEAD TRADE EJECTOR: Force-closed position {ticket} ({symbol})")
 
+    def partial_scale_out_and_breakeven(self, pos):
+        """Execute 50% partial volume scale-out at TP1 and move SL to Entry (Breakeven)."""
+        symbol = pos.symbol
+        pos_type = "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL"
+        tick = mt5.symbol_info_tick(symbol)
+        if not tick: return
+
+        current_price = tick.bid if pos_type == "BUY" else tick.ask
+        pnl_points = (current_price - pos.price_open) if pos_type == "BUY" else (pos.price_open - current_price)
+        
+        info = mt5.symbol_info(symbol)
+        point = info.point if info else 0.0001
+        atr = self.calculate_atr(symbol)
+        atr_target_dist = atr * 1.5 if atr > 0 else (100 * point)
+
+        # Trigger partial close if profit >= 1.5x ATR distance and SL is not yet at breakeven
+        is_sl_at_be = abs(pos.sl - pos.price_open) < (5 * point) if pos.sl > 0 else False
+
+        if pnl_points >= atr_target_dist and not is_sl_at_be:
+            if pos.volume >= 0.02:
+                step = info.volume_step if info.volume_step > 0 else 0.01
+                close_vol = round((pos.volume / 2.0) / step) * step
+                close_vol = max(info.volume_min, min(close_vol, pos.volume))
+
+                log.info(f"🚀 PARTIAL PROFIT SCALING: Closing 50% lot ({close_vol}) for {symbol} at TP1 & Moving SL to Entry ({pos.price_open})")
+                self.close_position(pos.ticket, symbol, pos_type, close_vol, current_price)
+
+            # Move SL to Entry (Breakeven)
+            self.modify_sl(pos.ticket, symbol, pos.price_open, pos_type)
+
     async def run_loop(self):
         log.info("Trail Boss Engine Online. Monitoring active positions...")
         while True:
@@ -119,22 +149,23 @@ class SwarmPositionManager:
             if positions:
                 current_time = time.time()
                 for pos in positions:
-                    if pos.magic == 999999: # Only Swarm Trades
+                    if pos.magic in (777777, 888888, 999999): # Telegram & Strategy Swarm Trades
                         tick = mt5.symbol_info_tick(pos.symbol)
                         if tick is None or (current_time - tick.time > 300):
-                            # Skip if market is closed or offline (no new ticks in 5 mins, e.g. weekend Forex)
                             continue
                             
                         pos_type_str = "BUY" if pos.type == mt5.ORDER_TYPE_BUY else "SELL"
                         
+                        # --- PARTIAL PROFIT SCALING AT TP1 ---
+                        self.partial_scale_out_and_breakeven(pos)
+                        
                         # --- DEAD TRADE EJECTOR LOGIC ---
-                        # If trade is open > 45 mins and in loss, kill it
                         trade_duration_mins = (current_time - pos.time) / 60
                         if trade_duration_mins > 45 and pos.profit < 0:
                             log.warning(f"[DEAD_TRADE_EJECTOR] {pos.symbol} {pos_type_str} open for {trade_duration_mins:.1f}m in loss. EJECTING!")
                             current_price = mt5.symbol_info_tick(pos.symbol).bid if pos_type_str == "BUY" else mt5.symbol_info_tick(pos.symbol).ask
                             self.close_position(pos.ticket, pos.symbol, pos_type_str, pos.volume, current_price)
-                            continue # Skip the trailing stop logic below for this trade
+                            continue
                         
                         atr = self.calculate_atr(pos.symbol)
                         state_payload = {
