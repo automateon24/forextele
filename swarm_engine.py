@@ -6,6 +6,7 @@ import csv
 from datetime import datetime
 from pathlib import Path
 from real_mt5_execution import MT5ExecutionEngine
+from smc_confluence_engine import SMCConfluenceEngine
 import MetaTrader5 as mt5
 
 # ─── ML TRAINING DATA PATH ──────────────────────────────────────────────────
@@ -59,6 +60,7 @@ class OllamaSwarmEngine:
         self.ollama_url = ollama_url
         self.model = model
         self.mt5_engine = MT5ExecutionEngine()
+        self.smc_engine = SMCConfluenceEngine()
         with open(PROMPTS_FILE, "r") as f:
             self.prompts = json.load(f)
 
@@ -183,6 +185,26 @@ class OllamaSwarmEngine:
             log.warning(f"[TELEGRAM_RESTRICTION] 🛑 Signal Symbol '{symbol}' rejected. Telegram signals are strictly restricted to Forex, Gold & Silver only.")
             self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Telegram Crypto Restriction: Symbol '{symbol}' rejected. Forex, Gold & Silver only.")
             return {"status": "REJECTED", "reason": f"Telegram signals restricted to Forex, Gold & Silver only. Rejected '{symbol}'."}
+
+        # ── HYBRID TRI-CONFLUENCE ENGINE: SMC (Order Blocks, FVG, BOS) + MOMENTUM CATCH-UP ──
+        action = str(trade_data.get("action", "BUY")).upper()
+        smc_res = self.smc_engine.get_smc_analysis(symbol, action)
+        smc_score = smc_res.get("smc_confluence_score", 0.50)
+        is_strong_momentum = smc_res.get("is_strong_momentum", False)
+        structural_sl = smc_res.get("structural_sl", 0.0)
+
+        log.info(f"[SMC_CONFLUENCE] {symbol} {action} -> Confluence Score: {smc_score:.2f} | FVG Aligned: {smc_res.get('fvg_aligned')} | Momentum Ratio: {smc_res.get('momentum_ratio')}x ATR")
+
+        # CONVICTION VETO THRESHOLD
+        if smc_score < 0.35:
+            log.warning(f"[SMC_VETO] 🛑 Trade {symbol} {action} rejected due to weak SMC Confluence ({smc_score:.2f} < 0.35)")
+            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Low SMC Confluence Score: {smc_score:.2f}")
+            return {"status": "REJECTED", "reason": f"Low SMC Confluence Score: {smc_score:.2f}"}
+
+        # MOMENTUM CATCH-UP LOGIC: If strong candle momentum, switch to market catch order
+        if is_strong_momentum:
+            log.info(f"[MOMENTUM_CATCH] 🚀 High Candle Momentum ({smc_res.get('momentum_ratio')}x ATR)! Triggering Running Momentum Market Catch-Up Order.")
+            trade_data["entry"] = None
 
         entry = trade_data.get("entry")
         sl = trade_data.get("sl")
