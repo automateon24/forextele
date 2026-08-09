@@ -1,6 +1,7 @@
 # Virtual Environments
 Lib/
 Scripts/
+!scripts/
 __pycache__/
 *.pyc
 
