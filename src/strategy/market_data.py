@@ -13,10 +13,19 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - [MARKET_DATA] - %(
 
 def init_mt5():
     if not mt5.initialize():
-        if os.path.exists(CONFIG_PATH):
+        login = os.environ.get("MT5_LOGIN")
+        server = os.environ.get("MT5_SERVER")
+        password = os.environ.get("MT5_PASSWORD")
+
+        if not (login and server and password) and os.path.exists(CONFIG_PATH):
             with open(CONFIG_PATH) as f:
                 cfg = json.load(f)
-            mt5.initialize(login=cfg.get('login'), server=cfg.get('server'), password=cfg.get('password'))
+            login = cfg.get('login')
+            server = cfg.get('server')
+            password = cfg.get('password')
+
+        if login and server and password:
+            mt5.initialize(login=int(login), server=server, password=password)
     return mt5.terminal_info() is not None
 
 def main():

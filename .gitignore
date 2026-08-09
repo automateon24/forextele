@@ -19,5 +19,5 @@ __pycache__/
 *.parquet
 backtest_highres_signals.csv
 *.joblib
-mt5_config.json
+*config.json
 *.csv
