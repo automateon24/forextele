@@ -11,11 +11,11 @@ from src.strategy.london_breakout import LondonBreakoutStrategy
 def test_london_breakout_buy():
     strategy = LondonBreakoutStrategy(symbol="EURUSD", lookback=3)
     data = {
-        'time': [1, 2, 3, 4],
-        'open': [1.1, 1.1, 1.1, 1.1],
-        'high': [1.11, 1.12, 1.10, 1.15],
-        'low': [1.09, 1.08, 1.09, 1.11],
-        'close': [1.1, 1.1, 1.1, 1.14]
+        'time': [1, 2, 3, 4, 5],
+        'open': [1.1, 1.1, 1.1, 1.1, 1.14],
+        'high': [1.11, 1.12, 1.10, 1.15, 1.16],
+        'low': [1.09, 1.08, 1.09, 1.11, 1.13],
+        'close': [1.1, 1.1, 1.1, 1.14, 1.15]
     }
     df = pd.DataFrame(data)
     signal = strategy.analyze(df)
@@ -27,11 +27,11 @@ def test_london_breakout_buy():
 def test_london_breakout_no_signal():
     strategy = LondonBreakoutStrategy(symbol="EURUSD", lookback=3)
     data = {
-        'time': [1, 2, 3, 4],
-        'open': [1.1, 1.1, 1.1, 1.1],
-        'high': [1.11, 1.12, 1.10, 1.11],
-        'low': [1.09, 1.08, 1.09, 1.09],
-        'close': [1.1, 1.1, 1.1, 1.1]
+        'time': [1, 2, 3, 4, 5],
+        'open': [1.1, 1.1, 1.1, 1.1, 1.1],
+        'high': [1.11, 1.12, 1.10, 1.11, 1.12],
+        'low': [1.09, 1.08, 1.09, 1.09, 1.10],
+        'close': [1.1, 1.1, 1.1, 1.1, 1.11]
     }
     df = pd.DataFrame(data)
     signal = strategy.analyze(df)
