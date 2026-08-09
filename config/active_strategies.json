@@ -3,9 +3,7 @@
     "EURUSD"
   ],
   "active_strategies": [
-    "LONDON_BREAKOUT",
-    "MEAN_REVERSION",
-    "TREND_MOMENTUM",
+    "ASIAN_RANGE_SCALP",
     "SMC_ORDER_BLOCK"
   ]
 }

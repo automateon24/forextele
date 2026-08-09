@@ -22,13 +22,18 @@ from src.strategy.rsi_reversal import RSIReversalStrategy
 from src.strategy.ema_trend_pullback import EMATrendPullbackStrategy
 from src.strategy.ny_open_breakout import NYOpenBreakoutStrategy
 from src.strategy.bollinger_mean_reversion import BollingerMeanReversionStrategy
+from src.strategy.london_breakout_v2 import LondonBreakoutV2Strategy
+from src.strategy.vwap_mean_reversion import VWAPMeanReversionStrategy
+from src.strategy.orb_opening_range_breakout import ORBOpeningRangeBreakoutStrategy
+from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
+from src.strategy.fvg_retest import FVGRetestStrategy
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Automated Batch Backtest Runner")
     parser.add_argument("--symbol", type=str, default="EURUSD", help="Symbol to test (e.g., XAUUSD)")
     parser.add_argument("--timeframe", type=str, default="H1", help="Timeframe (e.g., M15, H1)")
     parser.add_argument("--bars", type=int, default=3000, help="Number of historical bars to fetch")
-    parser.add_argument("--strategies", type=str, default="LONDON_BREAKOUT,MEAN_REVERSION,TREND_MOMENTUM,SMC_ORDER_BLOCK,ASIAN_RANGE_SCALP,RSI_REVERSAL,EMA_TREND_PULLBACK,NY_OPEN_BREAKOUT,BOLLINGER_MEAN_REVERSION", help="Comma-separated strategy IDs")
+    parser.add_argument("--strategies", type=str, default="LONDON_BREAKOUT,MEAN_REVERSION,TREND_MOMENTUM,SMC_ORDER_BLOCK,ASIAN_RANGE_SCALP,RSI_REVERSAL,EMA_TREND_PULLBACK,NY_OPEN_BREAKOUT,BOLLINGER_MEAN_REVERSION,LONDON_BREAKOUT_V2,VWAP_MEAN_REVERSION,ORB_OPENING_RANGE_BREAKOUT,SUPERTREND_PULLBACK,FVG_RETEST", help="Comma-separated strategy IDs")
     parser.add_argument("--capital", type=float, default=1500.0, help="Initial capital")
     parser.add_argument("--spread", type=float, default=0.00010, help="Spread in points/pips")
     parser.add_argument("--commission", type=float, default=7.0, help="Commission per lot round-turn")
@@ -86,6 +91,16 @@ def main():
         strategies.append(NYOpenBreakoutStrategy(symbol=args.symbol))
     if "BOLLINGER_MEAN_REVERSION" in strategy_names:
         strategies.append(BollingerMeanReversionStrategy(symbol=args.symbol))
+    if "LONDON_BREAKOUT_V2" in strategy_names:
+        strategies.append(LondonBreakoutV2Strategy(symbol=args.symbol))
+    if "VWAP_MEAN_REVERSION" in strategy_names:
+        strategies.append(VWAPMeanReversionStrategy(symbol=args.symbol))
+    if "ORB_OPENING_RANGE_BREAKOUT" in strategy_names:
+        strategies.append(ORBOpeningRangeBreakoutStrategy(symbol=args.symbol))
+    if "SUPERTREND_PULLBACK" in strategy_names:
+        strategies.append(SupertrendPullbackStrategy(symbol=args.symbol))
+    if "FVG_RETEST" in strategy_names:
+        strategies.append(FVGRetestStrategy(symbol=args.symbol))
         
     cost_model = CostModel(spread_points=args.spread, commission_per_lot=args.commission)
     
