@@ -88,6 +88,12 @@ def load_active_strategies():
     if "SMC_ORDER_BLOCK" in config.get("active_strategies", []):
         from src.strategy.smc_order_block import SMCOrderBlockStrategy
         strategies.append(SMCOrderBlockStrategy(symbol=symbol))
+    if "ASIAN_RANGE_SCALP" in config.get("active_strategies", []):
+        from src.strategy.asian_range_scalp import AsianRangeScalpStrategy
+        strategies.append(AsianRangeScalpStrategy(symbol=symbol))
+    if "LONDON_BREAKOUT_V2" in config.get("active_strategies", []):
+        from src.strategy.london_breakout_v2 import LondonBreakoutV2Strategy
+        strategies.append(LondonBreakoutV2Strategy(symbol=symbol))
         
     return strategies, symbol
 

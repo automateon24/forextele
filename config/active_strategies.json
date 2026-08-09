@@ -4,6 +4,6 @@
   ],
   "active_strategies": [
     "ASIAN_RANGE_SCALP",
-    "SMC_ORDER_BLOCK"
+    "LONDON_BREAKOUT_V2"
   ]
 }
