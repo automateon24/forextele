@@ -32,6 +32,12 @@ class BacktestEngine:
                         self.trades.append(trade)
                         
         logger.info(f"Engine completed. {len(self.trades)} trades simulated.")
+        
+        # Sanity Check 2: Total Return Limit
+        total_pnl = sum(t['pnl'] for t in self.trades)
+        if total_pnl > (self.capital * 5.0): # 500% return
+            raise ValueError(f"PnL scale implausible. Total return > 500% (${total_pnl:.2f}). Failing backtest.")
+            
         return pd.DataFrame(self.trades)
 
     def _simulate_execution(self, signal: SignalMessage, current_idx: int) -> Dict[str, Any]:
@@ -86,10 +92,18 @@ class BacktestEngine:
             exit_time = last_bar['time']
             exit_price = self.cost_model.apply_exit_cost(last_bar['close'], signal.side)
             
-        # Calculate PnL (Monetary)
-        gross_pnl_points = (exit_price - entry_price) if signal.side == "BUY" else (entry_price - exit_price)
-        gross_pnl_money = gross_pnl_points * volume * point_value
+        # Calculate PnL using centralized symbol specs
+        from src.backtest.symbol_specs import get_symbol_spec, calculate_pnl
+        spec = get_symbol_spec(signal.symbol)
+        
+        gross_pnl_money = calculate_pnl(signal.symbol, signal.side, entry_price, exit_price, volume, spec)
         net_pnl_money = gross_pnl_money - self.cost_model.get_commission_cost(volume)
+        
+        # Sanity Check 1: Single Trade Limit
+        if abs(net_pnl_money) > (self.capital * 1.0):
+            logger.warning(f"Implausible single trade PnL detected: ${net_pnl_money:.2f} on {volume} lots of {signal.symbol}. Check specs!")
+            # Hard assert to fail fast as requested by Grok
+            assert abs(net_pnl_money) <= (self.capital * 1.0), f"Implausible PnL: ${net_pnl_money:.2f}"
         
         return {
             "symbol": signal.symbol,
