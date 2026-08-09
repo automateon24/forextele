@@ -75,36 +75,37 @@ def load_active_strategies():
         config = json.load(f)
         
     strategies = []
-    symbol = config.get("active_symbols", ["EURUSD"])[0] # Run on first active symbol for now
+    symbols = config.get("active_symbols", ["EURUSD"])
     
-    if "LONDON_BREAKOUT" in config.get("active_strategies", []):
-        strategies.append(LondonBreakoutStrategy(symbol=symbol))
-    if "MEAN_REVERSION" in config.get("active_strategies", []):
-        from src.strategy.mean_reversion import MeanReversionStrategy
-        strategies.append(MeanReversionStrategy(symbol=symbol))
-    if "TREND_MOMENTUM" in config.get("active_strategies", []):
-        from src.strategy.trend_momentum import TrendMomentumStrategy
-        strategies.append(TrendMomentumStrategy(symbol=symbol))
-    if "SMC_ORDER_BLOCK" in config.get("active_strategies", []):
-        from src.strategy.smc_order_block import SMCOrderBlockStrategy
-        strategies.append(SMCOrderBlockStrategy(symbol=symbol))
-    if "ASIAN_RANGE_SCALP" in config.get("active_strategies", []):
-        from src.strategy.asian_range_scalp import AsianRangeScalpStrategy
-        strategies.append(AsianRangeScalpStrategy(symbol=symbol))
-    if "LONDON_BREAKOUT_V2" in config.get("active_strategies", []):
-        from src.strategy.london_breakout_v2 import LondonBreakoutV2Strategy
-        strategies.append(LondonBreakoutV2Strategy(symbol=symbol))
-        
-    return strategies, symbol
+    for symbol in symbols:
+        if "LONDON_BREAKOUT" in config.get("active_strategies", []):
+            strategies.append(LondonBreakoutStrategy(symbol=symbol))
+        if "MEAN_REVERSION" in config.get("active_strategies", []):
+            from src.strategy.mean_reversion import MeanReversionStrategy
+            strategies.append(MeanReversionStrategy(symbol=symbol))
+        if "TREND_MOMENTUM" in config.get("active_strategies", []):
+            from src.strategy.trend_momentum import TrendMomentumStrategy
+            strategies.append(TrendMomentumStrategy(symbol=symbol))
+        if "SMC_ORDER_BLOCK" in config.get("active_strategies", []):
+            from src.strategy.smc_order_block import SMCOrderBlockStrategy
+            strategies.append(SMCOrderBlockStrategy(symbol=symbol))
+        if "ASIAN_RANGE_SCALP" in config.get("active_strategies", []):
+            from src.strategy.asian_range_scalp import AsianRangeScalpStrategy
+            strategies.append(AsianRangeScalpStrategy(symbol=symbol))
+        if "LONDON_BREAKOUT_V2" in config.get("active_strategies", []):
+            from src.strategy.london_breakout_v2 import LondonBreakoutV2Strategy
+            strategies.append(LondonBreakoutV2Strategy(symbol=symbol))
+            
+    return strategies, symbols
 
-def run_session(iterations: int = 17280):
+def run_session():
     logger.info("Initializing Live MT5 Connection...")
     if not init_mt5():
         logger.error("MT5 Initialization failed. Halting.")
         return
         
-    strategies, symbol = load_active_strategies()
-    logger.info(f"Loaded {len(strategies)} strategies for {symbol}")
+    strategies, symbols = load_active_strategies()
+    logger.info(f"Loaded {len(strategies)} strategies across symbols: {', '.join(symbols)}")
     
     risk_engine = RiskEvaluator()
     execution_gateway = ExecutionRouter()
@@ -112,36 +113,43 @@ def run_session(iterations: int = 17280):
     # We fetch enough candles to satisfy the hungriest strategy
     max_lookback = max(s.min_bars for s in strategies) if strategies else 50
     
-    for i in range(iterations):
-        logger.info(f"--- Orchestrator Loop {i+1}/{iterations} ---")
+    logger.info("Starting infinite orchestrator loop. Press Ctrl+C to stop.")
+    
+    while True:
         try:
             # 1. Live Portfolio Snapshot
             portfolio = build_live_portfolio_snapshot()
             risk_engine.portfolio = portfolio
             
-            # 2. Live Market Data
-            df = fetch_live_candles(symbol, mt5.TIMEFRAME_H1, max_lookback + 5)
-            
-            if len(df) < max_lookback:
-                logger.warning("Not enough candles fetched.")
-                continue
+            # 2. Process each symbol
+            for symbol in symbols:
+                df = fetch_live_candles(symbol, mt5.TIMEFRAME_H1, max_lookback + 5)
                 
-            # 3. Strategy Evaluation (Multi-Strategy)
-            for strategy in strategies:
-                signal = strategy.analyze(df)
-                if signal:
-                    logger.info(f"[{strategy.strategy_id}] Signal Generated: {signal.side} {signal.symbol} @ {signal.suggested_entry_price}")
+                if len(df) < max_lookback:
+                    logger.warning(f"Not enough candles fetched for {symbol}.")
+                    continue
                     
-                    # 4. Risk Evaluation
-                    decision = risk_engine.evaluate(signal)
-                    logger.info(f"[{strategy.strategy_id}] Risk Decision: {decision.decision} ({decision.reason_code})")
-                    
-                    # 5. Execution
-                    if decision.decision in ["ALLOW", "ALLOW_REDUCED"]:
-                        logger.info(f"[{strategy.strategy_id}] Sending to Execution Gateway...")
-                        fill_report = execution_gateway.execute(decision)
-                        logger.info(f"[{strategy.strategy_id}] Execution Report: {fill_report.status} (Reason: {fill_report.reject_reason})")
+                # 3. Strategy Evaluation (Multi-Strategy)
+                symbol_strategies = [s for s in strategies if s.symbol == symbol]
                 
+                for strategy in symbol_strategies:
+                    signal = strategy.analyze(df)
+                    if signal:
+                        logger.info(f"[{strategy.strategy_id}] Signal Generated: {signal.side} {signal.symbol} @ {signal.suggested_entry_price}")
+                        
+                        # 4. Risk Evaluation
+                        decision = risk_engine.evaluate(signal)
+                        logger.info(f"[{strategy.strategy_id}] Risk Decision: {decision.decision} ({decision.reason_code})")
+                        
+                        # 5. Execution
+                        if decision.decision in ["ALLOW", "ALLOW_REDUCED"]:
+                            logger.info(f"[{strategy.strategy_id}] Sending to Execution Gateway...")
+                            fill_report = execution_gateway.execute(decision)
+                            logger.info(f"[{strategy.strategy_id}] Execution Report: {fill_report.status} (Reason: {fill_report.reject_reason})")
+                    
+        except KeyboardInterrupt:
+            logger.info("Keyboard interrupt received. Shutting down...")
+            break
         except Exception as e:
             logger.error(f"Error in orchestrator loop: {e}", exc_info=True)
             

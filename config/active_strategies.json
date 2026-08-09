@@ -1,6 +1,6 @@
-{
   "active_symbols": [
-    "EURUSD"
+    "EURUSD",
+    "GOLD"
   ],
   "active_strategies": [
     "ASIAN_RANGE_SCALP",
