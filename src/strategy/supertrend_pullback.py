@@ -26,8 +26,8 @@ class SupertrendPullbackStrategy:
         if pd.isna(current_adx) or pd.isna(st_df['supertrend'].iloc[-1]):
             return None
             
-        # Trend filter
-        if current_adx <= 25:
+        # Trend filter relaxed
+        if current_adx <= 20:
             return None
             
         latest_closed = lookback_df.iloc[-1]

@@ -32,17 +32,17 @@ class VWAPMeanReversionStrategy:
         if pd.isna(current_adx) or pd.isna(current_vwap):
             return None
             
-        # Range filter
-        if current_adx >= 20:
+        # Range filter relaxed to allow more trades
+        if current_adx >= 30:
             return None
             
         latest_closed = daily_df.iloc[-1]
         
-        # Fade extreme deviations: assume 0.0030 deviation is extreme for EURUSD
+        # Fade extreme deviations: relaxed to 0.0015
         deviation = latest_closed['close'] - current_vwap
         
-        is_buy = deviation < -0.0030
-        is_sell = deviation > 0.0030
+        is_buy = deviation < -0.0015
+        is_sell = deviation > 0.0015
         
         if is_buy:
             sl = latest_closed['close'] - 0.0020

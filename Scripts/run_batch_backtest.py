@@ -27,13 +27,14 @@ from src.strategy.vwap_mean_reversion import VWAPMeanReversionStrategy
 from src.strategy.orb_opening_range_breakout import ORBOpeningRangeBreakoutStrategy
 from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
 from src.strategy.fvg_retest import FVGRetestStrategy
+from src.strategy.london_session_scalp import LondonSessionScalpStrategy
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Automated Batch Backtest Runner")
     parser.add_argument("--symbol", type=str, default="EURUSD", help="Symbol to test (e.g., XAUUSD)")
     parser.add_argument("--timeframe", type=str, default="H1", help="Timeframe (e.g., M15, H1)")
     parser.add_argument("--bars", type=int, default=3000, help="Number of historical bars to fetch")
-    parser.add_argument("--strategies", type=str, default="LONDON_BREAKOUT,MEAN_REVERSION,TREND_MOMENTUM,SMC_ORDER_BLOCK,ASIAN_RANGE_SCALP,RSI_REVERSAL,EMA_TREND_PULLBACK,NY_OPEN_BREAKOUT,BOLLINGER_MEAN_REVERSION,LONDON_BREAKOUT_V2,VWAP_MEAN_REVERSION,ORB_OPENING_RANGE_BREAKOUT,SUPERTREND_PULLBACK,FVG_RETEST", help="Comma-separated strategy IDs")
+    parser.add_argument("--strategies", type=str, default="LONDON_BREAKOUT,MEAN_REVERSION,TREND_MOMENTUM,SMC_ORDER_BLOCK,ASIAN_RANGE_SCALP,RSI_REVERSAL,EMA_TREND_PULLBACK,NY_OPEN_BREAKOUT,BOLLINGER_MEAN_REVERSION,LONDON_BREAKOUT_V2,VWAP_MEAN_REVERSION,ORB_OPENING_RANGE_BREAKOUT,SUPERTREND_PULLBACK,FVG_RETEST,LONDON_SESSION_SCALP", help="Comma-separated strategy IDs")
     parser.add_argument("--capital", type=float, default=1500.0, help="Initial capital")
     parser.add_argument("--spread", type=float, default=0.00010, help="Spread in points/pips")
     parser.add_argument("--commission", type=float, default=7.0, help="Commission per lot round-turn")
@@ -101,6 +102,8 @@ def main():
         strategies.append(SupertrendPullbackStrategy(symbol=args.symbol))
     if "FVG_RETEST" in strategy_names:
         strategies.append(FVGRetestStrategy(symbol=args.symbol))
+    if "LONDON_SESSION_SCALP" in strategy_names:
+        strategies.append(LondonSessionScalpStrategy(symbol=args.symbol))
         
     cost_model = CostModel(spread_points=args.spread, commission_per_lot=args.commission)
     

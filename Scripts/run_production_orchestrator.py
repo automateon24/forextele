@@ -97,7 +97,7 @@ def load_active_strategies():
         
     return strategies, symbol
 
-def run_session(iterations: int = 5):
+def run_session(iterations: int = 17280):
     logger.info("Initializing Live MT5 Connection...")
     if not init_mt5():
         logger.error("MT5 Initialization failed. Halting.")
