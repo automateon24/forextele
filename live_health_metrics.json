@@ -1,0 +1,24 @@
+{
+    "history": [
+        {
+            "symbol": "GBPUSD",
+            "entry_price": 1.34636,
+            "sl": 1.343,
+            "tp": 1.35646,
+            "volume": 0.13,
+            "open_time": "2026-08-07T11:11:12.903716",
+            "comment": "SWARM:MOMENTUM_CROSS",
+            "close_time": "2026-08-07T11:12:22.909974"
+        },
+        {
+            "symbol": "AUDUSD",
+            "entry_price": 0.70381,
+            "sl": 0.70557,
+            "tp": 0.69853,
+            "volume": 0.1,
+            "open_time": "2026-08-07T11:11:12.903775",
+            "comment": "SWARM:FVG_PULLBACK",
+            "close_time": "2026-08-07T11:12:22.911853"
+        }
+    ]
+}

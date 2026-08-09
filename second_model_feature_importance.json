@@ -1,0 +1,54 @@
+{
+  "symbol_AUDUSD": 0.0034754743146274756,
+  "symbol_BTCUSD": 0.012048019687891848,
+  "symbol_ETHUSD": 0.012148592418142,
+  "symbol_EURUSD": 0.015188246934515436,
+  "symbol_GBPUSD": 0.01193951824931694,
+  "symbol_GOLD": 0.014618975913746965,
+  "symbol_SILVER": 0.009498638114102332,
+  "symbol_USDJPY": 0.031202213005200815,
+  "strategy_ASIAN_RANGE_SCALP": 0.004861272659201939,
+  "strategy_ENHANCED_BEARISH": 0.00753302543233154,
+  "strategy_INSTITUTIONAL_SUPPORT": 0.008781068906062707,
+  "strategy_MACD_DIVERGENCE": 0.012920324990971609,
+  "strategy_MEAN_REVERSION": 0.010734069918077889,
+  "strategy_ORDER_BLOCK_REVERSAL": 0.00811688705751376,
+  "strategy_VOLUME_CLIMAX": 0.005321226279193245,
+  "strategy_WIDE_RANGE_RIDER": 0.007163937201382014,
+  "direction_BUY": 0.02460644132196051,
+  "direction_SELL": 0.03241505860970442,
+  "session_ASIAN": 0.004315528481329418,
+  "session_LONDON": 0.012251564792784974,
+  "session_NY": 0.0065286712215919095,
+  "session_US": 0.010866528173961438,
+  "hour": 0.04797882732104931,
+  "weekday": 0.04483233351805137,
+  "rsi_val": 0.061684211979741874,
+  "adx_val": 0.08517885961101963,
+  "atr": 0.18852226067038255,
+  "sl_pts": 0.1755849297665212,
+  "tp_pts": 0.129683293449623,
+  "_best_model": "RandomForest",
+  "_metrics": {
+    "HistGradientBoosting": {
+      "accuracy": 0.4763582966226138,
+      "f1_weighted": 0.45466050062944413,
+      "roc_auc": 0.470571217611864,
+      "best_params": {
+        "clf__learning_rate": 0.05,
+        "clf__max_depth": 3,
+        "clf__max_iter": 200
+      }
+    },
+    "RandomForest": {
+      "accuracy": 0.4943710230053842,
+      "f1_weighted": 0.48626242774725476,
+      "roc_auc": 0.48552783943578465,
+      "best_params": {
+        "clf__max_depth": null,
+        "clf__min_samples_split": 5,
+        "clf__n_estimators": 200
+      }
+    }
+  }
+}

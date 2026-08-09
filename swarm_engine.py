@@ -78,13 +78,18 @@ class OllamaSwarmEngine:
         }
         
         async with httpx.AsyncClient(timeout=45.0) as client:
-            try:
-                resp = await client.post(self.ollama_url, json=payload)
-                resp.raise_for_status()
-                return resp.json().get("response", "").strip()
-            except Exception as e:
-                log.error(f"Ollama API Error: {e}")
-                return ""
+            for attempt in range(3):
+                try:
+                    resp = await client.post(self.ollama_url, json=payload)
+                    resp.raise_for_status()
+                    return resp.json().get("response", "").strip()
+                except Exception as e:
+                    if attempt < 2:
+                        log.warning(f"Ollama API Error (Attempt {attempt+1}): {e}. Retrying in 5 seconds...")
+                        await asyncio.sleep(5)
+                    else:
+                        log.error(f"Ollama API Error: {e}. Max retries reached.")
+                        return ""
 
     async def process_telegram_signal(self, raw_message: str, channel_name: str = "Unknown", account_id: str = "Unknown"):
         """

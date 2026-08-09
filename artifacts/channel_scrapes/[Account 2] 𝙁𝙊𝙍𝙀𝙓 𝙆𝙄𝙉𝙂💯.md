@@ -1,0 +1,187 @@
+# Channel Name: 𝙁𝙊𝙍𝙀𝙓 𝙆𝙄𝙉𝙂💯
+# Channel ID: 1917624782
+# Telegram Account: Account 2 (Vinay)
+Scraped for Date: 2026-07-15
+
+### Message at 02:28:56 UTC
+```text
+**🤲 یا فَتّاحُ، یا رَزّاقُ ✨
+O Allah, open the doors of success, remove our difficulties, and bless our efforts.
+Ameen 🤍**
+```
+
+---
+
+### Message at 02:29:33 UTC
+```text
+**I Will Manage Small Account  300$ 400$ 500$ 600$ 800$ 1000$
+Your Small Account double in one day
+Profit share 50%50
+Contact👉  ****@forexking1132**
+```
+
+---
+
+### Message at 02:31:53 UTC
+```text
+**If you want to grow your account 
+
+Send me  ( Help ) massage ❤️
+
+Contact now **
+```
+
+---
+
+### Message at 02:32:28 UTC
+```text
+**Who Is Ready 
+Who Is Want Big Profit 
+Who Is Want Safe Trading 
+Who Is Want Recover Loss
+Who Is Want Work With Me
+
+****@forexking1132**
+```
+
+---
+
+### Message at 02:37:01 UTC
+```text
+**Account management is Available 
+
+100$           daily profit 300$
+
+200$           daily profit 500$
+
+400$           daily profit 600$
+
+500$           daily profit 800$
+
+600$           daily profit 1000$
+
+700$           daily profit 1200$
+
+800$           daily profit 1400$
+
+1000$           daily profit 2000$
+
+Profit Sharing 50//50 daily
+
+And above safe work  safe trading  no risk no Loss  guarantee 
+
+Contact admin **
+```
+
+---
+
+### Message at 02:40:18 UTC
+```text
+**Lossser Brother/Sisters
+
+Don't miss out on this everyday's market opportunities! ⬇️⬇️
+
+Maximize your profits while minimizing risk with our expert Account Management Service
+
+join us today 🎉 ****@forexking1132**
+```
+
+---
+
+### Message at 02:41:25 UTC
+```text
+**Account Management Service Available 
+
+Minimum start 400$ to 50k$
+
+Interested Client's Knock ****@forexking1132**
+```
+
+---
+
+### Message at 02:45:12 UTC
+```text
+🙋🏿**Interested Clients Contact Me For The Best Account Management Service
+
+🚫No Risk
+🚫No Loss
+🚫Safe Your Equity
+🚫Safe Your Money 💰
+🚫100% Confirm signal's
+🚫100% Gurranteable Profit
+🚫100% Safe Account Management
+🚫Only Use Small Lot Size 
+🚫Profit Share 50/50%
+
+Contact Me**
+```
+
+---
+
+### Message at 05:20:26 UTC
+```text
+**📈 Join our Professional Account Management service.
+
+💰 Minimum Deposit: • $300 • $500 • $1,000 • $2,000 • $5,000 • Up to $100,000
+📩 Contact with ****@forexking1132**
+```
+
+---
+
+### Message at 05:25:17 UTC
+```text
+**Hi investor
+ For trust development in account management you can start small with us for testing  once the trust has been developed you can increase the capital feel free to try out easy money making account management with us
+
+let's grow you're account to 100k$ or even more**
+```
+
+---
+
+### Message at 05:25:39 UTC
+```text
+**Your  Account in Running Loss?
+
+No Worries! I can recover and manage your trading account professionally 
+90%-95% Signal Accuracy
+Controlled Risk & Drawdown
+Daily Profit with Smart Management
+
+I am online now**
+```
+
+---
+
+### Message at 12:20:16 UTC
+```text
+**#XAUUSD**** SELL   4045-4047
+
+TP 4040
+TP 4030
+TP 4020
+TP 4010
+
+SL. 4057**
+```
+
+---
+
+### Message at 12:46:43 UTC
+```text
+**How much is your account running loss 
+
+Stuck Clint account running too much loss 
+Knock me message me I will help**
+```
+
+---
+
+### Message at 12:51:28 UTC
+```text
+**Any people have small equity then don't worry I will manage your account 100$ 150$ 200$
+
+Connect me ✅👍**
+```
+
+---
+

@@ -1,0 +1,388 @@
+# Channel Name: 🅱️🅸🆃🅲🅾️🅸🅽
+# Channel ID: 1630560787
+# Telegram Account: Account 2 (Vinay)
+Scraped for Date: 2026-07-15
+
+### Message at 01:13:39 UTC
+```text
+scan
+```
+
+---
+
+### Message at 01:55:39 UTC
+```text
+Puzzle 71 remains unsolved; a single 5090 would take 10,000 years to run.Joining pool is one solution, allowing for a small share of the reward if it's solved, but so far only 0.88% of the entire Puzzle 71 range has been scanned.
+```
+
+---
+
+### Message at 01:59:09 UTC
+```text
+Let's buy lottery tickets instead, lol 😂
+```
+
+---
+
+### Message at 02:04:39 UTC
+```text
+I have and if you see every block jumps in certain amount so the key is to concentrate in a range of block whereas you might have more luck
+```
+
+---
+
+### Message at 03:38:51 UTC
+```text
+Forget the 71 puzzle what about the 256 bits .bin that can be shared....... this group talks of cracking and yet there is a potential and still nope.......lol
+```
+
+---
+
+### Message at 05:05:38 UTC
+```text
+Crack my bitcoin wallet address and get 0.155 btc + 0.5BTC
+https://bitcointalk.org/index.php?topic=1883978.0
+```
+
+---
+
+### Message at 05:06:05 UTC
+```text
+A real wallet posted by the owner
+```
+
+---
+
+### Message at 05:06:53 UTC
+```text
+If any of you decrypts it. 
+Please give me a cut
+```
+
+---
+
+### Message at 05:07:15 UTC
+```text
+i can make one wallet of this info  and tray to crack
+```
+
+---
+
+### Message at 05:07:33 UTC
+```text
+Please do....
+```
+
+---
+
+### Message at 05:08:02 UTC
+```text
+There is a 1.5 bitcoin price on it
+```
+
+---
+
+### Message at 05:09:28 UTC
+```text
+??
+```
+
+---
+
+### Message at 05:10:28 UTC
+```text
+Open the link I shared on your browser
+```
+
+---
+
+### Message at 05:10:35 UTC
+```text
+Which wallet?
+```
+
+---
+
+### Message at 05:10:56 UTC
+```text
+This one
+```
+
+---
+
+### Message at 05:12:45 UTC
+```text
+Scam
+```
+
+---
+
+### Message at 05:13:59 UTC
+```text
+ADM
+```
+
+---
+
+### Message at 05:21:38 UTC
+```text
+Scammer
+```
+
+---
+
+### Message at 05:22:55 UTC
+```text
+Scammer
+```
+
+---
+
+### Message at 05:26:44 UTC
+```text
+He asked for my ETH address, thinking I was bluffing; when I actually sent it, he revealed himself to be the scammer he is.
+```
+
+---
+
+### Message at 05:27:02 UTC
+```text
+...
+```
+
+---
+
+### Message at 05:27:14 UTC
+```text
+.....
+```
+
+---
+
+### Message at 05:27:53 UTC
+```text
+The scammer's second telegram account 😂 😂 😂
+```
+
+---
+
+### Message at 05:28:45 UTC
+```text
+The scammer even tried to delete the conversation, but I took screenshots beforehand.
+```
+
+---
+
+### Message at 05:30:52 UTC
+```text
+No tool is sold here... 
+Either share for free or don't share
+```
+
+---
+
+### Message at 05:31:00 UTC
+```text
+This group is a total shitshow, man. Back when I was an admin, some asshole like that would only have had time to write the first message.
+```
+
+---
+
+### Message at 05:31:13 UTC
+```text
+Nothing is sold here
+```
+
+---
+
+### Message at 05:31:55 UTC
+```text
+They look like a plague.
+```
+
+---
+
+### Message at 05:32:27 UTC
+```text
+Shove that fake screenshot up your ass, scammer.
+```
+
+---
+
+### Message at 05:32:32 UTC
+```text
+Hahaha
+```
+
+---
+
+### Message at 05:33:18 UTC
+```text
+And you are the one asking for money here....  😂 😂 😂
+```
+
+---
+
+### Message at 05:34:02 UTC
+```text
+The guy has a supposedly revolutionary tool and sells plans for $99 hahaha
+```
+
+---
+
+### Message at 05:34:36 UTC
+```text
+When I asked to deposit into my ETH account, they came up with an excuse.
+```
+
+---
+
+### Message at 05:35:03 UTC
+```text
+@bekli23
+```
+
+---
+
+### Message at 05:35:11 UTC
+```text
+SCAMMER ALERT
+```
+
+---
+
+### Message at 05:36:02 UTC
+```text
+No need to argue with him... 
+You warned everyone in time
+```
+
+---
+
+### Message at 05:38:10 UTC
+```text
+Your actual job the scammer job you got that right.
+```
+
+---
+
+### Message at 05:39:22 UTC
+```text
+Stop talking shit; everyone knows it's another Telegram of his. Hahaha
+```
+
+---
+
+### Message at 05:41:05 UTC
+```text
+WARNING: Only a sucker buys something that is so obviously a scam. End
+```
+
+---
+
+### Message at 05:42:02 UTC
+```text
+Who is the scammer?
+```
+
+---
+
+### Message at 05:42:16 UTC
+```text
+Here
+```
+
+---
+
+### Message at 05:43:57 UTC
+```text
+Other telegram
+```
+
+---
+
+### Message at 10:46:56 UTC
+```text
+He posted the password hash for hashcat or jtr on the third page
+```
+
+---
+
+### Message at 11:04:35 UTC
+```text
+0 hint of what will be password
+```
+
+---
+
+### Message at 11:10:32 UTC
+```text
+He posted all passwords he normally use on the first page
+```
+
+---
+
+### Message at 11:11:26 UTC
+```text
+wait i make wallet
+```
+
+---
+
+### Message at 11:50:22 UTC
+```text
+Would it be a machine for creating fake wallets, or just for testing?
+```
+
+---
+
+### Message at 11:51:31 UTC
+```text
+for my testing
+```
+
+---
+
+### Message at 11:53:18 UTC
+```text
+https://t.me/BitcoinCrackOfficial/119655
+```
+
+---
+
+### Message at 11:54:58 UTC
+```text
+When do you think the software will be ready after all the tests?
+```
+
+---
+
+### Message at 11:55:37 UTC
+```text
+software not public sorry
+```
+
+---
+
+### Message at 12:30:52 UTC
+```text
+what part of crypto space.
+crypto has many sub division dont makes reference as if you know all. i help clients trade and increase their earnings on futures trading if their don't trust they wont give me access to their money. trust has to do with individual personality
+```
+
+---
+
+### Message at 12:35:20 UTC
+```text
+That's great, but you're talking about yourself; you can't vouch for others.
+```
+
+---
+
+### Message at 12:36:39 UTC
+```text
+now this looks confirmed real wallet issue
+```
+
+---
+

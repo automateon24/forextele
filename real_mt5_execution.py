@@ -88,7 +88,7 @@ class MT5ExecutionEngine:
         
         # ABSOLUTE HARD SAFETY GOVERNOR CAP: Never exceed 1.00 lot under any circumstances
         HARD_MAX_LOT = 1.00
-        calculated_lot = max(info.volume_min, min(scaled_lot, info.volume_max, HARD_MAX_LOT))
+        calculated_lot = max(max(0.02, info.volume_min), min(scaled_lot, info.volume_max, HARD_MAX_LOT))
         log.info(f"[{symbol}] Calculated lot size: {calculated_lot:.2f} (raw={scaled_lot:.2f}, max_cap={HARD_MAX_LOT})")
         return calculated_lot
 

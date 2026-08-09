@@ -35,9 +35,9 @@ class SMCConfluenceEngine:
             return "NEUTRAL"
 
         df_h1 = pd.DataFrame(rates_h1)
-        ema_50 = df_h1['close'].ewm(span=50).mean().iloc[-1]
-        ema_200 = df_h1['close'].ewm(span=200).mean().iloc[-1]
-        latest_close = df_h1['close'].iloc[-1]
+        ema_50 = df_h1['close'].ewm(span=50).mean().iloc[-2]
+        ema_200 = df_h1['close'].ewm(span=200).mean().iloc[-2]
+        latest_close = df_h1['close'].iloc[-2]
 
         if latest_close > ema_50 and ema_50 > ema_200:
             return "BULLISH"
@@ -69,14 +69,14 @@ class SMCConfluenceEngine:
         df['bullish_fvg'] = df['low'] > df['high'].shift(2)
         df['bearish_fvg'] = df['high'] < df['low'].shift(2)
 
-        has_recent_bull_fvg = df['bullish_fvg'].iloc[-10:].any()
-        has_recent_bear_fvg = df['bearish_fvg'].iloc[-10:].any()
+        has_recent_bull_fvg = df['bullish_fvg'].iloc[-11:-1].any()
+        has_recent_bear_fvg = df['bearish_fvg'].iloc[-11:-1].any()
 
         # 2. BREAK OF STRUCTURE (BOS)
         swing_high_20 = df['high'].iloc[-30:-5].max()
         swing_low_20 = df['low'].iloc[-30:-5].min()
 
-        latest_close = df['close'].iloc[-1]
+        latest_close = df['close'].iloc[-2]
         bullish_bos = latest_close > swing_high_20
         bearish_bos = latest_close < swing_low_20
 
@@ -87,12 +87,12 @@ class SMCConfluenceEngine:
         bullish_ob_price = swing_low_20
         bearish_ob_price = swing_high_20
 
-        for i in range(len(df)-2, 10, -1):
+        for i in range(len(df)-3, 10, -1):
             if df['close'].iloc[i] < df['open'].iloc[i] and (df['close'].iloc[i+1] - df['open'].iloc[i+1]) > (mean_body * 1.5):
                 bullish_ob_price = df['low'].iloc[i]
                 break
 
-        for i in range(len(df)-2, 10, -1):
+        for i in range(len(df)-3, 10, -1):
             if df['close'].iloc[i] > df['open'].iloc[i] and (df['open'].iloc[i+1] - df['close'].iloc[i+1]) > (mean_body * 1.5):
                 bearish_ob_price = df['high'].iloc[i]
                 break
@@ -103,9 +103,9 @@ class SMCConfluenceEngine:
             (df['high'] - df['close'].shift()).abs(),
             (df['low'] - df['close'].shift()).abs()
         ], axis=1).max(axis=1)
-        atr_14 = df['tr'].rolling(14).mean().iloc[-1]
+        atr_14 = df['tr'].rolling(14).mean().iloc[-2]
 
-        recent_move = abs(df['close'].iloc[-1] - df['open'].iloc[-1])
+        recent_move = abs(df['close'].iloc[-2] - df['open'].iloc[-2])
         momentum_ratio = recent_move / atr_14 if atr_14 > 0 else 1.0
         is_strong_momentum = momentum_ratio >= 0.85
 

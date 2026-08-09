@@ -7,10 +7,10 @@
 
 | QA Test Target | Test Category | Status | Verification Details |
 | :--- | :---: | :---: | :--- |
-| **1. MT5 Terminal Connection & Account Check** | System QA | **PASSED** | Connected to server XMGlobal-MT5 2. Live Balance: $1536.68 USD |
+| **1. MT5 Terminal Connection & Account Check** | System QA | **PASSED** | Connected to server XMGlobal-MT5 2. Live Balance: $1577.09 USD |
 | **2. Retrained ML Model Inference** | System QA | **PASSED** | Loaded final_model_sucess.joblib (ROC-AUC 0.759). Sample Win Prob: 70.1% |
-| **3. SMC Confluence Engine** | System QA | **PASSED** | USDCHF BUY Confluence Score: 0.50 | FVG: False | Structural SL: 0.80822 |
-| **4. H1 Trend Confluence Engine** | System QA | **PASSED** | GBPJPY H1 Trend: BEARISH |
+| **3. SMC Confluence Engine** | System QA | **PASSED** | USDCHF BUY Confluence Score: 0.50 | FVG: False | Structural SL: 0.80968 |
+| **4. H1 Trend Confluence Engine** | System QA | **PASSED** | GBPJPY H1 Trend: BULLISH |
 | **5. Partial Scale-Out Math** | System QA | **PASSED** | Original Lot 0.05 -> Closed 0.02 at TP1, Remaining 0.03 with Breakeven SL |
 | **6. Live ML Reinforcement Learner** | System QA | **PASSED** | Learner initialized cleanly with CSV logger |
 | **7. Telegram Crypto Restriction Guard** | System QA | **PASSED** | Blocks BTC/ETH feeds from Telegram. Allows Forex, Gold & Silver only |

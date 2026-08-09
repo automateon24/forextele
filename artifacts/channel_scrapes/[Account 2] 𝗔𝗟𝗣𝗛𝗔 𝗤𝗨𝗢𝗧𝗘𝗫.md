@@ -1,0 +1,171 @@
+# Channel Name: 𝗔𝗟𝗣𝗛𝗔 𝗤𝗨𝗢𝗧𝗘𝗫
+# Channel ID: 2008133595
+# Telegram Account: Account 2 (Vinay)
+Scraped for Date: 2026-07-15
+
+### Message at 08:15:54 UTC
+```text
+🏴‍☠️**ALPHA QUOTEX TRADER**
+
+__Today's market sessions are officially scheduled and ready to begin.__
+
+🌎**Public Session**
+🕖 `03:00 PM (IST)`
+
+💎 **VIP Session I**
+🕖 `04:00 PM (IST)`
+
+📌 **VIP Session II**
+🕖 `09:00 PM (IST)`
+
+**━━━━━━━━━━━━**
+⏳ **__Join a few minutes early and be ready before the first signal is released. __**🚀🪙
+
+🚀**__Any Query__** __**-** ____@AlphaQtxTrader__
+```
+
+---
+
+### Message at 09:37:11 UTC
+```text
+Wait 15 min guys
+```
+
+---
+
+### Message at 10:06:03 UTC
+```text
+**Live trading session starting in 5 minutes!****💵**
+```
+
+---
+
+### Message at 10:11:08 UTC
+```text
+**__BROKER : QUOTEX __****__😊__**
+**__
+ASSET : USD/NGN (OTC)
+__**`
+`__**TIME : 1 MIN** __🤑
+```
+
+---
+
+### Message at 10:12:45 UTC
+```text
+AGAIN UP IF LOSS
+```
+
+---
+
+### Message at 10:14:35 UTC
+```text
+🎯** ALPHA QTX BUG **S**ignal****⚡️**
+**
+****💰**** Deep Sureshot Win ****✅****😀****
+
+****👑**** POWER OF AQT  ****🚀****🔥**
+
+**🚀****   1/1   WIN ****💲****✔️**
+```
+
+---
+
+### Message at 10:14:51 UTC
+```text
+Reactions Fast
+```
+
+---
+
+### Message at 10:17:23 UTC
+```text
+**__BROKER : QUOTEX __****__😊__**
+**__
+ASSET : USD/MXN (OTC)
+__**`
+`__**TIME : 1 MIN** __🤑
+```
+
+---
+
+### Message at 10:19:51 UTC
+```text
+🎯** ALPHA QTX BUG **S**ignal****⚡️**
+**
+****💰**** Deep Sureshot Win ****✅****😀****
+
+****👑**** POWER OF AQT  ****🚀****🔥**
+
+**🚀****   2/2   WIN ****💲****✔️**
+```
+
+---
+
+### Message at 10:23:31 UTC
+```text
+**ALPHA QTX BOT POWER** 🚀💸
+```
+
+---
+
+### Message at 10:24:37 UTC
+```text
+**Today Public Session Result ****❤️****
+
+****➡️**** Total Trades -02****👊****
+****➡️**** WIN  - 02****😉****💪****✅****
+****➡️**** Loss - 00
+
+**🤑 **101% ACCURACY RATE ****👌****❤️****
+**🤑 **DEEP WIN **💯**🤑****
+**🤑 **100% SURESHOT ****🔥****😎**** 
+
+(Always Profit Here No loss) ****📈****ALPHA TRADER**
+```
+
+---
+
+### Message at 11:14:58 UTC
+```text
+Don't Miss❌Today’s SURESHOT
+Session of VIP Group**❤️**🤑
+
+👇👇👇👇👇👇👇👇
+Join VIP Group Fast 🏁
+
+➡️**Quotex Link -** **https://broker-qx.pro/sign-up/?lid=518903**
+
+Create your account under my link and Deposit Minimum 30$ then I'll add you in VIP Group ✅ @AlphaQtxTrader🤑
+```
+
+---
+
+### Message at 12:35:25 UTC
+```text
+**__CHECK BOT ACCURACY__** **__🔥__****__💸__**
+**__Msg - __**__@AlphaQtxTrader__✅️
+```
+
+---
+
+### Message at 14:16:38 UTC
+```text
+**Next Session in VIP Channel ****▶️****
+
+****🔴**** See How to join 👇VIP ?
+__
+Step__****🤩****- Create Your New Quotex account Using my link ****✅****
+
+Quotex Link- ****https://broker-qx.pro/sign-up/?lid=518903****
+
+__Step__****🤩****- Deposit amount in your ID to Trade with my Signals****💵****
+
+Step****🤩****- SEND me your Quotex ID number ☑️
+      --> ****@AlphaQtxTrader**** ****🤔****
+
+I will check your id and Add you in the Vip Channel for Free🔥****✔️**
+```
+
+---
+

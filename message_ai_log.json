@@ -1,0 +1,1811 @@
+[
+  {
+    "channel_name": "RaSrasanForex",
+    "message": " XAUUSD Buy 4040\n TP 4043\n TP 4046\nTP 4049\n TP 4052\nTP 4055\n SL 4029\nhttps://t.me/+_0VwtF_qnCtmOTY0",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 10:58:34"
+  },
+  {
+    "channel_name": "Mr.DAVID, XAU/USD CLUB",
+    "message": "XAUUSD \nSELL : 4063.5004066.700\nSL: 4073\nTP1: 4055\nTP2: 4050\nTP3: 4045\nExtended TP: 4040",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 11:06:18"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SFP/USDT Take-Profit target 2 \nProfit: 19.9351% \nPeriod: 11 hr 15 min ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 11:18:20"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SFP/USDT Take-Profit target 1 \nProfit: 13.9082% \nPeriod: 11 hr 14 min ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 11:18:34"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SFP/USDT Take-Profit target 3 \nProfit: 29.9799% \nPeriod: 11 hr 18 min ",
+    "ai_reply": "{\"symbol\": \"#SFP/USDT\", \"action\": null, \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#SFP/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-04 11:20:14"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Entry 1 \nAverage Entry Price: 0.1955 ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 12:33:30"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: ADAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.1955\n2) 0.1857 (DCA)\n\nTake-Profit Targets:\n0.1969 - 0.198 - 0.2004 - 0.2033 - 0.2072 - 0.2111 - 0.217 - 0.2268\n\nStoploss: 0.1799",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 12:33:43"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ENJ/USDT Take-Profit target 2 \nProfit: 13.5891% \nPeriod: 3 hr 8 min ",
+    "ai_reply": "{\"symbol\": \"#ENJ/USDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#ENJ/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-04 12:48:12"
+  },
+  {
+    "channel_name": "GOLD Scalper",
+    "message": "XAUUSD BUY 4064-62\n\nTP 1 : 4069\nTP 2 : 4074\nTP 3 : 4079\nTP 4 : 4099\n\nSL : 4047",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 12:55:38"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " #Free Signal\n\n Long\n\nPair: #ZRX/USDT\n\n Entry Price: \n\n1) 0.0793\n2) 0.0769\n\n Targets:\n\n1) 0.0797\n2) 0.0814\n3) 0.0830\n4) 0.0847\n\nStop Loss: 0.0743\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 13:09:41"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD BUY 4064.8\n\nSL:  4054.8\nTP:  4084.8\n--Trade by Matthew",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4064.8, \"sl\": 4054.8, \"tp1\": 4084.8, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4054.8, \"final_tp1\": 4084.8, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: SureShot GOL 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-04 13:12:07"
+  },
+  {
+    "channel_name": "Mr.DAVID, XAU/USD CLUB",
+    "message": "XAUUSD \nSELL : 4068.4071\nSL: 4080\nTP1: 4060\nTP2: 4055\nTP3: 4050\nTP4.4045\nTP4.4040",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 13:47:49"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD BUY 4062.63\n\nSL:  4052.63\nTP:  4082.63\n--Trade by Matthew",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4062.63, \"sl\": 4052.63, \"tp1\": 4082.63, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4052.63, \"final_tp1\": 4082.63, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: SureShot GOL 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-04 13:54:46"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "Bitget Futures, OKX Futures, KuCoin Futures, Binance Futures, ByBit USDT\n#APE/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 14:16:11"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: APEUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.1331\n2) 0.1278 (DCA)\n\nTake-Profit Targets:\n0.1338 - 0.1344 - 0.1351 - 0.1371 - 0.1384 - 0.1411 - 0.1451 - 0.1531\n\nStoploss: 0.1251",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 14:16:21"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": "Price failed to hold above the 4065-4072 resistance area and selling pressure appeared exactly as expected. After breaking the short-term ascending trendline, the M5 structure has shifted into a bearish trend with lower highs, indicating that sellers are currently in control.\n\nThe 4055-4060 area has now become a Flip Zone (FZ) and is expected to act as the nearest resistance. If price retests this area but fails to reclaim the bullish structure, the short-term downtrend is likely to continue.\n\nThe first support to watch is 4045. This level has previously produced buying interest, so a temporary bounce or consolidation is possible once price reaches it. However, if sellers break 4045 decisively, the next downside target will be the 4026-4021 support zone.\n\nIf bearish momentum remains strong and 4021 fails to hold, a liquidity sweep toward 4003 becomes a realistic scenario. This is a higher-timeframe support level, where a stronger market reaction is expected.\n\nFor now, the primary focus remains on 4045. A clear rejection there could trigger a short-term recovery, while a strong break below it would favor continuation toward 4021, with the potential for an extended move down to 4003.\n\n#plan",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 14:38:43"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": "Breakout alert \n\nGain: 36% on #IOST",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 14:46:27"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD BUY 4051.01\n\nSL:  4041.01\nTP:  4071.01\n--Trade by Matthew",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4051.01, \"sl\": 4041.01, \"tp1\": 4071.01, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4041.01, \"final_tp1\": 4071.01, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: SureShot GOL 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-04 14:56:16"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Take-Profit target 1 \nProfit: 14.3223% \nPeriod: 2 hr 22 min ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 15:01:19"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#APE/USDT Take-Profit target 1 \nProfit: 10.5184% \nPeriod: 40 min ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 15:01:26"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": " XAUUSD BUY \n\n\n  \n\n Click to see \n\n \n\nhttps://t.me/+GsL55QphK3liNmVk\nhttps://t.me/+_kaTvJNHEq5lNzVk",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 15:29:00"
+  },
+  {
+    "channel_name": "\ud83d\udc51Market Trader Crypto Forex\ud83d\udc51",
+    "message": "GOLD  BUY  - 4042\n\nSL -  90 PIPS \n\nTARGET - 200 PIPS  \nREVERSAL TRADE\n\n\nhttps://affs.click/xnqPA\nPATNER CODE (663WF)",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4042.0, \"sl\": 90.0, \"tp1\": 200.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 90.0, \"final_tp1\": 200.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: \\ud83d\\udc51Market Trad 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 15:40:18"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ENJ/USDT Take-Profit target 3 \nProfit: 20.2505% \nPeriod: 6 hr 16 min ",
+    "ai_reply": "{\"symbol\": \"#ENJ/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#ENJ/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-04 15:48:36"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4048",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4048.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4058.0, \"final_tp1\": 4028.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 15:56:44"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GALAUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.001793\n2) 0.0019 (DCA)\n\nTake-Profit Targets:\n0.0018 - 0.0018 - 0.0018 - 0.0017 - 0.0017 - 0.0017 - 0.0016 - 0.0015\n\nStoploss: 0.0019",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:01:49"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4050",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:04:34"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4050\n\nTP 4047\nTP 4044\nTP 4041\nTP 4038\nTP 4035\nTP 4032\n\nSL 4061",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:07:24"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#APE/USDT Take-Profit target 2 \nProfit: 15.0263% \nPeriod: 1 hr 55 min ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:11:27"
+  },
+  {
+    "channel_name": "GOLD Trader Dan",
+    "message": "XAUUSD SMASHED TP1 100 PIPS ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:26:28"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#LDO/USDT Stop Target Hit \nLoss: 144.3875% ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:33:15"
+  },
+  {
+    "channel_name": "Sureshot FX VIP",
+    "message": "NZDUSD SELL 0.5878\n\nSL:  0.5928\nTP:  0.5728\n--Trade by David",
+    "ai_reply": "{\"symbol\": \"NZDUSD\", \"action\": \"SELL\", \"entry\": 0.5878, \"sl\": 0.5928, \"tp1\": 0.5728, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 0.5928, \"final_tp1\": 0.5728, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Sureshot FX 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-04 16:37:42"
+  },
+  {
+    "channel_name": "DUBAI CAPITAL FX GROUP 3",
+    "message": "GOLD BUY NOW 4049_4045\n\nSL 4036\n\nTP 4052\nTP 4055\nTP 4058\nTP 4061\nTP 4064\nTP 4067\n\nFOLLOW MONEY MANAGEMENT",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4049.0, \"sl\": 4036.0, \"tp1\": 4052.0, \"tp2\": 4055.0, \"tp3\": 4058.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4036.0, \"final_tp1\": 4052.0, \"final_tp2\": 4055.0, \"final_tp3\": 4058.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: DUBAI CAPITA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 16:59:20"
+  },
+  {
+    "channel_name": "GOLD Trader Dan",
+    "message": "XAUUSD RUNNING 210 PIPS ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 210.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 200.0, \"final_tp1\": 230.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0}",
+    "order_status": "Failed",
+    "error_msg": "Price sanity fail: entry 210.0 is 94.8% from live 4062.34000",
+    "ticket": null,
+    "timestamp": "2026-08-04 17:05:14"
+  },
+  {
+    "channel_name": "Sureshot FX VIP",
+    "message": "US100 SELL  \n--Trade by Lucas",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Sureshot FX 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-04 17:05:32"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4063",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 17:10:09"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4063\n\nTP 4060\nTP 4057\nTP 4054\nTP 4051\nTP 4048\nTP 4045\n\nSL 4073",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4063.0, \"sl\": 4073.0, \"tp1\": 4060.0, \"tp2\": 4057.0, \"tp3\": 4054.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4073.0, \"final_tp1\": 4060.0, \"final_tp2\": 4057.0, \"final_tp3\": 4054.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 17:11:11"
+  },
+  {
+    "channel_name": "GOLD Trader Dan",
+    "message": "XAUUSD SMASHED TAKE PROFIT 2 ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 17:25:45"
+  },
+  {
+    "channel_name": "Coin Chief",
+    "message": " Trade: #HFT/USDT\n\nDirection:  Short \n\n Entry Range: 0.009750 - 0.009900\n\n StopLoss: 0.010170\n\n Target 1: 0.009655\n Target 2: 0.009560\n Target 3: 0.009465\n Target 4: 0.009370\n Target 5: 0.009276\n Target 6: 0.009099\n\n Leverage : 5x - 10x - 20x",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": null, \"sl\": 0.01017, \"tp1\": 0.009655, \"tp2\": 0.00956, \"tp3\": 0.009465, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Coin Chief 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 17:44:35"
+  },
+  {
+    "channel_name": "Mr.DAVID, XAU/USD CLUB",
+    "message": "#XAUUSD BUY...4067....4065\n\nSL: 4055\n\nTP1: 4073\nTP2: 4077\nTP3: 4083\nTP4: 4086\nTP5: 4090",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 17:55:27"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD sell4077",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 18:06:36"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4083\nTP 4080\nTP 4077\nTP 4074\nTP 4071\nTP 4069\nSL 4093\nUse proper money management me",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 18:08:10"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD BUY 4077.96\n\nSL:  4067.96\nTP:  4097.96\n--Trade by Matthew",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 18:17:19"
+  },
+  {
+    "channel_name": "Binance Killers\u00ae VIP",
+    "message": "SIGNAL ID: #2198\nCOIN: $DOT/USDT (2-5x)  \nDirection: LONG\n\nENTRY: 0.815 - 0.825\n\nTARGETS: 0.860  0.900  0.950 - 1.010 - 1.085 - 1.170 - 1.270 - 1.400\n\nSTOP LOSS: 0.750\n\n8H FVG sitting at the retest of a broken descending trendline, now flipping into support.\n\n Binance Killers",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 18:23:59"
+  },
+  {
+    "channel_name": "Binance Killers\u00ae VIP",
+    "message": "SIGNAL ID: #2198\nCOIN: $DOT/USDT (2-5x)  \nDirection: LONG\n\nENTRY: 0.815 - 0.825\n\nTARGETS: 0.860  0.900  0.950 - 1.010 - 1.085 - 1.170 - 1.270 - 1.400\n\nSTOP LOSS: 0.750\n\n8H FVG sitting at the retest of a broken descending trendline, now flipping into support.\n\n Binance Killers",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 18:24:00"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ENJ/USDT Take-Profit target 4 \nProfit: 29.5763% \nPeriod: 10 hr 8 min ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 19:40:20"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GRTUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01457\n2) 0.0152 (DCA)\n\nTake-Profit Targets:\n0.0145 - 0.0144 - 0.0144 - 0.0141 - 0.014 - 0.0137 - 0.0133 - 0.0124\n\nStoploss: 0.0156",
+    "ai_reply": "{\"symbol\": \"GRTUSDT\", \"action\": null, \"entry\": null, \"sl\": 0.0156, \"tp1\": 0.0145, \"tp2\": 0.0142, \"tp3\": 0.0139}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'GRTUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-04 19:45:59"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#GRT/USDT Entry 1 \nAverage Entry Price: 0.01457 ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 20:01:36"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "Bitget Futures, KuCoin Futures, OKX Futures, Binance Futures, ByBit USDT\n#GRT/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 20:01:44"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GRTUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01457\n2) 0.0152 (DCA)\n\nTake-Profit Targets:\n0.0145 - 0.0144 - 0.0144 - 0.0141 - 0.014 - 0.0137 - 0.0133 - 0.0124\n\nStoploss: 0.0156",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 20:01:48"
+  },
+  {
+    "channel_name": "DUBAI CAPITAL FX GROUP 3",
+    "message": "GOLD SELL  @4079_4082\n\nSl 4089\n\nTP 4076\nTP 4073\nTP 4070\nTP 4067\nTP 4064\nTP 4061\n\nFOLLOW MONEY MANAGEMENT",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 20:07:38"
+  },
+  {
+    "channel_name": "DUBAI CAPITAL FX GROUP 3",
+    "message": "GOLD SELL  @4079_4082\n\nSl 4089\n\nTP 4076\nTP 4073\nTP 4070\nTP 4067\nTP 4064\nTP 4061\n\nFOLLOW MONEY MANAGEMENT",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 20:07:56"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "Binance Futures, Bitget Futures, ByBit USDT, KuCoin Futures, OKX Futures\n#SAND/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 21:01:29"
+  },
+  {
+    "channel_name": "GOLD Trader Dan",
+    "message": "XAUUSD TP SMASHED 470 PIPS ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 21:19:07"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4085",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4085.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4095.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 21:20:09"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4085\n\nTP 4083\nTP 4080\nTP 4077\nTP 4074\nTP 4071\nTP 4068\n\nSL 4095",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 21:33:28"
+  },
+  {
+    "channel_name": "GOLD Snipers",
+    "message": " XAUUSD BUY BOOM BOOM RUNNING 230+ PIPS ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 22:14:05"
+  },
+  {
+    "channel_name": "GOLD Scalper",
+    "message": " XAUUSD BUY BOOM BOOM RUNNING 230+ PIPS ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 22:14:09"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "Ready For XAUUSD Signal ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4047.0, \"sl\": 4058.0, \"tp1\": 4044.0, \"tp2\": 4041.0, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4058.0, \"final_tp1\": 4044.0, \"final_tp2\": 4041.0, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 22:20:02"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " #Free Signal\n\n Short\n\nPair: #ZIL/USDT\n\n Entry Price: \n\n1) 0.0025920\n2) 0.0026697\n\n Targets:\n\n1) 0.0025768\n2) 0.0025221\n3) 0.0024673\n4) 0.0024126\n\nStop Loss: 0.0027552\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 22:35:01"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4105",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4105.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4115.0, \"final_tp1\": 4085.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-04 22:38:34"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4105\n\nTP 4102\nTP 4099\nTP 4096\nTP 4093\nTP 4090\nTP 4087\n\nSL 4116",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-04 22:40:53"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " VIP Signal\n\n Long\n\nPair: #BTC/USDT\n\n Entry Price: \n\n1) 63268.00\n2) 61369.96\n\n Targets:\n\n1) 63631.33\n2) 64953.05\n3) 66274.77\n4) 67596.49\n\nStop Loss: 59282.11\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"symbol\": \"#BTC/USDT\", \"action\": \"BUY\", \"entry\": 63268.0, \"sl\": 59282.11, \"tp1\": 63631.33, \"tp2\": 64953.05, \"tp3\": 66274.77}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#BTC/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 00:01:19"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: ADAUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.1928\n2) 0.2024 (DCA)\n\nTake-Profit Targets:\n0.1915 - 0.1903 - 0.188 - 0.1851 - 0.1812 - 0.1774 - 0.1716 - 0.162\n\nStoploss: 0.2082",
+    "ai_reply": "{\"symbol\": \"ADAUSDT\", \"action\": \"SELL\", \"entry\": null, \"sl\": 0.2082, \"tp1\": 0.1915, \"tp2\": 0.1903, \"tp3\": 0.188}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'ADAUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 01:01:43"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Entry 1 \nAverage Entry Price: 0.1928 ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 01:16:28"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SAND/USDT Take-Profit target 1 \nProfit: 10.0215% \nPeriod: 4 hr 51 min ",
+    "ai_reply": "{\"symbol\": \"#SAND/USDT\", \"action\": null, \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#SAND/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 01:38:04"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "KuCoin Futures, ByBit USDT, Bitget Futures, Binance Futures, OKX Futures, HyperLiquid Futures\n#SOL/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068, \"sl\": 4083, \"tp1\": 4065, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 01:46:41"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": "DAILY REPORT  -  Aug 04, 2026\n\n SELL LIMIT 4067  +100 PIPS\n SELL LIMIT 4067  + 100 PIPS\n BUY LIMIT 4057  - 50 PIPS\n SELL LIMIT 4069 - 60 PIPS\n\n\nVantage |Exness |FxPro | VTMarkets\n Contact Admin  MyFxBook",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 02:01:13"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": "AI SIGNALS RECAP  - Aug 04, 2026\n\n SELL  4059.95-4063.51  +170 PIPS\n SELL  4066.91-4071.46  +130 PIPS\n BUY  4071.34-4079.02  +210 PIPS\n\n\nVantage |Exness |FxPro | VTMarkets\n Contact Admin  MyFxBook",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": 4059.95, \"sl\": 4063.51, \"tp1\": 4071.46, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4063.51, \"final_tp1\": 4071.46, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0}",
+    "order_status": "Failed",
+    "error_msg": "Price sanity fail: entry 4059.95 is 352026.7% from live 1.15298",
+    "ticket": null,
+    "timestamp": "2026-08-05 02:15:57"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "OKX Futures, Binance Futures, Bitget Futures, ByBit USDT, KuCoin Futures\n#GRT/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"symbol\": \"#GRT/USDT\", \"action\": null, \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#GRT/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 03:48:49"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#GRT/USDT Entry 1 \nAverage Entry Price: 0.01470 ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 03:48:53"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GRTUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.0147\n2) 0.0141 (DCA)\n\nTake-Profit Targets:\n0.0148 - 0.0148 - 0.0149 - 0.0151 - 0.0153 - 0.0156 - 0.016 - 0.0169\n\nStoploss: 0.0137",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 03:48:59"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GALAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.001807\n2) 0.0017 (DCA)\n\nTake-Profit Targets:\n0.0018 - 0.0018 - 0.0018 - 0.0019 - 0.0019 - 0.0019 - 0.002 - 0.0021\n\nStoploss: 0.0017",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 04:04:03"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#BTC/USDT Take-Profit target 2 \nProfit: 19.9991% \nPeriod: 1 day ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 04:49:07"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4070\nTP 4067\nTP 4064\nTP 4061\nTP 4058\nTP 4055\nSL 4082\nUse proper money management me",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4070.0, \"sl\": 4082.0, \"tp1\": 4067.0, \"tp2\": 4064.0, \"tp3\": 4061.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4082.0, \"final_tp1\": 4067.0, \"final_tp2\": 4064.0, \"final_tp3\": 4061.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:23:08"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "#XAUUSD / #Gold \nCONFIRM ENTRY4068-4073\n               \nhttps://t.me/+D2otCBVhNzFlOGE0\nhttps://t.me/+D2otCBVhNzFlOGE0\n                     \nhttps://t.me/+VRxdDQxIuKE4MzA0\n 600+ PIPS TARGET ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:26:04"
+  },
+  {
+    "channel_name": "Early Pump Detector",
+    "message": "2 ~ \n\n DAILY REPORT  2026-08-05 (UTC)\n\n\n Last 24 Hours\n Wins:        2\n Losses:      0\n Breakeven:   0\n Win Rate:    100.0%\n 24h P&L:     +$105,015.04\n Best:  National Bank Open: Gabriel Diallo vs Kyrian Ja : Gabriel Diallo (+$68,662.69)\n Worst: National Bank Open: Aleksandar Vukic vs Daniel : Daniel Altmaier (+$36,352.35)\n\n\n Portfolio Snapshot\n Open Trades:     2 / 25\n Capital In Use:  $200.00\n Total Closed:    419\n  Realized P&L:  +$33,718,419.34\n Total Capital:   $33,720,919.34",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Early Pump D 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:30:59"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL BIG \nUSE BIG LOT \nSL & TP ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:44:43"
+  },
+  {
+    "channel_name": "Sureshot FX VIP",
+    "message": "GBPNZD BUY 2.2883\n\nSL:  2.2833\nTP:  2.3033\n--Trade by David",
+    "ai_reply": "{\"symbol\": \"GBPNZD\", \"action\": \"BUY\", \"entry\": 2.2883, \"sl\": 2.2833, \"tp1\": 2.3033, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 2.2833, \"final_tp1\": 2.3033, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Sureshot FX 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-05 05:49:25"
+  },
+  {
+    "channel_name": "Sureshot FX \ud83c\udfaf",
+    "message": "GBPNZD BUY 2.2883\n\nSL:  2.2833\nTP:  2.3033\n--Trade by David",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:49:32"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "#XAUUSD / #Gold \nCONFIRM ENTRY4068-4073\n               \nhttps://t.me/+D2otCBVhNzFlOGE0\nhttps://t.me/+D2otCBVhNzFlOGE0\n                     \nhttps://t.me/+VRxdDQxIuKE4MzA0\n 600+ PIPS TARGET ",
+    "ai_reply": "{\"symbol\": \"#XAUUSD\", \"action\": \"SELL\", \"entry\": 4053.0, \"sl\": 4063.0, \"tp1\": 4050.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4063.0, \"final_tp1\": 4050.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:50:58"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " #Free Signal\n\n Long\n\nPair: #ONT/USDT\n\n Entry Price: \n\n1) 0.037390\n2) 0.036268\n\n Targets:\n\n1) 0.037604\n2) 0.038385\n3) 0.039166\n4) 0.039948\n\nStop Loss: 0.035034\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"symbol\": \"#ONT/USDT\", \"action\": \"BUY\", \"entry\": 0.036268, \"sl\": 0.035034, \"tp1\": 0.037604, \"tp2\": 0.038385, \"tp3\": 0.039166}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#ONT/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 05:54:20"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4080\nTP 4077\nTP 4074\nTP 4071\nTP 4068\nTP 4065\nSL 4092\nUse proper money management me",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:10:44"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Take-Profit target 1 \nProfit: 13.4855% \nPeriod: 5 hr 10 min ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:12:12"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "OKX Futures, KuCoin Futures, Binance Futures, ByBit USDT, Bitget Futures\n#APE/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:16:47"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "Binance Futures, Bitget Futures, ByBit USDT, KuCoin Futures, OKX Futures\n#GRT/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:16:56"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GRTUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01461\n2) 0.0152 (DCA)\n\nTake-Profit Targets:\n0.0145 - 0.0145 - 0.0144 - 0.0142 - 0.014 - 0.0137 - 0.0133 - 0.0124\n\nStoploss: 0.0156",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:17:04"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: APEUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.131\n2) 0.1362 (DCA)\n\nTake-Profit Targets:\n0.1303 - 0.1297 - 0.129 - 0.1271 - 0.1258 - 0.1231 - 0.1192 - 0.1114\n\nStoploss: 0.1389",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:17:11"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD gold 4076\nI will delete the link After two minutes \n\nhttps://t.me/+kHLn7vqfbtxkZDY0\nhttps://t.me/+kHLn7vqfbtxkZDY0\n 600+ PIPS TARGET ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4076.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4086.0, \"final_tp1\": 4056.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 06:38:55"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": " August 05, 2026 - Key Level to watch for XAUUSD\n\n Gold is currently ranging between 4051  4104.\nThe priority is to follow the confirmed breakout direction instead of forcing entries inside the range.\n A break above 4104 may open room for further upside toward 4144 and 4191.\n A break below 4051 may shift focus back toward 3963.\n\n Key Levels: 3963, 4051, 4104, 4144, 4191\n\n\nVantage |Exness |FxPro | VTMarkets\n Contact Admin  MyFxBook",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:02:32"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4100\nTP 4097\nTP 4094\nTP 4091\nTP 4088\nTP 4085\nSL 4110\nUse proper money management me",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:45:51"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "Gold Sell 4095\n\nTP And SL \n\nhttps://t.me/+2CeJL9WJZSc0MTZk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4095.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4105.0, \"final_tp1\": 4075.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:47:22"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "GOLD SELL ALERT\n\nhttps://t.me/+IqEJZuAclVYxMDdk\n\nhttps://t.me/+IqEJZuAclVYxMDdk\n\nXAUUSD  Check",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:48:06"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD BUY LIMIT 4092\n\nSL:  4082.0\nTP:  4112.0\n--Trade by Grace",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY LIMIT\", \"entry\": 4092.0, \"sl\": 4082.0, \"tp1\": 4112.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4082.0, \"final_tp1\": 4112.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: SureShot GOL 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:49:36"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4066\nUSE BIG LOT \nSL & TP ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4066.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4076.0, \"final_tp1\": 4046.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:50:18"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "GOLD SELL ALERT\n\nhttps://t.me/+IqEJZuAclVYxMDdk\n\nhttps://t.me/+IqEJZuAclVYxMDdk\n\nXAUUSD  Check",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 07:56:09"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD SELL 4118.27\n\nSL:  4128.27\nTP:  4098.27\n--Trade by Grace",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:10:55"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4126\nTP 4123\nTP 4120\nTP 4117\nTP 4114\nTP 4111\nSL 4137\nUse proper money management me",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4126.0, \"sl\": 4137.0, \"tp1\": 4123.0, \"tp2\": 4120.0, \"tp3\": 4117.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4137.0, \"final_tp1\": 4123.0, \"final_tp2\": 4120.0, \"final_tp3\": 4117.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-05 08:17:10"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD GOLD BUY NOW\n\n SL TP HERE \n\nhttps://t.me/+OHsaJevIHH41YjVk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:24:06"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "GOLD NOW 4070\n\nPLEASE don't SHARE\nthis link \nonce you join   \nhttps://t.me/+4i_GvOpyt1U0Y2I8\nhttps://t.me/+4i_GvOpyt1U0Y2I8\nITS A SECRET",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4070.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4080.0, \"final_tp1\": 4050.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:24:52"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": " XAUUSD BUY \n\n\n  \n\n Click to see \n\n \n\nhttps://t.me/+GsL55QphK3liNmVk\nhttps://t.me/+_kaTvJNHEq5lNzVk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:25:26"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Take-Profit target 2 \nProfit: 19.7095% \nPeriod: 7 hr 44 min ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:46:28"
+  },
+  {
+    "channel_name": "Binance Killers\u00ae VIP",
+    "message": "SIGNAL ID: #2198\nCOIN: $DOT/USDT (2-5x)\nDirection: LONG\n\nTarget 1: 0.860\n\n21.2% Profit (5x)\n\nUPGRADE / RENEW\n\n \n\n- Binance Killers",
+    "ai_reply": "{\"symbol\": \"DOT/USDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'DOT/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:53:35"
+  },
+  {
+    "channel_name": "Binance Killers\u00ae VIP",
+    "message": "SIGNAL ID: #2198\nCOIN: $DOT/USDT (2-5x)\nDirection: LONG\n\nTarget 1: 0.860\n\n21.2% Profit (5x)\n\nUPGRADE / RENEW\n\n \n\n- Binance Killers",
+    "ai_reply": "{\"symbol\": \"DOT/USDT\", \"action\": \"LONG\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'DOT/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:53:45"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#GRT/USDT Take-Profit target 1 \nProfit: 15.0582% \nPeriod: 2 hr 41 min ",
+    "ai_reply": "{\"symbol\": \"#GRT/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#GRT/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-05 08:57:24"
+  },
+  {
+    "channel_name": "Coin Chief",
+    "message": " Trade: #1000CHEEMS/USDT\n\nDirection:  LONG \n\n Entry Range: 0.0005125 - 0.0004930\n\n StopLoss: 0.0004780\n\n Target 1: 0.0005176\n Target 2: 0.0005228\n Target 3: 0.0005280\n Target 4: 0.0005330\n Target 5: 0.0005383\n Target 6: 0.0005437\n\n Leverage : 5x - 10x - 20x",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-05 09:11:11"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "Gold Still 4277\nTP SL Send signals only\n\nTP And SL \n\nhttps://t.me/+2CeJL9WJZSc0MTZk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 10:09:50"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "GOLD NOW Confirmed signal \n\nTP \nTP \nSL \n   3   ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 10:13:29"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SFP/USDT Take-Profit target 1 \nProfit: 13.7363% \nPeriod: 1 hr 8 min ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 10:25:05"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#APT/USDT Take-Profit target 6 \nProfit: 53.2864% \nPeriod: 3 days 19 hr ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 10:33:07"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": "#XAUUSD BUY LIMIT 4228\n   TP1:  4232\n   TP2:  4236\n   TP3:  4400\n   SL:  4222.00",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4228.0, \"sl\": null, \"tp1\": 4232.0, \"tp2\": 4236.0, \"tp3\": 4400.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4218.0, \"final_tp1\": 4232.0, \"final_tp2\": 4236.0, \"final_tp3\": 4400.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Forex Tradin 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 10:34:18"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SFP/USDT Take-Profit target 2 \nProfit: 19.6886% \nPeriod: 1 hr 19 min ",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 10:36:33"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": "Swing move \n\n23% bagged from #ZIL",
+    "ai_reply": "{\"symbol\": \"ZIL\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'ZIL' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 10:39:38"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "Gold Still 4277\nTP SL Send signals only\n\nTP And SL \n\nhttps://t.me/+2CeJL9WJZSc0MTZk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 11:08:28"
+  },
+  {
+    "channel_name": "Mr.DAVID, XAU/USD CLUB",
+    "message": "XAUUSD BUY \nEntry: Around 42574260 (current zone)\nStop Loss: 4242\nTake Profit 1: 4280\nTake Profit 2: 4300\nTake Profit 3: 4310\nTake Profit 4 4330",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 42574260.0, \"sl\": 4242.0, \"tp1\": 4280.0, \"tp2\": 4300.0, \"tp3\": 4310.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4242.0, \"final_tp1\": 4280.0, \"final_tp2\": 4300.0, \"final_tp3\": 4310.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0}",
+    "order_status": "Failed",
+    "error_msg": "Price sanity fail: entry 42574260.0 is 998395.7% from live 4263.84000",
+    "ticket": null,
+    "timestamp": "2026-08-06 11:11:59"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "Gold Still 4277\nTP SL Send signals only\n\nTP And SL \n\nhttps://t.me/+2CeJL9WJZSc0MTZk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 11:45:30"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "Gold Still 4277\nTP SL Send signals only\n\nTP And SL \n\nhttps://t.me/+2CeJL9WJZSc0MTZk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 12:04:46"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": "The price is adjusting to the OB zone at 4252 and is reacting here.\n\nSince the previous No SD reacted and broke through this OB, we need to be cautious when buying up, as the sellers have gained the upper hand pushing the price below the OB.\n\nHowever, the bullish structure is strong, and if the price sets up here again, it could be bought.\n\n#Plan",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Forex Tradin 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 12:21:15"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " #Free Signal\n\n Short\n\nPair: #ZRX/USDT\n\n Entry Price: \n\n1) 0.0797\n2) 0.0820\n\n Targets:\n\n1) 0.0792\n2) 0.0775\n3) 0.0758\n4) 0.0741\n\nStop Loss: 0.0847\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"symbol\": \"#ZRX/USDT\", \"action\": null, \"entry\": 0.0797, \"sl\": 0.0847, \"tp1\": 0.0792, \"tp2\": 0.0775, \"tp3\": 0.0758}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#ZRX/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 12:45:53"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: LDOUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.2947\n2) 0.3124 (DCA)\n\nTake-Profit Targets:\n0.2926 - 0.2909 - 0.2873 - 0.2829 - 0.277 - 0.2711 - 0.2623 - 0.2475\n\nStoploss: 0.3242",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:01:09"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: LDOUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.2947\n2) 0.3124 (DCA)\n\nTake-Profit Targets:\n0.2926 - 0.2909 - 0.2873 - 0.2829 - 0.277 - 0.2711 - 0.2623 - 0.2475\n\nStoploss: 0.3242",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:01:16"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#LDO/USDT Entry 1 \nAverage Entry Price: 0.2947 ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 0.2947, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": -9.7053, \"final_tp1\": 20.2947, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0}",
+    "order_status": "Failed",
+    "error_msg": "Price sanity fail: entry 0.2947 is 100.0% from live 4261.77000",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:02:12"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#LDO/USDT Take-Profit target 1 \nProfit: 14.2518% \nPeriod: 5 min ",
+    "ai_reply": "{\"symbol\": \"#LDO/USDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#LDO/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:06:17"
+  },
+  {
+    "channel_name": "GOLD Snipers",
+    "message": "NEW XAUUSD TRADE SENT HERE:\nhttps://t.me/+kpDe_PXbkbZiOTE0",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4050.0, \"sl\": 4063.0, \"tp1\": 4044.0, \"tp2\": 4041.0, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4063.0, \"final_tp1\": 4044.0, \"final_tp2\": 4041.0, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: GOLD Snipers 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:42:15"
+  },
+  {
+    "channel_name": "GOLD Snipers",
+    "message": "NEW XAUUSD TRADE SENT HERE:\nhttps://t.me/+kpDe_PXbkbZiOTE0",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:42:20"
+  },
+  {
+    "channel_name": "GOLD Snipers",
+    "message": "NEW XAUUSD TRADE SENT HERE:\nhttps://t.me/+kpDe_PXbkbZiOTE0",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:42:23"
+  },
+  {
+    "channel_name": "GOLD Snipers",
+    "message": "NEW XAUUSD TRADE SENT HERE:\nhttps://t.me/+kpDe_PXbkbZiOTE0",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4050.0, \"sl\": 4063.0, \"tp1\": 4044.0, \"tp2\": 4041.0, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4063.0, \"final_tp1\": 4044.0, \"final_tp2\": 4041.0, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: GOLD Snipers 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 13:43:31"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#LDO/USDT Take-Profit target 2 \nProfit: 20.0204% \nPeriod: 1 hr 48 min ",
+    "ai_reply": "{\"symbol\": \"#LDO/USDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#LDO/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 14:49:34"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SAND/USDT Take-Profit target 2 \nProfit: 14.047% \nPeriod: 20 hr 1 min ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:02:51"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#AVAX/USDT Take-Profit target 3 \nProfit: 29.7851% \nPeriod: 1 day 2 hr ",
+    "ai_reply": "{\"symbol\": \"#AVAX/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#AVAX/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:27:31"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4274",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4274.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4284.0, \"final_tp1\": 4254.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:33:29"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#AVAX/USDT Take-Profit target 4 \nProfit: 42.2789% \nPeriod: 1 day 2 hr ",
+    "ai_reply": "{\"symbol\": \"#AVAX/USDT\", \"action\": \"BUY LIMIT\", \"entry\": 4, \"sl\": null, \"tp1\": 42.2789, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#AVAX/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:34:18"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD SELL 4274\n\nTP 4271\nTP 4268\nTP 4265\nTP 4262\nTP 4259\nTP 4256\n\nSL 4285",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4274.0, \"sl\": 4285.0, \"tp1\": 4271.0, \"tp2\": 4268.0, \"tp3\": 4265.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4285.0, \"final_tp1\": 4271.0, \"final_tp2\": 4268.0, \"final_tp3\": 4265.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:39:04"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "ByBit USDT, Binance Futures, OKX Futures, Bitget Futures, KuCoin Futures\n#CHZ/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"symbol\": \"#CHZ/USDT\", \"action\": \"CLOSED\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#CHZ/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:46:11"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: CHZUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01295\n2) 0.0124 (DCA)\n\nTake-Profit Targets:\n0.013 - 0.0131 - 0.0131 - 0.0133 - 0.0135 - 0.0137 - 0.0141 - 0.0149\n\nStoploss: 0.012",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:46:21"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: CHZUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01295\n2) 0.0124 (DCA)\n\nTake-Profit Targets:\n0.013 - 0.0131 - 0.0131 - 0.0133 - 0.0135 - 0.0137 - 0.0141 - 0.0149\n\nStoploss: 0.012",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:46:23"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: KAVAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.0403\n2) 0.0387 (DCA)\n\nTake-Profit Targets:\n0.0405 - 0.0408 - 0.0413 - 0.0419 - 0.0427 - 0.0435 - 0.0447 - 0.0467\n\nStoploss: 0.0379",
+    "ai_reply": "{\"symbol\": \"KAVAUSDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": 0.0379, \"tp1\": 0.0403, \"tp2\": 0.0387, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'KAVAUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:46:47"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: KAVAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.0403\n2) 0.0387 (DCA)\n\nTake-Profit Targets:\n0.0405 - 0.0408 - 0.0413 - 0.0419 - 0.0427 - 0.0435 - 0.0447 - 0.0467\n\nStoploss: 0.0379",
+    "ai_reply": "{\"symbol\": \"KAVAUSDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": 0.0379, \"tp1\": 0.0403, \"tp2\": 0.0387, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'KAVAUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:46:55"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD SELL 4270\nTP 4267\nTP 4264\nTP 4261\nTP 4258\nTP 4255\nSL 4280\nUse proper money management me",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4270.0, \"sl\": 4280.0, \"tp1\": 4267.0, \"tp2\": 4264.0, \"tp3\": 4261.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4280.0, \"final_tp1\": 4267.0, \"final_tp2\": 4264.0, \"final_tp3\": 4261.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:47:19"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Entry 1 \nAverage Entry Price: 0.04030 ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 0.0403, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": -9.9597, \"final_tp1\": 20.0403, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0}",
+    "order_status": "Failed",
+    "error_msg": "Price sanity fail: entry 0.0403 is 100.0% from live 4267.95000",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:47:31"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " #Free Signal\n\n Long\n\nPair: #KNC/USDT\n\n Entry Price: \n\n1) 0.10220\n2) 0.09913\n\n Targets:\n\n1) 0.10278\n2) 0.10492\n3) 0.10705\n4) 0.10919\n\nStop Loss: 0.09576\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"symbol\": \"#KNC/USDT\", \"action\": \"BUY\", \"entry\": 0.1022, \"sl\": 0.09576, \"tp1\": 0.10278, \"tp2\": 0.10492, \"tp3\": 0.10705}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KNC/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:49:32"
+  },
+  {
+    "channel_name": "XAUUSD ACCURATE SiGNALS",
+    "message": "Gold buy 4267/63\nSl 4257\n\nTp 4275\nTp 4285/95/4325\n\n@Proazam1978",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4267.0, \"sl\": 4257.0, \"tp1\": 4275.0, \"tp2\": 4285.0, \"tp3\": 4325.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4257.0, \"final_tp1\": 4275.0, \"final_tp2\": 4285.0, \"final_tp3\": 4325.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: XAUUSD ACCUR 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 15:53:10"
+  },
+  {
+    "channel_name": "Crypto Radar",
+    "message": " VIP Signal\n\n Short\n\nPair: #XMR/USDT\n\n Entry Price: \n\n1) 366.27\n2) 377.25\n\n Targets:\n\n1) 364.12\n2) 356.39\n3) 348.66\n4) 340.92\n\nStop Loss: 389.34\n\nLeverage: 10x-20x",
+    "ai_reply": "{\"symbol\": \"#XMR/USDT\", \"action\": \"BUY\", \"entry\": 366.27, \"sl\": null, \"tp1\": 364.12, \"tp2\": 356.39, \"tp3\": 348.66}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#XMR/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 16:03:39"
+  },
+  {
+    "channel_name": "Sureshot FX \ud83c\udfaf",
+    "message": "Can you trade a falling market?\n\nMost can't. That's half your opportunities gone.\n\nXRPUSDT Short  +109.29 USDT | +32.26% \nRed candles pay too.\n\nSend CRYPTO\n@SSF_AdminBot",
+    "ai_reply": "{\"symbol\": \"XRPUSDT\", \"action\": \"SELL\", \"entry\": 109.29, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'XRPUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 16:38:53"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#CHZ/USDT Take-Profit target 1 \nProfit: 7.722% \nPeriod: 1 hr 3 min ",
+    "ai_reply": "{\"symbol\": \"#CHZ/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#CHZ/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 16:49:02"
+  },
+  {
+    "channel_name": "Sureshot FX VIP",
+    "message": "USDCAD BUY 1.4\n\nSL:  1.396\nTP:  1.412\n--Trade by Lucas",
+    "ai_reply": "{\"symbol\": \"USDCAD\", \"action\": \"BUY\", \"entry\": 1.4, \"sl\": 1.396, \"tp1\": 1.412, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 1.396, \"final_tp1\": 1.412, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Sureshot FX 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 17:10:31"
+  },
+  {
+    "channel_name": "Sureshot FX \ud83c\udfaf",
+    "message": "USDCAD BUY 1.4\n\nSL:  1.396\nTP:  1.412\n--Trade by Lucas",
+    "ai_reply": "{\"symbol\": \"USDCAD\", \"action\": \"BUY\", \"entry\": null, \"sl\": 1.396, \"tp1\": 1.412, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Sureshot FX 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 17:10:45"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD SELL 4261.57\n\nSL:  4271.57\nTP:  4241.57\n--Trade by William",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4261.57, \"sl\": 4271.57, \"tp1\": 4241.57, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4271.57, \"final_tp1\": 4241.57, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: SureShot GOL 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 17:14:40"
+  },
+  {
+    "channel_name": "Dan GOLD Scalper",
+    "message": "XAUUSD BUY 4260-58\n\nTP 1 : 4265\nTP 2 : 4270\nTP 3 : 4275\nTP 4 : 4295\n\nSL : 4243",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4260.0, \"sl\": 4243.0, \"tp1\": 4265.0, \"tp2\": 4270.0, \"tp3\": 4275.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4243.0, \"final_tp1\": 4265.0, \"final_tp2\": 4270.0, \"final_tp3\": 4275.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Dan GOLD Sca 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 18:00:16"
+  },
+  {
+    "channel_name": "DUBAI CAPITAL FX GROUP 3",
+    "message": "GOLD SELL 4247_4250\n\nSL _4262\n\nTP 4244\nTP 4241\nTP 4238\nTP 4235\nTP 4232\nTP 4229\nTP 4226\nTP 4223\n\nFOLLOW MONEY MANAGEMENT",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4247.0, \"sl\": 4262.0, \"tp1\": 4244.0, \"tp2\": 4241.0, \"tp3\": 4238.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4262.0, \"final_tp1\": 4244.0, \"final_tp2\": 4241.0, \"final_tp3\": 4238.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: DUBAI CAPITA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 18:53:17"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "HyperLiquid Futures, Binance Futures, OKX Futures, KuCoin Futures, ByBit USDT, Bitget Futures\n#SOL/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068, \"sl\": 4083, \"tp1\": 4065, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 20:01:11"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": " XAUUSD Buy 4040\n TP 4043\n TP 4046\nTP 4049\n TP 4052\nTP 4055\n SL 4029\nhttps://t.me/+_0VwtF_qnCtmOTY0",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4040.0, \"sl\": 4029.0, \"tp1\": 4043.0, \"tp2\": 4046.0, \"tp3\": 4049.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4029.0, \"final_tp1\": 4043.0, \"final_tp2\": 4046.0, \"final_tp3\": 4049.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 20:45:42"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": " XAUUSD SELL. 4280-4268\nI will delete the link after two minutes \n\nhttps://t.me/+SOmv4_NMpqAxMjI0\n\n600+ PIPS TARGET ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4280.0, \"sl\": 4268.0, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4268.0, \"final_tp1\": 4260.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 20:52:25"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": " XAUUSD SELL. 4280-4268\nI will delete the link after two minutes \n\nhttps://t.me/+SOmv4_NMpqAxMjI0\n\n600+ PIPS TARGET ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4280.0, \"sl\": 4268.0, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4268.0, \"final_tp1\": 4260.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 20:56:16"
+  },
+  {
+    "channel_name": "\ud83d\udc51Market Trader Crypto Forex\ud83d\udc51",
+    "message": "GOLD  SELL  - 4047\n\nSL -  90 PIPS \n\nTARGET - 200 PIPS  \nREVERSAL TRADE\n\n\nhttps://affs.click/xnqPA\nPATNER CODE (663WF)",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4047.0, \"sl\": 90.0, \"tp1\": 200.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 90.0, \"final_tp1\": 200.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: \\ud83d\\udc51Market Trad 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 21:23:07"
+  },
+  {
+    "channel_name": "Coin Chief",
+    "message": " Trade: #ZBT/USDT\n\nDirection:  Short \n\n Entry Range: 0.1763 - 0.1828\n\n StopLoss: 0.1869\n\n Target 1: 0.1746\n Target 2: 0.1729\n Target 3: 0.1712\n Target 4: 0.1695\n Target 5: 0.1679\n Target 6: 0.1662\n\n Leverage : 5x - 10x - 20x",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 21:23:20"
+  },
+  {
+    "channel_name": "Forexero - Forex Signals",
+    "message": "XAU/USD HIT TP2: +150 pips",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Forexero - F 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 21:26:30"
+  },
+  {
+    "channel_name": "Forexero - Forex Signals",
+    "message": "XAU/USD HIT TP3: +300 pips",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Forexero - F 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 21:29:09"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 1 \nProfit: 9.9256% \nPeriod: 5 hr 49 min ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-06 21:35:26"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD BUY 4238",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4238.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4228.0, \"final_tp1\": 4258.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 22:26:46"
+  },
+  {
+    "channel_name": "JOSEFINA TRADER0",
+    "message": "XAUUSD BUY 4238\nTP 4241\nTP 4244\nTP 4247\nTP 4250\nTP 4253\nSL 4228\nUse proper money management me",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4238.0, \"sl\": 4228.0, \"tp1\": 4241.0, \"tp2\": 4244.0, \"tp3\": 4250.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4228.0, \"final_tp1\": 4241.0, \"final_tp2\": 4244.0, \"final_tp3\": 4250.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: JOSEFINA TRA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 22:28:06"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD LIVE TRADE NOW \n\nXAUUSD \nUS30\nNAS100\nGBPUSD \nEURUSD \nGBPJPY \nALL SIGNALS AVAILABLE \nhttps://t.me/+HI2CLc1bhUw4MDJk\nhttps://t.me/+oHLRzcNDNiUwYjNk",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4047.0, \"sl\": 4058.0, \"tp1\": 4044.0, \"tp2\": 4041.0, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4058.0, \"final_tp1\": 4044.0, \"final_tp2\": 4041.0, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 22:32:54"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: APEUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.1331\n2) 0.1384 (DCA)\n\nTake-Profit Targets:\n0.1324 - 0.1318 - 0.1311 - 0.1291 - 0.1278 - 0.1251 - 0.1211 - 0.1131\n\nStoploss: 0.1411",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": null, \"sl\": 0.1411, \"tp1\": 0.1324, \"tp2\": 0.1318, \"tp3\": 0.1311, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 23:02:04"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "ByBit USDT, KuCoin Futures, OKX Futures, Binance Futures, Bitget Futures\n#APE/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 23:02:13"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: APEUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.1331\n2) 0.1384 (DCA)\n\nTake-Profit Targets:\n0.1324 - 0.1318 - 0.1311 - 0.1291 - 0.1278 - 0.1251 - 0.1211 - 0.1131\n\nStoploss: 0.1411",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-06 23:02:17"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#LDO/USDT Take-Profit target 3 \nProfit: 30.0871% \nPeriod: 10 hr 8 min ",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-06 23:08:58"
+  },
+  {
+    "channel_name": "Mr.DAVID, XAU/USD CLUB",
+    "message": "Buy: 4240 (current area)\nStop Loss: 4228\nTake Profit 1: 4255\nTake Profit 2: 4270\nTake Profit 3: 480",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Mr.DAVID, XA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-06 23:14:23"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#SOL/USDT Take-Profit target 1 \nProfit: 13.9382% \nPeriod: 4 hr 23 min ",
+    "ai_reply": "{\"symbol\": \"#SOL/USDT\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#SOL/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 00:24:31"
+  },
+  {
+    "channel_name": "GOLD Trader Dan",
+    "message": "XAUUSD SMASHED TP 440 PIPS ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: GOLD Trader 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 01:03:01"
+  },
+  {
+    "channel_name": "Dan GOLD Scalper",
+    "message": "XAUUSD SMASHED TP 440 PIPS ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Dan GOLD Sca 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 01:03:07"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": "DAILY REPORT  -  Aug 06, 2026\n\n BUY LIMIT 4264 -60 PIPS\n BUY LIMIT 4228  + 120 PIPS\n BUY LIMIT 4249  + 60 PIPS\n\nVantage |Exness |FxPro | IC\n Contact Admin  MyFxBook",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": -60.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Forex Tradin 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 02:11:07"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: ADAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.2027\n2) 0.1926 (DCA)\n\nTake-Profit Targets:\n0.2041 - 0.2053 - 0.2078 - 0.2108 - 0.2149 - 0.2189 - 0.225 - 0.2351\n\nStoploss: 0.1865",
+    "ai_reply": "{\"symbol\": \"ADAUSDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": 0.1865, \"tp1\": 0.1926, \"tp2\": 0.2027, \"tp3\": 0.2149}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'ADAUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 02:15:36"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: ADAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.2027\n2) 0.1926 (DCA)\n\nTake-Profit Targets:\n0.2041 - 0.2053 - 0.2078 - 0.2108 - 0.2149 - 0.2189 - 0.225 - 0.2351\n\nStoploss: 0.1865",
+    "ai_reply": "{\"symbol\": \"ADAUSDT\", \"action\": \"BUY\", \"entry\": null, \"sl\": 0.1865, \"tp1\": 0.1926, \"tp2\": 0.2027, \"tp3\": 0.2149}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol 'ADAUSDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 02:15:45"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Entry 1 \nAverage Entry Price: 0.2027 ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 0.2027, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": -9.7973, \"final_tp1\": 20.2027, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0}",
+    "order_status": "Failed",
+    "error_msg": "Price sanity fail: entry 0.2027 is 100.0% from live 4236.76000",
+    "ticket": null,
+    "timestamp": "2026-08-07 02:15:58"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Take-Profit target 1 \nProfit: 13.8135% \nPeriod: 48 min ",
+    "ai_reply": "{\"symbol\": \"EURUSD\", \"action\": \"SELL\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:04:22"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 2 \nProfit: 17.3697% \nPeriod: 11 hr 17 min ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:04:35"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 1 \nProfit: 7.8355% \nPeriod: 2 days 23 hr ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:11:02"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 1 \nProfit: 9.78% \nPeriod: 4 days 5 hr ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:12:29"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 3 \nProfit: 28.1224% \nPeriod: 11 hr 48 min ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": 28.1224, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:35:19"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#ADA/USDT Take-Profit target 2 \nProfit: 19.7336% \nPeriod: 1 hr 21 min ",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4068.0, \"sl\": 4083.0, \"tp1\": 4065.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4083.0, \"final_tp1\": 4065.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:36:39"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 2 \nProfit: 17.6298% \nPeriod: 3 days ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": 17.6298, \"sl\": null, \"tp1\": 3, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:47:52"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 2 \nProfit: 17.1149% \nPeriod: 4 days 6 hr ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 03:48:04"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 3 \nProfit: 27.7099% \nPeriod: 4 days 6 hr ",
+    "ai_reply": "{\"symbol\": \"#KAVA/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#KAVA/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 04:09:56"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 4 \nProfit: 40.9429% \nPeriod: 12 hr 22 min ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 04:10:09"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#KAVA/USDT Take-Profit target 3 \nProfit: 29.0565% \nPeriod: 3 days ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 04:10:12"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: CHZUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.0128\n2) 0.0133 (DCA)\n\nTake-Profit Targets:\n0.0127 - 0.0127 - 0.0126 - 0.0124 - 0.0123 - 0.012 - 0.0116 - 0.0109\n\nStoploss: 0.0137",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": null, \"sl\": 0.0137, \"tp1\": 0.0127, \"tp2\": 0.0126, \"tp3\": 0.0124, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: King Crypto 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 05:16:53"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "Binance Futures, KuCoin Futures, ByBit USDT, OKX Futures, Bitget Futures\n#CHZ/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 05:16:57"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: CHZUSDT\n\nTYPE: SHORT\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.0128\n2) 0.0133 (DCA)\n\nTake-Profit Targets:\n0.0127 - 0.0127 - 0.0126 - 0.0124 - 0.0123 - 0.012 - 0.0116 - 0.0109\n\nStoploss: 0.0137",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 05:17:02"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD BUY 4233",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4233.0, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4223.0, \"final_tp1\": 4253.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 06:23:18"
+  },
+  {
+    "channel_name": "RIAOGOLDFOREX",
+    "message": "XAUUSD BUY 4233\n\nTP 4236\n\nTP 4239\n\nTP 4242\n\nTP 4245\n\nTP 4258\n\nTP 4261\n\nSL 4223",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY\", \"entry\": 4233.0, \"sl\": 4223.0, \"tp1\": 4236.0, \"tp2\": 4239.0, \"tp3\": 4245.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4223.0, \"final_tp1\": 4236.0, \"final_tp2\": 4239.0, \"final_tp3\": 4245.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: RIAOGOLDFORE 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 06:25:24"
+  },
+  {
+    "channel_name": "Forex Trading Tips",
+    "message": " XAUUSD TRADING PLAN\nGold is currently ranging between 4,239  4,279. For now, the priority is to wait for a confirmed breakout before choosing direction.\n A break above 4,279 may open room for further upside toward 4,362.\n A break below 4,239 may shift focus back toward 4,170, then 4,118 and 4,037.\n\n Key Levels: 4,037 | 4,118 | 4,170 | 4,239 | 4,278 | 4,362\n\n Avoid trading in the middle of the range. Let price confirm the direction first.\n#plan",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"entry_override\": \"MARKET\", \"final_sl\": 0.0, \"final_tp1\": 0.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: Forex Tradin 777777\"}",
+    "order_status": "Failed",
+    "error_msg": "MT5 execution failed \u2014 check broker logs",
+    "ticket": null,
+    "timestamp": "2026-08-07 06:45:55"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GRTUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01452\n2) 0.0139 (DCA)\n\nTake-Profit Targets:\n0.0146 - 0.0147 - 0.0147 - 0.015 - 0.0151 - 0.0154 - 0.0158 - 0.0167\n\nStoploss: 0.0135",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 07:01:13"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "Binance Futures, OKX Futures, Bitget Futures, ByBit USDT, KuCoin Futures\n#GRT/USDT Closed due to opposite direction signal ",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 07:01:17"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GRTUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.01452\n2) 0.0139 (DCA)\n\nTake-Profit Targets:\n0.0146 - 0.0147 - 0.0147 - 0.015 - 0.0151 - 0.0154 - 0.0158 - 0.0167\n\nStoploss: 0.0135",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 07:01:23"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#GRT/USDT Entry 1 \nAverage Entry Price: 0.01452 ",
+    "ai_reply": "{\"symbol\": \"#GRT/USDT\", \"action\": \"BUY\", \"entry\": 0.01452, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#GRT/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 07:01:52"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "PAIR: GALAUSDT\n\nTYPE: LONG\nLEVERAGE: Cross 20x \n\nEntry Targets:\n1) 0.001809\n2) 0.0017 (DCA)\n\nTake-Profit Targets:\n0.0018 - 0.0018 - 0.0018 - 0.0019 - 0.0019 - 0.0019 - 0.002 - 0.0021\n\nStoploss: 0.0017",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 07:17:13"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD BUY LIMIT 4252\n\nSL:  4242.0\nTP:  4272.0\n--Trade by Grace",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"BUY LIMIT\", \"entry\": 4252.0, \"sl\": 4242.0, \"tp1\": 4272.0, \"tp2\": null, \"tp3\": null, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4242.0, \"final_tp1\": 4272.0, \"final_tp2\": null, \"final_tp3\": null, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: SureShot GOL 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-07 07:55:37"
+  },
+  {
+    "channel_name": "DUBAI CAPITAL FX GROUP 3",
+    "message": "GOLD SELL 4260_4263\n\nSL _4273\n\nTP 4257\nTP 4254\nTP 4251\nTP 4248\nTP 4245\nTP 4242\nTP 4239\nTP 4236\n\nFOLLOW MONEY MANAGEMENT",
+    "ai_reply": "{\"symbol\": \"GOLD\", \"action\": \"SELL\", \"entry\": 4260.0, \"sl\": 4273.0, \"tp1\": 4257.0, \"tp2\": 4254.0, \"tp3\": 4251.0, \"approved\": true, \"rejection_reason\": \"\", \"final_sl\": 4273.0, \"final_tp1\": 4257.0, \"final_tp2\": 4254.0, \"final_tp3\": 4251.0, \"risk_reward_ratio\": 1.5, \"status\": \"APPROVED\", \"risk_modifier\": 1.0, \"comment\": \"Tele: DUBAI CAPITA 777777\"}",
+    "order_status": "Success",
+    "error_msg": null,
+    "ticket": null,
+    "timestamp": "2026-08-07 08:00:08"
+  },
+  {
+    "channel_name": "Sureshot FX VIP",
+    "message": "AUDCAD BUY 0.9851\n\nSL:  0.9801\nTP:  1.0001\n--Trade by William",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 09:59:27"
+  },
+  {
+    "channel_name": "Sureshot FX \ud83c\udfaf",
+    "message": "AUDCAD BUY 0.9851\n\nSL:  0.9801\nTP:  1.0001\n--Trade by William",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 09:59:27"
+  },
+  {
+    "channel_name": "King Crypto Scalp [ LIVE ]",
+    "message": "#CHZ/USDT Take-Profit target 1 \nProfit: 15.625% \nPeriod: 4 hr 52 min ",
+    "ai_reply": "{\"symbol\": \"#CHZ/USDT\", \"action\": \"BUY LIMIT\", \"entry\": null, \"sl\": null, \"tp1\": null, \"tp2\": null, \"tp3\": null}",
+    "order_status": "Failed",
+    "error_msg": "Telegram Crypto Restriction: Symbol '#CHZ/USDT' rejected. Forex, Gold & Silver only.",
+    "ticket": null,
+    "timestamp": "2026-08-07 10:09:32"
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "message": "XAUUSD SELL LIMIT 4336.6\n\nSL:  4346.6\nTP:  4316.6\n--Trade by William",
+    "ai_reply": "{\"action\": \"NO_TRADE\"}",
+    "order_status": "Failed",
+    "error_msg": "Trigger could not parse a valid trade structure from this signal",
+    "ticket": null,
+    "timestamp": "2026-08-07 16:52:24"
+  }
+]
