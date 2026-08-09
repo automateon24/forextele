@@ -32,3 +32,15 @@ def calculate_adx(high: pd.Series, low: pd.Series, close: pd.Series, period: int
     dx = 100 * ((plus_di - minus_di).abs() / (plus_di + minus_di).abs())
     adx = dx.rolling(window=period).mean()
     return adx
+
+def calculate_ema(series: pd.Series, period: int = 14) -> pd.Series:
+    """Calculates the Exponential Moving Average"""
+    return series.ewm(span=period, adjust=False).mean()
+
+def calculate_bollinger_bands(series: pd.Series, period: int = 20, std_dev: float = 2.0):
+    """Calculates Bollinger Bands (upper, middle, lower)"""
+    middle = series.rolling(window=period).mean()
+    std = series.rolling(window=period).std()
+    upper = middle + (std * std_dev)
+    lower = middle - (std * std_dev)
+    return upper, middle, lower
