@@ -31,6 +31,26 @@ def get_daily_realised_pnl():
     pnl = sum(d.profit for d in deals if d.entry == mt5.DEAL_ENTRY_OUT)
     return pnl
 
+def reconcile_positions(expected_tickets: set):
+    """
+    Checks live MT5 positions against expected tickets to detect ghost trades or external interference.
+    """
+    positions = mt5.positions_get()
+    if positions is None:
+        logging.error("Failed to fetch MT5 positions for reconciliation.")
+        return False
+        
+    actual_tickets = {p.ticket for p in positions}
+    ghost_trades = actual_tickets - expected_tickets
+    missing_trades = expected_tickets - actual_tickets
+    
+    if ghost_trades:
+        logging.critical(f"GHOST TRADES DETECTED: {ghost_trades}. Immediate investigation required.")
+    if missing_trades:
+        logging.warning(f"MISSING TRADES DETECTED: {missing_trades}. Closed externally?")
+        
+    return len(ghost_trades) == 0
+
 def load_high_water_mark(current_equity):
     hwm_path = os.path.join(BASE_DIR, "config", "high_water_mark.json")
     hwm = current_equity

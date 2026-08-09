@@ -96,7 +96,17 @@ class RiskEvaluator:
         hard_cap = self.config.get("hard_lot_cap", 0.05)
         volume = min(volume, hard_cap)
 
-        return RiskDecisionMessage(
+        # Portfolio Heat Check (Total Risk % of Equity)
+        max_heat = self.config.get("max_portfolio_heat_pct", 0.03)
+        current_heat = sum(p.risk_amount for p in self.portfolio.open_positions) if hasattr(self.portfolio.open_positions[0], 'risk_amount') and self.portfolio.open_positions else 0.0
+        
+        # Approximate risk of new trade
+        new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) * volume * 100000 # Rough estimate without tick value
+        if self.portfolio.equity > 0:
+            if (current_heat + new_trade_risk) / self.portfolio.equity > max_heat:
+                return self._block(signal, "MAX_PORTFOLIO_HEAT")
+
+        decision_msg = RiskDecisionMessage(
             header=MessageHeader(message_type="RiskDecision", source_component="svc_risk_engine"),
             original_correlation_id=signal.header.correlation_id,
             decision="ALLOW",
@@ -109,18 +119,24 @@ class RiskEvaluator:
                 "side": signal.side,
                 "equity": self.portfolio.equity,
                 "positions": current_open_positions,
-                "daily_loss_pct": daily_loss_pct
+                "daily_loss_pct": daily_loss_pct,
+                "portfolio_heat": current_heat
             }
         )
-        self._audit_log(decision)
-        return decision
+        self._audit_log(decision_msg)
+        return decision_msg
 
     def _audit_log(self, decision: RiskDecisionMessage):
         try:
+            # Simple rotation logic: if file is > 10MB, rename it
+            if os.path.exists(AUDIT_LOG_PATH):
+                if os.path.getsize(AUDIT_LOG_PATH) > 10 * 1024 * 1024:
+                    os.rename(AUDIT_LOG_PATH, f"{AUDIT_LOG_PATH}.{int(time.time())}.bak")
+                    
             with open(AUDIT_LOG_PATH, "a") as f:
                 f.write(decision.model_dump_json() + "\n")
         except Exception as e:
-            logging.error(f"Failed to write to audit log: {e}")
+            logging.error(f"Failed to write audit log: {e}")
 
     def _block(self, signal: SignalMessage, reason: str) -> RiskDecisionMessage:
         decision = RiskDecisionMessage(
