@@ -1,0 +1,11 @@
+{
+  "active_symbols": [
+    "EURUSD"
+  ],
+  "active_strategies": [
+    "LONDON_BREAKOUT",
+    "MEAN_REVERSION",
+    "TREND_MOMENTUM",
+    "SMC_ORDER_BLOCK"
+  ]
+}
