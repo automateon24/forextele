@@ -101,7 +101,13 @@ class RiskEvaluator:
         current_heat = sum(p.risk_amount for p in self.portfolio.open_positions) if self.portfolio.open_positions and hasattr(self.portfolio.open_positions[0], 'risk_amount') else 0.0
         
         # Approximate risk of new trade
-        new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) * volume * 100000 # Rough estimate without tick value
+        import MetaTrader5 as mt5
+        sym_info = mt5.symbol_info(signal.symbol)
+        if sym_info and getattr(sym_info, 'trade_tick_size', 0) > 0:
+            new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) / sym_info.trade_tick_size * sym_info.trade_tick_value * volume
+        else:
+            mult = 100 if "GOLD" in signal.symbol or "XAU" in signal.symbol else 100000
+            new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) * volume * mult
         if self.portfolio.equity > 0:
             if (current_heat + new_trade_risk) / self.portfolio.equity > max_heat:
                 return self._block(signal, "MAX_PORTFOLIO_HEAT")
