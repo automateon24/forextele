@@ -98,7 +98,7 @@ class RiskEvaluator:
 
         # Portfolio Heat Check (Total Risk % of Equity)
         max_heat = self.config.get("max_portfolio_heat_pct", 0.03)
-        current_heat = sum(p.risk_amount for p in self.portfolio.open_positions) if hasattr(self.portfolio.open_positions[0], 'risk_amount') and self.portfolio.open_positions else 0.0
+        current_heat = sum(p.risk_amount for p in self.portfolio.open_positions) if self.portfolio.open_positions and hasattr(self.portfolio.open_positions[0], 'risk_amount') else 0.0
         
         # Approximate risk of new trade
         new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) * volume * 100000 # Rough estimate without tick value
