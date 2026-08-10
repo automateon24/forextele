@@ -113,6 +113,36 @@ def run_session():
     # We fetch enough candles to satisfy the hungriest strategy
     max_lookback = max(s.min_bars for s in strategies) if strategies else 50
     
+    logger.info("Injecting startup test signals to verify flow...")
+    from src.common.messages import SignalMessage
+    test_signals = []
+    
+    if "EURUSD" in symbols:
+        try:
+            ask = mt5.symbol_info_tick("EURUSD").ask
+            bid = mt5.symbol_info_tick("EURUSD").bid
+            test_signals.append(SignalMessage(header=MessageHeader(source_component="test", message_type="Signal"), symbol="EURUSD", side="BUY", strategy_id="TEST_FLOW", suggested_entry_price=ask, suggested_sl_price=ask-0.0020, suggested_tp_price=ask+0.0020))
+            test_signals.append(SignalMessage(header=MessageHeader(source_component="test", message_type="Signal"), symbol="EURUSD", side="SELL", strategy_id="TEST_FLOW", suggested_entry_price=bid, suggested_sl_price=bid+0.0020, suggested_tp_price=bid-0.0020))
+        except: pass
+        
+    if "GOLD" in symbols:
+        try:
+            ask = mt5.symbol_info_tick("GOLD").ask
+            bid = mt5.symbol_info_tick("GOLD").bid
+            test_signals.append(SignalMessage(header=MessageHeader(source_component="test", message_type="Signal"), symbol="GOLD", side="BUY", strategy_id="TEST_FLOW", suggested_entry_price=ask, suggested_sl_price=ask-2.0, suggested_tp_price=ask+2.0))
+            test_signals.append(SignalMessage(header=MessageHeader(source_component="test", message_type="Signal"), symbol="GOLD", side="SELL", strategy_id="TEST_FLOW", suggested_entry_price=bid, suggested_sl_price=bid+2.0, suggested_tp_price=bid-2.0))
+        except: pass
+        
+    for sig in test_signals:
+        if sig.suggested_entry_price == 0.0: continue
+        logger.info(f"[TEST_FLOW] Sending Test Signal: {sig.side} {sig.symbol} @ {sig.suggested_entry_price}")
+        dec = risk_engine.evaluate(sig)
+        logger.info(f"[TEST_FLOW] Risk Decision: {dec.decision} ({dec.reason_code})")
+        if dec.decision in ["ALLOW", "ALLOW_REDUCED"]:
+            rep = execution_gateway.execute(dec)
+            logger.info(f"[TEST_FLOW] Execution Report: {rep.status} (Reason: {rep.reject_reason})")
+            time.sleep(1) # small pause between test trades
+
     logger.info("Starting infinite orchestrator loop. Press Ctrl+C to stop.")
     
     loop_count = 0
