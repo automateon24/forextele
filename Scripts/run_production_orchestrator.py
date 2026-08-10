@@ -117,6 +117,9 @@ def run_session():
     from src.common.messages import SignalMessage
     test_signals = []
     
+    # Initialize portfolio to prevent DATA_STALE block
+    risk_engine.portfolio = build_live_portfolio_snapshot()
+    
     if "EURUSD" in symbols:
         try:
             ask = mt5.symbol_info_tick("EURUSD").ask
