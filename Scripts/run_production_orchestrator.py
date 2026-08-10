@@ -115,8 +115,13 @@ def run_session():
     
     logger.info("Starting infinite orchestrator loop. Press Ctrl+C to stop.")
     
+    loop_count = 0
     while True:
         try:
+            loop_count += 1
+            if loop_count % 12 == 0: # Every ~60 seconds
+                logger.info(f"Heartbeat: Loop {loop_count} completed. No new signals.")
+                
             # 1. Live Portfolio Snapshot
             portfolio = build_live_portfolio_snapshot()
             risk_engine.portfolio = portfolio
