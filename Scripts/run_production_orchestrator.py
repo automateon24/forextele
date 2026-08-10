@@ -119,12 +119,17 @@ def run_session():
     while True:
         try:
             loop_count += 1
-            if loop_count % 12 == 0: # Every ~60 seconds
-                logger.info(f"Heartbeat: Loop {loop_count} completed. No new signals.")
-                
+            
             # 1. Live Portfolio Snapshot
             portfolio = build_live_portfolio_snapshot()
             risk_engine.portfolio = portfolio
+            
+            if loop_count % 12 == 0: # Every ~60 seconds
+                pos_info = f"Open Positions: {len(portfolio.open_positions)}"
+                if portfolio.open_positions:
+                    details = ", ".join([f"{p.side} {p.volume} {p.symbol}" for p in portfolio.open_positions])
+                    pos_info += f" [{details}]"
+                logger.info(f"Heartbeat [Loop {loop_count}] - MT5 Connected - Capital: ${portfolio.equity:.2f} - {pos_info} - Watching: {', '.join(symbols)}")
             
             # 2. Process each symbol
             for symbol in symbols:
