@@ -84,23 +84,51 @@ def load_active_strategies():
     symbols = config.get("active_symbols", ["EURUSD"])
     
     for symbol in symbols:
-        if "LONDON_BREAKOUT" in config.get("active_strategies", []):
+        active_list = config.get("active_strategies", [])
+        if "LONDON_BREAKOUT" in active_list:
             strategies.append(LondonBreakoutStrategy(symbol=symbol))
-        if "MEAN_REVERSION" in config.get("active_strategies", []):
+        if "MEAN_REVERSION" in active_list:
             from src.strategy.mean_reversion import MeanReversionStrategy
             strategies.append(MeanReversionStrategy(symbol=symbol))
-        if "TREND_MOMENTUM" in config.get("active_strategies", []):
+        if "TREND_MOMENTUM" in active_list:
             from src.strategy.trend_momentum import TrendMomentumStrategy
             strategies.append(TrendMomentumStrategy(symbol=symbol))
-        if "SMC_ORDER_BLOCK" in config.get("active_strategies", []):
+        if "SMC_ORDER_BLOCK" in active_list:
             from src.strategy.smc_order_block import SMCOrderBlockStrategy
             strategies.append(SMCOrderBlockStrategy(symbol=symbol))
-        if "ASIAN_RANGE_SCALP" in config.get("active_strategies", []):
+        if "ASIAN_RANGE_SCALP" in active_list:
             from src.strategy.asian_range_scalp import AsianRangeScalpStrategy
             strategies.append(AsianRangeScalpStrategy(symbol=symbol))
-        if "LONDON_BREAKOUT_V2" in config.get("active_strategies", []):
+        if "LONDON_BREAKOUT_V2" in active_list:
             from src.strategy.london_breakout_v2 import LondonBreakoutV2Strategy
             strategies.append(LondonBreakoutV2Strategy(symbol=symbol))
+        if "LONDON_SESSION_SCALP" in active_list:
+            from src.strategy.london_session_scalp import LondonSessionScalpStrategy
+            strategies.append(LondonSessionScalpStrategy(symbol=symbol))
+        if "ORB_OPENING_RANGE_BREAKOUT" in active_list:
+            from src.strategy.orb_opening_range_breakout import ORBOpeningRangeBreakoutStrategy
+            strategies.append(ORBOpeningRangeBreakoutStrategy(symbol=symbol))
+        if "VWAP_MEAN_REVERSION" in active_list:
+            from src.strategy.vwap_mean_reversion import VWAPMeanReversionStrategy
+            strategies.append(VWAPMeanReversionStrategy(symbol=symbol))
+        if "SUPERTREND_PULLBACK" in active_list:
+            from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
+            strategies.append(SupertrendPullbackStrategy(symbol=symbol))
+        if "FVG_RETEST" in active_list:
+            from src.strategy.fvg_retest import FVGRetestStrategy
+            strategies.append(FVGRetestStrategy(symbol=symbol))
+        if "RSI_REVERSAL" in active_list:
+            from src.strategy.rsi_reversal import RSIReversalStrategy
+            strategies.append(RSIReversalStrategy(symbol=symbol))
+        if "EMA_TREND_PULLBACK" in active_list:
+            from src.strategy.ema_trend_pullback import EMATrendPullbackStrategy
+            strategies.append(EMATrendPullbackStrategy(symbol=symbol))
+        if "NY_OPEN_BREAKOUT" in active_list:
+            from src.strategy.ny_open_breakout import NYOpenBreakoutStrategy
+            strategies.append(NYOpenBreakoutStrategy(symbol=symbol))
+        if "BOLLINGER_MEAN_REVERSION" in active_list:
+            from src.strategy.bollinger_mean_reversion import BollingerMeanReversionStrategy
+            strategies.append(BollingerMeanReversionStrategy(symbol=symbol))
             
     return strategies, symbols
 

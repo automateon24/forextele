@@ -30,8 +30,13 @@ class AsianRangeScalpStrategy:
         is_buy = latest_closed['close'] <= (range_low + range_size * 0.1) # Bottom 10%
         is_sell = latest_closed['close'] >= (range_high - range_size * 0.1) # Top 10%
         
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            buffer = max(1.50, range_size * 0.05)
+        else:
+            buffer = max(0.0020, range_size * 0.05)
+            
         if is_buy:
-            sl = range_low - 0.0020
+            sl = range_low - buffer
             tp = range_high
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
@@ -43,7 +48,7 @@ class AsianRangeScalpStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = range_high + 0.0020
+            sl = range_high + buffer
             tp = range_low
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),

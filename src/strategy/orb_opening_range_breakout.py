@@ -6,7 +6,10 @@ class ORBOpeningRangeBreakoutStrategy:
     def __init__(self, symbol: str, lookback: int = 4, max_range_pips: float = 0.0060):
         self.symbol = symbol
         self.lookback = lookback # Number of bars to define the range (e.g. 4 H1 bars)
-        self.max_range = max_range_pips
+        if "GOLD" in symbol or "XAU" in symbol:
+            self.max_range = 30.0 # $30 max range for Gold
+        else:
+            self.max_range = max_range_pips
         self.strategy_id = "ORB_OPENING_RANGE_BREAKOUT"
         self.min_bars = self.lookback + 2
 
