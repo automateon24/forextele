@@ -16,7 +16,6 @@ class BacktestEngine:
         volume: float = 0.02,
         max_open_positions: int = 2,
         max_per_symbol: int = 1,
-        daily_loss_pct: float = 0.02,
     ):
         self.df = df
         self.strategies = strategies
@@ -25,7 +24,6 @@ class BacktestEngine:
         self.volume = volume
         self.max_open_positions = max_open_positions
         self.max_per_symbol = max_per_symbol
-        self.daily_loss_limit = -abs(daily_loss_pct * capital)
         self.trades = []
 
     def run(self):
@@ -37,22 +35,14 @@ class BacktestEngine:
 
         # Track open positions: list of {symbol, exit_bar_idx}
         open_positions: List[Dict] = []
-        # Track daily PnL: {date_str -> float}
-        daily_pnl: Dict[str, float] = {}
 
         for i in range(max_lookback, len(self.df)):
             window = self.df.iloc[i - max_lookback: i + 1]
             current_bar = window.iloc[-1]
             current_bar_time = current_bar['time']
-            current_date = str(current_bar_time)[:10]
 
             # --- Clean up expired open positions ---
             open_positions = [p for p in open_positions if p['exit_bar_idx'] > i]
-
-            # --- Daily loss halt ---
-            today_pnl = daily_pnl.get(current_date, 0.0)
-            if today_pnl <= self.daily_loss_limit:
-                continue  # Skip all signals today
 
             # --- Count open positions per symbol ---
             open_count = len(open_positions)
@@ -88,9 +78,6 @@ class BacktestEngine:
                 })
                 open_count += 1
                 symbol_counts[sig_symbol] = symbol_counts.get(sig_symbol, 0) + 1
-
-                # Track daily PnL
-                daily_pnl[current_date] = daily_pnl.get(current_date, 0.0) + trade['pnl']
 
         logger.info(f"Engine completed. {len(self.trades)} trades simulated.")
         return pd.DataFrame(self.trades)
