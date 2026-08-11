@@ -21,7 +21,10 @@ logger = logging.getLogger("ProdOrchestrator")
 def build_live_portfolio_snapshot() -> PortfolioSnapshotMessage:
     account_info = mt5.account_info()
     if account_info is None:
-        raise Exception("Failed to get MT5 account info")
+        init_mt5()
+        account_info = mt5.account_info()
+        if account_info is None:
+            raise Exception("Failed to get MT5 account info (connection down)")
     
     positions = mt5.positions_get()
     open_pos = []
@@ -61,7 +64,10 @@ def build_live_portfolio_snapshot() -> PortfolioSnapshotMessage:
 def fetch_live_candles(symbol: str, timeframe: int, count: int) -> pd.DataFrame:
     rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, count)
     if rates is None or len(rates) == 0:
-        return pd.DataFrame()
+        init_mt5()
+        rates = mt5.copy_rates_from_pos(symbol, timeframe, 0, count)
+        if rates is None or len(rates) == 0:
+            return pd.DataFrame()
     df = pd.DataFrame(rates)
     df['time'] = pd.to_datetime(df['time'], unit='s')
     return df
