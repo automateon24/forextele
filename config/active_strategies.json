@@ -1,11 +1,10 @@
 {
   "active_symbols": [
-    "EURUSD",
     "GOLD"
   ],
   "active_strategies": [
-    "ASIAN_RANGE_SCALP",
     "LONDON_SESSION_SCALP",
+    "ASIAN_RANGE_SCALP",
     "ORB_OPENING_RANGE_BREAKOUT"
   ]
 }
