@@ -14,16 +14,12 @@ class BacktestEngine:
         cost_model: CostModel,
         capital: float = 1500.0,
         volume: float = 0.02,
-        max_open_positions: int = 2,
-        max_per_symbol: int = 1,
     ):
         self.df = df
         self.strategies = strategies
         self.cost_model = cost_model
         self.capital = capital
         self.volume = volume
-        self.max_open_positions = max_open_positions
-        self.max_per_symbol = max_per_symbol
         self.trades = []
 
     def run(self):
@@ -33,32 +29,11 @@ class BacktestEngine:
             default=50
         )
 
-        # Track open positions: list of {symbol, exit_bar_idx}
-        open_positions: List[Dict] = []
-
         for i in range(max_lookback, len(self.df)):
             window = self.df.iloc[i - max_lookback: i + 1]
-            current_bar = window.iloc[-1]
-            current_bar_time = current_bar['time']
-
-            # --- Clean up expired open positions ---
-            open_positions = [p for p in open_positions if p['exit_bar_idx'] > i]
-
-            # --- Count open positions per symbol ---
-            open_count = len(open_positions)
-            symbol_counts: Dict[str, int] = {}
-            for p in open_positions:
-                symbol_counts[p['symbol']] = symbol_counts.get(p['symbol'], 0) + 1
+            current_bar_time = window.iloc[-1]['time']
 
             for strategy in self.strategies:
-                # --- Position limit checks ---
-                if open_count >= self.max_open_positions:
-                    break  # No more new positions allowed right now
-
-                sig_symbol = getattr(strategy, 'symbol', 'GOLD')
-                if symbol_counts.get(sig_symbol, 0) >= self.max_per_symbol:
-                    continue  # Already have a position on this symbol
-
                 signal = strategy.analyze(window)
                 if not signal:
                     continue
@@ -70,14 +45,6 @@ class BacktestEngine:
                 trade['strategy_id'] = strategy.strategy_id
                 trade['time'] = current_bar_time
                 self.trades.append(trade)
-
-                # Register open position
-                open_positions.append({
-                    'symbol': sig_symbol,
-                    'exit_bar_idx': trade.get('exit_bar_idx', i + 1),
-                })
-                open_count += 1
-                symbol_counts[sig_symbol] = symbol_counts.get(sig_symbol, 0) + 1
 
         logger.info(f"Engine completed. {len(self.trades)} trades simulated.")
         return pd.DataFrame(self.trades)
