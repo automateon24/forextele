@@ -5,6 +5,7 @@
   ],
   "active_strategies": [
     "ASIAN_RANGE_SCALP",
-    "LONDON_BREAKOUT_V2"
+    "LONDON_SESSION_SCALP",
+    "ORB_OPENING_RANGE_BREAKOUT"
   ]
 }
