@@ -170,19 +170,20 @@ def train_model_strict_oos(train_feature_df: pd.DataFrame, strategy_id: str, tim
 
 def run_oos_backtest(test_df: pd.DataFrame, strategies, cost_model, capital: float, volume: float, models: dict, use_ml: bool = False) -> pd.DataFrame:
     """
-    Run backtest on test_df (the holdout period).
+    Run backtest on test_df (the holdout period) with realistic execution fills.
     If use_ml=True, filter out trades where model predict_proba < ML_THRESHOLD.
     """
     from src.backtest.engine import BacktestEngine
     engine = BacktestEngine.__new__(BacktestEngine)
-    engine.df          = test_df
-    engine.strategies  = strategies
-    engine.cost_model  = cost_model
-    engine.capital     = capital
-    engine.volume      = volume
-    engine.use_tsl     = True
-    engine.max_dd_pct  = 0.30
-    engine.trades      = []
+    engine.df           = test_df
+    engine.strategies   = strategies
+    engine.cost_model   = cost_model
+    engine.capital      = capital
+    engine.volume       = volume
+    engine.use_tsl      = True
+    engine.max_dd_pct   = 0.30
+    engine.slippage_usd = 0.15
+    engine.trades       = []
 
     max_lookback = max(
         (getattr(s, 'min_bars', getattr(s, 'lookback', 10) + 2) for s in strategies),
@@ -202,6 +203,11 @@ def run_oos_backtest(test_df: pd.DataFrame, strategies, cost_model, capital: flo
         for strategy in strategies:
             signal = strategy.analyze(window)
             if not signal:
+                continue
+
+            # Risk Gate: min SL distance
+            sl_dist = abs(signal.suggested_entry_price - signal.suggested_sl_price)
+            if sl_dist < 1.00:
                 continue
 
             strat_id = strategy.strategy_id

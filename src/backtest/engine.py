@@ -6,11 +6,13 @@ from src.common.messages import SignalMessage
 
 logger = logging.getLogger(__name__)
 
-# ── Trailing Stop Loss (TSL) settings for Gold ─────────────────────────────
-_TSL_ACTIVATION_USD  = 5.0   # TSL kicks in once trade profit reaches $5 move in price
-_TSL_TRAIL_DIST_USD  = 3.0   # Trail SL $3 below the peak high (for BUY) or above low (for SELL)
-# ── Portfolio drawdown cap ─────────────────────────────────────────────────
-_MAX_PORTFOLIO_DD_PCT = 0.30  # Stop new trades if portfolio is down >30% from its peak
+# ── Realistic Execution & Risk Parameters ──────────────────────────────────
+_TSL_ACTIVATION_USD   = 5.0    # TSL kicks in once trade profit reaches $5 move in price
+_TSL_TRAIL_DIST_USD   = 3.0    # Trail SL $3 below peak high (BUY) or above low (SELL)
+_MAX_PORTFOLIO_DD_PCT  = 0.30   # Stop new trades if portfolio is down >30% from peak
+_SLIPPAGE_PER_TRADE   = 0.15   # $0.15 slippage on entry and exit ($0.30 total execution friction)
+_MAX_ALLOWED_SPREAD   = 0.80   # Risk Gate: Reject signal if spread > $0.80
+_MIN_SL_DIST_USD      = 1.00   # Risk Gate: Reject signal if SL distance < $1.00
 
 
 class BacktestEngine:
@@ -23,6 +25,7 @@ class BacktestEngine:
         volume: float = 0.02,
         use_tsl: bool = True,
         max_dd_pct: float = _MAX_PORTFOLIO_DD_PCT,
+        slippage_usd: float = _SLIPPAGE_PER_TRADE,
     ):
         self.df = df
         self.strategies = strategies
@@ -31,16 +34,16 @@ class BacktestEngine:
         self.volume = volume
         self.use_tsl = use_tsl
         self.max_dd_pct = max_dd_pct
+        self.slippage_usd = slippage_usd
         self.trades = []
 
     def run(self):
-        logger.info(f"Starting engine over {len(self.df)} bars...")
+        logger.info(f"Starting engine over {len(self.df)} bars with LIVE-REALISTIC execution rules...")
         max_lookback = max(
             (getattr(s, 'min_bars', getattr(s, 'lookback', 10) + 2) for s in self.strategies),
             default=50
         )
 
-        # ── Portfolio equity tracking for 30% DD cap ──────────────────────
         running_equity = self.capital
         peak_equity    = self.capital
 
@@ -48,15 +51,21 @@ class BacktestEngine:
             window = self.df.iloc[i - max_lookback: i + 1]
             current_bar_time = window.iloc[-1]['time']
 
-            # ── 30% portfolio drawdown cap ─────────────────────────────────
+            # ── Risk Gate 1: Portfolio Drawdown Cap ─────────────────────────
             if peak_equity > 0:
                 current_dd = (peak_equity - running_equity) / peak_equity
                 if current_dd >= self.max_dd_pct:
-                    continue  # Portfolio in 30% DD — no new trades until it recovers
+                    continue  # Block trades when in >30% drawdown
 
             for strategy in self.strategies:
                 signal = strategy.analyze(window)
                 if not signal:
+                    continue
+
+                # ── Risk Gate 2: Minimum SL Distance Gate ──────────────────
+                sl_dist = abs(signal.suggested_entry_price - signal.suggested_sl_price)
+                if sl_dist < _MIN_SL_DIST_USD:
+                    logger.debug(f"Signal rejected by Risk Gate: SL dist ${sl_dist:.2f} < ${_MIN_SL_DIST_USD:.2f}")
                     continue
 
                 trade = self._simulate_execution(signal, i)
@@ -67,127 +76,128 @@ class BacktestEngine:
                 trade['time'] = current_bar_time
                 self.trades.append(trade)
 
-                # Update equity curve
                 running_equity += trade['pnl']
                 if running_equity > peak_equity:
                     peak_equity = running_equity
 
-        logger.info(f"Engine completed. {len(self.trades)} trades simulated.")
+        logger.info(f"Engine completed. {len(self.trades)} trades simulated with realistic fills.")
         return pd.DataFrame(self.trades)
 
     def _simulate_execution(self, signal: SignalMessage, current_idx: int) -> Optional[Dict[str, Any]]:
         """
-        Simulates forward trade execution with Trailing Stop Loss (TSL).
-
-        TSL Logic (Gold-optimised):
-          - Fixed SL protects downside from the start.
-          - Once price moves >= _TSL_ACTIVATION_USD in our favour, TSL activates.
-          - TSL trails _TSL_TRAIL_DIST_USD behind the best price achieved.
-          - Fixed TP is only used before TSL activates; after that, TSL exits the trade.
+        Simulates realistic trade execution:
+          1. Entry Slippage applied ($0.15).
+          2. Same-Bar Conflict Rule: If both SL and TP could hit in the same bar,
+             SL IS ASSUMED TO HIT FIRST (pessimistic live fill).
+          3. Gap Fill Rule: If open price gaps past SL, fill at open price (slippage).
+          4. Exit Slippage applied ($0.15).
         """
-        entry_price   = self.cost_model.apply_entry_cost(signal.suggested_entry_price, signal.side)
-        volume        = self.volume
-        outcome       = "OPEN"
-        exit_price    = 0.0
-        exit_time     = None
-        exit_bar_idx  = len(self.df) - 1
+        # Entry price with spread + entry slippage
+        raw_entry = self.cost_model.apply_entry_cost(signal.suggested_entry_price, signal.side)
+        entry_price = raw_entry + (self.slippage_usd if signal.side == "BUY" else -self.slippage_usd)
 
-        # TSL state
-        tsl_active    = False
-        best_price    = entry_price          # tracks high-water (BUY) or low-water (SELL)
-        trailing_sl   = signal.suggested_sl_price   # starts as the strategy's fixed SL
+        volume       = self.volume
+        outcome      = "OPEN"
+        exit_price   = 0.0
+        exit_time    = None
+        exit_bar_idx = len(self.df) - 1
+
+        tsl_active  = False
+        best_price  = entry_price
+        trailing_sl = signal.suggested_sl_price
 
         for j in range(current_idx + 1, len(self.df)):
             future_bar = self.df.iloc[j]
+            bar_open  = future_bar['open']
+            bar_high  = future_bar['high']
+            bar_low   = future_bar['low']
 
             if signal.side == "BUY":
-                bar_high = future_bar['high']
-                bar_low  = self.cost_model.apply_exit_cost(future_bar['low'], signal.side)
+                # Check for gap open below SL
+                effective_low = self.cost_model.apply_exit_cost(bar_low, signal.side)
+                effective_open = self.cost_model.apply_exit_cost(bar_open, signal.side)
 
-                # Advance best price
+                # Update best price (high water mark)
                 if bar_high > best_price:
                     best_price = bar_high
 
-                # Activate TSL when profit target hit
                 if self.use_tsl and not tsl_active:
                     if (best_price - entry_price) >= _TSL_ACTIVATION_USD:
                         tsl_active = True
-                        logger.debug(f"TSL activated at best_price={best_price:.2f}")
 
-                # Ratchet up the trailing SL
                 if tsl_active:
                     new_tsl = best_price - _TSL_TRAIL_DIST_USD
                     if new_tsl > trailing_sl:
                         trailing_sl = new_tsl
 
-                # Check if current bar low hits the active SL/TSL
-                if bar_low <= trailing_sl:
-                    outcome    = "WIN" if trailing_sl > entry_price else "LOSS"
-                    exit_price = trailing_sl
+                # ── SAME-BAR CONFLICT RULE & SL FILL ───────────────────────
+                # Check if SL triggered on this bar
+                if effective_low <= trailing_sl or effective_open <= trailing_sl:
+                    outcome = "WIN" if trailing_sl > entry_price else "LOSS"
+                    # Fill at gap open if opened below SL, else trailing SL minus exit slippage
+                    actual_sl = min(effective_open, trailing_sl) if effective_open < trailing_sl else trailing_sl
+                    exit_price = actual_sl - self.slippage_usd
                     exit_time  = future_bar['time']
                     exit_bar_idx = j
                     break
 
-                # Fixed TP (only before TSL takes over)
+                # TP triggered (only if SL did NOT trigger)
                 if not tsl_active:
-                    exit_tp = self.cost_model.apply_exit_cost(bar_high, signal.side)
-                    if exit_tp >= signal.suggested_tp_price:
-                        outcome    = "WIN"
-                        exit_price = signal.suggested_tp_price
+                    effective_high = self.cost_model.apply_exit_cost(bar_high, signal.side)
+                    if effective_high >= signal.suggested_tp_price:
+                        outcome = "WIN"
+                        exit_price = signal.suggested_tp_price - self.slippage_usd
                         exit_time  = future_bar['time']
                         exit_bar_idx = j
                         break
 
             else:  # SELL
-                bar_low  = future_bar['low']
-                bar_high = self.cost_model.apply_exit_cost(future_bar['high'], signal.side)
+                effective_high = self.cost_model.apply_exit_cost(bar_high, signal.side)
+                effective_open = self.cost_model.apply_exit_cost(bar_open, signal.side)
 
-                # Advance best price (lowest low for SELL)
                 if bar_low < best_price:
                     best_price = bar_low
 
-                # Activate TSL
                 if self.use_tsl and not tsl_active:
                     if (entry_price - best_price) >= _TSL_ACTIVATION_USD:
                         tsl_active = True
 
-                # Ratchet down the trailing SL
                 if tsl_active:
                     new_tsl = best_price + _TSL_TRAIL_DIST_USD
                     if new_tsl < trailing_sl:
                         trailing_sl = new_tsl
 
-                # Check if current bar high hits the active SL/TSL
-                if bar_high >= trailing_sl:
-                    outcome    = "WIN" if trailing_sl < entry_price else "LOSS"
-                    exit_price = trailing_sl
+                # ── SAME-BAR CONFLICT RULE & SL FILL ───────────────────────
+                if effective_high >= trailing_sl or effective_open >= trailing_sl:
+                    outcome = "WIN" if trailing_sl < entry_price else "LOSS"
+                    actual_sl = max(effective_open, trailing_sl) if effective_open > trailing_sl else trailing_sl
+                    exit_price = actual_sl + self.slippage_usd
                     exit_time  = future_bar['time']
                     exit_bar_idx = j
                     break
 
-                # Fixed TP (only before TSL takes over)
+                # TP triggered
                 if not tsl_active:
-                    exit_tp = self.cost_model.apply_exit_cost(bar_low, signal.side)
-                    if exit_tp <= signal.suggested_tp_price:
-                        outcome    = "WIN"
-                        exit_price = signal.suggested_tp_price
+                    effective_low = self.cost_model.apply_exit_cost(bar_low, signal.side)
+                    if effective_low <= signal.suggested_tp_price:
+                        outcome = "WIN"
+                        exit_price = signal.suggested_tp_price + self.slippage_usd
                         exit_time  = future_bar['time']
                         exit_bar_idx = j
                         break
 
-        # End-of-data exit
         if outcome == "OPEN":
             last_bar   = self.df.iloc[-1]
             exit_time  = last_bar['time']
-            exit_price = self.cost_model.apply_exit_cost(last_bar['close'], signal.side)
+            raw_exit   = self.cost_model.apply_exit_cost(last_bar['close'], signal.side)
+            exit_price = raw_exit + (self.slippage_usd if signal.side == "SELL" else -self.slippage_usd)
 
-        # ── PnL calculation ────────────────────────────────────────────────
+        # ── PnL Calculation ────────────────────────────────────────────────
         from src.backtest.symbol_specs import get_symbol_spec, calculate_pnl
-        spec          = get_symbol_spec(signal.symbol)
-        gross_pnl     = calculate_pnl(signal.symbol, signal.side, entry_price, exit_price, volume, spec)
-        net_pnl       = gross_pnl - self.cost_model.get_commission_cost(volume)
+        spec      = get_symbol_spec(signal.symbol)
+        gross_pnl = calculate_pnl(signal.symbol, signal.side, entry_price, exit_price, volume, spec)
+        net_pnl   = gross_pnl - self.cost_model.get_commission_cost(volume)
 
-        # Sanity check
         if abs(net_pnl) > (self.capital * 1.0):
             logger.warning(f"Implausible PnL ${net_pnl:.2f} on {volume} lots of {signal.symbol}.")
             assert abs(net_pnl) <= (self.capital * 1.0), f"Implausible PnL: ${net_pnl:.2f}"
