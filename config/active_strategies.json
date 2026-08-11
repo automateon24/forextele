@@ -1,11 +1,9 @@
 {
-  "active_symbols": [
-    "GOLD"
-  ],
+  "active_symbols": ["GOLD"],
   "active_strategies": [
-    "BOLLINGER_MEAN_REVERSION",
     "LONDON_SESSION_SCALP",
-    "ASIAN_RANGE_SCALP",
-    "FVG_RETEST"
-  ]
+    "ASIAN_RANGE_SCALP"
+  ],
+  "_comment_paper_phase": "Paper trading phase: 2 strategies only as per Grok review. Add BOLLINGER_MEAN_REVERSION and FVG_RETEST only after constrained backtest + clean paper sessions confirmed.",
+  "_pending_strategies": ["BOLLINGER_MEAN_REVERSION", "FVG_RETEST"]
 }
