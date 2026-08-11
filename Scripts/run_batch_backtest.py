@@ -36,6 +36,7 @@ def parse_args():
     parser.add_argument("--bars", type=int, default=3000, help="Number of historical bars to fetch")
     parser.add_argument("--strategies", type=str, default="LONDON_BREAKOUT,MEAN_REVERSION,TREND_MOMENTUM,SMC_ORDER_BLOCK,ASIAN_RANGE_SCALP,RSI_REVERSAL,EMA_TREND_PULLBACK,NY_OPEN_BREAKOUT,BOLLINGER_MEAN_REVERSION,LONDON_BREAKOUT_V2,VWAP_MEAN_REVERSION,ORB_OPENING_RANGE_BREAKOUT,SUPERTREND_PULLBACK,FVG_RETEST,LONDON_SESSION_SCALP", help="Comma-separated strategy IDs")
     parser.add_argument("--capital", type=float, default=1500.0, help="Initial capital")
+    parser.add_argument("--volume", type=float, default=0.02, help="Fixed lot volume per trade (e.g. 0.02)")
     parser.add_argument("--spread", type=float, default=0.00010, help="Spread in points/pips")
     parser.add_argument("--commission", type=float, default=7.0, help="Commission per lot round-turn")
     parser.add_argument("--out", type=str, default="reports", help="Output directory base path")
@@ -107,8 +108,8 @@ def main():
         
     cost_model = CostModel(spread_points=args.spread, commission_per_lot=args.commission)
     
-    print(f"Initializing BacktestEngine for {len(strategies)} strategies...")
-    engine = BacktestEngine(df, strategies, cost_model, capital=args.capital)
+    print(f"Initializing BacktestEngine for {len(strategies)} strategies (Capital: ${args.capital}, Lot Size: {args.volume})...")
+    engine = BacktestEngine(df, strategies, cost_model, capital=args.capital, volume=args.volume)
     trades_df = engine.run()
     
     if trades_df.empty:

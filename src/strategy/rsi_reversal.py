@@ -18,16 +18,9 @@ class RSIReversalStrategy:
         lookback_df = df.iloc[:-1] # Remove forming bar
         
         rsi = calculate_rsi(lookback_df['close'], self.rsi_period)
-        adx = calculate_adx(lookback_df['high'], lookback_df['low'], lookback_df['close'], self.adx_period)
-        
         current_rsi = rsi.iloc[-1]
-        current_adx = adx.iloc[-1]
         
-        if pd.isna(current_rsi) or pd.isna(current_adx):
-            return None
-            
-        # Range filter
-        if current_adx >= 20:
+        if pd.isna(current_rsi):
             return None
             
         latest_closed = lookback_df.iloc[-1]
@@ -35,9 +28,16 @@ class RSIReversalStrategy:
         is_buy = current_rsi < 30
         is_sell = current_rsi > 70
         
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            sl_dist = 2.50
+            tp_dist = 5.00
+        else:
+            sl_dist = 0.0020
+            tp_dist = 0.0040
+            
         if is_buy:
-            sl = latest_closed['low'] - 0.0020
-            tp = latest_closed['close'] + 0.0040
+            sl = latest_closed['low'] - sl_dist
+            tp = latest_closed['close'] + tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -48,8 +48,8 @@ class RSIReversalStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = latest_closed['high'] + 0.0020
-            tp = latest_closed['close'] - 0.0040
+            sl = latest_closed['high'] + sl_dist
+            tp = latest_closed['close'] - tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,

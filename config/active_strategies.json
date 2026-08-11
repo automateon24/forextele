@@ -3,6 +3,7 @@
     "GOLD"
   ],
   "active_strategies": [
+    "BOLLINGER_MEAN_REVERSION",
     "LONDON_SESSION_SCALP",
     "ASIAN_RANGE_SCALP"
   ]

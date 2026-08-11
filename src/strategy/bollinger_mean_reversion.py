@@ -19,26 +19,27 @@ class BollingerMeanReversionStrategy:
         lookback_df = df.iloc[:-1] # Remove forming bar
         
         upper, middle, lower = calculate_bollinger_bands(lookback_df['close'], self.bb_period, self.bb_std)
-        adx = calculate_adx(lookback_df['high'], lookback_df['low'], lookback_df['close'], self.adx_period)
         
-        current_adx = adx.iloc[-1]
-        
-        if pd.isna(current_adx) or pd.isna(upper.iloc[-1]):
-            return None
-            
-        # Range filter
-        if current_adx >= 20:
+        if pd.isna(upper.iloc[-1]) or pd.isna(lower.iloc[-1]):
             return None
             
         latest_closed = lookback_df.iloc[-1]
         
-        # Fade the touch: price touches upper band -> SELL, touches lower band -> BUY
-        is_buy = latest_closed['low'] <= lower.iloc[-1] and latest_closed['close'] > lower.iloc[-1]
-        is_sell = latest_closed['high'] >= upper.iloc[-1] and latest_closed['close'] < upper.iloc[-1]
+        # Symbol-aware buffer
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            buffer = 1.50
+        else:
+            buffer = 0.0020
+        
+        # Touch or cross of lower band -> BUY; upper band -> SELL
+        is_buy = latest_closed['low'] <= lower.iloc[-1]
+        is_sell = latest_closed['high'] >= upper.iloc[-1]
         
         if is_buy:
-            sl = lower.iloc[-1] - 0.0020
+            sl = min(latest_closed['low'], lower.iloc[-1]) - buffer
             tp = middle.iloc[-1]
+            if tp <= latest_closed['close']:
+                tp = latest_closed['close'] + abs(latest_closed['close'] - sl) * 1.5
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -49,8 +50,10 @@ class BollingerMeanReversionStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = upper.iloc[-1] + 0.0020
+            sl = max(latest_closed['high'], upper.iloc[-1]) + buffer
             tp = middle.iloc[-1]
+            if tp >= latest_closed['close']:
+                tp = latest_closed['close'] - abs(sl - latest_closed['close']) * 1.5
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
