@@ -38,15 +38,22 @@ class VWAPMeanReversionStrategy:
             
         latest_closed = daily_df.iloc[-1]
         
-        # Fade extreme deviations: relaxed to 0.0015
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            dev_thresh = 3.00
+            sl_dist = 2.00
+        else:
+            dev_thresh = 0.0015
+            sl_dist = 0.0020
+            
         deviation = latest_closed['close'] - current_vwap
         
-        is_buy = deviation < -0.0015
-        is_sell = deviation > 0.0015
+        is_buy = deviation < -dev_thresh
+        is_sell = deviation > dev_thresh
         
         if is_buy:
-            sl = latest_closed['close'] - 0.0020
+            sl = latest_closed['close'] - sl_dist
             tp = current_vwap
+            if tp <= latest_closed['close']: tp = latest_closed['close'] + sl_dist * 1.5
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -57,8 +64,9 @@ class VWAPMeanReversionStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = latest_closed['close'] + 0.0020
+            sl = latest_closed['close'] + sl_dist
             tp = current_vwap
+            if tp >= latest_closed['close']: tp = latest_closed['close'] - sl_dist * 1.5
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,

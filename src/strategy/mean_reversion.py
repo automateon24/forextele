@@ -23,15 +23,20 @@ class MeanReversionStrategy:
         adx = calculate_adx(df['high'], df['low'], df['close'], self.adx_period)
         
         latest_rsi = rsi.iloc[-2]
-        latest_adx = adx.iloc[-2]
         
-        # Mean Reversion only works in ranging markets (ADX < 20)
-        if pd.isna(latest_adx) or latest_adx >= 20:
+        if pd.isna(latest_rsi):
             return None
             
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            sl_dist = 2.50
+            tp_dist = 5.00
+        else:
+            sl_dist = 0.0020
+            tp_dist = 0.0040
+            
         if latest_rsi < 30: # Oversold
-            sl = latest_closed['low'] - 0.0020
-            tp = latest_closed['close'] + 0.0040
+            sl = latest_closed['low'] - sl_dist
+            tp = latest_closed['close'] + tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -42,8 +47,8 @@ class MeanReversionStrategy:
                 suggested_tp_price=tp
             )
         elif latest_rsi > 70: # Overbought
-            sl = latest_closed['high'] + 0.0020
-            tp = latest_closed['close'] - 0.0040
+            sl = latest_closed['high'] + sl_dist
+            tp = latest_closed['close'] - tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,

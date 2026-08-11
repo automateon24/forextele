@@ -34,13 +34,22 @@ class SupertrendPullbackStrategy:
         current_st = st_df['supertrend'].iloc[-1]
         current_dir = st_df['direction'].iloc[-1]
         
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            touch_dist = 1.00
+            sl_buffer = 1.50
+            tp_dist = 4.50
+        else:
+            touch_dist = 0.0010
+            sl_buffer = 0.0020
+            tp_dist = 0.0060
+            
         # Pullback: Close is near the supertrend line but hasn't flipped it
-        is_buy = (current_dir == 1) and (latest_closed['low'] <= current_st + 0.0010) and (latest_closed['close'] > current_st)
-        is_sell = (current_dir == -1) and (latest_closed['high'] >= current_st - 0.0010) and (latest_closed['close'] < current_st)
+        is_buy = (current_dir == 1) and (latest_closed['low'] <= current_st + touch_dist) and (latest_closed['close'] > current_st)
+        is_sell = (current_dir == -1) and (latest_closed['high'] >= current_st - touch_dist) and (latest_closed['close'] < current_st)
         
         if is_buy:
-            sl = current_st - 0.0020
-            tp = latest_closed['close'] + 0.0060
+            sl = current_st - sl_buffer
+            tp = latest_closed['close'] + tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -51,8 +60,8 @@ class SupertrendPullbackStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = current_st + 0.0020
-            tp = latest_closed['close'] - 0.0060
+            sl = current_st + sl_buffer
+            tp = latest_closed['close'] - tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,

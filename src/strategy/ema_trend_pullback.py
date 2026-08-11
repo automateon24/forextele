@@ -41,9 +41,16 @@ class EMATrendPullbackStrategy:
         is_buy = uptrend and (latest_closed['low'] <= fast_line.iloc[-1]) and (latest_closed['close'] > fast_line.iloc[-1])
         is_sell = downtrend and (latest_closed['high'] >= fast_line.iloc[-1]) and (latest_closed['close'] < fast_line.iloc[-1])
         
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            sl_buffer = 1.50
+            tp_dist = 4.00
+        else:
+            sl_buffer = 0.0010
+            tp_dist = 0.0050
+            
         if is_buy:
-            sl = slow_line.iloc[-1] - 0.0010
-            tp = latest_closed['close'] + 0.0050
+            sl = slow_line.iloc[-1] - sl_buffer
+            tp = latest_closed['close'] + tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -54,8 +61,8 @@ class EMATrendPullbackStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = slow_line.iloc[-1] + 0.0010
-            tp = latest_closed['close'] - 0.0050
+            sl = slow_line.iloc[-1] + sl_buffer
+            tp = latest_closed['close'] - tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
