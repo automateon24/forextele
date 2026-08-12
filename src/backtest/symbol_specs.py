@@ -67,6 +67,20 @@ KNOWN_SPECS = {
         trade_contract_size=100,
         volume_step=0.01
     ),
+    "SILVER": SymbolSpec(
+        point=0.001,
+        trade_tick_size=0.001,
+        trade_tick_value=5.00,       # 1 tick ($0.001 move) = $5 for 1 standard lot (5000 oz)
+        trade_contract_size=5000,
+        volume_step=0.01
+    ),
+    "XAGUSD": SymbolSpec(
+        point=0.001,
+        trade_tick_size=0.001,
+        trade_tick_value=5.00,
+        trade_contract_size=5000,
+        volume_step=0.01
+    ),
     "XAUUSD": SymbolSpec(
         point=0.01,
         trade_tick_size=0.01,

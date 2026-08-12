@@ -29,16 +29,17 @@ logger = logging.getLogger("PORTFOLIO_DNA")
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-SYMBOLS = ["GOLD", "EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF", "NZDUSD"]
+SYMBOLS = ["GOLD", "SILVER", "EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF"]
 TIMEFRAMES = ["H1", "M15", "M5"]
 CAPITAL = 1500.0
 BARS_TO_FETCH = 3500     # ~6 mo H1, 1.5 mo M15, 0.5 mo M5
 TRAIN_RATIO = 0.70       # 70% Historical Train, 30% Unseen OOS Holdout
 ML_THRESHOLD = 0.58
 
-ALL_15_STRATEGIES = [
+ALL_16_STRATEGIES = [
     ("asian_range_scalp",          "AsianRangeScalpStrategy"),
     ("bollinger_mean_reversion",   "BollingerMeanReversionStrategy"),
+    ("chart_pattern_swing",        "ChartPatternSwingStrategy"),
     ("ema_trend_pullback",         "EMATrendPullbackStrategy"),
     ("fvg_retest",                 "FVGRetestStrategy"),
     ("london_breakout",            "LondonBreakoutStrategy"),
@@ -64,6 +65,7 @@ FEATURE_COLS = [
 
 SYMBOL_PARAMS = {
     "GOLD":   {"spread_points": 0.30, "slippage_usd": 0.15},
+    "SILVER": {"spread_points": 0.02, "slippage_usd": 0.01},
     "EURUSD": {"spread_points": 0.80, "slippage_usd": 0.00005},
     "GBPUSD": {"spread_points": 1.20, "slippage_usd": 0.00008},
     "USDJPY": {"spread_points": 1.00, "slippage_usd": 0.005},
@@ -337,7 +339,7 @@ def main():
             test_df   = df.iloc[split_idx:].copy().reset_index(drop=True)
 
             strategy_instances = []
-            for mod_file, cls_name in ALL_15_STRATEGIES:
+            for mod_file, cls_name in ALL_16_STRATEGIES:
                 try:
                     mod = __import__(f"src.strategy.{mod_file}", fromlist=[mod_file])
                     cls = getattr(mod, cls_name)

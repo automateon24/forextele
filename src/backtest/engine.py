@@ -64,11 +64,14 @@ class BacktestEngine:
 
                 # ── Risk Gate 2: Minimum & Maximum SL Distance Gate ────────
                 sl_dist = abs(signal.suggested_entry_price - signal.suggested_sl_price)
-                is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
-                is_jpy  = "JPY" in signal.symbol
+                is_gold   = "GOLD" in signal.symbol or "XAU" in signal.symbol
+                is_silver = "SILVER" in signal.symbol or "XAG" in signal.symbol
+                is_jpy    = "JPY" in signal.symbol
 
                 if is_gold:
                     min_sl, max_sl = 1.00, 50.0
+                elif is_silver:
+                    min_sl, max_sl = 0.050, 3.00
                 elif is_jpy:
                     min_sl, max_sl = 0.050, 3.00
                 else:
@@ -116,11 +119,14 @@ class BacktestEngine:
         best_price  = entry_price
         trailing_sl = signal.suggested_sl_price
 
-        is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
-        is_jpy  = "JPY" in signal.symbol
+        is_gold   = "GOLD" in signal.symbol or "XAU" in signal.symbol
+        is_silver = "SILVER" in signal.symbol or "XAG" in signal.symbol
+        is_jpy    = "JPY" in signal.symbol
 
         if is_gold:
             tsl_act, tsl_trail = 5.00, 3.00
+        elif is_silver:
+            tsl_act, tsl_trail = 0.250, 0.150
         elif is_jpy:
             tsl_act, tsl_trail = 0.150, 0.100
         else:
@@ -215,6 +221,8 @@ class BacktestEngine:
         # ── Price Cap Sanity Check (Filter broker outlier ticks/gaps) ───
         if is_gold:
             max_loss_dist = 50.0
+        elif is_silver:
+            max_loss_dist = 2.00   # Max 200 Silver cents
         elif is_jpy:
             max_loss_dist = 1.00   # Max 100 JPY pips
         else:
