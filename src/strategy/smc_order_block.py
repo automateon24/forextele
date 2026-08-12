@@ -22,10 +22,15 @@ class SMCOrderBlockStrategy:
         # If the latest close strongly rejects that level, go long.
         lowest_low = window['low'].min()
         highest_high = window['high'].max()
+
+        # Dynamic Buffer
+        sl_buffer = 1.50 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.15 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0010)
+        proxy_mult_buy = 1.0005 if "GOLD" not in self.symbol and "SILVER" not in self.symbol else 1.001
+        proxy_mult_sell = 0.9995 if "GOLD" not in self.symbol and "SILVER" not in self.symbol else 0.999
         
         # Bullish rejection
-        if latest_closed['low'] <= lowest_low * 1.0005 and latest_closed['close'] > latest_closed['open']:
-            sl = lowest_low - 0.0010
+        if latest_closed['low'] <= lowest_low * proxy_mult_buy and latest_closed['close'] > latest_closed['open']:
+            sl = lowest_low - sl_buffer
             tp = latest_closed['close'] + abs(latest_closed['close'] - sl) * 3
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
@@ -38,8 +43,8 @@ class SMCOrderBlockStrategy:
             )
             
         # Bearish rejection
-        if latest_closed['high'] >= highest_high * 0.9995 and latest_closed['close'] < latest_closed['open']:
-            sl = highest_high + 0.0010
+        if latest_closed['high'] >= highest_high * proxy_mult_sell and latest_closed['close'] < latest_closed['open']:
+            sl = highest_high + sl_buffer
             tp = latest_closed['close'] - abs(sl - latest_closed['close']) * 3
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),

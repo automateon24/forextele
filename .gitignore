@@ -22,3 +22,5 @@ backtest_highres_signals.csv
 *.joblib
 *config.json
 *.csv
+
+data/events/trading_events.jsonl

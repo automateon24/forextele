@@ -4,10 +4,12 @@ from src.common.messages import SignalMessage, MessageHeader
 from src.common.indicators import calculate_rsi, calculate_adx
 
 class TrendMomentumStrategy:
-    def __init__(self, symbol: str, rsi_period: int = 14, adx_period: int = 14):
+    def __init__(self, symbol: str, rsi_period: int = 14, adx_period: int = 14, sl_dist: Optional[float] = None, tp_dist: Optional[float] = None):
         self.symbol = symbol
         self.rsi_period = rsi_period
         self.adx_period = adx_period
+        self.sl_dist_override = sl_dist
+        self.tp_dist_override = tp_dist
         self.strategy_id = "TREND_MOMENTUM"
         self.min_bars = max(self.rsi_period, self.adx_period) * 2 + 2
 
@@ -29,15 +31,22 @@ class TrendMomentumStrategy:
         if pd.isna(latest_rsi) or pd.isna(latest_ema20):
             return None
             
-        if "GOLD" in self.symbol or "XAU" in self.symbol:
-            sl_dist = 2.00
-            tp_dist = 6.00
+        if self.sl_dist_override is not None and self.tp_dist_override is not None:
+            sl_dist = self.sl_dist_override
+            tp_dist = self.tp_dist_override
         else:
-            sl_dist = 0.0015
-            tp_dist = 0.0045
+            if "GOLD" in self.symbol or "XAU" in self.symbol:
+                sl_dist = 3.00
+                tp_dist = 4.50
+            elif "JPY" in self.symbol:
+                sl_dist = 0.30
+                tp_dist = 0.45
+            else:
+                sl_dist = 0.0030
+                tp_dist = 0.0045
             
-        # Buy on strong upward momentum aligned with EMA20
-        if latest_rsi > 58 and latest_closed['close'] > latest_ema20:
+        # Inverted logic: Mean Reversion off extremes (Buy Oversold, Sell Overbought)
+        if latest_rsi < 42 and latest_closed['close'] < latest_ema20:
             sl = latest_closed['close'] - sl_dist
             tp = latest_closed['close'] + tp_dist
             return SignalMessage(
@@ -49,8 +58,8 @@ class TrendMomentumStrategy:
                 suggested_sl_price=sl,
                 suggested_tp_price=tp
             )
-        # Sell on strong downward momentum aligned with EMA20
-        elif latest_rsi < 42 and latest_closed['close'] < latest_ema20:
+        # Inverted logic: Mean Reversion off extremes (Buy Oversold, Sell Overbought)
+        elif latest_rsi > 58 and latest_closed['close'] > latest_ema20:
             sl = latest_closed['close'] + sl_dist
             tp = latest_closed['close'] - tp_dist
             return SignalMessage(

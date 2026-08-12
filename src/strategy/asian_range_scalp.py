@@ -3,9 +3,11 @@ from typing import Optional
 from src.common.messages import SignalMessage, MessageHeader
 
 class AsianRangeScalpStrategy:
-    def __init__(self, symbol: str, lookback: int = 24): # 24 H1 bars
+    def __init__(self, symbol: str, lookback: int = 24, buffer_override: Optional[float] = None, tp_ratio_override: Optional[float] = None): # 24 H1 bars
         self.symbol = symbol
         self.lookback = lookback
+        self.buffer_override = buffer_override
+        self.tp_ratio_override = tp_ratio_override
         self.strategy_id = "ASIAN_RANGE_SCALP"
         self.min_bars = self.lookback + 2
 
@@ -30,15 +32,22 @@ class AsianRangeScalpStrategy:
         is_buy = latest_closed['close'] <= (range_low + range_size * 0.1) # Bottom 10%
         is_sell = latest_closed['close'] >= (range_high - range_size * 0.1) # Top 10%
         
-        if "GOLD" in self.symbol or "XAU" in self.symbol:
-            buffer = max(1.50, range_size * 0.05)
+        if self.buffer_override is not None:
+            buffer = self.buffer_override
         else:
-            buffer = max(0.0020, range_size * 0.05)
+            if "GOLD" in self.symbol or "XAU" in self.symbol:
+                buffer = max(1.00, range_size * 0.05)
+            elif "JPY" in self.symbol:
+                buffer = max(0.05, range_size * 0.05)
+            else:
+                buffer = max(0.0005, range_size * 0.05)
+            
+        tp_ratio = self.tp_ratio_override if self.tp_ratio_override is not None else 1.5
             
         if is_buy:
             sl = range_low - buffer
             risk_dist = abs(latest_closed['close'] - sl)
-            tp = latest_closed['close'] + (risk_dist * 1.5)
+            tp = latest_closed['close'] + (risk_dist * tp_ratio)
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -51,7 +60,7 @@ class AsianRangeScalpStrategy:
         elif is_sell:
             sl = range_high + buffer
             risk_dist = abs(sl - latest_closed['close'])
-            tp = latest_closed['close'] - (risk_dist * 1.5)
+            tp = latest_closed['close'] - (risk_dist * tp_ratio)
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,

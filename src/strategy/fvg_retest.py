@@ -24,13 +24,17 @@ class FVGRetestStrategy:
         c3 = lookback_df.iloc[-2]
         latest_closed = lookback_df.iloc[-1]
 
+        # Dynamic Gap and Buffer
+        min_gap = 1.00 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.10 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0010)
+        sl_buffer = 1.50 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.15 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0015)
+
         # Bullish FVG: c1 high is below c3 low → gap exists
         bullish_fvg_gap = c3['low'] - c1['high']
-        bullish_fvg = bullish_fvg_gap >= _MIN_GAP_USD
+        bullish_fvg = bullish_fvg_gap >= min_gap
 
         # Bearish FVG: c1 low is above c3 high → gap exists
         bearish_fvg_gap = c1['low'] - c3['high']
-        bearish_fvg = bearish_fvg_gap >= _MIN_GAP_USD
+        bearish_fvg = bearish_fvg_gap >= min_gap
 
         # Retest logic: latest closed candle dips into the gap and closes back inside
         is_buy = (
@@ -45,7 +49,7 @@ class FVGRetestStrategy:
         )
 
         if is_buy:
-            sl = c1['low'] - _SL_BUFFER_USD
+            sl = c1['low'] - sl_buffer
             risk = latest_closed['close'] - sl
             tp = latest_closed['close'] + risk * 2.0  # 2:1 R:R
             return SignalMessage(
@@ -58,7 +62,7 @@ class FVGRetestStrategy:
                 suggested_tp_price=tp
             )
         elif is_sell:
-            sl = c1['high'] + _SL_BUFFER_USD
+            sl = c1['high'] + sl_buffer
             risk = sl - latest_closed['close']
             tp = latest_closed['close'] - risk * 2.0  # 2:1 R:R
             return SignalMessage(

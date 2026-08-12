@@ -23,7 +23,10 @@ def get_htf_trend_bias(df_h1: pd.DataFrame) -> str:
     if len(df_h1) < 200:
         return "NEUTRAL"
 
-    close = df_h1["close"]
+    # Resample to H1 to get true Higher Timeframe context
+    df_h1 = df_h1.set_index('time')
+    df_h1_resampled = df_h1.resample('1h').agg({'open': 'first', 'high': 'max', 'low': 'min', 'close': 'last'}).dropna()
+    close = df_h1_resampled["close"]
     ema50 = calculate_ema(close, 50)
     ema200 = calculate_ema(close, 200)
 

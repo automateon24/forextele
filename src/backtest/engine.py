@@ -3,6 +3,7 @@ import logging
 from typing import List, Dict, Any, Optional
 from src.backtest.cost_model import CostModel
 from src.common.messages import SignalMessage
+from src.common.mtf_filter import get_htf_trend_bias, validate_mtf_alignment
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +24,7 @@ class BacktestEngine:
         cost_model: CostModel,
         capital: float = 1500.0,
         volume: float = 0.02,
-        use_tsl: bool = True,
+        use_tsl: bool = False,
         max_dd_pct: float = _MAX_PORTFOLIO_DD_PCT,
         slippage_usd: float = _SLIPPAGE_PER_TRADE,
     ):
@@ -61,6 +62,14 @@ class BacktestEngine:
                 signal = strategy.analyze(window)
                 if not signal:
                     continue
+                    
+                # ── Risk Gate 1.5: MTF Trend Alignment (Trend & SMC Strategies) ──
+                if strategy.strategy_id in ["TREND_MOMENTUM", "SMC_ORDER_BLOCK", "FVG_RETEST", "CHART_PATTERN_SWING", "BOLLINGER_SQUEEZE_BREAKOUT"]:
+                    full_history = self.df.iloc[: i + 1]
+                    htf_bias = get_htf_trend_bias(full_history)
+                    if not validate_mtf_alignment(signal.side, htf_bias):
+                        logger.debug(f"Signal rejected by MTF Gate: {signal.side} against {htf_bias} trend")
+                        continue
 
                 # ── Risk Gate 2: Minimum & Maximum SL Distance Gate ────────
                 sl_dist = abs(signal.suggested_entry_price - signal.suggested_sl_price)
@@ -137,9 +146,22 @@ class BacktestEngine:
           3. Gap Fill Rule: If open price gaps past SL, fill at open price (slippage).
           4. Exit Slippage applied ($0.15).
         """
+        is_gold   = "GOLD" in signal.symbol or "XAU" in signal.symbol
+        is_silver = "SILVER" in signal.symbol or "XAG" in signal.symbol
+        is_jpy    = "JPY" in signal.symbol
+
+        if is_gold:
+            symbol_slippage = 0.01
+        elif is_silver:
+            symbol_slippage = 0.001
+        elif is_jpy:
+            symbol_slippage = 0.001
+        else:
+            symbol_slippage = 0.00001
+
         # Entry price with spread + entry slippage
         raw_entry = self.cost_model.apply_entry_cost(signal.suggested_entry_price, signal.side)
-        entry_price = raw_entry + (self.slippage_usd if signal.side == "BUY" else -self.slippage_usd)
+        entry_price = raw_entry + (symbol_slippage if signal.side == "BUY" else -symbol_slippage)
 
         volume       = self.volume
         outcome      = "OPEN"
@@ -194,7 +216,7 @@ class BacktestEngine:
                     outcome = "WIN" if trailing_sl > entry_price else "LOSS"
                     # Fill at gap open if opened below SL, else trailing SL minus exit slippage
                     actual_sl = min(effective_open, trailing_sl) if effective_open < trailing_sl else trailing_sl
-                    exit_price = actual_sl - self.slippage_usd
+                    exit_price = actual_sl - symbol_slippage
                     exit_time  = future_bar['time']
                     exit_bar_idx = j
                     break
@@ -204,7 +226,7 @@ class BacktestEngine:
                     effective_high = self.cost_model.apply_exit_cost(bar_high, signal.side)
                     if effective_high >= signal.suggested_tp_price:
                         outcome = "WIN"
-                        exit_price = signal.suggested_tp_price - self.slippage_usd
+                        exit_price = signal.suggested_tp_price - symbol_slippage
                         exit_time  = future_bar['time']
                         exit_bar_idx = j
                         break
@@ -229,7 +251,7 @@ class BacktestEngine:
                 if effective_high >= trailing_sl or effective_open >= trailing_sl:
                     outcome = "WIN" if trailing_sl < entry_price else "LOSS"
                     actual_sl = max(effective_open, trailing_sl) if effective_open > trailing_sl else trailing_sl
-                    exit_price = actual_sl + self.slippage_usd
+                    exit_price = actual_sl + symbol_slippage
                     exit_time  = future_bar['time']
                     exit_bar_idx = j
                     break
@@ -239,7 +261,7 @@ class BacktestEngine:
                     effective_low = self.cost_model.apply_exit_cost(bar_low, signal.side)
                     if effective_low <= signal.suggested_tp_price:
                         outcome = "WIN"
-                        exit_price = signal.suggested_tp_price + self.slippage_usd
+                        exit_price = signal.suggested_tp_price + symbol_slippage
                         exit_time  = future_bar['time']
                         exit_bar_idx = j
                         break
@@ -248,7 +270,7 @@ class BacktestEngine:
             last_bar   = self.df.iloc[-1]
             exit_time  = last_bar['time']
             raw_exit   = self.cost_model.apply_exit_cost(last_bar['close'], signal.side)
-            exit_price = raw_exit + (self.slippage_usd if signal.side == "SELL" else -self.slippage_usd)
+            exit_price = raw_exit + (symbol_slippage if signal.side == "SELL" else -symbol_slippage)
 
         # ── Price Cap Sanity Check (Filter broker outlier ticks/gaps) ───
         if is_gold:
