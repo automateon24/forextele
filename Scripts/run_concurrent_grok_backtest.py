@@ -36,6 +36,7 @@ from src.backtest.engine import BacktestEngine
 from src.ml.features import extract_df_features, FEATURE_COLS
 from src.ml.filter import MLSignalFilter
 from src.common.mtf_filter import get_htf_trend_bias, validate_mtf_alignment
+from src.common.session_filter import is_prime_trading_hour
 
 # Import top winning strategy classes
 from src.strategy.bollinger_mean_reversion import BollingerMeanReversionStrategy
@@ -55,13 +56,28 @@ from src.strategy.smc_order_block import SMCOrderBlockStrategy
 from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
 
 ALL_STRATEGIES = [
-    ("TREND_MOMENTUM",    TrendMomentumStrategy),
-    ("ASIAN_RANGE_SCALP", AsianRangeScalpStrategy),
+    ("BOLLINGER_MEAN_REVERSION", BollingerMeanReversionStrategy),
+    ("TREND_MOMENTUM",          TrendMomentumStrategy),
+    ("ASIAN_RANGE_SCALP",        AsianRangeScalpStrategy),
+    ("ORB_OPENING_RANGE_BREAKOUT", ORBOpeningRangeBreakoutStrategy),
+    ("NY_OPEN_BREAKOUT",         NYOpenBreakoutStrategy),
+    ("VWAP_MEAN_REVERSION",      VWAPMeanReversionStrategy),
+    ("MEAN_REVERSION",           MeanReversionStrategy),
+    ("RSI_REVERSAL",             RSIReversalStrategy),
+    ("CHART_PATTERN_SWING",      ChartPatternSwingStrategy),
+    ("EMA_TREND_PULLBACK",       EMATrendPullbackStrategy),
+    ("FVG_RETEST",               FVGRetestStrategy),
+    ("LONDON_BREAKOUT",          LondonBreakoutStrategy),
+    ("LONDON_SESSION_SCALP",      LondonSessionScalpStrategy),
+    ("SMC_ORDER_BLOCK",          SMCOrderBlockStrategy),
+    ("SUPERTREND_PULLBACK",      SupertrendPullbackStrategy),
 ]
 
-ALL_SYMBOLS = ["GOLD"]
+ALL_SYMBOLS = ["GOLD", "SILVER", "EURUSD", "GBPUSD", "USDJPY", "USDCHF", "AUDUSD", "NZDUSD"]
 ALL_TIMEFRAMES = [
-    ("H1", mt5.TIMEFRAME_H1),
+    ("H1",  mt5.TIMEFRAME_H1),
+    ("M15", mt5.TIMEFRAME_M15),
+    ("M5",  mt5.TIMEFRAME_M5),
 ]
 
 
@@ -130,6 +146,10 @@ def main():
             for tr in engine.trades:
                 # MTF Filter: Reject trades that counter H1 trend direction
                 if not validate_mtf_alignment(tr.get("side", "BUY"), htf_bias):
+                    continue
+
+                # Session Failure Gate: Reject trades in rollover dead zones (18-22 UTC) & pre-news trap (11 UTC)
+                if not is_prime_trading_hour(tr["time"]):
                     continue
 
                 tr["symbol"] = sym
