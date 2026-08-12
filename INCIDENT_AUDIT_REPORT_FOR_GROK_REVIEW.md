@@ -157,3 +157,16 @@ For independent review by Grok AI:
 - [x] **Verify Volatility Math**: Confirmed 1.16 lots × $13.50 price move = -$1,566.00 loss.
 - [x] **Verify Root Cause**: Confirmed parallel strategy execution + removal of account-level lot caps created 100% correlated over-leveraged exposure.
 - [x] **Verify Code Remediation**: Confirmed `src/execution/ledger.py`, `src/execution/gateway.py`, and `src/risk/engine.py` are committed to remote main (`7bdd1557`).
+
+---
+
+## 9. Full Confirmation & Alignment with Grok's Rule Model
+
+### Grok Operating Model Confirmation:
+1. **Unique Key Slot**: `(Pair + Timeframe + Strategy)` (e.g. `GOLD` + `H1` + `ASIAN_RANGE_SCALP`).
+2. **Key Constraint**: Exactly **1 open trade per key** until TP, TSL, or SL exit.
+3. **Parallel Execution**: Different keys (e.g. `GOLD` + `M15` + `BOLLINGER_MEAN_REVERSION` and `EURUSD` + `H1` + `LONDON_SESSION_SCALP`) may each run their own 1 trade simultaneously.
+4. **Safety Caps Enforced in Code & Config**:
+   - `max_positions_per_symbol = 2` (Max 2 positions active on GOLD across all timeframes/strategies combined).
+   - `max_open_positions = 3` (Max 3 positions active account-wide / 0.06 total lots max).
+   - `max_daily_loss_pct = 0.03` (Hard 3% daily equity drawdown stop).

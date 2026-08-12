@@ -75,20 +75,21 @@ class RiskEvaluator:
                 if pos.symbol == signal.symbol and (tag in pos.comment or pos.comment in tag):
                     return self._block(signal, "STRATEGY_TIMEFRAME_POSITION_ACTIVE")
 
-        # 12. Daily Loss Limit
+        # 12. Daily Loss Limit (Hard 3% Daily Drawdown Circuit Breaker)
         daily_loss_pct = 0.0
         if self.portfolio.high_water_mark_equity > 0:
             daily_loss_pct = (self.portfolio.daily_realised_pnl + self.portfolio.daily_unrealised_pnl) / self.portfolio.high_water_mark_equity
-        if daily_loss_pct < -self.config.get("max_daily_loss_pct", 0.99):
+        if daily_loss_pct < -self.config.get("max_daily_loss_pct", 0.03):
             return self._block(signal, "DAILY_LOSS_LIMIT")
 
-        # 10. Max Positions (Disabled / Unrestricted per User Mandate)
+        # 10. Max Account Positions Cap (Max 3 active positions account-wide)
         current_open_positions = len(self.portfolio.open_positions)
-        if current_open_positions >= self.config.get("max_open_positions", 999):
+        if current_open_positions >= self.config.get("max_open_positions", 3):
             return self._block(signal, "MAX_OPEN_POSITIONS")
 
+        # 11. Max Symbol Positions Cap (Max 2 active positions per symbol e.g. GOLD)
         symbol_positions = len([p for p in self.portfolio.open_positions if p.symbol == signal.symbol])
-        if symbol_positions >= self.config.get("max_positions_per_symbol", 999):
+        if symbol_positions >= self.config.get("max_positions_per_symbol", 2):
             return self._block(signal, "MAX_SYMBOL_POSITIONS")
 
         # 11. Margin Check
