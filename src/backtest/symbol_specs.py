@@ -18,6 +18,13 @@ KNOWN_SPECS = {
         trade_contract_size=100000,
         volume_step=0.01
     ),
+    "GBPUSD": SymbolSpec(
+        point=0.00001,
+        trade_tick_size=0.00001,
+        trade_tick_value=1.00,       # 1 tick = $1 for 1 standard lot
+        trade_contract_size=100000,
+        volume_step=0.01
+    ),
     "GOLD": SymbolSpec(
         point=0.01,
         trade_tick_size=0.01,

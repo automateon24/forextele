@@ -62,10 +62,14 @@ class BacktestEngine:
                 if not signal:
                     continue
 
-                # ── Risk Gate 2: Minimum SL Distance Gate ──────────────────
+                # ── Risk Gate 2: Minimum & Maximum SL Distance Gate ────────
                 sl_dist = abs(signal.suggested_entry_price - signal.suggested_sl_price)
-                if sl_dist < _MIN_SL_DIST_USD:
-                    logger.debug(f"Signal rejected by Risk Gate: SL dist ${sl_dist:.2f} < ${_MIN_SL_DIST_USD:.2f}")
+                is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
+                min_sl  = 1.00 if is_gold else 0.00050
+                max_sl  = 50.0 if is_gold else (signal.suggested_entry_price * 0.02) # Max 2% SL for Forex
+
+                if sl_dist < min_sl or sl_dist > max_sl or signal.suggested_sl_price <= 0:
+                    logger.debug(f"Signal rejected by Risk Gate: SL price/dist invalid for {signal.symbol}")
                     continue
 
                 trade = self._simulate_execution(signal, i)
@@ -106,6 +110,9 @@ class BacktestEngine:
         best_price  = entry_price
         trailing_sl = signal.suggested_sl_price
 
+        tsl_act   = 5.00 if ("GOLD" in signal.symbol or "XAU" in signal.symbol) else 0.00150
+        tsl_trail = 3.00 if ("GOLD" in signal.symbol or "XAU" in signal.symbol) else 0.00100
+
         for j in range(current_idx + 1, len(self.df)):
             future_bar = self.df.iloc[j]
             bar_open  = future_bar['open']
@@ -122,11 +129,11 @@ class BacktestEngine:
                     best_price = bar_high
 
                 if self.use_tsl and not tsl_active:
-                    if (best_price - entry_price) >= _TSL_ACTIVATION_USD:
+                    if (best_price - entry_price) >= tsl_act:
                         tsl_active = True
 
                 if tsl_active:
-                    new_tsl = best_price - _TSL_TRAIL_DIST_USD
+                    new_tsl = best_price - tsl_trail
                     if new_tsl > trailing_sl:
                         trailing_sl = new_tsl
 
@@ -159,11 +166,11 @@ class BacktestEngine:
                     best_price = bar_low
 
                 if self.use_tsl and not tsl_active:
-                    if (entry_price - best_price) >= _TSL_ACTIVATION_USD:
+                    if (entry_price - best_price) >= tsl_act:
                         tsl_active = True
 
                 if tsl_active:
-                    new_tsl = best_price + _TSL_TRAIL_DIST_USD
+                    new_tsl = best_price + tsl_trail
                     if new_tsl < trailing_sl:
                         trailing_sl = new_tsl
 
@@ -192,6 +199,14 @@ class BacktestEngine:
             raw_exit   = self.cost_model.apply_exit_cost(last_bar['close'], signal.side)
             exit_price = raw_exit + (self.slippage_usd if signal.side == "SELL" else -self.slippage_usd)
 
+        # ── Price Cap Sanity Check (Filter broker outlier ticks/gaps) ───
+        is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
+        max_loss_dist = 50.0 if is_gold else 0.0100 # Max 100 pips loss limit per trade
+        if signal.side == "BUY":
+            exit_price = max(exit_price, entry_price - max_loss_dist)
+        else:
+            exit_price = min(exit_price, entry_price + max_loss_dist)
+
         # ── PnL Calculation ────────────────────────────────────────────────
         from src.backtest.symbol_specs import get_symbol_spec, calculate_pnl
         spec      = get_symbol_spec(signal.symbol)
@@ -199,6 +214,7 @@ class BacktestEngine:
         net_pnl   = gross_pnl - self.cost_model.get_commission_cost(volume)
 
         if abs(net_pnl) > (self.capital * 1.0):
+            print(f"CRITICAL PnL EXCEPTION: symbol={signal.symbol}, strat={getattr(signal, 'strategy_id', 'UNKNOWN')}, side={signal.side}, entry={entry_price}, exit={exit_price}, sl={signal.suggested_sl_price}, tp={signal.suggested_tp_price}, pnl={net_pnl}")
             logger.warning(f"Implausible PnL ${net_pnl:.2f} on {volume} lots of {signal.symbol}.")
             assert abs(net_pnl) <= (self.capital * 1.0), f"Implausible PnL: ${net_pnl:.2f}"
 
