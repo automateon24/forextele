@@ -35,6 +35,7 @@ from src.backtest.cost_model import CostModel
 from src.backtest.engine import BacktestEngine
 from src.ml.features import extract_df_features, FEATURE_COLS
 from src.ml.filter import MLSignalFilter
+from src.common.mtf_filter import get_htf_trend_bias, validate_mtf_alignment
 
 # Import top winning strategy classes
 from src.strategy.bollinger_mean_reversion import BollingerMeanReversionStrategy
@@ -124,6 +125,10 @@ def main():
 
             volume_size = 0.005 if "SILVER" in sym else 0.02
 
+            # Compute HTF H1 trend bias for symbol
+            df_h1 = fetch_bars(sym, mt5.TIMEFRAME_H1, count=3000) if tf_str != "H1" else df
+            htf_bias = get_htf_trend_bias(df_h1) if not df_h1.empty else "NEUTRAL"
+
             # Run BacktestEngine for candidates
             engine = BacktestEngine(
                 df=df,
@@ -138,12 +143,16 @@ def main():
             engine.run()
 
             for tr in engine.trades:
+                # MTF Filter: Reject trades that counter H1 trend direction
+                if not validate_mtf_alignment(tr.get("side", "BUY"), htf_bias):
+                    continue
+
                 tr["symbol"] = sym
                 tr["timeframe"] = tf_str
                 tr["key"] = f"{sym}_{tf_str}_{tr['strategy_id']}"
                 candidate_trades.append(tr)
 
-            logger.info(f"Generated {len(engine.trades)} candidate trades for {sym} [{tf_str}]")
+            logger.info(f"Generated {len(engine.trades)} candidate trades for {sym} [{tf_str}] (HTF Bias: {htf_bias})")
 
     mt5.shutdown()
 
