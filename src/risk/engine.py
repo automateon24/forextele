@@ -72,13 +72,13 @@ class RiskEvaluator:
         if daily_loss_pct < -self.config.get("max_daily_loss_pct", 0.02):
             return self._block(signal, "DAILY_LOSS_LIMIT")
 
-        # 10. Max Positions
+        # 10. Max Positions (Disabled / Unrestricted per User Mandate)
         current_open_positions = len(self.portfolio.open_positions)
-        if current_open_positions >= self.config.get("max_open_positions", 2):
+        if current_open_positions >= self.config.get("max_open_positions", 999):
             return self._block(signal, "MAX_OPEN_POSITIONS")
 
         symbol_positions = len([p for p in self.portfolio.open_positions if p.symbol == signal.symbol])
-        if symbol_positions >= self.config.get("max_positions_per_symbol", 1):
+        if symbol_positions >= self.config.get("max_positions_per_symbol", 999):
             return self._block(signal, "MAX_SYMBOL_POSITIONS")
 
         # 11. Margin Check

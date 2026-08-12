@@ -1,21 +1,21 @@
 {
   "risk_engine_version": "1.0.0",
   "global": {
-    "max_risk_per_trade_pct": 0.006,
-    "max_portfolio_heat_pct": 0.03,
-    "max_daily_loss_pct": 0.02,
-    "max_drawdown_pct": 0.06,
-    "max_open_positions": 2,
-    "max_positions_per_symbol": 1,
-    "margin_buffer_mult": 1.5,
-    "data_staleness_ms": 30000,
-    "hard_lot_cap": 0.05
+    "max_risk_per_trade_pct": 0.05,
+    "max_portfolio_heat_pct": 0.50,
+    "max_daily_loss_pct": 0.99,
+    "max_drawdown_pct": 0.99,
+    "max_open_positions": 999,
+    "max_positions_per_symbol": 999,
+    "margin_buffer_mult": 1.0,
+    "data_staleness_ms": 60000,
+    "hard_lot_cap": 1.0
   },
   "symbol_overrides": {
     "GOLD": {
-      "max_spread": 0.50,
-      "max_risk_per_trade_pct": 0.006,
-      "min_sl_distance": 1.50
+      "max_spread": 5.00,
+      "max_risk_per_trade_pct": 0.05,
+      "min_sl_distance": 1.00
     }
   },
   "strategy_overrides": {}
