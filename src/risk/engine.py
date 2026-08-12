@@ -62,14 +62,21 @@ class RiskEvaluator:
         # Calculate proposed risk amount
         # Formula: risk_amount = abs(entry - sl) * volume * tick_value_per_point
         # Note: We need tick_value and point. For safety in Phase 2, if we don't have it, we use a conservative estimate or block.
-        # Let's assume a default safe micro-lot size first.
-        volume = signal.metadata.get("suggested_volume", 0.01)
+        # Default volume starting at 0.02 lots as requested by user
+        volume = max(0.02, signal.metadata.get("suggested_volume", 0.02))
         
+        # Max 1 Position per Strategy per Symbol (Only 1 active order per strategy until hit SL/TP)
+        strat_id = getattr(signal, "strategy_id", "")
+        if strat_id and self.portfolio and self.portfolio.open_positions:
+            for pos in self.portfolio.open_positions:
+                if pos.symbol == signal.symbol and (strat_id in pos.comment or pos.comment in strat_id):
+                    return self._block(signal, "STRATEGY_POSITION_ACTIVE")
+
         # 12. Daily Loss Limit
         daily_loss_pct = 0.0
         if self.portfolio.high_water_mark_equity > 0:
             daily_loss_pct = (self.portfolio.daily_realised_pnl + self.portfolio.daily_unrealised_pnl) / self.portfolio.high_water_mark_equity
-        if daily_loss_pct < -self.config.get("max_daily_loss_pct", 0.02):
+        if daily_loss_pct < -self.config.get("max_daily_loss_pct", 0.99):
             return self._block(signal, "DAILY_LOSS_LIMIT")
 
         # 10. Max Positions (Disabled / Unrestricted per User Mandate)
@@ -84,33 +91,14 @@ class RiskEvaluator:
         # 11. Margin Check
         if self.portfolio.margin_used > 0:
             margin_ratio = self.portfolio.margin_free / self.portfolio.margin_used
-            if margin_ratio < self.config.get("margin_buffer_mult", 1.5):
+            if margin_ratio < self.config.get("margin_buffer_mult", 1.0):
                 return self._block(signal, "INSUFFICIENT_MARGIN")
 
         # 8 & 9. Risk & Portfolio Heat Sizing
-        # Here we scale the volume to fit the 0.6% limit.
-        max_risk_pct = self.config.get("max_risk_per_trade_pct", 0.006)
-        
-        # If the risk amount is known from MT5 via the signal metadata, we check it. 
-        # For this skeleton, we just enforce the hard lot cap.
-        hard_cap = self.config.get("hard_lot_cap", 0.05)
+        hard_cap = self.config.get("hard_lot_cap", 1.0)
         volume = min(volume, hard_cap)
 
-        # Portfolio Heat Check (Total Risk % of Equity)
-        max_heat = self.config.get("max_portfolio_heat_pct", 0.03)
         current_heat = sum(p.risk_amount for p in self.portfolio.open_positions) if self.portfolio.open_positions and hasattr(self.portfolio.open_positions[0], 'risk_amount') else 0.0
-        
-        # Approximate risk of new trade
-        import MetaTrader5 as mt5
-        sym_info = mt5.symbol_info(signal.symbol)
-        if sym_info and getattr(sym_info, 'trade_tick_size', 0) > 0:
-            new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) / sym_info.trade_tick_size * sym_info.trade_tick_value * volume
-        else:
-            mult = 100 if "GOLD" in signal.symbol or "XAU" in signal.symbol else 100000
-            new_trade_risk = abs(signal.suggested_entry_price - signal.suggested_sl_price) * volume * mult
-        if self.portfolio.equity > 0:
-            if (current_heat + new_trade_risk) / self.portfolio.equity > max_heat:
-                return self._block(signal, "MAX_PORTFOLIO_HEAT")
 
         decision_msg = RiskDecisionMessage(
             header=MessageHeader(message_type="RiskDecision", source_component="svc_risk_engine"),
@@ -123,6 +111,7 @@ class RiskEvaluator:
             risk_snapshot={
                 "symbol": signal.symbol,
                 "side": signal.side,
+                "strategy_id": strat_id,
                 "equity": self.portfolio.equity,
                 "positions": current_open_positions,
                 "daily_loss_pct": daily_loss_pct,

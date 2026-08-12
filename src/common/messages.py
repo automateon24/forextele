@@ -72,6 +72,7 @@ class OpenPosition(BaseModel):
     sl: float
     unrealised_pnl: float
     risk_amount: float
+    comment: str = ""
 
 class PortfolioSnapshotMessage(BaseModel):
     header: MessageHeader

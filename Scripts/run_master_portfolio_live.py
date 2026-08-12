@@ -7,7 +7,9 @@ Runs all 12 winning strategy combinations concurrently across GOLD and SILVER:
   3. GOLD M5: ASIAN_RANGE_SCALP, VWAP_MEAN_REVERSION
   4. SILVER H1: MEAN_REVERSION, RSI_REVERSAL
 
-Integrates:
+Enforces User Mandates:
+  - Starting volume: Minimum 0.02 lots per trade
+  - Strategy position limit: EXACTLY 1 active position per strategy per symbol until target (TP) or stop loss (SL) is hit in MT5
   - Live MT5 Portfolio Snapshot & Freshness Update (prevents DATA_STALE block)
   - Microsecond Deterministic ML Signal Filtering (src.ml.filter)
   - Live Broker Symbol Specification Verification (src.backtest.symbol_specs)
@@ -22,6 +24,7 @@ import json
 import uuid
 import logging
 import threading
+from typing import Optional
 from pathlib import Path
 from datetime import datetime, timezone
 import pandas as pd
@@ -46,7 +49,7 @@ from src.execution.gateway import ExecutionRouter
 from src.risk.engine import RiskEvaluator
 from src.portfolio.manager import init_mt5, get_daily_realised_pnl, load_high_water_mark
 from src.common.messages import PortfolioSnapshotMessage, MessageHeader, OpenPosition
-from src.ml.features import extract_features_at_row, extract_df_features
+from src.ml.features import extract_features_at_row
 from src.ml.filter import MLSignalFilter
 
 # Import all winning strategy modules
@@ -114,7 +117,8 @@ def build_live_portfolio_snapshot() -> PortfolioSnapshotMessage:
                 current_price=p.price_current,
                 sl=p.sl,
                 unrealised_pnl=p.profit,
-                risk_amount=abs(p.price_open - p.sl) * p.volume if p.sl > 0 else 0.0
+                risk_amount=abs(p.price_open - p.sl) * p.volume if p.sl > 0 else 0.0,
+                comment=getattr(p, "comment", "")
             ))
 
     equity = account_info.equity
@@ -171,6 +175,7 @@ def main_live_loop():
     logger.info("================================================================================")
     logger.info("  FOREXTELE MASTER PORTFOLIO 24/7 LIVE EXECUTION ORCHESTRATOR")
     logger.info("  Targeting 100%+ Monthly Return across Gold & Silver Winning Strategies")
+    logger.info("  Enforcing 0.02 Lot Volume & Max 1 Position Per Strategy Until TP/SL Hit")
     logger.info("================================================================================")
 
     Path("logs").mkdir(parents=True, exist_ok=True)
@@ -221,6 +226,7 @@ def main_live_loop():
                 continue
 
             # Update Live Portfolio Snapshot in Risk Engine to prevent DATA_STALE blocks
+            portfolio_snapshot = None
             try:
                 portfolio_snapshot = build_live_portfolio_snapshot()
                 risk_evaluator.portfolio = portfolio_snapshot
@@ -242,6 +248,18 @@ def main_live_loop():
                 st_id  = item["strategy_id"]
                 tf_str = item["timeframe"]
 
+                # MANDATE CHECK: Only 1 active position allowed per strategy per symbol in MT5 until hit TP/SL
+                has_active_trade = False
+                if portfolio_snapshot and portfolio_snapshot.open_positions:
+                    for pos in portfolio_snapshot.open_positions:
+                        if pos.symbol == sym and (st_id in pos.comment or pos.comment in st_id):
+                            has_active_trade = True
+                            break
+                
+                if has_active_trade:
+                    # Skip signal generation until active trade hits SL or TP in MT5
+                    continue
+
                 # 1. Fetch live candles
                 df = fetch_candles(sym, tf_mt5, count=100)
                 if df is None or len(df) < strat.min_bars:
@@ -253,7 +271,10 @@ def main_live_loop():
                 # 3. Strategy Signal Evaluation
                 signal = strat.analyze(df)
                 if signal:
-                    logger.info(f"[{sym}][{tf_str}][{st_id}] SIGNAL GENERATED: {signal.side} @ {signal.suggested_entry_price} (SL: {signal.suggested_sl_price}, TP: {signal.suggested_tp_price})")
+                    # Enforce starting volume minimum of 0.02 lots
+                    signal.metadata["suggested_volume"] = 0.02
+
+                    logger.info(f"[{sym}][{tf_str}][{st_id}] SIGNAL GENERATED: {signal.side} @ {signal.suggested_entry_price} (SL: {signal.suggested_sl_price}, TP: {signal.suggested_tp_price}, Vol: 0.02)")
 
                     # 4. Microsecond Classical ML Filter (HARD PATH)
                     feats = extract_features_at_row(df, -1)

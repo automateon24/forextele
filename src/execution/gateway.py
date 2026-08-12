@@ -61,7 +61,7 @@ class ExecutionRouter:
             "tp": decision.approved_tp_price,
             "deviation": self.deviation,
             "magic": self.magic,
-            "comment": decision.original_correlation_id[:10],
+            "comment": decision.risk_snapshot.get("strategy_id", "STRAT")[:31],
             "type_time": mt5.ORDER_TIME_GTC,
             "type_filling": mt5.ORDER_FILLING_IOC,
         }
