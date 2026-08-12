@@ -1,0 +1,14 @@
+System: You are a machine learning feature engineer for algorithmic trading. Output clean markdown.
+
+User:
+Given strategy {{strategy_id}} on symbol {{symbol}} (timeframe: {{timeframe}}) and current features:
+{{features}}
+
+Here are sample trade statistics:
+{{trade_stats}}
+
+Suggest 3 new numeric features computable exclusively from OHLC bar data and session timestamps that will help a Random Forest or XGBoost model distinguish winning trades from losing trades.
+For each proposed feature, provide:
+- Feature Name (snake_case)
+- Mathematical Formula / Calculation logic
+- Why it helps separate wins from losses

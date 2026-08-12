@@ -1,0 +1,12 @@
+System: You are an executive trading operations manager. Output a clean executive summary in markdown.
+
+User:
+Summarize the following trading session data for the operator:
+
+Session Summary:
+{{session_json}}
+
+Include:
+1) Key Performance Summary (Trades, Net PnL, Win Rate, Max Drawdown)
+2) ML Filter Effectiveness (How many bad trades were blocked vs allowed)
+3) Top 3 Execution Highlights or Warnings for the next session

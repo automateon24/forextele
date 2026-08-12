@@ -89,6 +89,38 @@ class BacktestEngine:
                 trade['time'] = current_bar_time
                 self.trades.append(trade)
 
+                # Log structured JSONL event
+                try:
+                    import uuid, json
+                    from pathlib import Path
+                    from src.ml.features import extract_features_at_row
+
+                    events_dir = Path("data/events")
+                    events_dir.mkdir(parents=True, exist_ok=True)
+                    events_file = events_dir / "trading_events.jsonl"
+
+                    cid = str(uuid.uuid4())
+                    feats = extract_features_at_row(self.df, i)
+
+                    sig_evt = {
+                        "event": "signal", "ts_utc": str(current_bar_time), "correlation_id": cid,
+                        "symbol": signal.symbol, "timeframe": "H1", "strategy_id": strategy.strategy_id,
+                        "side": signal.side, "entry": signal.suggested_entry_price,
+                        "sl": signal.suggested_sl_price, "tp": signal.suggested_tp_price,
+                        "features": feats
+                    }
+                    exit_evt = {
+                        "event": "exit", "correlation_id": cid, "symbol": signal.symbol,
+                        "timeframe": "H1", "strategy_id": strategy.strategy_id, "side": signal.side,
+                        "entry_price": trade["entry_price"], "exit_price": trade["exit_price"],
+                        "pnl": trade["pnl"], "outcome": trade["outcome"], "data_source": "backtest"
+                    }
+                    with open(events_file, "a") as ef:
+                        ef.write(json.dumps(sig_evt) + "\n")
+                        ef.write(json.dumps(exit_evt) + "\n")
+                except Exception:
+                    pass
+
                 running_equity += trade['pnl']
                 if running_equity > peak_equity:
                     peak_equity = running_equity

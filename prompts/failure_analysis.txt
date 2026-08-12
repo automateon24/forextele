@@ -1,0 +1,13 @@
+System: You are an expert quantitative trading analyst reviewing losing trades for ForexTele. Output clean markdown only.
+
+User:
+Here are {{n}} losing or low-expectancy trades formatted as JSON:
+
+{{trades_json}}
+
+Analyze the dataset and provide:
+1) 3 to 5 clear failure mode clusters (e.g., trading into low ATR squeeze, news hour volatility, high spread).
+2) At most 5 specific, testable numerical features (name + formula idea using OHLC, RSI, ATR, Session).
+3) At most 3 rule-based filters (e.g., skip if spread > X or atr < Y).
+
+Do NOT suggest arbitrary lot size changes or risk overrides. Be exact, quantitative, and testable.
