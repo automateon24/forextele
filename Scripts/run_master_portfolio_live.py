@@ -1,11 +1,29 @@
 """
 24/7 Non-Stop Master Portfolio Live Execution Orchestrator
 ===========================================================
-Runs all 12 winning strategy combinations concurrently across GOLD and SILVER:
-  1. GOLD H1: BOLLINGER_MEAN_REVERSION, TREND_MOMENTUM, ASIAN_RANGE_SCALP
-  2. GOLD M15: BOLLINGER_MEAN_REVERSION, ORB_OPENING_RANGE_BREAKOUT, NY_OPEN_BREAKOUT, MEAN_REVERSION, RSI_REVERSAL
-  3. GOLD M5: ASIAN_RANGE_SCALP, VWAP_MEAN_REVERSION
-  4. SILVER H1: MEAN_REVERSION, RSI_REVERSAL
+Scans ALL 15 Proven Strategies across ALL 8 Assets (GOLD, SILVER, EURUSD, GBPUSD, USDJPY, USDCHF, AUDUSD, NZDUSD)
+across H1, M15, and M5 timeframes under Microsecond AI/ML Signal Filtering.
+
+Assets (8):
+  - GOLD (XAUUSD), SILVER (XAGUSD)
+  - EURUSD, GBPUSD, USDJPY, USDCHF, AUDUSD, NZDUSD
+
+Strategies (15):
+  1. BOLLINGER_MEAN_REVERSION
+  2. TREND_MOMENTUM
+  3. ASIAN_RANGE_SCALP
+  4. ORB_OPENING_RANGE_BREAKOUT
+  5. NY_OPEN_BREAKOUT
+  6. VWAP_MEAN_REVERSION
+  7. MEAN_REVERSION
+  8. RSI_REVERSAL
+  9. CHART_PATTERN_SWING (Elliott Wave, Head & Shoulders, Double Top/Bottom, Flag & Pole)
+ 10. EMA_TREND_PULLBACK
+ 11. FVG_RETEST
+ 12. LONDON_BREAKOUT
+ 13. LONDON_SESSION_SCALP
+ 14. SMC_ORDER_BLOCK
+ 15. SUPERTREND_PULLBACK
 
 Enforces User Mandates:
   - Starting volume: Minimum 0.02 lots per trade
@@ -52,7 +70,7 @@ from src.common.messages import PortfolioSnapshotMessage, MessageHeader, OpenPos
 from src.ml.features import extract_features_at_row
 from src.ml.filter import MLSignalFilter
 
-# Import all winning strategy modules
+# Import all 15 strategy modules
 from src.strategy.bollinger_mean_reversion import BollingerMeanReversionStrategy
 from src.strategy.trend_momentum import TrendMomentumStrategy
 from src.strategy.asian_range_scalp import AsianRangeScalpStrategy
@@ -62,24 +80,53 @@ from src.strategy.vwap_mean_reversion import VWAPMeanReversionStrategy
 from src.strategy.mean_reversion import MeanReversionStrategy
 from src.strategy.rsi_reversal import RSIReversalStrategy
 from src.strategy.chart_pattern_swing import ChartPatternSwingStrategy
+from src.strategy.ema_trend_pullback import EMATrendPullbackStrategy
+from src.strategy.fvg_retest import FVGRetestStrategy
+from src.strategy.london_breakout import LondonBreakoutStrategy
+from src.strategy.london_session_scalp import LondonSessionScalpStrategy
+from src.strategy.smc_order_block import SMCOrderBlockStrategy
+from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
 
-# Master Portfolio Configuration: Only Proven Winning Permutations
-MASTER_WINNING_PORTFOLIO = [
-    # GOLD Permutations
-    {"symbol": "GOLD",   "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": BollingerMeanReversionStrategy, "strategy_id": "BOLLINGER_MEAN_REVERSION"},
-    {"symbol": "GOLD",   "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": TrendMomentumStrategy,          "strategy_id": "TREND_MOMENTUM"},
-    {"symbol": "GOLD",   "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": AsianRangeScalpStrategy,        "strategy_id": "ASIAN_RANGE_SCALP"},
-    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": BollingerMeanReversionStrategy, "strategy_id": "BOLLINGER_MEAN_REVERSION"},
-    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": ORBOpeningRangeBreakoutStrategy,"strategy_id": "ORB_OPENING_RANGE_BREAKOUT"},
-    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": NYOpenBreakoutStrategy,           "strategy_id": "NY_OPEN_BREAKOUT"},
-    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": MeanReversionStrategy,         "strategy_id": "MEAN_REVERSION"},
-    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": RSIReversalStrategy,           "strategy_id": "RSI_REVERSAL"},
-    {"symbol": "GOLD",   "timeframe": "M5",  "tf_mt5": mt5.TIMEFRAME_M5,  "strategy_cls": AsianRangeScalpStrategy,        "strategy_id": "ASIAN_RANGE_SCALP"},
-    {"symbol": "GOLD",   "timeframe": "M5",  "tf_mt5": mt5.TIMEFRAME_M5,  "strategy_cls": VWAPMeanReversionStrategy,        "strategy_id": "VWAP_MEAN_REVERSION"},
-    # SILVER Permutations
-    {"symbol": "SILVER", "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": MeanReversionStrategy,         "strategy_id": "MEAN_REVERSION"},
-    {"symbol": "SILVER", "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": RSIReversalStrategy,           "strategy_id": "RSI_REVERSAL"},
+ALL_STRATEGY_MAP = [
+    ("BOLLINGER_MEAN_REVERSION", BollingerMeanReversionStrategy),
+    ("TREND_MOMENTUM",          TrendMomentumStrategy),
+    ("ASIAN_RANGE_SCALP",        AsianRangeScalpStrategy),
+    ("ORB_OPENING_RANGE_BREAKOUT", ORBOpeningRangeBreakoutStrategy),
+    ("NY_OPEN_BREAKOUT",         NYOpenBreakoutStrategy),
+    ("VWAP_MEAN_REVERSION",      VWAPMeanReversionStrategy),
+    ("MEAN_REVERSION",           MeanReversionStrategy),
+    ("RSI_REVERSAL",             RSIReversalStrategy),
+    ("CHART_PATTERN_SWING",      ChartPatternSwingStrategy),
+    ("EMA_TREND_PULLBACK",       EMATrendPullbackStrategy),
+    ("FVG_RETEST",               FVGRetestStrategy),
+    ("LONDON_BREAKOUT",          LondonBreakoutStrategy),
+    ("LONDON_SESSION_SCALP",      LondonSessionScalpStrategy),
+    ("SMC_ORDER_BLOCK",          SMCOrderBlockStrategy),
+    ("SUPERTREND_PULLBACK",      SupertrendPullbackStrategy),
 ]
+
+ALL_SYMBOLS = ["GOLD", "SILVER", "EURUSD", "GBPUSD", "USDJPY", "USDCHF", "AUDUSD", "NZDUSD"]
+ALL_TIMEFRAMES = [
+    ("H1",  mt5.TIMEFRAME_H1),
+    ("M15", mt5.TIMEFRAME_M15),
+    ("M5",  mt5.TIMEFRAME_M5),
+]
+
+# Build Comprehensive Master Portfolio Matrix
+MASTER_WINNING_PORTFOLIO = []
+for sym in ALL_SYMBOLS:
+    for tf_str, tf_mt5 in ALL_TIMEFRAMES:
+        for st_id, st_cls in ALL_STRATEGY_MAP:
+            # Session filter rules for session-specific strategies
+            if st_id in ["ASIAN_RANGE_SCALP"] and tf_str not in ["H1", "M15", "M5"]:
+                continue
+            MASTER_WINNING_PORTFOLIO.append({
+                "symbol": sym,
+                "timeframe": tf_str,
+                "tf_mt5": tf_mt5,
+                "strategy_cls": st_cls,
+                "strategy_id": st_id
+            })
 
 
 def init_mt5_connection() -> bool:
@@ -174,7 +221,7 @@ def run_async_analytics_worker():
 def main_live_loop():
     logger.info("================================================================================")
     logger.info("  FOREXTELE MASTER PORTFOLIO 24/7 LIVE EXECUTION ORCHESTRATOR")
-    logger.info("  Targeting 100%+ Monthly Return across Gold & Silver Winning Strategies")
+    logger.info(f"  Scanning {len(ALL_STRATEGY_MAP)} Strategies across {len(ALL_SYMBOLS)} Assets & 3 Timeframes ({len(MASTER_WINNING_PORTFOLIO)} Engines Active)")
     logger.info("  Enforcing 0.02 Lot Volume & Max 1 Position Per Strategy Until TP/SL Hit")
     logger.info("================================================================================")
 
@@ -238,7 +285,7 @@ def main_live_loop():
                 balance = account_info.balance if account_info else 0.0
                 equity  = account_info.equity  if account_info else 0.0
                 pos_count = len(portfolio_snapshot.open_positions) if portfolio_snapshot else 0
-                logger.info(f"Heartbeat [Loop {loop_count}] - MT5 Connected | Balance: ${balance:.2f} | Equity: ${equity:.2f} | Open Positions: {pos_count} | 12 Engines Active")
+                logger.info(f"Heartbeat [Loop {loop_count}] - MT5 Connected | Balance: ${balance:.2f} | Equity: ${equity:.2f} | Open Positions: {pos_count} | {len(portfolio_instances)} Engines Active")
 
             # Evaluate each portfolio strategy item
             for item in portfolio_instances:
