@@ -5,7 +5,7 @@ CD /D "%~dp0"
 
 echo ================================================================================
 echo   STARTING FOREXTELE 24/7 MASTER PORTFOLIO LIVE EXECUTION ENGINE
-echo   Targeting 100%%+ Monthly Profit across Gold & Silver Winning Strategies
+echo   Targeting 100%%+ Monthly Profit across Gold and Silver Winning Strategies
 echo   Press Ctrl+C to stop
 echo ================================================================================
 echo.
