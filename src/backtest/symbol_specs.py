@@ -90,6 +90,28 @@ KNOWN_SPECS = {
     )
 }
 
+def get_verified_symbol_spec(symbol: str) -> SymbolSpec:
+    """
+    Queries live MT5 symbol_info if MT5 is initialized; otherwise falls back to KNOWN_SPECS.
+    Prevents PnL calculation error from broker contract size discrepancies.
+    """
+    try:
+        import MetaTrader5 as mt5
+        if mt5.terminal_info() is not None:
+            info = mt5.symbol_info(symbol)
+            if info is not None:
+                return SymbolSpec(
+                    point=info.point,
+                    trade_tick_size=info.trade_tick_size,
+                    trade_tick_value=info.trade_tick_value,
+                    trade_contract_size=info.trade_contract_size,
+                    volume_step=info.volume_step
+                )
+    except Exception:
+        pass
+
+    return get_symbol_spec(symbol)
+
 def get_symbol_spec(symbol: str) -> SymbolSpec:
     if symbol not in KNOWN_SPECS:
         raise ValueError(f"Symbol {symbol} is missing from symbol specifications. Cannot compute PnL safely.")

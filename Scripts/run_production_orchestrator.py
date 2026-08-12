@@ -143,6 +143,9 @@ def run_session():
     
     risk_engine = RiskEvaluator()
     execution_gateway = ExecutionRouter()
+    from src.ml.filter import MLSignalFilter
+    ml_filter = MLSignalFilter()
+    logger.info(f"ML Signal Filter initialized (Threshold: {ml_filter.threshold}, Production Models: {len(ml_filter.registry.list_production_models())})")
     
     # We fetch enough candles to satisfy the hungriest strategy
     max_lookback = max(s.min_bars for s in strategies) if strategies else 50
@@ -181,6 +184,41 @@ def run_session():
                     if signal:
                         logger.info(f"[{strategy.strategy_id}] Signal Generated: {signal.side} {signal.symbol} @ {signal.suggested_entry_price}")
                         
+                        # 3.5. ML Signal Filter Evaluation (HARD PATH - Microsecond Latency)
+                        from src.ml.features import extract_features_at_row
+                        feats = extract_features_at_row(df, -1)
+                        allow_ml, prob_win, ml_payload = ml_filter.evaluate(
+                            symbol=signal.symbol, timeframe="H1", strategy_id=strategy.strategy_id, features=feats
+                        )
+                        logger.info(f"[{strategy.strategy_id}] ML Filter Decision: {ml_payload['decision']} (Prob Win: {prob_win:.2%})")
+
+                        # Log JSONL event to data/events/trading_events.jsonl
+                        try:
+                            import uuid
+                            cid = str(uuid.uuid4())
+                            events_file = Path("data/events/trading_events.jsonl")
+                            events_file.parent.mkdir(parents=True, exist_ok=True)
+                            sig_evt = {
+                                "event": "signal", "ts_utc": str(datetime.now()), "correlation_id": cid,
+                                "symbol": signal.symbol, "timeframe": "H1", "strategy_id": strategy.strategy_id,
+                                "side": signal.side, "entry": signal.suggested_entry_price,
+                                "sl": signal.suggested_sl_price, "tp": signal.suggested_tp_price,
+                                "features": feats
+                            }
+                            flt_evt = {
+                                "event": "filter", "correlation_id": cid, "model_id": ml_payload.get("model_id"),
+                                "prob_win": prob_win, "threshold": ml_filter.threshold, "decision": ml_payload.get("decision")
+                            }
+                            with open(events_file, "a") as ef:
+                                ef.write(json.dumps(sig_evt) + "\n")
+                                ef.write(json.dumps(flt_evt) + "\n")
+                        except Exception:
+                            pass
+
+                        if not allow_ml:
+                            logger.info(f"[{strategy.strategy_id}] Signal BLOCKED by ML Filter (prob {prob_win:.2%} < threshold {ml_filter.threshold})")
+                            continue
+
                         # 4. Risk Evaluation
                         decision = risk_engine.evaluate(signal)
                         logger.info(f"[{strategy.strategy_id}] Risk Decision: {decision.decision} ({decision.reason_code})")
