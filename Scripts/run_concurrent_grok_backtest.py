@@ -122,15 +122,17 @@ def main():
             # Instantiate strategies for this symbol
             strats_inst = [st_cls(symbol=sym) for _, st_cls in ALL_STRATEGIES]
 
+            volume_size = 0.005 if "SILVER" in sym else 0.02
+
             # Run BacktestEngine for candidates
             engine = BacktestEngine(
                 df=df,
                 strategies=strats_inst,
                 cost_model=cost_m,
                 capital=1500.0,
-                volume=0.02,
+                volume=volume_size,
                 use_tsl=True,
-                max_dd_pct=0.50,
+                max_dd_pct=0.30,
                 slippage_usd=0.15
             )
             engine.run()
@@ -157,9 +159,10 @@ def main():
     max_drawdown_dollar = 0.0
     max_drawdown_pct = 0.0
 
-    max_positions_per_symbol = 2
-    max_account_positions = 3
-    daily_loss_limit_pct = 0.03 # 3% daily drawdown circuit breaker ($45.00)
+    # Global Exposure Cap per INCIDENT_AUDIT_REPORT_FOR_GROK_REVIEW.md
+    max_positions_per_symbol = 1 # Max 1 active position per symbol (e.g. GOLD)
+    max_account_positions = 2    # Max 2 active positions account-wide (0.04 total lots max exposure)
+    daily_loss_limit_pct = 0.03  # 3% daily drawdown circuit breaker ($45.00)
 
     open_positions = [] # List of active trade dicts
     executed_trades = []
