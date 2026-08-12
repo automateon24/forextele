@@ -26,8 +26,10 @@ Strategies (15):
  15. SUPERTREND_PULLBACK
 
 Enforces User Mandates:
-  - Starting volume: Minimum 0.02 lots per trade
-  - Strategy position limit: EXACTLY 1 active position per strategy per symbol until target (TP) or stop loss (SL) is hit in MT5
+  - Clear Order Comments in MT5: {STRATEGY_ID}_{TIMEFRAME} (e.g. BOLLINGER_MEAN_REVERSIO_H1)
+  - Full CSV Trade Ledger: Logs all trades with Order ID, Strategy, TF, Entry Price, Exit Price, PnL, Win Prob, & Exit Reason in logs/live_orders_ledger.csv
+  - Starting Volume: Minimum 0.02 lots per trade
+  - Strategy Position Limit: EXACTLY 1 active position per (Strategy, Symbol, Timeframe) until target (TP) or stop loss (SL) is hit in MT5
   - Live MT5 Portfolio Snapshot & Freshness Update (prevents DATA_STALE block)
   - Microsecond Deterministic ML Signal Filtering (src.ml.filter)
   - Live Broker Symbol Specification Verification (src.backtest.symbol_specs)
@@ -64,6 +66,7 @@ import MetaTrader5 as mt5
 
 from src.backtest.symbol_specs import get_verified_symbol_spec
 from src.execution.gateway import ExecutionRouter
+from src.execution.ledger import init_ledger, log_new_order, update_closed_trades
 from src.risk.engine import RiskEvaluator
 from src.portfolio.manager import init_mt5, get_daily_realised_pnl, load_high_water_mark
 from src.common.messages import PortfolioSnapshotMessage, MessageHeader, OpenPosition
@@ -222,11 +225,12 @@ def main_live_loop():
     logger.info("================================================================================")
     logger.info("  FOREXTELE MASTER PORTFOLIO 24/7 LIVE EXECUTION ORCHESTRATOR")
     logger.info(f"  Scanning {len(ALL_STRATEGY_MAP)} Strategies across {len(ALL_SYMBOLS)} Assets & 3 Timeframes ({len(MASTER_WINNING_PORTFOLIO)} Engines Active)")
-    logger.info("  Enforcing 0.02 Lot Volume & Max 1 Position Per Strategy Until TP/SL Hit")
+    logger.info("  Enforcing 0.02 Lot Volume, Per-Timeframe Position Locks & Live CSV Trade Ledger")
     logger.info("================================================================================")
 
     Path("logs").mkdir(parents=True, exist_ok=True)
     Path("data/events").mkdir(parents=True, exist_ok=True)
+    init_ledger()
 
     if not init_mt5_connection():
         logger.error("Initial MT5 connection failed. Retrying in 10 seconds...")
@@ -280,6 +284,12 @@ def main_live_loop():
             except Exception as e:
                 logger.warning(f"Could not update portfolio snapshot: {e}")
 
+            # Update CSV Trade Ledger for any closed positions (records exit price, exit timestamp, pnl, exit reason)
+            try:
+                update_closed_trades()
+            except Exception as e:
+                logger.warning(f"Could not update closed trade ledger: {e}")
+
             if loop_count % 12 == 0:  # Heartbeat log every ~60 seconds
                 account_info = mt5.account_info()
                 balance = account_info.balance if account_info else 0.0
@@ -296,7 +306,7 @@ def main_live_loop():
                 tf_str = item["timeframe"]
 
                 # MANDATE CHECK: Only 1 active position allowed per (Strategy, Symbol, Timeframe) in MT5 until hit TP/SL
-                tag = f"{st_id[:26]}_{tf_str}"
+                tag = f"{st_id[:24]}_{tf_str}"
                 has_active_trade = False
                 if portfolio_snapshot and portfolio_snapshot.open_positions:
                     for pos in portfolio_snapshot.open_positions:
@@ -323,22 +333,22 @@ def main_live_loop():
                     signal.metadata["suggested_volume"] = 0.02
                     signal.metadata["timeframe"] = tf_str
 
-                    logger.info(f"[{sym}][{tf_str}][{st_id}] SIGNAL GENERATED: {signal.side} @ {signal.suggested_entry_price} (SL: {signal.suggested_sl_price}, TP: {signal.suggested_tp_price}, Vol: 0.02)")
+                    logger.info(f"[{sym}][{tf_str}][{signal.strategy_id}] SIGNAL GENERATED: {signal.side} @ {signal.suggested_entry_price} (SL: {signal.suggested_sl_price}, TP: {signal.suggested_tp_price}, Vol: 0.02)")
 
                     # 4. Microsecond Classical ML Filter (HARD PATH)
                     feats = extract_features_at_row(df, -1)
                     allow_ml, prob_win, ml_payload = ml_signal_filter.evaluate(
-                        symbol=sym, timeframe=tf_str, strategy_id=st_id, features=feats
+                        symbol=sym, timeframe=tf_str, strategy_id=signal.strategy_id, features=feats
                     )
 
-                    logger.info(f"[{sym}][{tf_str}][{st_id}] ML FILTER DECISION: {ml_payload['decision']} (Win Prob: {prob_win:.2%})")
+                    logger.info(f"[{sym}][{tf_str}][{signal.strategy_id}] ML FILTER DECISION: {ml_payload['decision']} (Win Prob: {prob_win:.2%})")
 
                     # Log Telemetry Event to JSONL (using timezone-aware UTC)
                     cid = str(uuid.uuid4())
                     events_file = Path("data/events/trading_events.jsonl")
                     sig_evt = {
                         "event": "signal", "ts_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-                        "correlation_id": cid, "symbol": sym, "timeframe": tf_str, "strategy_id": st_id,
+                        "correlation_id": cid, "symbol": sym, "timeframe": tf_str, "strategy_id": signal.strategy_id,
                         "side": signal.side, "entry": signal.suggested_entry_price, "sl": signal.suggested_sl_price,
                         "tp": signal.suggested_tp_price, "features": feats
                     }
@@ -351,18 +361,36 @@ def main_live_loop():
                         ef.write(json.dumps(flt_evt) + "\n")
 
                     if not allow_ml:
-                        logger.info(f"[{sym}][{tf_str}][{st_id}] Signal BLOCKED by ML Filter (prob {prob_win:.2%} < threshold {ml_signal_filter.threshold})")
+                        logger.info(f"[{sym}][{tf_str}][{signal.strategy_id}] Signal BLOCKED by ML Filter (prob {prob_win:.2%} < threshold {ml_signal_filter.threshold})")
                         continue
 
                     # 5. Risk Engine Evaluation
                     risk_decision = risk_evaluator.evaluate(signal)
-                    logger.info(f"[{sym}][{tf_str}][{st_id}] RISK DECISION: {risk_decision.decision} ({risk_decision.reason_code})")
+                    logger.info(f"[{sym}][{tf_str}][{signal.strategy_id}] RISK DECISION: {risk_decision.decision} ({risk_decision.reason_code})")
 
-                    # 6. Live Execution Gateway
+                    # 6. Live Execution Gateway & CSV Ledger Logging
                     if risk_decision.decision in ["ALLOW", "ALLOW_REDUCED"]:
-                        logger.info(f"[{sym}][{tf_str}][{st_id}] ROUTING TO MT5 EXECUTION GATEWAY...")
+                        logger.info(f"[{sym}][{tf_str}][{signal.strategy_id}] ROUTING TO MT5 EXECUTION GATEWAY...")
                         fill_report = execution_router.execute(risk_decision)
-                        logger.info(f"[{sym}][{tf_str}][{st_id}] EXECUTION RESULT: {fill_report.status} (Reason: {fill_report.reject_reason})")
+                        logger.info(f"[{sym}][{tf_str}][{signal.strategy_id}] EXECUTION RESULT: {fill_report.status} (Reason: {fill_report.reject_reason})")
+
+                        # Log trade into CSV Ledger with complete order tracking
+                        entry_price = fill_report.fill_price if fill_report.status == "FILLED" else signal.suggested_entry_price
+                        entry_reason = f"ML_APPROVED (Win Prob: {prob_win:.2%}) | Risk OK" if fill_report.status == "FILLED" else f"REJECTED: {fill_report.reject_reason}"
+                        log_new_order(
+                            order_id=fill_report.broker_order_id,
+                            symbol=sym,
+                            timeframe=tf_str,
+                            strategy_id=signal.strategy_id,
+                            side=signal.side,
+                            volume=fill_report.volume,
+                            entry_price=entry_price,
+                            sl_price=signal.suggested_sl_price,
+                            tp_price=signal.suggested_tp_price,
+                            status=fill_report.status,
+                            win_probability=prob_win,
+                            entry_reason=entry_reason
+                        )
 
             time.sleep(5)  # 5-second polling loop
 
