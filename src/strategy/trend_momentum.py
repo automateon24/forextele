@@ -22,19 +22,23 @@ class TrendMomentumStrategy:
         
         latest_rsi = rsi.iloc[-2]
         
-        if pd.isna(latest_rsi):
+        from src.common.indicators import calculate_ema
+        ema20 = calculate_ema(df['close'], 20)
+        latest_ema20 = ema20.iloc[-2]
+        
+        if pd.isna(latest_rsi) or pd.isna(latest_ema20):
             return None
             
         if "GOLD" in self.symbol or "XAU" in self.symbol:
-            sl_dist = 2.50
-            tp_dist = 5.00
+            sl_dist = 2.00
+            tp_dist = 6.00
         else:
-            sl_dist = 0.0020
-            tp_dist = 0.0040
+            sl_dist = 0.0015
+            tp_dist = 0.0045
             
-        # Buy on strong upward momentum
-        if latest_rsi > 60:
-            sl = latest_closed['low'] - sl_dist
+        # Buy on strong upward momentum aligned with EMA20
+        if latest_rsi > 58 and latest_closed['close'] > latest_ema20:
+            sl = latest_closed['close'] - sl_dist
             tp = latest_closed['close'] + tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
@@ -45,9 +49,9 @@ class TrendMomentumStrategy:
                 suggested_sl_price=sl,
                 suggested_tp_price=tp
             )
-        # Sell on strong downward momentum
-        elif latest_rsi < 40:
-            sl = latest_closed['high'] + sl_dist
+        # Sell on strong downward momentum aligned with EMA20
+        elif latest_rsi < 42 and latest_closed['close'] < latest_ema20:
+            sl = latest_closed['close'] + sl_dist
             tp = latest_closed['close'] - tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),

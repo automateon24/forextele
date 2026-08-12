@@ -55,18 +55,13 @@ from src.strategy.smc_order_block import SMCOrderBlockStrategy
 from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
 
 ALL_STRATEGIES = [
-    ("TREND_MOMENTUM",   TrendMomentumStrategy),
+    ("TREND_MOMENTUM",    TrendMomentumStrategy),
     ("ASIAN_RANGE_SCALP", AsianRangeScalpStrategy),
-    ("FVG_RETEST",        FVGRetestStrategy),
-    ("RSI_REVERSAL",      RSIReversalStrategy),
-    ("MEAN_REVERSION",    MeanReversionStrategy),
 ]
 
-ALL_SYMBOLS = ["GOLD", "SILVER"]
+ALL_SYMBOLS = ["GOLD"]
 ALL_TIMEFRAMES = [
-    ("H1",  mt5.TIMEFRAME_H1),
-    ("M15", mt5.TIMEFRAME_M15),
-    ("M5",  mt5.TIMEFRAME_M5),
+    ("H1", mt5.TIMEFRAME_H1),
 ]
 
 
