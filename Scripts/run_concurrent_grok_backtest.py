@@ -55,24 +55,14 @@ from src.strategy.smc_order_block import SMCOrderBlockStrategy
 from src.strategy.supertrend_pullback import SupertrendPullbackStrategy
 
 ALL_STRATEGIES = [
-    ("BOLLINGER_MEAN_REVERSION", BollingerMeanReversionStrategy),
-    ("TREND_MOMENTUM",          TrendMomentumStrategy),
-    ("ASIAN_RANGE_SCALP",        AsianRangeScalpStrategy),
-    ("ORB_OPENING_RANGE_BREAKOUT", ORBOpeningRangeBreakoutStrategy),
-    ("NY_OPEN_BREAKOUT",         NYOpenBreakoutStrategy),
-    ("VWAP_MEAN_REVERSION",      VWAPMeanReversionStrategy),
-    ("MEAN_REVERSION",           MeanReversionStrategy),
-    ("RSI_REVERSAL",             RSIReversalStrategy),
-    ("CHART_PATTERN_SWING",      ChartPatternSwingStrategy),
-    ("EMA_TREND_PULLBACK",       EMATrendPullbackStrategy),
-    ("FVG_RETEST",               FVGRetestStrategy),
-    ("LONDON_BREAKOUT",          LondonBreakoutStrategy),
-    ("LONDON_SESSION_SCALP",      LondonSessionScalpStrategy),
-    ("SMC_ORDER_BLOCK",          SMCOrderBlockStrategy),
-    ("SUPERTREND_PULLBACK",      SupertrendPullbackStrategy),
+    ("TREND_MOMENTUM",   TrendMomentumStrategy),
+    ("ASIAN_RANGE_SCALP", AsianRangeScalpStrategy),
+    ("FVG_RETEST",        FVGRetestStrategy),
+    ("RSI_REVERSAL",      RSIReversalStrategy),
+    ("MEAN_REVERSION",    MeanReversionStrategy),
 ]
 
-ALL_SYMBOLS = ["GOLD", "SILVER", "EURUSD", "GBPUSD", "USDJPY", "USDCHF", "AUDUSD", "NZDUSD"]
+ALL_SYMBOLS = ["GOLD", "SILVER"]
 ALL_TIMEFRAMES = [
     ("H1",  mt5.TIMEFRAME_H1),
     ("M15", mt5.TIMEFRAME_M15),
