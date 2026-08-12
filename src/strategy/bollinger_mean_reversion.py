@@ -19,10 +19,15 @@ class BollingerMeanReversionStrategy:
         lookback_df = df.iloc[:-1] # Remove forming bar
         
         upper, middle, lower = calculate_bollinger_bands(lookback_df['close'], self.bb_period, self.bb_std)
-        
-        if pd.isna(upper.iloc[-1]) or pd.isna(lower.iloc[-1]):
+        adx = calculate_adx(lookback_df['high'], lookback_df['low'], lookback_df['close'], self.adx_period)
+
+        if pd.isna(upper.iloc[-1]) or pd.isna(lower.iloc[-1]) or pd.isna(adx.iloc[-1]):
             return None
-            
+
+        # ADX Gate: Only allow mean reversion when ADX < 20 (Ranging / Non-trending market)
+        if adx.iloc[-1] >= 20.0:
+            return None
+
         latest_closed = lookback_df.iloc[-1]
         
         # Symbol-aware buffer

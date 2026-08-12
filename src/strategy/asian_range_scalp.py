@@ -37,7 +37,8 @@ class AsianRangeScalpStrategy:
             
         if is_buy:
             sl = range_low - buffer
-            tp = range_high
+            risk_dist = abs(latest_closed['close'] - sl)
+            tp = latest_closed['close'] + (risk_dist * 1.5)
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
@@ -49,7 +50,8 @@ class AsianRangeScalpStrategy:
             )
         elif is_sell:
             sl = range_high + buffer
-            tp = range_low
+            risk_dist = abs(sl - latest_closed['close'])
+            tp = latest_closed['close'] - (risk_dist * 1.5)
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
                 symbol=self.symbol,
