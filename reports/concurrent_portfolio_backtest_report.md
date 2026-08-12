@@ -2,12 +2,12 @@
 ## Full Portfolio Backtest Across All 8 Assets ($1,500 Loaded Capital)
 
 - **Initial Capital**: $1,500.00 USD
-- **Final Balance**: **$1,262.13 USD**
-- **Net Return**: **-15.86%** ($-237.87 USD)
-- **Total Trades Taken**: 111 trades
-- **Win Rate**: **53.15%**
-- **Profit Factor**: **0.86**
-- **Max Account Drawdown**: **24.25%** ($404.03 USD)
+- **Final Balance**: **$476.51 USD**
+- **Net Return**: **-68.23%** ($-1,023.49 USD)
+- **Total Trades Taken**: 140 trades
+- **Win Rate**: **33.57%**
+- **Profit Factor**: **0.51**
+- **Max Account Drawdown**: **68.23%** ($1,023.49 USD)
 
 ---
 
@@ -25,4 +25,10 @@
 
 | Asset | Total Trades | Win Rate (%) | Net PnL ($) | Profit Factor |
 | :--- | :--- | :--- | :--- | :--- |
-| **GOLD** | 111 | 53.15% | $-237.87 | 0.86 |
+| **GOLD** | 96 | 46.88% | $-470.34 | 0.70 |
+| **SILVER** | 4 | 0.00% | $-186.32 | 0.00 |
+| **EURUSD** | 5 | 0.00% | $-100.70 | 0.00 |
+| **GBPUSD** | 3 | 0.00% | $-60.42 | 0.00 |
+| **USDJPY** | 28 | 7.14% | $-125.15 | 0.02 |
+| **AUDUSD** | 2 | 0.00% | $-40.28 | 0.00 |
+| **NZDUSD** | 2 | 0.00% | $-40.28 | 0.00 |
