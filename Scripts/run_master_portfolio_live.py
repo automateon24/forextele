@@ -295,16 +295,17 @@ def main_live_loop():
                 st_id  = item["strategy_id"]
                 tf_str = item["timeframe"]
 
-                # MANDATE CHECK: Only 1 active position allowed per strategy per symbol in MT5 until hit TP/SL
+                # MANDATE CHECK: Only 1 active position allowed per (Strategy, Symbol, Timeframe) in MT5 until hit TP/SL
+                tag = f"{st_id[:26]}_{tf_str}"
                 has_active_trade = False
                 if portfolio_snapshot and portfolio_snapshot.open_positions:
                     for pos in portfolio_snapshot.open_positions:
-                        if pos.symbol == sym and (st_id in pos.comment or pos.comment in st_id):
+                        if pos.symbol == sym and (tag in pos.comment or pos.comment in tag):
                             has_active_trade = True
                             break
                 
                 if has_active_trade:
-                    # Skip signal generation until active trade hits SL or TP in MT5
+                    # Skip signal generation until active trade for (Strategy, Symbol, Timeframe) hits SL or TP in MT5
                     continue
 
                 # 1. Fetch live candles
@@ -318,8 +319,9 @@ def main_live_loop():
                 # 3. Strategy Signal Evaluation
                 signal = strat.analyze(df)
                 if signal:
-                    # Enforce starting volume minimum of 0.02 lots
+                    # Enforce starting volume minimum of 0.02 lots & attach timeframe metadata
                     signal.metadata["suggested_volume"] = 0.02
+                    signal.metadata["timeframe"] = tf_str
 
                     logger.info(f"[{sym}][{tf_str}][{st_id}] SIGNAL GENERATED: {signal.side} @ {signal.suggested_entry_price} (SL: {signal.suggested_sl_price}, TP: {signal.suggested_tp_price}, Vol: 0.02)")
 

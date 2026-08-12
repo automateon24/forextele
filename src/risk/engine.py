@@ -65,12 +65,15 @@ class RiskEvaluator:
         # Default volume starting at 0.02 lots as requested by user
         volume = max(0.02, signal.metadata.get("suggested_volume", 0.02))
         
-        # Max 1 Position per Strategy per Symbol (Only 1 active order per strategy until hit SL/TP)
+        # Max 1 Position per (Strategy, Symbol, Timeframe) - Only 1 active order per strategy per timeframe until hit SL/TP
         strat_id = getattr(signal, "strategy_id", "")
-        if strat_id and self.portfolio and self.portfolio.open_positions:
+        tf_str = signal.metadata.get("timeframe", "")
+        tag = f"{strat_id[:26]}_{tf_str}" if tf_str else strat_id[:31]
+
+        if tag and self.portfolio and self.portfolio.open_positions:
             for pos in self.portfolio.open_positions:
-                if pos.symbol == signal.symbol and (strat_id in pos.comment or pos.comment in strat_id):
-                    return self._block(signal, "STRATEGY_POSITION_ACTIVE")
+                if pos.symbol == signal.symbol and (tag in pos.comment or pos.comment in tag):
+                    return self._block(signal, "STRATEGY_TIMEFRAME_POSITION_ACTIVE")
 
         # 12. Daily Loss Limit
         daily_loss_pct = 0.0
@@ -112,6 +115,7 @@ class RiskEvaluator:
                 "symbol": signal.symbol,
                 "side": signal.side,
                 "strategy_id": strat_id,
+                "timeframe": tf_str,
                 "equity": self.portfolio.equity,
                 "positions": current_open_positions,
                 "daily_loss_pct": daily_loss_pct,

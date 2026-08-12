@@ -85,7 +85,7 @@ class ChartPatternSwingStrategy:
                     tp = closes[-1] - tp_dist
                     return SignalMessage(
                         header=MessageHeader(source_component="strategy", message_type="Signal"),
-                        symbol=self.symbol, side="SELL", strategy_id=self.strategy_id,
+                        symbol=self.symbol, side="SELL", strategy_id="HEAD_AND_SHOULDERS",
                         suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
                     )
 
@@ -99,7 +99,7 @@ class ChartPatternSwingStrategy:
                     tp = closes[-1] + tp_dist
                     return SignalMessage(
                         header=MessageHeader(source_component="strategy", message_type="Signal"),
-                        symbol=self.symbol, side="BUY", strategy_id=self.strategy_id,
+                        symbol=self.symbol, side="BUY", strategy_id="INV_HEAD_SHOULDERS",
                         suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
                     )
 
@@ -111,7 +111,7 @@ class ChartPatternSwingStrategy:
                 tp = closes[-1] + tp_dist
                 return SignalMessage(
                     header=MessageHeader(source_component="strategy", message_type="Signal"),
-                    symbol=self.symbol, side="BUY", strategy_id=self.strategy_id,
+                    symbol=self.symbol, side="BUY", strategy_id="DOUBLE_BOTTOM",
                     suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
                 )
 
@@ -122,7 +122,7 @@ class ChartPatternSwingStrategy:
                 tp = closes[-1] - tp_dist
                 return SignalMessage(
                     header=MessageHeader(source_component="strategy", message_type="Signal"),
-                    symbol=self.symbol, side="SELL", strategy_id=self.strategy_id,
+                    symbol=self.symbol, side="SELL", strategy_id="DOUBLE_TOP",
                     suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
                 )
 
@@ -135,7 +135,7 @@ class ChartPatternSwingStrategy:
             tp = closes[-1] + tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
-                symbol=self.symbol, side="BUY", strategy_id=self.strategy_id,
+                symbol=self.symbol, side="BUY", strategy_id="FLAG_AND_POLE_BULL",
                 suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
             )
 
@@ -144,7 +144,7 @@ class ChartPatternSwingStrategy:
             tp = closes[-1] - tp_dist
             return SignalMessage(
                 header=MessageHeader(source_component="strategy", message_type="Signal"),
-                symbol=self.symbol, side="SELL", strategy_id=self.strategy_id,
+                symbol=self.symbol, side="SELL", strategy_id="FLAG_AND_POLE_BEAR",
                 suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
             )
 
@@ -163,7 +163,7 @@ class ChartPatternSwingStrategy:
                         tp = closes[-1] + tp_dist
                         return SignalMessage(
                             header=MessageHeader(source_component="strategy", message_type="Signal"),
-                            symbol=self.symbol, side="BUY", strategy_id=self.strategy_id,
+                            symbol=self.symbol, side="BUY", strategy_id="ELLIOTT_WAVE",
                             suggested_entry_price=closes[-1], suggested_sl_price=sl, suggested_tp_price=tp
                         )
 
