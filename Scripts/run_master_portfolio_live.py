@@ -8,6 +8,7 @@ Runs all 12 winning strategy combinations concurrently across GOLD and SILVER:
   4. SILVER H1: MEAN_REVERSION, RSI_REVERSAL
 
 Integrates:
+  - Live MT5 Portfolio Snapshot & Freshness Update (prevents DATA_STALE block)
   - Microsecond Deterministic ML Signal Filtering (src.ml.filter)
   - Live Broker Symbol Specification Verification (src.backtest.symbol_specs)
   - Telemetry Event Logging (data/events/trading_events.jsonl)
@@ -22,7 +23,7 @@ import uuid
 import logging
 import threading
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 import pandas as pd
 
 logging.basicConfig(
@@ -43,6 +44,8 @@ import MetaTrader5 as mt5
 from src.backtest.symbol_specs import get_verified_symbol_spec
 from src.execution.gateway import ExecutionRouter
 from src.risk.engine import RiskEvaluator
+from src.portfolio.manager import init_mt5, get_daily_realised_pnl, load_high_water_mark
+from src.common.messages import PortfolioSnapshotMessage, MessageHeader, OpenPosition
 from src.ml.features import extract_features_at_row, extract_df_features
 from src.ml.filter import MLSignalFilter
 
@@ -90,6 +93,51 @@ def init_mt5_connection() -> bool:
     return True
 
 
+def build_live_portfolio_snapshot() -> PortfolioSnapshotMessage:
+    """Fetches real-time account, positions, and equity state from MT5."""
+    account_info = mt5.account_info()
+    if account_info is None:
+        init_mt5_connection()
+        account_info = mt5.account_info()
+        if account_info is None:
+            raise Exception("Failed to fetch MT5 account info")
+
+    positions = mt5.positions_get()
+    open_pos = []
+    if positions:
+        for p in positions:
+            open_pos.append(OpenPosition(
+                symbol=p.symbol,
+                side="BUY" if p.type == mt5.ORDER_TYPE_BUY else "SELL",
+                volume=p.volume,
+                entry_price=p.price_open,
+                current_price=p.price_current,
+                sl=p.sl,
+                unrealised_pnl=p.profit,
+                risk_amount=abs(p.price_open - p.sl) * p.volume if p.sl > 0 else 0.0
+            ))
+
+    equity = account_info.equity
+    daily_realised = get_daily_realised_pnl()
+
+    return PortfolioSnapshotMessage(
+        header=MessageHeader(
+            message_id=str(uuid.uuid4()),
+            timestamp_utc=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+            source_component="portfolio",
+            message_type="PortfolioSnapshot"
+        ),
+        equity=equity,
+        balance=account_info.balance,
+        margin_used=account_info.margin,
+        margin_free=account_info.margin_free,
+        open_positions=open_pos,
+        daily_realised_pnl=daily_realised,
+        daily_unrealised_pnl=sum(p.unrealised_pnl for p in open_pos),
+        high_water_mark_equity=load_high_water_mark(equity)
+    )
+
+
 def fetch_candles(symbol: str, tf_mt5: int, count: int = 100) -> Optional[pd.DataFrame]:
     """Fetches and formats live OHLCV bars from MT5."""
     try:
@@ -111,11 +159,8 @@ def run_async_analytics_worker():
             time.sleep(14400) # Run every 4 hours
             logger.info("Executing periodic async soft path analytics (Dataset build & Ollama failure review)...")
 
-            # 1. Build dataset
             import subprocess
             subprocess.run([sys.executable, "scripts/build_dataset_from_logs.py"], capture_output=True)
-
-            # 2. Run Ollama failure review
             subprocess.run([sys.executable, "scripts/ollama_review_failures.py"], capture_output=True)
             logger.info("Soft path analytics task completed successfully.")
         except Exception as e:
@@ -175,11 +220,19 @@ def main_live_loop():
                 time.sleep(5)
                 continue
 
+            # Update Live Portfolio Snapshot in Risk Engine to prevent DATA_STALE blocks
+            try:
+                portfolio_snapshot = build_live_portfolio_snapshot()
+                risk_evaluator.portfolio = portfolio_snapshot
+            except Exception as e:
+                logger.warning(f"Could not update portfolio snapshot: {e}")
+
             if loop_count % 12 == 0:  # Heartbeat log every ~60 seconds
                 account_info = mt5.account_info()
                 balance = account_info.balance if account_info else 0.0
                 equity  = account_info.equity  if account_info else 0.0
-                logger.info(f"Heartbeat [Loop {loop_count}] - MT5 Connected | Account Balance: ${balance:.2f} | Equity: ${equity:.2f} | 12 Portfolio Engines Watching...")
+                pos_count = len(portfolio_snapshot.open_positions) if portfolio_snapshot else 0
+                logger.info(f"Heartbeat [Loop {loop_count}] - MT5 Connected | Balance: ${balance:.2f} | Equity: ${equity:.2f} | Open Positions: {pos_count} | 12 Engines Active")
 
             # Evaluate each portfolio strategy item
             for item in portfolio_instances:
@@ -210,14 +263,14 @@ def main_live_loop():
 
                     logger.info(f"[{sym}][{tf_str}][{st_id}] ML FILTER DECISION: {ml_payload['decision']} (Win Prob: {prob_win:.2%})")
 
-                    # Log Telemetry Event to JSONL
+                    # Log Telemetry Event to JSONL (using timezone-aware UTC)
                     cid = str(uuid.uuid4())
                     events_file = Path("data/events/trading_events.jsonl")
                     sig_evt = {
-                        "event": "signal", "ts_utc": datetime.utcnow().isoformat(), "correlation_id": cid,
-                        "symbol": sym, "timeframe": tf_str, "strategy_id": st_id, "side": signal.side,
-                        "entry": signal.suggested_entry_price, "sl": signal.suggested_sl_price, "tp": signal.suggested_tp_price,
-                        "features": feats
+                        "event": "signal", "ts_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+                        "correlation_id": cid, "symbol": sym, "timeframe": tf_str, "strategy_id": st_id,
+                        "side": signal.side, "entry": signal.suggested_entry_price, "sl": signal.suggested_sl_price,
+                        "tp": signal.suggested_tp_price, "features": feats
                     }
                     flt_evt = {
                         "event": "filter", "correlation_id": cid, "model_id": ml_payload.get("model_id"),
