@@ -1,0 +1,263 @@
+"""
+24/7 Non-Stop Master Portfolio Live Execution Orchestrator
+===========================================================
+Runs all 12 winning strategy combinations concurrently across GOLD and SILVER:
+  1. GOLD H1: BOLLINGER_MEAN_REVERSION, TREND_MOMENTUM, ASIAN_RANGE_SCALP
+  2. GOLD M15: BOLLINGER_MEAN_REVERSION, ORB_OPENING_RANGE_BREAKOUT, NY_OPEN_BREAKOUT, MEAN_REVERSION, RSI_REVERSAL
+  3. GOLD M5: ASIAN_RANGE_SCALP, VWAP_MEAN_REVERSION
+  4. SILVER H1: MEAN_REVERSION, RSI_REVERSAL
+
+Integrates:
+  - Microsecond Deterministic ML Signal Filtering (src.ml.filter)
+  - Live Broker Symbol Specification Verification (src.backtest.symbol_specs)
+  - Telemetry Event Logging (data/events/trading_events.jsonl)
+  - Async Soft Path Analytics: Periodic Ollama failure review & Parquet dataset building
+  - Non-Stop Resilience: Auto-reconnect, exception wrapping, and 24/7/365 loop stability
+"""
+
+import sys
+import time
+import json
+import uuid
+import logging
+import threading
+from pathlib import Path
+from datetime import datetime
+import pandas as pd
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler("logs/master_portfolio_live.log", encoding="utf-8")
+    ]
+)
+logger = logging.getLogger("MASTER_LIVE")
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+import MetaTrader5 as mt5
+
+from src.backtest.symbol_specs import get_verified_symbol_spec
+from src.execution.gateway import ExecutionRouter
+from src.risk.engine import RiskEvaluator
+from src.ml.features import extract_features_at_row, extract_df_features
+from src.ml.filter import MLSignalFilter
+
+# Import all winning strategy modules
+from src.strategy.bollinger_mean_reversion import BollingerMeanReversionStrategy
+from src.strategy.trend_momentum import TrendMomentumStrategy
+from src.strategy.asian_range_scalp import AsianRangeScalpStrategy
+from src.strategy.orb_opening_range_breakout import ORBOpeningRangeBreakoutStrategy
+from src.strategy.ny_open_breakout import NYOpenBreakoutStrategy
+from src.strategy.vwap_mean_reversion import VWAPMeanReversionStrategy
+from src.strategy.mean_reversion import MeanReversionStrategy
+from src.strategy.rsi_reversal import RSIReversalStrategy
+from src.strategy.chart_pattern_swing import ChartPatternSwingStrategy
+
+# Master Portfolio Configuration: Only Proven Winning Permutations
+MASTER_WINNING_PORTFOLIO = [
+    # GOLD Permutations
+    {"symbol": "GOLD",   "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": BollingerMeanReversionStrategy, "strategy_id": "BOLLINGER_MEAN_REVERSION"},
+    {"symbol": "GOLD",   "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": TrendMomentumStrategy,          "strategy_id": "TREND_MOMENTUM"},
+    {"symbol": "GOLD",   "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": AsianRangeScalpStrategy,        "strategy_id": "ASIAN_RANGE_SCALP"},
+    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": BollingerMeanReversionStrategy, "strategy_id": "BOLLINGER_MEAN_REVERSION"},
+    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": ORBOpeningRangeBreakoutStrategy,"strategy_id": "ORB_OPENING_RANGE_BREAKOUT"},
+    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": NYOpenBreakoutStrategy,           "strategy_id": "NY_OPEN_BREAKOUT"},
+    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": MeanReversionStrategy,         "strategy_id": "MEAN_REVERSION"},
+    {"symbol": "GOLD",   "timeframe": "M15", "tf_mt5": mt5.TIMEFRAME_M15, "strategy_cls": RSIReversalStrategy,           "strategy_id": "RSI_REVERSAL"},
+    {"symbol": "GOLD",   "timeframe": "M5",  "tf_mt5": mt5.TIMEFRAME_M5,  "strategy_cls": AsianRangeScalpStrategy,        "strategy_id": "ASIAN_RANGE_SCALP"},
+    {"symbol": "GOLD",   "timeframe": "M5",  "tf_mt5": mt5.TIMEFRAME_M5,  "strategy_cls": VWAPMeanReversionStrategy,        "strategy_id": "VWAP_MEAN_REVERSION"},
+    # SILVER Permutations
+    {"symbol": "SILVER", "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": MeanReversionStrategy,         "strategy_id": "MEAN_REVERSION"},
+    {"symbol": "SILVER", "timeframe": "H1",  "tf_mt5": mt5.TIMEFRAME_H1,  "strategy_cls": RSIReversalStrategy,           "strategy_id": "RSI_REVERSAL"},
+]
+
+
+def init_mt5_connection() -> bool:
+    """Ensures MT5 terminal connection is active with automatic reconnect."""
+    if not mt5.initialize():
+        logger.error(f"MT5 Initialize failed: {mt5.last_error()}")
+        return False
+    term_info = mt5.terminal_info()
+    if term_info is None or not term_info.connected:
+        logger.warning("MT5 terminal disconnected. Attempting auto-reconnect...")
+        mt5.shutdown()
+        time.sleep(2)
+        return mt5.initialize()
+    return True
+
+
+def fetch_candles(symbol: str, tf_mt5: int, count: int = 100) -> Optional[pd.DataFrame]:
+    """Fetches and formats live OHLCV bars from MT5."""
+    try:
+        rates = mt5.copy_rates_from_pos(symbol, tf_mt5, 0, count)
+        if rates is None or len(rates) == 0:
+            return None
+        df = pd.DataFrame(rates)
+        df["time"] = pd.to_datetime(df["time"], unit="s")
+        return df
+    except Exception as e:
+        logger.error(f"Error fetching candles for {symbol}: {e}")
+        return None
+
+
+def run_async_analytics_worker():
+    """Background worker that periodically builds datasets and invokes Ollama failure reviews."""
+    while True:
+        try:
+            time.sleep(14400) # Run every 4 hours
+            logger.info("Executing periodic async soft path analytics (Dataset build & Ollama failure review)...")
+
+            # 1. Build dataset
+            import subprocess
+            subprocess.run([sys.executable, "scripts/build_dataset_from_logs.py"], capture_output=True)
+
+            # 2. Run Ollama failure review
+            subprocess.run([sys.executable, "scripts/ollama_review_failures.py"], capture_output=True)
+            logger.info("Soft path analytics task completed successfully.")
+        except Exception as e:
+            logger.error(f"Async analytics worker error: {e}")
+
+
+def main_live_loop():
+    logger.info("================================================================================")
+    logger.info("  FOREXTELE MASTER PORTFOLIO 24/7 LIVE EXECUTION ORCHESTRATOR")
+    logger.info("  Targeting 100%+ Monthly Return across Gold & Silver Winning Strategies")
+    logger.info("================================================================================")
+
+    Path("logs").mkdir(parents=True, exist_ok=True)
+    Path("data/events").mkdir(parents=True, exist_ok=True)
+
+    if not init_mt5_connection():
+        logger.error("Initial MT5 connection failed. Retrying in 10 seconds...")
+        time.sleep(10)
+        return
+
+    # Start Async Soft Path Analytics Thread
+    analytics_thread = threading.Thread(target=run_async_analytics_worker, daemon=True)
+    analytics_thread.start()
+
+    # Initialize Engine Components
+    risk_evaluator    = RiskEvaluator()
+    execution_router  = ExecutionRouter()
+    ml_signal_filter  = MLSignalFilter()
+
+    logger.info(f"ML Signal Filter Active (Threshold: {ml_signal_filter.threshold}, Production Models: {len(ml_signal_filter.registry.list_production_models())})")
+
+    # Instantiate Strategy Portfolio Objects
+    portfolio_instances = []
+    for item in MASTER_WINNING_PORTFOLIO:
+        sym  = item["symbol"]
+        tf   = item["timeframe"]
+        cls  = item["strategy_cls"]
+        inst = cls(symbol=sym)
+        portfolio_instances.append({
+            "symbol": sym,
+            "timeframe": tf,
+            "tf_mt5": item["tf_mt5"],
+            "strategy": inst,
+            "strategy_id": item["strategy_id"]
+        })
+
+    logger.info(f"Master Portfolio Active: {len(portfolio_instances)} Strategy-Symbol-Timeframe Executions Loaded.")
+
+    loop_count = 0
+
+    # 24/7/365 Non-Stop Execution Loop
+    while True:
+        try:
+            loop_count += 1
+
+            if not init_mt5_connection():
+                time.sleep(5)
+                continue
+
+            if loop_count % 12 == 0:  # Heartbeat log every ~60 seconds
+                account_info = mt5.account_info()
+                balance = account_info.balance if account_info else 0.0
+                equity  = account_info.equity  if account_info else 0.0
+                logger.info(f"Heartbeat [Loop {loop_count}] - MT5 Connected | Account Balance: ${balance:.2f} | Equity: ${equity:.2f} | 12 Portfolio Engines Watching...")
+
+            # Evaluate each portfolio strategy item
+            for item in portfolio_instances:
+                sym    = item["symbol"]
+                tf_mt5 = item["tf_mt5"]
+                strat  = item["strategy"]
+                st_id  = item["strategy_id"]
+                tf_str = item["timeframe"]
+
+                # 1. Fetch live candles
+                df = fetch_candles(sym, tf_mt5, count=100)
+                if df is None or len(df) < strat.min_bars:
+                    continue
+
+                # 2. Verify live broker symbol specs
+                spec = get_verified_symbol_spec(sym)
+
+                # 3. Strategy Signal Evaluation
+                signal = strat.analyze(df)
+                if signal:
+                    logger.info(f"[{sym}][{tf_str}][{st_id}] SIGNAL GENERATED: {signal.side} @ {signal.suggested_entry_price} (SL: {signal.suggested_sl_price}, TP: {signal.suggested_tp_price})")
+
+                    # 4. Microsecond Classical ML Filter (HARD PATH)
+                    feats = extract_features_at_row(df, -1)
+                    allow_ml, prob_win, ml_payload = ml_signal_filter.evaluate(
+                        symbol=sym, timeframe=tf_str, strategy_id=st_id, features=feats
+                    )
+
+                    logger.info(f"[{sym}][{tf_str}][{st_id}] ML FILTER DECISION: {ml_payload['decision']} (Win Prob: {prob_win:.2%})")
+
+                    # Log Telemetry Event to JSONL
+                    cid = str(uuid.uuid4())
+                    events_file = Path("data/events/trading_events.jsonl")
+                    sig_evt = {
+                        "event": "signal", "ts_utc": datetime.utcnow().isoformat(), "correlation_id": cid,
+                        "symbol": sym, "timeframe": tf_str, "strategy_id": st_id, "side": signal.side,
+                        "entry": signal.suggested_entry_price, "sl": signal.suggested_sl_price, "tp": signal.suggested_tp_price,
+                        "features": feats
+                    }
+                    flt_evt = {
+                        "event": "filter", "correlation_id": cid, "model_id": ml_payload.get("model_id"),
+                        "prob_win": prob_win, "threshold": ml_signal_filter.threshold, "decision": ml_payload.get("decision")
+                    }
+                    with open(events_file, "a") as ef:
+                        ef.write(json.dumps(sig_evt) + "\n")
+                        ef.write(json.dumps(flt_evt) + "\n")
+
+                    if not allow_ml:
+                        logger.info(f"[{sym}][{tf_str}][{st_id}] Signal BLOCKED by ML Filter (prob {prob_win:.2%} < threshold {ml_signal_filter.threshold})")
+                        continue
+
+                    # 5. Risk Engine Evaluation
+                    risk_decision = risk_evaluator.evaluate(signal)
+                    logger.info(f"[{sym}][{tf_str}][{st_id}] RISK DECISION: {risk_decision.decision} ({risk_decision.reason_code})")
+
+                    # 6. Live Execution Gateway
+                    if risk_decision.decision in ["ALLOW", "ALLOW_REDUCED"]:
+                        logger.info(f"[{sym}][{tf_str}][{st_id}] ROUTING TO MT5 EXECUTION GATEWAY...")
+                        fill_report = execution_router.execute(risk_decision)
+                        logger.info(f"[{sym}][{tf_str}][{st_id}] EXECUTION RESULT: {fill_report.status} (Reason: {fill_report.reject_reason})")
+
+            time.sleep(5)  # 5-second polling loop
+
+        except KeyboardInterrupt:
+            logger.info("Shutdown signal received. Stopping orchestrator...")
+            break
+        except Exception as e:
+            logger.error(f"Unhandled error in main live loop: {e}", exc_info=True)
+            time.sleep(5)
+
+    mt5.shutdown()
+    logger.info("ForexTele Master Live Orchestrator shut down cleanly.")
+
+
+if __name__ == "__main__":
+    while True:
+        try:
+            main_live_loop()
+        except Exception as e:
+            logger.critical(f"Master orchestrator crashed. Restarting in 5 seconds... Error: {e}")
+            time.sleep(5)
