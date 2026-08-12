@@ -25,6 +25,41 @@ KNOWN_SPECS = {
         trade_contract_size=100000,
         volume_step=0.01
     ),
+    "USDJPY": SymbolSpec(
+        point=0.001,
+        trade_tick_size=0.001,
+        trade_tick_value=0.67,       # ~$0.67 for 1 pip at 150.00 JPY
+        trade_contract_size=100000,
+        volume_step=0.01
+    ),
+    "AUDUSD": SymbolSpec(
+        point=0.00001,
+        trade_tick_size=0.00001,
+        trade_tick_value=1.00,
+        trade_contract_size=100000,
+        volume_step=0.01
+    ),
+    "USDCAD": SymbolSpec(
+        point=0.00001,
+        trade_tick_size=0.00001,
+        trade_tick_value=0.74,
+        trade_contract_size=100000,
+        volume_step=0.01
+    ),
+    "USDCHF": SymbolSpec(
+        point=0.00001,
+        trade_tick_size=0.00001,
+        trade_tick_value=1.10,
+        trade_contract_size=100000,
+        volume_step=0.01
+    ),
+    "NZDUSD": SymbolSpec(
+        point=0.00001,
+        trade_tick_size=0.00001,
+        trade_tick_value=1.00,
+        trade_contract_size=100000,
+        volume_step=0.01
+    ),
     "GOLD": SymbolSpec(
         point=0.01,
         trade_tick_size=0.01,

@@ -65,8 +65,14 @@ class BacktestEngine:
                 # ── Risk Gate 2: Minimum & Maximum SL Distance Gate ────────
                 sl_dist = abs(signal.suggested_entry_price - signal.suggested_sl_price)
                 is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
-                min_sl  = 1.00 if is_gold else 0.00050
-                max_sl  = 50.0 if is_gold else (signal.suggested_entry_price * 0.02) # Max 2% SL for Forex
+                is_jpy  = "JPY" in signal.symbol
+
+                if is_gold:
+                    min_sl, max_sl = 1.00, 50.0
+                elif is_jpy:
+                    min_sl, max_sl = 0.050, 3.00
+                else:
+                    min_sl, max_sl = 0.00050, (signal.suggested_entry_price * 0.02) # Max 2% SL for Forex
 
                 if sl_dist < min_sl or sl_dist > max_sl or signal.suggested_sl_price <= 0:
                     logger.debug(f"Signal rejected by Risk Gate: SL price/dist invalid for {signal.symbol}")
@@ -110,8 +116,15 @@ class BacktestEngine:
         best_price  = entry_price
         trailing_sl = signal.suggested_sl_price
 
-        tsl_act   = 5.00 if ("GOLD" in signal.symbol or "XAU" in signal.symbol) else 0.00150
-        tsl_trail = 3.00 if ("GOLD" in signal.symbol or "XAU" in signal.symbol) else 0.00100
+        is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
+        is_jpy  = "JPY" in signal.symbol
+
+        if is_gold:
+            tsl_act, tsl_trail = 5.00, 3.00
+        elif is_jpy:
+            tsl_act, tsl_trail = 0.150, 0.100
+        else:
+            tsl_act, tsl_trail = 0.00150, 0.00100
 
         for j in range(current_idx + 1, len(self.df)):
             future_bar = self.df.iloc[j]
@@ -200,8 +213,12 @@ class BacktestEngine:
             exit_price = raw_exit + (self.slippage_usd if signal.side == "SELL" else -self.slippage_usd)
 
         # ── Price Cap Sanity Check (Filter broker outlier ticks/gaps) ───
-        is_gold = "GOLD" in signal.symbol or "XAU" in signal.symbol
-        max_loss_dist = 50.0 if is_gold else 0.0100 # Max 100 pips loss limit per trade
+        if is_gold:
+            max_loss_dist = 50.0
+        elif is_jpy:
+            max_loss_dist = 1.00   # Max 100 JPY pips
+        else:
+            max_loss_dist = 0.0100 # Max 100 Forex pips
         if signal.side == "BUY":
             exit_price = max(exit_price, entry_price - max_loss_dist)
         else:
