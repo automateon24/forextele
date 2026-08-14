@@ -117,6 +117,12 @@ def load_active_strategies():
         if "FVG_RETEST" in active_list:
             from src.strategy.fvg_retest import FVGRetestStrategy
             strategies.append(FVGRetestStrategy(symbol=symbol))
+        if "SMC_CHOCH" in active_list:
+            from src.strategy.smc_choch import SMCCHoCHStrategy
+            strategies.append(SMCCHoCHStrategy(symbol=symbol))
+        if "LIQUIDITY_SWEEP" in active_list:
+            from src.strategy.liquidity_sweep import LiquiditySweepStrategy
+            strategies.append(LiquiditySweepStrategy(symbol=symbol))
         if "RSI_REVERSAL" in active_list:
             from src.strategy.rsi_reversal import RSIReversalStrategy
             strategies.append(RSIReversalStrategy(symbol=symbol))
@@ -170,9 +176,12 @@ def run_session():
             
             # 2. Process each symbol
             for symbol in symbols:
-                df = fetch_live_candles(symbol, mt5.TIMEFRAME_H1, max_lookback + 5)
+                # Fetch multi-timeframe arrays
+                df_h1 = fetch_live_candles(symbol, mt5.TIMEFRAME_H1, max_lookback + 5)
+                df_m15 = fetch_live_candles(symbol, mt5.TIMEFRAME_M15, max_lookback + 5)
+                df_m5 = fetch_live_candles(symbol, mt5.TIMEFRAME_M5, max_lookback + 5)
                 
-                if len(df) < max_lookback:
+                if len(df_h1) < max_lookback or len(df_m15) < max_lookback:
                     logger.warning(f"Not enough candles fetched for {symbol}.")
                     continue
                     
@@ -180,15 +189,31 @@ def run_session():
                 symbol_strategies = [s for s in strategies if s.symbol == symbol]
                 
                 for strategy in symbol_strategies:
-                    signal = strategy.analyze(df)
+                    # Route correct timeframe based on strategy
+                    target_df = df_h1
+                    tf_str = "H1"
+                    if strategy.strategy_id in ["FVG_RETEST", "SMC_CHOCH"]:
+                        target_df = df_m15
+                        tf_str = "M15"
+                    elif strategy.strategy_id in ["LONDON_SESSION_SCALP", "ASIAN_RANGE_SCALP"]:
+                        target_df = df_m5
+                        tf_str = "M5"
+                        
+                    signal = strategy.analyze(target_df)
                     if signal:
                         logger.info(f"[{strategy.strategy_id}] Signal Generated: {signal.side} {signal.symbol} @ {signal.suggested_entry_price}")
                         
+                        # 3.25. Session Filter Check
+                        from src.common.session_filter import is_prime_trading_hour
+                        if not is_prime_trading_hour(datetime.now(timezone.utc)):
+                            logger.info(f"[{strategy.strategy_id}] Signal BLOCKED by Session Filter (Outside prime hours)")
+                            continue
+                        
                         # 3.5. ML Signal Filter Evaluation (HARD PATH - Microsecond Latency)
                         from src.ml.features import extract_features_at_row
-                        feats = extract_features_at_row(df, -1)
+                        feats = extract_features_at_row(target_df, -1)
                         allow_ml, prob_win, ml_payload = ml_filter.evaluate(
-                            symbol=signal.symbol, timeframe="H1", strategy_id=strategy.strategy_id, features=feats
+                            symbol=signal.symbol, timeframe=tf_str, strategy_id=strategy.strategy_id, features=feats
                         )
                         logger.info(f"[{strategy.strategy_id}] ML Filter Decision: {ml_payload['decision']} (Prob Win: {prob_win:.2%})")
 
@@ -200,7 +225,7 @@ def run_session():
                             events_file.parent.mkdir(parents=True, exist_ok=True)
                             sig_evt = {
                                 "event": "signal", "ts_utc": str(datetime.now()), "correlation_id": cid,
-                                "symbol": signal.symbol, "timeframe": "H1", "strategy_id": strategy.strategy_id,
+                                "symbol": signal.symbol, "timeframe": tf_str, "strategy_id": strategy.strategy_id,
                                 "side": signal.side, "entry": signal.suggested_entry_price,
                                 "sl": signal.suggested_sl_price, "tp": signal.suggested_tp_price,
                                 "features": feats
