@@ -18,6 +18,12 @@ class FVGRetestStrategy:
         if len(df) < self.min_bars:
             return None
 
+        # Time-Gate Optimization Filter (FVG M15 block: 14, 23, 4)
+        current_hour = df.iloc[-1]['time'].hour
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            if current_hour in [14, 23, 4]:
+                return None
+
         lookback_df = df.iloc[:-1]  # Remove forming bar
 
         c1 = lookback_df.iloc[-4]

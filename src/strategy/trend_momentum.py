@@ -19,6 +19,13 @@ class TrendMomentumStrategy:
             
         latest_closed = df.iloc[-2]
         
+        # Time-Gate Optimization Filter (Trend Momentum H1 optimized for 08:00-15:00 UTC)
+        current_hour = df.iloc[-1]['time'].hour
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            if current_hour < 8 or current_hour > 15:
+                return None
+        
+        
         rsi = calculate_rsi(df['close'], self.rsi_period)
         adx = calculate_adx(df['high'], df['low'], df['close'], self.adx_period)
         
