@@ -25,7 +25,16 @@ echo [%DATE% %TIME%] Starting Gold Part 1 Orchestrator Session... >> logs\gold_p
 echo [%DATE% %TIME%] Orchestrator is ACTIVE. Watching MT5 market ticks...
 echo.
 
-.venv\Scripts\python.exe scripts\run_production_orchestrator.py
+:: Auto-detect virtual environment python executable
+if exist "%~dp0..\.venv\Scripts\python.exe" (
+    set "PYTHON_CMD=%~dp0..\.venv\Scripts\python.exe"
+) else if exist "%~dp0.venv\Scripts\python.exe" (
+    set "PYTHON_CMD=%~dp0.venv\Scripts\python.exe"
+) else (
+    set "PYTHON_CMD=python"
+)
+
+"%PYTHON_CMD%" scripts\run_production_orchestrator.py
 
 echo.
 echo ====================================================================
