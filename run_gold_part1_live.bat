@@ -17,6 +17,7 @@ echo.
 
 cd /d "%~dp0"
 
+:: Create logs directory if missing
 if not exist "logs" mkdir logs
 
 :RUN_LOOP
