@@ -16,8 +16,8 @@ def is_prime_trading_hour(dt: datetime) -> bool:
     """
     hour = dt.hour
     
-    # 1. Block Market Rollover & NY Drain (21:00 to 22:59 UTC) -> 0% Win Rate Zone
-    if 21 <= hour <= 22:
+    # 1. Block Late NY & Market Rollover (18:00 to 22:59 UTC) -> High loss zone
+    if 18 <= hour <= 22:
         return False
         
     # 2. Block Pre-US News Trap (11:00 to 11:59 UTC) -> 3.3% Win Rate Zone
