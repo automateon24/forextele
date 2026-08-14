@@ -31,8 +31,16 @@ class FVGRetestStrategy:
         latest_closed = lookback_df.iloc[-1]
 
         # Dynamic Gap and Buffer
-        min_gap = 1.00 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.10 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0010)
-        sl_buffer = 1.50 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.15 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0015)
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            min_gap, sl_buffer = 1.00, 1.50
+        elif "BTC" in self.symbol:
+            min_gap, sl_buffer = 50.00, 100.00
+        elif "ETH" in self.symbol:
+            min_gap, sl_buffer = 3.00, 5.00
+        elif "SILVER" in self.symbol or "XAG" in self.symbol:
+            min_gap, sl_buffer = 0.10, 0.15
+        else:
+            min_gap, sl_buffer = 0.0010, 0.0015
 
         # Bullish FVG: c1 high is below c3 low → gap exists
         bullish_fvg_gap = c3['low'] - c1['high']

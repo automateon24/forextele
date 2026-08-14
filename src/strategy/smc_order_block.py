@@ -20,6 +20,12 @@ class SMCOrderBlockStrategy:
         if "GOLD" in self.symbol or "XAU" in self.symbol:
             min_gap = 1.00
             sl_buffer = 1.50
+        elif "BTC" in self.symbol:
+            min_gap = 50.00
+            sl_buffer = 100.00
+        elif "ETH" in self.symbol:
+            min_gap = 3.00
+            sl_buffer = 5.00
         elif "SILVER" in self.symbol or "XAG" in self.symbol:
             min_gap = 0.10
             sl_buffer = 0.15

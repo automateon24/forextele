@@ -76,9 +76,15 @@ class BacktestEngine:
                 is_gold   = "GOLD" in signal.symbol or "XAU" in signal.symbol
                 is_silver = "SILVER" in signal.symbol or "XAG" in signal.symbol
                 is_jpy    = "JPY" in signal.symbol
+                is_btc    = "BTC" in signal.symbol
+                is_eth    = "ETH" in signal.symbol
 
                 if is_gold:
                     min_sl, max_sl = 1.00, 50.0
+                elif is_btc:
+                    min_sl, max_sl = 10.0, 5000.0
+                elif is_eth:
+                    min_sl, max_sl = 1.0, 500.0
                 elif is_silver:
                     min_sl, max_sl = 0.050, 3.00
                 elif is_jpy:
@@ -150,8 +156,15 @@ class BacktestEngine:
         is_silver = "SILVER" in signal.symbol or "XAG" in signal.symbol
         is_jpy    = "JPY" in signal.symbol
 
+        is_btc = "BTC" in signal.symbol
+        is_eth = "ETH" in signal.symbol
+
         if is_gold:
             symbol_slippage = 0.01
+        elif is_btc:
+            symbol_slippage = 0.50
+        elif is_eth:
+            symbol_slippage = 0.05
         elif is_silver:
             symbol_slippage = 0.001
         elif is_jpy:
@@ -179,6 +192,10 @@ class BacktestEngine:
 
         if is_gold:
             tsl_act, tsl_trail = 5.00, 3.00
+        elif is_btc:
+            tsl_act, tsl_trail = 200.0, 100.0
+        elif is_eth:
+            tsl_act, tsl_trail = 15.0, 8.0
         elif is_silver:
             tsl_act, tsl_trail = 0.250, 0.150
         elif is_jpy:
@@ -275,6 +292,10 @@ class BacktestEngine:
         # ── Price Cap Sanity Check (Filter broker outlier ticks/gaps) ───
         if is_gold:
             max_loss_dist = 50.0
+        elif is_btc:
+            max_loss_dist = 5000.0
+        elif is_eth:
+            max_loss_dist = 500.0
         elif is_silver:
             max_loss_dist = 2.00   # Max 200 Silver cents
         elif is_jpy:

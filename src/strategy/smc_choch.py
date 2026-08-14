@@ -37,7 +37,16 @@ class SMCCHoCHStrategy:
         is_recent_major_high = (recent_high == major_high)
         is_recent_major_low = (recent_low == major_low)
         
-        sl_buffer = 1.50 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.15 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0015)
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            sl_buffer = 1.50
+        elif "BTC" in self.symbol:
+            sl_buffer = 100.00
+        elif "ETH" in self.symbol:
+            sl_buffer = 5.00
+        elif "SILVER" in self.symbol or "XAG" in self.symbol:
+            sl_buffer = 0.15
+        else:
+            sl_buffer = 0.0015
         
         # Bullish CHoCH
         # Recently made a major low, and now breaking above the recent minor high (structural shift)

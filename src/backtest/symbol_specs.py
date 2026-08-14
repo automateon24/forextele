@@ -87,6 +87,20 @@ KNOWN_SPECS = {
         trade_tick_value=1.00,
         trade_contract_size=100,
         volume_step=0.01
+    ),
+    "BTCUSD": SymbolSpec(
+        point=0.01,
+        trade_tick_size=0.01,
+        trade_tick_value=0.01,       # $0.01 tick value for 1 BTC (1 lot)
+        trade_contract_size=1.0,
+        volume_step=0.01
+    ),
+    "ETHUSD": SymbolSpec(
+        point=0.01,
+        trade_tick_size=0.01,
+        trade_tick_value=0.01,       # $0.01 tick value for 1 ETH (1 lot)
+        trade_contract_size=1.0,
+        volume_step=0.01
     )
 }
 
