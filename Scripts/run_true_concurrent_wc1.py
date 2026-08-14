@@ -67,15 +67,11 @@ def main():
             
     logger.info(f"Risk Caps Active: Max Total = {max_total_positions}, Max Per Symbol = {max_per_symbol}")
     
-    strat_m5_choch = SMCCHoCHStrategy(symbol=symbol)
     strat_m15_choch = SMCCHoCHStrategy(symbol=symbol)
     strat_m15_fvg = FVGRetestStrategy(symbol=symbol)
-    strat_h1_trend = TrendMomentumStrategy(symbol=symbol)
     
     # Unified execution engine for simulation
-    engine_m5 = BacktestEngine(df=df_m5, strategies=[], cost_model=cost_m, capital=capital, volume=volume, slippage_usd=0.15)
     engine_m15 = BacktestEngine(df=df_m15, strategies=[], cost_model=cost_m, capital=capital, volume=volume, slippage_usd=0.15)
-    engine_h1 = BacktestEngine(df=df_h1, strategies=[], cost_model=cost_m, capital=capital, volume=volume, slippage_usd=0.15)
 
     active_trades = []
     trade_history = []
@@ -178,7 +174,7 @@ def main():
     logger.info(f"Final Shared PnL: ${total_pnl:.2f}")
     
     # Strat Breakdown
-    for sid in ["SMC_CHOCH_M5", "SMC_CHOCH_M15", "FVG_RETEST_M15", "TREND_MOMENTUM_H1"]:
+    for sid in ["SMC_CHOCH_M15", "FVG_RETEST_M15"]:
         s_trades = [tr for tr in trade_history if tr["strategy_id"] == sid]
         if not s_trades:
             continue

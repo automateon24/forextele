@@ -17,8 +17,18 @@ class SMCOrderBlockStrategy:
         latest_closed = lookback_df.iloc[-1]
         
         # Dynamic gap threshold to qualify as an institutional displacement
-        min_gap = 1.00 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.10 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0010)
-        sl_buffer = 1.50 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.15 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0015)
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            min_gap = 1.00
+            sl_buffer = 1.50
+        elif "SILVER" in self.symbol or "XAG" in self.symbol:
+            min_gap = 0.10
+            sl_buffer = 0.15
+        elif "JPY" in self.symbol:
+            min_gap = 0.100
+            sl_buffer = 0.150
+        else:
+            min_gap = 0.0010
+            sl_buffer = 0.0015
         
         # Find the most recent FVG to identify displacement and its corresponding Order Block
         ob_long = None

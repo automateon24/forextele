@@ -9,7 +9,7 @@ echo.
 cd /d "%~dp0"
 
 :: Run the orchestrator
-py scripts/run_production_orchestrator.py
+.venv\Scripts\python.exe Scripts\run_production_orchestrator.py
 
 echo.
 echo Orchestrator stopped.

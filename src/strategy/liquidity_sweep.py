@@ -13,14 +13,22 @@ class LiquiditySweepStrategy:
         if len(df) < self.min_bars:
             return None
             
-        lookback_df = df.iloc[-self.lookback-2:-2]  # Exclude forming bar and latest closed bar
-        latest_closed = df.iloc[-2]
+        lookback_df = df.iloc[-self.lookback-2:-1]  # Exclude forming bar
+        latest_closed = df.iloc[-1]
         
         # Identify liquidity pools (Swing High and Swing Low over lookback)
         swing_high = lookback_df['high'].max()
         swing_low = lookback_df['low'].min()
         
-        sl_buffer = 1.50 if "GOLD" in self.symbol or "XAU" in self.symbol else (0.15 if "SILVER" in self.symbol or "XAG" in self.symbol else 0.0015)
+        # Dynamic buffer depending on symbol
+        if "GOLD" in self.symbol or "XAU" in self.symbol:
+            sl_buffer = 1.50
+        elif "SILVER" in self.symbol or "XAG" in self.symbol:
+            sl_buffer = 0.15
+        elif "JPY" in self.symbol:
+            sl_buffer = 0.150
+        else:
+            sl_buffer = 0.0015
         
         # Bullish Sweep (Turtle Soup Long)
         # Price sweeps below the swing low, but closes back above it and bullish
