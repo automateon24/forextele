@@ -1,9 +1,9 @@
 {
   "active_symbols": ["GOLD"],
   "active_strategies": [
-    "LONDON_SESSION_SCALP",
-    "ASIAN_RANGE_SCALP"
+    "FVG_RETEST",
+    "SMC_CHOCH"
   ],
-  "_comment_paper_phase": "Paper trading phase: 2 strategies only as per Grok review. Add BOLLINGER_MEAN_REVERSION and FVG_RETEST only after constrained backtest + clean paper sessions confirmed.",
-  "_pending_strategies": ["BOLLINGER_MEAN_REVERSION", "FVG_RETEST"]
+  "_comment_paper_phase": "WC1 Portfolio (Gold Only). Time-gates are hardcoded directly into strategy classes. Risk configured via risk_config.json (max 3 overall, 2 per symbol, 0.02 lot).",
+  "_pending_strategies": []
 }
