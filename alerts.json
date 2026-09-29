@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "source": "MT5 Execution (GOLD)",
+    "message": "Order Failed: Request rejected due to absence of network connection (Code 10031). Price: 4041.0 | SL: 4035.06 | TP: 4054.37",
+    "level": "CRITICAL",
+    "timestamp": "2026-09-21 14:19:00"
+  },
+  {
+    "source": "MT5 Execution (GOLD)",
+    "message": "Order Failed: Request rejected due to absence of network connection (Code 10031). Price: 4347.0 | SL: 4357.0 | TP: 4327.0",
+    "level": "CRITICAL",
+    "timestamp": "2026-09-21 15:31:22"
+  },
+  {
+    "source": "MT5 Execution (GOLD)",
+    "message": "Order Failed: Request rejected due to absence of network connection (Code 10031). Price: 4332.0 | SL: 4336.33 | TP: 4312.51",
+    "level": "CRITICAL",
+    "timestamp": "2026-09-21 19:36:42"
+  }
+]

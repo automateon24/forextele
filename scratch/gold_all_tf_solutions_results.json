@@ -1,0 +1,962 @@
+{
+  "M1": {
+    "baseline": {
+      "1:1.0": {
+        "trades": 20,
+        "wins": 11,
+        "losses": 9,
+        "win_rate": 55.0,
+        "net_pnl": 85.04,
+        "pf": 2.05
+      },
+      "1:1.5": {
+        "trades": 19,
+        "wins": 6,
+        "losses": 13,
+        "win_rate": 31.6,
+        "net_pnl": -18.09,
+        "pf": 0.87
+      },
+      "1:2.0": {
+        "trades": 19,
+        "wins": 6,
+        "losses": 13,
+        "win_rate": 31.6,
+        "net_pnl": 22.18,
+        "pf": 1.16
+      },
+      "1:3.0": {
+        "trades": 19,
+        "wins": 4,
+        "losses": 15,
+        "win_rate": 21.1,
+        "net_pnl": 38.72,
+        "pf": 1.25
+      }
+    },
+    "midpoint_sl": {
+      "1:1.0": {
+        "trades": 20,
+        "wins": 9,
+        "losses": 11,
+        "win_rate": 45.0,
+        "net_pnl": -16.04,
+        "pf": 0.78
+      },
+      "1:1.5": {
+        "trades": 20,
+        "wins": 8,
+        "losses": 12,
+        "win_rate": 40.0,
+        "net_pnl": -0.69,
+        "pf": 0.99
+      },
+      "1:2.0": {
+        "trades": 20,
+        "wins": 8,
+        "losses": 12,
+        "win_rate": 40.0,
+        "net_pnl": 24.9,
+        "pf": 1.32
+      },
+      "1:3.0": {
+        "trades": 20,
+        "wins": 5,
+        "losses": 15,
+        "win_rate": 25.0,
+        "net_pnl": -23.0,
+        "pf": 0.78
+      }
+    },
+    "close_confirm": {
+      "1:1.0": {
+        "trades": 25,
+        "wins": 11,
+        "losses": 14,
+        "win_rate": 44.0,
+        "net_pnl": 53.36,
+        "pf": 1.47
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate": 25.0,
+        "net_pnl": -49.77,
+        "pf": 0.71
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate": 25.0,
+        "net_pnl": -9.5,
+        "pf": 0.94
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 4,
+        "losses": 20,
+        "win_rate": 16.7,
+        "net_pnl": 7.04,
+        "pf": 1.04
+      }
+    },
+    "structure_sl": {
+      "1:1.0": {
+        "trades": 20,
+        "wins": 8,
+        "losses": 12,
+        "win_rate": 40.0,
+        "net_pnl": -17.71,
+        "pf": 0.72
+      },
+      "1:1.5": {
+        "trades": 20,
+        "wins": 8,
+        "losses": 12,
+        "win_rate": 40.0,
+        "net_pnl": 4.8,
+        "pf": 1.08
+      },
+      "1:2.0": {
+        "trades": 20,
+        "wins": 7,
+        "losses": 13,
+        "win_rate": 35.0,
+        "net_pnl": 16.23,
+        "pf": 1.24
+      },
+      "1:3.0": {
+        "trades": 20,
+        "wins": 4,
+        "losses": 16,
+        "win_rate": 20.0,
+        "net_pnl": -31.62,
+        "pf": 0.64
+      }
+    },
+    "rejection_confirm": {
+      "1:1.0": {
+        "trades": 18,
+        "wins": 11,
+        "losses": 7,
+        "win_rate": 61.1,
+        "net_pnl": 95.88,
+        "pf": 2.36
+      },
+      "1:1.5": {
+        "trades": 17,
+        "wins": 6,
+        "losses": 11,
+        "win_rate": 35.3,
+        "net_pnl": -7.25,
+        "pf": 0.94
+      },
+      "1:2.0": {
+        "trades": 17,
+        "wins": 6,
+        "losses": 11,
+        "win_rate": 35.3,
+        "net_pnl": 33.02,
+        "pf": 1.26
+      },
+      "1:3.0": {
+        "trades": 17,
+        "wins": 4,
+        "losses": 13,
+        "win_rate": 23.5,
+        "net_pnl": 49.56,
+        "pf": 1.34
+      }
+    },
+    "trend_close": {
+      "1:1.0": {
+        "trades": 16,
+        "wins": 7,
+        "losses": 9,
+        "win_rate": 43.8,
+        "net_pnl": -9.72,
+        "pf": 0.88
+      },
+      "1:1.5": {
+        "trades": 16,
+        "wins": 4,
+        "losses": 12,
+        "win_rate": 25.0,
+        "net_pnl": -22.76,
+        "pf": 0.77
+      },
+      "1:2.0": {
+        "trades": 16,
+        "wins": 4,
+        "losses": 12,
+        "win_rate": 25.0,
+        "net_pnl": 3.28,
+        "pf": 1.03
+      },
+      "1:3.0": {
+        "trades": 16,
+        "wins": 2,
+        "losses": 14,
+        "win_rate": 12.5,
+        "net_pnl": -8.64,
+        "pf": 0.93
+      }
+    },
+    "golden_hybrid": {
+      "1:1.0": {
+        "trades": 21,
+        "wins": 13,
+        "losses": 8,
+        "win_rate": 61.9,
+        "net_pnl": 37.19,
+        "pf": 1.8
+      },
+      "1:1.5": {
+        "trades": 21,
+        "wins": 12,
+        "losses": 9,
+        "win_rate": 57.1,
+        "net_pnl": 66.35,
+        "pf": 2.28
+      },
+      "1:2.0": {
+        "trades": 21,
+        "wins": 9,
+        "losses": 12,
+        "win_rate": 42.9,
+        "net_pnl": 68.97,
+        "pf": 2.08
+      },
+      "1:3.0": {
+        "trades": 21,
+        "wins": 6,
+        "losses": 15,
+        "win_rate": 28.6,
+        "net_pnl": 36.43,
+        "pf": 1.41
+      }
+    }
+  },
+  "M3": {
+    "baseline": {
+      "1:1.0": {
+        "trades": 23,
+        "wins": 10,
+        "losses": 13,
+        "win_rate": 43.5,
+        "net_pnl": 53.66,
+        "pf": 1.42
+      },
+      "1:1.5": {
+        "trades": 22,
+        "wins": 6,
+        "losses": 16,
+        "win_rate": 27.3,
+        "net_pnl": -49.72,
+        "pf": 0.73
+      },
+      "1:2.0": {
+        "trades": 22,
+        "wins": 5,
+        "losses": 17,
+        "win_rate": 22.7,
+        "net_pnl": -30.88,
+        "pf": 0.84
+      },
+      "1:3.0": {
+        "trades": 22,
+        "wins": 4,
+        "losses": 18,
+        "win_rate": 18.2,
+        "net_pnl": 4.54,
+        "pf": 1.02
+      }
+    },
+    "midpoint_sl": {
+      "1:1.0": {
+        "trades": 23,
+        "wins": 10,
+        "losses": 13,
+        "win_rate": 43.5,
+        "net_pnl": 4.32,
+        "pf": 1.06
+      },
+      "1:1.5": {
+        "trades": 23,
+        "wins": 8,
+        "losses": 15,
+        "win_rate": 34.8,
+        "net_pnl": 19.93,
+        "pf": 1.23
+      },
+      "1:2.0": {
+        "trades": 23,
+        "wins": 8,
+        "losses": 15,
+        "win_rate": 34.8,
+        "net_pnl": 55.89,
+        "pf": 1.64
+      },
+      "1:3.0": {
+        "trades": 23,
+        "wins": 6,
+        "losses": 17,
+        "win_rate": 26.1,
+        "net_pnl": 27.84,
+        "pf": 1.25
+      }
+    },
+    "close_confirm": {
+      "1:1.0": {
+        "trades": 25,
+        "wins": 11,
+        "losses": 14,
+        "win_rate": 44.0,
+        "net_pnl": 39.34,
+        "pf": 1.27
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 7,
+        "losses": 17,
+        "win_rate": 29.2,
+        "net_pnl": -61.5,
+        "pf": 0.7
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate": 25.0,
+        "net_pnl": -40.12,
+        "pf": 0.81
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": 0.38,
+        "pf": 1.0
+      }
+    },
+    "structure_sl": {
+      "1:1.0": {
+        "trades": 23,
+        "wins": 10,
+        "losses": 13,
+        "win_rate": 43.5,
+        "net_pnl": 2.09,
+        "pf": 1.03
+      },
+      "1:1.5": {
+        "trades": 23,
+        "wins": 9,
+        "losses": 14,
+        "win_rate": 39.1,
+        "net_pnl": 23.62,
+        "pf": 1.36
+      },
+      "1:2.0": {
+        "trades": 23,
+        "wins": 7,
+        "losses": 16,
+        "win_rate": 30.4,
+        "net_pnl": 31.62,
+        "pf": 1.43
+      },
+      "1:3.0": {
+        "trades": 23,
+        "wins": 5,
+        "losses": 18,
+        "win_rate": 21.7,
+        "net_pnl": 4.55,
+        "pf": 1.05
+      }
+    },
+    "rejection_confirm": {
+      "1:1.0": {
+        "trades": 21,
+        "wins": 10,
+        "losses": 11,
+        "win_rate": 47.6,
+        "net_pnl": 66.38,
+        "pf": 1.58
+      },
+      "1:1.5": {
+        "trades": 20,
+        "wins": 6,
+        "losses": 14,
+        "win_rate": 30.0,
+        "net_pnl": -37.0,
+        "pf": 0.79
+      },
+      "1:2.0": {
+        "trades": 20,
+        "wins": 5,
+        "losses": 15,
+        "win_rate": 25.0,
+        "net_pnl": -18.16,
+        "pf": 0.9
+      },
+      "1:3.0": {
+        "trades": 20,
+        "wins": 4,
+        "losses": 16,
+        "win_rate": 20.0,
+        "net_pnl": 17.26,
+        "pf": 1.09
+      }
+    },
+    "trend_close": {
+      "1:1.0": {
+        "trades": 14,
+        "wins": 5,
+        "losses": 9,
+        "win_rate": 35.7,
+        "net_pnl": -31.38,
+        "pf": 0.68
+      },
+      "1:1.5": {
+        "trades": 14,
+        "wins": 3,
+        "losses": 11,
+        "win_rate": 21.4,
+        "net_pnl": -40.88,
+        "pf": 0.65
+      },
+      "1:2.0": {
+        "trades": 14,
+        "wins": 3,
+        "losses": 11,
+        "win_rate": 21.4,
+        "net_pnl": -15.62,
+        "pf": 0.87
+      },
+      "1:3.0": {
+        "trades": 14,
+        "wins": 2,
+        "losses": 12,
+        "win_rate": 14.3,
+        "net_pnl": -11.66,
+        "pf": 0.91
+      }
+    },
+    "golden_hybrid": {
+      "1:1.0": {
+        "trades": 22,
+        "wins": 12,
+        "losses": 10,
+        "win_rate": 54.5,
+        "net_pnl": 29.4,
+        "pf": 1.45
+      },
+      "1:1.5": {
+        "trades": 22,
+        "wins": 10,
+        "losses": 12,
+        "win_rate": 45.5,
+        "net_pnl": 51.38,
+        "pf": 1.68
+      },
+      "1:2.0": {
+        "trades": 22,
+        "wins": 9,
+        "losses": 13,
+        "win_rate": 40.9,
+        "net_pnl": 63.86,
+        "pf": 1.75
+      },
+      "1:3.0": {
+        "trades": 22,
+        "wins": 7,
+        "losses": 15,
+        "win_rate": 31.8,
+        "net_pnl": 38.6,
+        "pf": 1.35
+      }
+    }
+  },
+  "M5": {
+    "baseline": {
+      "1:1.0": {
+        "trades": 24,
+        "wins": 11,
+        "losses": 13,
+        "win_rate": 45.8,
+        "net_pnl": 14.36,
+        "pf": 1.09
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 7,
+        "losses": 17,
+        "win_rate": 29.2,
+        "net_pnl": -82.47,
+        "pf": 0.64
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": -96.9,
+        "pf": 0.61
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": -19.56,
+        "pf": 0.92
+      }
+    },
+    "midpoint_sl": {
+      "1:1.0": {
+        "trades": 25,
+        "wins": 10,
+        "losses": 15,
+        "win_rate": 40.0,
+        "net_pnl": -38.97,
+        "pf": 0.66
+      },
+      "1:1.5": {
+        "trades": 25,
+        "wins": 8,
+        "losses": 17,
+        "win_rate": 32.0,
+        "net_pnl": -41.51,
+        "pf": 0.68
+      },
+      "1:2.0": {
+        "trades": 25,
+        "wins": 8,
+        "losses": 17,
+        "win_rate": 32.0,
+        "net_pnl": -12.22,
+        "pf": 0.91
+      },
+      "1:3.0": {
+        "trades": 25,
+        "wins": 6,
+        "losses": 19,
+        "win_rate": 24.0,
+        "net_pnl": 3.87,
+        "pf": 1.03
+      }
+    },
+    "close_confirm": {
+      "1:1.0": {
+        "trades": 24,
+        "wins": 12,
+        "losses": 12,
+        "win_rate": 50.0,
+        "net_pnl": 44.44,
+        "pf": 1.31
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 8,
+        "losses": 16,
+        "win_rate": 33.3,
+        "net_pnl": -44.87,
+        "pf": 0.79
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": -96.9,
+        "pf": 0.61
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": -19.56,
+        "pf": 0.92
+      }
+    },
+    "structure_sl": {
+      "1:1.0": {
+        "trades": 25,
+        "wins": 10,
+        "losses": 15,
+        "win_rate": 40.0,
+        "net_pnl": -31.94,
+        "pf": 0.64
+      },
+      "1:1.5": {
+        "trades": 25,
+        "wins": 9,
+        "losses": 16,
+        "win_rate": 36.0,
+        "net_pnl": -13.85,
+        "pf": 0.85
+      },
+      "1:2.0": {
+        "trades": 25,
+        "wins": 7,
+        "losses": 18,
+        "win_rate": 28.0,
+        "net_pnl": -23.07,
+        "pf": 0.78
+      },
+      "1:3.0": {
+        "trades": 25,
+        "wins": 6,
+        "losses": 19,
+        "win_rate": 24.0,
+        "net_pnl": 3.73,
+        "pf": 1.03
+      }
+    },
+    "rejection_confirm": {
+      "1:1.0": {
+        "trades": 23,
+        "wins": 11,
+        "losses": 12,
+        "win_rate": 47.8,
+        "net_pnl": 26.82,
+        "pf": 1.19
+      },
+      "1:1.5": {
+        "trades": 23,
+        "wins": 7,
+        "losses": 16,
+        "win_rate": 30.4,
+        "net_pnl": -70.01,
+        "pf": 0.68
+      },
+      "1:2.0": {
+        "trades": 23,
+        "wins": 5,
+        "losses": 18,
+        "win_rate": 21.7,
+        "net_pnl": -84.44,
+        "pf": 0.65
+      },
+      "1:3.0": {
+        "trades": 23,
+        "wins": 5,
+        "losses": 18,
+        "win_rate": 21.7,
+        "net_pnl": -7.1,
+        "pf": 0.97
+      }
+    },
+    "trend_close": {
+      "1:1.0": {
+        "trades": 13,
+        "wins": 5,
+        "losses": 8,
+        "win_rate": 38.5,
+        "net_pnl": -22.82,
+        "pf": 0.75
+      },
+      "1:1.5": {
+        "trades": 13,
+        "wins": 3,
+        "losses": 10,
+        "win_rate": 23.1,
+        "net_pnl": -32.03,
+        "pf": 0.71
+      },
+      "1:2.0": {
+        "trades": 13,
+        "wins": 2,
+        "losses": 11,
+        "win_rate": 15.4,
+        "net_pnl": -41.78,
+        "pf": 0.66
+      },
+      "1:3.0": {
+        "trades": 13,
+        "wins": 2,
+        "losses": 11,
+        "win_rate": 15.4,
+        "net_pnl": -1.58,
+        "pf": 0.99
+      }
+    },
+    "golden_hybrid": {
+      "1:1.0": {
+        "trades": 24,
+        "wins": 11,
+        "losses": 13,
+        "win_rate": 45.8,
+        "net_pnl": -26.31,
+        "pf": 0.75
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 9,
+        "losses": 15,
+        "win_rate": 37.5,
+        "net_pnl": -27.3,
+        "pf": 0.77
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 9,
+        "losses": 15,
+        "win_rate": 37.5,
+        "net_pnl": 3.53,
+        "pf": 1.03
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 7,
+        "losses": 17,
+        "win_rate": 29.2,
+        "net_pnl": 22.71,
+        "pf": 1.17
+      }
+    }
+  },
+  "M15": {
+    "baseline": {
+      "1:1.0": {
+        "trades": 24,
+        "wins": 8,
+        "losses": 16,
+        "win_rate": 33.3,
+        "net_pnl": -161.56,
+        "pf": 0.43
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate": 25.0,
+        "net_pnl": -166.89,
+        "pf": 0.46
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": -147.2,
+        "pf": 0.54
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 4,
+        "losses": 20,
+        "win_rate": 16.7,
+        "net_pnl": -112.04,
+        "pf": 0.66
+      }
+    },
+    "midpoint_sl": {
+      "1:1.0": {
+        "trades": 25,
+        "wins": 12,
+        "losses": 13,
+        "win_rate": 48.0,
+        "net_pnl": -24.13,
+        "pf": 0.81
+      },
+      "1:1.5": {
+        "trades": 25,
+        "wins": 9,
+        "losses": 16,
+        "win_rate": 36.0,
+        "net_pnl": -46.78,
+        "pf": 0.7
+      },
+      "1:2.0": {
+        "trades": 25,
+        "wins": 8,
+        "losses": 17,
+        "win_rate": 32.0,
+        "net_pnl": -39.09,
+        "pf": 0.76
+      },
+      "1:3.0": {
+        "trades": 25,
+        "wins": 6,
+        "losses": 19,
+        "win_rate": 24.0,
+        "net_pnl": -31.19,
+        "pf": 0.83
+      }
+    },
+    "close_confirm": {
+      "1:1.0": {
+        "trades": 24,
+        "wins": 8,
+        "losses": 16,
+        "win_rate": 33.3,
+        "net_pnl": -161.56,
+        "pf": 0.43
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate": 25.0,
+        "net_pnl": -166.89,
+        "pf": 0.46
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 5,
+        "losses": 19,
+        "win_rate": 20.8,
+        "net_pnl": -147.2,
+        "pf": 0.54
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 4,
+        "losses": 20,
+        "win_rate": 16.7,
+        "net_pnl": -112.04,
+        "pf": 0.66
+      }
+    },
+    "structure_sl": {
+      "1:1.0": {
+        "trades": 25,
+        "wins": 11,
+        "losses": 14,
+        "win_rate": 44.0,
+        "net_pnl": -28.5,
+        "pf": 0.72
+      },
+      "1:1.5": {
+        "trades": 25,
+        "wins": 8,
+        "losses": 17,
+        "win_rate": 32.0,
+        "net_pnl": -39.43,
+        "pf": 0.67
+      },
+      "1:2.0": {
+        "trades": 25,
+        "wins": 6,
+        "losses": 19,
+        "win_rate": 24.0,
+        "net_pnl": -51.1,
+        "pf": 0.62
+      },
+      "1:3.0": {
+        "trades": 25,
+        "wins": 4,
+        "losses": 21,
+        "win_rate": 16.0,
+        "net_pnl": -53.0,
+        "pf": 0.63
+      }
+    },
+    "rejection_confirm": {
+      "1:1.0": {
+        "trades": 23,
+        "wins": 8,
+        "losses": 15,
+        "win_rate": 34.8,
+        "net_pnl": -150.3,
+        "pf": 0.45
+      },
+      "1:1.5": {
+        "trades": 23,
+        "wins": 6,
+        "losses": 17,
+        "win_rate": 26.1,
+        "net_pnl": -155.63,
+        "pf": 0.48
+      },
+      "1:2.0": {
+        "trades": 23,
+        "wins": 5,
+        "losses": 18,
+        "win_rate": 21.7,
+        "net_pnl": -135.94,
+        "pf": 0.56
+      },
+      "1:3.0": {
+        "trades": 23,
+        "wins": 4,
+        "losses": 19,
+        "win_rate": 17.4,
+        "net_pnl": -100.78,
+        "pf": 0.69
+      }
+    },
+    "trend_close": {
+      "1:1.0": {
+        "trades": 15,
+        "wins": 3,
+        "losses": 12,
+        "win_rate": 20.0,
+        "net_pnl": -109.4,
+        "pf": 0.32
+      },
+      "1:1.5": {
+        "trades": 15,
+        "wins": 2,
+        "losses": 13,
+        "win_rate": 13.3,
+        "net_pnl": -101.02,
+        "pf": 0.4
+      },
+      "1:2.0": {
+        "trades": 15,
+        "wins": 2,
+        "losses": 13,
+        "win_rate": 13.3,
+        "net_pnl": -78.8,
+        "pf": 0.53
+      },
+      "1:3.0": {
+        "trades": 15,
+        "wins": 1,
+        "losses": 14,
+        "win_rate": 6.7,
+        "net_pnl": -85.08,
+        "pf": 0.53
+      }
+    },
+    "golden_hybrid": {
+      "1:1.0": {
+        "trades": 24,
+        "wins": 12,
+        "losses": 12,
+        "win_rate": 50.0,
+        "net_pnl": -18.25,
+        "pf": 0.85
+      },
+      "1:1.5": {
+        "trades": 24,
+        "wins": 9,
+        "losses": 15,
+        "win_rate": 37.5,
+        "net_pnl": -40.9,
+        "pf": 0.73
+      },
+      "1:2.0": {
+        "trades": 24,
+        "wins": 8,
+        "losses": 16,
+        "win_rate": 33.3,
+        "net_pnl": -33.21,
+        "pf": 0.79
+      },
+      "1:3.0": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate": 25.0,
+        "net_pnl": -25.31,
+        "pf": 0.85
+      }
+    }
+  }
+}

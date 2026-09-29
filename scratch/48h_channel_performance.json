@@ -1,0 +1,1620 @@
+{
+  "generated_at": "2026-09-23 18:03:59",
+  "period": "Last 48 Hours (2026-09-21 17:00 UTC to 2026-09-23 12:35 UTC)",
+  "summary": {
+    "total_trades": 111,
+    "wins": 44,
+    "losses": 66,
+    "net_pnl": -327.02,
+    "win_rate": 39.6,
+    "profitable_channels_count": 3,
+    "losing_channels_count": 13
+  },
+  "channels": {
+    "FVG_RETEST_": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -49.24,
+      "swap": -1.7,
+      "net_pnl": -50.940000000000005,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2318036505,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-18 07:15:03 UTC",
+          "exit_time": "2026-09-21 17:03:39 UTC",
+          "net_pnl": -50.94,
+          "outcome": "LOSS",
+          "magic": 123456,
+          "entry_comment": "FVG_RETEST_",
+          "exit_comment": "[sl 4332.83]"
+        }
+      ],
+      "magic_numbers": [
+        123456
+      ]
+    },
+    "RIAOGOLDFOREX": {
+      "trades": 16,
+      "wins": 1,
+      "losses": 15,
+      "breakevens": 0,
+      "gross_profit": -155.8,
+      "swap": 0.4,
+      "net_pnl": -155.4,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2320449864,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-21 17:17:00 UTC",
+          "exit_time": "2026-09-21 17:26:05 UTC",
+          "net_pnl": -16.74,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4340.63]"
+        },
+        {
+          "pos_id": 2320395825,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-21 17:27:34 UTC",
+          "exit_time": "2026-09-21 17:44:43 UTC",
+          "net_pnl": -17.06,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4333.51]"
+        },
+        {
+          "pos_id": 2321159205,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-22 05:51:39 UTC",
+          "exit_time": "2026-09-22 05:53:13 UTC",
+          "net_pnl": -15.66,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4342.72]"
+        },
+        {
+          "pos_id": 2321172488,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 06:04:47 UTC",
+          "exit_time": "2026-09-22 06:09:18 UTC",
+          "net_pnl": -12.55,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4340.54]"
+        },
+        {
+          "pos_id": 2321262394,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-22 07:27:25 UTC",
+          "exit_time": "2026-09-22 08:03:08 UTC",
+          "net_pnl": 36.72,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[tp 4343.55]"
+        },
+        {
+          "pos_id": 2321400260,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 08:56:20 UTC",
+          "exit_time": "2026-09-22 09:04:56 UTC",
+          "net_pnl": -13.74,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4318.24]"
+        },
+        {
+          "pos_id": 2321672409,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 11:19:58 UTC",
+          "exit_time": "2026-09-22 11:23:04 UTC",
+          "net_pnl": -12.5,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4301.83]"
+        },
+        {
+          "pos_id": 2321928072,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 13:09:21 UTC",
+          "exit_time": "2026-09-22 13:09:59 UTC",
+          "net_pnl": -12.6,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4332.58]"
+        },
+        {
+          "pos_id": 2322423356,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 17:02:52 UTC",
+          "exit_time": "2026-09-22 17:03:20 UTC",
+          "net_pnl": -13.2,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4332.50]"
+        },
+        {
+          "pos_id": 2323007707,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 22:37:44 UTC",
+          "exit_time": "2026-09-22 22:39:05 UTC",
+          "net_pnl": -0.42,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4369.92]"
+        },
+        {
+          "pos_id": 2322989550,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 23:14:20 UTC",
+          "exit_time": "2026-09-23 01:06:26 UTC",
+          "net_pnl": -12.16,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4364.91]"
+        },
+        {
+          "pos_id": 2323276760,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 05:51:18 UTC",
+          "exit_time": "2026-09-23 05:55:48 UTC",
+          "net_pnl": -12.8,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4334.11]"
+        },
+        {
+          "pos_id": 2323289928,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-23 06:13:10 UTC",
+          "exit_time": "2026-09-23 06:13:31 UTC",
+          "net_pnl": -16.39,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4339.40]"
+        },
+        {
+          "pos_id": 2323626215,
+          "symbol": "GOLD",
+          "volume": 0.1,
+          "entry_time": "2026-09-23 11:40:29 UTC",
+          "exit_time": "2026-09-23 11:40:57 UTC",
+          "net_pnl": -13.0,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4318.17]"
+        },
+        {
+          "pos_id": 2323637136,
+          "symbol": "GOLD",
+          "volume": 0.1,
+          "entry_time": "2026-09-23 11:47:56 UTC",
+          "exit_time": "2026-09-23 11:48:06 UTC",
+          "net_pnl": -13.0,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4317.23]"
+        },
+        {
+          "pos_id": 2323621634,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-23 12:33:45 UTC",
+          "exit_time": "2026-09-23 12:48:32 UTC",
+          "net_pnl": -10.3,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[RIAOGOLDFOREX]",
+          "exit_comment": "[sl 4309.88]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Swift Gold Forex": {
+      "trades": 9,
+      "wins": 5,
+      "losses": 4,
+      "breakevens": 0,
+      "gross_profit": 81.04,
+      "swap": 0.0,
+      "net_pnl": 81.04,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2320564075,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-21 18:17:38 UTC",
+          "exit_time": "2026-09-21 18:24:32 UTC",
+          "net_pnl": -16.14,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[sl 4352.13]"
+        },
+        {
+          "pos_id": 2321223585,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 06:59:29 UTC",
+          "exit_time": "2026-09-22 07:03:58 UTC",
+          "net_pnl": 67.87,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[tp 4335.65]"
+        },
+        {
+          "pos_id": 2321607930,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 10:52:42 UTC",
+          "exit_time": "2026-09-22 10:59:38 UTC",
+          "net_pnl": 2.31,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[sl 4303.54]"
+        },
+        {
+          "pos_id": 2321969823,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 13:34:51 UTC",
+          "exit_time": "2026-09-22 13:37:22 UTC",
+          "net_pnl": -13.45,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[sl 4330.43]"
+        },
+        {
+          "pos_id": 2322021605,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 14:07:46 UTC",
+          "exit_time": "2026-09-22 14:09:25 UTC",
+          "net_pnl": 36.0,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[tp 4312.60]"
+        },
+        {
+          "pos_id": 2322309843,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 16:21:20 UTC",
+          "exit_time": "2026-09-22 16:24:00 UTC",
+          "net_pnl": 30.45,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[tp 4331.54]"
+        },
+        {
+          "pos_id": 2322567500,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 18:09:40 UTC",
+          "exit_time": "2026-09-22 18:10:18 UTC",
+          "net_pnl": -12.7,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[sl 4340.50]"
+        },
+        {
+          "pos_id": 2323516689,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 10:10:20 UTC",
+          "exit_time": "2026-09-23 10:13:06 UTC",
+          "net_pnl": -13.55,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[sl 4324.82]"
+        },
+        {
+          "pos_id": 2323523001,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 10:13:42 UTC",
+          "exit_time": "2026-09-23 10:19:40 UTC",
+          "net_pnl": 0.25,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Swift Gold Forex]",
+          "exit_comment": "[sl 4326.22]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "XAUUSD GOLD MASTER": {
+      "trades": 29,
+      "wins": 10,
+      "losses": 19,
+      "breakevens": 0,
+      "gross_profit": -136.41,
+      "swap": 0.0,
+      "net_pnl": -136.41,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2320987955,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-22 03:32:56 UTC",
+          "exit_time": "2026-09-22 03:35:28 UTC",
+          "net_pnl": -15.3,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4355.86]"
+        },
+        {
+          "pos_id": 2321035901,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 04:10:31 UTC",
+          "exit_time": "2026-09-22 04:13:42 UTC",
+          "net_pnl": -12.38,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4353.81]"
+        },
+        {
+          "pos_id": 2321448584,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 09:15:38 UTC",
+          "exit_time": "2026-09-22 09:19:38 UTC",
+          "net_pnl": -12.6,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4318.14]"
+        },
+        {
+          "pos_id": 2321458204,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 09:22:27 UTC",
+          "exit_time": "2026-09-22 09:22:44 UTC",
+          "net_pnl": -14.3,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4318.86]"
+        },
+        {
+          "pos_id": 2321461803,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 09:25:27 UTC",
+          "exit_time": "2026-09-22 09:39:35 UTC",
+          "net_pnl": -16.3,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4316.83]"
+        },
+        {
+          "pos_id": 2321661729,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-22 11:14:49 UTC",
+          "exit_time": "2026-09-22 11:14:59 UTC",
+          "net_pnl": -15.72,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4303.75]"
+        },
+        {
+          "pos_id": 2321852592,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 12:34:30 UTC",
+          "exit_time": "2026-09-22 12:36:33 UTC",
+          "net_pnl": 0.3,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4314.22]"
+        },
+        {
+          "pos_id": 2322222956,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 16:09:38 UTC",
+          "exit_time": "2026-09-22 16:20:21 UTC",
+          "net_pnl": 0.48,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4339.94]"
+        },
+        {
+          "pos_id": 2322224745,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 16:09:38 UTC",
+          "exit_time": "2026-09-22 16:20:21 UTC",
+          "net_pnl": 0.48,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4339.94]"
+        },
+        {
+          "pos_id": 2322356475,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 16:38:51 UTC",
+          "exit_time": "2026-09-22 16:39:54 UTC",
+          "net_pnl": -13.55,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4332.02]"
+        },
+        {
+          "pos_id": 2322394553,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 16:50:22 UTC",
+          "exit_time": "2026-09-22 16:52:42 UTC",
+          "net_pnl": -13.45,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4341.18]"
+        },
+        {
+          "pos_id": 2322408377,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 16:55:56 UTC",
+          "exit_time": "2026-09-22 16:57:14 UTC",
+          "net_pnl": -12.75,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4334.14]"
+        },
+        {
+          "pos_id": 2322386408,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 17:34:30 UTC",
+          "exit_time": "2026-09-22 17:36:15 UTC",
+          "net_pnl": 0.42,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4324.68]"
+        },
+        {
+          "pos_id": 2322509273,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 17:39:12 UTC",
+          "exit_time": "2026-09-22 17:45:16 UTC",
+          "net_pnl": 23.12,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4321.25]"
+        },
+        {
+          "pos_id": 2323308100,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 06:40:51 UTC",
+          "exit_time": "2026-09-23 06:59:53 UTC",
+          "net_pnl": 10.0,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4342.47]"
+        },
+        {
+          "pos_id": 2323297180,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 08:43:18 UTC",
+          "exit_time": "2026-09-23 08:45:40 UTC",
+          "net_pnl": 9.95,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4331.99]"
+        },
+        {
+          "pos_id": 2323475077,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-23 09:36:16 UTC",
+          "exit_time": "2026-09-23 09:36:19 UTC",
+          "net_pnl": -13.86,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4333.25]"
+        },
+        {
+          "pos_id": 2323475693,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 09:36:55 UTC",
+          "exit_time": "2026-09-23 09:46:11 UTC",
+          "net_pnl": -12.55,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4330.83]"
+        },
+        {
+          "pos_id": 2323500752,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 09:57:57 UTC",
+          "exit_time": "2026-09-23 10:00:58 UTC",
+          "net_pnl": -13.0,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4329.75]"
+        },
+        {
+          "pos_id": 2323530380,
+          "symbol": "GOLD",
+          "volume": 0.1,
+          "entry_time": "2026-09-23 10:20:16 UTC",
+          "exit_time": "2026-09-23 10:20:54 UTC",
+          "net_pnl": -11.1,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4327.43]"
+        },
+        {
+          "pos_id": 2323531547,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 10:21:22 UTC",
+          "exit_time": "2026-09-23 10:25:24 UTC",
+          "net_pnl": -12.55,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4324.67]"
+        },
+        {
+          "pos_id": 2323553885,
+          "symbol": "GOLD",
+          "volume": 0.1,
+          "entry_time": "2026-09-23 10:37:09 UTC",
+          "exit_time": "2026-09-23 10:37:27 UTC",
+          "net_pnl": -13.0,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4321.25]"
+        },
+        {
+          "pos_id": 2323641123,
+          "symbol": "GOLD",
+          "volume": 0.1,
+          "entry_time": "2026-09-23 11:50:45 UTC",
+          "exit_time": "2026-09-23 11:58:19 UTC",
+          "net_pnl": -12.1,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4319.49]"
+        },
+        {
+          "pos_id": 2323761183,
+          "symbol": "GOLD",
+          "volume": 0.03,
+          "entry_time": "2026-09-23 13:39:45 UTC",
+          "exit_time": "2026-09-23 13:54:34 UTC",
+          "net_pnl": -0.69,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4315.95]"
+        },
+        {
+          "pos_id": 2323796901,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 14:18:55 UTC",
+          "exit_time": "2026-09-23 14:19:22 UTC",
+          "net_pnl": -12.15,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4312.06]"
+        },
+        {
+          "pos_id": 2323740625,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 14:19:23 UTC",
+          "exit_time": "2026-09-23 14:32:36 UTC",
+          "net_pnl": 51.5,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[tp 4301.92]"
+        },
+        {
+          "pos_id": 2323874376,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 14:48:13 UTC",
+          "exit_time": "2026-09-23 14:49:02 UTC",
+          "net_pnl": -12.3,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4308.51]"
+        },
+        {
+          "pos_id": 2323900654,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 15:06:00 UTC",
+          "exit_time": "2026-09-23 15:17:48 UTC",
+          "net_pnl": 1.05,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4314.80]"
+        },
+        {
+          "pos_id": 2323871778,
+          "symbol": "GOLD",
+          "volume": 0.03,
+          "entry_time": "2026-09-23 15:11:02 UTC",
+          "exit_time": "2026-09-23 15:24:37 UTC",
+          "net_pnl": 5.94,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD GOLD MASTER]",
+          "exit_comment": "[sl 4314.01]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Market Trader Crypto Forex": {
+      "trades": 3,
+      "wins": 0,
+      "losses": 3,
+      "breakevens": 0,
+      "gross_profit": -29.130000000000003,
+      "swap": 0.0,
+      "net_pnl": -29.130000000000003,
+      "symbols": [
+        "GBPNZD",
+        "US30Cash"
+      ],
+      "deals": [
+        {
+          "pos_id": 2320997762,
+          "symbol": "GBPNZD",
+          "volume": 0.07,
+          "entry_time": "2026-09-22 03:39:48 UTC",
+          "exit_time": "2026-09-22 04:08:54 UTC",
+          "net_pnl": -14.25,
+          "outcome": "LOSS",
+          "magic": 888888,
+          "entry_comment": "[Market Trader]",
+          "exit_comment": "[sl 2.34529]"
+        },
+        {
+          "pos_id": 2321967216,
+          "symbol": "GBPNZD",
+          "volume": 0.07,
+          "entry_time": "2026-09-22 13:33:09 UTC",
+          "exit_time": "2026-09-22 16:46:50 UTC",
+          "net_pnl": -1.38,
+          "outcome": "LOSS",
+          "magic": 888888,
+          "entry_comment": "[Market Trader]",
+          "exit_comment": "[sl 2.32997]"
+        },
+        {
+          "pos_id": 2323228042,
+          "symbol": "US30Cash",
+          "volume": 0.9,
+          "entry_time": "2026-09-23 04:52:35 UTC",
+          "exit_time": "2026-09-23 05:12:28 UTC",
+          "net_pnl": -13.5,
+          "outcome": "LOSS",
+          "magic": 888888,
+          "entry_comment": "[Market Trader]",
+          "exit_comment": "[sl 51888.50]"
+        }
+      ],
+      "magic_numbers": [
+        888888
+      ]
+    },
+    "Vault Gold Forex": {
+      "trades": 8,
+      "wins": 4,
+      "losses": 4,
+      "breakevens": 0,
+      "gross_profit": -22.8,
+      "swap": 0.0,
+      "net_pnl": -22.8,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321030723,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 04:06:51 UTC",
+          "exit_time": "2026-09-22 04:07:42 UTC",
+          "net_pnl": 0.36,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4362.84]"
+        },
+        {
+          "pos_id": 2321668313,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 11:17:25 UTC",
+          "exit_time": "2026-09-22 11:17:52 UTC",
+          "net_pnl": -12.54,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4303.05]"
+        },
+        {
+          "pos_id": 2322144414,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 15:14:56 UTC",
+          "exit_time": "2026-09-22 15:16:10 UTC",
+          "net_pnl": -12.85,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4326.41]"
+        },
+        {
+          "pos_id": 2321639101,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 21:06:06 UTC",
+          "exit_time": "2026-09-22 21:47:00 UTC",
+          "net_pnl": 3.5,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4354.12]"
+        },
+        {
+          "pos_id": 2322619123,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 21:06:06 UTC",
+          "exit_time": "2026-09-22 21:47:00 UTC",
+          "net_pnl": 3.5,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4354.12]"
+        },
+        {
+          "pos_id": 2323291349,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 06:14:26 UTC",
+          "exit_time": "2026-09-23 06:16:02 UTC",
+          "net_pnl": -12.55,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4337.32]"
+        },
+        {
+          "pos_id": 2323223069,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 08:43:54 UTC",
+          "exit_time": "2026-09-23 08:54:01 UTC",
+          "net_pnl": -12.7,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[sl 4332.50]"
+        },
+        {
+          "pos_id": 2323168862,
+          "symbol": "GOLD",
+          "volume": 0.04,
+          "entry_time": "2026-09-23 09:21:49 UTC",
+          "exit_time": "2026-09-23 09:35:18 UTC",
+          "net_pnl": 20.48,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Vault Gold Forex]",
+          "exit_comment": "[tp 4332.00]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "JOSEFINA TRADER0": {
+      "trades": 20,
+      "wins": 10,
+      "losses": 10,
+      "breakevens": 0,
+      "gross_profit": -9.649999999999991,
+      "swap": 0.0,
+      "net_pnl": -9.649999999999991,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321036103,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 04:10:31 UTC",
+          "exit_time": "2026-09-22 04:13:42 UTC",
+          "net_pnl": -12.38,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4353.81]"
+        },
+        {
+          "pos_id": 2321067200,
+          "symbol": "GOLD",
+          "volume": 0.04,
+          "entry_time": "2026-09-22 04:44:39 UTC",
+          "exit_time": "2026-09-22 04:52:44 UTC",
+          "net_pnl": 7.88,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4347.93]"
+        },
+        {
+          "pos_id": 2321089525,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 04:55:42 UTC",
+          "exit_time": "2026-09-22 04:56:20 UTC",
+          "net_pnl": -14.96,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4348.82]"
+        },
+        {
+          "pos_id": 2321086309,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 05:00:52 UTC",
+          "exit_time": "2026-09-22 05:04:28 UTC",
+          "net_pnl": 0.46,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4349.75]"
+        },
+        {
+          "pos_id": 2321104553,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 05:07:35 UTC",
+          "exit_time": "2026-09-22 05:07:50 UTC",
+          "net_pnl": -14.41,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4346.59]"
+        },
+        {
+          "pos_id": 2321188781,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 06:22:03 UTC",
+          "exit_time": "2026-09-22 06:41:04 UTC",
+          "net_pnl": 3.94,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4344.99]"
+        },
+        {
+          "pos_id": 2321237534,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 07:06:37 UTC",
+          "exit_time": "2026-09-22 07:06:47 UTC",
+          "net_pnl": -13.75,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4337.65]"
+        },
+        {
+          "pos_id": 2321242553,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-22 07:11:18 UTC",
+          "exit_time": "2026-09-22 07:11:23 UTC",
+          "net_pnl": -12.43,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4339.41]"
+        },
+        {
+          "pos_id": 2321300696,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-22 08:04:44 UTC",
+          "exit_time": "2026-09-22 08:07:08 UTC",
+          "net_pnl": -15.42,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4344.22]"
+        },
+        {
+          "pos_id": 2322081398,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 14:39:10 UTC",
+          "exit_time": "2026-09-22 14:44:11 UTC",
+          "net_pnl": 0.48,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4317.20]"
+        },
+        {
+          "pos_id": 2322099925,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 14:51:09 UTC",
+          "exit_time": "2026-09-22 14:56:52 UTC",
+          "net_pnl": -12.8,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4322.67]"
+        },
+        {
+          "pos_id": 2322256429,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 15:59:00 UTC",
+          "exit_time": "2026-09-22 16:03:04 UTC",
+          "net_pnl": 0.22,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4334.80]"
+        },
+        {
+          "pos_id": 2322323733,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 16:25:56 UTC",
+          "exit_time": "2026-09-22 16:27:25 UTC",
+          "net_pnl": -12.7,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4331.23]"
+        },
+        {
+          "pos_id": 2322635856,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 18:32:09 UTC",
+          "exit_time": "2026-09-22 20:54:26 UTC",
+          "net_pnl": 42.96,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[tp 4351.08]"
+        },
+        {
+          "pos_id": 2323226645,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-23 04:51:14 UTC",
+          "exit_time": "2026-09-23 05:15:50 UTC",
+          "net_pnl": 62.22,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[tp 4335.89]"
+        },
+        {
+          "pos_id": 2323340692,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 07:22:47 UTC",
+          "exit_time": "2026-09-23 08:04:12 UTC",
+          "net_pnl": 1.25,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4345.22]"
+        },
+        {
+          "pos_id": 2323393503,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-23 08:32:43 UTC",
+          "exit_time": "2026-09-23 08:33:20 UTC",
+          "net_pnl": -14.85,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4339.16]"
+        },
+        {
+          "pos_id": 2323329276,
+          "symbol": "GOLD",
+          "volume": 0.03,
+          "entry_time": "2026-09-23 08:43:59 UTC",
+          "exit_time": "2026-09-23 09:09:23 UTC",
+          "net_pnl": 5.97,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4331.66]"
+        },
+        {
+          "pos_id": 2323452565,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-23 09:25:04 UTC",
+          "exit_time": "2026-09-23 09:32:39 UTC",
+          "net_pnl": -11.58,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4332.05]"
+        },
+        {
+          "pos_id": 2323559143,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 10:42:12 UTC",
+          "exit_time": "2026-09-23 10:54:14 UTC",
+          "net_pnl": 0.25,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[JOSEFINA TRADER0]",
+          "exit_comment": "[sl 4322.13]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "THE FOREX BLUEPRINT": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -13.23,
+      "swap": 0.0,
+      "net_pnl": -13.23,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321042838,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 04:15:14 UTC",
+          "exit_time": "2026-09-22 04:26:01 UTC",
+          "net_pnl": 0.42,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[THE FOREX BLUEPRINT]",
+          "exit_comment": "[sl 4355.26]"
+        },
+        {
+          "pos_id": 2323286221,
+          "symbol": "GOLD",
+          "volume": 0.03,
+          "entry_time": "2026-09-23 08:43:26 UTC",
+          "exit_time": "2026-09-23 08:44:38 UTC",
+          "net_pnl": -13.65,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[THE FOREX BLUEPRINT]",
+          "exit_comment": "[sl 4329.04]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Perfect Management": {
+      "trades": 4,
+      "wins": 3,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -3.719999999999999,
+      "swap": 0.0,
+      "net_pnl": -3.719999999999999,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321050882,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 04:21:20 UTC",
+          "exit_time": "2026-09-22 04:44:53 UTC",
+          "net_pnl": 1.56,
+          "outcome": "WIN",
+          "magic": 786786,
+          "entry_comment": "[Perfect Management]",
+          "exit_comment": "[tp 4350.00]"
+        },
+        {
+          "pos_id": 2321144115,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 05:39:13 UTC",
+          "exit_time": "2026-09-22 08:23:18 UTC",
+          "net_pnl": -45.92,
+          "outcome": "LOSS",
+          "magic": 786786,
+          "entry_comment": "[Perfect Management]",
+          "exit_comment": "[sl 4331.00]"
+        },
+        {
+          "pos_id": 2322201206,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 15:33:36 UTC",
+          "exit_time": "2026-09-22 16:08:25 UTC",
+          "net_pnl": 0.52,
+          "outcome": "WIN",
+          "magic": 786786,
+          "entry_comment": "[Perfect Management]",
+          "exit_comment": "[sl 4339.41]"
+        },
+        {
+          "pos_id": 2323354941,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-23 07:45:58 UTC",
+          "exit_time": "2026-09-23 10:26:08 UTC",
+          "net_pnl": 40.12,
+          "outcome": "WIN",
+          "magic": 786786,
+          "entry_comment": "[Perfect Management]",
+          "exit_comment": "[tp 4324.00]"
+        }
+      ],
+      "magic_numbers": [
+        786786
+      ]
+    },
+    "XAUUSD ACCURATE SiGNALS": {
+      "trades": 3,
+      "wins": 3,
+      "losses": 0,
+      "breakevens": 0,
+      "gross_profit": 68.62,
+      "swap": 0.0,
+      "net_pnl": 68.62,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321091322,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 05:10:09 UTC",
+          "exit_time": "2026-09-22 05:34:31 UTC",
+          "net_pnl": 24.72,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD ACCURATE SiGNALS]",
+          "exit_comment": "[tp 4355.00]"
+        },
+        {
+          "pos_id": 2321383789,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 09:08:02 UTC",
+          "exit_time": "2026-09-22 09:11:09 UTC",
+          "net_pnl": 3.38,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD ACCURATE SiGNALS]",
+          "exit_comment": "[sl 4317.91]"
+        },
+        {
+          "pos_id": 2321774551,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 11:56:49 UTC",
+          "exit_time": "2026-09-22 12:28:52 UTC",
+          "net_pnl": 40.52,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[XAUUSD ACCURATE SiGNALS]",
+          "exit_comment": "[tp 4315.00]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Forex with karol": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -15.42,
+      "swap": 0.0,
+      "net_pnl": -15.42,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321411858,
+          "symbol": "GOLD",
+          "volume": 0.06,
+          "entry_time": "2026-09-22 08:56:05 UTC",
+          "exit_time": "2026-09-22 08:56:13 UTC",
+          "net_pnl": -15.42,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Forex with karol]",
+          "exit_comment": "[sl 4325.03]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "SureShot GOLD (VIP)": {
+      "trades": 4,
+      "wins": 2,
+      "losses": 1,
+      "breakevens": 1,
+      "gross_profit": -14.78,
+      "swap": 0.0,
+      "net_pnl": -14.78,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321500367,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 10:01:06 UTC",
+          "exit_time": "2026-09-22 10:26:29 UTC",
+          "net_pnl": -0.06,
+          "outcome": "BREAKEVEN",
+          "magic": 777777,
+          "entry_comment": "[SureShot GOLD (VIP)]",
+          "exit_comment": "[sl 4321.00]"
+        },
+        {
+          "pos_id": 2321683926,
+          "symbol": "GOLD",
+          "volume": 0.03,
+          "entry_time": "2026-09-22 11:26:36 UTC",
+          "exit_time": "2026-09-22 11:35:41 UTC",
+          "net_pnl": 4.62,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[SureShot GOLD (VIP)]",
+          "exit_comment": "[sl 4300.77]"
+        },
+        {
+          "pos_id": 2321742285,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 11:46:14 UTC",
+          "exit_time": "2026-09-22 11:51:00 UTC",
+          "net_pnl": -19.82,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[SureShot GOLD (VIP)]",
+          "exit_comment": "[sl 4327.80]"
+        },
+        {
+          "pos_id": 2322200121,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 15:33:57 UTC",
+          "exit_time": "2026-09-22 15:41:47 UTC",
+          "net_pnl": 0.48,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[SureShot GOLD (VIP)]",
+          "exit_comment": "[sl 4340.84]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Grade Profit forex": {
+      "trades": 7,
+      "wins": 4,
+      "losses": 3,
+      "breakevens": 0,
+      "gross_profit": 21.5,
+      "swap": 0.0,
+      "net_pnl": 21.5,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321546854,
+          "symbol": "GOLD",
+          "volume": 0.04,
+          "entry_time": "2026-09-22 10:28:15 UTC",
+          "exit_time": "2026-09-22 10:51:39 UTC",
+          "net_pnl": 62.8,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[tp 4304.56]"
+        },
+        {
+          "pos_id": 2321877817,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-22 12:49:25 UTC",
+          "exit_time": "2026-09-22 12:50:09 UTC",
+          "net_pnl": -12.5,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[sl 4323.31]"
+        },
+        {
+          "pos_id": 2321986563,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 15:20:41 UTC",
+          "exit_time": "2026-09-22 15:22:52 UTC",
+          "net_pnl": -18.9,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[sl 4339.64]"
+        },
+        {
+          "pos_id": 2322422752,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 17:13:38 UTC",
+          "exit_time": "2026-09-22 17:17:12 UTC",
+          "net_pnl": -14.34,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[sl 4328.72]"
+        },
+        {
+          "pos_id": 2321677827,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 21:04:05 UTC",
+          "exit_time": "2026-09-22 21:45:52 UTC",
+          "net_pnl": 0.44,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[sl 4352.62]"
+        },
+        {
+          "pos_id": 2321643376,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 21:06:06 UTC",
+          "exit_time": "2026-09-22 21:47:00 UTC",
+          "net_pnl": 3.5,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[sl 4354.12]"
+        },
+        {
+          "pos_id": 2321485460,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 21:06:15 UTC",
+          "exit_time": "2026-09-22 21:08:11 UTC",
+          "net_pnl": 0.5,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[Grade Profit forex]",
+          "exit_comment": "[sl 4356.86]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Telegram VIP (Magic 777777)": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -13.52,
+      "swap": 0.0,
+      "net_pnl": -13.52,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2321939925,
+          "symbol": "GOLD",
+          "volume": 0.02,
+          "entry_time": "2026-09-22 15:20:53 UTC",
+          "exit_time": "2026-09-22 15:27:41 UTC",
+          "net_pnl": 0.34,
+          "outcome": "WIN",
+          "magic": 777777,
+          "entry_comment": "[]",
+          "exit_comment": "[sl 4334.77]"
+        },
+        {
+          "pos_id": 2323300885,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-23 06:27:41 UTC",
+          "exit_time": "2026-09-23 06:31:21 UTC",
+          "net_pnl": -13.86,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[]",
+          "exit_comment": "[sl 4339.92]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "GOLD Snipers": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -20.68,
+      "swap": 0.0,
+      "net_pnl": -20.68,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2323120155,
+          "symbol": "GOLD",
+          "volume": 0.11,
+          "entry_time": "2026-09-23 01:47:22 UTC",
+          "exit_time": "2026-09-23 01:50:36 UTC",
+          "net_pnl": -20.68,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[GOLD Snipers]",
+          "exit_comment": "[sl 4361.68]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    },
+    "Gold VIP": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "breakevens": 0,
+      "gross_profit": -12.5,
+      "swap": 0.0,
+      "net_pnl": -12.5,
+      "symbols": [
+        "GOLD"
+      ],
+      "deals": [
+        {
+          "pos_id": 2323662909,
+          "symbol": "GOLD",
+          "volume": 0.05,
+          "entry_time": "2026-09-23 12:15:39 UTC",
+          "exit_time": "2026-09-23 12:18:27 UTC",
+          "net_pnl": -12.5,
+          "outcome": "LOSS",
+          "magic": 777777,
+          "entry_comment": "[Gold VIP]",
+          "exit_comment": "[sl 4316.86]"
+        }
+      ],
+      "magic_numbers": [
+        777777
+      ]
+    }
+  }
+}

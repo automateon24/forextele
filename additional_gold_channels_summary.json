@@ -1,0 +1,62 @@
+[
+  {
+    "channel_name": "Forex with karol",
+    "total_trades": 34,
+    "wins": 26,
+    "losses": 8,
+    "opens": 0,
+    "win_rate_pct": 76.5,
+    "net_pips": 1400.0,
+    "avg_pips_per_trade": 41.2
+  },
+  {
+    "channel_name": "XAUUSD GOLD MASTER",
+    "total_trades": 26,
+    "wins": 19,
+    "losses": 7,
+    "opens": 0,
+    "win_rate_pct": 73.1,
+    "net_pips": -725.0,
+    "avg_pips_per_trade": -27.9
+  },
+  {
+    "channel_name": "ALTO FX",
+    "total_trades": 12,
+    "wins": 8,
+    "losses": 4,
+    "opens": 0,
+    "win_rate_pct": 66.7,
+    "net_pips": 510.2,
+    "avg_pips_per_trade": 42.5
+  },
+  {
+    "channel_name": "GOLD PRO TRADER ",
+    "total_trades": 35,
+    "wins": 23,
+    "losses": 12,
+    "opens": 0,
+    "win_rate_pct": 65.7,
+    "net_pips": 199.1,
+    "avg_pips_per_trade": 5.7
+  },
+  {
+    "channel_name": "Swift Gold Forex",
+    "total_trades": 12,
+    "wins": 6,
+    "losses": 6,
+    "opens": 0,
+    "win_rate_pct": 50.0,
+    "net_pips": 3560.0,
+    "avg_pips_per_trade": 296.7
+  },
+  {
+    "channel_name": "SureShot GOLD (VIP)",
+    "total_trades": 34,
+    "wins": 17,
+    "losses": 17,
+    "opens": 0,
+    "win_rate_pct": 50.0,
+    "net_pips": 1850.3,
+    "avg_pips_per_trade": 54.4
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "2330914966": {
+    "ticket": 2330914966,
+    "symbol": "BTCUSD",
+    "action": "BUY",
+    "entry": 83156.75,
+    "initial_sl": 82782.35,
+    "current_sl": 82782.35,
+    "tps": [],
+    "channel": "Autonomous AI Scanner",
+    "conviction": 0.95,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-09-29 21:13:30",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  }
+}

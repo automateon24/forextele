@@ -1,0 +1,290 @@
+[
+  {
+    "channel": "JOSEFINA TRADER0",
+    "trades": 18,
+    "wins": 18,
+    "losses": 0,
+    "opens": 0,
+    "win_rate": 100.0,
+    "net_pips": 1170.0
+  },
+  {
+    "channel": "Profitway Crypto MCX Forex",
+    "trades": 5,
+    "wins": 5,
+    "losses": 0,
+    "opens": 0,
+    "win_rate": 100.0,
+    "net_pips": 708.5
+  },
+  {
+    "channel": "Forexero - Forex Signals",
+    "trades": 3,
+    "wins": 3,
+    "losses": 0,
+    "opens": 0,
+    "win_rate": 100.0,
+    "net_pips": -338.5
+  },
+  {
+    "channel": "Areeal Forex",
+    "trades": 7,
+    "wins": 7,
+    "losses": 0,
+    "opens": 0,
+    "win_rate": 100.0,
+    "net_pips": -1054.8
+  },
+  {
+    "channel": "Forex Trading Tips",
+    "trades": 5,
+    "wins": 4,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 80.0,
+    "net_pips": -836.2
+  },
+  {
+    "channel": "Grade Profit forex",
+    "trades": 4,
+    "wins": 3,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 75.0,
+    "net_pips": 70.0
+  },
+  {
+    "channel": "XAUUSD GOLD MASTER",
+    "trades": 10,
+    "wins": 7,
+    "losses": 3,
+    "opens": 0,
+    "win_rate": 70.0,
+    "net_pips": 35.0
+  },
+  {
+    "channel": "Forex with karol",
+    "trades": 13,
+    "wins": 9,
+    "losses": 4,
+    "opens": 0,
+    "win_rate": 69.2,
+    "net_pips": 300.0
+  },
+  {
+    "channel": "THE FOREX BLUEPRINT",
+    "trades": 3,
+    "wins": 2,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 66.7,
+    "net_pips": 50.0
+  },
+  {
+    "channel": "ALTO FX",
+    "trades": 8,
+    "wins": 5,
+    "losses": 3,
+    "opens": 0,
+    "win_rate": 62.5,
+    "net_pips": 450.2
+  },
+  {
+    "channel": "GOLD PRO TRADER",
+    "trades": 34,
+    "wins": 21,
+    "losses": 13,
+    "opens": 0,
+    "win_rate": 61.8,
+    "net_pips": -115.9
+  },
+  {
+    "channel": "RIAOGOLDFOREX",
+    "trades": 20,
+    "wins": 12,
+    "losses": 8,
+    "opens": 0,
+    "win_rate": 60.0,
+    "net_pips": 150.0
+  },
+  {
+    "channel": "ROCKY GOLD FX",
+    "trades": 5,
+    "wins": 3,
+    "losses": 2,
+    "opens": 0,
+    "win_rate": 60.0,
+    "net_pips": 0.0
+  },
+  {
+    "channel": "PERO | Forex - Investing",
+    "trades": 21,
+    "wins": 12,
+    "losses": 9,
+    "opens": 0,
+    "win_rate": 57.1,
+    "net_pips": 257.6
+  },
+  {
+    "channel": "HaremFX12",
+    "trades": 23,
+    "wins": 13,
+    "losses": 10,
+    "opens": 0,
+    "win_rate": 56.5,
+    "net_pips": -296.8
+  },
+  {
+    "channel": "XAUUSD VIP SIGNAL",
+    "trades": 11,
+    "wins": 6,
+    "losses": 5,
+    "opens": 0,
+    "win_rate": 54.5,
+    "net_pips": -410.0
+  },
+  {
+    "channel": "SureShot GOLD (VIP)",
+    "trades": 33,
+    "wins": 17,
+    "losses": 16,
+    "opens": 0,
+    "win_rate": 51.5,
+    "net_pips": 1950.3
+  },
+  {
+    "channel": "PipXpert - Forex Signals",
+    "trades": 8,
+    "wins": 4,
+    "losses": 4,
+    "opens": 0,
+    "win_rate": 50.0,
+    "net_pips": 388.7
+  },
+  {
+    "channel": "Orbex Global Forex",
+    "trades": 2,
+    "wins": 1,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 50.0,
+    "net_pips": -50.0
+  },
+  {
+    "channel": "DENMARKPFOREX",
+    "trades": 2,
+    "wins": 1,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 50.0,
+    "net_pips": -120.0
+  },
+  {
+    "channel": "Vijay Gold Forex",
+    "trades": 8,
+    "wins": 4,
+    "losses": 4,
+    "opens": 0,
+    "win_rate": 50.0,
+    "net_pips": -200.0
+  },
+  {
+    "channel": "Nice Profit Forex",
+    "trades": 17,
+    "wins": 8,
+    "losses": 9,
+    "opens": 0,
+    "win_rate": 47.1,
+    "net_pips": -510.0
+  },
+  {
+    "channel": "Swift Gold Forex",
+    "trades": 11,
+    "wins": 5,
+    "losses": 6,
+    "opens": 0,
+    "win_rate": 45.5,
+    "net_pips": 3530.0
+  },
+  {
+    "channel": "Easy Forex  OFFICIAL CHANNEL",
+    "trades": 11,
+    "wins": 5,
+    "losses": 6,
+    "opens": 0,
+    "win_rate": 45.5,
+    "net_pips": -400.0
+  },
+  {
+    "channel": "Dan GOLD Scalper",
+    "trades": 10,
+    "wins": 4,
+    "losses": 6,
+    "opens": 0,
+    "win_rate": 40.0,
+    "net_pips": -600.0
+  },
+  {
+    "channel": "Sureshot FX VIP",
+    "trades": 3,
+    "wins": 1,
+    "losses": 2,
+    "opens": 0,
+    "win_rate": 33.3,
+    "net_pips": 0.0
+  },
+  {
+    "channel": "GOLD Snipers",
+    "trades": 9,
+    "wins": 3,
+    "losses": 6,
+    "opens": 0,
+    "win_rate": 33.3,
+    "net_pips": -686.0
+  },
+  {
+    "channel": "GOLD Sniper Pips",
+    "trades": 5,
+    "wins": 1,
+    "losses": 4,
+    "opens": 0,
+    "win_rate": 20.0,
+    "net_pips": 322.8
+  },
+  {
+    "channel": "Gold Market Insights",
+    "trades": 5,
+    "wins": 1,
+    "losses": 4,
+    "opens": 0,
+    "win_rate": 20.0,
+    "net_pips": -630.0
+  },
+  {
+    "channel": "ULTREOS FOREX",
+    "trades": 1,
+    "wins": 0,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 0.0,
+    "net_pips": 80.6
+  },
+  {
+    "channel": "Forex GDP - Free Signal Channel 501",
+    "trades": 1,
+    "wins": 0,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 0.0,
+    "net_pips": -150.0
+  },
+  {
+    "channel": "Market Trader Crypto Forex",
+    "trades": 1,
+    "wins": 0,
+    "losses": 1,
+    "opens": 0,
+    "win_rate": 0.0,
+    "net_pips": -150.0
+  }
+]

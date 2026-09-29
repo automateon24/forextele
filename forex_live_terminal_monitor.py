@@ -30,10 +30,7 @@ class ForexConsoleMaster:
         self.processes = {}
         self.running = True
         self.service_scripts = {
-            "AI_STRATEGY_ENGINE (Multi-TF & Crypto)": ("live_strategy_executor.py", "python"),
-            "WEBSOCKET_DATA_BRIDGE (Port 8888)": ("dashboard_websocket.py", "python"),
             "TELEGRAM_SIGNAL_ENGINE": ("telegram_signal_engine.py", "python"),
-            "SWARM_POSITION_MANAGER": ("swarm_position_manager.py", "python"),
         }
         
     def start_service_quiet(self, name, target, proc_type):

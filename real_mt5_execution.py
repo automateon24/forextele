@@ -103,13 +103,20 @@ class MT5ExecutionEngine:
         symbol = swarm_payload.get("symbol")
         action = swarm_payload.get("action", "BUY").upper()
         
-        # ── USER DIRECTIVE: TELEGRAM SIGNALS RESTRICTED TO FOREX, GOLD & SILVER ONLY ──
+        # ── USER DIRECTIVE: TELEGRAM SIGNALS RESTRICTED TO GOLD, EXCEPT MARKET TRADER (MAGIC 888888) ──
         if magic_number in (777777, 999999):
             sym_upper = str(symbol).upper()
-            is_crypto = any(kw in sym_upper for kw in ["BTC", "ETH", "USDT", "CRYPTO", "APE", "ONDO", "NEAR", "AKE", "SOL", "XRP", "DOGE"])
-            if is_crypto:
-                log.warning(f"[TELEGRAM_RESTRICTION] 🛑 Blocking Telegram trade execution for {symbol}. Telegram signals are restricted to Forex, Gold & Silver only.")
+            if not any(k in sym_upper for k in ["GOLD", "XAU"]):
+                log.warning(f"[GOLD_RESTRICTION] Blocking trade execution for non-gold symbol '{symbol}'. Pure Gold only.")
                 return False
+        elif magic_number == 888888:
+            # Market Trader Whitelist (Gold + Forex + US30)
+            whitelisted = ["GOLD", "XAU", "AUDJPY", "USDJPY", "GBPJPY", "GBPCAD", "EURCAD", "GBPNZD", "US30", "US30CASH", "BTC", "ETH"]
+            sym_upper = str(symbol).upper()
+            if not any(k in sym_upper for k in whitelisted):
+                log.warning(f"[MARKET_TRADER_RESTRICTION] Symbol '{symbol}' not in whitelisted Forex/Index/Gold pairs.")
+                return False
+
 
         # WEEKEND SCHEDULE GUARD: Protect Forex/Metals from weekend order rejection loops
         from datetime import datetime
@@ -177,7 +184,26 @@ class MT5ExecutionEngine:
                 
         # Validate Stops against final_price to prevent Retcode 10016 (Invalid Stops)
         sl = round(swarm_payload.get("final_sl", 0.0), info.digits)
-        tp = round(swarm_payload.get("final_tp1", 0.0), info.digits)
+
+        # Broker TP Setup:
+        # Fixed SL until TP2, and 10-pip jumping TSL from TP2 onwards.
+        # NEVER place hard broker TP at TP1 or TP2 (which would close the trade before runner TSL).
+        raw_tp3 = swarm_payload.get("final_tp3") or swarm_payload.get("tp3")
+        raw_tp2 = swarm_payload.get("final_tp2") or swarm_payload.get("tp2")
+        raw_tp1 = swarm_payload.get("final_tp1") or swarm_payload.get("tp1") or swarm_payload.get("tp")
+
+        if raw_tp3 and float(raw_tp3) > 0:
+            tp = round(float(raw_tp3), info.digits)
+        elif raw_tp2 and float(raw_tp2) > 0:
+            tp2_val = float(raw_tp2)
+            ext_dist = abs(tp2_val - final_price) * 1.6
+            tp = round(final_price + ext_dist if action == "BUY" else final_price - ext_dist, info.digits)
+        elif raw_tp1 and float(raw_tp1) > 0:
+            tp1_val = float(raw_tp1)
+            ext_dist = abs(tp1_val - final_price) * 2.5
+            tp = round(final_price + ext_dist if action == "BUY" else final_price - ext_dist, info.digits)
+        else:
+            tp = 0.0
         
         if action == "BUY":
             if tp > 0 and tp <= final_price: tp = 0 # Invalid TP
@@ -186,16 +212,30 @@ class MT5ExecutionEngine:
             if tp > 0 and tp >= final_price: tp = 0
             if sl > 0 and sl <= final_price: sl = 0
             
-        # AUTO DYNAMIC INJECTION FOR MISSING STOPS (Proportional to Asset Price)
+        # AUTO DYNAMIC INJECTION FOR MISSING STOPS (Guarantees NO naked trades on MT5)
+        # Fallback TP is wide extension to prevent premature broker exit
         if sl == 0 or tp == 0:
-            # 0.5% of the asset's current price gives it room to breathe past the spread
-            fallback_dist = final_price * 0.005
-            if action == "BUY":
-                if sl == 0: sl = round(final_price - fallback_dist, info.digits)
-                if tp == 0: tp = round(final_price + fallback_dist * 1.5, info.digits)
+            sym_u = symbol.upper()
+            if "BTC" in sym_u:
+                fallback_sl_dist = 400.0
+                fallback_tp_dist = 1500.0
+            elif "US30" in sym_u or "DJ30" in sym_u:
+                fallback_sl_dist = 60.0
+                fallback_tp_dist = 200.0
+            elif "GOLD" in sym_u or "XAU" in sym_u:
+                fallback_sl_dist = 3.50   # 35 Gold Pips
+                fallback_tp_dist = 18.00  # 180 Gold Pips (Wide ceiling, dynamic TSL manages exit)
             else:
-                if sl == 0: sl = round(final_price + fallback_dist, info.digits)
-                if tp == 0: tp = round(final_price - fallback_dist * 1.5, info.digits)
+                pip_unit = 10.0 * point if point > 0 else 0.0001
+                fallback_sl_dist = 35.0 * pip_unit
+                fallback_tp_dist = 150.0 * pip_unit
+
+            if action == "BUY":
+                if sl == 0: sl = round(final_price - fallback_sl_dist, info.digits)
+                if tp == 0: tp = round(final_price + fallback_tp_dist, info.digits)
+            else:
+                if sl == 0: sl = round(final_price + fallback_sl_dist, info.digits)
+                if tp == 0: tp = round(final_price - fallback_tp_dist, info.digits)
                 
         # --- LIQUIDITY SWEEP PROTECTION (V-Shape Defense) ---
         # Fetch Daily High and Low
@@ -212,8 +252,22 @@ class MT5ExecutionEngine:
                 sl = round(final_price + (abs(sl - final_price) / 2), info.digits)
                 
         # Calculate Lot Size (Governor approved the trade, we scale it accurately using validated SL)
-        volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
+        if swarm_payload.get("volume") and float(swarm_payload.get("volume")) > 0:
+            volume = float(swarm_payload.get("volume"))
+        else:
+            volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
         volume = min(float(volume), 1.00)  # ABSOLUTE HARD GOVERNOR SAFETY CAP
+
+        # Clean, human-readable channel punch on MT5 Comment (max 31 chars)
+        raw_comment = swarm_payload.get("comment", "")
+        raw_chan = swarm_payload.get("source_channel", "")
+        if raw_comment and raw_comment.startswith("[") and raw_comment.endswith("]"):
+            order_comment = raw_comment[:31]
+        elif raw_chan:
+            clean_chan_str = raw_chan.encode('ascii', 'ignore').decode('ascii').strip()
+            order_comment = f"[{clean_chan_str[:27]}]"[:31]
+        else:
+            order_comment = (raw_comment or "AI_SWARM")[:31]
 
         request = {
             "action": action_type,
@@ -225,7 +279,7 @@ class MT5ExecutionEngine:
             "tp": float(tp),
             "deviation": 20,
             "magic": magic_number,
-            "comment": swarm_payload.get("comment", "AI_SWARM")[:31],
+            "comment": order_comment,
             "type_time": mt5.ORDER_TIME_GTC,
             "type_filling": mt5.ORDER_FILLING_IOC if action_type == mt5.TRADE_ACTION_DEAL else mt5.ORDER_FILLING_RETURN,
         }
@@ -302,4 +356,110 @@ class MT5ExecutionEngine:
             return False
             
         log.info(f"SUCCESS! Trade {result.order} opened by Swarm AI.")
+        swarm_payload["ticket"] = result.order
         return True
+
+    def move_sl_to_breakeven(self, symbol: str, magic_number: int = 888888, buffer_points: float = 0.0) -> bool:
+        """Moves Stop Loss to Entry Price (Cost-to-Cost) with optional breathing buffer for open positions."""
+        if not self.connected:
+            if not self.connect(): return False
+            
+        positions = mt5.positions_get(symbol=symbol)
+        if not positions:
+            # Try finding by magic number across all symbols
+            all_pos = mt5.positions_get()
+            positions = [p for p in (all_pos or []) if p.magic == magic_number and (symbol is None or p.symbol == symbol)]
+            
+        if not positions:
+            log.warning(f"[BREAKEVEN] No open position found for symbol {symbol} (magic {magic_number}).")
+            return False
+            
+        success = True
+        for p in positions:
+            if magic_number and p.magic != magic_number:
+                continue
+            entry_price = p.price_open
+            # Apply breathing buffer: for BUY, leave SL below entry by buffer_points to absorb spread; for SELL, above
+            if buffer_points > 0:
+                adjusted_sl = (entry_price - buffer_points) if p.type == mt5.ORDER_TYPE_BUY else (entry_price + buffer_points)
+                if p.type == mt5.ORDER_TYPE_BUY and adjusted_sl <= p.sl:
+                    continue
+                elif p.type == mt5.ORDER_TYPE_SELL and p.sl > 0 and adjusted_sl >= p.sl:
+                    continue
+            else:
+                adjusted_sl = entry_price
+                
+            info = mt5.symbol_info(p.symbol)
+            digits = info.digits if info else 2
+            adjusted_sl = round(adjusted_sl, digits)
+            
+            request = {
+                "action": mt5.TRADE_ACTION_SLTP,
+                "position": p.ticket,
+                "symbol": p.symbol,
+                "sl": float(adjusted_sl),
+                "tp": float(p.tp),
+                "magic": p.magic
+            }
+            res = mt5.order_send(request)
+            if res and res.retcode == mt5.TRADE_RETCODE_DONE:
+                log.info(f"[BREAKEVEN SUCCESS] Moved SL to {adjusted_sl} (buffer={buffer_points}) for ticket {p.ticket} ({p.symbol}).")
+            else:
+                err = res.comment if res else mt5.last_error()
+                log.error(f"[BREAKEVEN FAILED] Ticket {p.ticket}: {err}")
+                success = False
+        return success
+
+    def close_partial_position(self, symbol: str, close_pct: int = 50, magic_number: int = 888888) -> bool:
+        """Closes a percentage (e.g. 50%, 60%, 80%) of open volume to bank profits."""
+        if not self.connected:
+            if not self.connect(): return False
+            
+        positions = mt5.positions_get(symbol=symbol)
+        if not positions:
+            all_pos = mt5.positions_get()
+            positions = [p for p in (all_pos or []) if p.magic == magic_number and (symbol is None or p.symbol == symbol)]
+            
+        if not positions:
+            log.warning(f"[PARTIAL CLOSE] No open position for {symbol}.")
+            return False
+            
+        for p in positions:
+            if magic_number and p.magic != magic_number:
+                continue
+            info = mt5.symbol_info(p.symbol)
+            if not info: continue
+            
+            raw_close_vol = p.volume * (close_pct / 100.0)
+            step = info.volume_step if info.volume_step > 0 else 0.01
+            close_vol = round(raw_close_vol / step) * step
+            close_vol = max(info.volume_min, min(close_vol, p.volume))
+            
+            tick = mt5.symbol_info_tick(p.symbol)
+            price = tick.bid if p.type == mt5.ORDER_TYPE_BUY else tick.ask
+            close_type = mt5.ORDER_TYPE_SELL if p.type == mt5.ORDER_TYPE_BUY else mt5.ORDER_TYPE_BUY
+            
+            request = {
+                "action": mt5.TRADE_ACTION_DEAL,
+                "position": p.ticket,
+                "symbol": p.symbol,
+                "volume": float(close_vol),
+                "type": close_type,
+                "price": float(price),
+                "deviation": 20,
+                "magic": p.magic,
+                "comment": f"PARTIAL_{close_pct}%"[:31],
+                "type_time": mt5.ORDER_TIME_GTC,
+                "type_filling": mt5.ORDER_FILLING_IOC
+            }
+            res = mt5.order_send(request)
+            if res and res.retcode == mt5.TRADE_RETCODE_DONE:
+                log.info(f"[PARTIAL CLOSE SUCCESS] Closed {close_vol} of {p.volume} lots for ticket {p.ticket}.")
+            else:
+                log.error(f"[PARTIAL CLOSE FAILED] Ticket {p.ticket}: {res.comment if res else mt5.last_error()}")
+        return True
+
+    def close_position(self, symbol: str, magic_number: int = 888888) -> bool:
+        """Closes 100% of open positions for the symbol."""
+        return self.close_partial_position(symbol, close_pct=100, magic_number=magic_number)
+

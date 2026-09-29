@@ -1,17 +1,13 @@
 @echo off
-title FOREX SWARM OS - LIVE MASTER TERMINAL (EXCLUSIVE FOR FOREX)
+title FOREX & GOLD AUTONOMOUS TELEGRAM TO MT5 TERMINAL
 color 0A
+chcp 65001 > nul
+set PYTHONIOENCODING=utf-8
+set PYTHONUTF8=1
 
 echo ==================================================================================
-echo    INITIATING FOREX AI SWARM SYSTEM (MULTI-TIMEFRAME ENGINE & WEEKEND CRYPTO)      
+echo    INITIATING AUTONOMOUS PURE TELEGRAM TO MT5 ENGINE (GOLD + MULTI-ASSET)        
 echo ==================================================================================
 echo.
-echo [STEP 1] Pre-cleaning old Forex tasks and freeing Port 5555 & 8888...
-call "%~dp0stop_swarm_OS_forex.bat" --auto
-echo.
-echo [STEP 2] Launching Interactive Real-Time Forex Console & Services...
-echo (Dashboard UI will be warm and available on-demand at http://localhost:5555)
-echo.
-cd /d "C:\anlyzeforex\forextele"
-py forex_live_terminal_monitor.py
-pause
+cd /d "%~dp0"
+call "%~dp0run_telegram_gold_live.bat"

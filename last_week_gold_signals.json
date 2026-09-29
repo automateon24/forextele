@@ -1,0 +1,3523 @@
+{
+  "scraped_at": "2026-09-20T17:32:44.842988+00:00",
+  "time_window_start": "2026-09-13T17:32:16.792881+00:00",
+  "channel_stats": {
+    "Areeal Forex": {
+      "id": -1001182477198,
+      "total_messages": 80,
+      "gold_signals": 7
+    },
+    "Profitway Crypto MCX Forex": {
+      "id": -1002036439427,
+      "total_messages": 80,
+      "gold_signals": 7
+    },
+    "FX TRADING HUB": {
+      "id": -1001716334529,
+      "total_messages": 28,
+      "gold_signals": 0
+    },
+    "GOLD Copy Trading": {
+      "id": -1001335852535,
+      "total_messages": 13,
+      "gold_signals": 0
+    },
+    "GOLD Trader Dan": {
+      "id": -1001095525244,
+      "total_messages": 80,
+      "gold_signals": 8
+    },
+    "Trading Forex Quotex Binomo Signals": {
+      "id": -1001617309775,
+      "total_messages": 80,
+      "gold_signals": 0
+    },
+    "ForexTradingEducation": {
+      "id": -1001125504616,
+      "total_messages": 36,
+      "gold_signals": 0
+    },
+    "Forexero - Forex Signals": {
+      "id": -1001758700941,
+      "total_messages": 17,
+      "gold_signals": 3
+    },
+    "Forex Trading Tips": {
+      "id": -1002058804124,
+      "total_messages": 80,
+      "gold_signals": 7
+    },
+    "HaremFX12": {
+      "id": -1002037277586,
+      "total_messages": 80,
+      "gold_signals": 26
+    },
+    "PERO | Forex - Investing": {
+      "id": -1001641287946,
+      "total_messages": 51,
+      "gold_signals": 21
+    },
+    "Binance Killers VIP": {
+      "id": -1001234364040,
+      "total_messages": 48,
+      "gold_signals": 0
+    },
+    "Forex with karol": {
+      "id": -1002463493154,
+      "total_messages": 80,
+      "gold_signals": 13
+    },
+    "Sureshot FX": {
+      "id": -1001218056271,
+      "total_messages": 80,
+      "gold_signals": 1
+    },
+    "Forex-Funded": {
+      "id": -1003895133416,
+      "total_messages": 27,
+      "gold_signals": 0
+    },
+    "Vijay Gold Forex": {
+      "id": -1001770318851,
+      "total_messages": 80,
+      "gold_signals": 8
+    },
+    "THE FOREX BLUEPRINT": {
+      "id": -1001596236085,
+      "total_messages": 80,
+      "gold_signals": 30
+    },
+    "DENMARKPFOREX": {
+      "id": -1001517913644,
+      "total_messages": 80,
+      "gold_signals": 2
+    },
+    "Dan GOLD Scalper": {
+      "id": -1002395355942,
+      "total_messages": 80,
+      "gold_signals": 18
+    },
+    "RIAOGOLDFOREX": {
+      "id": -1001618581129,
+      "total_messages": 80,
+      "gold_signals": 47
+    },
+    "Nice Profit Forex": {
+      "id": -1002301385145,
+      "total_messages": 80,
+      "gold_signals": 46
+    },
+    "GOLD Sniper Pips": {
+      "id": -1001710836950,
+      "total_messages": 28,
+      "gold_signals": 6
+    },
+    "GOLD Snipers": {
+      "id": -1001584939836,
+      "total_messages": 80,
+      "gold_signals": 10
+    },
+    "Orbex Global Forex": {
+      "id": -1002111254252,
+      "total_messages": 80,
+      "gold_signals": 2
+    },
+    "XAUUSD GOLD MASTER": {
+      "id": -1001241983953,
+      "total_messages": 80,
+      "gold_signals": 34
+    },
+    "YoForex Premium": {
+      "id": -1001951092380,
+      "total_messages": 80,
+      "gold_signals": 0
+    },
+    "GoldSignals.io": {
+      "id": -1001451168389,
+      "total_messages": 12,
+      "gold_signals": 0
+    },
+    "Forex GDP - Free Signal Channel 501": {
+      "id": -1002253548791,
+      "total_messages": 3,
+      "gold_signals": 1
+    },
+    "MSB FX Elite Insights": {
+      "id": -1001841399481,
+      "total_messages": 22,
+      "gold_signals": 0
+    },
+    "GOLD PRO TRADER": {
+      "id": -1001370758307,
+      "total_messages": 48,
+      "gold_signals": 38
+    },
+    "Easy Forex  OFFICIAL CHANNEL": {
+      "id": -1001284268486,
+      "total_messages": 32,
+      "gold_signals": 12
+    },
+    "Gold VIP": {
+      "id": -1002531199093,
+      "total_messages": 80,
+      "gold_signals": 0
+    },
+    "JOSEFINA TRADER0": {
+      "id": -1002064435712,
+      "total_messages": 80,
+      "gold_signals": 18
+    },
+    "Swift Gold Forex": {
+      "id": -1001563961063,
+      "total_messages": 80,
+      "gold_signals": 11
+    },
+    "Market Trader Crypto Forex": {
+      "id": -1002350799273,
+      "total_messages": 49,
+      "gold_signals": 1
+    },
+    "Sureshot FX VIP": {
+      "id": -1001422000261,
+      "total_messages": 80,
+      "gold_signals": 3
+    },
+    "Saviour Gold EA": {
+      "id": -1001218320988,
+      "total_messages": 3,
+      "gold_signals": 0
+    },
+    "XAUUSD VIP SIGNAL": {
+      "id": -1001738171603,
+      "total_messages": 69,
+      "gold_signals": 11
+    },
+    "PipXpert - Forex Signals": {
+      "id": -1001821216397,
+      "total_messages": 23,
+      "gold_signals": 8
+    },
+    "Office Workflow Using AI Mastery": {
+      "id": -1001820445431,
+      "total_messages": 5,
+      "gold_signals": 0
+    },
+    "AI Mastery Program Be10x": {
+      "id": -1001786680754,
+      "total_messages": 5,
+      "gold_signals": 0
+    },
+    "SureShot GOLD (VIP)": {
+      "id": -1001661400724,
+      "total_messages": 80,
+      "gold_signals": 33
+    },
+    "vfxAlert signals": {
+      "id": -1001177936461,
+      "total_messages": 2,
+      "gold_signals": 0
+    },
+    "ALTO FX": {
+      "id": -1001472031579,
+      "total_messages": 50,
+      "gold_signals": 18
+    },
+    "Grade Profit forex": {
+      "id": -1001288100770,
+      "total_messages": 49,
+      "gold_signals": 4
+    },
+    "Gold Market Insights": {
+      "id": -1001178704438,
+      "total_messages": 39,
+      "gold_signals": 5
+    },
+    "ULTREOS FOREX": {
+      "id": -1001189897936,
+      "total_messages": 4,
+      "gold_signals": 1
+    },
+    "ROCKY GOLD FX": {
+      "id": -1003973975394,
+      "total_messages": 80,
+      "gold_signals": 5
+    },
+    "Hedging Mastermind Group": {
+      "id": -1001698362445,
+      "total_messages": 2,
+      "gold_signals": 0
+    },
+    "Forexzonespot Channel": {
+      "id": -1001620606655,
+      "total_messages": 0,
+      "gold_signals": 0
+    },
+    "The Forex master Course Trading With Karol": {
+      "id": -1003436456947,
+      "total_messages": 0,
+      "gold_signals": 0
+    },
+    "Gold king": {
+      "id": -1003969585532,
+      "total_messages": 0,
+      "gold_signals": 0
+    }
+  },
+  "signals": [
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 161016,
+      "date": "2026-09-18T17:10:05+00:00",
+      "text": "\u2705**XAUUSD SELL.  4387\n\n****\u2705****TP.  4384\n****\u2705****TP.  4381\n****\u2705****TP.  4378\n****\u2705****TP.  4375\n****\u2705****TP.  4372\n\n****\u2757\ufe0f****SL.  4399**"
+    },
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 160940,
+      "date": "2026-09-18T13:38:19+00:00",
+      "text": "\u2705**XAUUSD BUY.  4355\n\n****\u2705****TP.   4358\n****\u2705****TP.   4361\n****\u2705****TP.   4364\n****\u2705****TP.   4367\n****\u2705****TP.   4370\n\n****\u2757\ufe0f****SL.   4343**"
+    },
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 160854,
+      "date": "2026-09-18T03:20:59+00:00",
+      "text": "\u2705**XAUUSD BUY.   4335\n\n****\u2705****TP.    4338\n****\u2705****TP.    4341\n****\u2705****TP.    4344\n****\u2705****TP.    4347\n****\u2705****TP.    4350\n\n****\u2757\ufe0f****SL.    4342**"
+    },
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 160763,
+      "date": "2026-09-17T14:59:18+00:00",
+      "text": "\u2705**XAUUSD BUY.   4350\n\n****\u2705****TP.   4353\n****\u2705****TP.   4356\n****\u2705****TP.   4359\n****\u2705****TP.   4362\n****\u2705****TP.   4365\n\n****\u2757\ufe0f****SL.   4338**"
+    },
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 160745,
+      "date": "2026-09-17T12:20:24+00:00",
+      "text": "\u2705**XAUUSD SELL.  4363\n\n****\u2705****TP.    4360\n****\u2705****TP.    4357\n****\u2705****TP.    4354\n****\u2705****TP.    4351\n****\u2705****TP.    4348\n****\u2705****TP.    4345\n****\u2705****TP.    4342\n\n****\u2757\ufe0f****SL.   4374**"
+    },
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 160669,
+      "date": "2026-09-17T09:25:33+00:00",
+      "text": "**\u2705****XAUUSD BUY. 4310\n\n****\u2705****TP.    4313\n****\u2705****TP.    4316\n****\u2705****TP.    4319\n****\u2705****TP.    4322\n****\u2705****TP.    4325\n\n****\u2757\ufe0f****SL.    4299**"
+    },
+    {
+      "channel_id": -1001182477198,
+      "channel_name": "Areeal Forex",
+      "message_id": 160614,
+      "date": "2026-09-17T03:47:52+00:00",
+      "text": "\u2705**XAUUSD SELL 4297\n\n****\u2705****TP.   4294\n****\u2705****TP.   4291\n****\u2705****TP.   4288\n****\u2705****TP.   4285\n****\u2705****TP.   4282\n\n****\u2757\ufe0f****SL.   4309**"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5792,
+      "date": "2026-09-18T07:52:15+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\nPRICE NOW 4400 \ud83d\udcb0\n\n320+ PIPES DONE TARGATE 2 AS WE PRIDICT BOOK 80% GUYS \ud83d\ude80\n\n[https://affs.click/qc8EV](https://affs.click/qc8EV) 320+ PIPES COMPLETE\ud83d\udc51\ud83d\udc51\ud83d\udc51\n\n#POWEROFPROFITWAY \ud83d\ude0e WHAT A AMAZING BREAKFAST ENJOY GUYS\ud83d\udc4c\ud83c\udffc\ud83d\udc4c\ud83c\udffc\ud83d\udc4c\ud83c\udffc"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5790,
+      "date": "2026-09-18T06:13:10+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\nPRICE NOW 4388 \ud83d\udcb0\n\n200+ PIPES DONE, BOOK UR HALF QUNTITAY AND TRAIL STOPLOSS. GUYS DONT MISS GOOD PROFIT... \ud83d\udcc9\ud83d\ude80\n\nSAVE MONEY, SAVE UR FUTURE \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5789,
+      "date": "2026-09-18T06:00:50+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\nPRICE NOW 4380 \ud83d\udcb0\n\n120+ PIPES DONE SHIFT UR SL CTC GUYS \ud83d\ude80\n\n[https://affs.click/qc8EV](https://affs.click/qc8EV) 120+ PIPES COMPLETE\ud83d\udc51\ud83d\udc51\ud83d\udc51\n\n#POWEROFPROFITWAY \ud83d\ude0e"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5778,
+      "date": "2026-09-18T05:12:39+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\n4368 NEAR \ud83c\udfaf\n\nTP...4380\nTP...4400\nTP...4415\n\nSTOPLOS 80 PIPES 4360 \ud83d\uded1\n\nFOLLOW RISK MANGMENT LOW QUNTITY FOR BIGGER TARGATE ...AWARE FOR SCALP \ud83d\udcc9"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5766,
+      "date": "2026-09-17T07:13:37+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\nPRICE NOW 4320 AS WE PRIDICT  TP,,3 DONE \ud83d\udcb0\n\n300+ PIPES DONE BOOK UR 100% QUANTITY FOR SURE \ud83d\ude80\n\n[https://affs.click/qc8EV](https://affs.click/qc8EV) COMPLETE ALL TARGATE \n\n SAVE MONEY SAVE UR FUTURE \ud83d\ude4f TRADE CLOSE ENJOY NEXT SETUP IN YT LIVE"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5757,
+      "date": "2026-09-17T06:12:00+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\nPRICE NOW 4312 ALMOST TP,,2 DONE \ud83d\udcb0\n\n220+ PIPES DONE BOOK UR 80% QUANTITY FOR SURE \ud83d\ude80\n\n[https://affs.click/qc8EV](https://affs.click/qc8EV) ENJOY THE GOOD BREAKFAST SAVE MONEY SAVE UR FUTURE \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002036439427,
+      "channel_name": "Profitway Crypto MCX Forex",
+      "message_id": 5755,
+      "date": "2026-09-17T05:50:52+00:00",
+      "text": "#GOLD #BUY \ud83d\udcc8\n\nPRICE NOW 4300 \ud83d\udcb0\n\n100+ PIPES DONE SHIFT UR SL CTC GUYS \ud83d\ude80\n\n[https://affs.click/qc8EV](https://affs.click/qc8EV) 100+ PIPES DIYA"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41498,
+      "date": "2026-09-18T15:39:21+00:00",
+      "text": "It was a beautiful sell! 1/6 RR \u2708\ufe0f\nXAUUSD SMASHED 560 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41497,
+      "date": "2026-09-18T15:39:12+00:00",
+      "text": "Asia session sell trade! 1/7 RR! \u2708\ufe0f\nXAUUSD SMASHED TP 450 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41496,
+      "date": "2026-09-18T15:39:06+00:00",
+      "text": "Our NY session buy trade! 1/5 RR \u2708\ufe0f\nXAUUSD SMASHED 140 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41450,
+      "date": "2026-09-17T13:34:09+00:00",
+      "text": "Again! Buy limit! Dan Airlines! 1/6 RR!\nXAUUSD SMASHED TP 1200 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41449,
+      "date": "2026-09-17T13:33:53+00:00",
+      "text": "London session sell trade! 1/4 RR!\nXAUUSD SMASHED TP 410 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41448,
+      "date": "2026-09-17T13:33:41+00:00",
+      "text": "Asia session sell trade! 1/4 RR trade!\nXAUUSD SMASHED 350 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41409,
+      "date": "2026-09-16T17:05:31+00:00",
+      "text": "Asia session sell trade! 1/6 RR trade!\nXAUUSD SMASHED TP 320 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001095525244,
+      "channel_name": "GOLD Trader Dan",
+      "message_id": 41407,
+      "date": "2026-09-16T17:05:17+00:00",
+      "text": "Asia session sell trade! 1/6 RR trade!\nXAUUSD SMASHED TP 320 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001758700941,
+      "channel_name": "Forexero - Forex Signals",
+      "message_id": 4228,
+      "date": "2026-09-18T08:18:48+00:00",
+      "text": "\ud83d\udd14XAU/USD\ud83d\udd14\n\nDirection: SELL\nEntry Price: 4392.00\n\nTP1       4387.00\nTP2       4362.00\n**TP3       4342.00**\n\nSL          4442.00"
+    },
+    {
+      "channel_id": -1001758700941,
+      "channel_name": "Forexero - Forex Signals",
+      "message_id": 4225,
+      "date": "2026-09-17T09:25:59+00:00",
+      "text": "\ud83d\udd14XAU/USD\ud83d\udd14\n\nDirection: SELL\nEntry Price: 4312.00\n\nTP1       4307.00\nTP2       4292.00\nTP3       4262.00\n\nSL          4362.00"
+    },
+    {
+      "channel_id": -1001758700941,
+      "channel_name": "Forexero - Forex Signals",
+      "message_id": 4218,
+      "date": "2026-09-14T13:19:34+00:00",
+      "text": "\ud83d\udd14XAU/USD\ud83d\udd14\n\nDirection: BUY\nEntry Price: 4270.00\n\nTP1       4275.00\nTP2       4295.00\n**TP3       4320.00**\n\nSL          4220.00"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11106,
+      "date": "2026-09-20T10:03:06+00:00",
+      "text": "\ud83e\udde0\ud83e\udde0\ud83e\udde0 **The AI is never asked \"buy or sell\"**\n\nBehind the button, no model is handed a trade question. Each seat is asked one thing: classify the current technical bias of gold from the chart. Bullish or bearish.\n\n\ud83e\uddea The mapping to BUY or SELL happens afterwards, in our code. The model never sees those words.\n\n\u274c It had to be rebuilt that way. Phrased as a trade call, one seat hard refused every single time and dropped out of the panel.\n\n\u2705 Phrased as chart reading, the seats answer, and the answer is grounded in structure instead of opinion.\n\n\ud83d\udc49 Same button. Very different question underneath.\n\n__An AI opinion for education, not financial advice.__\n\n\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\n\ud83d\udd17 [**Exness**](https://dailytrading.tips/exness)  \ud83d\udd17 [**Vantage**](https://dailytrading.tips/vantage)  \ud83d\udd17 [**FxPro**](https://dailytrading.tips/fxpro)  \ud83d\udd17 [**IC**](https://dailytrading.tips/ic)\n\ud83d\udcac [**Contact Admin**](https://t.me/FxprotipsAssistant)  \ud83d\udcca [**MyFxBook**](https://www.myfxbook.com/members/dtradingtips/daily-trading-tips/12064509)"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11083,
+      "date": "2026-09-18T10:22:01+00:00",
+      "text": "\ud83c\udfc6\ud83c\udfc6 **200 PIPS FROM ONE CLEAN XAUUSD SELL**\n\n\ud83c\udfaf **SELL LIMIT 4395** \n\u2705 TP1 hit \u2192 **+30 pips**\n\u2705 TP2 hit \u2192 **+60 pips**\n\u2705 Extended \u2192 **+100 pips**\n\ud83c\udfaf Final push \u2192 **+200 pips**\n\n\u26a1 From **4395** down into the **4375 area** \u2014 Gold gave us the move.\n**One setup. Multiple targets secured. 200 pips delivered.**\n\n\u26a1 Clean level. Clean reaction. Clean execution. \n\n\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\n\ud83d\udd17 [**Exness**](https://dailytrading.tips/exness)  \ud83d\udd17 [**Vantage**](https://dailytrading.tips/vantage)  \ud83d\udd17 [**FxPro**](https://dailytrading.tips/fxpro)  \ud83d\udd17 [**IC**](https://dailytrading.tips/ic)\n\ud83d\udcac [**Contact Admin**](https://t.me/FxprotipsAssistant)  \ud83d\udcca [**MyFxBook**](https://www.myfxbook.com/members/dtradingtips/daily-trading-tips/12064509)"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11078,
+      "date": "2026-09-18T03:30:15+00:00",
+      "text": "\ud83d\udd14\ud83d\udcca **FREE SIGNAL**\n**\n****#XAUUSD**** BUY LIMIT 4335\n****\u2705**** TP1: 4338\n****\u2705**** TP2: 4341\n****\u2705**** TP3: 4472\n****\u274c**** SL: 4330**.**00**"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11075,
+      "date": "2026-09-17T23:02:41+00:00",
+      "text": "\ud83e\udd16 **BUY OR SELL GOLD? ASK THE AI COUNCIL.**\n\n\u2705  Live XAUUSD read\n\u2705  BUY / SELL bias\n\u2705  Confidence score\n\u2705  Multiple AI opinions\n\n**Ask once. Get the consensus in seconds.** \ud83e\udde0\ud83d\udcca\n\n__AI analysis is for informational and educational purposes only. Trading involves risk.__\n\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\n \ud83e\udd16 [**ASK AI COUNCIL**](https://t.me/FxProTipsBot)  \ud83d\udcac [**Contact Admin**](https://t.me/FxprotipsAssistant)"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11065,
+      "date": "2026-09-17T05:22:00+00:00",
+      "text": "\ud83d\udd14\ud83d\udcca **FREE SIGNAL**\n\n**#XAUUSD**** BUY LIMIT 4277\n****\u2705**** TP1: 4280\n****\u2705**** TP2: 4283\n****\u2705**** TP3: 4357\n****\u274c**** SL: 4272**.**00**"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11048,
+      "date": "2026-09-16T04:33:04+00:00",
+      "text": "\u26a0\ufe0f\u26a0\ufe0f\u26a0\ufe0f **MYTH: \"GOLD IS A SAFE HAVEN, SO IT RISES IN EVERY CRISIS\"**\n\nPartly true. Gold does attract haven demand when confidence breaks. But a second force pulls the other way, and in the sharpest moments it can win: when investors need cash, they sell what they are able to sell, and gold is one of the most liquid things on the book.\n\n\ud83e\udde0 That is why gold can fall hard in the opening weeks of a panic and recover afterwards, as it did in March 2020\n\ud83d\udcc9 Two other things sit on the same scale: the direction of the dollar, and real yields, which are rates minus inflation\n\u2705 The practical version is a question, not a forecast: is the market buying protection, or raising cash?\n\n\ud83d\udc49 A haven asset is not a promise about direction. It describes who wants it and why, and that can change inside the same week.\n\n__Education only, not financial advice. Trading involves risk.__\n\n\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\u2796\n\ud83d\udd17 [**Exness**](https://dailytrading.tips/exness)  \ud83d\udd17 [**Vantage**](https://dailytrading.tips/vantage)  \ud83d\udd17 [**FxPro**](https://dailytrading.tips/fxpro)  \ud83d\udd17 [**IC**](https://dailytrading.tips/ic)\n\ud83d\udcac [**Contact Admin**](https://t.me/FxprotipsAssistant)  \ud83d\udcca [**MyFxBook**](https://www.myfxbook.com/members/dtradingtips/daily-trading-tips/12064509)"
+    },
+    {
+      "channel_id": -1002058804124,
+      "channel_name": "Forex Trading Tips",
+      "message_id": 11043,
+      "date": "2026-09-16T03:03:45+00:00",
+      "text": "\ud83d\udd14\ud83d\udcca **FREE SIGNAL**\n**\n****#XAUUSD**** SELL LIMIT 4336\n****\u2705**** TP1: 4333\n****\u2705**** TP2: 4330\n****\u2705**** TP3: 4282\n****\u274c**** SL: 4342**.**00**"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19413,
+      "date": "2026-09-18T11:54:02+00:00",
+      "text": "GOLD BUY\n\nALL TP HIT WITH 320+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19412,
+      "date": "2026-09-18T11:53:42+00:00",
+      "text": "GOLD BUY\n\nTP 8 HIT WITH 320+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19411,
+      "date": "2026-09-18T11:53:31+00:00",
+      "text": "GOLD BUY\n\nTP 7 HIT WITH 280+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19410,
+      "date": "2026-09-18T11:53:15+00:00",
+      "text": "GOLD BUY\n\nTP 6 HIT WITH 240+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19402,
+      "date": "2026-09-18T05:05:56+00:00",
+      "text": "GOLD BUY\n\nTP 5 HIT WITH 200+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19401,
+      "date": "2026-09-18T05:04:41+00:00",
+      "text": "GOLD BUY\n\nTP 4 HIT WITH 160+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19389,
+      "date": "2026-09-18T03:47:35+00:00",
+      "text": "GOLD BUY\n\nTP 3 HIT WITH 120+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19387,
+      "date": "2026-09-18T03:45:30+00:00",
+      "text": "GOLD BUY\n\nTP 2 HIT WITH 80+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19386,
+      "date": "2026-09-18T03:44:55+00:00",
+      "text": "GOLD BUY\n\nTP 1 HIT WITH 40+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19343,
+      "date": "2026-09-17T08:39:19+00:00",
+      "text": "GOLD BUY\n\nALL TP HIT WITH 320+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19342,
+      "date": "2026-09-17T08:38:08+00:00",
+      "text": "GOLD BUY\n\nTP 8 HIT WITH 320+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19341,
+      "date": "2026-09-17T08:37:52+00:00",
+      "text": "GOLD BUY\n\nTP 7 HIT WITH 280+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19339,
+      "date": "2026-09-17T08:36:55+00:00",
+      "text": "GOLD BUY\n\nTP 5 HIT WITH 200+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19338,
+      "date": "2026-09-17T08:36:08+00:00",
+      "text": "GOLD BUY\n\nTP 4 HIT WITH 160+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19337,
+      "date": "2026-09-17T08:35:53+00:00",
+      "text": "GOLD BUY\n\nTP 3 HIT WITH 120+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19336,
+      "date": "2026-09-17T07:48:33+00:00",
+      "text": "GOLD BUY\n\nTP 2 HIT WITH 80+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19335,
+      "date": "2026-09-17T04:03:08+00:00",
+      "text": "GOLD BUY\n\nTP 1 HIT WITH 40+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19328,
+      "date": "2026-09-16T18:40:07+00:00",
+      "text": "GOLD SELL\n\nALL TP HIT WITH 33l20+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19327,
+      "date": "2026-09-16T18:39:37+00:00",
+      "text": "GOLD SELL\n\nTP 7 HIT WITH 280+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19326,
+      "date": "2026-09-16T18:39:23+00:00",
+      "text": "GOLD SELL\n\nTP 6 HIT WITH 240+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19325,
+      "date": "2026-09-16T18:39:05+00:00",
+      "text": "GOLD SELL\n\nTP 5 HIT WITH 200+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19324,
+      "date": "2026-09-16T18:38:57+00:00",
+      "text": "GOLD SELL\n\nTP 4 HIT WITH 160+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19323,
+      "date": "2026-09-16T18:38:47+00:00",
+      "text": "GOLD SELL\n\nTP 3 HIT WITH 120+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19322,
+      "date": "2026-09-16T18:38:37+00:00",
+      "text": "GOLD SELL\n\nTP 2 HIT WITH 80+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19321,
+      "date": "2026-09-16T18:38:09+00:00",
+      "text": "GOLD SELL\n\nTP 1 HIT WITH 40+ PIPS PROFIT \u2705\u2705\u2705\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5\ud83d\udca5"
+    },
+    {
+      "channel_id": -1002037277586,
+      "channel_name": "HaremFX12",
+      "message_id": 19270,
+      "date": "2026-09-16T14:45:14+00:00",
+      "text": "XAUUSD BUY NOW 4336.5\u2705\ufe0f\n\nTp 4350\nTp 4361\nTp Open \n\nSl 4326"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11870,
+      "date": "2026-09-18T16:51:38+00:00",
+      "text": "\ud83c\udf15 **GOLD PROFIT RECAP**\n(18/09/2026)\n\n**\ud83d\udea9 TOTAL PROFIT: +2,370 pips \ud83d\ude80**\n\nBUY GOLD 4345 - 4342: **+200 pips**\nBUY GOLD 4350 - 4348: **+80 pips**\nBUY GOLD 4350 - 4348: **+150 pips**\nBUY GOLD 4350 - 4348: **+80 pips**\nBUY GOLD 4343 - 4341: **+90 pips**\nSELL GOLD 4343 - 4345: **-80 pips**\n\nBUY GOLD 4361 - 4359: **+85 pips**\nSELL GOLD 4375 - 4377: **+75 pips**\nBUY GOLD 4361 - 4359: **+300 pips**\nBUY GOLD 4381 - 4378: **+150 pips**\nSELL GOLD 4394 - 4397: **+130 pips**\nSELL GOLD 4394 - 4395: **+220 pips**\nBUY GOLD 4382 - 4379: **+70 pips**\nBUY GOLD 4382 - 4379: **-70 pips**\n\nSELL GOLD 4382 - 4380: **+280 pips**\nBUY GOLD 4354 - 4352: **+200 pips**\nBUY GOLD 4354 - 4352: **+65 pips**\nBUY GOLD 4350:** +120p**ips\nSELL GOLD 4362 - 4364: **+140pips**\n(Other trades are still ongoing...)\n\nThere is no limit that you cannot overcome. Go ahead and make a profit.\n\n**\ud83d\udcb5**** 19 signals: 17 Win | 02 Lose | Winrate: ~91.2%**\n\n**Profit with VIP PERO PREMIUM**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11865,
+      "date": "2026-09-18T13:09:04+00:00",
+      "text": "\u2755__Yesterday, we asked: \u201c4400 coming soon?\u201d__\n\nGold has been trading close to that round number today and this is where experience starts to matter \ud83e\udd14\n\nOur planned Sell** **from** **4394\u20134397 caught the first reaction. As price behavior changed around the area, the team continued to work with the developing structure.\n\n**Three setups. Different stages of the move. One area we\u2019ve been watching closely.**\n\nWhether Gold eventually reaches 4400 or not isn\u2019t the point.\n\n**__The opportunity is often in how price behaves around an important level - not just whether it touches it __**\ud83d\ude45\u200d\u2642\ufe0f"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11860,
+      "date": "2026-09-18T06:55:39+00:00",
+      "text": "\ud83d\udd3d**PLAN SELL 4394\u20134397 +70 PIPS **\n\nGold reached our next planned resistance and gave us another reaction\ud83e\udd14\n\n**__Manage profits and keep the remaining position protected.__**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11858,
+      "date": "2026-09-18T03:58:31+00:00",
+      "text": "\ud83d\udfe1**PERO TREND FORECAST**\n\nGold is holding above the rising intraday structure, but price is still trading below the 4374\u20134377 resistance.\n\nThe 4350 zone is the immediate pivot. Holding above it keeps the recovery structure constructive, while 4374\u20134377 remains the key breakout level for further upside.\n\n**Keylevel**\n\nResistance: 4374\u20134377 \u2192 4394\u20134397\nSupport: 4350 \u2192 4337\u20134335 \u2192 4325\u20134323 \u2192 4305\u20134302\n\n\ud83d\ude80**TRADING STRATEGY**\n\n\u2705Buy reactions around 4350 remain favorable if the zone holds.\nSL: 4342\n\n\u2705Additional buy interest around 4337\u20134335 on a deeper pullback.\nSL: 4327\n\n\u26a1Buy breakout only after a confirmed H1 candle close above 4377.\nSL: 4369\n\n\u2705Sell reactions around 4374\u20134377 remain favorable while price fails to break the zone.\nSL: 4385\n\n\u2705Additional sell interest around 4394\u20134397 if price extends higher.\nSL: 4405\n\n__\u26a0\ufe0f__**__Note__**\n\n__4350 is the immediate pivot.__\n\n__Holding above it keeps pressure toward 4374\u20134377. A confirmed H1 close above 4377 opens room toward 4394\u20134397.__"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11855,
+      "date": "2026-09-17T15:30:19+00:00",
+      "text": "\ud83c\udf15 **GOLD PROFIT RECAP**\n(17/09/2026)\n\n**\ud83d\udea9**** TOTAL PROFIT: +1,630 pips ****\ud83d\ude80**\n\nSELL GOLD 4394 - 4396: **-70 pips**\nSELL GOLD 4310: **+160 pips**\nSELL GOLD 4310 + 4313: **+260 pips**\nBUY GOLD 4291 - 4289: **-70 pips**\n\nSELL GOLD 4291 - 4293: **+180 pips**\nBUY GOLD 4274 - 4272: **+300 pips**\nBUY GOLD 4288 - 4286: **+160 pips**\nSELL GOLD 4310 - 4312: **+60 pips**\nSELL GOLD 4332: **+160 pips**\nBUY GOLD 4315 - 4312: **+80 pips**\nBUY GOLD 4312 - 4310: **+90 pips**\n\nBUY GOLD 4310 - 4308: **+340 pips**\nSELL GOLD 4266 - 4268: **-80 pips**\nBUY GOLD 4365 - 4268: **-70 pips**\nBUY GOLD 4368 - 4365: **+100 pips**\nSELL GOLD 4367 - 4369: **+100 pips**\nSELL GOLD 4362 - 4364: **-70 pips**\nSELL GOLD 4371 - 4369: **+55 pips**\n\n(Other trades are still ongoing...)\n\nThere is no limit that you cannot overcome. Go ahead and make a profit.\n\n\ud83d\udcb5 18 signals: 13 Win | 05 Lose | Winrate: ~72.2%\n\n**Profit with VIP PERO PREMIUM**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11851,
+      "date": "2026-09-17T07:36:51+00:00",
+      "text": "\u270f\ufe0fOur earlier Sell** **4317\u20134320 was invalidated as Gold pushed through the resistance and continued higher.\n\nThat changed the short-term picture, which is why we shifted our focus to the Buy** **4315\u20134312 shared afterward.\n\n\ud83d\udc40**The daily plan gives us the key levels. Price action tells us how to work with them.**\n\n__Let\u2019s see what the pullback gives us.__"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11850,
+      "date": "2026-09-17T07:18:09+00:00",
+      "text": "BUY GOLD LIMIT 4315 - 4312\n\n\u21a0\u00a0 Stop Loss 4307\n\n\u2192 Take Profit 1 : 50 ~ 100 pips\n\u2192 Take Profit 2 : 200 pips\n\u2192 Take Profit 3 : 500Pips - Opense"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11849,
+      "date": "2026-09-17T05:06:33+00:00",
+      "text": "\ud83d\udfe1**PERO TREND FORECAST**\n\nGold is attempting to stabilize after the sharp selloff from the 4360 area.\n\nPrice is recovering from 4255\u20134258, but the rebound remains below the 4317\u20134320 and 4342\u20134345 resistance structure. Near-term bias stays corrective while these levels cap price.\n\n**Keylevel**\n\nResistance: 4317\u20134320 \u2192 4342\u20134345 \u2192 4378\u20134380 \u2192 4397\u20134394\nSupport: 4255\u20134258 \u2192 4243\u20134240\n\n\ud83d\ude80**TRADING STRATEGY**\n\n\u2705Buy scalp around 4255\u20134258 remain favorable.\nSL: 4250\n\n\u2705Buy reactions around 4243\u20134240 if price extends lower.\nSL: 4232\n\n\u2705Sell reactions around 4317\u20134320 remain favorable.\nSL: 4328\n\n\u2705Additional sell interest around 4342\u20134345 if the recovery extends higher.\nSL: 4353\n\n\u26a1Buy breakout only after a confirmed H1 candle close above 4345.\nSL: 4336\n\n__\u26a0\ufe0f__**__Note__**\n\n__The rebound is still corrective below 4342\u20134345.__\n\n__Avoid chasing around 4295\u20134300. Prefer reactions at the marked levels; a confirmed reclaim above 4345 would improve the recovery structure.__"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11847,
+      "date": "2026-09-16T15:22:01+00:00",
+      "text": "\ud83c\udf15 **GOLD PROFIT RECAP**\n(16/09/2026)\n\n\ud83d\udea9** TOTAL PROFIT: +1.200 pips **\ud83d\ude80\n\nSELL GOLD 4295 - 4297: **+50 pips**\nSELL GOLD 4305 - 4307: **-90 pips**\nBUY GOLD 4283: **+120 pips**\n\nBUY GOLD 4320: **+130 pips**\nBUY GOLD 4326: **+120 pips**\nBUY GOLD 4324: **+140 pips**\nBUY GOLD 4324: **+250 pips**\nBUY GOLD 4332: **+180 pips**\n\nSELL GOLD 4353 - 4355: **+180pips**\nSELL GOLD 4348: **+130 pips**\nSELL GOLD 4342**: +60pips**\nSELL GOLD 4344: **-30 pips**\nBUY GOLD 4345: **-70 pips**\nBUY GOLD 4337: **-70 pips**\n\n(Other trades are still ongoing...)\n\nThere is no limit that you cannot overcome. Go ahead and make a profit.\n\n\ud83d\udcb5** 14 signals: 10 Win | 04 Lose | Winrate: ~70%**\n\n**Profit with VIP PERO PREMIUM**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11846,
+      "date": "2026-09-16T12:40:32+00:00",
+      "text": "\ud83d\ude04 **A few members messaged me saying they regretted closing that Buy.**\n\nHaha\u2026 I get it. Gold took off right after Retail Sales and the trade would have looked beautiful.\n\nBut here\u2019s another way to look at it.\n\n**FOMC is only a few hours away.** Gold doesn\u2019t need to wait for the actual announcement to become unpredictable - positioning can already get messy during the US session.\n\nAnd around FOMC, I\u2019ve seen plenty of good trades turn into problems very quickly.\n\nSo closing before the data was a deliberate risk decision. \n**Safety came first!**\n\n\ud83d\ude0f Beautiful trades? We have them in VIP every day. We don\u2019t need to gamble around a news release to find one.\n\n**No regrets. There will always be another trade **\ud83c\udf78"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11842,
+      "date": "2026-09-16T10:54:29+00:00",
+      "text": "BUY GOLD 4337 - 4334\n\n\u21a0\u00a0 Stop Loss 4328\n\n\u2192 Take Profit 1 : 50 ~ 100 pips\n\u2192 Take Profit 2 : 200 pips\n\u2192 Take Profit 3 : 500Pips - Opense"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11839,
+      "date": "2026-09-16T04:39:16+00:00",
+      "text": "\ud83d\udfe1**PERO TREND FORECAST**\n\nGold is recovering from the 4277\u20134275 area and has pushed back above the nearby 4305\u20134307 structure.\n\nShort-term momentum is improving, but 4316\u20134318 is the immediate decision zone. Holding above it keeps the recovery open toward 4353\u20134355.\n\n**Keylevel**\n\nResistance: 4353\u20134355 \u2192 4378\u20134380 \u2192 4397\u20134400\nSupport: 4316\u20134318 \u2192 4305\u20134307 \u2192 4277\u20134275\n\n\ud83d\ude80**TRADING STRATEGY**\n\n\u2705Buy reactions around 4316\u20134318 remain favorable if the breakout area holds as support.\nSL: 4308\n\n__(Watch the candle momentum. If the candle moves too aggressively, use the next entry.)__\n\n\u2705Additional buy interest around 4305\u20134307 on a deeper pullback.\nSL: 4297\n\n\u2705Buy reactions around 4277\u20134275 remain favorable if price extends lower.\nSL: 4267\n\n\u2705Sell reactions around 4353\u20134355 remain favorable.\nSL: 4363\n\n\u2705Additional sell interest around 4378\u20134380 if price extends higher.\nSL: 4388\n\n__\u26a0\ufe0f__**__Note__**\n\n__The recovery remains constructive above 4316\u20134318, but price is moving into overhead resistance.__\n\n__Avoid chasing around 4325\u20134330. Prefer pullbacks into support or reactions from the marked resistance zones.__"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11838,
+      "date": "2026-09-15T16:49:30+00:00",
+      "text": "\ud83c\udf15 **GOLD PROFIT RECAP**\n(15/09/2026)\n\n\ud83d\udea9** TOTAL PROFIT: +1,440 pips **\ud83d\ude80\n\nBUY GOLD 4296: **+150 pips**\nSELL GOLD 4314 - 4316: **+260 pips**\nSELL GOLD 4304 - 4306: **+160 pips**\nBUY GOLD 4391 - 4389: **+110 pips**\nBUY GOLD 4389 - 4387: **+85 pips**\n\nBUY GOLD 4266 - 4264: **+110 pips**\nBUY GOLD 4269: **-50 pips**\nSELL GOLD 4267 - 4269: **+60 pips**\nSELL GOLD 4278 - 4280: **+80 pips**\nSELL GOLD 4271.5: **-50 pips**\n\nSELL GOLD 4286 - 4288: **+150 pips**\nSELL GOLD 4281 - 4283: **+55 pips**\nBUY GOLD 4284 - 4282: **+90 pips**\nBUY GOLD 4284 - 4282: **+160 pips**\nBUY GOLD 4293 - 4292: **+70 pips**\n\n(Other trades are still ongoing...)\n\n\ud83d\udcb5** 15 signals: 13 Win | 02 Lose | Winrate: ~86.7%**\n\nThere is no limit that you cannot overcome. Go ahead and make a profit.\n\n**Profit with VIP PERO PREMIUM**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11836,
+      "date": "2026-09-15T11:15:22+00:00",
+      "text": "\ud83c\udd99**BUY 4266 +170 PIPS **\n\nWell\u2026 that reaction had more to give!\n\n**Okay Gold, we see you! **\ud83e\udd70"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11834,
+      "date": "2026-09-15T08:53:53+00:00",
+      "text": "BUY GOLD now 4266\n\n\u21a0\u00a0 Stop Loss 4255\n\n\u2192 Take Profit 1 : 50 ~ 100 pips\n\u2192 Take Profit 2 : 200 pips\n\u2192 Take Profit 3 : 500Pips - Opense"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11833,
+      "date": "2026-09-15T07:09:34+00:00",
+      "text": "\ud83d\udea9**ASIA  SESSION RECAP | XAUUSD**\n\n\u2022 **BUY GOLD** (4296) \u2794 **+150 pips** (TP)\n\u2022 **BUY GOLD** (4391 - 4389) \u2794 **+110 pips** (TP)\n\u2022 **BUY GOLD** (4389 - 4387) \u2794 **+85 pips** (RUNNING)\n\u2022 **SELL GOLD** (4314 - 4316) \u2794 **+260 pips** (TP)\n\u2022 **SELL GOLD** (4304 - 4306) \u2794 **+160 pips** (TP)\n\n\u2757\ufe0f **Total Signals:** 5 Positions\n\n\u203c\ufe0f **Closed Profit:** **+680 Pips**\n\n\u2022 **Floating Profit:** **+85 Pips**\n\n\u2022 **Total Pips:** **+765 Pips**\n\n\u2022 **Accuracy:** 100% Win Rate\n\n\ud83c\udfaf **ACTION PLAN**\nFlawless execution catching both sides of the trend. Set Stop-Loss to Break-Even (SL = BE) for the open position to protect gains before US volatility kicks in."
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11830,
+      "date": "2026-09-15T04:38:31+00:00",
+      "text": "\ud83d\udfe1**PERO TREND FORECAST**\n\nGold is attempting to recover, but price is still capped below the 4316\u20134320 intraday resistance.\n\nThe immediate structure is neutral-to-bearish while below this zone. 4289\u20134285 remains the key support deciding whether the recovery holds or selling pressure resumes.\n\n**Keylevel**\n\nResistance: 4316\u20134320 \u2192 4353\u20134355 \u2192 4378\u20134380\nSupport: 4289\u20134285 \u2192 4246\u20134243\n\n\ud83d\ude80**TRADING STRATEGY**\n\n\u2705Buy reactions around 4289\u20134285 remain favorable if the zone holds.\nSL: 4277\n\n\u26a1Buy breakout only after a confirmed H1 candle close above 4320.\nSL: 4311\n\n\u2705Sell reactions around 4316\u20134320 remain favorable while price stays below the zone.\nSL: 4328\n\n\u2705Additional sell interest around 4353\u20134355 if the recovery extends higher.\nSL: 4363\n\n__\u26a0\ufe0f__**__Note__**\n\n__4316\u20134320 is the immediate decision area. Rejection keeps pressure toward 4289\u20134285, while confirmed acceptance above it shifts focus toward 4353\u20134355.__\n\n__A clean loss of 4285 would expose the lower structure, with 4246\u20134243 remaining the next major support.__"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11829,
+      "date": "2026-09-15T00:32:19+00:00",
+      "text": "\ud83c\udf15 **GOLD PROFIT RECAP**\n(14/09/2026)\n\n\ud83d\udea9** TOTAL PROFIT: +1,205 pips **\ud83d\ude80\n\nSELL GOLD 4336 - 4338: **+70 pips**\nBUY GOLD 4337 - 4335: **-70 pips**\nBUY GOLD zone 4328: **+70 pips**\nSELL GOLD 4330 - 4332: **+85 pips**\n\nBUY GOLD 4328 - 4330: **+90 pips**\nBUY GOLD 4332 - 4330: **-70 pips**\nSELL GOLD 4322 - 4324: **+130 pips**\nBUY GOLD 4310 - 4309: **+120 pips**\nBUY GOLD 4310 - 4308: **+80 pips**\nSELL GOLD 4288 - 4290: **+110 pips**\nBUY GOLD 4285 - 4283: **+70 pips**\nBUY GOLD 4291 - 4289: **+70 pips**\n\nSELL GOLD 4290 - 4292: **+200 pips**\nBUY GOLD 4275 - 4272: **+120 pips**\nBUY GOLD 4362 - 4260: **-50 pips**\nSELL GOLD 4276 - 4278: **+120 pips**\nBUY GOLD 4265 - 4263: **+70 pips**\n\n(Other trades are still ongoing...)\n\nThere is no limit that you cannot overcome. Go ahead and make a profit.\n\n\ud83d\udcb5** 17 signals: 14 Win | 03 Lose | Winrate: ~82.4%**\n\n**Profit with VIP PERO PREMIUM**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11824,
+      "date": "2026-09-14T10:20:34+00:00",
+      "text": "SELL GOLD  4305  - 4308\n\n\u21a0\u00a0 Stop Loss 4313\n\n\u2192 Take Profit 1 : 50 ~ 100 pips\n\u2192 Take Profit 2 : 200 pips\n\u2192 Take Profit 3 : 500Pips - Opense"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11823,
+      "date": "2026-09-14T09:24:55+00:00",
+      "text": "**Waterfall! **\ud83d\udc4f\n\nThe first buy reaction from 4302\u20134300 failed to hold and was stopped as selling pressure accelerated.\n\nGold is now extending lower, with our next planned support at 4275\u20134272 still ahead.\n\n**__Let\u2019s see what the lower zone gives us.__**"
+    },
+    {
+      "channel_id": -1001641287946,
+      "channel_name": "PERO | Forex - Investing",
+      "message_id": 11821,
+      "date": "2026-09-14T04:18:05+00:00",
+      "text": "\ud83d\udfe1**PERO TREND FORECAST**\n\nGold remains under intraday selling pressure below the descending trendline.\n\nPrice is currently trading between 4353\u20134355 resistance and 4302\u20134300 support. Recoveries remain corrective while the upper resistance structure holds.\n\n**Keylevel**\n\nResistance: 4353\u20134355 \u2192 4397\u20134400 \u2192 4427\u20134430\n\nSupport: 4302\u20134300 \u2192 4275\u20134272\n\n\ud83d\ude80**TRADING STRATEGY**\n\n\u2705Buy reactions around 4302\u20134300 remain favorable.\nSL: 4292\n\n\u2705Additional buy interest around 4275\u20134272 if price extends lower.\nSL: 4264\n\n\u26a1Buy breakout only after a confirmed H1 candle close above 4430.\nSL: 4421\n\n\u2705Sell reactions around 4353\u20134355 remain favorable.\nSL: 4363\n\n\u2705Additional sell interest around 4397\u20134400 if price retraces higher.\nSL: 4408\n\n__\u26a0\ufe0f__**__Note__**\n\n__Bearish pressure remains dominant below the descending trendline.__\n\n__Avoid chasing around 4330. Prefer selling recoveries into resistance or waiting for defined support before considering buys.__"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10489,
+      "date": "2026-09-18T14:52:16+00:00",
+      "text": "Sell at gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10479,
+      "date": "2026-09-18T10:11:08+00:00",
+      "text": "Buy at gold\n\nLong term trade \u2705"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10477,
+      "date": "2026-09-18T09:24:48+00:00",
+      "text": "GOLD BUY: Entry on 1min. breakout at entry level\u2764\ufe0f\u200d\ud83d\udd25\u270c\ud83c\udffb\u270c\ud83c\udffb"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10474,
+      "date": "2026-09-18T07:32:48+00:00",
+      "text": "Sell gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10472,
+      "date": "2026-09-18T07:22:08+00:00",
+      "text": "GOLD BUY: Entry on1min. green candle"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10463,
+      "date": "2026-09-17T15:43:31+00:00",
+      "text": "Buy at gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10462,
+      "date": "2026-09-17T14:04:46+00:00",
+      "text": "1 more trade buy at gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10461,
+      "date": "2026-09-17T13:38:35+00:00",
+      "text": "Buy at gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10452,
+      "date": "2026-09-17T10:12:20+00:00",
+      "text": "Buy gold\n\nScalp"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10451,
+      "date": "2026-09-17T10:01:42+00:00",
+      "text": "Buy at gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10444,
+      "date": "2026-09-17T07:21:50+00:00",
+      "text": "GOLD SELL: Entry on 1min. strong red candle at entry level\u2764\ufe0f\u200d\ud83d\udd25\u270c\ud83c\udffb"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10437,
+      "date": "2026-09-17T04:55:51+00:00",
+      "text": "Buy at gold"
+    },
+    {
+      "channel_id": -1002463493154,
+      "channel_name": "Forex with karol",
+      "message_id": 10431,
+      "date": "2026-09-16T14:49:39+00:00",
+      "text": "Buy at gold"
+    },
+    {
+      "channel_id": -1001218056271,
+      "channel_name": "Sureshot FX",
+      "message_id": 30752,
+      "date": "2026-09-20T14:01:16+00:00",
+      "text": "\ud83e\udd47 GOLD **FREE CHANNEL** PERFORMANCE:\n**\n****\u27a1\ufe0f****14th - 18th September**\n\n\u2714\ufe0f[**XAUUSD SELL: +200 pips**](https://t.me/ssfgold/17917)\n\u2714\ufe0f[**XAUUSD SELL: +200 pips**](https://t.me/ssfgold/17938)\n\u2714\ufe0f[**XAUUSD BUY: +200 pips**](https://t.me/ssfgold/17957)\n\u2714\ufe0f[**XAUUSD SELL: +55 pips**](https://t.me/ssfgold/17986)\n\u2714\ufe0f[**XAUUSD SELL: +85 pips**](https://t.me/ssfgold/18012)\n\n\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\n\n**Total Gain: +740 PIPS**\n\nTotal loss: -0 PIPS\n**Net Profit: +740 PIPS\ud83d\udcb0\nWin rate: 100%**\n**\n\ud83d\udc51Upgrade to VIP today:**\n**https://sureshotfx.com/gold-vip-signals**\n**\n****\u2709\ufe0f****Have any queries? \n**\ud83d\udc47\n[**ASK HERE**](https://t.me/SSF_AdminBot)"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75580,
+      "date": "2026-09-18T02:08:57+00:00",
+      "text": "GOLD Sell NOW 4350\n\nTP\u00b9 4348\nTP\u00b2 4346\nTP\u00b3 4344\nTP\u2074 4342\nTP\u2075 4340\nTP\u2076 4338\n\nSL _4362"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75579,
+      "date": "2026-09-18T02:08:21+00:00",
+      "text": "GOLD Sell NOW 4350"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75502,
+      "date": "2026-09-17T13:11:29+00:00",
+      "text": "GOLD Sell NOW 4368\n\nTP\u00b9 4366\nTP\u00b2 4364\nTP\u00b3 4362\nTP\u2074 4360\nTP\u2075 4358\nTP\u2076 4356\n\nSL _4380"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75501,
+      "date": "2026-09-17T13:10:49+00:00",
+      "text": "GOLD Sell NOW 4368"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75458,
+      "date": "2026-09-17T12:08:24+00:00",
+      "text": "GOLD Sell NOW 4352\n\nTP\u00b9 4350\nTP\u00b2 4348\nTP\u00b3 4346\nTP\u2074 4344\nTP\u2075 4342\nTP\u2076 4340\n\nSL _4364"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75456,
+      "date": "2026-09-17T12:08:12+00:00",
+      "text": "GOLD Sell NOW 4352"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75415,
+      "date": "2026-09-17T02:08:37+00:00",
+      "text": "GOLD BUY NOW 4288\n\nTP\u00b9 4290\nTP\u00b2 4292\nTP\u00b3 4294\nTP\u2074 4296\nTP\u2075 4298\nTP\u2076 4300\n\nSL _4276"
+    },
+    {
+      "channel_id": -1001770318851,
+      "channel_name": "Vijay Gold Forex",
+      "message_id": 75414,
+      "date": "2026-09-17T02:07:35+00:00",
+      "text": "GOLD BUY NOW 4288"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29122,
+      "date": "2026-09-18T06:17:32+00:00",
+      "text": "#XAUUSD**__ BUY \nAllTP Hit ENJOY (+320) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29120,
+      "date": "2026-09-18T06:15:59+00:00",
+      "text": "#XAUUSD**__ BUY \n6TP Hit ENJOY (+320) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29119,
+      "date": "2026-09-18T06:08:56+00:00",
+      "text": "#XAUUSD**__ BUY \n5TP Hit ENJOY (+270) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29118,
+      "date": "2026-09-18T06:08:40+00:00",
+      "text": "#XAUUSD**__ BUY \n4TP Hit ENJOY (+220) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29115,
+      "date": "2026-09-18T05:46:22+00:00",
+      "text": "#XAUUSD**__ BUY \n3TP Hit ENJOY (+170) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29114,
+      "date": "2026-09-18T05:46:05+00:00",
+      "text": "#XAUUSD**__ BUY \n2TP Hit ENJOY (+120) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29113,
+      "date": "2026-09-18T05:05:26+00:00",
+      "text": "#XAUUSD**__ BUY \n1TP Hit ENJOY (+60) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29111,
+      "date": "2026-09-18T04:48:11+00:00",
+      "text": "**__GOLD POR TRADER\ud83e\udef5:\n\ud83d\udcca GOLD BUY NOW ZONE 43-58 43-53\n\n\u2705TP1\u00a0\u00a0\u00a0 \u00a0\u00a0 43-64\n\u2705TP2\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 43-70\n\u2705TP3\u00a0\u00a0\u00a0 \u00a0\u00a0 43-75\n\u2705TP4\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 43-80\n\u2705TP5.\u00a0\u00a0\u00a0\u00a0\u00a0 43-85\n\u2705TP6.\u00a0\u00a0\u00a0\u00a0  43-90\n\n\ud83d\udeab\u00a0 SL\u00a0\u00a0\u00a0 \u00a0 :43-47\n\nEverybody Use according to Money Management ,\ud83d\udcaf\ud83d\udcaf\u2705\u2705\ud83d\udc4d__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29077,
+      "date": "2026-09-17T06:12:04+00:00",
+      "text": "#XAUUSD**__ BUY \nAllTP Hit ENJOY (+300) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29076,
+      "date": "2026-09-17T06:11:49+00:00",
+      "text": "#XAUUSD**__ BUY \n6TP Hit ENJOY (+300) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29075,
+      "date": "2026-09-17T06:08:38+00:00",
+      "text": "#XAUUSD**__ BUY \n5TP Hit ENJOY (+250) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29074,
+      "date": "2026-09-17T06:08:17+00:00",
+      "text": "#XAUUSD**__ BUY \n4TP Hit ENJOY (+200) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29063,
+      "date": "2026-09-17T03:14:25+00:00",
+      "text": "**__GOLD POR TRADER\ud83e\udef5:\n\ud83d\udcca GOLD BUY NOW ZONE 42-80 42-75\n\n\u2705TP1\u00a0\u00a0\u00a0 \u00a0\u00a0 42-85\n\u2705TP2\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 42-90\n\u2705TP3\u00a0\u00a0\u00a0 \u00a0\u00a0 42-95\n\u2705TP4\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 43-00\n\u2705TP5.\u00a0\u00a0\u00a0\u00a0\u00a0 43-05\n\u2705TP6.\u00a0\u00a0\u00a0\u00a0 43-1\n\n\ud83d\udeab\u00a0 SL\u00a0\u00a0\u00a0 \u00a0 :42-68\n\nEverybody Use according to Money Management ,\ud83d\udcaf\ud83d\udcaf\u2705\u2705\ud83d\udc4d__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29039,
+      "date": "2026-09-16T10:13:35+00:00",
+      "text": "#XAUUSD**__ BUY \nAllTP Hit ENJOY (+300) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29038,
+      "date": "2026-09-16T10:13:19+00:00",
+      "text": "#XAUUSD**__ BUY \n6TP Hit ENJOY (+300) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29026,
+      "date": "2026-09-16T03:22:36+00:00",
+      "text": "#XAUUSD**__ BUY \n6TP Hit ENJOY (+300) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29025,
+      "date": "2026-09-16T03:13:33+00:00",
+      "text": "#XAUUSD**__ BUY \n5TP Hit ENJOY (+250) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29024,
+      "date": "2026-09-16T03:08:41+00:00",
+      "text": "#XAUUSD**__ BUY \n4TP Hit ENJOY (+200) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29023,
+      "date": "2026-09-16T03:05:47+00:00",
+      "text": "#XAUUSD BUY \n3TP Hit ENJOY (+150) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29022,
+      "date": "2026-09-16T03:05:47+00:00",
+      "text": "#XAUUSD BUY \n2TP Hit ENJOY (+100) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29021,
+      "date": "2026-09-16T03:05:46+00:00",
+      "text": "#XAUUSD BUY \n1TP Hit ENJOY (+50) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29020,
+      "date": "2026-09-16T02:40:16+00:00",
+      "text": "**__GOLD POR TRADER\ud83e\udef5:\n\ud83d\udcca GOLD BUY NOW ZONE 43-10 43-05\n\n\u2705TP1\u00a0\u00a0\u00a0 \u00a0\u00a0 43-15\n\u2705TP2\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 43-20\n\u2705TP3\u00a0\u00a0\u00a0 \u00a0\u00a0 43-25\n\u2705TP4\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 43-30\n\u2705TP5.\u00a0\u00a0\u00a0\u00a0\u00a0 43-35\n\u2705TP6.\u00a0\u00a0\u00a0\u00a0 43-40\n\u2705TP7.\u00a0\u00a0\u00a0\u00a0 43-45\n\n\ud83d\udeab\u00a0 SL\u00a0\u00a0\u00a0 \u00a0 :42-98\n\nEverybody Use according to Money Management ,\ud83d\udcaf\ud83d\udcaf\u2705\u2705\ud83d\udc4d__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29015,
+      "date": "2026-09-15T14:54:27+00:00",
+      "text": "#XAUUSD**__ BUY __**\nAll**__TP Hit ENJOY (+350) PIPS DONE __**\n**__\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29014,
+      "date": "2026-09-15T14:54:26+00:00",
+      "text": "#XAUUSD**__ BUY __**\n7**__TP Hit ENJOY (+350) PIPS DONE __**\n**__\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29013,
+      "date": "2026-09-15T13:01:04+00:00",
+      "text": "#XAUUSD**__ BUY __**\n**__6TP Hit ENJOY (+300) PIPS DONE __**\n**__\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29012,
+      "date": "2026-09-15T13:00:48+00:00",
+      "text": "#XAUUSD**__ BUY \n5TP Hit ENJOY (+250) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29009,
+      "date": "2026-09-15T11:24:47+00:00",
+      "text": "#XAUUSD**__ BUY \n4TP Hit ENJOY (+200) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29008,
+      "date": "2026-09-15T10:53:32+00:00",
+      "text": "#XAUUSD**__ BUY \n3TP Hit ENJOY (+150) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29006,
+      "date": "2026-09-15T10:16:12+00:00",
+      "text": "#XAUUSD**__ BUY \n2TP Hit ENJOY (+100) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001596236085,
+      "channel_name": "THE FOREX BLUEPRINT",
+      "message_id": 29005,
+      "date": "2026-09-15T10:15:55+00:00",
+      "text": "#XAUUSD**__ BUY \n1TP Hit ENJOY (+50) PIPS DONE \n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ENJOY RUNNING PROFIT__**"
+    },
+    {
+      "channel_id": -1001517913644,
+      "channel_name": "DENMARKPFOREX",
+      "message_id": 255334,
+      "date": "2026-09-18T03:05:37+00:00",
+      "text": "Gold sell"
+    },
+    {
+      "channel_id": -1001517913644,
+      "channel_name": "DENMARKPFOREX",
+      "message_id": 254940,
+      "date": "2026-09-17T00:36:58+00:00",
+      "text": "**XAUUSD SELL 4289\n\nTP 4286\n\nTP\u00a04283\n\nTP 4280\n\nTP 4277\n\nTP 4274\n\nSL 4300**"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4436,
+      "date": "2026-09-18T15:39:21+00:00",
+      "text": "It was a beautiful sell! 1/6 RR \u2708\ufe0f\nXAUUSD SMASHED 560 PIPS \u2705"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4435,
+      "date": "2026-09-18T15:39:13+00:00",
+      "text": "Asia session sell trade! 1/7 RR! \u2708\ufe0f\nXAUUSD SMASHED TP 450 PIPS \u2705"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4434,
+      "date": "2026-09-18T15:39:10+00:00",
+      "text": "Our NY session buy trade! 1/5 RR \u2708\ufe0f\nXAUUSD SMASHED 140 PIPS \u2705"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4395,
+      "date": "2026-09-18T03:34:36+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP3 DONE 170+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4394,
+      "date": "2026-09-18T02:59:42+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP2 DONE 120+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4393,
+      "date": "2026-09-18T02:59:05+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP1 DONE 70+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4392,
+      "date": "2026-09-18T02:43:10+00:00",
+      "text": "XAUUSD SELL 4353-55\n\nTP 1 : 4348\nTP 2 : 4343\nTP 3 : 4338\nTP 4 : 4318\n\nSL : 4365"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4389,
+      "date": "2026-09-17T13:34:10+00:00",
+      "text": "Again! Buy limit! Dan Airlines! 1/6 RR!\nXAUUSD SMASHED TP 1200 PIPS \u2705"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4388,
+      "date": "2026-09-17T13:33:54+00:00",
+      "text": "London session sell trade! 1/4 RR!\nXAUUSD SMASHED TP 410 PIPS \u2705"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4387,
+      "date": "2026-09-17T13:33:42+00:00",
+      "text": "Asia session sell trade! 1/4 RR trade!\nXAUUSD SMASHED 350 PIPS \u2705"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4371,
+      "date": "2026-09-17T10:45:28+00:00",
+      "text": "XAUUSD SELL NOW!"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4369,
+      "date": "2026-09-17T07:57:08+00:00",
+      "text": "GOLD BUY 4324.7\nMORE BUY 4314.7\n\nTP : 4339.7\nTP : 4354.7\nTP : 4374.7\n\nSL : 4309.7"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4366,
+      "date": "2026-09-17T03:06:24+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL BOOM BOOM RUNNING 270+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4365,
+      "date": "2026-09-17T02:16:39+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP3 DONE 170+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4364,
+      "date": "2026-09-17T01:13:31+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP2 DONE 100+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4363,
+      "date": "2026-09-17T01:13:17+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP1 DONE 50+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4362,
+      "date": "2026-09-17T01:10:00+00:00",
+      "text": "XAUUSD SELL 4307-09\n\nTP 1 : 4302\nTP 2 : 4297\nTP 3 : 4292\nTP 4 : 4272\n\nSL : 4320"
+    },
+    {
+      "channel_id": -1002395355942,
+      "channel_name": "Dan GOLD Scalper",
+      "message_id": 4349,
+      "date": "2026-09-16T17:05:32+00:00",
+      "text": "Asia session sell trade! 1/6 RR trade!\nXAUUSD SMASHED TP 320 PIPS \u2705"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137637,
+      "date": "2026-09-19T04:11:40+00:00",
+      "text": "**XAUUSD BUY TP 6 Hit 180 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137636,
+      "date": "2026-09-19T04:11:16+00:00",
+      "text": "**XAUUSD BUY TP 5 Hit 150 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137635,
+      "date": "2026-09-19T04:11:16+00:00",
+      "text": "**XAUUSD BUY TP 4 Hit 120 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137633,
+      "date": "2026-09-19T04:10:03+00:00",
+      "text": "**XAUUSD BUY TP 3 Hit 90 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137632,
+      "date": "2026-09-19T04:09:46+00:00",
+      "text": "**XAUUSD BUY TP 2 Hit 60 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137628,
+      "date": "2026-09-18T15:26:21+00:00",
+      "text": "XAUUSD BUY TP 1 Hit 30 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137626,
+      "date": "2026-09-18T13:36:53+00:00",
+      "text": "**XAUUSD BUY 4355\n\nTP\u00b9 4358\n\nTP\u00b2 4361\n\nTP\u00b3 4364\n\nTP\u2074 4367\n\nTP\u2075 4370\n\nTP\u2076 4373\n\nSL\u00a0\u00a0 4344**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137625,
+      "date": "2026-09-18T13:35:49+00:00",
+      "text": "**XAUUSD BUY 4355**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137622,
+      "date": "2026-09-18T10:21:00+00:00",
+      "text": "**XAUUSD BUY 4377\n\nTP\u00b9 4380\n\nTP\u00b2 4383\n\nTP\u00b3 4384\n\nTP\u2074 4387\n\nTP\u2075 4390\n\nTP\u2076 4393\n\nSL\u00a0\u00a0 4366**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137621,
+      "date": "2026-09-18T10:18:00+00:00",
+      "text": "**XAUUSD BUY 4376**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137614,
+      "date": "2026-09-18T06:13:32+00:00",
+      "text": "**XAUUSD BUY TP 6 Hit 180 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137613,
+      "date": "2026-09-18T06:13:15+00:00",
+      "text": "**XAUUSD BUY TP 5 Hit 150 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137612,
+      "date": "2026-09-18T06:11:58+00:00",
+      "text": "**XAUUSD BUY TP 4 Hit 120 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137599,
+      "date": "2026-09-18T02:34:34+00:00",
+      "text": "**XAUUSD BUY TP 3 Hit 90 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137592,
+      "date": "2026-09-18T02:27:35+00:00",
+      "text": "**XAUUSD BUY TP 2 Hit 60 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137591,
+      "date": "2026-09-18T02:27:17+00:00",
+      "text": "**XAUUSD BUY TP 1 Hit 30 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137575,
+      "date": "2026-09-18T02:06:04+00:00",
+      "text": "**XAUUSD BUY 4347\n\nTP\u00b9 4350\n\nTP\u00b2 4353\n\nTP\u00b3 4356\n\nTP\u2074 4359\n\nTP\u2075 4362\n\nTP\u2076 4365\n\nSL\u00a0\u00a0 4337**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137574,
+      "date": "2026-09-18T02:04:39+00:00",
+      "text": "**XAUUSD BUY 434**7"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137557,
+      "date": "2026-09-17T21:53:47+00:00",
+      "text": "**XAUUSD Sell TP 6 Hit 180 PIPS Profit Boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137556,
+      "date": "2026-09-17T21:53:30+00:00",
+      "text": "**XAUUSD Sell TP 5 Hit 150 PIPS Profit Boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137555,
+      "date": "2026-09-17T21:53:02+00:00",
+      "text": "**XAUUSD Sell TP 4 Hit 120 PIPS Profit Boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137544,
+      "date": "2026-09-17T14:32:08+00:00",
+      "text": "**XAUUSD Sell TP 3 Hit 90 PIPS Profit Boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137543,
+      "date": "2026-09-17T14:29:35+00:00",
+      "text": "**XAUUSD Sell TP 2 Hit 60 PIPS Profit Boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137542,
+      "date": "2026-09-17T14:02:16+00:00",
+      "text": "**XAUUSD Sell TP 1 Hit 30 PIPS Profit Boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137540,
+      "date": "2026-09-17T13:27:21+00:00",
+      "text": "**XAUUSD SELL 4367\n\nTP\u00b9 4364\nTP\u00b2 4361\nTP\u00b3 4358\nTP\u2074 4355\nTP\u2075 4352\nTP\u2076 4349\n\nSL\u00a0\u00a0 4376**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137539,
+      "date": "2026-09-17T13:26:24+00:00",
+      "text": "**XAUUSD SELL 4367**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137485,
+      "date": "2026-09-17T01:55:21+00:00",
+      "text": "**XAUUSD BUY TP 6 Hit 180 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137484,
+      "date": "2026-09-17T01:55:02+00:00",
+      "text": "**XAUUSD BUY TP 5 Hit 150 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137483,
+      "date": "2026-09-17T01:54:44+00:00",
+      "text": "**XAUUSD BUY TP 4 Hit 120 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137481,
+      "date": "2026-09-17T01:54:10+00:00",
+      "text": "**XAUUSD BUY TP 3 Hit 90 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137480,
+      "date": "2026-09-17T01:53:18+00:00",
+      "text": "**XAUUSD BUY TP 2 Hit 60 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137479,
+      "date": "2026-09-17T01:53:03+00:00",
+      "text": "**XAUUSD BUY TP 1 Hit 30 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137477,
+      "date": "2026-09-17T01:01:03+00:00",
+      "text": "**XAUUSD BUY 4278\n\nTP\u00b9 4281\n\nTP\u00b2 4284\n\nTP\u00b3 4287\n\nTP\u2074 4290\n\nTP\u2075 4293\n\nTP\u2076 4296\n\nSL\u00a0\u00a0 4268**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137476,
+      "date": "2026-09-17T01:00:06+00:00",
+      "text": "**XAUUSD BUY 4278**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137431,
+      "date": "2026-09-16T03:12:12+00:00",
+      "text": "**XAUUSD BUY TP 6 Hit 180 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137430,
+      "date": "2026-09-16T03:12:12+00:00",
+      "text": "**XAUUSD BUY TP 5 Hit 150 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137429,
+      "date": "2026-09-16T03:08:06+00:00",
+      "text": "**XAUUSD BUY TP 4 Hit 120 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137426,
+      "date": "2026-09-16T02:56:56+00:00",
+      "text": "**XAUUSD BUY TP 3 Hit 90 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137425,
+      "date": "2026-09-16T02:55:46+00:00",
+      "text": "**XAUUSD BUY TP 2 Hit 60 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137424,
+      "date": "2026-09-16T02:55:43+00:00",
+      "text": "**XAUUSD BUY TP 1 Hit 30 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137421,
+      "date": "2026-09-16T02:37:02+00:00",
+      "text": "**XAUUSD BUY 4307\n\nTP\u00b9 4310\n\nTP\u00b2 4313\n\nTP\u00b3 4316\n\nTP\u2074 4319\n\nTP\u2075 4322\n\nTP\u2076 4325\n\nSL\u00a0\u00a0 4297**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137420,
+      "date": "2026-09-16T02:35:12+00:00",
+      "text": "**XAUUSD BUY 4307**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137415,
+      "date": "2026-09-16T00:25:41+00:00",
+      "text": "**XAUUSD SELL 4286\n\nTP\u00b9 4283\nTP\u00b2 4280\nTP\u00b3 4277\nTP\u2074 4274\nTP\u2075 4271\nTP\u2076 4268\n\nSL\u00a0\u00a0 4296**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137414,
+      "date": "2026-09-16T00:23:41+00:00",
+      "text": "**XAUUSD SELL 4286**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137410,
+      "date": "2026-09-15T14:11:41+00:00",
+      "text": "**XAUUSD BUY TP 6 Hit 180 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137409,
+      "date": "2026-09-15T14:08:15+00:00",
+      "text": "XAUUSD BUY TP 5 Hit 150 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5"
+    },
+    {
+      "channel_id": -1001618581129,
+      "channel_name": "RIAOGOLDFOREX",
+      "message_id": 137396,
+      "date": "2026-09-15T10:54:16+00:00",
+      "text": "**XAUUSD BUY TP 4 Hit 120 PIPS Profit Boom boom \ud83d\udca5 \ud83d\udca5 \ud83d\udca5**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173316,
+      "date": "2026-09-18T17:20:43+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP5 HIT ( 150PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173303,
+      "date": "2026-09-18T17:05:11+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP4 HIT ( 120PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173302,
+      "date": "2026-09-18T17:04:41+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173301,
+      "date": "2026-09-18T17:04:26+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173300,
+      "date": "2026-09-18T17:04:13+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP1 HIT ( 30PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173290,
+      "date": "2026-09-18T16:48:18+00:00",
+      "text": "**\u2705****XAUUSD BUY 4374/4371****\u2705****\n\n****\u2705****TP 4377****\u2705****\n\n****\u2705****TP 4380****\u2705****\n\n****\u2705****TP 4383****\u2705****\n\n****\u2705****TP 4386****\u2705****\n\n****\u2705****TP 4389****\u2705****\n\n****\u274c****SL 4364****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173289,
+      "date": "2026-09-18T16:48:06+00:00",
+      "text": "**XAUUSD BUY 4374/4371**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173239,
+      "date": "2026-09-18T15:15:11+00:00",
+      "text": "**GOLD SELL ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173238,
+      "date": "2026-09-18T15:14:50+00:00",
+      "text": "**GOLD SELL ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173237,
+      "date": "2026-09-18T15:14:32+00:00",
+      "text": "**GOLD SELL ****\ud83d\udcca****\ud83d\udcca****\n\nTP1 HIT ( 30PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173196,
+      "date": "2026-09-18T14:41:47+00:00",
+      "text": "**XAUUSD SELL 4355/4358**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173181,
+      "date": "2026-09-18T13:13:34+00:00",
+      "text": "**XAUUSD BUY 4370/4367**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173129,
+      "date": "2026-09-18T11:03:24+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP4 HIT ( 120PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173127,
+      "date": "2026-09-18T11:03:01+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173110,
+      "date": "2026-09-18T10:23:40+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173108,
+      "date": "2026-09-18T10:23:28+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP1 HIT ( 30PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173084,
+      "date": "2026-09-18T09:59:37+00:00",
+      "text": "**\u2705****XAUUSD BUY 4374/4371****\u2705****\n\n****\u2705****TP 4377****\u2705****\n\n****\u2705****TP 4380****\u2705****\n\n****\u2705****TP 4383****\u2705****\n\n****\u2705****TP 4386****\u2705****\n\n****\u2705****TP 4389****\u2705****\n\n****\u274c****SL 4364****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173083,
+      "date": "2026-09-18T09:58:59+00:00",
+      "text": "**XAUUSD BUY 4374/4371**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173035,
+      "date": "2026-09-18T09:19:54+00:00",
+      "text": "**\u2705****XAUUSD BUY 4391/4388****\u2705****\n\n****\u2705****TP 4394****\u2705****\n\n****\u2705****TP 4397****\u2705****\n\n****\u2705****TP 4400****\u2705****\n\n****\u2705****TP 4403****\u2705****\n\n****\u2705****TP 4406****\u2705****\n\n****\u274c****SL 4381****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 173034,
+      "date": "2026-09-18T09:19:28+00:00",
+      "text": "**XAUUSD BUY 4391/4388**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172918,
+      "date": "2026-09-18T03:47:22+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP5 HIT ( 150PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172904,
+      "date": "2026-09-18T02:56:45+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP4 HIT ( 120PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172902,
+      "date": "2026-09-18T02:26:37+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172880,
+      "date": "2026-09-18T01:55:14+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172879,
+      "date": "2026-09-18T01:54:35+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP1 HIT ( 30PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172860,
+      "date": "2026-09-18T01:47:25+00:00",
+      "text": "**\u2705****XAUUSD BUY 4344/4341****\u2705****\n\n****\u2705****TP 4347****\u2705****\n\n****\u2705****TP 4350****\u2705****\n\n****\u2705****TP 4353****\u2705****\n\n****\u2705****TP 4356****\u2705****\n\n****\u2705****TP 4359****\u2705****\n\n****\u274c****SL 4334****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172857,
+      "date": "2026-09-18T01:45:47+00:00",
+      "text": "**XAUUSD BUY 4346/4343**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172836,
+      "date": "2026-09-18T01:29:56+00:00",
+      "text": "**\u2705****XAUUSD BUY 4357/4354****\u2705****\n\n****\u2705****TP 4360****\u2705****\n\n****\u2705****TP 4363****\u2705****\n\n****\u2705****TP 4366****\u2705****\n\n****\u2705****TP 4369****\u2705****\n\n****\u2705****TP 4372****\u2705****\n\n****\u274c****SL 4347****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172832,
+      "date": "2026-09-18T01:28:48+00:00",
+      "text": "**XAUUSD BUY 4357/4354**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172635,
+      "date": "2026-09-17T12:21:35+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP5 HIT ( 150PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172629,
+      "date": "2026-09-17T12:14:09+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP4 HIT ( 120PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172628,
+      "date": "2026-09-17T12:13:36+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172627,
+      "date": "2026-09-17T12:13:14+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172626,
+      "date": "2026-09-17T12:12:59+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP1 HIT ( 30PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172608,
+      "date": "2026-09-17T12:06:40+00:00",
+      "text": "**\u2705****XAUUSD BUY 4343/4340****\u2705****\n\n****\u2705****TP 4346****\u2705****\n\n****\u2705****TP 4349****\u2705****\n\n****\u2705****TP 4352****\u2705****\n\n****\u2705****TP 4355****\u2705****\n\n****\u2705****TP 4358****\u2705****\n\n****\u274c****SL 4333****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172603,
+      "date": "2026-09-17T12:05:41+00:00",
+      "text": "**XAUUSD BUY 4343/4340**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172583,
+      "date": "2026-09-17T11:36:46+00:00",
+      "text": "**GOLD SELL ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172582,
+      "date": "2026-09-17T11:36:30+00:00",
+      "text": "**GOLD SELL ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172581,
+      "date": "2026-09-17T11:36:14+00:00",
+      "text": "**GOLD SELL ****\ud83d\udcca****\ud83d\udcca****\n\nTP1 HIT ( 30PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172560,
+      "date": "2026-09-17T11:25:14+00:00",
+      "text": "**\u2705****XAUUSD SELL 4334/4337****\u2705****\n\n****\u2705****TP 4331****\u2705****\n\n****\u2705****TP 4328****\u2705****\n\n****\u2705****TP 4325****\u2705****\n\n****\u2705****TP 4322****\u2705****\n\n****\u2705****TP 4319****\u2705****\n\n****\u274c****SL 4344****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172559,
+      "date": "2026-09-17T11:24:28+00:00",
+      "text": "**XAUUSD SELL 4334/4337**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172501,
+      "date": "2026-09-17T10:41:08+00:00",
+      "text": "**\u2705****XAUUSD SELL 4318/4321****\u2705****\n\n****\u2705****TP 4315****\u2705****\n\n****\u2705****TP 4312****\u2705****\n\n****\u2705****TP 4309****\u2705****\n\n****\u2705****TP 4306****\u2705****\n\n****\u2705****TP 4303****\u2705****\n\n****\u274c****SL 4328****\u274c**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172388,
+      "date": "2026-09-17T07:13:22+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP5 HIT ( 150PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172387,
+      "date": "2026-09-17T07:13:04+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP4 HIT ( 120PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172386,
+      "date": "2026-09-17T07:12:42+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP3 HIT ( 90PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1002301385145,
+      "channel_name": "Nice Profit Forex",
+      "message_id": 172374,
+      "date": "2026-09-17T06:59:36+00:00",
+      "text": "**GOLD BUY ****\ud83d\udcca****\ud83d\udcca****\n\nTP2 HIT ( 60PiPS) PROFIT \n****\u2705****\u2705****\u2705****\u2705**"
+    },
+    {
+      "channel_id": -1001710836950,
+      "channel_name": "GOLD Sniper Pips",
+      "message_id": 35684,
+      "date": "2026-09-20T09:08:27+00:00",
+      "text": "**\ud83d\uddd3****THIS WEEK 14/09- 18/09 PERFORMANCE:\n\n\u2022 GOLD SELL : +180pips\u2705 \u00a0\u00a0\n\u2022 GOLD BUY : +490pips\u2705 \u00a0\u00a0 \u00a0\u00a0\u00a0\n\u2022 GOLD BUY : +390pips\u2705 \u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2022 GOLD BUY : +210pips\u2705 \u00a0\u00a0\u00a0\u00a0\n\u2022 GOLD BUY : +330pips\u2705 \u00a0 \u00a0\n\u2022 GOLD SELL : +150pips\u2705\n\u2022 GOLD BUY : +390pips\u2705 \n\u2022 GOLD SELL : +370pips\u2705\n\u2022 GOLD SELL : STOP LOSS \n\u2022 GOLD SELL : +310pips\u2705 \n\u2022 GOLD SELL : +250pips\u2705 \u00a0\n\u2022 GOLD BUY : +410pips\u2705 \u00a0\u00a0\u00a0\u00a0\n\u2022 GOLD SELL : +150pips\u2705 \u00a0\u00a0\n\u2022 GOLD SELL : STOP LOSS\u00a0\n\u2022 GOLD SELL : +280pips\u2705 \u00a0\u00a0\u00a0\u00a0\n\u2022 GOLD SELL : +340pips\u2705 \u00a0 \u00a0\n\u2022 GOLD SELL : +290pips\u2705 \u00a0 \u00a0\u00a0\u00a0\n\u2022 GOLD BUY : +390pips\u2705 \n\u2022 GOLD BUY : +260pips\u2705 \u00a0\u00a0\u00a0\u00a0 \n\u2022 GOLD SELL : +180pips\u2705 \u00a0\u00a0\n\u2022 GOLD SELL : STOP LOSS**\u00a0 \u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \n\n\u2714\ufe0f WINS: 22\n\u274c LOSS: 3\n\n**Exclusive Premium Channel for free**. Spots are limited.\n| [SCHOOL](https://t.me/m/2XNnOE5wMmFk) | [VIP](https://t.me/m/2XNnOE5wMmFk) | [EBOOK](https://t.me/m/2XNnOE5wMmFk) | \n[beginners Basics](https://t.me/m/2XNnOE5wMmFk) | [MT5 GUIDE](https://t.me/m/2XNnOE5wMmFk) | [COPY TRADING](https://t.me/m/2XNnOE5wMmFk) | (NEW)"
+    },
+    {
+      "channel_id": -1001710836950,
+      "channel_name": "GOLD Sniper Pips",
+      "message_id": 35680,
+      "date": "2026-09-18T07:58:06+00:00",
+      "text": "XAUUSD BUY \n\nENTRY 4392.8-4382.8\nSL 4378\nTP 4396.8\nTP 4402.8\nTP 4422.8\n\n\ud83d\udc49**GOLD SNIPERS VIP**"
+    },
+    {
+      "channel_id": -1001710836950,
+      "channel_name": "GOLD Sniper Pips",
+      "message_id": 35678,
+      "date": "2026-09-17T07:57:07+00:00",
+      "text": "XAUUSD BUY \n\nENTRY 4324.7-4314.7\nSL 4309.7\nTP 4328.7\nTP 4334.7\nTP 4354.7\n\n\ud83d\udc49**GOLD SNIPERS VIP**"
+    },
+    {
+      "channel_id": -1001710836950,
+      "channel_name": "GOLD Sniper Pips",
+      "message_id": 35672,
+      "date": "2026-09-16T07:43:45+00:00",
+      "text": "XAUUSD BUY \n\nENTRY 4335.3-4225.3\nSL 4221\nTP 4339.3\nTP 4345.3\nTP 4365.3\n\n\ud83d\udc49**GOLD SNIPERS VIP**"
+    },
+    {
+      "channel_id": -1001710836950,
+      "channel_name": "GOLD Sniper Pips",
+      "message_id": 35665,
+      "date": "2026-09-15T07:20:38+00:00",
+      "text": "XAUUSD SELL \n\nENTRY 4291.5-4301.5\nSL 4306.5\nTP 4287.5\nTP 4281.5\nTP 4261.5\n\n\ud83d\udc49**GOLD SNIPERS VIP**"
+    },
+    {
+      "channel_id": -1001710836950,
+      "channel_name": "GOLD Sniper Pips",
+      "message_id": 35658,
+      "date": "2026-09-14T07:34:01+00:00",
+      "text": "XAUUSD SELL \n\nENTRY 4317.5-3427.5\nSL 4331.5\nTP 4313.5\nTP 4307.5\nTP 4287.5\n\n\ud83d\udc49**GOLD SNIPERS VIP**"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53851,
+      "date": "2026-09-19T07:10:39+00:00",
+      "text": "**Friday 18/09/2026 GOLD results:\n\u00a0\u00a0 \n\u2022 GOLD SELL : +170pips\u2705 (FREE) \n\u2022 GOLD SELL : +210pips\u2705 \n\u2022 GOLD SELL : +450pips\u2705 \u00a0\u00a0\n\u2022 GOLD SELL : +320pips\u2705 \u00a0\u00a0\u00a0\u00a0\n\u2022 GOLD BUY : +380pips\u2705 \u00a0 \u00a0\n\u2022 GOLD BUY : +260pips\u2705 \u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \n\n\u2728Become a member: ****https://easyforexpips.com/gold-xauusd-trading-signals**"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53793,
+      "date": "2026-09-18T03:34:36+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP3 DONE 170+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53792,
+      "date": "2026-09-18T02:59:42+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP2 DONE 120+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53791,
+      "date": "2026-09-18T02:59:00+00:00",
+      "text": "\ud83d\udcca XAUUSD SELL TP1 DONE 70+ PIPS \ud83d\ude4f"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53790,
+      "date": "2026-09-18T02:43:09+00:00",
+      "text": "XAUUSD SELL \n\nENTRY 4353-55\nSL 4365\nTP 4348\nTP 4343\nTP 4338\nTP 4318\n    \n\u2b50\ufe0f Deposit **$300** get **FREE VIP**:\n\ud83d\udc49 https://puvip.co/VvQz2e"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53756,
+      "date": "2026-09-17T12:17:19+00:00",
+      "text": "GOLD SELL 4360\nMORE SELL 4370\n\nTP : 4345\nTP : 4330\nTP : 4310\n\nSL : 4375"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53744,
+      "date": "2026-09-16T21:52:00+00:00",
+      "text": "**Tuesday 16/09/2026 GOLD results:\n\u00a0\u00a0 \n\u2022 GOLD BUY : +200pips\u2705 (FREE)\n\u2022 GOLD SELL: +520pips\u2705 \n\u2022 GOLD BUY : +360pips\u2705 \u00a0\u00a0\u00a0\u00a0 \n\u2022 GOLD SELL : +310pips\u2705 \u00a0\u00a0\n\u2022 GOLD BUY : +170pips\u2705 \u00a0\u00a0\n\u2022 GOLD SELL : +400pips\u2705 \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \n\n\u2728Become a member: ****https://easyforexpips.com/gold-xauusd-trading-signals**"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53696,
+      "date": "2026-09-16T07:43:48+00:00",
+      "text": "GOLD BUY 4335.3\nMORE BUY 4325.3\n\nTP : 4350.3\nTP : 4365.3\nTP : 4385.3\n\nSL : 4321"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53689,
+      "date": "2026-09-15T22:04:45+00:00",
+      "text": "**Tuesday 15/09/2025 GOLD results:\n\u00a0\u00a0 \n\u2022 GOLD BUY : +200pips\u2705 (FREE) \n\u2022 GOLD SELL : +250pips\u2705 \n\u2022 GOLD BUY : +340pips\u2705 \u00a0\u00a0\n\u2022 GOLD SELL : +220pips\u2705 \u00a0\u00a0\u00a0\u00a0\n\u2022 GOLD BUY : +240pips\u2705 \u00a0\u00a0\n\u2022 GOLD SELL : +150pips\u2705\u00a0 \u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0\u00a0 \n\n\u2728Become a member: ****https://easyforexpips.com/gold-xauusd-trading-signals**"
+    },
+    {
+      "channel_id": -1001584939836,
+      "channel_name": "GOLD Snipers",
+      "message_id": 53654,
+      "date": "2026-09-15T07:21:14+00:00",
+      "text": "GOLD SELL 4291.5\nMORE SELL 4301.5\n\nTP : 4276.5\nTP : 4261.5\nTP : 4241.5\n\nSL : 4306.5"
+    },
+    {
+      "channel_id": -1002111254252,
+      "channel_name": "Orbex Global Forex",
+      "message_id": 116435,
+      "date": "2026-09-18T01:31:25+00:00",
+      "text": "XAUUSD SELL 4263"
+    },
+    {
+      "channel_id": -1002111254252,
+      "channel_name": "Orbex Global Forex",
+      "message_id": 116303,
+      "date": "2026-09-17T02:04:52+00:00",
+      "text": "**XAUUSD SELL 4301**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196725,
+      "date": "2026-09-18T12:30:14+00:00",
+      "text": "**XAUUSD SELL 4360/4368\nTP 4357\nTP 4354\nTP 4351\nTP 4348\nTP 4371\nTP 4345\nTP 4342\nTP 4339\nSL 4383**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196368,
+      "date": "2026-09-18T03:54:55+00:00",
+      "text": "**XAUUSD BUY 4357/4350\nTP 4360\nTP 4363\nTP 4364\nTP 4368\nTP 4371\nTP 4374\nTP 4377\nTP 4380\nSL 4335**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196348,
+      "date": "2026-09-18T03:27:59+00:00",
+      "text": "**#XAUUSD**** SELL\n\nALL TP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196347,
+      "date": "2026-09-18T03:27:48+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196339,
+      "date": "2026-09-18T03:22:08+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u2074 HIT 120+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196338,
+      "date": "2026-09-18T03:21:18+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b3 HIT 90+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196335,
+      "date": "2026-09-18T03:20:01+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b2 HIT 60+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196296,
+      "date": "2026-09-18T01:59:24+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b9 HIT 30+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196295,
+      "date": "2026-09-18T01:45:48+00:00",
+      "text": "**XAUUSD SELL 4350\n\nTP 4347\nTP 4344\nTP 4341\nTP 4338\nTP 4335\n\nSL 4362**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196294,
+      "date": "2026-09-18T01:45:34+00:00",
+      "text": "**XAUUSD SELL 4350**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196279,
+      "date": "2026-09-17T15:31:35+00:00",
+      "text": "**#XAUUSD**** SELL\n\nALL TP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196278,
+      "date": "2026-09-17T15:31:25+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196262,
+      "date": "2026-09-17T14:59:52+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u2074 HIT 120+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196261,
+      "date": "2026-09-17T14:59:39+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b3 HIT 90+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196260,
+      "date": "2026-09-17T14:59:30+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP HIT 60+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196184,
+      "date": "2026-09-17T14:01:39+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b9 HIT 30+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196177,
+      "date": "2026-09-17T13:55:50+00:00",
+      "text": "**XAUUSD SELL 4366\n\nTP 4363\nTP 4360\nTP 4357\nTP 4354\nTP 4351\n\nSL 4378**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 196176,
+      "date": "2026-09-17T13:55:41+00:00",
+      "text": "**XAUUSD SELL 4366**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195972,
+      "date": "2026-09-17T09:26:23+00:00",
+      "text": "**#XAUUSD**** SELL\n\nALL TP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195971,
+      "date": "2026-09-17T09:26:14+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195899,
+      "date": "2026-09-17T07:57:20+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u2074 HIT 120+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195898,
+      "date": "2026-09-17T07:57:10+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b3 HIT 90+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195897,
+      "date": "2026-09-17T07:56:45+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b2 HIT 60+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195896,
+      "date": "2026-09-17T07:56:32+00:00",
+      "text": "**#XAUUSD**** SELL\n\nTP\u00b9 HIT 30+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195886,
+      "date": "2026-09-17T07:49:07+00:00",
+      "text": "**XAUUSD SELL 4336\n\nTP 4333\nTP 4330\nTP 4327\nTP 4324\nTP 4321\n\nSL 4348**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195885,
+      "date": "2026-09-17T07:48:57+00:00",
+      "text": "**XAUUSD SELL 4336**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195828,
+      "date": "2026-09-17T06:47:54+00:00",
+      "text": "**#XAUUSD**** BUY\n\nALL TP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195827,
+      "date": "2026-09-17T06:47:45+00:00",
+      "text": "**#XAUUSD**** BUY\n\nTP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195826,
+      "date": "2026-09-17T06:47:36+00:00",
+      "text": "**#XAUUSD**** BUY\n\nTP\u00b3 HIT 90+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195752,
+      "date": "2026-09-17T05:09:51+00:00",
+      "text": "**#XAUUSD**** BUY\n\nTP\u00b9 HIT 30+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195751,
+      "date": "2026-09-17T05:09:43+00:00",
+      "text": "**XAUUSD BUY 4293\n\nTP 4296\nTP 4299\nTP 4302\nTP 4305\nTP 4308\n\nSL 4285**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195750,
+      "date": "2026-09-17T05:09:35+00:00",
+      "text": "**XAUUSD BUY 4293**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195711,
+      "date": "2026-09-17T02:40:19+00:00",
+      "text": "**#XAUUSD**** BUY \n\nALL TP\u2075 HIT 150+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1001241983953,
+      "channel_name": "XAUUSD GOLD MASTER",
+      "message_id": 195710,
+      "date": "2026-09-17T02:40:08+00:00",
+      "text": "**#XAUUSD**** BUY\n\nTP\u2074 HIT 120+ PIPS done \ud83d\udd25\ud83d\udd25**"
+    },
+    {
+      "channel_id": -1002253548791,
+      "channel_name": "Forex GDP - Free Signal Channel 501",
+      "message_id": 755,
+      "date": "2026-09-18T11:04:01+00:00",
+      "text": "**+13,250 Points XAUUSD price fell** from the lower high area of the Descending channel. check previous lower high area analysis here: https://www.forexgdp.com/news/fed-rate-decision-shifts-markets/\n\n\u2705 Your power is in patience, not in frequently pressing buy/sell buttons. \n\n**\u274c ~~50% OFF~~** \ud83c\udf89 Now **85% LIMITED OFFER** for Trading Signals **+3 FREE MONTHS** \ud83d\ude0d **GOING TO END** - Get now: https://www.forexgdp.com/offer/\n\n\ud83d\udcb9** 22X** (**+2200%), 8X (+800%), 6X (+665%) Growth in Live Real Trading account of our users**, check here: https://www.forexgdp.com/realaccounts/\n\n **Trading Signals** **Trusted by 100,000+ Traders Since 2015**"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77765,
+      "date": "2026-09-18T12:39:39+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 2 Hit 80+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77764,
+      "date": "2026-09-18T12:39:30+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 1 Hit 40+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77763,
+      "date": "2026-09-18T12:34:48+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY 4365.4361\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2714\ufe0fTP1 : 4369\n\u2714\ufe0fTP2 : 4373\n\u2714\ufe0fTP3 : 4377\n\u2714\ufe0fTP4:\u00a0 4381\n\u2714\ufe0fTP5...4385.4389\n\n\nSL 4349"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77754,
+      "date": "2026-09-17T11:10:05+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fAll TP Hit 280+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77753,
+      "date": "2026-09-17T11:07:13+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 5 Hit 240+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77752,
+      "date": "2026-09-17T11:02:30+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 4 Hit 200+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77751,
+      "date": "2026-09-17T10:53:16+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 3 Hit 160+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77750,
+      "date": "2026-09-17T09:11:26+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 2 Hit 80+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77749,
+      "date": "2026-09-17T09:01:25+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 1 Hit 40+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77748,
+      "date": "2026-09-17T08:49:35+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY 4310.4306\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2714\ufe0fTP1 : 4314\n\u2714\ufe0fTP2 : 4318\n\u2714\ufe0fTP3 : 4322\n\u2714\ufe0fTP4:\u00a0 4326\n\u2714\ufe0fTP5...4330.4334\n\n\nSL 4295"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77745,
+      "date": "2026-09-17T06:07:25+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fAll TP Hit 240+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77744,
+      "date": "2026-09-17T05:56:15+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 5 Hit 200+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77743,
+      "date": "2026-09-17T05:55:06+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 4 Hit 160+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77742,
+      "date": "2026-09-17T05:40:43+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 3 Hit 120+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77741,
+      "date": "2026-09-17T05:32:01+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 2 Hit 80+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77740,
+      "date": "2026-09-17T05:30:53+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 1 Hit 40+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77739,
+      "date": "2026-09-17T05:25:58+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY 4285.4281\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2714\ufe0fTP1 : 4289\n\u2714\ufe0fTP2 : 4293\n\u2714\ufe0fTP3 : 4297\n\u2714\ufe0fTP4:\u00a0 4301\n\u2714\ufe0fTP5...4305.4309\n\n\nSL 4270"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77730,
+      "date": "2026-09-16T09:39:07+00:00",
+      "text": "#GOLD #XAUUSD \n\nNow you can follow this and wait for the 4345$\n\nThe aim of the gold is to go uprise and my suggestions to keep buy from the 4324-20"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77727,
+      "date": "2026-09-16T03:15:14+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fAll TP Hit 240+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77726,
+      "date": "2026-09-16T03:03:51+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 5 Hit 200+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77725,
+      "date": "2026-09-16T03:03:40+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 4 Hit 160+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77724,
+      "date": "2026-09-16T02:56:25+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 3 Hit 120+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77723,
+      "date": "2026-09-16T02:51:27+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 2 Hit 80+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77722,
+      "date": "2026-09-16T02:44:47+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 1 Hit 40+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77721,
+      "date": "2026-09-16T02:40:05+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY 4308.4304\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2714\ufe0fTP1 : 4312\n\u2714\ufe0fTP2 : 4316\n\u2714\ufe0fTP3 : 4320\n\u2714\ufe0fTP4:\u00a0 4324\n\u2714\ufe0fTP5...4328.4332\n\n\nSL 4293"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77717,
+      "date": "2026-09-15T08:07:35+00:00",
+      "text": "\u2714\ufe0f#GOLD Sell \n\n\u2714\ufe0fAll TP Hit 260+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77716,
+      "date": "2026-09-15T08:07:14+00:00",
+      "text": "\u2714\ufe0f#GOLD Sell \n\n\u2714\ufe0fTP 5 Hit 200+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77715,
+      "date": "2026-09-15T08:06:58+00:00",
+      "text": "\u2714\ufe0f#GOLD Sell \n\n\u2714\ufe0fTP 4 Hit 160+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77714,
+      "date": "2026-09-15T07:15:26+00:00",
+      "text": "\u2714\ufe0f#GOLD Sell \n\n\u2714\ufe0fTP 3 Hit 120+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77711,
+      "date": "2026-09-15T02:41:10+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 2 Hit 80+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77710,
+      "date": "2026-09-15T02:37:56+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 1 Hit 40+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77709,
+      "date": "2026-09-15T02:34:34+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY 4308.4304\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2714\ufe0fTP1 : 4312\n\u2714\ufe0fTP2 : 4316\n\u2714\ufe0fTP3 : 4320\n\u2714\ufe0fTP4:\u00a0 4324\n\u2714\ufe0fTP5...4328.4332\n\n\nSL 4293"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77705,
+      "date": "2026-09-14T11:00:12+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 4 Hit 160+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77704,
+      "date": "2026-09-14T10:41:12+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 3 Hit 120+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77703,
+      "date": "2026-09-14T09:38:34+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 2 Hit 80+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77702,
+      "date": "2026-09-14T09:38:12+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY \n\n\u2714\ufe0fTP 1 Hit 40+Pips profit Done \u2714\ufe0f\u2714\ufe0f\ud83d\udd25\ud83d\udd25"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77700,
+      "date": "2026-09-14T09:32:21+00:00",
+      "text": "\u2714\ufe0f#GOLD BUY 4280.4275\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \n\u2714\ufe0fTP1 : 4284\n\u2714\ufe0fTP2 : 4288\n\u2714\ufe0fTP3 : 4292\n\u2714\ufe0fTP4:\u00a0 4296\n\u2714\ufe0fTP5...4300.4306..4315\n\n\nSL 4262"
+    },
+    {
+      "channel_id": -1001370758307,
+      "channel_name": "GOLD PRO TRADER",
+      "message_id": 77696,
+      "date": "2026-09-14T08:06:21+00:00",
+      "text": "#GOLD #XAUUSD \n\nGold has failed to remain above the 4360$ and dipped down for the 4308$ as per call. \n\nNow look at the support level at 4302$-4300$ which sustained will be rebounded for the 4320$-30$-50$ means to buy. \n\nWhereas failed to sustain will dip down 4290$-83$&72$ means to sell."
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58825,
+      "date": "2026-09-18T07:28:53+00:00",
+      "text": "\u203c\ufe0fNEW BUY XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58823,
+      "date": "2026-09-18T02:01:30+00:00",
+      "text": "\ud83d\udd35\ud83d\udd3518 SEPTEMBER FREE signal forecast: EURUSD \n\nEURUSD BUY \n\nENTRY @  1.14798\nSL:\u00a0\u00a01.14691\n\nTP1:\u00a0\u00a01.14896\nTP2:\u00a01.15012\n\n\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0fBecome a VIP member => https://easyforexpips.com\n\ud83d\udcbb\ud83d\udcf1Our XAUUSD Channel\ud83d\udc49 [CLICK HERE](https://t.me/+yf6Qtimi3K4yM2Q0)"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58820,
+      "date": "2026-09-17T14:42:58+00:00",
+      "text": "\u203c\ufe0fNEW SELL XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58814,
+      "date": "2026-09-17T06:08:10+00:00",
+      "text": "\ud83d\udd35\ud83d\udd3517 SEPTEMBER FREE signal forecast: USDCHF \n\nUSDCHF SELL-STOP @0.82461\nSL:\u00a0\u00a0 0.82747\n\nTP1:\u00a0\u00a00.82222\nTP2:\u00a0\u00a00.81982 \nTP3: 0.81748\n\n\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0fBecome a VIP member => https://easyforexpips.com\n\ud83d\udcbb\ud83d\udcf1Our XAUUSD Channel\ud83d\udc49 [CLICK HERE](https://t.me/+yf6Qtimi3K4yM2Q0)"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58806,
+      "date": "2026-09-16T17:30:50+00:00",
+      "text": "\u203c\ufe0fNEW BUY XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58804,
+      "date": "2026-09-16T14:27:57+00:00",
+      "text": "\u203c\ufe0fNEW BUY XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58799,
+      "date": "2026-09-15T07:15:52+00:00",
+      "text": "\u203c\ufe0fNEW BUY XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58797,
+      "date": "2026-09-15T00:30:36+00:00",
+      "text": "\ud83d\udd35\ud83d\udd3515 SEPTEMBER FREE signal forecast: GBPUSD \n\nGBPUSD SELL-LIMIT @1.35249\nSL:\u00a0\u00a01.35475\n\nTP1:\u00a0\u00a01.35046\nTP2:\u00a01.34816\nTP3: 1.34613\n\n\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0fBecome a VIP member => https://easyforexpips.com\n\ud83d\udcbb\ud83d\udcf1Our XAUUSD Channel\ud83d\udc49 [CLICK HERE](https://t.me/+yf6Qtimi3K4yM2Q0)"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58795,
+      "date": "2026-09-14T18:30:41+00:00",
+      "text": "\ud83d\udd35\ud83d\udd3515 SEPTEMBER FREE signal forecast: NAS100 \n\nNAS100 SELL-LIMIT @29423\nSL:\u00a0\u00a0 29611\n\nTP1:\u00a0\u00a0\u00a029257\nTP2:\u00a0\u00a029052\nTP3:  28850\n\n\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0fBecome a VIP member => https://easyforexpips.com\n\ud83d\udcbb\ud83d\udcf1Our XAUUSD Channel\ud83d\udc49 [CLICK HERE](https://t.me/+yf6Qtimi3K4yM2Q0)"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58794,
+      "date": "2026-09-14T15:34:21+00:00",
+      "text": "\u203c\ufe0fNEW BUY XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58793,
+      "date": "2026-09-14T13:41:50+00:00",
+      "text": "\ud83d\udd35\ud83d\udd3514 SEPTEMBER FREE signal forecast: CHFJPY\n\nCHFJPY SELL-LIMIT  @189.644\nSL:\u00a0\u00a0 190.225\n\nTP1:\u00a0\u00a0189.118\nTP2:\u00a0188.483\nTP3: 187.892\n\n\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0fBecome a VIP member => https://easyforexpips.com\n\ud83d\udcbb\ud83d\udcf1Our XAUUSD Channel\ud83d\udc49 [CLICK HERE](https://t.me/+yf6Qtimi3K4yM2Q0)"
+    },
+    {
+      "channel_id": -1001284268486,
+      "channel_name": "Easy Forex  OFFICIAL CHANNEL",
+      "message_id": 58792,
+      "date": "2026-09-14T12:06:20+00:00",
+      "text": "\u203c\ufe0fNEW BUY XAUUSD SIGNAL HERE: https://t.me/+kpDe_PXbkbZiOTE0"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99535,
+      "date": "2026-09-18T16:37:12+00:00",
+      "text": "**XAUUSD SELL 4384\nTP 4381\nTP 4378\nTP 4375\nTP 4372\nTP 4369\nSL 4390\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99533,
+      "date": "2026-09-18T16:34:57+00:00",
+      "text": "**XAUUSD SELL 4384**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99436,
+      "date": "2026-09-18T03:48:50+00:00",
+      "text": "**XAUUSD SELL 4360\nTP 4357\nTP 4354\nTP 4351\nTP 4348\nTP 4345\nTP 4342\nTP 4339\nTP 4336\nTP 4333\nTP 4330\nSL 4375\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99434,
+      "date": "2026-09-18T03:46:12+00:00",
+      "text": "**XAUUSD SELL 4360**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99345,
+      "date": "2026-09-18T01:45:23+00:00",
+      "text": "**XAUUSD SELL 4350\nTP 4347\nTP 4344\nTP 4341\nTP 4338\nTP 4335\nSL 4360\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99344,
+      "date": "2026-09-18T01:43:06+00:00",
+      "text": "**XAUUSD SELL 4350**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99312,
+      "date": "2026-09-17T14:52:09+00:00",
+      "text": "**XAUUSD SELL 4363\nTP 4360\nTP 4357\nTP 4354\nTP 4351\nTP 4348\nSL 4374\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99311,
+      "date": "2026-09-17T14:51:05+00:00",
+      "text": "**XAUUSD SELL 4363**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99278,
+      "date": "2026-09-17T11:22:03+00:00",
+      "text": "**XAUUSD SELL 4335\nTP 4332\nTP 4329\nTP 4326\nTP 4323\nTP 4320\nSL 4345\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99277,
+      "date": "2026-09-17T11:17:39+00:00",
+      "text": "**XAUUSD SELL 4335**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99246,
+      "date": "2026-09-17T08:26:06+00:00",
+      "text": "**XAUUSD SELL 4316\nTP 4313\nTP 4310\nTP 4307\nTP 4304\nTP 4301\nSL 4327\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**\ud83e\udd42"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99245,
+      "date": "2026-09-17T08:24:23+00:00",
+      "text": "**XAUUSD SELL 4316**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99229,
+      "date": "2026-09-17T07:43:18+00:00",
+      "text": "**XAUUSD SELL 4333\nTP 4330\nTP 4327\nTP 4324\nTP 4321\nTP 4318\nSL 4344\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99228,
+      "date": "2026-09-17T07:39:55+00:00",
+      "text": "**XAUUSD SELL 4333**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99221,
+      "date": "2026-09-17T06:08:30+00:00",
+      "text": "**XAUUSD SELL 4307\nTP 4304\nTP 4301\nTP 4298\nTP 4295\nTP 4292\nSL 4317\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99220,
+      "date": "2026-09-17T06:06:35+00:00",
+      "text": "**XAUUSD SELL 4307**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99107,
+      "date": "2026-09-17T02:07:53+00:00",
+      "text": "**XAUUSD SELL 4293\nTP 4290\nTP 4287\nTP 4284\nTP 4281\nTP 4278\nSL 4305\n\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42\ud83e\udd42**"
+    },
+    {
+      "channel_id": -1002064435712,
+      "channel_name": "JOSEFINA TRADER0",
+      "message_id": 99106,
+      "date": "2026-09-17T02:06:50+00:00",
+      "text": "XAUUSD SELL 4293"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200917,
+      "date": "2026-09-18T10:10:34+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4373\n\n\ud83d\udd39TP 4376\n\ud83d\udd39TP 4379\n\ud83d\udd39TP 4382\n\ud83d\udd39TP 4385\n\n\ud83d\udd36SL 4363**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200855,
+      "date": "2026-09-18T01:37:16+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4351\n\n\ud83d\udd39TP 4354\n\ud83d\udd39TP 4357\n\ud83d\udd39TP 4360\n\ud83d\udd39TP 4363\n\n\ud83d\udd36SL 4340**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200795,
+      "date": "2026-09-17T12:24:35+00:00",
+      "text": "**\u2714\ufe0fXAUUSD SELL 4375\n\n\ud83d\udd39TP 4372\n\ud83d\udd39TP 4369\n\ud83d\udd39TP 4366\n\ud83d\udd39TP 4363\n\n\ud83d\udd36SL 4385**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200764,
+      "date": "2026-09-17T09:41:31+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4308\n\n\ud83d\udd39TP 4311\n\ud83d\udd39TP 4314\n\ud83d\udd39TP 4317\n\ud83d\udd39TP 4320\n\n\ud83d\udd36SL 4298**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200723,
+      "date": "2026-09-17T05:39:41+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4294\n\n\ud83d\udd39TP 4297\n\ud83d\udd39TP 4300\n\ud83d\udd39TP 4303\n\ud83d\udd39TP 4306\n\n\ud83d\udd36SL 4384**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200638,
+      "date": "2026-09-16T12:12:53+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4342\n\n\ud83d\udd39TP 4345\n\ud83d\udd39TP 4348\n\ud83d\udd39TP 4351\n\ud83d\udd39TP 4354\n\n\ud83d\udd36SL 4331**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200527,
+      "date": "2026-09-16T02:47:49+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4310\n\n\ud83d\udd39TP 4313\n\ud83d\udd39TP 4316\n\ud83d\udd39TP 4319\n\ud83d\udd39TP 4322\n\n\ud83d\udd36SL 4200**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200416,
+      "date": "2026-09-15T08:08:40+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4266\n\n\ud83d\udd39TP 4269\n\ud83d\udd39TP 4272\n\ud83d\udd39TP 4275\n\ud83d\udd39TP 4278\n\n\ud83d\udd36SL 4255**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200352,
+      "date": "2026-09-15T01:50:58+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4299\n\n\ud83d\udd39TP 4302\n\ud83d\udd39TP 4305\n\ud83d\udd39TP 4308\n\ud83d\udd39TP 4311\n\n\ud83d\udd36SL 4389**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200260,
+      "date": "2026-09-14T15:10:50+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4280\n\n\ud83d\udd39TP 4283\n\ud83d\udd39TP 4286\n\ud83d\udd39TP 4289\n\ud83d\udd39TP 4292\n\n\ud83d\udd36SL 4370**"
+    },
+    {
+      "channel_id": -1001563961063,
+      "channel_name": "Swift Gold Forex",
+      "message_id": 200199,
+      "date": "2026-09-14T09:20:17+00:00",
+      "text": "\u2714\ufe0f**XAUUSD BUY 4286\n\n\ud83d\udd39TP 4289\n\ud83d\udd39TP 4292\n\ud83d\udd39TP 4295\n\ud83d\udd39TP 4298\n\n\ud83d\udd36SL 4376**"
+    },
+    {
+      "channel_id": -1002350799273,
+      "channel_name": "Market Trader Crypto Forex",
+      "message_id": 7932,
+      "date": "2026-09-15T09:41:10+00:00",
+      "text": "GOLD  BUY - 4265\n\nSL -  90 PIPS \n\nTARGET - 220 PIPS\n  \n\ud83d\udc47\ud83d\udc47\nhttps://affs.click/xnqPA\nPATNER CODE (663WF)\n\nALREADY TOLD IN LIVE BUT MARKET IS NOT MOVING"
+    },
+    {
+      "channel_id": -1001422000261,
+      "channel_name": "Sureshot FX VIP",
+      "message_id": 20945,
+      "date": "2026-09-15T14:19:51+00:00",
+      "text": "XAUUSD BUY 4293.16\n\nSL:  4283.16\nTP:  4313.16\n--Trade by David"
+    },
+    {
+      "channel_id": -1001422000261,
+      "channel_name": "Sureshot FX VIP",
+      "message_id": 20942,
+      "date": "2026-09-15T13:03:07+00:00",
+      "text": "XAUUSD BUY 4291.69\n\nSL:  4281.69\nTP:  4311.69\n--Trade by David"
+    },
+    {
+      "channel_id": -1001422000261,
+      "channel_name": "Sureshot FX VIP",
+      "message_id": 20925,
+      "date": "2026-09-14T14:21:18+00:00",
+      "text": "XAUUSD BUY 4272.37\n\nSL:  4262.37\nTP:  4292.37\n--Trade by David"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192358,
+      "date": "2026-09-18T14:25:42+00:00",
+      "text": "**XAUUSD BUY NOW @ 4352\nMORE BUY @ 4348\n\nTP : 4356\nTP : 4360\nTP : 4364\nTP : 4368\nTP : 4372\nTP : 4376\nTP : 4380\n\nSL : 4340**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192356,
+      "date": "2026-09-18T07:54:50+00:00",
+      "text": "**XAUUSD BUY NOW @ 4394\nMORE BUY @ 4390\n\nTP : 4398\nTP : 4402\nTP : 4406\nTP : 4410\nTP : 4414\nTP : 4418\nTP : 4422\n\nSL : 4380**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192354,
+      "date": "2026-09-18T02:25:36+00:00",
+      "text": "**XAUUSD BUY NOW @ 4352\nMORE BUY @ 4348\n\nTP : 4356\nTP : 4360\nTP : 4364\nTP : 4368\nTP : 4372\nTP : 4376\nTP : 4380\n\nSL : 4340**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192342,
+      "date": "2026-09-17T10:26:11+00:00",
+      "text": "**XAUUSD BUY NOW @ 4313\nMORE BUY @ 4309\n\nTP : 4317\nTP : 4321\nTP : 4325\nTP : 4329\nTP : 4333\nTP : 4337\nTP : 4341\n\nSL : 4300**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192334,
+      "date": "2026-09-17T02:10:09+00:00",
+      "text": "**XAUUSD BUY NOW @ 4286\nMORE BUY @ 4282\n\nTP : 4290\nTP : 4294\nTP : 4298\nTP : 4302\nTP : 4306\nTP : 4310\nTP : 4314\n\nSL : 4270**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192321,
+      "date": "2026-09-16T04:51:30+00:00",
+      "text": "**XAUUSD BUY NOW @ 4321\nMORE BUY @ 4317\n\nTP : 4325\nTP : 4329\nTP : 4333\nTP : 4337\nTP : 4341\nTP : 4345\nTP : 4350\n\nSL : 4310**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192309,
+      "date": "2026-09-15T11:14:51+00:00",
+      "text": "**XAUUSD BUY NOW @ 4281\nMORE BUY @ 4277\n\nTP : 4285\nTP : 4289\nTP : 4293\nTP : 4297\nTP : 4301\nTP : 4305\nTP : 4310\n\nSL : 4270**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192305,
+      "date": "2026-09-15T06:09:10+00:00",
+      "text": "**XAUUSD BUY NOW @ 4287\nMORE BUY @ 4283\n\nTP : 4291\nTP : 4295\nTP : 4299\nTP : 4303\nTP : 4307\nTP : 4311\nTP : 4315\n\nSL : 4270**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192302,
+      "date": "2026-09-15T02:29:47+00:00",
+      "text": "**XAUUSD BUY NOW @ 4308\nMORE BUY @ 4304\n\nTP : 4312\nTP : 4316\nTP : 4320\nTP : 4324\nTP : 4328\nTP : 4332\nTP : 4336\n\nSL : 4295**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192296,
+      "date": "2026-09-14T09:49:01+00:00",
+      "text": "**XAUUSD BUY NOW @ 4280\nMORE BUY @ 4276\n\nTP : 4284\nTP : 4288\nTP : 4292\nTP : 4296\nTP : 4300\nTP : 4304\nTP : 4308\n\nSL : 4265**"
+    },
+    {
+      "channel_id": -1001738171603,
+      "channel_name": "XAUUSD VIP SIGNAL",
+      "message_id": 192288,
+      "date": "2026-09-14T04:16:45+00:00",
+      "text": "**XAUUSD BUY NOW @ 4328\nMORE BUY @ 4324\n\nTP : 4332\nTP : 4336\nTP : 4340\nTP : 4344\nTP : 4348\nTP : 4352\nTP : 4356\n\nSL : 4315**"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3243,
+      "date": "2026-09-18T08:28:25+00:00",
+      "text": "\ud83d\udce3 **XAU/USD Market Alert** \ud83d\udce3\n\nCurrent market bias: **Bullish**\n\nPair: **XAU/USD**\n\nTimeframes reviewed: **30M / 1H / 5H**\n\n\ud83d\udccd **Key reaction zone:** **4389.00**\n\n\ud83d\udcc9** This is the area where the Bullish scenario becomes active and where price reaction is important.**\n\n\ud83d\udcca **Support areas to watch:**\n\n**4392.00** - first Resistance area\n**4404.00** - deeper Resistance zone\n**4419.00** - extended Bullish area\n\n\u26a0\ufe0f **View becomes weaker if price breaks and holds below:**\n\n**4377.00**\n\n\u26a0\ufe0f **Invalidation area:**\n\nThe** bullish view becomes weaker **if price drops back **below the lower support** area near **4369.00**.\n\nA strong break and hold **below this zone would suggest that buyers are losing control **and that the** market structure may shift**.\n\n__Educational market alert only. This is not financial advice, not a personal recommendation, and not an instruction to buy or sell.__"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3242,
+      "date": "2026-09-18T08:28:25+00:00",
+      "text": "\ud83d\udce3XAU/USD\ud83d\udce3\n\nDirection: BUY\n\nEntry Price:  4389.00\n\nTP1       4392.00\nTP2       4404.00\nTP3       4419.00\n\nSL        4369.00"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3234,
+      "date": "2026-09-16T09:46:04+00:00",
+      "text": "\ud83d\udce3 **XAU/USD Market Alert** \ud83d\udce3\n\nCurrent market bias: **Bullish**\n\nPair: **XAU/USD**\n\nTimeframes reviewed: **30M / 1H / 5H**\n\n\ud83d\udccd **Key reaction zone:** **4337.00**\n\n\ud83d\udcc9** This is the area where the Bullish scenario becomes active and where price reaction is important.**\n\n\ud83d\udcca **Support areas to watch:**\n\n**4340.00** - first Resistance area\n**4347.00** - deeper Resistance zone\n**4357.00** - extended Bullish area\n\n\u26a0\ufe0f **View becomes weaker if price breaks and holds below:**\n\n**4327.00**\n\n\u26a0\ufe0f **Invalidation area:**\n\nThe** bullish view becomes weaker **if price drops back **below the lower support** area near **4317.00**.\n\nA strong break and hold **below this zone would suggest that buyers are losing control **and that the** market structure may shift**.\n\n__Educational market alert only. This is not financial advice, not a personal recommendation, and not an instruction to buy or sell.__"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3233,
+      "date": "2026-09-16T09:44:20+00:00",
+      "text": "\ud83d\udce3XAU/USD\ud83d\udce3\n\nDirection: BUY\n\nEntry Price:  4337.00\n\nTP1       4340.00\nTP2       4347.00\nTP3       4357.00\n\nSL        4317.00"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3230,
+      "date": "2026-09-15T07:50:50+00:00",
+      "text": "\ud83d\udce3 **XAU/USD Market Alert** \ud83d\udce3\n\nCurrent market bias: **Bearish**\n\nPair: **XAU/USD**\n\nTimeframes reviewed: **30M / 1H / 5H**\n\n\ud83d\udccd **Key reaction zone:** **4285.00**\n\n**\ud83d\udcc9**** This is the area where the Bearish scenario becomes active and where price reaction is important.**\n\n\ud83d\udcca **Support areas to watch:**\n\n**4282.00** - first lower support area\n**4272.00** - deeper support zone\n**4255.00** - extended Bearish area\n\n**\u26a0\ufe0f**** View becomes weaker if price breaks and holds above:**\n\n**4296.00**\n\n\u26a0\ufe0f **Invalidation area:**\n\nThe** bearish view becomes weaker** if price pushes back** above the upper resistance **area near **4306.00**.\n\nA strong break and hold **above this zone would suggest that sellers are losing control** and that the **market structure may shift**.\n\n__Educational market alert only. This is not financial advice, not a personal recommendation, and not an instruction to buy or sell.__"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3229,
+      "date": "2026-09-15T07:49:52+00:00",
+      "text": "\ud83d\udce3XAU/USD\ud83d\udce3\n\nDirection: SELL\n\nEntry Price:  4285.00\n\nTP1       4282.00\nTP2       4272.00\nTP3       4255.00\n\nSL        4306.00"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3225,
+      "date": "2026-09-14T08:30:02+00:00",
+      "text": "\ud83d\udce3 **XAU/USD Market Alert** \ud83d\udce3\n\nCurrent market bias: **Bearish**\n\nPair: **XAU/USD**\n\nTimeframes reviewed: **30M / 1H / 5H**\n\n\ud83d\udccd **Key reaction zone:** **4311.00**\n\n**\ud83d\udcc9**** This is the area where the Bearish scenario becomes active and where price reaction is important.**\n\n\ud83d\udcca **Support areas to watch:**\n\n**4308.00** - first lower support area\n**4301.00** - deeper support zone\n**4291.00** - extended Bearish area\n\n**\u26a0\ufe0f**** View becomes weaker if price breaks and holds above:**\n\n**4321.00**\n\n\u26a0\ufe0f **Invalidation area:**\n\nThe** bearish view becomes weaker** if price pushes back** above the upper resistance **area near **4330.00**.\n\nA strong break and hold **above this zone would suggest that sellers are losing control** and that the **market structure may shift**.\n\n__Educational market alert only. This is not financial advice, not a personal recommendation, and not an instruction to buy or sell.__"
+    },
+    {
+      "channel_id": -1001821216397,
+      "channel_name": "PipXpert - Forex Signals",
+      "message_id": 3223,
+      "date": "2026-09-14T08:30:02+00:00",
+      "text": "\ud83d\udce3XAU/USD\ud83d\udce3\n\nDirection: SELL\n\nEntry Price:  4311.00\n\nTP1       4308.00\nTP2       4301.00\nTP3       4291.00\n\nSL        4320.00"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14572,
+      "date": "2026-09-18T11:38:49+00:00",
+      "text": "XAUUSD BUY 4379.34\n\nSL:  4369.34\nTP:  4399.34\n--Trade by Flynn"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14567,
+      "date": "2026-09-18T07:46:36+00:00",
+      "text": "XAUUSD SELL 4393.91\n\nSL:  4403.91\nTP:  4373.91\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14566,
+      "date": "2026-09-18T07:22:33+00:00",
+      "text": "XAUUSD SELL 4393.66\n\nSL:  4403.66\nTP:  4373.66\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14564,
+      "date": "2026-09-17T12:18:53+00:00",
+      "text": "XAUUSD SELL 4362.85\n\nSL:  4372.85\nTP:  4342.85\n--Trade by Mark"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14559,
+      "date": "2026-09-17T11:40:15+00:00",
+      "text": "XAUUSD BUY 4325.58\n\nSL:  4315.58\nTP:  4345.58\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14557,
+      "date": "2026-09-17T11:07:55+00:00",
+      "text": "XAUUSD SELL 4332.76\n\nSL:  4342.76\nTP:  4312.76\n--Trade by Mark"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14553,
+      "date": "2026-09-17T07:38:23+00:00",
+      "text": "XAUUSD SELL 4331.97\n\nSL:  4341.97\nTP:  4311.97\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14551,
+      "date": "2026-09-17T06:33:15+00:00",
+      "text": "XAUUSD SELL 4313.65\n\nSL:  4323.65\nTP:  4293.65\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14549,
+      "date": "2026-09-17T06:10:02+00:00",
+      "text": "XAUUSD SELL 4309.99\n\nSL:  4319.99\nTP:  4289.99\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14547,
+      "date": "2026-09-16T15:41:36+00:00",
+      "text": "XAUUSD BUY 4350.86\n\nSL:  4340.86\nTP:  4370.86\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14545,
+      "date": "2026-09-16T14:57:17+00:00",
+      "text": "XAUUSD SELL 4349.57\n\nSL:  4359.57\nTP:  4329.57\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14542,
+      "date": "2026-09-16T13:49:15+00:00",
+      "text": "XAUUSD SELL 4343.27\n\nSL:  4353.27\nTP:  4323.27\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14538,
+      "date": "2026-09-16T09:34:22+00:00",
+      "text": "XAUUSD BUY 4334.09\n\nSL:  4324.09\nTP:  4354.09\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14536,
+      "date": "2026-09-16T08:42:57+00:00",
+      "text": "XAUUSD BUY 4324.93\n\nSL:  4314.93\nTP:  4344.93\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14534,
+      "date": "2026-09-16T08:19:41+00:00",
+      "text": "XAUUSD SELL 4331.97\n\nSL:  4341.97\nTP:  4311.97\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14533,
+      "date": "2026-09-16T08:00:54+00:00",
+      "text": "XAUUSD SELL 4327.63\n\nSL:  4337.63\nTP:  4307.63\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14531,
+      "date": "2026-09-16T07:33:11+00:00",
+      "text": "XAUUSD BUY 4334.05\n\nSL:  4324.05\nTP:  4354.05\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14529,
+      "date": "2026-09-16T03:39:47+00:00",
+      "text": "XAUUSD BUY 4327.49\n\nSL:  4317.49\nTP:  4347.49\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14527,
+      "date": "2026-09-15T18:30:42+00:00",
+      "text": "XAUUSD BUY 4303.28\n\nSL:  4293.28\nTP:  4323.28\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14525,
+      "date": "2026-09-15T16:06:24+00:00",
+      "text": "XAUUSD SELL 4290.48\n\nSL:  4300.48\nTP:  4270.48\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14524,
+      "date": "2026-09-15T15:04:15+00:00",
+      "text": "XAUUSD SELL 4282.25\n\nSL:  4292.25\nTP:  4262.25\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14519,
+      "date": "2026-09-15T14:16:35+00:00",
+      "text": "XAUUSD SELL 4292.46\n\nSL:  4302.46\nTP:  4272.46\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14517,
+      "date": "2026-09-15T12:43:11+00:00",
+      "text": "XAUUSD SELL 4279.84\n\nSL:  4289.84\nTP:  4259.84\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14513,
+      "date": "2026-09-15T10:02:01+00:00",
+      "text": "XAUUSD SELL LIMIT 4277\n\nSL:  4287.0\nTP:  4257.0\n--Trade by William"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14512,
+      "date": "2026-09-15T08:27:01+00:00",
+      "text": "XAUUSD BUY 4272.21\n\nSL:  4262.21\nTP:  4292.21\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14511,
+      "date": "2026-09-15T07:56:54+00:00",
+      "text": "XAUUSD BUY 4278.66\n\nSL:  4268.66\nTP:  4298.66\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14507,
+      "date": "2026-09-15T04:43:03+00:00",
+      "text": "XAUUSD SELL 4305.86\n\nSL:  4315.86\nTP:  4285.86\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14502,
+      "date": "2026-09-14T09:57:11+00:00",
+      "text": "XAUUSD BUY 4286.76\n\nSL:  4276.76\nTP:  4306.76\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14500,
+      "date": "2026-09-14T09:48:45+00:00",
+      "text": "XAUUSD BUY 4281.24\n\nSL:  4271.24\nTP:  4301.24\n--Trade by Mark"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14499,
+      "date": "2026-09-14T09:33:50+00:00",
+      "text": "XAUUSD BUY 4286.0\n\nSL:  4276.0\nTP:  4306.0\n--Trade by Mark"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14498,
+      "date": "2026-09-14T09:23:21+00:00",
+      "text": "XAUUSD BUY 4288.0\n\nSL:  4278.0\nTP:  4308.0\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14495,
+      "date": "2026-09-14T08:59:28+00:00",
+      "text": "XAUUSD BUY 4306.63\n\nSL:  4296.63\nTP:  4326.63\n--Trade by Liam"
+    },
+    {
+      "channel_id": -1001661400724,
+      "channel_name": "SureShot GOLD (VIP)",
+      "message_id": 14494,
+      "date": "2026-09-14T08:55:52+00:00",
+      "text": "XAUUSD BUY 4306.03\n\nSL:  4296.03\nTP:  4326.03\n--Trade by Matthew"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134561,
+      "date": "2026-09-18T08:56:14+00:00",
+      "text": "**XAUUSD BUY \n\nTARGET3 COMPLET 130+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134560,
+      "date": "2026-09-18T06:44:57+00:00",
+      "text": "**XAUUSD BUY \n\nTARGET2 COMPLET 100+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134559,
+      "date": "2026-09-18T06:38:47+00:00",
+      "text": "**XAUUSD BUY \n\nTARGET1 COMPLET 60+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134557,
+      "date": "2026-09-18T06:15:34+00:00",
+      "text": "**XAUUSD BUY 4388 4386\n\nTP 4392\nTP 4396\nTP 4399\nTP 4401\n\nSL 4374**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134555,
+      "date": "2026-09-18T03:21:08+00:00",
+      "text": "**XAUUSD SELL \n\nTARGET4 COMPLET 120+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134554,
+      "date": "2026-09-18T03:20:28+00:00",
+      "text": "**XAUUSD SELL \n\nTARGET3 COMPLET 100+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134553,
+      "date": "2026-09-18T03:16:23+00:00",
+      "text": "**XAUUSD SELL \n\nTARGET2 COMPLET70+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134548,
+      "date": "2026-09-17T19:41:54+00:00",
+      "text": "**XAUUSD SELL \n\nTARGET2 COMPLET170+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134546,
+      "date": "2026-09-17T19:03:20+00:00",
+      "text": "**XAUUSD SELL \n\nTARGET1 COMPLET130+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134538,
+      "date": "2026-09-17T12:48:50+00:00",
+      "text": "**XAUUSD BUY 4360 4357\n\nTP 4364\nTP 4368\nTP 4272\nTP 4278\n\nSL 4347**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134535,
+      "date": "2026-09-17T10:55:00+00:00",
+      "text": "**\ud83d\udcca XAUUSD | Gold Buy Setup Update\n\n\u274c Unfortunately, this trade has hit the Stop Loss (SL).\n\n\ud83d\udcc9 SL: 4322\n\nThe market moved against our scenario, and losses are part of trading. What matters most is protecting your capital and maintaining proper risk management. Do not rush into a new trade just to recover the loss. \u2764\ufe0f\n\n\ud83d\ude4f Thank you for your continued trust and support.\n\nWe\u2019ll analyze the upcoming opportunities with even greater care and share the next setup as soon as a high-quality trading opportunity forms.\n\n\ud83d\udc8e Stay with us \u2014 the best opportunities are still ahead.**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134526,
+      "date": "2026-09-16T17:06:27+00:00",
+      "text": "**XAUUSD Sell \n\nTARGET4 COMPLET310+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134524,
+      "date": "2026-09-16T17:05:31+00:00",
+      "text": "**XAUUSD Sell \n\nTARGET2 COMPLET110+ PIPS DONE\u00a0 \u2b50\ufe0f\u2b50\ufe0f**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134517,
+      "date": "2026-09-16T12:41:38+00:00",
+      "text": "**XAUUSD Sell 4346\n\nTP 4340\nTP 4335\nTP 4325\nTP 4315\n\nSL 4360**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134515,
+      "date": "2026-09-16T06:36:54+00:00",
+      "text": "**__\ud83d\udfe1 XAU/USD \u2013 SELL Signal \ud83d\udfe2\n\n\ud83d\udd3b BUYEntry Zone: 4325\u2013 4329\n\n\ud83c\udfaf Take Profit Targets: 1\ufe0f\u20e3 TP1: 4321\n2\ufe0f\u20e3 TP2: 4319\n3\ufe0f\u20e3 TP3: 4317\n4\ufe0f\u20e3 TP4: 4315\n5\ufe0f\u20e3 TP5: 4310\n\n\u26d4 Stop Loss (SL): 4340\n\n\u26a0\ufe0f Risk Management:\n\nPlease manage your capital properly and always stick to the Stop Loss (SL).\n\n\n\ud83d\udc8e Discipline \u2022 Patience \u2022 Risk Management \ud83d\udc8e__**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134508,
+      "date": "2026-09-16T02:52:03+00:00",
+      "text": "**__\ud83d\udfe1 XAU/USD \u2013 Gold BUY Signal \ud83d\udfe2\n\n\ud83d\udd3b BUYEntry Zone: 4313\u2013 4310\n\n\ud83c\udfaf Take Profit Targets: 1\ufe0f\u20e3 TP1: 4317\n2\ufe0f\u20e3 TP2: 4319\n3\ufe0f\u20e3 TP3: 4321\n4\ufe0f\u20e3 TP4: 4324\n5\ufe0f\u20e3 TP5: 4326\n\n\u26d4 Stop Loss (SL): 4300\n\n\u26a0\ufe0f Risk Management:\n\nPlease manage your capital properly and always stick to the Stop Loss (SL).\n\n\n\ud83d\udc8e Discipline \u2022 Patience \u2022 Risk Management \ud83d\udc8e__**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134504,
+      "date": "2026-09-15T01:20:15+00:00",
+      "text": "**__\ud83d\udfe1 XAU/USD \u2013 Gold BUY Signal \ud83d\udfe2\n\n\ud83d\udd3b BUYEntry Zone: 4301\u2013 4297\n\n\ud83c\udfaf Take Profit Targets: 1\ufe0f\u20e3 TP1: 4305\n2\ufe0f\u20e3 TP2: 4308\n3\ufe0f\u20e3 TP3: 4312\n4\ufe0f\u20e3 TP4: 4314\n5\ufe0f\u20e3 TP5: 4315\n\n\u26d4 Stop Loss (SL): 4288\n\n\u26a0\ufe0f Risk Management:\n\nPlease manage your capital properly and always stick to the Stop Loss (SL).\n\n\n\ud83d\udc8e Discipline \u2022 Patience \u2022 Risk Management \ud83d\udc8e__**"
+    },
+    {
+      "channel_id": -1001472031579,
+      "channel_name": "ALTO FX",
+      "message_id": 134499,
+      "date": "2026-09-14T08:05:55+00:00",
+      "text": "**__\ud83d\udfe1 XAU/USD \u2013 Gold SELL Signal \ud83d\udfe2\n\n\ud83d\udd3b SELL Entry Zone: 4314\u2013 4318\n\n\ud83c\udfaf Take Profit Targets: 1\ufe0f\u20e3 TP1: 4310\n2\ufe0f\u20e3 TP2: 4306\n3\ufe0f\u20e3 TP3: 4303\n4\ufe0f\u20e3 TP4: 4300\n5\ufe0f\u20e3 TP5: 4297\n\n\u26d4 Stop Loss (SL): 4327\n\n\u26a0\ufe0f Risk Management:\n\nPlease manage your capital properly and always stick to the Stop Loss (SL).\n\n\n\ud83d\udc8e Discipline \u2022 Patience \u2022 Risk Management \ud83d\udc8e__**"
+    },
+    {
+      "channel_id": -1001288100770,
+      "channel_name": "Grade Profit forex",
+      "message_id": 177396,
+      "date": "2026-09-17T10:48:37+00:00",
+      "text": "**XAUUSD BUY 4314\n\nTP 4317\nTP 4320\nTP 4323\nTP 4326\nTP 4329\n\nSL 4304**"
+    },
+    {
+      "channel_id": -1001288100770,
+      "channel_name": "Grade Profit forex",
+      "message_id": 177395,
+      "date": "2026-09-17T10:47:56+00:00",
+      "text": "**XAUUSD BUY 4314**"
+    },
+    {
+      "channel_id": -1001288100770,
+      "channel_name": "Grade Profit forex",
+      "message_id": 177241,
+      "date": "2026-09-17T01:31:33+00:00",
+      "text": "**XAUUSD BUY 4309\n\nTP 4312\nTP 4315\nTP 4318\nTP 4328\nTP 4331\n\nSL 4300**"
+    },
+    {
+      "channel_id": -1001288100770,
+      "channel_name": "Grade Profit forex",
+      "message_id": 177033,
+      "date": "2026-09-16T02:24:33+00:00",
+      "text": "**XAUUSD BUY 4290\n\nTP 4293\nTP 4296\nTP 4299\nTP 4302\nTP 4305\nTP 4308\nTP 4311\nTP 4314\nTP 4317\nTP 4320\n\nSL 4275**"
+    },
+    {
+      "channel_id": -1001178704438,
+      "channel_name": "Gold Market Insights",
+      "message_id": 272162,
+      "date": "2026-09-17T01:23:04+00:00",
+      "text": "**XAUUSD BUY 4303\n\nTP 4306\nTP 4309\nTP 4312\nTP 4315\nTP 4318\nTP 4321\nTP 4324\nTP 4327\nTP 4330\n\nSl. 4285**"
+    },
+    {
+      "channel_id": -1001178704438,
+      "channel_name": "Gold Market Insights",
+      "message_id": 272154,
+      "date": "2026-09-16T02:33:38+00:00",
+      "text": "**XAUUSD BUY 4304\n\nTP 4307\nTP 4310\nTP 4313\nTP 4316\nTP 4319\nTP 4322\n\nSL\u00a0 4284**"
+    },
+    {
+      "channel_id": -1001178704438,
+      "channel_name": "Gold Market Insights",
+      "message_id": 272148,
+      "date": "2026-09-15T13:01:07+00:00",
+      "text": "**XAUUSD BUY 4286\n\nTP 4289\nTP 4292\nTP 4295\nTP 4298\nTP 4301\nTP 4304\nTP 4307\nTP 4310\n\nSl\u00a0 4270**"
+    },
+    {
+      "channel_id": -1001178704438,
+      "channel_name": "Gold Market Insights",
+      "message_id": 272143,
+      "date": "2026-09-15T02:33:44+00:00",
+      "text": "**XAUUSD BUY 4307\n\nTP 4310\nTP 4313\nTP 4316\nTP 4319\nTP 4322\nTP 4325\n\nSL\u00a0 4295**"
+    },
+    {
+      "channel_id": -1001178704438,
+      "channel_name": "Gold Market Insights",
+      "message_id": 272134,
+      "date": "2026-09-13T23:37:29+00:00",
+      "text": "**XAUUSD SELL 4343\n\nTP 4340\nTP 4337\nTP 4334\nTP 4331\nTP 4328\nTP 4325\nTP 4322\nTP 4319\n\nSl\u00a0 4360**"
+    },
+    {
+      "channel_id": -1001189897936,
+      "channel_name": "ULTREOS FOREX",
+      "message_id": 9971,
+      "date": "2026-09-14T16:35:56+00:00",
+      "text": "XAUUSD buy now 4300\nsl 4280\ntp 4390\ntp 4470"
+    },
+    {
+      "channel_id": -1003973975394,
+      "channel_name": "ROCKY GOLD FX",
+      "message_id": 712,
+      "date": "2026-09-15T11:01:34+00:00",
+      "text": "Gold buy"
+    },
+    {
+      "channel_id": -1003973975394,
+      "channel_name": "ROCKY GOLD FX",
+      "message_id": 707,
+      "date": "2026-09-15T04:06:04+00:00",
+      "text": "Gold Sell"
+    },
+    {
+      "channel_id": -1003973975394,
+      "channel_name": "ROCKY GOLD FX",
+      "message_id": 692,
+      "date": "2026-09-14T17:00:21+00:00",
+      "text": "Gold buy"
+    },
+    {
+      "channel_id": -1003973975394,
+      "channel_name": "ROCKY GOLD FX",
+      "message_id": 685,
+      "date": "2026-09-14T16:03:34+00:00",
+      "text": "Gold Buy"
+    },
+    {
+      "channel_id": -1003973975394,
+      "channel_name": "ROCKY GOLD FX",
+      "message_id": 671,
+      "date": "2026-09-14T08:03:26+00:00",
+      "text": "Gold Sell"
+    }
+  ]
+}

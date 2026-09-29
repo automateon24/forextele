@@ -1,0 +1,32 @@
+{
+  "last_heartbeat": 1790712053.7959037,
+  "last_heartbeat_str": "2026-09-30 01:30:53",
+  "status": "ACTIVE_SCANNING",
+  "symbols_monitored": [
+    "GOLD",
+    "BTCUSD"
+  ],
+  "magic_number": 999001,
+  "daily_trade_count": 0,
+  "max_daily_trades": 4,
+  "details": {
+    "GOLD": {
+      "has_open_pos": false,
+      "in_cooldown": false,
+      "h1_trend": "NEUTRAL",
+      "rsi_m5": 66.9,
+      "atr14": 7.197857142857109,
+      "spread": 0.55,
+      "last_price": 4176.4
+    },
+    "BTCUSD": {
+      "has_open_pos": true,
+      "in_cooldown": false,
+      "h1_trend": "BEARISH",
+      "rsi_m5": 45.1,
+      "atr14": 170.7357142857145,
+      "spread": 40.0,
+      "last_price": 83550.35
+    }
+  }
+}

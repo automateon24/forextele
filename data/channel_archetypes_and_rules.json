@@ -1,0 +1,1545 @@
+{
+  "last_updated": "2026-09-30 00:18:38",
+  "channels": {
+    "Market Trader": {
+      "total_trades": 1,
+      "win_rate": 100.0,
+      "net_pnl": 15.5,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": 15.5
+        }
+      }
+    },
+    "Vault Gold Forex": {
+      "total_trades": 27,
+      "win_rate": 3.7,
+      "net_pnl": -399.52,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 20,
+          "pnl": -335.16
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -10.86
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -10.5
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -2.34
+        }
+      }
+    },
+    "HaremFX12": {
+      "total_trades": 10,
+      "win_rate": 0.0,
+      "net_pnl": -203.3,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 10,
+          "pnl": -203.3
+        }
+      }
+    },
+    "Crypto World Updates": {
+      "total_trades": 8,
+      "win_rate": 0.0,
+      "net_pnl": -162.64,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 7,
+          "pnl": -142.31
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "[ID:1319578596]": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Areeal Forex": {
+      "total_trades": 6,
+      "win_rate": 0.0,
+      "net_pnl": -121.98,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -81.32
+        }
+      }
+    },
+    "JOSEFINA TRADER0": {
+      "total_trades": 9,
+      "win_rate": 0.0,
+      "net_pnl": -182.97,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 8,
+          "pnl": -162.64
+        }
+      }
+    },
+    "Gold Market Insights": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "FX TRADING HUB": {
+      "total_trades": 7,
+      "win_rate": 0.0,
+      "net_pnl": -142.31,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 7,
+          "pnl": -142.31
+        }
+      }
+    },
+    "GOLD PRO TRADER": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "[ID:1487215936]": {
+      "total_trades": 9,
+      "win_rate": 0.0,
+      "net_pnl": -182.97,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 9,
+          "pnl": -182.97
+        }
+      }
+    },
+    "[ID:2458369770]": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Market Trader Crypto Forex": {
+      "total_trades": 27,
+      "win_rate": 18.5,
+      "net_pnl": -72.09,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 14,
+          "pnl": -37.03
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 9,
+          "pnl": -78.96
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": 42.93
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 1,
+          "pnl": 0.97
+        }
+      }
+    },
+    "PIPS HUNTER 4.0": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "[ID:1986940315]": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "XAUUSD VIP SIGNAL": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 3,
+          "pnl": -60.99
+        }
+      }
+    },
+    "Trade Time With Pranjal - Official": {
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "net_pnl": -81.32,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -81.32
+        }
+      }
+    },
+    "BLW Online Trading": {
+      "total_trades": 9,
+      "win_rate": 0.0,
+      "net_pnl": -182.97,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 4,
+          "pnl": -81.32
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -60.99
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Scalping Gold": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Wolf Of Trading": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Metaverse Trading Academy (Channel)": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Easy Forex  OFFICIAL CHANNEL": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "pattern_breakdown": {
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "King Crypto Scalp [ LIVE ]": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 3,
+          "pnl": -60.99
+        }
+      }
+    },
+    "Grade Profit forex": {
+      "total_trades": 11,
+      "win_rate": 27.3,
+      "net_pnl": -15.89,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 7,
+          "pnl": -19.83
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": 3.94
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": 0.0
+        }
+      }
+    },
+    "NTrade | Market Insights": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Profitway Crypto MCX Forex": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Orbex Global Forex": {
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "net_pnl": -81.32,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 4,
+          "pnl": -81.32
+        }
+      }
+    },
+    "THE FOREX BLUEPRINT": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -33.98,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -13.65
+        }
+      }
+    },
+    "[ID:1198204444]": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "MCX Commodities V.I.P Group": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "[ID:1917624782]": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Bitcoin Bullets Premium Free": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Alpha Trade Zone": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "BEST FX XAUUSD GOLD TRADER": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "[ID:1520188830]": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "XAUUSD GOLD MASTER": {
+      "total_trades": 49,
+      "win_rate": 14.3,
+      "net_pnl": -94.78,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 16,
+          "pnl": -25.33
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 7,
+          "pnl": 20.28
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 7,
+          "pnl": -11.95
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 4,
+          "pnl": -12.55
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 4,
+          "pnl": -25.8
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 6,
+          "pnl": -39.85
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 5,
+          "pnl": 0.42
+        }
+      }
+    },
+    "[ID:1495198097]": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "PipXpert - Forex Signals": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Coineo": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Binance CoinSignals": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Binance CoinSignals PRO VIP": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "CoinMarketCap Announcements": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "PIPS HUNTER 4.0 EA": {
+      "total_trades": 8,
+      "win_rate": 0.0,
+      "net_pnl": -162.64,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
+      "pattern_breakdown": {
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -60.99
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 3,
+          "pnl": -60.99
+        }
+      }
+    },
+    "DIL SE TRADER Crypto": {
+      "total_trades": 7,
+      "win_rate": 0.0,
+      "net_pnl": -142.31,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 5,
+          "pnl": -101.65
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Swift Gold Forex": {
+      "total_trades": 14,
+      "win_rate": 14.3,
+      "net_pnl": -86.39,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 5,
+          "pnl": -85.34
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 6,
+          "pnl": 11.4
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -12.7
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 0.25
+        }
+      }
+    },
+    "Sureshot FX VIP": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "pattern_breakdown": {
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "ALTO FX": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "GOLD Snipers": {
+      "total_trades": 6,
+      "win_rate": 16.7,
+      "net_pnl": -70.92,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -30.26
+        }
+      }
+    },
+    "CRYPTO_VULTURE_SIGNALS": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Max Leverage": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Max Leverage (Acc2)": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Fidelity Traderg": {
+      "total_trades": 8,
+      "win_rate": 0.0,
+      "net_pnl": -162.64,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 6,
+          "pnl": -121.98
+        }
+      }
+    },
+    "[ID:1267469938]": {
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "net_pnl": -81.32,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -81.32
+        }
+      }
+    },
+    "Binance Spot & FutuRes Signals": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "HAMODY CRYPTO": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "[ID:1679908940]": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Octa Analytics": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Pump Dump Gold": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Forex Advisors Group": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Intelligent trader": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Gokul Chhabra | SEBI Registered RA": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "THE WOLF (CRYPTO)": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "GOLD Sniper Pips": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -20.33,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "Tradeology Commodities | By Hiral": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Tradeology Commodities | By Hiral (Acc2)": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "VIP Radar Track": {
+      "total_trades": 7,
+      "win_rate": 0.0,
+      "net_pnl": -142.31,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 7,
+          "pnl": -142.31
+        }
+      }
+    },
+    "Binance Killers VIP": {
+      "total_trades": 9,
+      "win_rate": 0.0,
+      "net_pnl": -182.97,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 9,
+          "pnl": -182.97
+        }
+      }
+    },
+    "Binance Killers VIP (Acc2)": {
+      "total_trades": 9,
+      "win_rate": 0.0,
+      "net_pnl": -182.97,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 9,
+          "pnl": -182.97
+        }
+      }
+    },
+    "[ID:1790981228]": {
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "net_pnl": -81.32,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "GOLD Trader Dan": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "PERO | Forex - Investing": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -60.99,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 3,
+          "pnl": -60.99
+        }
+      }
+    },
+    "Forex with karol": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": 0.0
+        }
+      }
+    },
+    "Trading with karol stocks": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "DENMARKPFOREX": {
+      "total_trades": 6,
+      "win_rate": 0.0,
+      "net_pnl": -121.98,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 6,
+          "pnl": -121.98
+        }
+      }
+    },
+    "Dan GOLD Scalper": {
+      "total_trades": 5,
+      "win_rate": 0.0,
+      "net_pnl": -101.65,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -60.99
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Forex Trading Tips": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -40.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "Perfect Management": {
+      "total_trades": 27,
+      "win_rate": 22.2,
+      "net_pnl": -180.92,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 13,
+          "pnl": -87.93
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -64.14
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -41.9
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 6,
+          "pnl": 34.93
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -21.88
+        }
+      }
+    },
+    "[ID:2368866378]": {
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "net_pnl": -81.32,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        }
+      }
+    },
+    "[ID:2222076772]": {
+      "total_trades": 6,
+      "win_rate": 0.0,
+      "net_pnl": -121.98,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 6,
+          "pnl": -121.98
+        }
+      }
+    },
+    "BingX - Empowering Traders": {
+      "total_trades": 16,
+      "win_rate": 0.0,
+      "net_pnl": -325.28,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 15,
+          "pnl": -304.95
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -20.33
+        }
+      }
+    },
+    "[ID:1154999984]": {
+      "total_trades": 6,
+      "win_rate": 0.0,
+      "net_pnl": -121.98,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 6,
+          "pnl": -121.98
+        }
+      }
+    },
+    "RIAOGOLDFOREX": {
+      "total_trades": 54,
+      "win_rate": 9.3,
+      "net_pnl": -559.79,
+      "top_smc_pattern": "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 30,
+          "pnl": -429.28
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 7,
+          "pnl": -30.78
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -32.38
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 7,
+          "pnl": -38.69
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -12.16
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -0.42
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 3,
+          "pnl": -16.08
+        }
+      }
+    },
+    "Mr.DAVID, XAU/USD CLUB": {
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "net_pnl": -96.47,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -96.47
+        }
+      }
+    },
+    "XAUUSD ACCURATE SiGNALS": {
+      "total_trades": 7,
+      "win_rate": 0.0,
+      "net_pnl": -83.49,
+      "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 6,
+          "pnl": -83.49
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": 0.0
+        }
+      }
+    },
+    "DUBAI CAPITAL FX GROUP 3": {
+      "total_trades": 20,
+      "win_rate": 0.0,
+      "net_pnl": -406.6,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 14,
+          "pnl": -284.62
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 6,
+          "pnl": -121.98
+        }
+      }
+    },
+    "[ID:2203795617]": {
+      "total_trades": 8,
+      "win_rate": 0.0,
+      "net_pnl": -162.64,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 4,
+          "pnl": -81.32
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": -81.32
+        }
+      }
+    },
+    "SureShot GOLD (VIP)": {
+      "total_trades": 16,
+      "win_rate": 18.8,
+      "net_pnl": -125.91,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -40.66
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 6,
+          "pnl": -71.29
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 3,
+          "pnl": -41.24
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -10.26
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": 26.22
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 11.32
+        }
+      }
+    },
+    "Vault Gold Forex™": {
+      "total_trades": 17,
+      "win_rate": 35.3,
+      "net_pnl": 102.44,
+      "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -14.84
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 5,
+          "pnl": -8.72
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 4,
+          "pnl": 23.98
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -12.55
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -7.86
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 3,
+          "pnl": 122.43
+        }
+      }
+    },
+    "JOSEFINA TRADER0⚔️": {
+      "total_trades": 27,
+      "win_rate": 22.2,
+      "net_pnl": 50.24,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 5,
+          "pnl": 33.19
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 11,
+          "pnl": 39.42
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 4,
+          "pnl": 0.0
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 1.25
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 4,
+          "pnl": -23.87
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": 0.25
+        }
+      }
+    },
+    "𝐗𝐀𝐔𝐔𝐒𝐃 𝐕𝐈𝐏 𝐒𝐈𝐆𝐍𝐀𝐋𝐒": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": 0.0,
+      "top_smc_pattern": "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "pattern_breakdown": {
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 0.0
+        }
+      }
+    },
+    "𝐗𝐀𝐔𝐔𝐒𝐃 𝐓𝐑𝐀𝐃𝐈𝐍𝐆 𝐌𝐀𝐒𝐓𝐄𝐑": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -25.16,
+      "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
+      "pattern_breakdown": {
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 1,
+          "pnl": -13.86
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -11.3
+        }
+      }
+    },
+    "Gold VIP": {
+      "total_trades": 3,
+      "win_rate": 33.3,
+      "net_pnl": -6.04,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 3,
+          "pnl": -6.04
+        }
+      }
+    },
+    "JOSEFINA TRADER0🎖": {
+      "total_trades": 27,
+      "win_rate": 29.6,
+      "net_pnl": 15.52,
+      "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
+      "pattern_breakdown": {
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 5,
+          "pnl": 3.86
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 2,
+          "pnl": 35.74
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 12,
+          "pnl": 4.34
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 7,
+          "pnl": -28.42
+        }
+      }
+    },
+    "Autonomous AI Scanner": {
+      "total_trades": 84,
+      "win_rate": 22.6,
+      "net_pnl": -170.57,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 14,
+          "pnl": 15.38
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 26,
+          "pnl": -36.36
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 42,
+          "pnl": -169.81
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": 20.22
+        }
+      }
+    },
+    "Swich Gold Forex™": {
+      "total_trades": 10,
+      "win_rate": 20.0,
+      "net_pnl": 35.74,
+      "top_smc_pattern": "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "pattern_breakdown": {
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 5,
+          "pnl": 4.1
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": 0.0
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": 31.64
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": 0.0
+        }
+      }
+    },
+    "XAU MARKET INSIGHT": {
+      "total_trades": 1,
+      "win_rate": 0.0,
+      "net_pnl": -10.1,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "pattern_breakdown": {
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -10.1
+        }
+      }
+    },
+    "XAUUSD GOLO MASTER": {
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "net_pnl": -29.66,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 1,
+          "pnl": -9.58
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": 0.0
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -20.08
+        }
+      }
+    }
+  }
+}

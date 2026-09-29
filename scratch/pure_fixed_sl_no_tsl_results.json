@@ -1,0 +1,831 @@
+{
+  "generated_at": "2026-09-23 18:52:47",
+  "period": "Last 3 Days (Sep 21 00:00 UTC to Sep 23 13:00 UTC)",
+  "total_setups": 901,
+  "modes_summary": {
+    "premature_tsl": {
+      "wins": 70,
+      "breakevens": 534,
+      "win_rate": 7.8,
+      "net_usd": -771.55
+    },
+    "pure_fixed_tp1": {
+      "wins": 474,
+      "win_rate": 52.6,
+      "net_usd": -870.49,
+      "gain_vs_tsl": -98.94
+    },
+    "pure_fixed_tp2": {
+      "wins": 329,
+      "win_rate": 36.5,
+      "net_usd": -708.7,
+      "gain_vs_tsl": 62.85
+    },
+    "pure_fixed_tp3": {
+      "wins": 258,
+      "win_rate": 28.6,
+      "net_usd": -440.93,
+      "gain_vs_tsl": 330.62
+    },
+    "hybrid_50_50": {
+      "wins": 335,
+      "win_rate": 37.2,
+      "net_usd": -789.56,
+      "gain_vs_tsl": -18.01
+    }
+  },
+  "channels": {
+    "Vijay Gold Forex": {
+      "trades": 5,
+      "net_tsl": -9.9,
+      "net_tp1": -15.65,
+      "net_tp2": -22.65,
+      "net_tp3": -22.65,
+      "net_hyb": -19.15
+    },
+    "RIAOGOLDFOREX": {
+      "trades": 75,
+      "net_tsl": -37.5,
+      "net_tp1": -88.46,
+      "net_tp2": -54.46,
+      "net_tp3": 27.54,
+      "net_hyb": -71.46
+    },
+    "JOSEFINA TRADER0\u2694\ufe0f": {
+      "trades": 90,
+      "net_tsl": 10.58,
+      "net_tp1": 23.58,
+      "net_tp2": 135.58,
+      "net_tp3": 316.58,
+      "net_hyb": 79.58
+    },
+    "Grade Profit forex": {
+      "trades": 33,
+      "net_tsl": -27.24,
+      "net_tp1": 17.51,
+      "net_tp2": 24.51,
+      "net_tp3": 32.51,
+      "net_hyb": 21.01
+    },
+    "Perfect Management": {
+      "trades": 20,
+      "net_tsl": -22.42,
+      "net_tp1": -117.7,
+      "net_tp2": -104.19,
+      "net_tp3": -118.68,
+      "net_hyb": -110.95
+    },
+    "XAUUSD GOLD MASTER": {
+      "trades": 101,
+      "net_tsl": -65.94,
+      "net_tp1": -35.5,
+      "net_tp2": 9.36,
+      "net_tp3": 111.26,
+      "net_hyb": -13.07
+    },
+    "\ud835\udc17\ud835\udc00\ud835\udc14\ud835\udc14\ud835\udc12\ud835\udc03 \ud835\udc13\ud835\udc11\ud835\udc00\ud835\udc03\ud835\udc08\ud835\udc0d\ud835\udc06 \ud835\udc0c\ud835\udc00\ud835\udc12\ud835\udc13\ud835\udc04\ud835\udc11": {
+      "trades": 10,
+      "net_tsl": -19.8,
+      "net_tp1": -17.3,
+      "net_tp2": -1.3,
+      "net_tp3": -13.3,
+      "net_hyb": -9.3
+    },
+    "XAUUSD VIP SIGNAL": {
+      "trades": 9,
+      "net_tsl": -5.07,
+      "net_tp1": -7.57,
+      "net_tp2": 0.29,
+      "net_tp3": -34.85,
+      "net_hyb": -3.64
+    },
+    "Swift Gold Forex": {
+      "trades": 30,
+      "net_tsl": -18.9,
+      "net_tp1": -10.27,
+      "net_tp2": -16.27,
+      "net_tp3": 3.73,
+      "net_hyb": -13.27
+    },
+    "THE FOREX BLUEPRINT": {
+      "trades": 22,
+      "net_tsl": -48.66,
+      "net_tp1": -15.66,
+      "net_tp2": -22.66,
+      "net_tp3": -35.66,
+      "net_hyb": -19.16
+    },
+    "GOLD PRO TRADER \u2668\ufe0f": {
+      "trades": 7,
+      "net_tsl": -14.71,
+      "net_tp1": -3.71,
+      "net_tp2": -9.71,
+      "net_tp3": -15.71,
+      "net_hyb": -6.71
+    },
+    "Sureshot FX VIP": {
+      "trades": 14,
+      "net_tsl": -30.06,
+      "net_tp1": -29.75,
+      "net_tp2": -29.6,
+      "net_tp3": -33.5,
+      "net_hyb": -29.68
+    },
+    "Sureshot FX \ud83c\udfaf": {
+      "trades": 3,
+      "net_tsl": -3.6,
+      "net_tp1": -2.1,
+      "net_tp2": 0.17,
+      "net_tp3": -3.73,
+      "net_hyb": -0.97
+    },
+    "DUBAI CAPITAL FX GROUP 3": {
+      "trades": 13,
+      "net_tsl": -13.14,
+      "net_tp1": -9.89,
+      "net_tp2": -36.89,
+      "net_tp3": -26.89,
+      "net_hyb": -23.39
+    },
+    "Mr.DAVID, XAU/USD CLUB": {
+      "trades": 10,
+      "net_tsl": -41.13,
+      "net_tp1": -38.63,
+      "net_tp2": -57.63,
+      "net_tp3": -38.63,
+      "net_hyb": -48.13
+    },
+    "ALTO FX": {
+      "trades": 9,
+      "net_tsl": -9.63,
+      "net_tp1": 2.62,
+      "net_tp2": 4.62,
+      "net_tp3": 24.62,
+      "net_hyb": 3.62
+    },
+    "XAUUSD ACCURATE SiGNALS": {
+      "trades": 13,
+      "net_tsl": -40.91,
+      "net_tp1": -14.87,
+      "net_tp2": -101.87,
+      "net_tp3": -107.87,
+      "net_hyb": -58.37
+    },
+    "\ud83c\udf15 PERO | Forex - Investing \u2122": {
+      "trades": 9,
+      "net_tsl": 2.03,
+      "net_tp1": 9.53,
+      "net_tp2": 4.53,
+      "net_tp3": 24.53,
+      "net_hyb": 7.03
+    },
+    "Pump Dump Gold": {
+      "trades": 4,
+      "net_tsl": -1.12,
+      "net_tp1": 2.88,
+      "net_tp2": 3.88,
+      "net_tp3": 13.88,
+      "net_hyb": 3.38
+    },
+    "SureShot GOLD (VIP)": {
+      "trades": 18,
+      "net_tsl": -35.31,
+      "net_tp1": -70.48,
+      "net_tp2": -101.48,
+      "net_tp3": -92.48,
+      "net_hyb": -85.98
+    },
+    "Forex with karol": {
+      "trades": 3,
+      "net_tsl": -13.59,
+      "net_tp1": -13.59,
+      "net_tp2": -13.59,
+      "net_tp3": -13.59,
+      "net_hyb": -13.59
+    },
+    "\ud835\udc17\ud835\udc00\ud835\udc14\ud835\udc14\ud835\udc12\ud835\udc03 \ud835\udc15\ud835\udc08\ud835\udc0f \ud835\udc12\ud835\udc08\ud835\udc06\ud835\udc0d\ud835\udc00\ud835\udc0b\ud835\udc12": {
+      "trades": 4,
+      "net_tsl": -18.12,
+      "net_tp1": -18.12,
+      "net_tp2": -18.12,
+      "net_tp3": -18.12,
+      "net_hyb": -18.12
+    },
+    "\ud835\ude42\ud835\ude61\ud835\ude64\ud835\ude57\ud835\ude56\ud835\ude61 \ud835\ude42\ud835\ude64\ud835\ude61\ud835\ude59 \ud835\ude44\ud835\ude63\ud835\ude68\ud835\ude5e\ud835\ude5c\ud835\ude5d\ud835\ude69\ud835\ude68": {
+      "trades": 3,
+      "net_tsl": -5.09,
+      "net_tp1": 0.41,
+      "net_tp2": 8.41,
+      "net_tp3": 18.41,
+      "net_hyb": 4.41
+    },
+    "\ud83d\udc51 Profitway Crypto MCX Forex \ud83d\udc51": {
+      "trades": 2,
+      "net_tsl": 11.19,
+      "net_tp1": 4.94,
+      "net_tp2": 1.94,
+      "net_tp3": 6.94,
+      "net_hyb": 3.44
+    },
+    "PipXpert - Forex Signals": {
+      "trades": 7,
+      "net_tsl": -10.46,
+      "net_tp1": -3.71,
+      "net_tp2": 4.29,
+      "net_tp3": -30.71,
+      "net_hyb": 0.29
+    },
+    "Vault Gold Forex\u2122": {
+      "trades": 65,
+      "net_tsl": -50.7,
+      "net_tp1": -63.45,
+      "net_tp2": -19.45,
+      "net_tp3": 41.55,
+      "net_hyb": -41.45
+    },
+    "GOLD Trader Dan": {
+      "trades": 7,
+      "net_tsl": -14.51,
+      "net_tp1": -18.31,
+      "net_tp2": -11.33,
+      "net_tp3": -11.43,
+      "net_hyb": -14.82
+    },
+    "Market Trader Crypto Forex": {
+      "trades": 7,
+      "net_tsl": -17.73,
+      "net_tp1": -14.0,
+      "net_tp2": -16.11,
+      "net_tp3": -12.71,
+      "net_hyb": -15.05
+    },
+    "GOLD Snipers": {
+      "trades": 6,
+      "net_tsl": 5.82,
+      "net_tp1": -4.79,
+      "net_tp2": -3.79,
+      "net_tp3": -9.79,
+      "net_hyb": -4.29
+    },
+    "BEST FX XAUUSD GOLD TRADER": {
+      "trades": 3,
+      "net_tsl": -0.84,
+      "net_tp1": 7.27,
+      "net_tp2": 7.27,
+      "net_tp3": -0.73,
+      "net_hyb": 7.27
+    },
+    "\ud835\udd40\ud835\udd5f\ud835\udd55\ud835\udd56\ud835\udd69 \ud835\udd4b\ud835\udd63\ud835\udd52\ud835\udd55\ud835\udd5a\ud835\udd5f\ud835\udd58 \ud835\udd4a\ud835\udd54\ud835\udd59\ud835\udd60\ud835\udd60\ud835\udd5d (\ud835\udd38\ud835\udd5f\ud835\udd52\ud835\udd5d\ud835\udd6a\ud835\udd64\ud835\udd5a\ud835\udd64 & \ud835\udd40\ud835\udd5f\ud835\udd55\ud835\udd5a\ud835\udd54\ud835\udd56\ud835\udd54 \ud835\udc3c\ud835\udcc3\ud835\udcb9\ud835\udc52\ud835\udccd \ud835\udcaf\ud835\udcc7\ud835\udcb6\ud835\udcb9\ud835\udcbe\ud835\udcc3\ud835\udc54 \ud835\udcae\ud835\udcb8\ud835\udcbd\ud835\udc5c\ud835\udc5c\ud835\udcc1 (": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 2.47,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -1.03
+    },
+    "Scalping Gold": {
+      "trades": 4,
+      "net_tsl": -1.12,
+      "net_tp1": 24.15,
+      "net_tp2": -22.81,
+      "net_tp3": -17.81,
+      "net_hyb": 0.68
+    },
+    "\ud835\udde0\ud835\uddff\ud835\uddda\ud835\uddfc\ud835\uddf9\ud835\uddf1\ud835\uddf2\ud835\uddfb\ud835\uddea\ud835\uddee\ud835\ude06 \ud835\udde7\ud835\uddff\ud835\uddee\ud835\uddf1\ud835\uddf2\ud835\uddff": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "[ID:2222076772]": {
+      "trades": 23,
+      "net_tsl": -20.19,
+      "net_tp1": -48.45,
+      "net_tp2": -61.45,
+      "net_tp3": -59.45,
+      "net_hyb": -54.95
+    },
+    "Vault Gold Forex": {
+      "trades": 16,
+      "net_tsl": 37.65,
+      "net_tp1": -17.39,
+      "net_tp2": 10.02,
+      "net_tp3": 26.43,
+      "net_hyb": -3.69
+    },
+    "BingX - Empowering Traders": {
+      "trades": 16,
+      "net_tsl": -25.7,
+      "net_tp1": -25.95,
+      "net_tp2": -34.6,
+      "net_tp3": -35.2,
+      "net_hyb": -30.27
+    },
+    "GOLD PRO TRADER": {
+      "trades": 12,
+      "net_tsl": -17.54,
+      "net_tp1": -27.0,
+      "net_tp2": -33.0,
+      "net_tp3": -31.8,
+      "net_hyb": -30.0
+    },
+    "HaremFX12": {
+      "trades": 9,
+      "net_tsl": -15.27,
+      "net_tp1": -24.12,
+      "net_tp2": -16.12,
+      "net_tp3": -48.12,
+      "net_hyb": -20.12
+    },
+    "[ID:1487215936]": {
+      "trades": 8,
+      "net_tsl": -6.49,
+      "net_tp1": -21.48,
+      "net_tp2": -13.48,
+      "net_tp3": -5.48,
+      "net_hyb": -17.48
+    },
+    "BLW Online Trading": {
+      "trades": 10,
+      "net_tsl": 9.13,
+      "net_tp1": 0.67,
+      "net_tp2": -0.31,
+      "net_tp3": 1.39,
+      "net_hyb": 0.18
+    },
+    "Binance Killers VIP": {
+      "trades": 9,
+      "net_tsl": -23.77,
+      "net_tp1": -12.77,
+      "net_tp2": -18.77,
+      "net_tp3": -24.77,
+      "net_hyb": -15.77
+    },
+    "JOSEFINA TRADER0": {
+      "trades": 9,
+      "net_tsl": 9.23,
+      "net_tp1": 9.96,
+      "net_tp2": 22.76,
+      "net_tp3": -12.44,
+      "net_hyb": 16.36
+    },
+    "Binance Killers VIP (Acc2)": {
+      "trades": 9,
+      "net_tsl": -23.77,
+      "net_tp1": -12.77,
+      "net_tp2": -18.77,
+      "net_tp3": -24.77,
+      "net_hyb": -15.77
+    },
+    "Crypto World Updates": {
+      "trades": 8,
+      "net_tsl": 17.01,
+      "net_tp1": 5.76,
+      "net_tp2": -3.24,
+      "net_tp3": 11.76,
+      "net_hyb": 1.26
+    },
+    "PIPS HUNTER 4.0 EA": {
+      "trades": 7,
+      "net_tsl": -1.3,
+      "net_tp1": 1.23,
+      "net_tp2": 20.72,
+      "net_tp3": -15.31,
+      "net_hyb": 10.97
+    },
+    "[ID:2203795617]": {
+      "trades": 8,
+      "net_tsl": -46.39,
+      "net_tp1": -40.29,
+      "net_tp2": -29.29,
+      "net_tp3": -16.29,
+      "net_hyb": -34.79
+    },
+    "Fidelity Traderg": {
+      "trades": 8,
+      "net_tsl": -10.74,
+      "net_tp1": -18.15,
+      "net_tp2": -7.15,
+      "net_tp3": 5.85,
+      "net_hyb": -12.65
+    },
+    "VIP Radar Track": {
+      "trades": 7,
+      "net_tsl": -1.96,
+      "net_tp1": 17.29,
+      "net_tp2": 45.29,
+      "net_tp3": 56.29,
+      "net_hyb": 31.29
+    },
+    "DIL SE TRADER Crypto": {
+      "trades": 7,
+      "net_tsl": -6.11,
+      "net_tp1": -8.65,
+      "net_tp2": 0.05,
+      "net_tp3": 9.5,
+      "net_hyb": -4.29
+    },
+    "FX TRADING HUB": {
+      "trades": 7,
+      "net_tsl": -0.81,
+      "net_tp1": -19.56,
+      "net_tp2": -16.56,
+      "net_tp3": -13.56,
+      "net_hyb": -18.06
+    },
+    "DENMARKPFOREX": {
+      "trades": 6,
+      "net_tsl": -5.84,
+      "net_tp1": -6.63,
+      "net_tp2": -0.63,
+      "net_tp3": 2.43,
+      "net_hyb": -3.63
+    },
+    "Areeal Forex": {
+      "trades": 6,
+      "net_tsl": 1.57,
+      "net_tp1": 0.82,
+      "net_tp2": -5.18,
+      "net_tp3": -11.18,
+      "net_hyb": -2.18
+    },
+    "[ID:1198204444]": {
+      "trades": 6,
+      "net_tsl": -14.43,
+      "net_tp1": -15.1,
+      "net_tp2": -27.18,
+      "net_tp3": -27.18,
+      "net_hyb": -21.14
+    },
+    "[ID:1154999984]": {
+      "trades": 6,
+      "net_tsl": -33.69,
+      "net_tp1": -25.58,
+      "net_tp2": -25.72,
+      "net_tp3": -54.92,
+      "net_hyb": -25.65
+    },
+    "Dan GOLD Scalper": {
+      "trades": 5,
+      "net_tsl": -5.65,
+      "net_tp1": -21.26,
+      "net_tp2": -21.26,
+      "net_tp3": -21.26,
+      "net_hyb": -21.26
+    },
+    "MCX Commodities V.I.P Group": {
+      "trades": 4,
+      "net_tsl": -0.52,
+      "net_tp1": -2.12,
+      "net_tp2": -6.14,
+      "net_tp3": -2.74,
+      "net_hyb": -4.13
+    },
+    "Tradeology Commodities | By Hiral": {
+      "trades": 4,
+      "net_tsl": -2.08,
+      "net_tp1": -6.33,
+      "net_tp2": -6.33,
+      "net_tp3": -6.33,
+      "net_hyb": -6.33
+    },
+    "[ID:1267469938]": {
+      "trades": 3,
+      "net_tsl": -5.09,
+      "net_tp1": 0.41,
+      "net_tp2": -2.59,
+      "net_tp3": 2.41,
+      "net_hyb": -1.09
+    },
+    "[ID:2368866378]": {
+      "trades": 3,
+      "net_tsl": -9.34,
+      "net_tp1": -6.59,
+      "net_tp2": -13.59,
+      "net_tp3": -13.59,
+      "net_hyb": -10.09
+    },
+    "Tradeology Commodities | By Hiral (Acc2)": {
+      "trades": 4,
+      "net_tsl": -2.08,
+      "net_tp1": -6.33,
+      "net_tp2": -6.33,
+      "net_tp3": -6.33,
+      "net_hyb": -6.33
+    },
+    "Trade Time With Pranjal - Official": {
+      "trades": 4,
+      "net_tsl": -5.37,
+      "net_tp1": -4.12,
+      "net_tp2": 3.88,
+      "net_tp3": 13.88,
+      "net_hyb": -0.12
+    },
+    "[ID:1790981228]": {
+      "trades": 4,
+      "net_tsl": -1.12,
+      "net_tp1": -8.59,
+      "net_tp2": -2.59,
+      "net_tp3": 3.41,
+      "net_hyb": -5.59
+    },
+    "Orbex Global Forex": {
+      "trades": 4,
+      "net_tsl": -1.12,
+      "net_tp1": -8.09,
+      "net_tp2": -1.09,
+      "net_tp3": 6.91,
+      "net_hyb": -4.59
+    },
+    "THE WOLF (CRYPTO)": {
+      "trades": 3,
+      "net_tsl": -5.41,
+      "net_tp1": -2.66,
+      "net_tp2": -9.66,
+      "net_tp3": -9.66,
+      "net_hyb": -6.16
+    },
+    "King Crypto Scalp [ LIVE ]": {
+      "trades": 3,
+      "net_tsl": 22.66,
+      "net_tp1": 7.41,
+      "net_tp2": 19.41,
+      "net_tp3": 34.41,
+      "net_hyb": 13.41
+    },
+    "Max Leverage": {
+      "trades": 3,
+      "net_tsl": -5.09,
+      "net_tp1": 0.41,
+      "net_tp2": 1.4,
+      "net_tp3": -27.68,
+      "net_hyb": 0.91
+    },
+    "PERO | Forex - Investing": {
+      "trades": 3,
+      "net_tsl": -9.34,
+      "net_tp1": -6.59,
+      "net_tp2": -13.59,
+      "net_tp3": -13.59,
+      "net_hyb": -10.09
+    },
+    "[ID:2458369770]": {
+      "trades": 3,
+      "net_tsl": 9.04,
+      "net_tp1": 3.48,
+      "net_tp2": 9.48,
+      "net_tp3": 4.79,
+      "net_hyb": 6.48
+    },
+    "Max Leverage (Acc2)": {
+      "trades": 3,
+      "net_tsl": -5.09,
+      "net_tp1": 0.41,
+      "net_tp2": 1.4,
+      "net_tp3": -27.68,
+      "net_hyb": 0.91
+    },
+    "[ID:1917624782]": {
+      "trades": 2,
+      "net_tsl": -0.56,
+      "net_tp1": 4.94,
+      "net_tp2": -9.06,
+      "net_tp3": -9.06,
+      "net_hyb": -2.06
+    },
+    "[ID:1319578596]": {
+      "trades": 2,
+      "net_tsl": 11.19,
+      "net_tp1": 4.24,
+      "net_tp2": 10.54,
+      "net_tp3": 17.84,
+      "net_hyb": 7.39
+    },
+    "Bitcoin Bullets Premium Free": {
+      "trades": 2,
+      "net_tsl": -0.46,
+      "net_tp1": 0.0,
+      "net_tp2": -0.25,
+      "net_tp3": 0.15,
+      "net_hyb": -0.12
+    },
+    "Coineo": {
+      "trades": 2,
+      "net_tsl": -0.83,
+      "net_tp1": -0.6,
+      "net_tp2": -0.25,
+      "net_tp3": 0.15,
+      "net_hyb": -0.42
+    },
+    "[ID:1986940315]": {
+      "trades": 2,
+      "net_tsl": 11.19,
+      "net_tp1": 4.94,
+      "net_tp2": 12.94,
+      "net_tp3": -19.09,
+      "net_hyb": 8.94
+    },
+    "PIPS HUNTER 4.0": {
+      "trades": 2,
+      "net_tsl": -0.09,
+      "net_tp1": 4.57,
+      "net_tp2": 14.81,
+      "net_tp3": -14.95,
+      "net_hyb": 9.69
+    },
+    "Binance Spot & FutuRes Signals": {
+      "trades": 2,
+      "net_tsl": -0.56,
+      "net_tp1": 4.94,
+      "net_tp2": 5.94,
+      "net_tp3": 10.94,
+      "net_hyb": 5.44
+    },
+    "Profitway Crypto MCX Forex": {
+      "trades": 2,
+      "net_tsl": -0.51,
+      "net_tp1": 2.47,
+      "net_tp2": -5.13,
+      "net_tp3": -5.13,
+      "net_hyb": -1.33
+    },
+    "Forex Trading Tips": {
+      "trades": 2,
+      "net_tsl": -0.56,
+      "net_tp1": -12.37,
+      "net_tp2": -8.37,
+      "net_tp3": -19.37,
+      "net_hyb": -10.37
+    },
+    "Easy Forex  OFFICIAL CHANNEL": {
+      "trades": 2,
+      "net_tsl": -0.56,
+      "net_tp1": 4.94,
+      "net_tp2": 12.94,
+      "net_tp3": 22.94,
+      "net_hyb": 8.94
+    },
+    "NTrade | Market Insights": {
+      "trades": 2,
+      "net_tsl": -0.48,
+      "net_tp1": 1.87,
+      "net_tp2": 5.2,
+      "net_tp3": -0.85,
+      "net_hyb": 3.54
+    },
+    "CRYPTO_VULTURE_SIGNALS": {
+      "trades": 2,
+      "net_tsl": -4.76,
+      "net_tp1": -4.53,
+      "net_tp2": -4.18,
+      "net_tp3": -3.78,
+      "net_hyb": -4.35
+    },
+    "Trading with karol stocks": {
+      "trades": 2,
+      "net_tsl": -4.81,
+      "net_tp1": -9.06,
+      "net_tp2": -9.06,
+      "net_tp3": -9.06,
+      "net_hyb": -9.06
+    },
+    "Binance CoinSignals": {
+      "trades": 1,
+      "net_tsl": -0.6,
+      "net_tp1": -0.6,
+      "net_tp2": -0.6,
+      "net_tp3": -0.6,
+      "net_hyb": -0.6
+    },
+    "Binance CoinSignals PRO VIP": {
+      "trades": 1,
+      "net_tsl": -0.6,
+      "net_tp1": -0.6,
+      "net_tp2": -0.6,
+      "net_tp3": -0.6,
+      "net_hyb": -0.6
+    },
+    "Alpha Trade Zone": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 2.47,
+      "net_tp2": 6.47,
+      "net_tp3": 11.47,
+      "net_hyb": 4.47
+    },
+    "HAMODY CRYPTO": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 2.47,
+      "net_tp2": -0.53,
+      "net_tp3": -0.53,
+      "net_hyb": 0.97
+    },
+    "[ID:1679908940]": {
+      "trades": 1,
+      "net_tsl": -4.53,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "Wolf Of Trading": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "Octa Analytics": {
+      "trades": 1,
+      "net_tsl": -4.53,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "[ID:1520188830]": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 11.38,
+      "net_tp2": 16.38,
+      "net_tp3": -9.62,
+      "net_hyb": 13.88
+    },
+    "Forex Advisors Group": {
+      "trades": 1,
+      "net_tsl": -4.53,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "KRISHNA CRYPTO": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 2.47,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -1.03
+    },
+    "CoinMarketCap Announcements": {
+      "trades": 1,
+      "net_tsl": -0.23,
+      "net_tp1": -0.6,
+      "net_tp2": -0.6,
+      "net_tp3": -0.6,
+      "net_hyb": -0.6
+    },
+    "Intelligent trader": {
+      "trades": 1,
+      "net_tsl": -4.53,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "Gokul Chhabra | SEBI Registered RA": {
+      "trades": 1,
+      "net_tsl": -4.53,
+      "net_tp1": -4.53,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -4.53
+    },
+    "Metaverse Trading Academy (Channel)": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 2.47,
+      "net_tp2": 6.47,
+      "net_tp3": -4.53,
+      "net_hyb": 4.47
+    },
+    "Gold Market Insights": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 4.75,
+      "net_tp2": 7.75,
+      "net_tp3": 10.75,
+      "net_hyb": 6.25
+    },
+    "[ID:1495198097]": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": 2.47,
+      "net_tp2": -4.53,
+      "net_tp3": -4.53,
+      "net_hyb": -1.03
+    },
+    "GOLD Sniper Pips": {
+      "trades": 1,
+      "net_tsl": -0.28,
+      "net_tp1": -4.94,
+      "net_tp2": -4.94,
+      "net_tp3": -4.94,
+      "net_hyb": -4.94
+    }
+  }
+}

@@ -47,10 +47,11 @@ SPAM_KEYWORDS = [
 # ─── DAILY CIRCUIT BREAKER ──────────────────────────────────────────────────
 MAX_DAILY_LOSS_PCT = 999.0 # Disabled for paper trading  # Stop ALL Telegram trades if account drops 3% today
 
-# ─── CHANNEL BLACKLIST (Block high-noise / format-broken channels) ───────────
+# ─── CHANNEL BLACKLIST (Block high-noise / format-broken / heavy-loss channels) ───
 CHANNEL_BLACKLIST = [
     "binance 360", "crypto world updates", "gold dreams trader",
-    "max leverage", "dil se trader crypto"
+    "max leverage", "dil se trader crypto", "areeal forex",
+    "gold market insights", "dan gold scalper", "forex trading tips"
 ]
 
 log = logging.getLogger(__name__)
@@ -181,35 +182,52 @@ class OllamaSwarmEngine:
         # 3. The Governor (Hardcoded Python Logic for 100% Reliability & Speed)
         log.info("[GOVERNOR] Evaluating Risk Profile...")
         
-        # ── USER DIRECTIVE: TELEGRAM SIGNALS RESTRICTED TO FOREX, GOLD & SILVER ONLY ──
-        symbol = str(trade_data.get("symbol", "")).upper()
-        is_crypto = any(kw in symbol for kw in ["BTC", "ETH", "USDT", "CRYPTO", "APE", "ONDO", "NEAR", "AKE", "SOL", "XRP", "DOGE", "P-ETH", "P-BTC"])
-        is_forex_or_metal = any(kw in symbol for kw in ["GOLD", "XAU", "SILVER", "XAG", "EUR", "GBP", "USD", "JPY", "CHF", "AUD", "NZD", "CAD"])
+        # ── USER DIRECTIVE: PURE GOLD (XAUUSD) SIGNALS ONLY ──
+        raw_sym = str(trade_data.get("symbol", "")).upper()
+        is_gold = any(kw in raw_sym for kw in ["GOLD", "XAU"])
 
-        if is_crypto or not is_forex_or_metal:
-            log.warning(f"[TELEGRAM_RESTRICTION] 🛑 Signal Symbol '{symbol}' rejected. Telegram signals are strictly restricted to Forex, Gold & Silver only.")
-            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Telegram Crypto Restriction: Symbol '{symbol}' rejected. Forex, Gold & Silver only.")
-            return {"status": "REJECTED", "reason": f"Telegram signals restricted to Forex, Gold & Silver only. Rejected '{symbol}'."}
+        if not is_gold:
+            log.warning(f"[GOLD_LOCK] Signal Symbol '{raw_sym}' rejected. System is strictly locked to GOLD (XAUUSD) signals only.")
+            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Gold Lock: Symbol '{raw_sym}' rejected. Gold only.")
+            return {"status": "REJECTED", "reason": f"System locked to GOLD (XAUUSD) signals only. Rejected '{raw_sym}'."}
 
-        # ── HYBRID TRI-CONFLUENCE ENGINE: SMC (Order Blocks, FVG, BOS) + MOMENTUM CATCH-UP ──
+        # Normalize symbol for MT5
+        trade_data["symbol"] = "GOLD"
+        symbol = "GOLD"
         action = str(trade_data.get("action", "BUY")).upper()
-        smc_res = self.smc_engine.get_smc_analysis(symbol, action)
-        smc_score = smc_res.get("smc_confluence_score", 0.50)
-        is_strong_momentum = smc_res.get("is_strong_momentum", False)
-        structural_sl = smc_res.get("structural_sl", 0.0)
-
-        log.info(f"[SMC_CONFLUENCE] {symbol} {action} -> Confluence Score: {smc_score:.2f} | FVG Aligned: {smc_res.get('fvg_aligned')} | Momentum Ratio: {smc_res.get('momentum_ratio')}x ATR")
-
-        # CONVICTION VETO THRESHOLD
-        if smc_score < 0.35:
-            log.warning(f"[SMC_VETO] 🛑 Trade {symbol} {action} rejected due to weak SMC Confluence ({smc_score:.2f} < 0.35)")
-            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Low SMC Confluence Score: {smc_score:.2f}")
-            return {"status": "REJECTED", "reason": f"Low SMC Confluence Score: {smc_score:.2f}"}
-
-        # MOMENTUM CATCH-UP LOGIC: If strong candle momentum, switch to market catch order
-        if is_strong_momentum:
-            log.info(f"[MOMENTUM_CATCH] 🚀 High Candle Momentum ({smc_res.get('momentum_ratio')}x ATR)! Triggering Running Momentum Market Catch-Up Order.")
-            trade_data["entry"] = None
+        # ── MACRO TREND CONFLUENCE GATE (Learned from 48h Live Audit) ──
+        # Protects capital from low-conviction channels spamming counter-trend knife-catching signals
+        try:
+            from ai_conviction_tsl_manager import get_channel_conviction
+            ch_conv = get_channel_conviction(channel_name)
+            
+            if mt5.terminal_info():
+                h1_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 100)
+                if h1_rates is not None and len(h1_rates) >= 50:
+                    import pandas as pd
+                    df_h1 = pd.DataFrame(h1_rates)
+                    ema50 = df_h1['close'].ewm(span=50).mean().iloc[-2]
+                    ema200 = df_h1['close'].ewm(span=200).mean().iloc[-2]
+                    latest_c = df_h1['close'].iloc[-2]
+                    
+                    h1_is_bearish = (latest_c < ema50 and ema50 < ema200)
+                    h1_is_bullish = (latest_c > ema50 and ema50 > ema200)
+                    
+                    # If channel conviction is below Elite threshold (< 0.85), strictly forbid counter-trend signals
+                    if ch_conv < 0.85:
+                        if action == "BUY" and h1_is_bearish:
+                            reason = f"Macro Trend Filter: Counter-trend BUY from '{channel_name}' (Conviction={ch_conv:.2f}) blocked during H1 BEARISH trend."
+                            log.warning(f"[TREND_GATE] REJECTED — {reason}")
+                            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                            return {"status": "REJECTED", "reason": reason}
+                        elif action == "SELL" and h1_is_bullish:
+                            reason = f"Macro Trend Filter: Counter-trend SELL from '{channel_name}' (Conviction={ch_conv:.2f}) blocked during H1 BULLISH trend."
+                            log.warning(f"[TREND_GATE] REJECTED — {reason}")
+                            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                            return {"status": "REJECTED", "reason": reason}
+                        log.info(f"[TREND_GATE] Aligned trend confirmed for {channel_name} (Action={action}, H1_Bear={h1_is_bearish}, H1_Bull={h1_is_bullish})")
+        except Exception as tg_ex:
+            log.warning(f"[TREND_GATE] Error verifying H1 trend: {tg_ex}")
 
         entry = trade_data.get("entry")
         sl = trade_data.get("sl")
@@ -232,35 +250,76 @@ class OllamaSwarmEngine:
             
             # Default ATR proxies if missing
             is_gold = "XAU" in symbol or "GOLD" in symbol
-            atr_sl_dist = 10.0 if is_gold else 0.0050
-            atr_tp_dist = 20.0 if is_gold else 0.0100
-            
+
+            # ── LIVE ATR(14) from MT5 M15 bars (Gold intraday volatility gauge) ──
+            live_atr = None
+            try:
+                if mt5.terminal_info():
+                    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 20)
+                    if rates is not None and len(rates) >= 14:
+                        import numpy as np
+                        highs = [r["high"] for r in rates]
+                        lows = [r["low"] for r in rates]
+                        closes = [r["close"] for r in rates]
+                        trs = [max(h - l, abs(h - c_prev), abs(l - c_prev))
+                               for h, l, c_prev in zip(highs[1:], lows[1:], closes[:-1])]
+                        live_atr = float(np.mean(trs[-14:]))
+                        log.info(f"[ATR_GATE] Live M15 ATR(14) for {symbol}: {live_atr:.2f}")
+            except Exception as atr_ex:
+                log.warning(f"[ATR_GATE] Could not compute live ATR: {atr_ex}")
+
+            # Max SL distance: 1.0x ATR if live, else fallback to 3.0 for GOLD (30 pips)
+            MAX_SL_PRICE_DIST = live_atr if live_atr else (3.0 if is_gold else 0.0060)
+            atr_sl_dist  = MAX_SL_PRICE_DIST * 0.8  # Auto-SL at 0.8x ATR
+            atr_tp_dist  = MAX_SL_PRICE_DIST * 1.8  # Auto-TP at 1.8x ATR (R:R = 2.25)
+
             sl = trade_data.get("sl")
             tp1 = trade_data.get("tp1")
-            
+
             # Safe float conversion
             try:
                 sl_val = float(sl) if sl is not None and sl != "" else 0.0
-            except:
+            except Exception:
                 sl_val = 0.0
-                
+
             try:
                 tp1_val = float(tp1) if tp1 is not None and tp1 != "" else 0.0
-            except:
+            except Exception:
                 tp1_val = 0.0
-            
+
             if sl_val <= 0:
                 log.info(f"[GOVERNOR] SL missing or invalid, auto-calculating ATR proxy for {symbol}")
                 sl = entry - atr_sl_dist if "BUY" in action else entry + atr_sl_dist
             else:
                 sl = sl_val
-                
+
             if tp1_val <= 0:
                 log.info(f"[GOVERNOR] TP missing or invalid, auto-calculating ATR proxy for {symbol}")
                 tp1 = entry + atr_tp_dist if "BUY" in action else entry - atr_tp_dist
             else:
                 tp1 = tp1_val
-                
+
+            # ── ATR SL CAP GATE: If channel SL is wider than 1.5x ATR, reject trade ──
+            sl_dist = abs(entry - float(sl))
+            if sl_dist > MAX_SL_PRICE_DIST * 1.5:
+                reason = (f"SL too wide: {sl_dist:.2f} > {MAX_SL_PRICE_DIST * 1.5:.2f} "
+                          f"(1.5x ATR={MAX_SL_PRICE_DIST:.2f}). Max risk exceeded.")
+                log.warning(f"[ATR_GATE] REJECTED — {reason}")
+                self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                return {"status": "REJECTED", "reason": reason}
+
+            # ── R:R GATE: Reject if TP is less than 1.5x the SL distance ──
+            tp_dist = abs(float(tp1) - entry)
+            rr_ratio = tp_dist / sl_dist if sl_dist > 0 else 0
+            if rr_ratio < 1.5 and tp1_val > 0:  # Only enforce if TP was given by channel
+                reason = (f"R:R too low: {rr_ratio:.2f}x (need >= 1.5x). "
+                          f"TP={float(tp1):.2f}, SL dist={sl_dist:.2f}")
+                log.warning(f"[RR_GATE] REJECTED — {reason}")
+                self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                return {"status": "REJECTED", "reason": reason}
+
+            log.info(f"[GOVERNOR] Signal passed ATR/RR gates: SL dist={sl_dist:.2f}, R:R={rr_ratio:.2f}x, ATR={MAX_SL_PRICE_DIST:.2f}")
+
             risk_decision = {
                 "approved": True,
                 "rejection_reason": "",
@@ -268,7 +327,7 @@ class OllamaSwarmEngine:
                 "final_tp1": float(tp1),
                 "final_tp2": trade_data.get("tp2"),
                 "final_tp3": trade_data.get("tp3"),
-                "risk_reward_ratio": 1.5
+                "risk_reward_ratio": round(rr_ratio, 2)
             }
 
         if not risk_decision.get("approved", False):
@@ -329,12 +388,44 @@ class OllamaSwarmEngine:
         # --- PHASE 3: EXECUTION HANDOFF ---
         log.info("[HANDOFF] Routing payload to MT5 Broker...")
         try:
-            short_chan = channel_name[:12].strip()
-            final_trade["comment"] = f"Tele: {short_chan} 777777"
+            clean_chan = channel_name.encode('ascii', 'ignore').decode('ascii').strip()
+            final_trade["comment"] = f"[{clean_chan[:27]}]"
+            final_trade["source_channel"] = channel_name
             success = self.mt5_engine.execute_trade(final_trade, magic_number=777777)
         except Exception as ex:
             log.error(f"[EXECUTION] Critical exception during MT5 handoff: {ex}")
             success = False
+
+        if success and final_trade.get("ticket"):
+            try:
+                from ai_conviction_tsl_manager import register_trade, get_channel_conviction
+                ch_conv = get_channel_conviction(channel_name)
+                tps = [final_trade.get("final_tp1"), final_trade.get("final_tp2"), final_trade.get("final_tp3")]
+                valid_tps = [float(t) for t in tps if t is not None and float(t) > 0]
+                register_trade(
+                    ticket=final_trade["ticket"],
+                    symbol=final_trade["symbol"],
+                    action=final_trade["action"],
+                    entry=final_trade.get("entry", 0.0),
+                    sl=final_trade.get("final_sl", 0.0),
+                    tps=valid_tps,
+                    channel=channel_name,
+                    conviction=ch_conv
+                )
+                from ai_trade_learning_engine import learning_engine
+                learning_engine.record_and_learn_trade(
+                    channel=channel_name,
+                    account=account_id,
+                    symbol=final_trade["symbol"],
+                    action=final_trade["action"],
+                    entry=final_trade.get("entry", 0.0),
+                    sl=final_trade.get("final_sl", 0.0),
+                    tps=valid_tps,
+                    raw_text=raw_message,
+                    ticket=final_trade["ticket"]
+                )
+            except Exception as tsl_reg_ex:
+                log.warning(f"Could not register trade for TSL/Learning: {tsl_reg_ex}")
             
         exec_status = "SUCCESS" if success else "FAILED"
         exec_reason = "Trade executed successfully on MT5" if success else "MT5 execution failed — check broker logs"
@@ -343,6 +434,7 @@ class OllamaSwarmEngine:
         
         final_trade["execution_status"] = exec_status
         return final_trade
+
         
     def _log_audit(self, account_id, channel_name, raw_message, parsed_data, status, reason):
         """Logs the final disposition of a signal to the audit CSV."""

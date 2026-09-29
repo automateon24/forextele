@@ -9,6 +9,9 @@ __pycache__/
 *.log
 *.session
 *.session-journal
+*.session-wal
+*.session-shm
+*.bak
 
 # Executables and Binaries
 *.exe
