@@ -39,9 +39,23 @@ import logging
 from pathlib import Path
 from datetime import datetime, timezone, timedelta, time as dtime
 
+import psutil
+
 BASE_DIR = Path(r"C:\anlyzeforex\forextele")
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
+
+def ensure_single_instance():
+    curr_pid = os.getpid()
+    for p in psutil.process_iter(['pid', 'name', 'cmdline']):
+        try:
+            if p.pid != curr_pid and 'python' in (p.name() or '').lower():
+                cmd = " ".join(p.cmdline() or [])
+                if "breakout_boss_engine.py" in cmd and "SepPro" not in cmd:
+                    log.info(f"Existing BreakoutBoss detected (PID {p.pid}). Exiting duplicate instance cleanly.")
+                    sys.exit(0)
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
 
 import MetaTrader5 as mt5
 import pandas as pd
@@ -264,7 +278,8 @@ class BreakoutBossEngine:
 
         elif mtype == "AI_CONVICTION":
             conviction_weights = {
-                "FRA": 1.35, "LNC": 1.35, "NYC": 1.15, "NYP": 1.15, "LON": 1.00, "ASIA": 0.70
+                "FRA": 1.35, "LNC": 1.35, "NYC": 1.15, "NYP": 1.15, "LON": 1.00, "ASIA": 0.70,
+                "GANN72": 1.10, "GANN144": 1.40
             }
             weight = conviction_weights.get(session_code, 1.0)
             base_lots = (virtual_equity / 1000.0) * 0.02
@@ -613,12 +628,123 @@ class BreakoutBossEngine:
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
 
+    def scan_gann_harmonic_cycles(self):
+        """
+        Scans for Gann Harmonic Cycle M1 Candle #72 and Candle #144 breakouts.
+        - Candle #72: ~02:11 UTC (Tokyo Liquidity Acceleration)
+        - Candle #144: ~03:23 UTC (Shanghai Gold Exchange Opening Alignment - 76.5% Backtest WR)
+        Target R:R: 1:1.5 with Confirmed Rejection.
+        """
+        now_utc = datetime.now(timezone.utc)
+        today_date_str = now_utc.strftime("%Y-%m-%d")
+
+        if now_utc.time() >= dtime(20, 45) or now_utc.time() < dtime(1, 0):
+            return
+
+        # Gold market opens after rollover around 01:00 UTC
+        day_open_dt = datetime(now_utc.year, now_utc.month, now_utc.day, 0, 50, tzinfo=timezone.utc)
+        rates = mt5.copy_rates_range(self.symbol, mt5.TIMEFRAME_M1, day_open_dt, now_utc)
+        if rates is None or len(rates) < 73:
+            return
+
+        df_m1 = pd.DataFrame(rates)
+        df_m1['time_utc'] = pd.to_datetime(df_m1['time'], unit='s', utc=True)
+        df_m1.set_index('time_utc', inplace=True)
+        df_m1.sort_index(inplace=True)
+
+        # Targets: Candle #72 (index 71), Candle #144 (index 143)
+        gann_targets = [
+            {"num": 72, "idx": 71, "code": "GANN72", "weight": 1.10},
+            {"num": 144, "idx": 143, "code": "GANN144", "weight": 1.40}
+        ]
+
+        retest_tol = 0.25
+        target_rr = 1.5
+
+        for gt in gann_targets:
+            c_idx = gt["idx"]
+            c_num = gt["num"]
+            setup_id = f"{today_date_str}_GANN_C{c_num}"
+
+            if setup_id in self.processed_setups:
+                continue
+
+            if len(df_m1) <= c_idx + 1:
+                continue
+
+            ref_bar = df_m1.iloc[c_idx]
+            ref_high = ref_bar['high']
+            ref_low = ref_bar['low']
+            ref_range = ref_high - ref_low
+
+            if ref_range < 0.25 or ref_range > 8.00:
+                self.processed_setups.add(setup_id)
+                self.registry["processed_setups"] = list(self.processed_setups)
+                save_registry(self.registry)
+                continue
+
+            post_bars = df_m1.iloc[c_idx + 1:]
+            if len(post_bars) < 2:
+                continue
+
+            broken_bull = post_bars['high'].max() > ref_high + retest_tol
+            broken_bear = post_bars['low'].min() < ref_low - retest_tol
+
+            latest_bar = post_bars.iloc[-1]
+            latest_close = latest_bar['close']
+            latest_open = latest_bar['open']
+            latest_high = latest_bar['high']
+            latest_low = latest_bar['low']
+
+            # Bullish Breakout & Retest
+            if broken_bull and not broken_bear:
+                is_touch = (latest_low <= ref_high + retest_tol and latest_high >= ref_high - retest_tol)
+                is_rejection = (latest_close >= latest_open) or (latest_close > ref_high)
+
+                if is_touch and is_rejection:
+                    entry_ref = ref_high + 0.25
+                    sl_ref = ref_low
+                    risk_pts = max(entry_ref - sl_ref, 0.60)
+
+                    log.info(f"🔮 [GANN HARMONIC C{c_num} TRIGGERED] {setup_id} BUY SIGNAL! Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
+                    self.execute_multi_model_orders("BUY", risk_pts, gt["code"], 1, target_rr)
+                    self.processed_setups.add(setup_id)
+                    self.registry["processed_setups"] = list(self.processed_setups)
+                    save_registry(self.registry)
+
+                elif latest_low <= ref_low:
+                    self.processed_setups.add(setup_id)
+                    self.registry["processed_setups"] = list(self.processed_setups)
+                    save_registry(self.registry)
+
+            # Bearish Breakout & Retest
+            elif broken_bear and not broken_bull:
+                is_touch = (latest_high >= ref_low - retest_tol and latest_low <= ref_low + retest_tol)
+                is_rejection = (latest_close <= latest_open) or (latest_close < ref_low)
+
+                if is_touch and is_rejection:
+                    entry_ref = ref_low - 0.25
+                    sl_ref = ref_high
+                    risk_pts = max(sl_ref - entry_ref, 0.60)
+
+                    log.info(f"🔮 [GANN HARMONIC C{c_num} TRIGGERED] {setup_id} SELL SIGNAL! Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
+                    self.execute_multi_model_orders("SELL", risk_pts, gt["code"], 1, target_rr)
+                    self.processed_setups.add(setup_id)
+                    self.registry["processed_setups"] = list(self.processed_setups)
+                    save_registry(self.registry)
+
+                elif latest_high >= ref_high:
+                    self.processed_setups.add(setup_id)
+                    self.registry["processed_setups"] = list(self.processed_setups)
+                    save_registry(self.registry)
+
     def run_loop(self):
         log.info("====================================================================")
         log.info("🚀 BREAKOUTBOSS 5-MODEL SUITE STARTED (ALL 5 COMPOUNDING ENGINES ACTIVE)")
         log.info(f"   Target: {self.symbol} | Virtual Baskets: 5 x $1,000 USD | Total Allocation: $5,000")
         log.info("   Models: M0 (Fixed), M1 (Step-Ladder), M2 (Linear), M3 (AI Kelly), M4 (Half-Kelly)")
         log.info("   Dynamic Live Quote Anchoring: ACTIVE (Zero 10016 / 10030 Errors)")
+        log.info("   Gann Harmonic Sub-Engine: ACTIVE (Candles #72 & #144 | 1:1.5 R:R)")
         log.info("   AI Continuous Learning: ACTIVE")
         log.info("====================================================================")
 
@@ -626,11 +752,13 @@ class BreakoutBossEngine:
             try:
                 self.manage_active_trades()
                 self.scan_session_breakouts()
+                self.scan_gann_harmonic_cycles()
             except Exception as e:
                 log.error(f"Error in BreakoutBoss main loop: {e}")
             time.sleep(10)
 
 if __name__ == "__main__":
+    ensure_single_instance()
     engine = BreakoutBossEngine()
     if engine.initialize_mt5():
         engine.run_loop()
