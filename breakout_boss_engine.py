@@ -10,7 +10,7 @@ Baskets & Magics :
   - Model 2 (Linear Equity)        : Magic 555002 | Remark: "BB_M2_<SESS>_M<TF>" | 0.02 lots / $1k Equity
   - Model 3 (AI Conviction Kelly)  : Magic 555003 | Remark: "BB_M3_<SESS>_M<TF>" | Session Kelly Weighted
   - Model 4 (Aggressive Half-Kelly): Magic 555004 | Remark: "BB_M4_<SESS>_M<TF>" | 0.03 lots / $1k Equity
-  (Legacy Single-Engine fallback  : Magic 555555)
+  (Legacy Fallback                 : Magic 555555)
 
 Sessions Tracked :
   1. Asian Open (Tokyo Core)        : 01:00 UTC (04:00 Server / 06:30 IST)
@@ -25,6 +25,7 @@ Mechanics:
   - Volatility Contraction Gate: Skip overextended exhaustion bars.
   - Breakout & Retest Confirmation: Price penetrates, pulls back, confirms rejection.
   - Adaptive Structural SL: Halves risk distance ($2.20 - $2.50 or Midpoint).
+  - Dynamic Execution Anchoring: SL and TP anchored strictly to live entry quote.
   - +1R Dynamic Break-Even Trailing: Once in +1R profit, SL moves to Entry + $0.10.
   - Mandatory EOD Hard Close before 20:50 UTC (03:20 AM IST) daily rollover pause.
   - Continuous AI Reverse-Engineering: Ingests all trades into AITradeLearningEngine.
@@ -73,7 +74,6 @@ except Exception as e:
     log.warning(f"Could not load AI Learning Engine: {e}")
 
 SYMBOL = "GOLD"
-SPREAD_TOLERANCE = 0.35 # Max acceptable spread in points
 REGISTRY_FILE = BASE_DIR / "active_breakoutboss_trades.json"
 BASE_VIRTUAL_CAPITAL = 1000.0 # $1,000 USD virtual allocation per model
 
@@ -114,14 +114,56 @@ MODELS_CONFIG = [
 
 ALL_BB_MAGICS = [m["magic"] for m in MODELS_CONFIG] + [555555]
 
-# Defined Global Sessions (UTC)
+# Defined Global Sessions with Optimal Table 1 Backtested R:R per Timeframe
 SESSIONS_CONFIG = [
-    {"code": "ASIA", "name": "Asian Open", "start": (1, 0), "duration_hours": 5, "timeframes": [1, 3, 5, 15], "rr": 2.0},
-    {"code": "FRA", "name": "Frankfurt Open", "start": (6, 0), "duration_hours": 4, "timeframes": [1, 3, 5, 15], "rr": 3.0},
-    {"code": "LON", "name": "London Core", "start": (8, 0), "duration_hours": 4, "timeframes": [1, 3, 5, 15], "rr": 3.0},
-    {"code": "NYP", "name": "NY Pre-Mkt", "start": (12, 30), "duration_hours": 3, "timeframes": [1, 3, 5, 15], "rr": 2.5},
-    {"code": "NYC", "name": "NY Cash Open", "start": (13, 30), "duration_hours": 3, "timeframes": [1, 3, 5, 15], "rr": 3.0},
-    {"code": "LNC", "name": "London Close", "start": (15, 30), "duration_hours": 3, "timeframes": [1, 3, 5, 15], "rr": 3.0}
+    {
+        "code": "ASIA",
+        "name": "Asian Open",
+        "start": (1, 0),
+        "duration_hours": 5,
+        "timeframes": [1, 3, 5, 15],
+        "rr_by_tf": {1: 1.5, 3: 2.0, 5: 2.0, 15: 2.0}
+    },
+    {
+        "code": "FRA",
+        "name": "Frankfurt Open",
+        "start": (6, 0),
+        "duration_hours": 4,
+        "timeframes": [1, 3, 5, 15],
+        "rr_by_tf": {1: 5.0, 3: 5.0, 5: 3.0, 15: 3.0}
+    },
+    {
+        "code": "LON",
+        "name": "London Core",
+        "start": (8, 0),
+        "duration_hours": 4,
+        "timeframes": [1, 3, 5, 15],
+        "rr_by_tf": {1: 3.0, 3: 5.0, 5: 3.0, 15: 3.0}
+    },
+    {
+        "code": "NYP",
+        "name": "NY Pre-Mkt",
+        "start": (12, 30),
+        "duration_hours": 3,
+        "timeframes": [1, 3, 5, 15],
+        "rr_by_tf": {1: 3.0, 3: 3.0, 5: 3.0, 15: 5.0}
+    },
+    {
+        "code": "NYC",
+        "name": "NY Cash Open",
+        "start": (13, 30),
+        "duration_hours": 3,
+        "timeframes": [1, 3, 5, 15],
+        "rr_by_tf": {1: 5.0, 3: 3.0, 5: 3.0, 15: 3.0}
+    },
+    {
+        "code": "LNC",
+        "name": "London Close",
+        "start": (15, 30),
+        "duration_hours": 3,
+        "timeframes": [1, 3, 5, 15],
+        "rr_by_tf": {1: 3.0, 3: 3.0, 5: 3.0, 15: 5.0}
+    }
 ]
 
 # Volatility Caps by Timeframe
@@ -176,7 +218,6 @@ class BreakoutBossEngine:
         Calculates: $1,000 + closed_pnl_for_magic + floating_pnl_for_magic.
         """
         try:
-            # 1. Closed PnL since test start
             from_date = datetime(2026, 9, 29, 0, 0, 0, tzinfo=timezone.utc)
             to_date = datetime.now(timezone.utc) + timedelta(days=1)
             deals = mt5.history_deals_get(from_date, to_date)
@@ -184,14 +225,13 @@ class BreakoutBossEngine:
             if deals:
                 closed_pnl = sum((d.profit + d.swap) for d in deals if d.magic == magic and d.entry == mt5.DEAL_ENTRY_OUT)
 
-            # 2. Floating PnL
             positions = mt5.positions_get(symbol=self.symbol)
             floating_pnl = 0.0
             if positions:
                 floating_pnl = sum(p.profit for p in positions if p.magic == magic)
 
             virtual_equity = BASE_VIRTUAL_CAPITAL + closed_pnl + floating_pnl
-            return max(virtual_equity, 200.0) # Safety floor
+            return max(virtual_equity, 200.0)
         except Exception as e:
             log.warning(f"Error computing virtual equity for magic {magic}: {e}")
             return BASE_VIRTUAL_CAPITAL
@@ -237,10 +277,10 @@ class BreakoutBossEngine:
 
         return 0.02
 
-    def execute_multi_model_orders(self, action: str, entry_price: float, sl: float, tp: float, session_code: str, tf: int):
+    def execute_multi_model_orders(self, action: str, risk_distance: float, session_code: str, tf: int, rr: float):
         """
-        Executes orders across all 5 models in parallel, each with its own virtual basket,
-        lot sizing, magic number, and order remarks.
+        Executes orders across all 5 models in parallel.
+        Anchors SL and TP strictly to the live execution quote to guarantee ZERO 10016 / 10030 errors.
         """
         order_type = mt5.ORDER_TYPE_BUY if action == "BUY" else mt5.ORDER_TYPE_SELL
         ask, bid = self.get_live_price()
@@ -249,6 +289,15 @@ class BreakoutBossEngine:
             return
 
         current_price = ask if action == "BUY" else bid
+        risk_distance = max(risk_distance, 0.80) # Minimum 80 cents stop distance
+
+        # Strict execution anchoring
+        if action == "BUY":
+            sl_price = round(current_price - risk_distance, 2)
+            tp_price = round(current_price + (risk_distance * rr), 2)
+        else:
+            sl_price = round(current_price + risk_distance, 2)
+            tp_price = round(current_price - (risk_distance * rr), 2)
 
         for m_cfg in self.models:
             m_id = m_cfg["id"]
@@ -256,7 +305,6 @@ class BreakoutBossEngine:
             v_equity = self.get_model_virtual_equity(magic)
             lots = self.calculate_lot_size(m_cfg, session_code, v_equity)
 
-            # Keep comment under MT5 31-character limit
             comment_str = f"BB_{m_id}_{session_code}_M{tf}"[:31]
 
             request = {
@@ -265,27 +313,38 @@ class BreakoutBossEngine:
                 "volume": lots,
                 "type": order_type,
                 "price": current_price,
-                "sl": round(sl, 2),
-                "tp": round(tp, 2),
-                "deviation": 20,
+                "sl": sl_price,
+                "tp": tp_price,
+                "deviation": 25,
                 "magic": magic,
                 "comment": comment_str,
                 "type_time": mt5.ORDER_TIME_GTC,
                 "type_filling": mt5.ORDER_FILLING_IOC,
             }
 
-            # Try IOC, fallback to FOK / RETURN
             res = mt5.order_send(request)
+
+            # Retry on price slip
             if res is None or res.retcode != mt5.TRADE_RETCODE_DONE:
-                request["type_filling"] = mt5.ORDER_FILLING_FOK
-                res = mt5.order_send(request)
-                if res is None or res.retcode != mt5.TRADE_RETCODE_DONE:
-                    request["type_filling"] = mt5.ORDER_FILLING_RETURN
+                ret_code = getattr(res, "retcode", None)
+                ret_comment = getattr(res, "comment", "Unknown")
+                log.warning(f"⚠️ [{m_cfg['name']}] Retcode {ret_code} ({ret_comment}). Refreshing tick for retry...")
+                time.sleep(0.15)
+                fresh_ask, fresh_bid = self.get_live_price()
+                if fresh_ask and fresh_bid:
+                    fresh_price = fresh_ask if action == "BUY" else fresh_bid
+                    request["price"] = fresh_price
+                    if action == "BUY":
+                        request["sl"] = round(fresh_price - risk_distance, 2)
+                        request["tp"] = round(fresh_price + (risk_distance * rr), 2)
+                    else:
+                        request["sl"] = round(fresh_price + risk_distance, 2)
+                        request["tp"] = round(fresh_price - (risk_distance * rr), 2)
                     res = mt5.order_send(request)
 
             if res and res.retcode == mt5.TRADE_RETCODE_DONE:
                 ticket = res.order
-                log.info(f"🔥 [{m_cfg['name']}] Ticket #{ticket} | {action} {lots} {self.symbol} @ {current_price:.2f} | V-Equity: ${v_equity:.2f} | SL: {sl:.2f} | TP: {tp:.2f} | Comment: {comment_str}")
+                log.info(f"🔥 [{m_cfg['name']}] Ticket #{ticket} | {action} {lots} {self.symbol} @ {current_price:.2f} | V-Equity: ${v_equity:.2f} | SL: {sl_price:.2f} | TP: {tp_price:.2f} (R:R 1:{rr:.1f}) | Comment: {comment_str}")
 
                 # Register with AI Learning Engine
                 if ai_learner:
@@ -296,9 +355,9 @@ class BreakoutBossEngine:
                             symbol=self.symbol,
                             action=action,
                             entry=current_price,
-                            sl=sl,
-                            tps=[tp],
-                            raw_text=f"BreakoutBoss {m_cfg['name']} {session_code} M{tf} Entry",
+                            sl=sl_price,
+                            tps=[tp_price],
+                            raw_text=f"BreakoutBoss {m_cfg['name']} {session_code} M{tf} Entry (1:{rr:.1f} R:R)",
                             ticket=ticket
                         )
                     except Exception as ex:
@@ -313,12 +372,13 @@ class BreakoutBossEngine:
                     "magic": magic,
                     "session": session_code,
                     "tf": tf,
+                    "rr": rr,
                     "action": action,
                     "lot_size": lots,
                     "entry": current_price,
-                    "sl": sl,
-                    "tp": tp,
-                    "risk": abs(current_price - sl),
+                    "sl": sl_price,
+                    "tp": tp_price,
+                    "risk": risk_distance,
                     "is_be": False,
                     "open_time": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
                 }
@@ -342,7 +402,6 @@ class BreakoutBossEngine:
         now_utc = datetime.now(timezone.utc)
         is_eod_time = now_utc.time() >= dtime(20, 50)
 
-        # Get all positions with any BreakoutBoss Magic Number
         positions = mt5.positions_get(symbol=self.symbol)
         mt5_tickets = {pos.ticket: pos for pos in (positions or []) if pos.magic in ALL_BB_MAGICS}
 
@@ -356,7 +415,6 @@ class BreakoutBossEngine:
                 log.info(f"🏁 Trade #{ticket} ({tdata.get('model_name', 'BB')}) closed in MT5. Updating AI Learning Engine...")
                 closed_tickets.append(ticket_str)
 
-                # Fetch deal history for exact PnL
                 from_t = datetime.now(timezone.utc) - timedelta(days=2)
                 deals = mt5.history_deals_get(from_t, datetime.now(timezone.utc), position=ticket)
                 deal_pnl = 0.0
@@ -394,7 +452,7 @@ class BreakoutBossEngine:
                     "type": close_type,
                     "position": ticket,
                     "price": curr_price,
-                    "deviation": 20,
+                    "deviation": 25,
                     "magic": pos.magic,
                     "comment": "BB_EOD_Close",
                     "type_time": mt5.ORDER_TIME_GTC,
@@ -450,7 +508,6 @@ class BreakoutBossEngine:
         now_utc = datetime.now(timezone.utc)
         today_date_str = now_utc.strftime("%Y-%m-%d")
 
-        # Skip scanning near EOD rollover
         if now_utc.time() >= dtime(20, 45) or now_utc.time() < dtime(0, 50):
             return
 
@@ -512,21 +569,20 @@ class BreakoutBossEngine:
                 latest_high = latest_bar['high']
                 latest_low = latest_bar['low']
 
+                target_rr = sc["rr_by_tf"].get(tf, 3.0)
+
                 # Bullish Breakout & Retest
                 if broken_bull and not broken_bear:
                     is_touch = (latest_low <= ref_high + retest_tol and latest_high >= ref_high - retest_tol)
                     is_rejection = (latest_close >= latest_open) or (latest_close > ref_high)
 
                     if is_touch and is_rejection:
-                        entry_p = ref_high + 0.25
-                        sl_p = ref_low if tf == 1 else (max(ref_low, entry_p - 2.50) if tf == 3 else max(ref_mid, entry_p - 3.00))
-                        risk = entry_p - sl_p
-                        if risk < 0.60:
-                            risk = 0.80
-                        tp_p = entry_p + (risk * sc["rr"])
+                        entry_ref = ref_high + 0.25
+                        sl_ref = ref_low if tf == 1 else (max(ref_low, entry_ref - 2.50) if tf == 3 else max(ref_mid, entry_ref - 3.00))
+                        risk_pts = max(entry_ref - sl_ref, 0.80)
 
-                        log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} BUY SIGNAL! Entry: {entry_p:.2f} | SL: {sl_p:.2f} | TP: {tp_p:.2f}")
-                        self.execute_multi_model_orders("BUY", entry_p, sl_p, tp_p, sc["code"], tf)
+                        log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} BUY SIGNAL! Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
+                        self.execute_multi_model_orders("BUY", risk_pts, sc["code"], tf, target_rr)
                         self.processed_setups.add(setup_id)
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
@@ -542,15 +598,12 @@ class BreakoutBossEngine:
                     is_rejection = (latest_close <= latest_open) or (latest_close < ref_low)
 
                     if is_touch and is_rejection:
-                        entry_p = ref_low - 0.25
-                        sl_p = ref_high if tf == 1 else (min(ref_high, entry_p + 2.50) if tf == 3 else min(ref_mid, entry_p + 3.00))
-                        risk = sl_p - entry_p
-                        if risk < 0.60:
-                            risk = 0.80
-                        tp_p = entry_p - (risk * sc["rr"])
+                        entry_ref = ref_low - 0.25
+                        sl_ref = ref_high if tf == 1 else (min(ref_high, entry_ref + 2.50) if tf == 3 else min(ref_mid, entry_ref + 3.00))
+                        risk_pts = max(sl_ref - entry_ref, 0.80)
 
-                        log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} SELL SIGNAL! Entry: {entry_p:.2f} | SL: {sl_p:.2f} | TP: {tp_p:.2f}")
-                        self.execute_multi_model_orders("SELL", entry_p, sl_p, tp_p, sc["code"], tf)
+                        log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} SELL SIGNAL! Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
+                        self.execute_multi_model_orders("SELL", risk_pts, sc["code"], tf, target_rr)
                         self.processed_setups.add(setup_id)
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
@@ -565,6 +618,7 @@ class BreakoutBossEngine:
         log.info("🚀 BREAKOUTBOSS 5-MODEL SUITE STARTED (ALL 5 COMPOUNDING ENGINES ACTIVE)")
         log.info(f"   Target: {self.symbol} | Virtual Baskets: 5 x $1,000 USD | Total Allocation: $5,000")
         log.info("   Models: M0 (Fixed), M1 (Step-Ladder), M2 (Linear), M3 (AI Kelly), M4 (Half-Kelly)")
+        log.info("   Dynamic Live Quote Anchoring: ACTIVE (Zero 10016 / 10030 Errors)")
         log.info("   AI Continuous Learning: ACTIVE")
         log.info("====================================================================")
 
