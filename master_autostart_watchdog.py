@@ -73,7 +73,25 @@ def is_process_running(script_name: str) -> bool:
             pass
     return False
 
+def is_market_open() -> bool:
+    """Returns False during weekend market closure (Friday 21:00 UTC to Sunday 22:00 UTC)."""
+    now_utc = datetime.now(timezone.utc)
+    # Friday post-close
+    if now_utc.weekday() == 4 and now_utc.hour >= 21:
+        return False
+    # Saturday
+    if now_utc.weekday() == 5:
+        return False
+    # Sunday pre-open (market opens 22:00 UTC)
+    if now_utc.weekday() == 6 and now_utc.hour < 22:
+        return False
+    return True
+
 def ensure_services():
+    if not is_market_open():
+        log.info("⏸️ [WEEKEND PAUSE] Global forex/gold market is CLOSED. Watchdog idle until Monday market open.")
+        return
+
     log.info("--- [WATCHDOG HEALTH CHECK] ---")
 
     # 1. MetaTrader 5 Terminal Check

@@ -581,6 +581,13 @@ class AutonomousAIMarketScanner:
 
         while True:
             try:
+                # Weekend Market Closure Guard (Friday 21:00 UTC to Sunday 22:00 UTC)
+                now_u = datetime.now(timezone.utc)
+                is_weekend = (now_u.weekday() == 4 and now_u.hour >= 21) or (now_u.weekday() == 5) or (now_u.weekday() == 6 and now_u.hour < 22)
+                if is_weekend:
+                    await asyncio.sleep(60)
+                    continue
+
                 # Auto-tune once per new UTC day
                 today = datetime.now(timezone.utc).date()
                 if today != last_tune_day:

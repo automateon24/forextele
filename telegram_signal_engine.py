@@ -284,6 +284,11 @@ async def main():
 
     async def process_event(event, account_id):
         try:
+            # Weekend Market Closure Guard (Friday 21:00 UTC to Sunday 22:00 UTC)
+            now_u = datetime.now(timezone.utc)
+            if (now_u.weekday() == 4 and now_u.hour >= 21) or (now_u.weekday() == 5) or (now_u.weekday() == 6 and now_u.hour < 22):
+                return
+
             chat = await event.get_chat()
             if chat is None:
                 return

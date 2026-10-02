@@ -844,6 +844,13 @@ class BreakoutBossEngine:
 
         while True:
             try:
+                # Weekend Market Closure Guard (Friday 21:00 UTC to Sunday 22:00 UTC)
+                now_u = datetime.now(timezone.utc)
+                is_weekend = (now_u.weekday() == 4 and now_u.hour >= 21) or (now_u.weekday() == 5) or (now_u.weekday() == 6 and now_u.hour < 22)
+                if is_weekend:
+                    time.sleep(60)
+                    continue
+
                 self.manage_active_trades()
                 self.scan_session_breakouts()
                 self.scan_gann_harmonic_cycles()
