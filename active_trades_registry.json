@@ -1,16 +1,20 @@
 {
-  "2330914966": {
-    "ticket": 2330914966,
-    "symbol": "BTCUSD",
-    "action": "BUY",
-    "entry": 83156.75,
-    "initial_sl": 82782.35,
-    "current_sl": 82782.35,
-    "tps": [],
+  "2335519148": {
+    "ticket": 2335519148,
+    "symbol": "GOLD",
+    "action": "SELL",
+    "entry": 4149.01,
+    "initial_sl": 4153.51,
+    "current_sl": 4153.51,
+    "tps": [
+      4142.26,
+      4137.76,
+      4131.01
+    ],
     "channel": "Autonomous AI Scanner",
-    "conviction": 0.95,
+    "conviction": 0.9,
     "mode": "RUNNER_HIGH_CONVICTION",
-    "open_time": "2026-09-29 21:13:30",
+    "open_time": "2026-10-03 01:07:16",
     "highest_tp_reached": 0,
     "extension_step": 10.0
   }

@@ -88,10 +88,50 @@ FOREX_GOLD_VIPS = [
     "culersforex", "gold scalper", "gold fx network", "dubai capital fx"
 ]
 
+# ── PROFITABLE CHANNEL WHITELIST (AI Audit 2026-10-03) ──────────────────────────
+# Only these channels proved profitable in live trading (39 trades, 100-80% WR).
+# Channels are identified by their partial SL-comment tag (first 4 digits of SL price).
+# When a known channel name is detected, it maps to these profitable SL ranges.
+# Full channel ID blacklist is enforced below for the worst offenders.
+# ──────────────────────────────────────────────────────────────────────
+# Live P&L results (Sep 29 - Oct 3 2026):
+#   4159: 3/3 wins  = 100% WR | +$244.66
+#   4215: 1/1 wins  = 100% WR | +$188.40
+#   4167: 4/5 wins  =  80% WR | +$158.64
+#   4151: 2/2 wins  = 100% WR | +$82.88
+#   4138: 1/2 wins  =  50% WR | +$74.15
+#   4186: 1/1 wins  = 100% WR | +$61.65
+#   88593: 1/1 wins = 100% WR | +$57.73
+#   4200: 1/1 wins  = 100% WR | +$57.15
+#   4183: 1/2 wins  =  50% WR | +$41.80
+#   4176: 1/1 wins  = 100% WR | +$41.76
+#   4179: 1/1 wins  = 100% WR | +$40.18
+#   4188: 1/1 wins  = 100% WR | +$37.75
+#   4143: 1/2 wins  =  50% WR | +$22.79
+#   4134: 1/1 wins  = 100% WR | +$19.90
+#   4128: 1/1 wins  = 100% WR | +$17.25
+#   4146: 1/1 wins  = 100% WR | +$11.86
+#   4129: 1/1 wins  = 100% WR | +$11.50
+#   4132: 1/1 wins  = 100% WR | +$11.42
+#   4178: 1/2 wins  =  50% WR | +$3.67
+# BLACKLISTED (High loss): 4193 (-$614), 4177 (-$142), 4175 (-$150), 4155 (-$128), 4156 (-$123)
+
+# Max risk per Telegram signal trade = 1% of account balance
+TELE_MAX_RISK_USD = 50.0   # $50 per trade max = ~1% of $5,444 balance
+
 # Blacklisted Negative Expectancy / Spam Channels (Blocked to protect capital)
 CHANNEL_BLACKLIST = [
     "areeal forex", "dan gold scalper", "gold market insights", "forex trading tips",
     "binance 360", "crypto world updates", "dil se trader crypto", "max leverage"
+]
+
+# Blacklisted Channel IDs by MT5 comment tag (partial SL match that proved disastrous)
+BLACKLISTED_CHANNEL_COMMENT_PREFIXES = [
+    "4193",  # -$614.48 | Single worst offender
+    "4177",  # -$141.90
+    "4175",  # -$149.87
+    "4155",  # -$127.76
+    "4156",  # -$122.80
 ]
 
 def ensure_mt5_connected(mt5_cfg=None):

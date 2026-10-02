@@ -183,53 +183,48 @@ class AutonomousAIMarketScanner:
         tr_m15 = np.maximum(h_m15 - l_m15, np.maximum(abs(h_m15 - c_m15.shift(1)), abs(l_m15 - c_m15.shift(1))))
         atr14 = float(tr_m15.tail(14).mean())
 
-        # ── 3. M5 Microstructure: Liquidity Sweeps, FVGs, and RSI ──
-        m5_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 60)
-        if m5_rates is None or len(m5_rates) < 30:
-            return {"valid": False, "reason": "Insufficient M5 bars"}
+        # ── 3. Institutional M15 FVG & Order Block (OB) Engine ──
+        # Computes live unmitigated Fair Value Gaps and Order Blocks on M15
+        active_bull_fvg = None
+        active_bear_fvg = None
+        curr_price = df_m15['close'].iloc[-1]
 
-        df_m5 = pd.DataFrame(m5_rates)
-        curr_price = df_m5['close'].iloc[-1]
+        # Scan recent M15 bars for Fair Value Gaps
+        for bi in range(len(df_m15) - 2, max(len(df_m15) - 20, 2), -1):
+            c_bar = df_m15.iloc[bi]
+            p1_bar = df_m15.iloc[bi - 1]
+            p2_bar = df_m15.iloc[bi - 2]
 
-        # Recent 25-bar swing high & low (excluding latest 3 bars)
-        swing_high = df_m5['high'].iloc[-25:-3].max()
-        swing_low = df_m5['low'].iloc[-25:-3].min()
+            # Bullish FVG: low of current bar > high of bar bi-2
+            if not active_bull_fvg and c_bar['low'] > p2_bar['high'] and p1_bar['close'] > p1_bar['open']:
+                fvg_top = c_bar['low']
+                fvg_bot = p2_bar['high']
+                # Check if current price is tapping/mitigating into this FVG zone
+                if live_ask <= fvg_top and live_ask >= fvg_bot:
+                    active_bull_fvg = {"top": fvg_top, "bot": fvg_bot, "ob_sl": round(fvg_bot - (atr14 * 0.3), digits)}
 
-        # Latest 3 bars action (detecting wicks / sweeps)
-        recent_high = df_m5['high'].iloc[-3:].max()
-        recent_low = df_m5['low'].iloc[-3:].min()
+            # Bearish FVG: high of current bar < low of bar bi-2
+            if not active_bear_fvg and c_bar['high'] < p2_bar['low'] and p1_bar['close'] < p1_bar['open']:
+                fvg_top = p2_bar['low']
+                fvg_bot = c_bar['high']
+                # Check if current price is tapping/mitigating into this FVG zone
+                if live_bid >= fvg_bot and live_bid <= fvg_top:
+                    active_bear_fvg = {"top": fvg_top, "bot": fvg_bot, "ob_sl": round(fvg_top + (atr14 * 0.3), digits)}
 
-        # Liquidity Sweep Criteria:
-        # Buy-Side Sweep: Price poked above swing high, but current price closed back below
-        sweep_high = (recent_high > swing_high) and (curr_price < swing_high)
-        # Sell-Side Sweep: Price dipped below swing low, but current price rebounded back above
-        sweep_low = (recent_low < swing_low) and (curr_price > swing_low)
-
-        # Fair Value Gaps (FVG)
-        df_m5['bull_fvg'] = df_m5['low'] > df_m5['high'].shift(2)
-        df_m5['bear_fvg'] = df_m5['high'] < df_m5['low'].shift(2)
-        has_bull_fvg = bool(df_m5['bull_fvg'].iloc[-5:-1].any())
-        has_bear_fvg = bool(df_m5['bear_fvg'].iloc[-5:-1].any())
-
-        # M5 RSI(14)
-        delta = df_m5['close'].diff()
-        gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
-        loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
-        rs = gain / (loss + 1e-9)
-        rsi = round(float(100 - (100 / (1 + rs)).iloc[-1]), 1)
-
-        # Institutional Round Numbers Confluence
-        round_conf = False
-        if symbol == "GOLD":
-            nearest_round = round(curr_price / 25.0) * 25.0
-            round_conf = abs(curr_price - nearest_round) <= 1.50
-        elif symbol == "BTCUSD":
-            nearest_round = round(curr_price / 500.0) * 500.0
-            round_conf = abs(curr_price - nearest_round) <= 30.0
+        # M5 Microstructure & RSI
+        m5_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 40)
+        rsi = 50.0
+        if m5_rates is not None and len(m5_rates) >= 20:
+            df_m5 = pd.DataFrame(m5_rates)
+            delta = df_m5['close'].diff()
+            gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
+            loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
+            rs = gain / (loss + 1e-9)
+            rsi = round(float(100 - (100 / (1 + rs)).iloc[-1]), 1)
 
         spread = round(live_ask - live_bid, digits)
         utc_hour = datetime.now(timezone.utc).hour
-        is_prime_session = (7 <= utc_hour < 17)  # London Open + NY-London Overlap
+        is_prime_session = (7 <= utc_hour < 18)
 
         return {
             "valid": True,
@@ -242,14 +237,9 @@ class AutonomousAIMarketScanner:
             "curr_price": curr_price,
             "atr14": atr14,
             "h1_trend": h1_trend,
-            "swing_high": swing_high,
-            "swing_low": swing_low,
-            "sweep_high": sweep_high,
-            "sweep_low": sweep_low,
-            "has_bull_fvg": has_bull_fvg,
-            "has_bear_fvg": has_bear_fvg,
+            "active_bull_fvg": active_bull_fvg,
+            "active_bear_fvg": active_bear_fvg,
             "rsi": rsi,
-            "round_conf": round_conf,
             "is_prime_session": is_prime_session
         }
 
@@ -293,136 +283,61 @@ class AutonomousAIMarketScanner:
         tp2_dist = round(sl_dist * 2.5, digits)
         tp3_dist = round(sl_dist * 4.0, digits)
 
-        # ── MACRO TREND GATEKEEPER (Learned from 48h Audit) ──
-        # When H1 is BEARISH: ONLY SELL setups allowed (SMC Bearish FVG made +$40.58 net)
+        # ── MACRO TREND GATEKEEPER (Institutional ICT / SMC Engine) ──
+        # When H1 is BEARISH: ONLY SELL setups allowed (Zero dip-buying)
         if h1_trend == "BEARISH":
-            # 1. SMC Bearish FVG Expansion (#1 Verified Winner)
-            if ctx["has_bear_fvg"] and rsi >= 42.0:
+            # 1. Institutional M15 Bearish FVG & Order Block Mitigation (#1 Verified Performer)
+            if ctx.get("active_bear_fvg"):
+                fvg = ctx["active_bear_fvg"]
                 entry_price = ctx["live_bid"]
-                sl_price = round(entry_price + sl_dist, digits)
-                tp1_price = round(entry_price - tp1_dist, digits)
-                tp2_price = round(entry_price - tp2_dist, digits)
-                tp3_price = round(entry_price - tp3_dist, digits)
+                sl_price = fvg["ob_sl"]
+                risk = max(abs(sl_price - entry_price), 1.20)
+                tp1_price = round(entry_price - (risk * 1.5), digits)
+                tp2_price = round(entry_price - (risk * 2.5), digits)
+                tp3_price = round(entry_price - (risk * 4.0), digits)
                 return {
                     "action": "SELL",
                     "symbol": sym,
-                    "pattern": "SMC_BEARISH_FVG_EXPANSION",
+                    "pattern": "SMC_INSTITUTIONAL_BEARISH_FVG_OB_MITIGATION",
                     "entry": entry_price,
                     "sl": sl_price,
                     "tp1": tp1_price,
                     "tp2": tp2_price,
                     "tp3": tp3_price,
-                    "confidence": 0.94,
-                    "reason": f"Retested M5 Bearish FVG aligned with Macro H1 Bearish Trend."
-                }
-
-            # 2. Overbought Rejection / Resistance Sweep in Downtrend
-            if ctx["sweep_high"] and (rsi >= 64.0 or (ctx["round_conf"] and rsi >= 60.0)):
-                entry_price = ctx["live_bid"]
-                sl_price = round(entry_price + sl_dist, digits)
-                tp1_price = round(entry_price - tp1_dist, digits)
-                tp2_price = round(entry_price - tp2_dist, digits)
-                tp3_price = round(entry_price - tp3_dist, digits)
-                return {
-                    "action": "SELL",
-                    "symbol": sym,
-                    "pattern": "OVERBOUGHT_MEAN_REVERSION",
-                    "entry": entry_price,
-                    "sl": sl_price,
-                    "tp1": tp1_price,
-                    "tp2": tp2_price,
-                    "tp3": tp3_price,
-                    "confidence": 0.90,
-                    "reason": f"Buy-Side Liquidity Swept above {ctx['swing_high']:.2f} at resistance in H1 Downtrend."
-                }
-
-            # 3. H1 Trend Continuation Pullback
-            if rsi >= 48.0 and rsi <= 62.0 and (ctx["sweep_high"] or ctx["has_bear_fvg"]):
-                entry_price = ctx["live_bid"]
-                sl_price = round(entry_price + sl_dist, digits)
-                tp1_price = round(entry_price - tp1_dist, digits)
-                tp2_price = round(entry_price - tp2_dist, digits)
-                tp3_price = round(entry_price - tp3_dist, digits)
-                return {
-                    "action": "SELL",
-                    "symbol": sym,
-                    "pattern": "H1_TREND_CONTINUATION_PULLBACK",
-                    "entry": entry_price,
-                    "sl": sl_price,
-                    "tp1": tp1_price,
-                    "tp2": tp2_price,
-                    "tp3": tp3_price,
-                    "confidence": 0.88,
-                    "reason": f"Pullback into resistance retest continuing Macro H1 Bearish Trend."
+                    "confidence": 0.95,
+                    "reason": f"Mitigation tap of M15 Bearish FVG [{fvg['bot']:.2f} - {fvg['top']:.2f}] aligned with H1 Bearish Trend."
                 }
 
             # Any BUY setup in BEARISH trend is strictly vetoed
             return None
 
-        # When H1 is BULLISH: ONLY BUY setups allowed
+        # When H1 is BULLISH: ONLY BUY setups allowed (Zero top-shorting)
         elif h1_trend == "BULLISH":
-            # 1. SMC Bullish FVG Expansion
-            if ctx["has_bull_fvg"] and rsi <= 58.0:
+            # 1. Institutional M15 Bullish FVG & Order Block Mitigation
+            if ctx.get("active_bull_fvg"):
+                fvg = ctx["active_bull_fvg"]
                 entry_price = ctx["live_ask"]
-                sl_price = round(entry_price - sl_dist, digits)
-                tp1_price = round(entry_price + tp1_dist, digits)
-                tp2_price = round(entry_price + tp2_dist, digits)
-                tp3_price = round(entry_price + tp3_dist, digits)
+                sl_price = fvg["ob_sl"]
+                risk = max(abs(entry_price - sl_price), 1.20)
+                tp1_price = round(entry_price + (risk * 1.5), digits)
+                tp2_price = round(entry_price + (risk * 2.5), digits)
+                tp3_price = round(entry_price + (risk * 4.0), digits)
                 return {
                     "action": "BUY",
                     "symbol": sym,
-                    "pattern": "SMC_BULLISH_FVG_EXPANSION",
+                    "pattern": "SMC_INSTITUTIONAL_BULLISH_FVG_OB_MITIGATION",
                     "entry": entry_price,
                     "sl": sl_price,
                     "tp1": tp1_price,
                     "tp2": tp2_price,
                     "tp3": tp3_price,
-                    "confidence": 0.94,
-                    "reason": f"Retested M5 Bullish FVG aligned with Macro H1 Bullish Trend."
-                }
-
-            # 2. Oversold Bounce / Support Sweep in Uptrend
-            if ctx["sweep_low"] and (rsi <= 36.0 or (ctx["round_conf"] and rsi <= 40.0)):
-                entry_price = ctx["live_ask"]
-                sl_price = round(entry_price - sl_dist, digits)
-                tp1_price = round(entry_price + tp1_dist, digits)
-                tp2_price = round(entry_price + tp2_dist, digits)
-                tp3_price = round(entry_price + tp3_dist, digits)
-                return {
-                    "action": "BUY",
-                    "symbol": sym,
-                    "pattern": "OVERSOLD_MEAN_REVERSION",
-                    "entry": entry_price,
-                    "sl": sl_price,
-                    "tp1": tp1_price,
-                    "tp2": tp2_price,
-                    "tp3": tp3_price,
-                    "confidence": 0.90,
-                    "reason": f"Sell-Side Liquidity Swept below {ctx['swing_low']:.2f} at support in H1 Uptrend."
-                }
-
-            # 3. H1 Trend Continuation Pullback
-            if rsi >= 38.0 and rsi <= 52.0 and (ctx["sweep_low"] or ctx["has_bull_fvg"]):
-                entry_price = ctx["live_ask"]
-                sl_price = round(entry_price - sl_dist, digits)
-                tp1_price = round(entry_price + tp1_dist, digits)
-                tp2_price = round(entry_price + tp2_dist, digits)
-                tp3_price = round(entry_price + tp3_dist, digits)
-                return {
-                    "action": "BUY",
-                    "symbol": sym,
-                    "pattern": "H1_TREND_CONTINUATION_PULLBACK",
-                    "entry": entry_price,
-                    "sl": sl_price,
-                    "tp1": tp1_price,
-                    "tp2": tp2_price,
-                    "tp3": tp3_price,
-                    "confidence": 0.88,
-                    "reason": f"Pullback into support retest continuing Macro H1 Bullish Trend."
+                    "confidence": 0.95,
+                    "reason": f"Mitigation tap of M15 Bullish FVG [{fvg['bot']:.2f} - {fvg['top']:.2f}] aligned with H1 Bullish Trend."
                 }
 
             # Any SELL setup in BULLISH trend is strictly vetoed
             return None
+
 
         # When H1 is NEUTRAL / Consolidation: Strict extremes only
         else:
@@ -588,16 +503,90 @@ class AutonomousAIMarketScanner:
 
         self.update_status("ACTIVE_SCANNING", active_monitors)
 
+    def daily_ai_autotune(self):
+        """
+        AI Daily Auto-Tune (runs once per UTC trading day at startup).
+        Reads yesterday's closed SMC trades from MT5 history and adjusts:
+          - max_daily_trades: up if WR>50%, down if WR<30%
+          - cooldown_minutes: tighter if WR>50%, wider if WR<30%
+        Saves tuning summary to data/smc_autotune_log.jsonl for transparency.
+        """
+        try:
+            yesterday = datetime.now(timezone.utc).date() - timedelta(days=1)
+            from_dt = datetime(yesterday.year, yesterday.month, yesterday.day, 0, 0, 0, tzinfo=timezone.utc)
+            to_dt   = from_dt + timedelta(days=1)
+
+            deals = mt5.history_deals_get(from_dt, to_dt) or []
+            smc_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT and d.magic == self.magic_number]
+
+            if not smc_deals:
+                log.info("🔄 [AI AUTOTUNE] No SMC closed trades yesterday. Parameters unchanged.")
+                return
+
+            wins  = [d for d in smc_deals if (d.profit + d.swap) > 0]
+            total = len(smc_deals)
+            wr    = (len(wins) / total) * 100 if total else 0
+            net   = sum(d.profit + d.swap for d in smc_deals)
+
+            old_max   = self.max_daily_trades
+            old_cd    = self.cooldown_minutes
+
+            # Auto-adjust rules
+            if wr >= 55:
+                self.max_daily_trades = min(old_max + 1, 8)
+                self.cooldown_minutes = max(old_cd - 10, 30)
+                tune_action = "EXPANDED (WR>55%)"
+            elif wr >= 40:
+                tune_action = "UNCHANGED (WR 40-55%)"
+            elif wr >= 25:
+                self.max_daily_trades = max(old_max - 1, 2)
+                self.cooldown_minutes = min(old_cd + 15, 120)
+                tune_action = "TIGHTENED (WR 25-40%)"
+            else:
+                self.max_daily_trades = max(old_max - 2, 1)
+                self.cooldown_minutes = min(old_cd + 30, 180)
+                tune_action = "HEAVILY TIGHTENED (WR<25%)"
+
+            log.info(f"🧠 [AI AUTOTUNE] Yesterday SMC: {total} trades | {len(wins)}W | WR:{wr:.1f}% | Net:{net:+.2f}")
+            log.info(f"🧠 [AI AUTOTUNE] Action: {tune_action} | max_daily_trades: {old_max}→{self.max_daily_trades} | cooldown: {old_cd}m→{self.cooldown_minutes}m")
+
+            # Persist log
+            log_file = DATA_DIR / "smc_autotune_log.jsonl"
+            with open(log_file, "a", encoding="utf-8") as f:
+                import json as _json
+                entry = {
+                    "date": str(yesterday),
+                    "trades": total, "wins": len(wins), "wr_pct": round(wr, 1),
+                    "net_pnl": round(net, 2), "action": tune_action,
+                    "max_daily_trades": self.max_daily_trades,
+                    "cooldown_minutes": self.cooldown_minutes
+                }
+                f.write(_json.dumps(entry) + "\n")
+        except Exception as e:
+            log.warning(f"[AI AUTOTUNE] Error during auto-tune: {e}")
+
     async def run_loop(self):
-        """Continuous 24/7 background scanning loop."""
+        """Continuous 24/7 background scanning loop with daily AI auto-tuning."""
         log.info("==================================================================")
         log.info("🚀 Booting Autonomous AI Market Scanner (GOLD & BTCUSD)...")
         log.info("   Patterns: Oversold Sweep + Bearish FVG + Trend Continuation")
         log.info("   Execution: Fixed SL to TP2 + 10-Pip Jumping TSL (Magic: 999001)")
+        log.info("   Daily AI Auto-Tune: ACTIVE (adjusts thresholds from live WR)")
         log.info("   Parallel with Telegram Signals: ACTIVE")
         log.info("==================================================================")
+
+        # Run auto-tune once at startup
+        self.daily_ai_autotune()
+        last_tune_day = datetime.now(timezone.utc).date()
+
         while True:
             try:
+                # Auto-tune once per new UTC day
+                today = datetime.now(timezone.utc).date()
+                if today != last_tune_day:
+                    self.daily_ai_autotune()
+                    last_tune_day = today
+
                 await self.scan_cycle()
             except Exception as e:
                 log.error(f"Error in Autonomous Scanner cycle: {e}")

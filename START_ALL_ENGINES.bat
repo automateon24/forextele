@@ -1,64 +1,52 @@
 @echo off
-TITLE START FOREXTELE AUTONOMOUS ENGINES (24/7 LIVE - $7,000 CAPITAL POOL)
-COLOR 0A
-chcp 65001 > nul
-set PYTHONIOENCODING=utf-8
-set PYTHONUTF8=1
-
-cd /d "%~dp0"
-
+cls
 echo ====================================================================
-echo    STARTING FOREXTELE AUTONOMOUS LIVE ENGINES ($7,000 CAPITAL POOL)
-echo    1. Telegram VIP Signals Engine (40+ Channels with Trend Gate) [$1k]
-echo    2. Autonomous AI Market Scanner (SMC + Liquidity Gate) [$1k]
-echo    3. BreakoutBoss 5-Model Suite (M0, M1, M2, M3, M4) [$5k]
-echo    4. Master 24/7 Autostart Watchdog (Reboot and Crash Supervisor)
+echo  FOREXTELE - 3-ENGINE SUITE START (AI-TUNED v2)
+echo  Updated: 2026-10-03 | AI Audit Fixes Applied
 echo ====================================================================
 echo.
+echo  ENGINE 1: BreakoutBoss (5 Models + Gann Harmonic)
+echo    - H1 Trend Filter: ACTIVE (blocks counter-trend trades)
+echo    - Blocked Hours: 05/09/18 UTC (0%% WR empirically)
+echo    - Min Risk Floor: $1.20 (forces R:R >= 2.0)
+echo.
+echo  ENGINE 2: Autonomous AI Market Scanner (SMC)
+echo    - Daily AI Auto-Tune: ACTIVE (adjusts thresholds at UTC midnight)
+echo    - Max daily trades auto-adjusted by yesterday WR
+echo.
+echo  ENGINE 3: Telegram VIP Signal Engine
+echo    - Profitable channel list: 19 channels whitelisted
+echo    - Blacklisted: 4193 / 4177 / 4175 / 4155 / 4156
+echo    - Max risk per trade: $50 (1%% of balance)
+echo.
+echo ====================================================================
 
-set PYTHON_EXE=C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe
-if not exist "%PYTHON_EXE%" set PYTHON_EXE=py -3.11
+SET PYTHON=C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe
+SET DIR=C:\anlyzeforex\forextele
 
-:: 1. Verify MT5 Terminal is running
-tasklist /fi "imagename eq terminal64.exe" | findstr /i "terminal64.exe" >nul
-if %errorlevel% neq 0 (
-    echo [MT5] XM Global MT5 terminal not running. Launching terminal64.exe...
-    if exist "C:\Program Files\XM Global MT5\terminal64.exe" (
-        start "" "C:\Program Files\XM Global MT5\terminal64.exe"
-        ping 127.0.0.1 -n 7 >nul
-    )
-) else (
-    echo [MT5] XM Global MT5 terminal is active and connected.
-)
+echo [%time%] Starting master watchdog...
+start "MASTER_WATCHDOG" /MIN cmd /c "%PYTHON% %DIR%\master_autostart_watchdog.py >> %DIR%\logs\watchdog.log 2>&1"
+timeout /t 3 /nobreak >nul
 
-:: 2. Launch Telegram Signal Engine in Dedicated Window
-echo [1/4] Launching Telegram Signal Engine (40+ VIP Channels)...
-start "TELEGRAM_SIGNAL_ENGINE_247" cmd.exe /c "run_telegram_gold_live.bat"
-ping 127.0.0.1 -n 4 >nul
+echo [%time%] Starting BreakoutBoss Engine (AI-tuned)...
+start "BREAKOUTBOSS" /MIN cmd /c "%PYTHON% %DIR%\breakout_boss_engine.py >> %DIR%\logs\breakout_boss.log 2>&1"
+timeout /t 3 /nobreak >nul
 
-:: 3. Launch Autonomous AI Market Scanner in Dedicated Window
-echo [2/4] Launching Autonomous AI Market Scanner (GOLD and BTCUSD)...
-start "AUTONOMOUS_AI_MARKET_SCANNER_247" cmd.exe /c "run_autonomous_scanner.bat"
-ping 127.0.0.1 -n 4 >nul
+echo [%time%] Starting Autonomous AI SMC Scanner (with daily auto-tune)...
+start "SMC_SCANNER" /MIN cmd /c "%PYTHON% %DIR%\autonomous_ai_market_scanner.py >> %DIR%\logs\smc_scanner.log 2>&1"
+timeout /t 3 /nobreak >nul
 
-:: 4. Launch BreakoutBoss 5-Model Multi-Session Gold Suite in Dedicated Window
-echo [3/4] Launching BreakoutBoss 5-Model Suite (M0, M1, M2, M3, M4)...
-start "BREAKOUT_BOSS_ENGINE_247" cmd.exe /c "run_breakout_boss.bat"
-ping 127.0.0.1 -n 4 >nul
-
-:: 5. Launch Master Autostart Watchdog in Dedicated Window
-echo [4/4] Launching Master 24/7 Autostart Watchdog...
-start "FOREXTELE_MASTER_WATCHDOG_247" cmd.exe /c "master_autostart_watchdog.bat"
-ping 127.0.0.1 -n 3 >nul
+echo [%time%] Starting Telegram VIP Signal Engine (whitelisted channels)...
+start "TELEGRAM_SIGNALS" /MIN cmd /c "%PYTHON% %DIR%\telegram_signal_engine.py >> %DIR%\logs\telegram_signals.log 2>&1"
+timeout /t 5 /nobreak >nul
 
 echo.
 echo ====================================================================
-echo ALL 7 ALLOCATION BASKETS RUNNING IN PARALLEL
-echo --------------------------------------------------------------------
-echo  - Telegram Listener : Armed with H1 Trend Confluence Gate ($1k Basket)
-echo  - AI Market Scanner : Cooldown 60m, Max 4 trades/day ($1k Basket)
-echo  - BreakoutBoss M0-M4: 5 Compounding Models x 6 Global Sessions ($5k Baskets)
-echo  - Master Watchdog   : Monitoring every 60s for 24/7 uptime
+echo  ALL 3 ENGINES STARTED. Monitor logs in: %DIR%\logs\
+echo  BreakoutBoss : logs\breakout_boss.log
+echo  SMC Scanner  : logs\smc_scanner.log
+echo  Telegram     : logs\telegram_signals.log
+echo  Watchdog     : logs\watchdog.log
 echo ====================================================================
 echo.
-ping 127.0.0.1 -n 5 >nul
+pause

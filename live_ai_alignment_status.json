@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-02 19:39:45 UTC",
+  "status": "HEALTHY",
+  "engines": {
+    "BREAKOUT_BOSS": {
+      "trades": 160,
+      "wins": 46,
+      "losses": 112,
+      "win_rate": 28.7,
+      "target_wr": 65.0,
+      "profit_factor": 0.55,
+      "net_pnl": -257.46,
+      "is_aligned": false,
+      "action": "THROTTLE_RISK_AND_EXPAND_COOLDOWN"
+    },
+    "AUTONOMOUS_SMC": {
+      "trades": 101,
+      "wins": 22,
+      "losses": 79,
+      "win_rate": 21.8,
+      "target_wr": 38.0,
+      "profit_factor": 0.67,
+      "net_pnl": -245.71,
+      "is_aligned": false,
+      "action": "THROTTLE_RISK_AND_EXPAND_COOLDOWN"
+    },
+    "TELEGRAM_SIGNALS": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 100.0,
+      "target_wr": 60.0,
+      "profit_factor": 1.0,
+      "net_pnl": 0,
+      "is_aligned": true,
+      "action": "NOMINAL_EXECUTION"
+    }
+  }
+}
