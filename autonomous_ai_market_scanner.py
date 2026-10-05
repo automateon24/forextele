@@ -363,7 +363,7 @@ class AutonomousAIMarketScanner:
 
         # When H1 is NEUTRAL / Consolidation: Strict extremes only
         else:
-            if ctx["sweep_low"] and rsi <= 28.0 and ctx["round_conf"]:
+            if ctx.get("sweep_low") and rsi <= 28.0 and ctx.get("round_conf"):
                 entry_price = ctx["live_ask"]
                 sl_price = round(entry_price - sl_dist, digits)
                 tp1_price = round(entry_price + tp1_dist, digits)
@@ -382,7 +382,7 @@ class AutonomousAIMarketScanner:
                     "reason": f"Extreme range oversold RSI={rsi:.1f} at round support in neutral market."
                 }
 
-            if ctx["sweep_high"] and rsi >= 72.0 and ctx["round_conf"]:
+            if ctx.get("sweep_high") and rsi >= 72.0 and ctx.get("round_conf"):
                 entry_price = ctx["live_bid"]
                 sl_price = round(entry_price + sl_dist, digits)
                 tp1_price = round(entry_price - tp1_dist, digits)
