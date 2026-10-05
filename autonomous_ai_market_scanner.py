@@ -15,11 +15,25 @@ import json
 import time
 import logging
 import asyncio
+import os
+import psutil
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import pandas as pd
 import numpy as np
 import MetaTrader5 as mt5
+
+def ensure_single_instance():
+    curr_pid = os.getpid()
+    for p in psutil.process_iter(['pid', 'name', 'cmdline']):
+        try:
+            if p.pid != curr_pid and 'python' in (p.name() or '').lower():
+                cmd = " ".join(p.cmdline() or [])
+                if "autonomous_ai_market_scanner.py" in cmd and "SepPro" not in cmd:
+                    log.info(f"Existing AutonomousScanner detected (PID {p.pid}). Exiting duplicate instance cleanly.")
+                    sys.exit(0)
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
 
 BASE_DIR = Path(r"C:\anlyzeforex\forextele")
 DATA_DIR = BASE_DIR / "data"
@@ -600,5 +614,6 @@ class AutonomousAIMarketScanner:
             await asyncio.sleep(25)  # Scans every 25 seconds
 
 if __name__ == "__main__":
+    ensure_single_instance()
     scanner = AutonomousAIMarketScanner()
     asyncio.run(scanner.run_loop())

@@ -1,4 +1,6 @@
 import asyncio
+import sys
+import psutil
 from telethon import TelegramClient, events
 from telethon.network.connection import ConnectionTcpIntermediate
 from telethon.sessions import SQLiteSession
@@ -230,7 +232,20 @@ async def telethon_keepalive(clients):
             except Exception:
                 pass
 
+def ensure_single_instance():
+    curr_pid = os.getpid()
+    for p in psutil.process_iter(['pid', 'name', 'cmdline']):
+        try:
+            if p.pid != curr_pid and 'python' in (p.name() or '').lower():
+                cmd = " ".join(p.cmdline() or [])
+                if "telegram_signal_engine.py" in cmd and "SepPro" not in cmd:
+                    log.info(f"Existing TelegramSignalEngine detected (PID {p.pid}). Exiting duplicate instance cleanly.")
+                    sys.exit(0)
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+
 async def main():
+    ensure_single_instance()
     asyncio.create_task(heartbeat_loop())
     asyncio.create_task(tsl_background_loop())
     log.info("==================================================================")
