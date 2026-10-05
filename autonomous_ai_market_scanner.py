@@ -43,14 +43,22 @@ STATUS_FILE = DATA_DIR / "autonomous_scanner_status.json"
 AUDIT_LOG = DATA_DIR / "autonomous_scanner_audit.csv"
 
 # Configure Logging
+LOGS_DIR = BASE_DIR / "logs"
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+SCANNER_LOG = LOGS_DIR / "smc_scanner.log"
+
 log = logging.getLogger("AUTONOMOUS_AI_SCANNER")
 log.setLevel(logging.INFO)
 if not log.handlers:
+    formatter = logging.Formatter('%(asctime)s - [AI_SCANNER] - %(levelname)s - %(message)s')
     ch = logging.StreamHandler(sys.stdout)
     ch.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s - [AI_SCANNER] - %(levelname)s - %(message)s')
     ch.setFormatter(formatter)
     log.addHandler(ch)
+    fh = logging.FileHandler(str(SCANNER_LOG), encoding='utf-8')
+    fh.setLevel(logging.INFO)
+    fh.setFormatter(formatter)
+    log.addHandler(fh)
 
 from real_mt5_execution import MT5ExecutionEngine
 from ai_conviction_tsl_manager import register_trade

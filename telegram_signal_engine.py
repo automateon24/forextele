@@ -22,10 +22,18 @@ BASE_DIR = Path(__file__).parent
 SESSION_1 = BASE_DIR / "telegram_session.session"
 SESSION_2 = BASE_DIR / "telegram_session2.session"
 
+LOGS_DIR = BASE_DIR / "logs"
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+TELEGRAM_LOG = LOGS_DIR / "telegram_signals.log"
+
 # Setup Logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - [TELEGRAM_LISTENER] - %(levelname)s - %(message)s'
+    format='%(asctime)s - [TELEGRAM_LISTENER] - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler(str(TELEGRAM_LOG), encoding='utf-8')
+    ]
 )
 log = logging.getLogger(__name__)
 
