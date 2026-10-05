@@ -34,7 +34,7 @@ if not exist "logs" mkdir logs
 for /f "tokens=1" %%p in ('wmic process where "commandline like '%%telegram_signal_engine%%' and not commandline like '%%SepPro%%'" get processid ^| findstr /r "[0-9]"') do (
     taskkill /PID %%p /F >nul 2>&1
 )
-timeout /t 2 /nobreak >nul
+ping 127.0.0.1 -n 3 >nul
 
 :RUN_LOOP
 echo [%DATE% %TIME%] Starting Telegram Listener Session... >> logs\telegram_gold_supervisor.log
@@ -51,5 +51,5 @@ echo Restarting in 8 seconds... (Press Ctrl+C to stop)
 echo ====================================================================
 echo [%DATE% %TIME%] Telegram Listener EXITED. Auto-restarting in 8 seconds... >> logs\telegram_gold_supervisor.log
 
-timeout /t 8 /nobreak >nul
+ping 127.0.0.1 -n 9 >nul
 goto RUN_LOOP

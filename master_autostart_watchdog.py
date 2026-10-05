@@ -37,11 +37,24 @@ log.addHandler(console_handler)
 MT5_EXE = Path(r"C:\Program Files\XM Global MT5\terminal64.exe")
 PYTHON_EXE = Path(r"C:\Users\Administrator\AppData\Local\Programs\Python\Python311\python.exe")
 TELEGRAM_BAT = BASE_DIR / "run_telegram_gold_live.bat"
-AUTONOMOUS_BAT = BASE_DIR / "run_autonomous_scanner.bat"
-BREAKOUT_BAT = BASE_DIR / "run_breakout_boss.bat"
+import psutil
+import socket
+
+# Detached flags for reliable 24/7 background daemons:
+DETACHED_FLAGS = 0x00000008 | 0x00000200
+
+_watchdog_socket = None
 
 def ensure_single_watchdog_instance():
     """Guarantees only one master watchdog runs at a time across the entire system."""
+    global _watchdog_socket
+    _watchdog_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        _watchdog_socket.bind(('127.0.0.1', 39888))
+    except OSError:
+        log.info("[INFO] Existing Forex Watchdog detected on port 39888. Exiting duplicate instance cleanly.")
+        sys.exit(0)
+
     curr_pid = os.getpid()
     for p in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
@@ -63,11 +76,16 @@ def is_mt5_running() -> bool:
     return False
 
 def is_process_running(script_name: str) -> bool:
-    """Checks if a process (python or cmd wrapper) with script_name is already running, excluding SepPro."""
-    for p in psutil.process_iter(['name', 'cmdline']):
+    """Checks if a process (python or cmd wrapper) with script_name is already running, excluding SepPro and watchdog."""
+    curr_pid = os.getpid()
+    for p in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
+            if p.pid == curr_pid:
+                continue
             cmd = " ".join(p.cmdline() or [])
-            if script_name in cmd and "SepPro" not in cmd:
+            if "SepPro" in cmd or "master_autostart_watchdog" in cmd:
+                continue
+            if script_name in cmd:
                 return True
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             pass
@@ -108,9 +126,8 @@ def ensure_services():
 
     # 2. Telegram Signal Engine Check
     if not (is_process_running("telegram_signal_engine") or is_process_running("run_telegram_gold_live")):
-        log.warning("⚠️ Telegram Signal Engine not running! Spawning via run_telegram_gold_live.bat...")
-        cmd = f'start "TELEGRAM_SIGNAL_ENGINE_247" cmd.exe /c "{TELEGRAM_BAT}"'
-        subprocess.Popen(cmd, cwd=str(BASE_DIR), shell=True)
+        log.warning("⚠️ Telegram Signal Engine not running! Spawning as detached daemon...")
+        subprocess.Popen([str(PYTHON_EXE), "telegram_signal_engine.py"], cwd=str(BASE_DIR), creationflags=DETACHED_FLAGS)
         time.sleep(3)
         log.info("✅ Telegram Signal Engine launched.")
     else:
@@ -118,9 +135,8 @@ def ensure_services():
 
     # 3. Autonomous AI Market Scanner Check
     if not (is_process_running("autonomous_ai_market_scanner") or is_process_running("run_autonomous_scanner")):
-        log.warning("⚠️ Autonomous AI Market Scanner not running! Spawning via run_autonomous_scanner.bat...")
-        cmd = f'start "AUTONOMOUS_AI_MARKET_SCANNER_247" cmd.exe /c "{AUTONOMOUS_BAT}"'
-        subprocess.Popen(cmd, cwd=str(BASE_DIR), shell=True)
+        log.warning("⚠️ Autonomous AI Market Scanner not running! Spawning as detached daemon...")
+        subprocess.Popen([str(PYTHON_EXE), "autonomous_ai_market_scanner.py"], cwd=str(BASE_DIR), creationflags=DETACHED_FLAGS)
         time.sleep(3)
         log.info("✅ Autonomous AI Market Scanner launched.")
     else:
@@ -128,9 +144,8 @@ def ensure_services():
 
     # 4. BreakoutBoss Multi-Session Engine Check
     if not (is_process_running("breakout_boss_engine") or is_process_running("run_breakout_boss")):
-        log.warning("⚠️ BreakoutBoss Engine not running! Spawning via run_breakout_boss.bat...")
-        cmd = f'start "BREAKOUT_BOSS_ENGINE_247" cmd.exe /c "{BREAKOUT_BAT}"'
-        subprocess.Popen(cmd, cwd=str(BASE_DIR), shell=True)
+        log.warning("⚠️ BreakoutBoss Engine not running! Spawning as detached daemon...")
+        subprocess.Popen([str(PYTHON_EXE), "breakout_boss_engine.py"], cwd=str(BASE_DIR), creationflags=DETACHED_FLAGS)
         time.sleep(3)
         log.info("✅ BreakoutBoss Engine launched.")
     else:

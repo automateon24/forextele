@@ -38,5 +38,5 @@ echo Restarting in 5 seconds... (Press Ctrl+C to stop)
 echo ====================================================================
 echo [%DATE% %TIME%] Autonomous Scanner EXITED. Auto-restarting in 5 seconds... >> logs\autonomous_scanner_supervisor.log
 
-timeout /t 5 /nobreak >nul
+ping 127.0.0.1 -n 6 >nul
 goto RUN_LOOP
