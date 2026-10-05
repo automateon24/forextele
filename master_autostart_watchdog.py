@@ -13,7 +13,7 @@ import time
 import subprocess
 import logging
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 import psutil
 
 BASE_DIR = Path(r"C:\anlyzeforex\forextele")

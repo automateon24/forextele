@@ -8,7 +8,7 @@ from pathlib import Path
 import os
 import json
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timezone
 import MetaTrader5 as mt5
 from swarm_engine import OllamaSwarmEngine
 from market_trader_engine import MarketTraderHandler
