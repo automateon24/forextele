@@ -135,48 +135,48 @@ SESSIONS_CONFIG = [
         "name": "Asian Open",
         "start": (1, 0),
         "duration_hours": 5,
-        "timeframes": [1, 3, 5, 15],
-        "rr_by_tf": {1: 1.5, 3: 2.0, 5: 2.0, 15: 2.0}
+        "timeframes": [1],  # Backtest finding: Only Gold M1 was profitable (64.7% WR); M5/M15 failed in Asian chop
+        "rr_by_tf": {1: 1.5}
     },
     {
         "code": "FRA",
         "name": "Frankfurt Open",
         "start": (6, 0),
         "duration_hours": 4,
-        "timeframes": [1, 3, 5, 15],
-        "rr_by_tf": {1: 5.0, 3: 5.0, 5: 3.0, 15: 3.0}
+        "timeframes": [1, 5],
+        "rr_by_tf": {1: 5.0, 5: 3.0}
     },
     {
         "code": "LON",
         "name": "London Core",
         "start": (8, 0),
         "duration_hours": 4,
-        "timeframes": [1, 3, 5, 15],
-        "rr_by_tf": {1: 3.0, 3: 5.0, 5: 3.0, 15: 3.0}
+        "timeframes": [1, 5],
+        "rr_by_tf": {1: 3.0, 5: 3.0}
     },
     {
         "code": "NYP",
         "name": "NY Pre-Mkt",
         "start": (12, 30),
         "duration_hours": 3,
-        "timeframes": [1, 3, 5, 15],
-        "rr_by_tf": {1: 3.0, 3: 3.0, 5: 3.0, 15: 5.0}
+        "timeframes": [1, 5],
+        "rr_by_tf": {1: 3.0, 5: 3.0}
     },
     {
         "code": "NYC",
         "name": "NY Cash Open",
         "start": (13, 30),
         "duration_hours": 3,
-        "timeframes": [1, 3, 5, 15],
-        "rr_by_tf": {1: 5.0, 3: 3.0, 5: 3.0, 15: 3.0}
+        "timeframes": [1, 5],
+        "rr_by_tf": {1: 5.0, 5: 3.0}
     },
     {
         "code": "LNC",
         "name": "London Close",
         "start": (15, 30),
         "duration_hours": 3,
-        "timeframes": [1, 3, 5, 15],
-        "rr_by_tf": {1: 3.0, 3: 3.0, 5: 3.0, 15: 5.0}
+        "timeframes": [1],
+        "rr_by_tf": {1: 3.0}
     }
 ]
 
@@ -612,6 +612,10 @@ class BreakoutBossEngine:
             if now_utc < session_start_dt or now_utc > session_end_dt:
                 continue
 
+            session_active_key = f"{today_date_str}_{sc['code']}_TRIGGERED"
+            if session_active_key in self.processed_setups:
+                continue  # Backtest Safeguard: Max 1 trade per session per symbol to eliminate over-trading chop
+
             for tf in sc["timeframes"]:
                 setup_id = f"{today_date_str}_{sc['code']}_M{tf}"
                 if setup_id in self.processed_setups:
@@ -685,6 +689,7 @@ class BreakoutBossEngine:
                         log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} BUY SIGNAL! H1:{h1_trend} | Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
                         self.execute_multi_model_orders("BUY", risk_pts, sc["code"], tf, target_rr)
                         self.processed_setups.add(setup_id)
+                        self.processed_setups.add(session_active_key)
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
 
@@ -714,6 +719,7 @@ class BreakoutBossEngine:
                         log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} SELL SIGNAL! H1:{h1_trend} | Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
                         self.execute_multi_model_orders("SELL", risk_pts, sc["code"], tf, target_rr)
                         self.processed_setups.add(setup_id)
+                        self.processed_setups.add(session_active_key)
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
 

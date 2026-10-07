@@ -45,7 +45,7 @@ BENCHMARKS = {
         "min_acceptable_wr": 30.0
     },
     "TELEGRAM_SIGNALS": {
-        "magics": [888001],
+        "magics": [777777, 888001],
         "target_wr": 60.0,
         "max_risk_cap": 50.0,
         "min_acceptable_wr": 45.0

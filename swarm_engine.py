@@ -195,12 +195,21 @@ class OllamaSwarmEngine:
         trade_data["symbol"] = "GOLD"
         symbol = "GOLD"
         action = str(trade_data.get("action", "BUY")).upper()
-        # ── MACRO TREND CONFLUENCE GATE (Learned from 48h Live Audit) ──
-        # Protects capital from low-conviction channels spamming counter-trend knife-catching signals
+        # ── GATE: Option 2 Strict Institutional AI Conviction Filter (>= 0.85) ──
+        # Blocks all unverified/low-conviction Telegram channels (< 0.85).
+        # Only Elite channels with verified positive expectancy and trend alignment are permitted.
         try:
             from ai_conviction_tsl_manager import get_channel_conviction
             ch_conv = get_channel_conviction(channel_name)
             
+            MIN_CONVICTION = 0.85
+            if ch_conv < MIN_CONVICTION:
+                reason = f"Option 2 Strict AI Filter: Channel '{channel_name}' Conviction ({ch_conv:.2f}) < {MIN_CONVICTION:.2f} threshold. Signal rejected."
+                log.warning(f"[CONVICTION_GATE] REJECTED — {reason}")
+                self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                return {"status": "REJECTED", "reason": reason}
+            
+            # ── MACRO TREND CONFLUENCE GATE ──
             if mt5.terminal_info():
                 h1_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 100)
                 if h1_rates is not None and len(h1_rates) >= 50:
@@ -213,19 +222,17 @@ class OllamaSwarmEngine:
                     h1_is_bearish = (latest_c < ema50 and ema50 < ema200)
                     h1_is_bullish = (latest_c > ema50 and ema50 > ema200)
                     
-                    # If channel conviction is below Elite threshold (< 0.85), strictly forbid counter-trend signals
-                    if ch_conv < 0.85:
-                        if action == "BUY" and h1_is_bearish:
-                            reason = f"Macro Trend Filter: Counter-trend BUY from '{channel_name}' (Conviction={ch_conv:.2f}) blocked during H1 BEARISH trend."
-                            log.warning(f"[TREND_GATE] REJECTED — {reason}")
-                            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
-                            return {"status": "REJECTED", "reason": reason}
-                        elif action == "SELL" and h1_is_bullish:
-                            reason = f"Macro Trend Filter: Counter-trend SELL from '{channel_name}' (Conviction={ch_conv:.2f}) blocked during H1 BULLISH trend."
-                            log.warning(f"[TREND_GATE] REJECTED — {reason}")
-                            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
-                            return {"status": "REJECTED", "reason": reason}
-                        log.info(f"[TREND_GATE] Aligned trend confirmed for {channel_name} (Action={action}, H1_Bear={h1_is_bearish}, H1_Bull={h1_is_bullish})")
+                    if action == "BUY" and h1_is_bearish:
+                        reason = f"Macro Trend Filter: Counter-trend BUY from '{channel_name}' blocked during H1 BEARISH trend."
+                        log.warning(f"[TREND_GATE] REJECTED — {reason}")
+                        self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                        return {"status": "REJECTED", "reason": reason}
+                    elif action == "SELL" and h1_is_bullish:
+                        reason = f"Macro Trend Filter: Counter-trend SELL from '{channel_name}' blocked during H1 BULLISH trend."
+                        log.warning(f"[TREND_GATE] REJECTED — {reason}")
+                        self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
+                        return {"status": "REJECTED", "reason": reason}
+                    log.info(f"[TREND_GATE] Aligned trend confirmed for {channel_name} (Action={action})")
         except Exception as tg_ex:
             log.warning(f"[TREND_GATE] Error verifying H1 trend: {tg_ex}")
 

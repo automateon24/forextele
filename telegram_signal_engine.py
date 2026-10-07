@@ -220,14 +220,14 @@ async def heartbeat_loop():
         await asyncio.sleep(10)
 
 async def telethon_keepalive(clients):
-    """Actively pings Telegram servers every 25s so NAT firewalls never drop idle TCP sockets."""
-    log.info("📡 Telethon Active Keepalive armed (25s ping cycle)...")
+    """Actively pings Telegram servers every 60s so NAT firewalls never drop idle TCP sockets."""
+    log.info("📡 Telethon Active Keepalive armed (60s ping cycle)...")
     while True:
-        await asyncio.sleep(25)
+        await asyncio.sleep(60)
         for c in clients:
             try:
                 if c.is_connected():
-                    await asyncio.wait_for(c.get_me(), timeout=6.0)
+                    await asyncio.wait_for(c.get_me(), timeout=15.0)
             except asyncio.TimeoutError:
                 log.warning("⚠️ Keepalive ping timeout. Re-establishing socket cleanly...")
                 try:

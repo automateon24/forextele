@@ -256,7 +256,11 @@ class MT5ExecutionEngine:
             volume = float(swarm_payload.get("volume"))
         else:
             volume = self.calculate_lot_size(symbol, final_price, sl, risk_pct=final_risk_pct)
-        volume = min(float(volume), 1.00)  # ABSOLUTE HARD GOVERNOR SAFETY CAP
+
+        if magic_number == 777777:
+            volume = min(float(volume), 0.04)  # Hard cap for Telegram Signals (avoids oversized drawdown)
+        else:
+            volume = min(float(volume), 1.00)  # ABSOLUTE HARD GOVERNOR SAFETY CAP
 
         # Clean, human-readable channel punch on MT5 Comment (max 31 chars)
         raw_comment = swarm_payload.get("comment", "")
