@@ -23,6 +23,7 @@
 | **Start 24/7 Suite + Live HUD** | [`START_247_PERSISTENT_SUITE.bat`](file:///c:/anlyzeforex/forextele/START_247_PERSISTENT_SUITE.bat) | Fresh start: terminates prior threads cleanly, ensures boot persistence, launches engines, and opens live HUD monitor. |
 | **Restart All Engines** | [`RESTART_ALL_ENGINES.bat`](file:///c:/anlyzeforex/forextele/RESTART_ALL_ENGINES.bat) | Clean restart script that reloads all parameters and brings up the live monitor. |
 | **Stop All Engines** | [`STOP_ALL_ENGINES.bat`](file:///c:/anlyzeforex/forextele/STOP_ALL_ENGINES.bat) | Force-terminates all engines and closes open positions. |
+| **Indian Market Blueprint** | [`INDIAN_MARKET_BREAKOUT_AND_GANN_BLUEPRINT.md`](file:///c:/anlyzeforex/forextele/INDIAN_MARKET_BREAKOUT_AND_GANN_BLUEPRINT.md) | Complete standalone guide for Nifty, Bank Nifty, M1/M3/M5 breakouts, and Gann timing candles. |
 | **Consolidated Live Monitor** | [`consolidated_live_suite.py`](file:///c:/anlyzeforex/forextele/consolidated_live_suite.py) | Python live console aggregator with account metrics, engine status, and filtered real-time event stream. |
 
 ---
