@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-10-16 21:33:02 UTC",
+  "today_realized_pnl": -143.82,
+  "max_daily_loss_limit": 150.0,
+  "circuit_breaker_tripped": false,
+  "status": "ACTIVE"
+}

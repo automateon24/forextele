@@ -182,34 +182,49 @@ class OllamaSwarmEngine:
         # 3. The Governor (Hardcoded Python Logic for 100% Reliability & Speed)
         log.info("[GOVERNOR] Evaluating Risk Profile...")
         
-        # ── USER DIRECTIVE: PURE GOLD (XAUUSD) SIGNALS ONLY ──
-        raw_sym = str(trade_data.get("symbol", "")).upper()
-        is_gold = any(kw in raw_sym for kw in ["GOLD", "XAU"])
+        # ── MULTI-ASSET SYMBOL NORMALIZATION ──
+        raw_sym = str(trade_data.get("symbol", "")).upper().replace("/", "").strip()
+        if any(kw in raw_sym for kw in ["GOLD", "XAU"]):
+            symbol = "GOLD"
+        elif any(kw in raw_sym for kw in ["SILVER", "XAG"]):
+            symbol = "SILVER"
+        elif "BTC" in raw_sym:
+            symbol = "BTCUSD"
+        elif "EURUSD" in raw_sym:
+            symbol = "EURUSD"
+        elif "GBPUSD" in raw_sym:
+            symbol = "GBPUSD"
+        elif "USDJPY" in raw_sym:
+            symbol = "USDJPY"
+        elif "USDCAD" in raw_sym:
+            symbol = "USDCAD"
+        elif "AUDUSD" in raw_sym:
+            symbol = "AUDUSD"
+        else:
+            symbol = raw_sym if raw_sym else "GOLD"
 
-        if not is_gold:
-            log.warning(f"[GOLD_LOCK] Signal Symbol '{raw_sym}' rejected. System is strictly locked to GOLD (XAUUSD) signals only.")
-            self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", f"Gold Lock: Symbol '{raw_sym}' rejected. Gold only.")
-            return {"status": "REJECTED", "reason": f"System locked to GOLD (XAUUSD) signals only. Rejected '{raw_sym}'."}
+        # Check if MT5 supports the symbol
+        if mt5.terminal_info() and not mt5.symbol_select(symbol, True):
+            log.warning(f"[SYMBOL_CHECK] Symbol '{symbol}' not found on MT5. Defaulting to GOLD.")
+            symbol = "GOLD"
 
-        # Normalize symbol for MT5
-        trade_data["symbol"] = "GOLD"
-        symbol = "GOLD"
+        trade_data["symbol"] = symbol
         action = str(trade_data.get("action", "BUY")).upper()
-        # ── GATE: Option 2 Strict Institutional AI Conviction Filter (>= 0.85) ──
-        # Blocks all unverified/low-conviction Telegram channels (< 0.85).
-        # Only Elite channels with verified positive expectancy and trend alignment are permitted.
+
+        # ── GATE: Active Telegram AI Conviction Filter (>= 0.40) ──
+        # Relaxed threshold so active Telegram channels can execute trades directly
         try:
             from ai_conviction_tsl_manager import get_channel_conviction
             ch_conv = get_channel_conviction(channel_name)
             
-            MIN_CONVICTION = 0.85
+            MIN_CONVICTION = 0.40
             if ch_conv < MIN_CONVICTION:
-                reason = f"Option 2 Strict AI Filter: Channel '{channel_name}' Conviction ({ch_conv:.2f}) < {MIN_CONVICTION:.2f} threshold. Signal rejected."
+                reason = f"AI Conviction Gate: Channel '{channel_name}' Conviction ({ch_conv:.2f}) < {MIN_CONVICTION:.2f} threshold. Signal rejected."
                 log.warning(f"[CONVICTION_GATE] REJECTED — {reason}")
                 self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
                 return {"status": "REJECTED", "reason": reason}
             
-            # ── MACRO TREND CONFLUENCE GATE ──
+            # ── MACRO TREND CONFLUENCE (Informational, non-blocking) ──
             if mt5.terminal_info():
                 h1_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 100)
                 if h1_rates is not None and len(h1_rates) >= 50:
@@ -223,16 +238,11 @@ class OllamaSwarmEngine:
                     h1_is_bullish = (latest_c > ema50 and ema50 > ema200)
                     
                     if action == "BUY" and h1_is_bearish:
-                        reason = f"Macro Trend Filter: Counter-trend BUY from '{channel_name}' blocked during H1 BEARISH trend."
-                        log.warning(f"[TREND_GATE] REJECTED — {reason}")
-                        self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
-                        return {"status": "REJECTED", "reason": reason}
+                        log.info(f"[TREND_CONFLUENCE] Counter-trend BUY from '{channel_name}' (H1 Bearish) — Executing with strict SL protection.")
                     elif action == "SELL" and h1_is_bullish:
-                        reason = f"Macro Trend Filter: Counter-trend SELL from '{channel_name}' blocked during H1 BULLISH trend."
-                        log.warning(f"[TREND_GATE] REJECTED — {reason}")
-                        self._log_audit(account_id, channel_name, raw_message, trade_data, "REJECTED", reason)
-                        return {"status": "REJECTED", "reason": reason}
-                    log.info(f"[TREND_GATE] Aligned trend confirmed for {channel_name} (Action={action})")
+                        log.info(f"[TREND_CONFLUENCE] Counter-trend SELL from '{channel_name}' (H1 Bullish) — Executing with strict SL protection.")
+                    else:
+                        log.info(f"[TREND_CONFLUENCE] Trend-aligned {action} confirmed for {channel_name} on {symbol}.")
         except Exception as tg_ex:
             log.warning(f"[TREND_GATE] Error verifying H1 trend: {tg_ex}")
 

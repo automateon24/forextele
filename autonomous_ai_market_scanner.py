@@ -71,10 +71,10 @@ class AutonomousAIMarketScanner:
         self.mt5_engine = MT5ExecutionEngine()
         self.magic_number = MAGIC_AUTONOMOUS
         self.symbols = ["GOLD", "BTCUSD"]
-        self.last_trade_time = {}
-        self.cooldown_minutes = 60  # Increased from 15m to 60m for trade quality
-        self.max_daily_trades = 4   # Cap to max 4 high-conviction trades per day
+        self.cooldown_minutes = 45  # 45m cooldown to prevent consecutive entries into ranging chop
+        self.max_daily_trades = 3   # Strict cap: max 3 autonomous trades per day (prevents overtrading)
         self.daily_trade_count = 0
+        self.last_trade_time = {}
         self.current_trade_day = datetime.now(timezone.utc).date()
         self.status_file = STATUS_FILE
         self.learned_rules = self._load_learned_rules()
@@ -310,6 +310,11 @@ class AutonomousAIMarketScanner:
         if h1_trend == "BEARISH":
             # 1. Institutional M15 Bearish FVG & Order Block Mitigation (#1 Verified Performer)
             if ctx.get("active_bear_fvg"):
+                # Filter: Do not short into deeply oversold RSI (<35)
+                if rsi < 35.0:
+                    log.debug(f"[SMC_FILTER] Bearish FVG tap skipped — M5 RSI ({rsi:.1f}) is already oversold.")
+                    return None
+
                 fvg = ctx["active_bear_fvg"]
                 entry_price = ctx["live_bid"]
                 sl_price = fvg["ob_sl"]
@@ -337,6 +342,11 @@ class AutonomousAIMarketScanner:
         elif h1_trend == "BULLISH":
             # 1. Institutional M15 Bullish FVG & Order Block Mitigation
             if ctx.get("active_bull_fvg"):
+                # Filter: Do not buy into deeply overbought RSI (>65)
+                if rsi > 65.0:
+                    log.debug(f"[SMC_FILTER] Bullish FVG tap skipped — M5 RSI ({rsi:.1f}) is already overbought.")
+                    return None
+
                 fvg = ctx["active_bull_fvg"]
                 entry_price = ctx["live_ask"]
                 sl_price = fvg["ob_sl"]
@@ -488,6 +498,16 @@ class AutonomousAIMarketScanner:
         if not mt5.initialize():
             self.update_status("MT5_DISCONNECTED")
             return
+
+        # ── Daily Circuit Breaker Guard (-$150 Limit) ──
+        try:
+            from live_circuit_breaker import is_circuit_breaker_active
+            if is_circuit_breaker_active(150.0):
+                log.debug("[AI_SCANNER] Daily circuit breaker active (-$150 loss reached). Skipping scans.")
+                self.update_status("CIRCUIT_BREAKER_ACTIVE", {"status": "HALTED"})
+                return
+        except Exception:
+            pass
 
         # Check daily trade cap
         if not self.check_daily_limit():

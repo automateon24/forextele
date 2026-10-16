@@ -1,0 +1,142 @@
+{
+  "title": "AllInOne (AIO) Converged Master Quantitative DNA",
+  "timestamp": "2026-10-10 15:38:27 UTC",
+  "iterations_tested": 4,
+  "winning_configuration": {
+    "name": "Converged Pair-Specific DNA (Silver/Gold/Crypto/Forex Tailored)",
+    "allowed_strategies": [
+      "DILSE_PULLBACK",
+      "SMC_FVG_MITIGATION",
+      "BOLLINGER_SQUEEZE",
+      "BREAKOUT_BOSS"
+    ],
+    "pair_hours": {
+      "GOLD": [
+        1,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "SILVER": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "BTCUSD": [
+        1,
+        3,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "ETHUSD": [
+        1,
+        3,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        23
+      ],
+      "EURUSD": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "GBPUSD": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "USDJPY": [
+        13,
+        14
+      ],
+      "AUDUSD": [
+        1,
+        2,
+        7,
+        8,
+        9
+      ]
+    },
+    "atr_sl_mult": 1.35,
+    "t1_r": 1.8,
+    "t2_r": 3.0,
+    "t3_r": 4.5,
+    "cooldown_bars": 4,
+    "trail_atr_mult": 1.35
+  },
+  "performance_evolution": [
+    {
+      "iteration": 1,
+      "name": "Raw Baseline (All Modules, 24/7 Unfiltered)",
+      "trades": 9712,
+      "win_rate": 43.6,
+      "gross_loss": 421559.47,
+      "net_pnl": 41409.55,
+      "profit_factor": 1.1,
+      "max_drawdown": 20084.76
+    },
+    {
+      "iteration": 2,
+      "name": "AI Zone & Session Gating (Pruning Rollover & Dead Hours)",
+      "trades": 5666,
+      "win_rate": 43.1,
+      "gross_loss": 259566.53,
+      "net_pnl": 21657.98,
+      "profit_factor": 1.08,
+      "max_drawdown": 27347.91
+    },
+    {
+      "iteration": 3,
+      "name": "Asymmetric Risk Armor (1.4x ATR Buffer + 1.8R/3.0R Targets)",
+      "trades": 4935,
+      "win_rate": 38.6,
+      "gross_loss": 263664.06,
+      "net_pnl": 24554.62,
+      "profit_factor": 1.09,
+      "max_drawdown": 25540.24
+    },
+    {
+      "iteration": 4,
+      "name": "Converged Pair-Specific DNA (Silver/Gold/Crypto/Forex Tailored)",
+      "trades": 4054,
+      "win_rate": 40.1,
+      "gross_loss": 89796.95,
+      "net_pnl": 43351.01,
+      "profit_factor": 1.48,
+      "max_drawdown": 7669.11
+    }
+  ]
+}

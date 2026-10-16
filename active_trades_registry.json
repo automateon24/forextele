@@ -1,20 +1,127 @@
 {
-  "2335519148": {
-    "ticket": 2335519148,
+  "2347513013": {
+    "ticket": 2347513013,
+    "symbol": "USDJPY",
+    "action": "SELL",
+    "entry": 157.882,
+    "initial_sl": 157.93,
+    "current_sl": 157.93,
+    "tps": [
+      157.217,
+      156.842
+    ],
+    "channel": "AIO_BOLL_SQZ",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-16 20:20:40",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347600016": {
+    "ticket": 2347600016,
+    "symbol": "SILVER",
+    "action": "SELL",
+    "entry": 57.254,
+    "initial_sl": 57.629,
+    "current_sl": 57.629,
+    "tps": [
+      56.673,
+      56.237
+    ],
+    "channel": "AIO_BOLL_SQZ",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-16 21:29:08",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347601861": {
+    "ticket": 2347601861,
     "symbol": "GOLD",
     "action": "SELL",
-    "entry": 4149.01,
-    "initial_sl": 4153.51,
-    "current_sl": 4153.51,
+    "entry": 4168.42,
+    "initial_sl": 4174.53,
+    "current_sl": 4174.53,
     "tps": [
-      4142.26,
-      4137.76,
-      4131.01
+      4151.85,
+      4140.8
     ],
-    "channel": "Autonomous AI Scanner",
-    "conviction": 0.9,
+    "channel": "AIO_SMC_FVG",
+    "conviction": 0.85,
     "mode": "RUNNER_HIGH_CONVICTION",
-    "open_time": "2026-10-03 01:07:16",
+    "open_time": "2026-10-16 21:30:08",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347677938": {
+    "ticket": 2347677938,
+    "symbol": "AUDUSD",
+    "action": "SELL",
+    "entry": 0.69388,
+    "initial_sl": 0.69527,
+    "current_sl": 0.69527,
+    "tps": [
+      0.68888,
+      0.68513
+    ],
+    "channel": "AIO_BOLL_SQZ",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-16 22:35:48",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347778486": {
+    "ticket": 2347778486,
+    "symbol": "EURUSD",
+    "action": "SELL",
+    "entry": 1.12389,
+    "initial_sl": 1.12441,
+    "current_sl": 1.12441,
+    "tps": [
+      1.11701,
+      1.11326
+    ],
+    "channel": "AIO_BOLL_SQZ",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-17 01:30:39",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347791284": {
+    "ticket": 2347791284,
+    "symbol": "GBPUSD",
+    "action": "BUY",
+    "entry": 1.33353,
+    "initial_sl": 1.33063,
+    "current_sl": 1.33063,
+    "tps": [
+      1.33563,
+      1.33763
+    ],
+    "channel": "AIO_DILSE_PULL",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-17 02:27:27",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347792417": {
+    "ticket": 2347792417,
+    "symbol": "ETHUSD",
+    "action": "SELL",
+    "entry": 2419.03,
+    "initial_sl": 2439.03,
+    "current_sl": 2439.03,
+    "tps": [
+      2389.03,
+      2369.03
+    ],
+    "channel": "AIO_DILSE_PULL",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-17 03:03:03",
     "highest_tp_reached": 0,
     "extension_step": 10.0
   }

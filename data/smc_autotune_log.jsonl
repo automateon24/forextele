@@ -1,0 +1,5 @@
+{"date": "2026-10-05", "trades": 9, "wins": 3, "wr_pct": 33.3, "net_pnl": -24.48, "action": "TIGHTENED (WR 25-40%)", "max_daily_trades": 3, "cooldown_minutes": 75}
+{"date": "2026-10-06", "trades": 4, "wins": 0, "wr_pct": 0.0, "net_pnl": -6.81, "action": "HEAVILY TIGHTENED (WR<25%)", "max_daily_trades": 1, "cooldown_minutes": 105}
+{"date": "2026-10-07", "trades": 5, "wins": 1, "wr_pct": 20.0, "net_pnl": -13.25, "action": "HEAVILY TIGHTENED (WR<25%)", "max_daily_trades": 2, "cooldown_minutes": 90}
+{"date": "2026-10-08", "trades": 2, "wins": 0, "wr_pct": 0.0, "net_pnl": -4.13, "action": "HEAVILY TIGHTENED (WR<25%)", "max_daily_trades": 1, "cooldown_minutes": 120}
+{"date": "2026-10-12", "trades": 5, "wins": 1, "wr_pct": 20.0, "net_pnl": -13.71, "action": "HEAVILY TIGHTENED (WR<25%)", "max_daily_trades": 13, "cooldown_minutes": 45}

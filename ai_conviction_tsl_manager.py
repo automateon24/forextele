@@ -303,10 +303,14 @@ async def run_tsl_monitoring_cycle():
                 updated = True
                 log.info(f"🎯 [TP2 ACHIEVED] Ticket {p.ticket} ({p.symbol}) hit TP2 ({tp2_target})! Engaging 10-Pip Jumping TSL...")
 
-        # ── FIXED SL UNTIL TP2: SL stays 100% UNTOUCHED until TP2 is reached! ──
+        # ── SMART BREAKEVEN PROTECTION: Lock SL to entry at +35 pips profit ──
         if not has_reached_tp2:
-            # Keep original stated SL - zero premature wicking, zero breakeven choke!
-            pass
+            if profit_pips >= 35.0:
+                be_sl = round(open_price + (fee_buffer * 0.5), digits) if p.type == mt5.ORDER_TYPE_BUY else round(open_price - (fee_buffer * 0.5), digits)
+                if (p.type == mt5.ORDER_TYPE_BUY and be_sl > p.sl and be_sl < current_price) or \
+                   (p.type == mt5.ORDER_TYPE_SELL and be_sl < p.sl and be_sl > current_price):
+                    new_sl = be_sl
+                    log.info(f"🛡️ [BREAKEVEN SECURED] Ticket {p.ticket} ({p.symbol}): Profit +{profit_pips:.1f}p -> Locking SL to Entry {new_sl}!")
         else:
             # ── AT OR BEYOND TP2: Put TSL at TP2 and Jump 10 Pips from there ──
             jump_gap = 10.0 * pip_size  # 10 pips ($1.00 on Gold, 10 pips on FX, $10 on BTC, 10 pts on US30)

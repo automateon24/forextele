@@ -96,6 +96,15 @@ class MT5ExecutionEngine:
         """
         Executes the exact parameters determined by the AI Swarm Governor.
         """
+        # ── HARD DAILY CIRCUIT BREAKER GUARD (-$150 Cap) ──
+        try:
+            from live_circuit_breaker import is_circuit_breaker_active
+            if is_circuit_breaker_active(150.0):
+                log.warning(f"🛑 [DAILY CIRCUIT BREAKER ACTIVE] Blocking trade execution for {swarm_payload.get('symbol')}. Net daily loss reached -$150 limit.")
+                return False
+        except Exception as e_cb:
+            log.warning(f"Circuit breaker check warning: {e_cb}")
+
         if not self.connected:
             if not self.connect():
                 return False

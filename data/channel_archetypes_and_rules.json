@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-03 01:07:20",
+  "last_updated": "2026-10-17 01:18:07",
   "channels": {
     "Market Trader": {
       "total_trades": 1,
@@ -194,14 +194,14 @@
       }
     },
     "Market Trader Crypto Forex": {
-      "total_trades": 36,
-      "win_rate": 19.4,
-      "net_pnl": -244.44,
-      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
+      "total_trades": 41,
+      "win_rate": 22.0,
+      "net_pnl": -59.75,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 21,
-          "pnl": -129.15
+          "trades": 25,
+          "pnl": 55.54
         },
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 9,
@@ -212,7 +212,7 @@
           "pnl": -38.73
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
+          "trades": 4,
           "pnl": 1.43
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
@@ -526,34 +526,34 @@
       }
     },
     "XAUUSD GOLD MASTER": {
-      "total_trades": 49,
-      "win_rate": 14.3,
-      "net_pnl": -94.78,
-      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
+      "total_trades": 62,
+      "win_rate": 16.1,
+      "net_pnl": -213.72,
+      "top_smc_pattern": "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 16,
-          "pnl": -25.33
+          "trades": 19,
+          "pnl": -184.51
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
-          "trades": 7,
-          "pnl": 20.28
+          "trades": 11,
+          "pnl": -181.96
         },
         "SMC_BULLISH_FVG_EXPANSION": {
-          "trades": 7,
-          "pnl": -11.95
+          "trades": 9,
+          "pnl": 57.07
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 4,
-          "pnl": -12.55
+          "trades": 5,
+          "pnl": 158.15
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 4,
           "pnl": -25.8
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 6,
-          "pnl": -39.85
+          "trades": 9,
+          "pnl": -37.09
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 5,
@@ -726,18 +726,18 @@
       }
     },
     "GOLD Snipers": {
-      "total_trades": 6,
-      "win_rate": 16.7,
-      "net_pnl": -70.92,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "total_trades": 7,
+      "win_rate": 14.3,
+      "net_pnl": -123.57,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
           "trades": 2,
           "pnl": -40.66
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 4,
-          "pnl": -30.26
+          "trades": 5,
+          "pnl": -82.91
         }
       }
     },
@@ -1122,26 +1122,26 @@
       }
     },
     "Perfect Management": {
-      "total_trades": 38,
-      "win_rate": 36.8,
-      "net_pnl": 211.72,
+      "total_trades": 46,
+      "win_rate": 39.1,
+      "net_pnl": 106.48,
       "top_smc_pattern": "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 15,
-          "pnl": -68.81
+          "trades": 16,
+          "pnl": -124.91
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 6,
-          "pnl": 19.52
+          "trades": 8,
+          "pnl": 26.79
         },
         "SMC_BULLISH_FVG_EXPANSION": {
-          "trades": 4,
-          "pnl": -48.98
+          "trades": 5,
+          "pnl": -41.78
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
-          "trades": 7,
-          "pnl": 75.73
+          "trades": 10,
+          "pnl": 65.69
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 1,
@@ -1156,8 +1156,8 @@
           "pnl": 308.27
         },
         "OVERBOUGHT_MEAN_REVERSION": {
-          "trades": 2,
-          "pnl": 18.79
+          "trades": 3,
+          "pnl": -34.78
         }
       }
     },
@@ -1218,8 +1218,8 @@
       }
     },
     "RIAOGOLDFOREX": {
-      "total_trades": 59,
-      "win_rate": 10.2,
+      "total_trades": 60,
+      "win_rate": 10.0,
       "net_pnl": -742.02,
       "top_smc_pattern": "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL",
       "pattern_breakdown": {
@@ -1232,7 +1232,7 @@
           "pnl": -13.84
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 4,
+          "trades": 5,
           "pnl": -32.38
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
@@ -1258,34 +1258,42 @@
       }
     },
     "Mr.DAVID, XAU/USD CLUB": {
-      "total_trades": 4,
+      "total_trades": 6,
       "win_rate": 0.0,
-      "net_pnl": -96.47,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "net_pnl": -169.57,
+      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
           "trades": 4,
           "pnl": -96.47
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -73.1
         }
       }
     },
     "XAUUSD ACCURATE SiGNALS": {
-      "total_trades": 8,
-      "win_rate": 0.0,
-      "net_pnl": -130.02,
-      "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
+      "total_trades": 11,
+      "win_rate": 18.2,
+      "net_pnl": -111.34,
+      "top_smc_pattern": "OVERBOUGHT_MEAN_REVERSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 6,
-          "pnl": -83.49
+          "trades": 7,
+          "pnl": -99.13
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 1,
           "pnl": 0.0
         },
         "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -45.57
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
-          "pnl": -46.53
+          "pnl": 33.36
         }
       }
     },
@@ -1322,18 +1330,18 @@
       }
     },
     "SureShot GOLD (VIP)": {
-      "total_trades": 22,
-      "win_rate": 31.8,
-      "net_pnl": 52.56,
+      "total_trades": 24,
+      "win_rate": 29.2,
+      "net_pnl": -58.7,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
-          "pnl": -1.88
+          "trades": 4,
+          "pnl": -63.14
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 6,
-          "pnl": -71.29
+          "trades": 7,
+          "pnl": -121.29
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 3,
@@ -1426,25 +1434,33 @@
       }
     },
     "𝐗𝐀𝐔𝐔𝐒𝐃 𝐕𝐈𝐏 𝐒𝐈𝐆𝐍𝐀𝐋𝐒": {
-      "total_trades": 2,
-      "win_rate": 0.0,
-      "net_pnl": 0.0,
-      "top_smc_pattern": "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL",
+      "total_trades": 6,
+      "win_rate": 16.7,
+      "net_pnl": -71.71,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
       "pattern_breakdown": {
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 0.0
+          "trades": 2,
+          "pnl": -51.15
         },
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
           "pnl": 0.0
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 1,
+          "pnl": 0.56
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -21.12
         }
       }
     },
     "𝐗𝐀𝐔𝐔𝐒𝐃 𝐓𝐑𝐀𝐃𝐈𝐍𝐆 𝐌𝐀𝐒𝐓𝐄𝐑": {
-      "total_trades": 4,
+      "total_trades": 5,
       "win_rate": 0.0,
-      "net_pnl": -158.09,
+      "net_pnl": -213.61,
       "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "H1_TREND_CONTINUATION_PULLBACK": {
@@ -1458,50 +1474,58 @@
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 2,
           "pnl": -132.93
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -55.52
         }
       }
     },
     "Gold VIP": {
-      "total_trades": 5,
-      "win_rate": 40.0,
-      "net_pnl": 24.56,
+      "total_trades": 7,
+      "win_rate": 28.6,
+      "net_pnl": -79.73,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 5,
-          "pnl": 24.56
+          "trades": 6,
+          "pnl": -30.31
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -49.42
         }
       }
     },
     "JOSEFINA TRADER0🎖": {
-      "total_trades": 50,
-      "win_rate": 36.0,
-      "net_pnl": -677.47,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "total_trades": 59,
+      "win_rate": 32.2,
+      "net_pnl": -458.11,
+      "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 8,
-          "pnl": 170.57
+          "trades": 12,
+          "pnl": 23.61
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 2,
           "pnl": 35.74
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 17,
-          "pnl": -86.03
+          "trades": 20,
+          "pnl": 390.11
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 2,
           "pnl": -59.4
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
-          "trades": 8,
-          "pnl": 28.46
+          "trades": 9,
+          "pnl": -27.84
         },
         "OVERBOUGHT_MEAN_REVERSION": {
-          "trades": 1,
-          "pnl": -78.36
+          "trades": 2,
+          "pnl": -131.88
         },
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 12,
@@ -1510,26 +1534,30 @@
       }
     },
     "Autonomous AI Scanner": {
-      "total_trades": 102,
-      "win_rate": 21.6,
-      "net_pnl": -245.01,
+      "total_trades": 149,
+      "win_rate": 19.5,
+      "net_pnl": -382.6,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 21,
-          "pnl": -29.91
+          "trades": 34,
+          "pnl": -59.3
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 34,
-          "pnl": -95.54
+          "trades": 36,
+          "pnl": -87.99
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 43,
-          "pnl": -163.76
+          "trades": 44,
+          "pnl": -160.27
         },
         "SMC_BULLISH_FVG_EXPANSION": {
-          "trades": 4,
-          "pnl": 44.2
+          "trades": 11,
+          "pnl": 32.41
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 24,
+          "pnl": -107.45
         }
       }
     },
@@ -1562,14 +1590,18 @@
       }
     },
     "XAU MARKET INSIGHT": {
-      "total_trades": 1,
-      "win_rate": 0.0,
-      "net_pnl": -10.1,
-      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "total_trades": 2,
+      "win_rate": 50.0,
+      "net_pnl": -9.62,
+      "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": -10.1
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": 0.48
         }
       }
     },
@@ -1606,9 +1638,9 @@
       }
     },
     "BreakoutBoss_M0_ASIA": {
-      "total_trades": 6,
-      "win_rate": 33.3,
-      "net_pnl": 8504.54,
+      "total_trades": 14,
+      "win_rate": 14.3,
+      "net_pnl": 5313.04,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
@@ -1620,15 +1652,19 @@
           "pnl": -797.26
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
-          "pnl": -2391.78
+          "trades": 9,
+          "pnl": -4224.69
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -1358.59
         }
       }
     },
     "BreakoutBoss_M1_ASIA": {
-      "total_trades": 6,
-      "win_rate": 33.3,
-      "net_pnl": 8504.54,
+      "total_trades": 14,
+      "win_rate": 14.3,
+      "net_pnl": 5313.04,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
@@ -1640,15 +1676,19 @@
           "pnl": -797.26
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
-          "pnl": -2391.78
+          "trades": 9,
+          "pnl": -4224.69
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -1358.59
         }
       }
     },
     "BreakoutBoss_M2_ASIA": {
-      "total_trades": 6,
-      "win_rate": 33.3,
-      "net_pnl": 8504.54,
+      "total_trades": 14,
+      "win_rate": 14.3,
+      "net_pnl": 5313.04,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
@@ -1660,15 +1700,19 @@
           "pnl": -797.26
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
-          "pnl": -2391.78
+          "trades": 9,
+          "pnl": -4224.69
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -1358.59
         }
       }
     },
     "BreakoutBoss_M3_ASIA": {
-      "total_trades": 6,
-      "win_rate": 33.3,
-      "net_pnl": 8504.54,
+      "total_trades": 14,
+      "win_rate": 14.3,
+      "net_pnl": 5313.04,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
@@ -1680,15 +1724,19 @@
           "pnl": -797.26
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
-          "pnl": -2391.78
+          "trades": 9,
+          "pnl": -4224.69
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -1358.59
         }
       }
     },
     "BreakoutBoss_M4_ASIA": {
-      "total_trades": 6,
-      "win_rate": 33.3,
-      "net_pnl": 8504.54,
+      "total_trades": 13,
+      "win_rate": 15.4,
+      "net_pnl": 5631.53,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
@@ -1700,308 +1748,396 @@
           "pnl": -797.26
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 3,
-          "pnl": -2391.78
+          "trades": 8,
+          "pnl": -3906.2
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 2,
+          "pnl": -1358.59
         }
       }
     },
     "BreakoutBoss_M0_NYC": {
-      "total_trades": 9,
-      "win_rate": 66.7,
-      "net_pnl": 31691.89,
+      "total_trades": 20,
+      "win_rate": 45.0,
+      "net_pnl": 29305.06,
       "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": 11414.94
+          "trades": 5,
+          "pnl": 10690.06
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5664.05
+          "trades": 2,
+          "pnl": 5521.39
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 5600.61
+          "trades": 4,
+          "pnl": 5200.71
         },
         "OVERSOLD_MEAN_REVERSION": {
-          "trades": 3,
-          "pnl": 10547.68
+          "trades": 4,
+          "pnl": 10396.34
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -2490.48
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 2,
-          "pnl": -1535.39
+          "pnl": -12.96
         }
       }
     },
     "BreakoutBoss_M1_NYC": {
-      "total_trades": 9,
-      "win_rate": 66.7,
-      "net_pnl": 31691.89,
+      "total_trades": 20,
+      "win_rate": 45.0,
+      "net_pnl": 29305.06,
       "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": 11414.94
+          "trades": 5,
+          "pnl": 10690.06
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5664.05
+          "trades": 2,
+          "pnl": 5521.39
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 5600.61
+          "trades": 4,
+          "pnl": 5200.71
         },
         "OVERSOLD_MEAN_REVERSION": {
-          "trades": 3,
-          "pnl": 10547.68
+          "trades": 4,
+          "pnl": 10396.34
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -2490.48
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 2,
-          "pnl": -1535.39
+          "pnl": -12.96
         }
       }
     },
     "BreakoutBoss_M2_NYC": {
-      "total_trades": 9,
-      "win_rate": 66.7,
-      "net_pnl": 31691.89,
+      "total_trades": 20,
+      "win_rate": 45.0,
+      "net_pnl": 29305.06,
       "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": 11414.94
+          "trades": 5,
+          "pnl": 10690.06
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5664.05
+          "trades": 2,
+          "pnl": 5521.39
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 5600.61
+          "trades": 4,
+          "pnl": 5200.71
         },
         "OVERSOLD_MEAN_REVERSION": {
-          "trades": 3,
-          "pnl": 10547.68
+          "trades": 4,
+          "pnl": 10396.34
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -2490.48
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 2,
-          "pnl": -1535.39
+          "pnl": -12.96
         }
       }
     },
     "BreakoutBoss_M3_NYC": {
-      "total_trades": 9,
-      "win_rate": 66.7,
-      "net_pnl": 31691.89,
+      "total_trades": 20,
+      "win_rate": 45.0,
+      "net_pnl": 29305.06,
       "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": 11414.94
+          "trades": 5,
+          "pnl": 10690.06
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5664.05
+          "trades": 2,
+          "pnl": 5521.39
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 5600.61
+          "trades": 4,
+          "pnl": 5200.71
         },
         "OVERSOLD_MEAN_REVERSION": {
-          "trades": 3,
-          "pnl": 10547.68
+          "trades": 4,
+          "pnl": 10396.34
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -2490.48
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 2,
-          "pnl": -1535.39
+          "pnl": -12.96
         }
       }
     },
     "BreakoutBoss_M4_NYC": {
-      "total_trades": 9,
-      "win_rate": 66.7,
-      "net_pnl": 31691.89,
+      "total_trades": 20,
+      "win_rate": 45.0,
+      "net_pnl": 29305.06,
       "top_smc_pattern": "SMC_BEARISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": 11414.94
+          "trades": 5,
+          "pnl": 10690.06
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5664.05
+          "trades": 2,
+          "pnl": 5521.39
         },
         "SMC_SELL_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 5600.61
+          "trades": 4,
+          "pnl": 5200.71
         },
         "OVERSOLD_MEAN_REVERSION": {
-          "trades": 3,
-          "pnl": 10547.68
+          "trades": 4,
+          "pnl": 10396.34
         },
         "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -2490.48
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 2,
-          "pnl": -1535.39
+          "pnl": -12.96
         }
       }
     },
     "BreakoutBoss_M0_LON": {
-      "total_trades": 6,
-      "win_rate": 50.0,
-      "net_pnl": 14380.92,
+      "total_trades": 18,
+      "win_rate": 33.3,
+      "net_pnl": 12702.5,
       "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5670.58
+          "trades": 2,
+          "pnl": 5614.56
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 2,
           "pnl": 11341.16
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": -1753.88
+          "trades": 4,
+          "pnl": -1821.65
         },
         "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -876.7
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": 732.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 5,
+          "pnl": -2232.96
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
-          "pnl": -876.94
+          "pnl": -54.51
         }
       }
     },
     "BreakoutBoss_M1_LON": {
-      "total_trades": 6,
-      "win_rate": 50.0,
-      "net_pnl": 14380.92,
+      "total_trades": 18,
+      "win_rate": 33.3,
+      "net_pnl": 12702.5,
       "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5670.58
+          "trades": 2,
+          "pnl": 5614.56
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 2,
           "pnl": 11341.16
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": -1753.88
+          "trades": 4,
+          "pnl": -1821.65
         },
         "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -876.7
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": 732.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 5,
+          "pnl": -2232.96
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
-          "pnl": -876.94
+          "pnl": -54.51
         }
       }
     },
     "BreakoutBoss_M2_LON": {
-      "total_trades": 6,
-      "win_rate": 50.0,
-      "net_pnl": 14380.92,
+      "total_trades": 17,
+      "win_rate": 35.3,
+      "net_pnl": 13374.79,
       "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5670.58
+          "trades": 2,
+          "pnl": 5614.56
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 2,
           "pnl": 11341.16
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": -1753.88
+          "trades": 4,
+          "pnl": -1821.65
         },
         "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -876.7
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": 732.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 4,
+          "pnl": -1560.67
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
-          "pnl": -876.94
+          "pnl": -54.51
         }
       }
     },
     "BreakoutBoss_M3_LON": {
-      "total_trades": 6,
-      "win_rate": 50.0,
-      "net_pnl": 14380.92,
+      "total_trades": 18,
+      "win_rate": 33.3,
+      "net_pnl": 12702.5,
       "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5670.58
+          "trades": 2,
+          "pnl": 5614.56
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 2,
           "pnl": 11341.16
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": -1753.88
+          "trades": 4,
+          "pnl": -1821.65
         },
         "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -876.7
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": 732.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 5,
+          "pnl": -2232.96
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
-          "pnl": -876.94
+          "pnl": -54.51
         }
       }
     },
     "BreakoutBoss_M4_LON": {
-      "total_trades": 6,
-      "win_rate": 50.0,
-      "net_pnl": 14380.92,
+      "total_trades": 18,
+      "win_rate": 33.3,
+      "net_pnl": 12702.5,
       "top_smc_pattern": "OVERSOLD_MEAN_REVERSION",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 1,
-          "pnl": 5670.58
+          "trades": 2,
+          "pnl": 5614.56
         },
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 2,
           "pnl": 11341.16
         },
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 2,
-          "pnl": -1753.88
+          "trades": 4,
+          "pnl": -1821.65
         },
         "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 2,
+          "pnl": -876.7
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": 732.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 5,
+          "pnl": -2232.96
+        },
+        "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 1,
-          "pnl": -876.94
+          "pnl": -54.51
         }
       }
     },
     "BreakoutBoss_M0_NYP": {
-      "total_trades": 8,
-      "win_rate": 50.0,
-      "net_pnl": 19817.19,
+      "total_trades": 23,
+      "win_rate": 26.1,
+      "net_pnl": 14956.98,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 1,
-          "pnl": 5654.78
+          "trades": 8,
+          "pnl": 1368.91
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 2,
-          "pnl": 11309.56
+          "trades": 8,
+          "pnl": 10837.27
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
-          "trades": 1,
-          "pnl": 5675.81
+          "trades": 2,
+          "pnl": 5694.58
         },
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 4,
           "pnl": -2822.96
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -120.82
         }
       }
     },
     "BreakoutBoss_M1_NYP": {
-      "total_trades": 8,
-      "win_rate": 50.0,
-      "net_pnl": 19817.19,
+      "total_trades": 22,
+      "win_rate": 22.7,
+      "net_pnl": 14938.21,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 1,
-          "pnl": 5654.78
+          "trades": 8,
+          "pnl": 1368.91
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 2,
-          "pnl": 11309.56
+          "trades": 8,
+          "pnl": 10837.27
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 1,
@@ -2010,22 +2146,26 @@
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 4,
           "pnl": -2822.96
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -120.82
         }
       }
     },
     "BreakoutBoss_M2_NYP": {
-      "total_trades": 8,
-      "win_rate": 50.0,
-      "net_pnl": 19817.19,
+      "total_trades": 22,
+      "win_rate": 22.7,
+      "net_pnl": 14938.21,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 1,
-          "pnl": 5654.78
+          "trades": 8,
+          "pnl": 1368.91
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 2,
-          "pnl": 11309.56
+          "trades": 8,
+          "pnl": 10837.27
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 1,
@@ -2034,22 +2174,26 @@
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 4,
           "pnl": -2822.96
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -120.82
         }
       }
     },
     "BreakoutBoss_M3_NYP": {
-      "total_trades": 8,
-      "win_rate": 50.0,
-      "net_pnl": 19817.19,
+      "total_trades": 22,
+      "win_rate": 22.7,
+      "net_pnl": 14938.21,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 1,
-          "pnl": 5654.78
+          "trades": 8,
+          "pnl": 1368.91
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 2,
-          "pnl": 11309.56
+          "trades": 8,
+          "pnl": 10837.27
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 1,
@@ -2058,22 +2202,26 @@
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 4,
           "pnl": -2822.96
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -120.82
         }
       }
     },
     "BreakoutBoss_M4_NYP": {
-      "total_trades": 8,
-      "win_rate": 50.0,
-      "net_pnl": 19817.19,
+      "total_trades": 22,
+      "win_rate": 22.7,
+      "net_pnl": 14938.21,
       "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BEARISH_FVG_EXPANSION": {
-          "trades": 1,
-          "pnl": 5654.78
+          "trades": 8,
+          "pnl": 1368.91
         },
         "DISCRETIONARY_MOMENTUM": {
-          "trades": 2,
-          "pnl": 11309.56
+          "trades": 8,
+          "pnl": 10837.27
         },
         "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
           "trades": 1,
@@ -2082,186 +2230,370 @@
         "OVERBOUGHT_MEAN_REVERSION": {
           "trades": 4,
           "pnl": -2822.96
+        },
+        "OVERSOLD_MEAN_REVERSION": {
+          "trades": 1,
+          "pnl": -120.82
         }
       }
     },
     "BreakoutBoss_M0_LNC": {
-      "total_trades": 1,
-      "win_rate": 100.0,
-      "net_pnl": 5737.04,
+      "total_trades": 4,
+      "win_rate": 25.0,
+      "net_pnl": 5046.36,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": 5737.04
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -652.15
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -38.53
         }
       }
     },
     "BreakoutBoss_M1_LNC": {
-      "total_trades": 1,
-      "win_rate": 100.0,
-      "net_pnl": 5737.04,
+      "total_trades": 4,
+      "win_rate": 25.0,
+      "net_pnl": 5046.36,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": 5737.04
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -652.15
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -38.53
         }
       }
     },
     "BreakoutBoss_M2_LNC": {
-      "total_trades": 1,
-      "win_rate": 100.0,
-      "net_pnl": 5737.04,
+      "total_trades": 4,
+      "win_rate": 25.0,
+      "net_pnl": 5046.36,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": 5737.04
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -652.15
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -38.53
         }
       }
     },
     "BreakoutBoss_M3_LNC": {
-      "total_trades": 1,
-      "win_rate": 100.0,
-      "net_pnl": 5737.04,
+      "total_trades": 4,
+      "win_rate": 25.0,
+      "net_pnl": 5046.36,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": 5737.04
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -652.15
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -38.53
         }
       }
     },
     "BreakoutBoss_M4_LNC": {
-      "total_trades": 1,
-      "win_rate": 100.0,
-      "net_pnl": 5737.04,
+      "total_trades": 4,
+      "win_rate": 25.0,
+      "net_pnl": 5046.36,
       "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": 5737.04
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 2,
+          "pnl": -652.15
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -38.53
         }
       }
     },
     "BreakoutBoss_M0_GANN72": {
-      "total_trades": 1,
+      "total_trades": 8,
       "win_rate": 0.0,
-      "net_pnl": -808.04,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "net_pnl": -3624.56,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -1160.53
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
           "trades": 1,
-          "pnl": -808.04
+          "pnl": -85.98
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -318.49
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -1326.88
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -732.68
         }
       }
     },
     "BreakoutBoss_M1_GANN72": {
-      "total_trades": 1,
+      "total_trades": 8,
       "win_rate": 0.0,
-      "net_pnl": -808.04,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "net_pnl": -3624.56,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -1160.53
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
           "trades": 1,
-          "pnl": -808.04
+          "pnl": -85.98
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -318.49
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -1326.88
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -732.68
         }
       }
     },
     "BreakoutBoss_M2_GANN72": {
-      "total_trades": 1,
+      "total_trades": 8,
       "win_rate": 0.0,
-      "net_pnl": -808.04,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "net_pnl": -3624.56,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -1160.53
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
           "trades": 1,
-          "pnl": -808.04
+          "pnl": -85.98
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -318.49
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -1326.88
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -732.68
         }
       }
     },
     "BreakoutBoss_M3_GANN72": {
-      "total_trades": 1,
+      "total_trades": 8,
       "win_rate": 0.0,
-      "net_pnl": -808.04,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "net_pnl": -3624.56,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -1160.53
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
           "trades": 1,
-          "pnl": -808.04
+          "pnl": -85.98
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -318.49
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -1326.88
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -732.68
         }
       }
     },
     "BreakoutBoss_M4_GANN72": {
-      "total_trades": 1,
+      "total_trades": 8,
       "win_rate": 0.0,
-      "net_pnl": -808.04,
-      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "net_pnl": -3624.56,
+      "top_smc_pattern": "H1_TREND_CONTINUATION_PULLBACK",
       "pattern_breakdown": {
         "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -1160.53
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
           "trades": 1,
-          "pnl": -808.04
+          "pnl": -85.98
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -318.49
+        },
+        "SMC_BULLISH_FVG_EXPANSION": {
+          "trades": 3,
+          "pnl": -1326.88
+        },
+        "SMC_BUY_SIDE_LIQUIDITY_SWEEP_REVERSAL": {
+          "trades": 1,
+          "pnl": -732.68
         }
       }
     },
     "BreakoutBoss_M0_FRA": {
-      "total_trades": 1,
-      "win_rate": 0.0,
-      "net_pnl": -747.97,
-      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "total_trades": 19,
+      "win_rate": 26.3,
+      "net_pnl": -5710.55,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": -747.97
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 13,
+          "pnl": -4492.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -395.63
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -74.35
         }
       }
     },
     "BreakoutBoss_M1_FRA": {
-      "total_trades": 1,
-      "win_rate": 0.0,
-      "net_pnl": -747.97,
-      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "total_trades": 19,
+      "win_rate": 26.3,
+      "net_pnl": -5710.55,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": -747.97
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 13,
+          "pnl": -4492.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -395.63
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -74.35
         }
       }
     },
     "BreakoutBoss_M2_FRA": {
-      "total_trades": 1,
-      "win_rate": 0.0,
-      "net_pnl": -747.97,
-      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "total_trades": 18,
+      "win_rate": 27.8,
+      "net_pnl": -4249.62,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": -747.97
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 12,
+          "pnl": -3031.67
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -395.63
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -74.35
         }
       }
     },
     "BreakoutBoss_M3_FRA": {
-      "total_trades": 1,
-      "win_rate": 0.0,
-      "net_pnl": -747.97,
-      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "total_trades": 19,
+      "win_rate": 26.3,
+      "net_pnl": -5710.55,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": -747.97
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 13,
+          "pnl": -4492.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -395.63
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -74.35
         }
       }
     },
     "BreakoutBoss_M4_FRA": {
-      "total_trades": 1,
-      "win_rate": 0.0,
-      "net_pnl": -747.97,
-      "top_smc_pattern": "SMC_BULLISH_FVG_EXPANSION",
+      "total_trades": 19,
+      "win_rate": 26.3,
+      "net_pnl": -5726.91,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
       "pattern_breakdown": {
         "SMC_BULLISH_FVG_EXPANSION": {
           "trades": 1,
           "pnl": -747.97
+        },
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 13,
+          "pnl": -4492.6
+        },
+        "H1_TREND_CONTINUATION_PULLBACK": {
+          "trades": 3,
+          "pnl": -411.99
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 2,
+          "pnl": -74.35
         }
       }
     },
@@ -2274,6 +2606,22 @@
         "OVERSOLD_MEAN_REVERSION": {
           "trades": 1,
           "pnl": -55.2
+        }
+      }
+    },
+    "🌕 PERO | Forex - Investing ™": {
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "net_pnl": -104.37,
+      "top_smc_pattern": "DISCRETIONARY_MOMENTUM",
+      "pattern_breakdown": {
+        "SMC_BEARISH_FVG_EXPANSION": {
+          "trades": 1,
+          "pnl": -55.65
+        },
+        "DISCRETIONARY_MOMENTUM": {
+          "trades": 1,
+          "pnl": -48.72
         }
       }
     }

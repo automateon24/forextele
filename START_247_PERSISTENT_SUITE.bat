@@ -12,10 +12,10 @@ if not exist "%PYTHON_EXE%" (
 echo ====================================================================
 echo  FOREXTELE - 24/7 PERSISTENT 1-MONTH AUTONOMOUS TRADING SUITE
 echo  [1] BreakoutBoss v2 (5 Compounding Models + Gann on Gold M5)
-echo  [2] Autonomous SMC AI (Institutional M15 FVG & Liquidity Sweeps)
+echo  [2] Autonomous SMC AI (Institutional M15 FVG ^& Liquidity Sweeps)
 echo  [3] Telegram VIP Engine (40+ Channels + AI Swarm Conviction Filter)
-echo  [4] 24/7 Master Watchdog (Survives Reboots & Self-Heals Drops)
-echo  [5] Daily AI Trade Learning & Continuous Auto-Optimization
+echo  [4] 24/7 Master Watchdog (Survives Reboots ^& Self-Heals Drops)
+echo  [5] Daily AI Trade Learning ^& Continuous Auto-Optimization
 echo ====================================================================
 echo.
 

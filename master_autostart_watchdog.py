@@ -49,6 +49,7 @@ def ensure_single_watchdog_instance():
     """Guarantees only one master watchdog runs at a time across the entire system."""
     global _watchdog_socket
     _watchdog_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    _watchdog_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     try:
         _watchdog_socket.bind(('127.0.0.1', 39888))
     except OSError:
@@ -92,7 +93,12 @@ def is_process_running(script_name: str) -> bool:
     return False
 
 def is_market_open() -> bool:
-    """Returns False during weekend market closure (Friday 21:00 UTC to Sunday 22:00 UTC)."""
+    """
+    Returns False during weekend market closure:
+    - Friday post-close: after 21:00 UTC (pause).
+    - Saturday: all day (pause).
+    - Sunday: pauses until 20:45 UTC (wakes up 15 minutes before 21:00 UTC market open to initialize MT5 and all engines).
+    """
     now_utc = datetime.now(timezone.utc)
     # Friday post-close
     if now_utc.weekday() == 4 and now_utc.hour >= 21:
@@ -100,21 +106,31 @@ def is_market_open() -> bool:
     # Saturday
     if now_utc.weekday() == 5:
         return False
-    # Sunday pre-open (market opens 22:00 UTC)
-    if now_utc.weekday() == 6 and now_utc.hour < 22:
-        return False
+    # Sunday pre-open: wake up at 20:45 UTC (15 minutes prior to 21:00 UTC market open)
+    if now_utc.weekday() == 6:
+        if now_utc.hour < 20 or (now_utc.hour == 20 and now_utc.minute < 45):
+            return False
     return True
 
 def ensure_services():
+    # ── 1. Stale Pending Order Purge & Weekend Cleanup ──
+    try:
+        from live_circuit_breaker import clean_stale_pending_orders, is_circuit_breaker_active, get_today_realized_pnl
+        cleaned = clean_stale_pending_orders(max_age_hours=4.0)
+        if cleaned > 0:
+            log.info(f"🧹 Purged {cleaned} stale/weekend pending orders.")
+    except Exception as e_cln:
+        log.warning(f"Order cleanup check error: {e_cln}")
+
+    # Crypto (BTCUSD) trades 24/7/365, so engines and MT5 remain ACTIVE continuously!
     if not is_market_open():
-        log.info("⏸️ [WEEKEND PAUSE] Global forex/gold market is CLOSED. Watchdog idle until Monday market open.")
-        return
+        log.info("ℹ️ [WEEKEND NOTICE] Forex/Gold markets closed until Sunday 21:00 UTC. Crypto (BTCUSD) scanning 24/7 ACTIVE.")
 
     log.info("--- [WATCHDOG HEALTH CHECK] ---")
 
     # 1. MetaTrader 5 Terminal Check
     if not is_mt5_running():
-        log.warning("⚠️ MT5 terminal64.exe not running! Launching XM Global MT5...")
+        log.warning("⚠️ MT5 terminal64.exe not running! Launching XM Global MT5 (15 min pre-open)...")
         if MT5_EXE.exists():
             subprocess.Popen([str(MT5_EXE)], cwd=str(MT5_EXE.parent), shell=False)
             time.sleep(6)
@@ -148,8 +164,14 @@ def ensure_services():
         subprocess.Popen([str(PYTHON_EXE), "breakout_boss_engine.py"], cwd=str(BASE_DIR), creationflags=DETACHED_FLAGS)
         time.sleep(3)
         log.info("✅ BreakoutBoss Engine launched.")
+    # 5. All-In-One (AIO) Multi-Asset Autonomous Quantitative Engine
+    if not is_process_running("aio_live_trading_engine"):
+        log.warning("⚠️ All-In-One (AIO) Multi-Asset Engine not running! Spawning as detached daemon...")
+        subprocess.Popen([str(PYTHON_EXE), "aio_live_trading_engine.py"], cwd=str(BASE_DIR), creationflags=DETACHED_FLAGS)
+        time.sleep(3)
+        log.info("✅ All-In-One (AIO) Engine launched.")
     else:
-        log.info("✅ BreakoutBoss Engine is ACTIVE.")
+        log.info("✅ All-In-One (AIO) Engine is ACTIVE.")
 
     log.info("--- [WATCHDOG HEALTH CHECK COMPLETE] ---\n")
 

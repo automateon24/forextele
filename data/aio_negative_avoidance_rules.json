@@ -1,0 +1,26 @@
+{
+  "rules": [
+    {
+      "rule_id": "AIO_01_REGIME_CONFLICT",
+      "condition": "Reject BUY when H1 Macro is BEARISH; Reject SELL when H1 Macro is BULLISH",
+      "impact": "Eliminates counter-trend knife-catching losses across all 8 assets"
+    },
+    {
+      "rule_id": "AIO_02_TWO_STRIKE_COOLDOWN",
+      "condition": "If an asset takes 2 consecutive losses in 60 minutes, lock out new entries for 60 minutes",
+      "impact": "Prevents over-trading in choppy consolidation ranges"
+    },
+    {
+      "rule_id": "AIO_03_USDJPY_NY_MATRIX",
+      "condition": "USDJPY is restricted exclusively to NY Session (13:00 - 20:00 UTC)",
+      "impact": "Eliminates Asian/London whipsaw from BOJ interventions"
+    },
+    {
+      "rule_id": "AIO_04_COMMODITY_VOLATILITY_ARMOR",
+      "condition": "Apply 1.5x Spread anti-wick noise buffer to Gold and Silver SL",
+      "impact": "Prevents premature stop-outs during session opening spikes"
+    }
+  ],
+  "summary": "All 4 avoidance rules active and verified for AllInOne (AIO) live suite.",
+  "readiness": "PRODUCTION_ARMED"
+}

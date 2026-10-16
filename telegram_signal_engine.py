@@ -286,8 +286,11 @@ async def main():
     # Account 2 Config (Active verified account: 919008400869)
     API_ID_2 = 36022932
     API_HASH_2 = "b9d59de22c25223f94f0e513c04279df"
+    SESSION_2_PATH = BASE_DIR / "telegram_session2_live.session"
+    if not SESSION_2_PATH.exists():
+        SESSION_2_PATH = SESSION_2
     client2 = TelegramClient(
-        RobustSQLiteSession(str(SESSION_2)),
+        RobustSQLiteSession(str(SESSION_2_PATH)),
         API_ID_2,
         API_HASH_2,
         connection=ConnectionTcpIntermediate,
@@ -350,13 +353,20 @@ async def main():
                 return
 
             valid_channel = False
+            chat_id = getattr(chat, 'id', 0)
             
+            # Explicit Tier 1 Elite Channel IDs (Fail-Safe)
+            TIER_1_ELITE_IDS = {-1002350799273, -1001509806486, -1001721819841, -1002064435712, -1001218714411, -1001661400724}
+            if chat_id in TIER_1_ELITE_IDS:
+                valid_channel = True
+
             # Check against verified and user-requested Gold VIPs
-            for vip in FOREX_GOLD_VIPS:
-                if vip in chat_title or vip in chat_user:
-                    valid_channel = True
-                    break
-                    
+            if not valid_channel:
+                for vip in FOREX_GOLD_VIPS:
+                    if vip in chat_title or vip in chat_user:
+                        valid_channel = True
+                        break
+                        
             # Dynamic matching: also capture any channel that explicitly trades GOLD / XAU
             if not valid_channel:
                 if any(kw in chat_title or kw in chat_user for kw in ["gold", "xauusd", "xau"]):

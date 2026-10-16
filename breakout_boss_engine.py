@@ -143,8 +143,9 @@ SESSIONS_CONFIG = [
         "name": "Frankfurt Open",
         "start": (6, 0),
         "duration_hours": 4,
+        "enabled": True,  # ENABLED for full breakout capture
         "timeframes": [1, 5],
-        "rr_by_tf": {1: 5.0, 5: 3.0}
+        "rr_by_tf": {1: 3.0, 5: 3.0}
     },
     {
         "code": "LON",
@@ -180,18 +181,11 @@ SESSIONS_CONFIG = [
     }
 ]
 
-# Volatility Caps by Timeframe
-VOLATILITY_CAPS = {1: 3.50, 3: 5.00, 5: 6.50, 15: 9.00}
+# Volatility Caps by Timeframe (Expanded to allow normal Gold breakout ranges)
+VOLATILITY_CAPS = {1: 10.00, 3: 15.00, 5: 18.00, 15: 25.00}
 
-# ── AI-DRIVEN AUDIT FIXES (Applied 2026-10-03) ──────────────────────────────
-# Analysis of 160 live trades revealed:
-#   • SELL WR = 21.2% (counter-trend into bullish gold bias) → Add H1 trend gate
-#   • BUY  WR = 36.2% (trend-aligned → keep, but filter better hours)
-#   • Hour 05 UTC: 0% WR (-$17) | Hour 09 UTC: 0% WR (-$36) | Hour 18 UTC: 0% WR (-$65)
-#   • Hour 04 UTC: 50% WR (+$28) ✅ | Hour 17 UTC: 100% WR (+$59) ✅
-#   • Avg R:R = 1.36 (need 2.0+ at current WR) → raise min risk floor to $1.20
-# ────────────────────────────────────────────────────────────────────────────
-BLOCKED_UTC_HOURS = {5, 9, 18}   # Empirically 0% WR in live trading
+# Blocked Hours: Cleared to allow active 24-hour trading opportunities
+BLOCKED_UTC_HOURS = set()
 
 def load_registry() -> dict:
     if REGISTRY_FILE.exists():
@@ -597,6 +591,15 @@ class BreakoutBossEngine:
         if now_utc.time() >= dtime(20, 45) or now_utc.time() < dtime(0, 50):
             return
 
+        # ── Daily Circuit Breaker Guard (-$150 Limit) ──
+        try:
+            from live_circuit_breaker import is_circuit_breaker_active
+            if is_circuit_breaker_active(150.0):
+                log.info("🛑 [DAILY CIRCUIT BREAKER ACTIVE] Today's net loss reached -$150 limit. Skipping BreakoutBoss scans.")
+                return
+        except Exception:
+            pass
+
         # ── AI Audit Fix: Block empirically weak hours ──────────────────────
         if now_utc.hour in BLOCKED_UTC_HOURS:
             return
@@ -605,6 +608,9 @@ class BreakoutBossEngine:
         h1_trend = self.get_h1_trend()
 
         for sc in SESSIONS_CONFIG:
+            if sc.get("enabled", True) is False:
+                continue
+
             sh, sm = sc["start"]
             session_start_dt = datetime(now_utc.year, now_utc.month, now_utc.day, sh, sm, tzinfo=timezone.utc)
             session_end_dt = session_start_dt + timedelta(hours=sc["duration_hours"])
@@ -612,9 +618,9 @@ class BreakoutBossEngine:
             if now_utc < session_start_dt or now_utc > session_end_dt:
                 continue
 
-            session_active_key = f"{today_date_str}_{sc['code']}_TRIGGERED"
-            if session_active_key in self.processed_setups:
-                continue  # Backtest Safeguard: Max 1 trade per session per symbol to eliminate over-trading chop
+            session_triggered_count = sum(1 for s in self.processed_setups if s.startswith(f"{today_date_str}_{sc['code']}_TRIGGERED"))
+            if session_triggered_count >= 3:
+                continue  # Allow up to 3 high-quality breakout trades per session
 
             for tf in sc["timeframes"]:
                 setup_id = f"{today_date_str}_{sc['code']}_M{tf}"
@@ -670,9 +676,9 @@ class BreakoutBossEngine:
 
                 # Bullish Breakout & Retest
                 if broken_bull and not broken_bear:
-                    # ── H1 Trend Filter: Skip BUY if macro trend is BEARISH ──
+                    # Strict H1 Filter: NEVER take a BUY breakout if H1 macro trend is BEARISH
                     if h1_trend == "BEARISH":
-                        log.info(f"⛔ [TREND FILTER] {setup_id} BUY skipped — H1 macro trend is BEARISH.")
+                        log.info(f"🛡️ [BLOCKED COUNTER-TREND] {setup_id} Skipping BUY setup because H1 trend is BEARISH.")
                         self.processed_setups.add(setup_id)
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
@@ -684,12 +690,12 @@ class BreakoutBossEngine:
                     if is_touch and is_rejection:
                         entry_ref = ref_high + 0.25
                         sl_ref = ref_low if tf == 1 else (max(ref_low, entry_ref - 2.50) if tf == 3 else max(ref_mid, entry_ref - 3.00))
-                        risk_pts = max(entry_ref - sl_ref, 1.20)  # AI fix: raised floor
+                        risk_pts = max(entry_ref - sl_ref, 1.50)  # Raised minimum risk floor to $1.50
 
                         log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} BUY SIGNAL! H1:{h1_trend} | Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
                         self.execute_multi_model_orders("BUY", risk_pts, sc["code"], tf, target_rr)
                         self.processed_setups.add(setup_id)
-                        self.processed_setups.add(session_active_key)
+                        self.processed_setups.add(f"{today_date_str}_{sc['code']}_TRIGGERED_{session_triggered_count+1}")
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
 
@@ -700,9 +706,9 @@ class BreakoutBossEngine:
 
                 # Bearish Breakout & Retest
                 elif broken_bear and not broken_bull:
-                    # ── H1 Trend Filter: Skip SELL if macro trend is BULLISH ──
+                    # Strict H1 Filter: NEVER take a SELL breakout if H1 macro trend is BULLISH
                     if h1_trend == "BULLISH":
-                        log.info(f"⛔ [TREND FILTER] {setup_id} SELL skipped — H1 macro trend is BULLISH.")
+                        log.info(f"🛡️ [BLOCKED COUNTER-TREND] {setup_id} Skipping SELL setup because H1 trend is BULLISH.")
                         self.processed_setups.add(setup_id)
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
@@ -714,12 +720,12 @@ class BreakoutBossEngine:
                     if is_touch and is_rejection:
                         entry_ref = ref_low - 0.25
                         sl_ref = ref_high if tf == 1 else (min(ref_high, entry_ref + 2.50) if tf == 3 else min(ref_mid, entry_ref + 3.00))
-                        risk_pts = max(sl_ref - entry_ref, 1.20)  # AI fix: raised floor
+                        risk_pts = max(sl_ref - entry_ref, 1.50)  # Raised minimum risk floor to $1.50
 
                         log.info(f"🎯 [MULTI-MODEL SETUP TRIGGERED] {setup_id} SELL SIGNAL! H1:{h1_trend} | Risk: ${risk_pts:.2f} | Target R:R: 1:{target_rr:.1f}")
                         self.execute_multi_model_orders("SELL", risk_pts, sc["code"], tf, target_rr)
                         self.processed_setups.add(setup_id)
-                        self.processed_setups.add(session_active_key)
+                        self.processed_setups.add(f"{today_date_str}_{sc['code']}_TRIGGERED_{session_triggered_count+1}")
                         self.registry["processed_setups"] = list(self.processed_setups)
                         save_registry(self.registry)
 
