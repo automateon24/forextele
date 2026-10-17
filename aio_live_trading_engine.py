@@ -175,6 +175,11 @@ class AIOLiveTradingEngine:
         if symbol in self.quarantined_symbols:
             return
 
+        # Weekend Mode: Forex and Gold are closed on weekends. Specialize exclusively on Crypto (BTCUSD, ETHUSD)
+        is_weekend = (now_utc.weekday() >= 5)
+        if is_weekend and symbol not in ["BTCUSD", "ETHUSD"]:
+            return
+
         # Filter 1: Daily Trade Cap per Asset (stops catastrophic overtrading like 215 Gold trades)
         spec = ASSET_SPECS.get(symbol, {"lot": 0.02, "pip_size": 0.10, "digits": 2, "max_daily": 3})
         trades_today = self.daily_trade_count.get(symbol, 0)
@@ -405,9 +410,23 @@ class AIOLiveTradingEngine:
                     sl=sl, tps=[tp1, tp2], channel=strat_name, conviction=0.85
                 )
 
+                # Real-time Telegram Institutional Alert
+                try:
+                    from telegram_notifier import notify_trade_opened
+                    notify_trade_opened(
+                        ticket=ticket, symbol=symbol, action=action, volume=lot,
+                        entry=entry, sl=sl, tp1=tp1, tp2=tp2, win_prob=win_prob,
+                        strategy=strat_name
+                    )
+                except Exception as ex:
+                    log.warning(f"Telegram notification error: {ex}")
+
     def run_cycle(self):
-        log.info(f"🔄 Scanning 8 Multi-Asset pairs across all AIO quantitative strategies...")
-        for sym in SYMBOLS:
+        is_weekend = (datetime.now(timezone.utc).weekday() >= 5)
+        scan_list = ["BTCUSD", "ETHUSD"] if is_weekend else SYMBOLS
+        label = "🌐 WEEKEND 24/7 CRYPTO" if is_weekend else "🔄 ALL-ASSET MULTI-TIMEFRAME"
+        log.info(f"{label} Scanning {len(scan_list)} pairs ({', '.join(scan_list)})...")
+        for sym in scan_list:
             try:
                 self.scan_asset(sym)
             except Exception as e:
