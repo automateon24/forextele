@@ -107,21 +107,39 @@
     "highest_tp_reached": 0,
     "extension_step": 10.0
   },
-  "2347792417": {
-    "ticket": 2347792417,
-    "symbol": "ETHUSD",
+  "2347821832": {
+    "ticket": 2347821832,
+    "symbol": "BTCUSD",
     "action": "SELL",
-    "entry": 2419.03,
-    "initial_sl": 2439.03,
-    "current_sl": 2439.03,
+    "entry": 81599.25,
+    "initial_sl": 81799.25,
+    "current_sl": 81799.25,
     "tps": [
-      2389.03,
-      2369.03
+      81299.25,
+      81099.25
     ],
     "channel": "AIO_DILSE_PULL",
     "conviction": 0.85,
     "mode": "RUNNER_HIGH_CONVICTION",
-    "open_time": "2026-10-17 03:03:03",
+    "open_time": "2026-10-17 15:53:14",
+    "highest_tp_reached": 0,
+    "extension_step": 10.0
+  },
+  "2347822405": {
+    "ticket": 2347822405,
+    "symbol": "ETHUSD",
+    "action": "BUY",
+    "entry": 2441.22,
+    "initial_sl": 2432.93,
+    "current_sl": 2432.93,
+    "tps": [
+      2488.22,
+      2525.72
+    ],
+    "channel": "AIO_BOLL_SQZ",
+    "conviction": 0.85,
+    "mode": "RUNNER_HIGH_CONVICTION",
+    "open_time": "2026-10-17 16:11:31",
     "highest_tp_reached": 0,
     "extension_step": 10.0
   }
