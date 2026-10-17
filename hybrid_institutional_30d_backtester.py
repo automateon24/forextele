@@ -38,10 +38,10 @@ INITIAL_CAPITAL = 3000.0
 SYMBOLS = ["GOLD", "SILVER", "BTCUSD", "ETHUSD", "EURUSD", "GBPUSD", "USDJPY"]
 
 SPECS = {
-    "GOLD":   {"spread_pts": 0.35,  "digits": 2, "contract_size": 100,    "base_lot": 0.03, "slippage_pts": 0.15, "weight": 1.35, "point": 0.01, "max_lot": 0.08},
-    "SILVER": {"spread_pts": 0.035, "digits": 3, "contract_size": 5000,   "base_lot": 0.01, "slippage_pts": 0.010, "weight": 0.50, "point": 0.001, "max_lot": 0.02},
-    "BTCUSD": {"spread_pts": 25.0,  "digits": 2, "contract_size": 1,      "base_lot": 0.04, "slippage_pts": 10.0, "weight": 1.25, "point": 0.01, "max_lot": 0.08},
-    "ETHUSD": {"spread_pts": 2.5,   "digits": 2, "contract_size": 1,      "base_lot": 0.04, "slippage_pts": 1.0,   "weight": 0.80, "point": 0.01, "max_lot": 0.06},
+    "GOLD":   {"spread_pts": 0.35,  "digits": 2, "contract_size": 100,    "base_lot": 0.03, "slippage_pts": 0.15, "weight": 1.35, "point": 0.01, "max_lot": 0.10},
+    "SILVER": {"spread_pts": 0.035, "digits": 3, "contract_size": 5000,   "base_lot": 0.01, "slippage_pts": 0.010, "weight": 0.65, "point": 0.001, "max_lot": 0.03},
+    "BTCUSD": {"spread_pts": 25.0,  "digits": 2, "contract_size": 1,      "base_lot": 0.04, "slippage_pts": 10.0, "weight": 1.30, "point": 0.01, "max_lot": 0.10},
+    "ETHUSD": {"spread_pts": 2.5,   "digits": 2, "contract_size": 1,      "base_lot": 0.04, "slippage_pts": 1.0,   "weight": 0.85, "point": 0.01, "max_lot": 0.08},
     "EURUSD": {"spread_pts": 0.00016, "digits": 5, "contract_size": 100000, "base_lot": 0.05, "slippage_pts": 0.00008, "weight": 0.85, "point": 0.00001, "max_lot": 0.08},
     "GBPUSD": {"spread_pts": 0.00018, "digits": 5, "contract_size": 100000, "base_lot": 0.05, "slippage_pts": 0.00010, "weight": 0.85, "point": 0.00001, "max_lot": 0.08},
     "USDJPY": {"spread_pts": 0.018,   "digits": 3, "contract_size": 100000, "base_lot": 0.05, "slippage_pts": 0.010, "weight": 0.85, "point": 0.001, "max_lot": 0.08},
@@ -50,13 +50,13 @@ SPECS = {
 COMMISSION_PER_LOT = 7.00
 
 SESSION_HOURS = {
-    "GOLD":   [1, 7, 8, 9, 10, 11, 12, 13, 14],
-    "SILVER": [7, 8, 9, 10, 11, 12, 13, 14],
-    "BTCUSD": [1, 3, 7, 8, 9, 10, 11, 12, 13, 14, 23],
-    "ETHUSD": [1, 3, 7, 8, 9, 10, 11, 12, 13, 14, 23],
-    "EURUSD": [7, 8, 9, 10, 11, 12, 13, 14],
-    "GBPUSD": [7, 8, 9, 10, 11, 12, 13, 14],
-    "USDJPY": [12, 13, 14, 15],
+    "GOLD":   [1, 7, 8, 9, 10],
+    "SILVER": [7],
+    "BTCUSD": [1, 3, 12, 14, 15, 16, 23],
+    "ETHUSD": [1, 3, 12, 14, 15, 16, 23],
+    "EURUSD": [8, 9],
+    "GBPUSD": [8],
+    "USDJPY": [0, 1, 2, 7, 8],
 }
 
 MAX_DAILY_TRADES = {
@@ -336,7 +336,7 @@ def simulate_hybrid_symbol(symbol: str, df: pd.DataFrame, ml_model=None):
         # -------------------------------------------------------------
         # Strategy 1: Dilse Pullback with Converged 1.35 ATR Armor
         # -------------------------------------------------------------
-        if symbol in ["GOLD", "SILVER", "BTCUSD", "EURUSD"] and adx >= 20.0:
+        if symbol in ["GOLD", "SILVER", "BTCUSD", "ETHUSD", "EURUSD", "GBPUSD", "USDJPY"] and adx >= 20.0:
             if macro == "BULLISH" and curr['ema21'] > curr['ema50']:
                 if low_p <= curr['ema21'] and close_p > curr['ema21'] and 40.0 < rsi < 65.0:
                     risk = max(atr * 1.35, spread_pts * 20)
@@ -359,15 +359,16 @@ def simulate_hybrid_symbol(symbol: str, df: pd.DataFrame, ml_model=None):
                 sig = {"strategy": "HYBRID_SMC_FVG", "side": "SELL", "sl": curr['high'] + (risk * 0.40), "tp1": close_p - (risk * 1.8), "tp2": close_p - (risk * 3.0)}
 
         # -------------------------------------------------------------
-        # Strategy 3: Breakout Boss Core Session Open Breakout (Gold & Silver London/NY)
+        # Strategy 3: Breakout Boss Core Session Open Breakout (Gold/Silver/FX London, BTC US)
         # -------------------------------------------------------------
-        if not sig and symbol in ["GOLD", "SILVER"]:
-            if hour in [8, 13] and minute == 15:
+        if not sig and symbol in ["GOLD", "SILVER", "GBPUSD", "EURUSD", "BTCUSD"]:
+            is_breakout_time = (hour == 8 and minute in [0, 15]) if symbol != "BTCUSD" else (hour == 14 and minute in [0, 15])
+            if is_breakout_time:
                 ref_high = prev['high']
                 ref_low = prev['low']
                 ref_range = ref_high - ref_low
-                min_r = 1.50 if symbol == "GOLD" else 0.15
-                max_r = 9.00 if symbol == "GOLD" else 0.90
+                min_r = 1.50 if symbol == "GOLD" else (0.15 if symbol == "SILVER" else (150.0 if symbol == "BTCUSD" else 0.0008))
+                max_r = 9.00 if symbol == "GOLD" else (0.90 if symbol == "SILVER" else (1200.0 if symbol == "BTCUSD" else 0.0035))
                 if min_r <= ref_range <= max_r:
                     risk = max(ref_range, atr * 1.25)
                     if close_p > ref_high and macro == "BULLISH":
@@ -489,10 +490,11 @@ def run_hybrid_institutional_backtest():
 
         # AI Conviction Scaling (Kelly conviction * Wyckoff multiplier)
         conviction = max(0.70, min(2.50, (prob - 0.40) / 0.16)) * wyckoff_mult
-        mult = min(3.5, max(0.5, (eq / 3000.0) * (2.0 * w) * conviction))
+        mult = min(5.0, max(0.6, (eq / 3000.0) * (2.4 * w) * conviction))
 
         # Dynamic compounded lot size with institutional capital protection
-        c_lot = min(max_lot_cap, round(b_lot * mult, 2))
+        dyn_cap = round(max_lot_cap * (eq / 3000.0), 2)
+        c_lot = min(dyn_cap, round(b_lot * mult, 2))
 
         t_pnl = pnl_per_l * c_lot
         eq += t_pnl

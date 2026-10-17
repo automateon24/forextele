@@ -60,13 +60,13 @@ ASSET_SPECS = {
 
 # Strict session hours (UTC) to eliminate low-liquidity chop and spread-widening periods
 PAIR_ALLOWED_HOURS = {
-    "GOLD":   [1, 7, 8, 9, 10, 11, 12, 13, 14, 15],  # London Core + NY Open
-    "SILVER": [7, 8, 9, 10, 11, 12, 13, 14, 15],
-    "BTCUSD": [1, 2, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
-    "ETHUSD": [1, 2, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
-    "EURUSD": [7, 8, 9, 10, 11, 12, 13, 14, 15],
-    "GBPUSD": [7, 8, 9, 10, 11, 12, 13, 14, 15],
-    "USDJPY": [12, 13, 14, 15],
+    "GOLD":   [1, 7, 8, 9, 10],
+    "SILVER": [7],
+    "BTCUSD": [1, 3, 12, 14, 15, 16, 23],
+    "ETHUSD": [1, 3, 12, 14, 15, 16, 23],
+    "EURUSD": [8, 9],
+    "GBPUSD": [8],
+    "USDJPY": [0, 1, 2, 7, 8],
 }
 
 class AIOLiveTradingEngine:

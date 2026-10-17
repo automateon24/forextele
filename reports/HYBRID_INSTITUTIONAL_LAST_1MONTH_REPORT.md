@@ -1,5 +1,5 @@
 # SepPro-Enhanced Hybrid Institutional 30-Day Master Report ($3,000 Capital)
-**Date:** 2026-10-17 11:09:51 UTC  
+**Date:** 2026-10-17 11:34:47 UTC  
 **Evaluation Window:** Last 30 Calendar Days (Sept 17, 2026 - Oct 17, 2026)  
 **Execution Precision:** Real MT5 M5 Execution with M15/H1 Multi-Timeframe Confluence  
 **Data Integrity:** Zero Intra-Bar Peek Bias (Hard SL evaluated before TP on every bar), Real Live Spreads, $7/lot Commission, Slippage  
@@ -15,42 +15,45 @@
 
 ## 1. 30-Day Executive Performance
 * **Starting Capital:** $3,000.00 USD
-* **Final Balance (Today):** **$3,286.97 USD**
-* **Net Profit in 30 Days:** **$+286.97 USD**
-* **30-Day Return on Investment (ROI):** **+9.57%**
-* **Total Closed Trades:** 88
-* **Win / Loss Record:** 36 Wins / 52 Losses (**40.91% Win Rate**)
-* **Profit Factor:** **1.11**
-* **Maximum Historical Drawdown:** **$570.80 USD (14.80%)**
+* **Final Balance (Today):** **$4,843.09 USD**
+* **Net Profit in 30 Days:** **$+1,843.09 USD**
+* **30-Day Return on Investment (ROI):** **+61.44%**
+* **Total Closed Trades:** 77
+* **Win / Loss Record:** 40 Wins / 37 Losses (**51.95% Win Rate**)
+* **Profit Factor:** **1.75**
+* **Maximum Historical Drawdown:** **$534.24 USD (10.41%)**
 
 ---
 
 ## 2. Asset Attribution (Last 30 Days)
 | Symbol | Total Trades | Wins | Losses | Win Rate | Net PnL (USD) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **GOLD** | 50 | 21 | 29 | 42.0% | **$+215.13** |
-| **SILVER** | 15 | 4 | 11 | 26.7% | **$-169.74** |
-| **BTCUSD** | 11 | 7 | 4 | 63.6% | **$+284.51** |
-| **EURUSD** | 12 | 4 | 8 | 33.3% | **$-42.93** |
+| **GOLD** | 33 | 19 | 14 | 57.6% | **$+1,384.51** |
+| **SILVER** | 8 | 3 | 5 | 37.5% | **$+52.26** |
+| **BTCUSD** | 13 | 8 | 5 | 61.5% | **$+399.31** |
+| **ETHUSD** | 2 | 1 | 1 | 50.0% | **$+1.99** |
+| **EURUSD** | 6 | 4 | 2 | 66.7% | **$+131.46** |
+| **GBPUSD** | 3 | 0 | 3 | 0.0% | **$-142.20** |
+| **USDJPY** | 12 | 5 | 7 | 41.7% | **$+15.74** |
 
 ---
 
 ## 3. Strategy Attribution (Last 30 Days)
 | Strategy | Total Trades | Wins | Losses | Win Rate | Net PnL (USD) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **HYBRID_DILSE_PULL** | 82 | 33 | 49 | 40.2% | **$+235.02** |
-| **BREAKOUT_BOSS_CORE** | 6 | 3 | 3 | 50.0% | **$+51.95** |
+| **HYBRID_DILSE_PULL** | 72 | 36 | 36 | 50.0% | **$+1,575.56** |
+| **BREAKOUT_BOSS_CORE** | 5 | 4 | 1 | 80.0% | **$+267.51** |
 
 ---
 
 ## 4. Week-by-Week Verified Progression
 | Calendar Week | Trades | Wins | Win Rate | Net PnL (USD) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Week 38** | 6 | 4 | 66.7% | **$+156.52** |
-| **Week 39** | 18 | 8 | 44.4% | **$+186.54** |
-| **Week 40** | 19 | 8 | 42.1% | **$+63.40** |
-| **Week 41** | 25 | 11 | 44.0% | **$+328.86** |
-| **Week 42** | 20 | 5 | 25.0% | **$-448.35** |
+| **Week 38** | 5 | 5 | 100.0% | **$+345.05** |
+| **Week 39** | 16 | 9 | 56.2% | **$+533.23** |
+| **Week 40** | 18 | 9 | 50.0% | **$+492.25** |
+| **Week 41** | 25 | 11 | 44.0% | **$+519.58** |
+| **Week 42** | 13 | 6 | 46.2% | **$-47.04** |
 
 ---
 
