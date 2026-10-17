@@ -1,0 +1,77 @@
+[
+  {
+    "iteration": 0,
+    "name": "Iteration 0 (Unrestricted Baseline)",
+    "metrics": {
+      "trades": 3388,
+      "wins": 1295,
+      "losses": 2093,
+      "win_rate": 38.22,
+      "net_pnl": 3678.46,
+      "roi_pct": 122.62,
+      "max_dd_pct": 29.19,
+      "max_dd_usd": 2263.1,
+      "profit_factor": 1.09
+    }
+  },
+  {
+    "iteration": 1,
+    "name": "Iteration 1 (Session Liquidity Gating)",
+    "metrics": {
+      "trades": 2502,
+      "wins": 956,
+      "losses": 1546,
+      "win_rate": 38.21,
+      "net_pnl": 4017.55,
+      "roi_pct": 133.92,
+      "max_dd_pct": 17.52,
+      "max_dd_usd": 954.88,
+      "profit_factor": 1.16
+    }
+  },
+  {
+    "iteration": 2,
+    "name": "Iteration 2 (ADX >= 22 Trend Strength Gate)",
+    "metrics": {
+      "trades": 2362,
+      "wins": 868,
+      "losses": 1494,
+      "win_rate": 36.75,
+      "net_pnl": 4196.38,
+      "roi_pct": 139.88,
+      "max_dd_pct": 14.81,
+      "max_dd_usd": 1115.14,
+      "profit_factor": 1.18
+    }
+  },
+  {
+    "iteration": 3,
+    "name": "Iteration 3 (Negative Expectancy Pruning)",
+    "metrics": {
+      "trades": 1765,
+      "wins": 771,
+      "losses": 994,
+      "win_rate": 43.68,
+      "net_pnl": 4530.91,
+      "roi_pct": 151.03,
+      "max_dd_pct": 10.91,
+      "max_dd_usd": 874.37,
+      "profit_factor": 1.22
+    }
+  },
+  {
+    "iteration": 4,
+    "name": "Iteration 4 (Model 3 AI Conviction Compounding)",
+    "metrics": {
+      "trades": 1765,
+      "wins": 771,
+      "losses": 994,
+      "win_rate": 43.68,
+      "net_pnl": 11556.27,
+      "roi_pct": 385.21,
+      "max_dd_pct": 18.82,
+      "max_dd_usd": 3060.3,
+      "profit_factor": 1.22
+    }
+  }
+]
