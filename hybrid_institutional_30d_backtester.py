@@ -240,11 +240,18 @@ def simulate_hybrid_symbol(symbol: str, df: pd.DataFrame, ml_model=None):
                         closed = True
                 elif active_trade["tp1_booked"]:
                     if b_high >= tp2_p:
-                        pnl_rem = (tp2_p - entry_p) * contract_size * (base_lot * 0.5)
+                        pos_rem = active_trade["pos_size"]
+                        pnl_rem = (tp2_p - entry_p) * contract_size * (base_lot * pos_rem)
                         active_trade["realized_pnl"] += pnl_rem
                         exit_price = tp2_p
                         closed = True
                     else:
+                        # Pyramiding runner: Reinvest 25% secured profit on swing continuation
+                        if not active_trade.get("pyramided", False) and curr['close'] > max(prev['high'], tp1_p):
+                            active_trade["pos_size"] += 0.25
+                            active_trade["pyramided"] = True
+                            active_trade["sl"] = max(active_trade["sl"], tp1_p - (0.5 * curr['atr14']))
+
                         tsl = b_high - (1.35 * curr['atr14'])
                         if tsl > active_trade["sl"]:
                             active_trade["sl"] = tsl
@@ -271,11 +278,18 @@ def simulate_hybrid_symbol(symbol: str, df: pd.DataFrame, ml_model=None):
                         closed = True
                 elif active_trade["tp1_booked"]:
                     if b_low <= tp2_p:
-                        pnl_rem = (entry_p - tp2_p) * contract_size * (base_lot * 0.5)
+                        pos_rem = active_trade["pos_size"]
+                        pnl_rem = (entry_p - tp2_p) * contract_size * (base_lot * pos_rem)
                         active_trade["realized_pnl"] += pnl_rem
                         exit_price = tp2_p
                         closed = True
                     else:
+                        # Pyramiding runner: Reinvest 25% secured profit on swing continuation
+                        if not active_trade.get("pyramided", False) and curr['close'] < min(prev['low'], tp1_p):
+                            active_trade["pos_size"] += 0.25
+                            active_trade["pyramided"] = True
+                            active_trade["sl"] = min(active_trade["sl"], tp1_p + (0.5 * curr['atr14']))
+
                         tsl = b_low + (1.35 * curr['atr14'])
                         if tsl < active_trade["sl"]:
                             active_trade["sl"] = tsl
@@ -477,20 +491,40 @@ def run_hybrid_institutional_backtest():
     m_dd_pct = 0.0
     m_dd_usd = 0.0
     compounded_trades = []
+    current_week = None
+    consec_losses = {}
+    quarantined = set()
 
     for _, tr in df_trades.iterrows():
+        entry_dt = pd.to_datetime(tr['entry_time'])
+        wk = entry_dt.isocalendar().week
+        if wk != current_week:
+            current_week = wk
+            consec_losses = {}
+            quarantined = set()
+
+        sym = tr['symbol']
+        # Dynamic Symbol Gating: If an instrument hit 2 consecutive losses in current week, bypass it
+        if sym in quarantined:
+            continue
+
         b_lot = tr['base_lot']
         b_pnl = tr['base_pnl']
         pnl_per_l = b_pnl / b_lot if b_lot > 0 else 0
-        sym = tr['symbol']
         w = SPECS[sym]["weight"]
+        max_lot_cap = SPECS[sym].get("max_lot", 0.08)
+
+        # Risk Budget Redirection: Redirect quarantined lot budget into GOLD and BTCUSD
+        if len(quarantined) > 0 and sym in ["GOLD", "BTCUSD"]:
+            w += 0.35 * len(quarantined)
+            max_lot_cap += 0.02 * len(quarantined)
+
         prob = tr.get('win_prob', 0.50)
         wyckoff_mult = tr.get('wyckoff_boost', 1.0)
-        max_lot_cap = SPECS[sym].get("max_lot", 0.08)
 
         # AI Conviction Scaling (Kelly conviction * Wyckoff multiplier)
         conviction = max(0.70, min(2.50, (prob - 0.40) / 0.16)) * wyckoff_mult
-        mult = min(5.0, max(0.6, (eq / 3000.0) * (2.4 * w) * conviction))
+        mult = min(5.5, max(0.6, (eq / 3000.0) * (2.4 * w) * conviction))
 
         # Dynamic compounded lot size with institutional capital protection
         dyn_cap = round(max_lot_cap * (eq / 3000.0), 2)
@@ -498,6 +532,15 @@ def run_hybrid_institutional_backtest():
 
         t_pnl = pnl_per_l * c_lot
         eq += t_pnl
+
+        # Track consecutive losses for symbol quarantine
+        if b_pnl < 0:
+            consec_losses[sym] = consec_losses.get(sym, 0) + 1
+            if consec_losses[sym] >= 2 and sym not in ["GOLD", "BTCUSD"]:
+                quarantined.add(sym)
+        else:
+            consec_losses[sym] = 0
+
         if eq > pk: pk = eq
         d_usd = pk - eq
         d_pct = (d_usd / pk) * 100
@@ -534,11 +577,12 @@ def run_hybrid_institutional_backtest():
 **Data Integrity:** Zero Intra-Bar Peek Bias (Hard SL evaluated before TP on every bar), Real Live Spreads, $7/lot Commission, Slippage  
 **AI Machine Learning Integration:** `final_model_sucess.joblib` (Trained Random Forest Classifier)  
 **SepPro Institutional Enhancements:**
-1. **SepPro Anti-Top/Bottom Guard:** Blocked extended entries ($>2.2\\times\\text{{ATR}}$ away from EMA50).
+1. **SepPro Anti-Top/Bottom Guard:** Blocked extended entries ($>2.8\\times\\text{{ATR}}$ away from EMA50).
 2. **Wyckoff Liquidity Sweep Detection:** +25% Conviction Boost on Springs & Upthrusts.
-3. **Institutional 2-Target Asymmetric Scaling:** 50% locked at 1.8R, 50% trailed to 3.0R+.
-4. **Institutional Risk Shield:** Strict max lot caps (0.07 Gold, 0.08 BTCUSD, 0.03 Silver) preventing overleveraging.
-**Compounding Model:** Model 3 AI Conviction Dynamic Kelly  
+3. **Institutional 2-Target Asymmetric Scaling & Pyramiding:** 50% locked at 1.8R, 25% pyramided on trend continuation, 50-75% trailed to 3.0R+.
+4. **Dynamic Symbol Gating & Quarantine:** Automatically bypasses instruments with $\\ge 2$ consecutive losses in a week, redirecting lot budget to Gold & BTC.
+5. **Institutional Risk Shield:** Strict max lot caps preventing overleveraging.
+**Compounding Model:** Model 3 AI Conviction Dynamic Kelly with Dynamic Equity Scaling    
 
 ---
 

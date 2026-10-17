@@ -75,6 +75,9 @@ class AIOLiveTradingEngine:
         self.last_trade_time = {}
         self.daily_trade_count = {}
         self.current_trade_day = datetime.now(timezone.utc).date()
+        self.current_week = datetime.now(timezone.utc).isocalendar().week
+        self.consec_losses = {}
+        self.quarantined_symbols = set()
         self.cooldown_seconds = 1800  # 30 minutes per asset (raised from 15m to stop chop churn)
         self.magic_base = 888100
 
@@ -159,6 +162,18 @@ class AIOLiveTradingEngine:
             self.current_trade_day = today
             self.daily_trade_count = {}
             log.info(f"🔄 [AIO ENGINE] New UTC Day ({today}) - Reset all daily trade counters.")
+
+        # Weekly reset for symbol quarantine
+        week_num = now_utc.isocalendar().week
+        if week_num != self.current_week:
+            self.current_week = week_num
+            self.consec_losses = {}
+            self.quarantined_symbols = set()
+            log.info(f"🔄 [AIO ENGINE] New Calendar Week ({week_num}) - Reset symbol quarantine & loss counters.")
+
+        # Dynamic Symbol Gating: If quarantined due to >= 2 consecutive losses this week, skip
+        if symbol in self.quarantined_symbols:
+            return
 
         # Filter 1: Daily Trade Cap per Asset (stops catastrophic overtrading like 215 Gold trades)
         spec = ASSET_SPECS.get(symbol, {"lot": 0.02, "pip_size": 0.10, "digits": 2, "max_daily": 3})
@@ -351,7 +366,9 @@ class AIOLiveTradingEngine:
             account_info = mt5.account_info()
             equity = account_info.equity if account_info else 3000.0
             conviction = max(0.70, min(2.50, (win_prob - 0.40) / 0.16))
-            weight = 1.35 if symbol in ["GOLD", "SILVER"] else (1.0 if symbol == "BTCUSD" else 0.85)
+            weight = 1.35 if symbol == "GOLD" else (0.65 if symbol == "SILVER" else (1.30 if symbol == "BTCUSD" else 0.85))
+            if len(self.quarantined_symbols) > 0 and symbol in ["GOLD", "BTCUSD"]:
+                weight += 0.35 * len(self.quarantined_symbols)
             compounded_lot = round(min(0.20, max(lot, lot * (equity / 3000.0) * conviction * weight)), 2)
             lot = compounded_lot
 
