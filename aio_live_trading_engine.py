@@ -78,6 +78,17 @@ class AIOLiveTradingEngine:
         self.cooldown_seconds = 1800  # 30 minutes per asset (raised from 15m to stop chop churn)
         self.magic_base = 888100
 
+        # Load trained AI ML model
+        self.ml_model = None
+        ml_path = BASE_DIR / "final_model_sucess.joblib"
+        if ml_path.exists():
+            try:
+                import joblib
+                self.ml_model = joblib.load(ml_path)
+                log.info(" Loaded trained AI ML model (final_model_sucess.joblib) for live trade gating")
+            except Exception as e:
+                log.warning(f"Could not load ML model: {e}")
+
     def init_mt5(self) -> bool:
         if mt5.initialize():
             self.mt5_engine.connected = True
@@ -301,7 +312,50 @@ class AIOLiveTradingEngine:
             magic = trade_signal["magic"]
             lot = spec["lot"]
 
-            log.info(f"🎯 [{strat_name}] Signal on {symbol}: {action} {lot} lots | SL: {sl} | TP1: {tp1} | Reason: {trade_signal['reason']}")
+            # AI ML Model Inference & Gating
+            win_prob = 0.50
+            if self.ml_model is not None:
+                strat_map = {
+                    ("AIO_DILSE_PULL", "BUY"): "BULL_TREND_FOLLOWER",
+                    ("AIO_DILSE_PULL", "SELL"): "BEAR_TREND_FOLLOWER",
+                    ("AIO_BOLL_SQZ", "BUY"): "VOLATILITY_BREAKOUT",
+                    ("AIO_BOLL_SQZ", "SELL"): "VOLATILITY_BREAKOUT",
+                    ("AIO_SMC_FVG", "BUY"): "ORDER_BLOCK_REVERSAL",
+                    ("AIO_SMC_FVG", "SELL"): "ORDER_BLOCK_REVERSAL",
+                    ("AIO_OB_REV", "BUY"): "ORDER_BLOCK_REVERSAL",
+                    ("AIO_OB_REV", "SELL"): "ORDER_BLOCK_REVERSAL",
+                }
+                pt_map = {"GOLD":0.01, "SILVER":0.001, "BTCUSD":0.01, "ETHUSD":0.01, "EURUSD":0.00001, "GBPUSD":0.00001, "USDJPY":0.001}
+                pt_val = pt_map.get(symbol, 0.01)
+                ml_strat = strat_map.get((strat_name, action), "BULL_TREND_FOLLOWER")
+                session_name = "LONDON" if 7 <= now_utc.hour < 12 else ("NY" if 12 <= now_utc.hour < 17 else ("ASIAN" if 0 <= now_utc.hour < 7 else "US"))
+                sl_pts = abs(close_p - sl) / pt_val
+                tp_pts = abs(tp1 - close_p) / pt_val
+                feat = pd.DataFrame([{
+                    "symbol": symbol, "strategy": ml_strat, "direction": action,
+                    "session": session_name, "hour": now_utc.hour, "weekday": now_utc.weekday(),
+                    "rsi_val": float(rsi) if not np.isnan(rsi) else 50.0,
+                    "adx_val": 22.0, "atr": float(atr),
+                    "sl_pts": float(sl_pts), "tp_pts": float(tp_pts)
+                }])
+                try:
+                    win_prob = float(self.ml_model.predict_proba(feat)[0][1])
+                except Exception as e:
+                    win_prob = 0.50
+
+                if win_prob < 0.46:
+                    log.info(f"🛡️ [ML FILTER] Dropped {strat_name} on {symbol} due to low win prob: {win_prob:.1%}")
+                    return
+
+            # Model 3 AI Conviction Dynamic Compounding
+            account_info = mt5.account_info()
+            equity = account_info.equity if account_info else 3000.0
+            conviction = max(0.70, min(2.50, (win_prob - 0.40) / 0.16))
+            weight = 1.35 if symbol in ["GOLD", "SILVER"] else (1.0 if symbol == "BTCUSD" else 0.85)
+            compounded_lot = round(min(0.20, max(lot, lot * (equity / 3000.0) * conviction * weight)), 2)
+            lot = compounded_lot
+
+            log.info(f"🎯 [{strat_name}] Signal on {symbol}: {action} {lot} lots (WinProb: {win_prob:.1%}) | SL: {sl} | TP1: {tp1} | Reason: {trade_signal['reason']}")
 
             tick = mt5.symbol_info_tick(symbol)
             if not tick: return
